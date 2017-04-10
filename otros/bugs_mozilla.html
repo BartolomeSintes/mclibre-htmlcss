@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bugs de Firefox. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      table#bug320451 p:first-letter { font-size: 300%; color: red; }
+      table#bug379641 p:first-letter { float: left; }
+      p.bug328111:first-letter { color: red; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Bugs de Firefox</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Bugs de Firefox</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#bugs-por-enviar">Bugs por enviar/identificar</a></li>
+          <li><a href="#bugs-css3">Bugs relacionados con CSS3</a></li>
+          <li><a href="#bugs-por-incluir">Bugs por incluir</a></li>
+          <li><a href="#bugs-pendientes">Bugs pendientes</a>
+            <ul>
+              <li><a href="#bug-2212">B2.212: align="char"</a></li>
+              <li><a href="#bug-13944">B13.944: <span class="css-prop">-moz-border-radius</span></a></li>
+              <li><a href="#bug-15499">B15.499: <span class="css-prop">cellpadding</span></a></li>
+              <li><a href="#bug-125390">B125.390: <span class="css-prop">letter-spacing</span></a></li>
+              <li><a href="#bug-320451">B320.451: <span class="css-sele">p:</span><span class="css-pseudo">first-letter</span></a></li>
+              <li><a href="#bug-359497">B359.497: <span class="css-prop">outline</span> y <span class="css-prop">outline-color</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Se puede <a href="https://bugzilla.mozilla.org/">seguir el desarrollo de Firefox</a> gracias a <a href="https://www.bugzilla.org/">Bugzilla</a>, el sistema de seguimiento de bugs creado para Firefox y cada vez más utilizado por otros proyectos de software libre o propietario. Esta página contiene enlaces a algunos bugs relacionados con temas explicados en estos apuntes (alguno ya resuelto) o a bugs descubiertos por mí o por mis alumnos.</p>
+
+    <section id="bugs-por-enviar">
+      <h2>Bugs por enviar/identificar</h2>
+    </section>
+
+    <p>Ninguno</p>
+
+    <section id="bugs-css3">
+      <h2>Bugs relacionados con CSS3</h2>
+      <ul>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=616436">Bug 616436</a>: column-span not implemented (css3 multicolumn)</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=548372">Bug 548372</a>: Implement background-repeat: [space | round] </li>
+      </ul>
+    </section>
+
+    <section id="bugs-por-incluir">
+      <h2>Bugs por incluir en esta página</h2>
+      <ul>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=164421">Bug 164421</a>: Bugs that annoy Internet Explorer users switching to Mozilla (IE parity).</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=195752">Bug 195.752</a>: Visited link doesn't change color. En realidad hay muchos bugs relacionados con éste. Si en bugzilla se pone "visited link" salen 23.</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=264944">Bug 264.944</a>: Crashes found with Zalewski's mangleme (Bugtraq: "browsers, a mini-farce").<br />
+          Comentado en <a href="https://lwn.net/Articles/107087/">lwn.net</a> el 21/10/04.</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=202930">Bug 202.930</a>: CSS text-decoration is computed correctly but not drawn on text inside TABLEs in Standards Compliance mode<br />
+          text-decoration no funciona en caption. Este bug habla de otra cosa, pero se comenta este problema.</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=14713">Bug 14.713</a>: Default for unsupported CSS2 list-style-type.<br />
+          041117. Si no está instalada la fuente correspondiente en algunos estilos de lista pone ? en vez del punto. En este bug se proponía que saliera un punto o un número, pero parece que no van a hacer nada.</li>
+        <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=915">Bug 915</a>: No admite alineación en las columnas.</li>
+      </ul>
+    </section>
+
+    <section id="bugs-pendientes">
+      <h2>Bugs pendientes</h2>
+
+      <section id="bug-2212">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2212">Bug 2.212</a>: no admite align="char" en tablas</h3>
+
+        <p>El valor <span class="html-atri-valor">char</span> del atributo <span class="html-atri">align</span> de <span class="html-eti">&lt;tbody&gt;</span> debería permitir alinear los valores de una columna a un carácter. En el primer ejemplo, las comas deberían estar en la misma vertical. En el segundo ejemplo, las a deberían estar en la misma vertical. Ni Firefox ni Internet Explorer lo hacen.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre><code class="language-html">&lt;tbody align="char" char="a"&gt;</code></pre></td>
+              <td class="resul">
+                <table border="1">
+                  <tbody char="a" align="char">
+                    <tr>
+                      <td>100,3</td>
+                      <td>abbbbbbbb</td>
+                    </tr>
+                    <tr>
+                      <td>3,124</td>
+                      <td>bbbbbab</td>
+                    </tr>
+                    <tr>
+                      <td>2456,4567</td>
+                      <td>bbbbbba</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre><code class="language-html">&lt;tbody align="char" char=","&gt;</code></pre></td>
+              <td class="resul">
+                <table border="1">
+                  <tbody char="," align="char">
+                    <tr>
+                      <td>100,3</td>
+                      <td>abbbbbbbb</td>
+                    </tr>
+                    <tr>
+                      <td>3,124</td>
+                      <td>bbbbbab</td>
+                    </tr>
+                    <tr>
+                      <td>2456,4567</td>
+                      <td>bbbbbba</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2212">bug 2.212</a> se abrió el 06/01/99 y no ha tenido prácticamente ninguna actividad.</p>
+      </section>
+
+      <section id="bug-13944">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">Bug 13.944</a>: Si se utiliza la propiedad <span class="css-prop">-moz-border-radius</span>, los estilos <span class="css-valor">dotted</span> y <span class="css-valor">dashed</span> se muestran como <span class="css-valor">solid</span></h3>
+
+        <p>El módulo de bordes de la futura recomendación CSS 3 define la propiedad <span class="css-prop">border-radius</span>, que permitirá redondear las esquinas de los bordes. En Firefox existe la propiedad <span class="css-prop">-moz-border-radius</span> que realiza la misma función. El problema es que si el estilo del borde es <span class="css-valor">dotted</span> o <span class="css-valor">dashed</span>, Firefox muestra el borde como <span class="css-valor">solid</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">blockquote {
+  padding: 3px 10px;
+  border: PowderBlue dotted 5px;
+  -moz-border-radius: 20px;
+}</code>
+ </pre>
+              </td>
+              <td>
+                <blockquote style="padding: 3px 10px;  border: PowderBlue dotted 5px; -moz-border-radius: 20px;">
+                  <p style="text-align: center">El borde de este párrafo debería verse a puntos, y no como una línea contínua. En Firefox deberían verse además las esquinas redondeadas.</p>
+                </blockquote>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">blockquote {
+  padding: 3px 10px;
+  border: PowderBlue dashed 5px;
+  -moz-border-radius: 20px;
+}</code>
+  </pre>
+              </td>
+              <td class="resul">
+                <blockquote style="padding: 3px 10px;  border: PowderBlue dashed 5px; -moz-border-radius: 20px;">
+                  <p style="text-align: center">El borde de este párrafo debería verse a trazos, y no como una línea contínua. En Firefox deberían verse además las esquinas redondeadas.</p>
+                </blockquote>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Este bug lo encontró en clase el alumno Pello Ziarsolo Areitioaurtena el 25/10/04. Me pareció que este bug no estaba en bugzilla, así que el 26/10/04 abrí el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=266099">bug 266.099</a>. El mismo día Gary van der Merwe cerró este bug, ya que es un duplicado del <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">bug 13.944</a></p>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">bug 13.994</a> se abrió el 15/09/99 y desde entonces no ha habido ninguna actividad para resolverlo.</p>
+      </section>
+
+      <section id="bug-15499">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=15499">Bug 15.499</a>: cellpadding no admite valores en porcentajes</h3>
+
+        <p>En Firefox, si una tabla tiene cellpadding (o cellspacing) en porcentaje, lo muestra como píxeles. Internet Explorer hace lo mismo.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre><code class="language-html">&lt;table cellpadding="10%"&gt;</code></pre></td>
+              <td class="resul">
+                <table border="1" cellpadding="10">
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Casilla 1</td>
+                      <td>Casilla 2</td>
+                    </tr>
+                    <tr>
+                      <td>Casilla 3</td>
+                      <td>Casilla 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre><code class="language-html">&lt;table cellspacing="10%"&gt;</code></pre></td>
+              <td class="resul">
+                <table border="1" cellspacing="10">
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Casilla 1</td>
+                      <td>Casilla 2</td>
+                    </tr>
+                    <tr>
+                      <td>Casilla 3</td>
+                      <td>Casilla 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=159403">bug 15.499</a> se abrió el 04/10/99 y no ha tenido prácticamente ninguna actividad.</p>
+      </section>
+
+      <section id="bug-125390">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=125390">Bug 125.390</a>: la propiedad <span class="css-prop">letter-spacing</span> se aplica a la última letra</h3>
+
+        <p>En Firefox, la propiedad <span class="css-prop">letter-spacing</span> se aplica siempre a la última letra, lo que puede causar efectos no deseados.</p>
+
+        <p>Por ejemplo, si el texto tiene algún estilo, el estilo se extiende al espacio final.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">span {
+  letter-spacing: 10px;
+  text-decoration: underline;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p><span style="text-decoration: underline; letter-spacing: 10px;">Letras separadas</span></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">span {
+  letter-spacing: 10px;
+  background-color: lightblue;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p><span style="background-color: lightblue; letter-spacing: 10px;">Letras separadas</span></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>O si el párrafo está centrado y la propiedad <span class="css-prop">letter-spacing</span> tiene un valor grande, el texto no se verá centrado.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  letter-spacing: 50px;
+  text-align: center;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="letter-spacing: 100px; text-align: center;">XX</p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  letter-spacing: 50px;
+  text-align: center;
+}
+
+span {
+  background-color: lightblue;
+  }</code>
+  </pre>
+              </td>
+              <td class="resul"><p style="letter-spacing: 100px; text-align: center;"><span style=" background-color: lightblue;">XX</span></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Yo pensaba que ese comportamiento era un bug de Firefox y que Internet Explorer 7 y anteriores lo hacían correctamente al no mostrar ese espacio final. Incluso hay un bug relacionado, el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=125390">bug 125.390</a> que se abrió el 13/02/02 y en el que nadie ha dicho nunca que Firefox lo estuviera haciendo bien, aunque tampoco han avanzado nada en su resolución.</p>
+
+        <p>Pero resulta que Internet Explorer 8 lo hace como Firefox, así que tengo que tengo que pensar que el comportamiento correcto es mostrar ese espacio final y que no se trata de un bug.</p>
+      </section>
+
+      <section id="bug-320451">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=320451">Bug 320.451</a>: Si se desactiva la hoja de estilo y se actualiza la página, al activar la hoja de estilo no se aplica el estilo de <span class="css-sele">p:</span><span class="css-pseudo">first-letter</span></h3>
+
+        <p>Si se desactiva la hoja de estilo con "Ver &gt; Estilo de página &gt; Sin estilo", se recarga la página (con F5, por ejemplo) y se vuelve a activar la hoja de estilo con Ver &gt; Estilo de página &gt; Estilo de página básico, el estilo de la primera letra (puesto con <span class="css-sele">p:</span><span class="css-pseudo">first-letter</span>) se pierde. Si se recarga la página o si no se había recargado entre medias, el estilo sí que se aplica.</p>
+
+        <table class="ejemplo" id="bug320451">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p:first-letter {
+  font-size: 300%;
+  color:red;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Prueba</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Este bug lo encontró en clase el alumno Luis Mariano Toledo Sánchez el 15/02/04 al hacer el ejercicio de OídoBarra.</p>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=320451">bug 320.451</a> lo abrí el 15/12/05. El 04/04/09 lo marcaron como duplicado del <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=303076">bug 303.076</a>.</p>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=303076">bug 303.076</a> se abrió 02/08/05 y no ha tenido prácticamente actividad desde entonces.</p>
+
+      </section>
+
+      <section id="bug-359497">
+        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=359497">Bug 359.497</a>: No funciona el valor <span class="css-valor">invert</span> en las propiedades <span class="css-prop">outline</span> y <span class="css-prop">outline-color</span></h3>
+
+        <p>Firefox no muestra el valor <span class="css-valor">invert</span> (desde la versión FF3.0) y no lo hará en el futuro. El motivo, según los desarrolladores de Firefox, es que las recomendaciones <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> y CSS 3 no obligan a mostrar el valor <span class="css-valor">invert</span>, sino que lo tendría que hacer el sistema operativo (y por lo visto ninguno lo hace). Dicen que implementarlo en Firefox daría después problemas para optimizar el renderizado de la página, así que no piensan hacerlo. Sin embargo, Internet Explorer y Chrome admiten el valor <span class="css-valor">invert</span>, así que es posible que en algún momento cambien de idea.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">body {
+  background-color: black;
+  color:white;
+}
+
+p {
+  outline: invert 3px solid;
+}</code>
+</pre>
+              </td>
+              <td class="resul" style="background-color: black; color: white;"><p style="outline: invert 3px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=359497">bug 359.497</a> se abrió el 04/11/06 y el 22/02/09 se marcó como WONTFIX (a no resolver).</p>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de noviembre de 2013</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

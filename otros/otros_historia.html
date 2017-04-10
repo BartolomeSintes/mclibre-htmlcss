@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Historia de la Web: Normas y recomendaciones. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Historia de la Web: Normas y recomendaciones</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Historia de la Web</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#historia-w3c">W3C</a></li>
+          <li><a href="#normas-web">Normas web</a>
+            <ul>
+              <li><a href="#uri">URI</a></li>
+              <li><a href="#http">HTTP</a></li>
+              <li><a href="#html">HTML</a></li>
+              <li><a href="#css">CSS</a></li>
+              <li><a href="#javascript">JavaScript</a></li>
+              <li><a href="#otros-lenguajes">Otros lenguajes</a></li>
+            </ul>
+          </li>
+          <li><a href="#normas-graficos">Estándares gráficos</a></li>
+          <li><a href="#otros">Otros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p class="incompleto">Cosas que faltan: faltan varias actividades del W3C y sus recomendaciones correspondientes (accesibilidad, Web services, WebCGM, etc., consultar <a href="https://www.w3.org/Consortium/activities">actividades 1</a> y <a href="https://www.w3.org/2001/di/Activity.html">actividades 2</a>) y otros temas no directamente tratados por el W3C como <a href="http://microformats.org/">microformatos</a>, buscadores, Flash / Apollo, Silverlight, etc</p>
+
+    <section id="historia-w3c">
+      <h2>La World Wide Web y el W3C</h2>
+
+      <p class="centrado">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="900" viewBox="-50 -60 900 120">
+          <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+          <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1970</text>
+          <line x1="80" y1="-30" x2="80" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="80" y="-40" text-anchor="middle" style="font-size: 100%">1975</text>
+          <line x1="160" y1="-30" x2="160" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="160" y="-40" text-anchor="middle" style="font-size: 100%">1980</text>
+          <line x1="240" y1="-30" x2="240" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="240" y="-40" text-anchor="middle" style="font-size: 100%">1985</text>
+          <line x1="320" y1="-30" x2="320" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="320" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+          <line x1="400" y1="-30" x2="400" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="400" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+          <line x1="480" y1="-30" x2="480" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="480" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+          <line x1="560" y1="-30" x2="560" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="560" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+          <line x1="640" y1="-30" x2="640" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="640" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+          <line x1="720" y1="-30" x2="720" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="720" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+          <line x1="800" y1="-30" x2="800" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="800" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+          <circle cx="36" cy="0" r="7" fill="red" />
+          <text x="36" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">IANA</text>
+          <circle cx="257" cy="0" r="7" fill="red" />
+          <text x="257" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">IETF</text>
+          <circle cx="307" cy="0" r="7" fill="blue" />
+          <text x="307" y="25" text-anchor="middle" fill="blue" style="font-size: 100%; font-weight: bold">Web</text>
+          <circle cx="396" cy="0" r="7" fill="red" />
+          <text x="396" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">W3C</text>
+          <circle cx="551" cy="0" r="7" fill="red" />
+          <text x="551" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">WHATWG</text>
+        </svg>
+      </p>
+
+      <p>La World Wide Web nació cerca de Ginebra (Suiza) en el <a href="http://home.cern/">CERN</a>, el laboratorio europeo de física de partículas. Su principal creador fue <a href="https://www.w3.org/People/Berners-Lee/">Tim Berners-Lee</a> (nacido en Londres en 1955), que propuso en marzo de 1989 la creación de un sistema de hipertexto para facilitar el intercambio de información entre los investigadores del CERN. El <a href="https://en.wikipedia.org/wiki/File:First_Web_Server.jpg">primer servidor web</a> de la historia se instaló en el CERN en diciembre de 1990. En el verano de 1991, este sistema (servidor y navegador) se puso a disposición de todos los usuarios de Internet. El 20 de abril de 1993, el CERN <a href="https://cds.cern.ch/record/1164399">anunció oficialmente</a> que la licencia del software del navegador y del servidor sería el dominio público, permitiendo su expansión sin límites.</p>
+
+      <p>El éxito de la web impulsó la creación en 1994 del <a href="https://www.w3.org">W3C</a> (World Wide Web Consortium), organismo formado por empresas y universidades de todo el mundo. El W3C se organiza en grupos de trabajo, en los que las empresas y organismos interesados desarrollan por consenso especificaciones que, una vez publicadas, reciben el nombre de recomendaciones.</p>
+
+      <p>El W3C está presidido por Berners-Lee y su objetivo es conducir la web a su pleno desarrollo, asegurando su estabilidad. El éxito de la web como espacio compartido de información y entretenimiento ha hecho necesario ir ampliando las capacidades de la web. Para conseguirlo, el W3C ha publicado un gran número de recomendaciones, que pueden <a href="https://www.w3.org/TR/">consultarse</a> en la web.</p>
+
+      <p>Pese al extraordinario desarrollo y utilización de la web, su breve historia está llena de crisis, pasos atrás y conflictos enquistados. Los usuarios de la web y las pequeñas y medianas empresas están interesados en que existan unas normas comunes que permitan la interoperabilidad y la competencia, pero las empresas que dominan un mercado suelen preferir que no existan normas comunes para que sus productos se conviertan en la norma "de facto" y asegurar su dominio. En función de su control del mercado, algunas empresas han cambiado varias veces de bando y seguramente lo seguirán haciendo en el futuro.</p>
+
+      <p>El W3C tiene sedes en varios países. Desde octubre de 2003, existe una <a href="http://www.w3c.es/">oficina española del W3C</a>, con sede en Asturias. Entre otras cosas, mantienen una lista de recomendaciones del W3C <a href="https://www.w3.org/2005/11/Translations/Lists/ListLang-es.html">traducidas al español</a>.</p>
+
+      <p>El W3C no es el único organismo que juega un papel en el desarrollo de la web. La <a href="http://www.ietf.org/">IETF</a> (Internet Engineering Task Force) se ocupa desde 1986 del desarrollo de la arquitectura de Internet y publica las normas (que por razones históricas reciben el nombre de Request For Comments) que definen los protocolos empleados en Internet. La <a href="http://www.iana.org/">IANA</a> (Internet Assigned Numbers Authority) se ocupa desde 1972 de la asignación de direcciones a cada ordenador conectado a Internet.</p>
+
+      <p>En junio de 2004 se creó el <a href="https://whatwg.org/">WHATWG</a> (Web Hypertext Application Technology Working Group), un grupo independiente del W3C que de hecho es el que desarrolla desde entonces el HTML, aunque el W3C publica recomendaciones con números de versión (HTML 5, HTML 5.1, etc.) que se basan en el trabajo del WHATWG.</p>
+
+      <p>W3C Highlights:
+        <a href="https://www.w3.org/Consortium/highlights/">Última versión</a> -
+        <a href="https://www.w3.org/2016/09/w3c-highlights/Overview.html">septiembre 2016</a> -
+        <a href="https://www.w3.org/2016/03/w3c-highlights/">marzo 2016</a> -
+        <a href="https://www.w3.org/2015/10/w3c-highlights/">octubre 2015</a> -
+        <a href="https://www.w3.org/2015/05/w3c-highlights/">mayo 2015</a> -
+        <a href="https://www.w3.org/2014/10/w3c-highlights/">octubre 2014</a> -
+        <a href="https://www.w3.org/2014/06/w3c-highlights/">junio 2014</a> -
+        <a href="https://www.w3.org/2013/11/w3c-highlights/">noviembre 2013</a> -
+        <a href="https://www.w3.org/2013/08/w3c-highlights/">agosto 2013</a>.
+      </p>
+
+      <p><strong>Notas</strong>:</p>
+      <ul>
+        <li>Tim Berners-Lee presentó su propuesta de sistema de hipertexto el 12 de marzo de 1989 y por ello el W3C celebra el cumpleaños de la web el 12 de marzo.</li>
+        <li>En abril de 2013, para conmemorar los 20 años de la web, el CERN abrió una <a href="http://info.cern.ch/">web de homenaje</a> a la primera web, que se puede <a href="http://info.cern.ch/hypertext/WWW/TheProject.html">visitar de nuevo</a>.</li>
+        <li>En octubre de 2013, el CERN publicó un <a href="http://line-mode.cern.ch/">simulador de su navegador de texto de 1992</a>, con el que se puede intentar visitar páginas actuales (como <a href="http://line-mode.cern.ch/www/proxy?url=http://www.mclibre.org/">http://www.mclibre.org/</a>, por ejemplo). El simulador parece que sólo muestra la página inicial de los sitios web.</li>
+      </ul>
+
+      <section id="elaboracion-recomendaciones">
+        <h3>Proceso de elaboración de de las recomendaciones del W3C</h3>
+
+        <p>El proceso de elaboración de recomendaciones del W3C es un proceso largo que permite obtener documentos fruto del consenso entre los diferentes actores implicados. Este proceso se describe en el documento <a href="https://www.w3.org/Consortium/Process/">W3C Process Document</a> y se puede dividir en cuatro fases principales:</p>
+        <ul>
+          <li>WD (Working Draft): Borrador de grupo de trabajo</li>
+          <li>CR (Candidate Recommendation): Candidata a Recomendación</li>
+          <li>PR (Proposed Recommendation): Recomendación propuesta</li>
+          <li>REC (Recommendation): Recomendación</li>
+        </ul>
+
+        <p class="centrado"><img src="../img/historia/w3c_elaboracion_recomendaciones.svg" alt="Fases de elaboración de recomendaciones del W3C" title="Fases de elaboración de recomendaciones del W3C" width="750" height="90" /></p>
+
+        <p>Los documentos van avanzando a lo largo de estas cuatro fases, aunque también pueden retroceder a fases anteriores. En las fases de borrador o candidata se suelen publicar sucesivas versiones del documento. Los documentos que merecen ser difundidos pero que, por algún motivo, no consiguen alcanzar la fase de recomendación se suelen publicar como Notas del grupo de trabajo (Working Group Note).</p>
+      </section>
+    </section>
+
+    <section id="normas-web">
+      <h2>Las normas de la web</h2>
+
+      <p>Para que la web funcione, se necesitan tres mecanismos:</p>
+      <ul>
+        <li>la identificación de los recursos disponibles (URI)</li>
+        <li>reglas de comunicación entre el servidor y el navegador (HTTP)</li>
+        <li>un formato común para los documentos intercambiados (HTML, XML)</li>
+      </ul>
+
+      <p>Tanto la identificación de los recursos como las reglas de comunicación son aspectos relativamente estables, mientras que el formato de los documentos ha tenido una evolución más compleja y continúa en desarrollo. A continuación se describen los diferentes estándares que conforman la web.</p>
+
+      <section id="uri">
+        <h3><a href="http://www.w3.org/Addressing/Activity">URI</a> (Uniform Resource Identifier = Identificador Uniforme del Recurso)</h3>
+
+        <p class="centrado">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="900" viewBox="-50 -60 900 120">
+            <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+            <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1980</text>
+            <line x1="100" y1="-30" x2="100" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="100" y="-40" text-anchor="middle" style="font-size: 100%">1985</text>
+            <line x1="200" y1="-30" x2="200" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="200" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+            <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+            <line x1="400" y1="-30" x2="400" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="400" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+            <line x1="500" y1="-30" x2="500" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="500" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+            <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+            <line x1="700" y1="-30" x2="700" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="700" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+            <line x1="800" y1="-30" x2="800" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="800" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+            <circle cx="77" cy="0" r="7" fill="steelblue" />
+            <text x="77" y="-15" text-anchor="middle" fill="steelblue" style="font-size: 100%; font-weight: bold">DNS</text>
+            <circle cx="299" cy="0" r="7" fill="red" />
+            <text x="299" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">URL</text>
+            <circle cx="373" cy="0" r="7" fill="red" />
+            <text x="373" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">URI</text>
+            <circle cx="464" cy="0" r="7" fill="steelblue" />
+            <text x="464" y="-15" text-anchor="middle" fill="steelblue" style="font-size: 100%; font-weight: bold">IDNA</text>
+            <circle cx="501" cy="0" r="7" fill="red" />
+            <text x="501" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">IRI</text>
+          </svg>
+        </p>
+
+        <p>El URI de un elemento identifica su posición en la web (su "dirección" web). En un principio se utilizó el término URL (Uniform Resource Locator = Localizador Uniforme del Recurso).</p>
+
+        <ul>
+          <li>diciembre de 1994: <a href="https://tools.ietf.org/html/rfc1738">RFC 1738</a> , escrita por Berners-Lee y otros, en la que se detallaban las reglas y características de los URLs.</li>
+          <li>agosto de 1998: <a href="https://tools.ietf.org/html/rfc2396">RFC 2396</a>, escrita por Berners-Lee y otros, en la que ya se adoptó la denominación URI, más general y que engloba direcciones absolutas y relativas.</li>
+          <li>enero de 2005: <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>, escrita por Berners-Lee y otros, que sustituía a la RFC 2396 y que adecuaba las URIs a la internacionalización de los nombres de dominio.</li>
+          <li>enero de 2005: <a href="https://tools.ietf.org/html/rfc3987">RFC 3987</a>, escrita por Martin Dürst y Michel Suignard, que definía los IRIs (Internationalized Resource Identifiers = Identificadores de Recursos Internacionalizados), permitiendo la utilización de caracteres Unicode.</li>
+        </ul>
+
+        <p>El Sistema de Nombres de Dominios (DNS) permite convertir los nombres de dominio (escrito con caracteres) en direcciones IP (numéricas).</p>
+        <ul>
+          <li>noviembre de 1983: <a href="https://tools.ietf.org/html/rfc882">RFC 882</a> y <a href="https://tools.ietf.org/html/rfc883">RFC 883</a>, escritas por Paul Mockapetris, en la que se definían el sistema de nombres de dominio y sus protocolos y servidores.</li>
+          <li>noviembre de 1987: <a href="https://tools.ietf.org/html/rfc1034">RFC 1034</a> y <a href="https://tools.ietf.org/html/rfc1035">RFC 1035</a>, escritas por Paul Mockapetris, que actualizaban y sustituían las RFC 882 y RFC 883.</li>
+        </ul>
+
+        <p>El sistema DNS sólo permite los caracteres del alfabeto latino, los dígitos de 0 a 9, el punto y el guión (-). En 1986 M. Duerst propuso la internacionalización de los nombres, pero hasta marzo de 2003 no se publicaron las normas <a href="https://tools.ietf.org/html/rfc3454">RFC 3454</a>, <a href="https://tools.ietf.org/html/rfc3490">RFC 3490</a>, <a href="https://tools.ietf.org/html/rfc3491">RFC 3491</a> y <a href="https://tools.ietf.org/html/rfc3491">RFC 3492</a>, escritas por Hoffman, Blanchet, Faltstrom y Costello, que definían el sistema IDNA (Nombres de Dominio Internacionalizados para Aplicaciones) para poder interpretar los nombres de dominios con caracteres Unicode.</p>
+
+        <p>El sistema IDNA (también llamado punycode) establece las reglas para transformar cadenas Unicode a cadenas de caracteres del sistema DNS. Por ejemplo, la dirección <a href="http://www.españa.es">http://www.españa.es</a> se traduce en <a href="http://www.xn--espaa-rta.es/">http://www.xn--espaa-rta.es/</a>.</p>
+
+        <p>Desde hace años bastantes dominios permiten ya el uso de caracteres no-ASCII. Por ejemplo, Chile lo permite desde 2005 (ejemplo: <a href="http://www.ñandú.cl/">www.ñandú.cl</a>), el dominio .cat lo permite desde 2006 (ejemplo: <a href="http://www.fundació.cat/">www.fundació.cat</a>) y el dominio .es los permite desde octubre de 2007 (por ejemplo: <a href="http://www.león.es/">www.león.es</a>).</p>
+
+        <p>Los dominios internacionalizados no han tenido éxito, básicamente por dos motivos:</p>
+
+        <ul>
+          <li>El primero es que el correo electrónico no admite nombres internacionalizados, lo que puede generar confusión en los usuarios (las direcciones web y de correo electrónico de una misma empresa u organización tienen que ser distintos, con y sin acentos o eñes).</li>
+          <li>El segundo y más importante es que un timador puede registrar un dominio internacionalizado similar a uno legítimo y atraer incautos a su web que no se han dado cuenta de que la dirección no es la misma (este procedimiento es una variedad de <a href="https://es.wikipedia.org/wiki/Spoofing">spoofing</a>).</li>
+        </ul>
+
+        <p>Firefox 1.5, Internet Explorer 7 y Google Chrome desde su primera versión ya admitían nombres de dominio internacionalizados (Internet Explorer 6 no los admitía). Para evitar suplantaciones, cada navegador utiliza una estrategia distinta. Internet Explorer muestra las direcciones como punycode si algún carácter es de un idioma no incluido en la lista de idiomas del navegador, Firefox muestra únicamente los dominios que consideran lícitos (porque han sido registrados por un registrador fiable) y Chrome muestra las direcciones como punnycode si algún carácter no es del idioma del navegador.</p>
+      </section>
+
+      <section id="http">
+        <h3><a href="https://www.w3.org/Protocols/">HTTP</a> (HyperText Transfer Protocol = Protocolo de Transferencia de HiperTexto)</h3>
+
+        <p class="centrado">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+            <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+            <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+            <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+            <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+            <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+            <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+            <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+            <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+            <circle cx="191" cy="0" r="7" fill="red" />
+            <text x="191" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 1.0</text>
+            <circle cx="211" cy="0" r="7" fill="red" />
+            <text x="211" y="25" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 1.1</text>
+            <circle cx="284" cy="0" r="7" fill="red" />
+            <text x="314" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 1.0 rev</text>
+            <text x="314" y="25" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 1.1 rev</text>
+            <circle cx="734" cy="0" r="7" fill="red" />
+            <text x="734" y="25" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 1.1 rev</text>
+            <circle cx="762" cy="0" r="7" fill="red" />
+            <text x="762" y="-15" text-anchor="middle" fill="red" style="font-size: 100%; font-weight: bold">HTTP 2</text>
+          </svg>
+        </p>
+
+        <p>La web, como cualquier otro servicio de Internet, necesita unas reglas definidas de petición y entrega de la información. Las normas de este protocolo son elaboradas por el <a href="http://httpwg.org/">IETF HTTP Working Group</a> y son publicadas por la IETF en forma de RCF:</p>
+
+        <ul>
+          <li>Las versiones iniciales (de 1991 hasta 1996) de este protocolo no llegaron a ser publicadas como norma.</li>
+          <li>mayo de 1996: <a href="https://tools.ietf.org/html/rfc1945">RFC 1945</a>, escrita por Berners-Lee y otros, primera versión "oficial" HTTP 1.0.</li>
+          <li>enero de 1997: <a href="https://tools.ietf.org/html/rfc2068">RFC 2068</a>, escrita por R. Fielding y otros, que define la versión HTTP 1.1.</li>
+          <li>junio de 1999: <a href="https://tools.ietf.org/html/rfc2616">RFC 2616</a>, escrita por R. Fielding y otros, que actualiza el protocolo HTTP 1.1.</li>
+          <li>junio de 1999: <a href="https://tools.ietf.org/html/rfc2617">RFC 2617</a>, escrita por J. Franks y otros, que define la autenticación HTTP 1.0.</li>
+          <li>junio de 2014: <a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a> y <a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>, escritas por R. Fielding y J. Reschke, que actualizan de nuevo el protocolo HTTP 1.1.</li>
+          <li>mayo de 2015: <a href="https://tools.ietf.org/html/rfc7540">RFC 7540</a>, escrita por M. Belshe y otros, que define la versión HTTP 2.</li>
+          <li>mayo de 2015: <a href="https://tools.ietf.org/html/rfc7541">RFC 7541</a>, escrita por R. Peon y otros, que define la compresión de cabeceras HTTP.</li>
+        </ul>
+
+        <p>La versión HTTP 2 se ha <a href="http://queue.acm.org/detail.cfm?id=2716278">criticado bastante</a>. Se ha criticado sobre todo la precipitación con la que se ha redactado y aprobado, pero quizás era la única manera que otros implantaran protocolos alternativos (como <a href="http://dev.chromium.org/spdy">SPDY</a>, desarrollado por Google en 2012 para reducir la latencia del tráfico web, pero que tras la publicación de HTTP 2 <a href="https://blog.chromium.org/2015/02/hello-http2-goodbye-spdy.html">Google dejó de usar en 2016</a>).</p>
+
+        <p><strong>Nota</strong>: Reportaje de Linux Week News sobre el <a href="https://lwn.net/Articles/590156/">estado de desarrollo de HTTP 2.0 de marzo de 2014</a>.</p>
+
+        <p class="incompleto">Completar: ¿habría que hablar aquí de SOAP (HTTP para XML)?</p>
+      </section>
+
+      <section id="html">
+        <h3><a href="https://www.w3.org/WebPlatform/WG/">HTML</a> (HyperText Markup Language = Lenguaje de Marcas de HiperTexto)</h3>
+
+        <p class="centrado">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+            <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+            <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+            <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+            <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+            <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+            <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+            <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+            <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+            <circle cx="29" cy="0" r="7" fill="red" />
+            <text x="29" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML inicial</text>
+            <circle cx="176" cy="0" r="7" fill="red" />
+            <text x="176" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 2</text>
+            <circle cx="211" cy="0" r="7" fill="red" />
+            <text x="211" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 3.2</text>
+            <circle cx="239" cy="0" r="7" fill="red" />
+            <text x="239" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 4.0</text>
+            <circle cx="300" cy="0" r="7" fill="red" />
+            <text x="300" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 4.01</text>
+            <circle cx="302" cy="0" r="4" fill="none" stroke-width="3" stroke="steelblue" />
+            <text x="312" y="25" text-anchor="middle" fill="steelblue" style="font-size: 90%; font-weight: bold">XHTML 1.0</text>
+            <circle cx="343" cy="0" r="7" fill="steelblue" />
+            <text x="380" y="-15" text-anchor="middle" fill="steelblue" style="font-size: 90%; font-weight: bold">XHTML 1.01</text>
+            <circle cx="745" cy="0" r="7" fill="red" />
+            <text x="745" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 5</text>
+            <circle cx="806" cy="0" r="7" fill="red" />
+            <text x="806" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 5.1</text>
+            <circle cx="837" cy="0" r="7" fill="white" stroke-width="3" stroke="red" />
+            <text x="837" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">HTML 5.2</text>
+          </svg>
+        </p>
+
+        <p>Una página web es un documento de texto con marcas (también llamadas etiquetas). Las marcas permiten modificar la presentación del documento, incluir elementos no contenidos en el texto (por ejemplo, imágenes), crear hiperenlaces, etc. La utilización de marcas se remonta a los años 60 y su formalización culminó en 1986 con la publicación de la norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=16387">ISO 8879:1986</a> (las normas <a href="https://www.iso.org/home.html">ISO</a> son de pago), que definía el SGML (Standard Generalized Markup Language = Lenguaje de Marcas Generalizado y Normalizado).</p>
+
+        <p>Basándose en el SGML, Berners-Lee creó el HTML, definiendo un conjunto de marcas muy reducido que permitiera su utilización en cualquier sistema operativo y la creación de enlaces de hipertexto. El éxito de la World Wide Web en los primeros años 90 hizo necesario la ampliación de las características del HTML, lo que requería nuevas marcas. Este desarrollo fue impulsado por las empresas que desarrollaban los navegadores (básicamente Netscape y Microsoft) y fue un desarrollo bastante caótico que no se logró encauzar hasta mediados de los 90, con la creación del W3C (World Wide Web).</p>
+
+        <p>En noviembre de 1995 la IETF publicó la norma <a href="https://tools.ietf.org/html/rfc1866">RFC 1866</a>, escrita por Berners Lee y D. Connolly, que define la versión HTML 2.0 y el tipo MIME (Multipurpose Internet Mail Extension) text/html. Esta versión recapitulaba el estado del HTML de 1994 y recibió el nombre de HTML 2.0 para distinguirla de los HTML anteriores, que nunca recibieron nombre oficial. LA IETF dejó de trabajar en este campo en 1996, aunque en junio de 2000 publicó la norma <a href="https://tools.ietf.org/html/rfc2854">RFC 2854</a> que resumía y anulaba los RFC anteriores relativos al HTML.</p>
+
+        <p>El W3C publicó en enero de 1997 la recomendación <a href="https://www.w3.org/TR/REC-html32">HTML 3.2</a>, escrita por Dave Raggett. Esta versión incorporó muchas estructuras nuevas al HTML (tablas, imágenes flotantes, applets, hojas de estilo). En diciembre de 1997 se publicó la recomendación HTML 4.0, editada por Dave Raggett y otros, aunque la versión definitiva <a href="https://www.w3.org/TR/1998/REC-html40-19980424/">HTML 4.0</a>, editada por Dave Raggett y otros, se publicó en abril de 1998 corrigiendo erratas de la primera edición. Los cambios más importantes fueron la incorporación de los frames y la mayor relevancia de las hojas de estilo. En diciembre de 1999 se publicó la recomendación <a href="https://www.w3.org/TR/html401/">HTML 4.01</a>, editada por Dave Raggett y otros, que modificaba ligeramente la versión anterior.</p>
+
+        <p>En HTML 4.01 se definen tres tipos de documentos: Strict (estricto), Frameset (con marcos) y Transitional (de transición). El tipo Transitional intenta parecerse a las versiones anteriores de HTML, manteniendo el mayor número posible de etiquetas. El tipo Frameset es como el Transitional, salvo que incluye además la posibilidad de crear marcos (frames). El tipo Strict elimina las etiquetas directamente relacionadas con el aspecto visual (como <span class="html-eti">font</span>, <span class="html-eti">s</span> o <span class="html-eti">u</span>).</p>
+
+        <p>Con estas recomendaciones, uno de los objetivos del W3C había sido profundizar la separación entre contenido y su presentación, es decir, eliminar del HTML las etiquetas que hicieran referencia directa al formato visual (y almacenar esta información en una hoja de estilo). Pero al mismo tiempo, el W3C tuvo que aumentar el número de etiquetas para dar respuesta a las demandas de los usuarios, cada vez más diferentes. Pero como estas demandas son inagotables, el W3C tomó un camino diferente: el XML. XML (eXtensible Markup Language = Lenguaje de Marcas Extensible) no es un nuevo lenguaje de marcas, sino las reglas para poder crear nuevos lenguajes de marcas compatibles entre sí. En febrero de 1998 se aprobó la recomendación XML 1.0, editada por Tim Bray y otros.</p>
+
+        <p>Lógicamente, el siguiente paso fue adaptar el HTML a las exigencias del XML. El resultado se publicó en enero de 2000: la recomendación <a href="https://www.w3.org/TR/2000/REC-xhtml1-20000126/">XHTML 1.0</a> (Extensible HyperText Markup Language = Lenguaje de Marcas de HiperTexto Extensible), editada por Steven Pemberton y otros, de la que en agosto de 2002 se publicó la <a href="https://www.w3.org/TR/2002/REC-xhtml1-20020801/">segunda edición</a>, editada por Steven Pemberton y otros. En realidad, XHTML 1.0 no es más que el HTML 4.01 adaptado a las reglas (más formalizadas) del XML 1.0.</p>
+
+        <p>Paralelamente, para abordar el problema de la diversidad de aplicaciones, el W3C aprobó en abril de 2001 la recomendación <a href="https://www.w3.org/TR/2001/REC-xhtml-modularization-20010410/">Modularización del XHTML</a>, editada por Murray Altheim y otros. La idea es dividir el lenguaje en grupos de marcas relacionadas para poder limitar o ampliar el lenguaje, definiendo por ejemplo perfiles xhtml+mathml o xhtm+mathml+svg.</p>
+
+        <p>En el camino de la modularización se aprobó en mayo de 2001 la recomendación <a href="https://www.w3.org/TR/2001/REC-xhtml11-20010531/">XHTML 1.1</a>, editada por Murray Altheim y Shane McCarron, que apenas modifica el XHTML 1.0 Strict, pero que se estructura de forma modular. También se han aprobado varias recomendaciones que desarrollan módulos definidos en la recomendación de modularización:</p>
+        <ul>
+          <li>diciembre de 2000: <a href="https://www.w3.org/TR/2000/REC-xhtml-basic-20001219/">XHTML Basic</a>, editada por Mark Baker y otros, que definía un XHTML mínimo.</li>
+          <li>mayo de 2001: <a href="https://www.w3.org/TR/2001/REC-ruby-20010531/">Notación Ruby</a>, editada por Michel Suignard y otros, que permite utilizar un estilo de escritura utilizado en algunas lenguas asiáticas.</li>
+          <li>septiembre de 2006: <a href="https://www.w3.org/TR/2006/REC-xhtml-print-20060920/">XHTML Print</a>, editada por Melinda Grant y Jim Bigelow, destinada a impresoras de bajo coste y sin memoria.</li>
+          <li>julio de 2008: <a href="https://www.w3.org/TR/2008/REC-xhtml-basic-20080729/">XHTML Basic 1.1</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
+          <li>octubre de 2008: <a href="https://www.w3.org/TR/2008/REC-xhtml-modularization-20081008/">Modularización del XHTML 1.1</a>, editada por Daniel Austin y otros.</li>
+          <li>octubre de 2008: <a href="https://www.w3.org/TR/2008/REC-rdfa-syntax-20081014/">RDFa en XHTML: sintaxis y procesamiento</a>, editada por Ben Adida y otros.</li>
+        </ul>
+
+        <p>En 2010 se publicaron segundas ediciones de algunas recomendaciones:</p>
+
+        <ul>
+          <li>julio de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">Modularización del XHTML 1.1 (2º edición)</a>, editada por Shane McCarron.</li>
+          <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-basic-20101123/">XHTML Basic 1.1 (2º edición)</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
+          <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-print-20101123/">XHTML Print (2º edición)</a>, editada por Shane McCarron.</li>
+          <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml11-20101123/">XHTML 1.1 (2º edición)</a>, editada por Murray Altheim y Shane McCarron.</li>
+        </ul>
+
+        <hr class="corta" />
+
+        <p>A partir del año 2002, el grupo de trabajo del W3C dejó de funcionar y aunque formalmente continuaba el desarrollo de la recomendación <a href="https://www.w3.org/TR/xhtml2/">XHTML 2.0</a>, en la práctica su trabajo se convirtió en irrelevante.</p>
+
+        <p>Por desgracia, el paso del HTML al XHTML, que el W3C pensaba que sería inmediato, resultó ser un fracaso. Probablemente, el principal motivo del fracaso fue el problema de los tipos MIME en Intenet Explorer (en las versiones anteriores a IE9).</p>
+
+        <p>Los tipos MIME definen tipos de documentos y son la manera en que el servidor le dice al navegador qué tipo de documento le va a enviar. El tipo MIME de los documentos html es text/html mientras que el tipo MIME de los documentos xhtml es application/xhtml+xml . El problema es que los Internet Explorer anteriores a IE9 no admitían el tipo application/xhtml+xml (definido en la norma <a href="https://tools.ietf.org/html/rfc3236">RFC 3236</a>, de enero de 2002) y simplemente no mostraban los documentos enviados con este tipo MIME. La alternativa es enviar los documentos xhtml como text/html, pero eso genera <a href="http://www.hixie.ch/advocacy/xhtml">multitud de problemas</a>. El más importante es que los navegadores no tratan el documento como xhtml sino como html y por tanto el navegador piensa que el documento está lleno de errores, aunque los navegadores los ignoran y consiguen mostrar la página. Dado que Internet Explorer es el navegador más utilizado, prácticamente nadie envía los documentos xhtml con el tipo MIME application/xhtml+xml y como al enviarlos con el tipo MIME text/html se pierden todas las ventajas del xhtml, la conclusión es automática: no vale la pena usar xhtml. Actualmente (septiembre de 2015) gran parte o la mayoría de las páginas disponibles en la web ni son XHTML ni se sirven como tal.</p>
+
+        <p>Ante este bloqueo que impedía el desarrollo del HTML (el W3C había abandonado el desarrollo del HTML en favor del XHTML pero el mercado -por culpa de Microsoft, especialmente- rechazaba el XHTML), en 2004 se creó el <a href="https://whatwg.org/">WHATWG</a> (Web Hypertext Application Technology Working Group), un grupo de trabajo informal formado por individuos y empresas (Mozilla, Opera, Apple, Google entre ellas) y dedicado al desarrollo del HTML, sobre todo para facilitar el desarrollo de las aplicaciones Web. Este grupo empezó a elaborar las especificaciones <a href="https://html.spec.whatwg.org/">HTML 5</a> (también llamada Web Applications 1.0), <a href="https://whatwg.org/specs/web-forms/current-work/">Web Forms 2.0</a> y <a href="https://whatwg.org/specs/web-controls/current-work/">Web Controls 1.0</a>, editadas por Ian Hickson, con la intención de que en el futuro se publicaran como recomendaciones del W3C con el nombre de HTML 5.</p>
+
+        <p>A finales de 2006, Tim Berners-Lee anunció la creación de un nuevo grupo de trabajo sobre HTML dentro del W3C y la reestructuración de los grupos existentes para reintregar el trabajo del WHATWG.</p>
+
+        <p>En marzo de 2007 se creó el <a href="https://www.w3.org/html/wg/">grupo de trabajo HTML</a> con la misión de retomar el desarrollo del HTML y con participación de todos los implicados (incluso de Microsoft, que se mantiene al margen del WHATWG, pero que forma parte del grupo de trabajo HTML del W3C desde el verano de 2009). Este grupo adoptó los borradores del WHATWG y desde 2008 publica regularmente borradores de HTML 5 (en un principio idénticos a los borradores del WHATWG).</p>
+
+        <p>En marzo de 2007 también se creó el <a href="https://www.w3.org/MarkUp/">grupo de trabajo XHTML2</a> con la misión de continuar el desarrollo del XHTML, pero ese grupo se cerró en diciembre de 2009 sin llegar a publicar la recomendación del XHTML 2.0.</p>
+
+        <p>En enero de 2011, el W3C anunció su compromiso definitivo con el HTML 5 y la intención de publicar la recomendación en 2014. Simultáneamente, el WHATWG anunció que cambiaba su modelo de desarrollo a un modelo de desarrollo continuo, es decir, dejar de hablar de versiones de HTML, llamarlo siempre HTML y que la norma se vaya modificando continuamente (durante un tiempo se publicó un <a href="https://blog.whatwg.org/category/weekly-review">blog dedicado a la evolución de los borradores de HTML</a>, pero lleva años abandonado).</p>
+
+        <p>El reparto de papeles (el WHATWG desarrollando continuamente el HTML, los navegadores implementando el HTML del WHATWG y el W3C fijando versiones cada ciertos años), comenzó con buen pie pero que dos grupos distintos pudieran desarrollar su trabajo sin fricciones resultaba sorprendente. Hasta mediados de 2012 el funcionamiento correcto de este modelo de desarrollo se debió en gran parte a que el editor de ambos documentos era la misma persona, el físico suizo-británico <a href="https://plus.google.com/+IanHickson/posts">Ian Hickson</a> que actualmente (noviembre de 2016) trabaja en Google. Pero en julio de 2012 Hickson dejó de ser el editor del W3C para centrar su trabajo en el WHATWG, lo que genera dudas sobre cómo se resolverán las diferencias que vayan apareciendo en el futuro o si el W3C decide dejar de basarse en el borrador del WHATWG.</p>
+
+        <p>Finalmente, el 28 de octubre de 2014 se publicó la recomendación <a href="https://www.w3.org/TR/2014/REC-html5-20141028/">HTML5: Vocabulario y APIs asociadas para HTML y XHTML</a>. En diciembre de 2014 se publicó la nota <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/">diferencias entre HTML4 y HTML5</a>.</p>
+
+        <p>El 1 de noviembre de 2016 se publicó la recomendación <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">HTML 5.1</a>. Esta versión no supone un gran cambio respecto a HTML 5, pero introduce algunos elementos nuevos.</p>
+
+        <p>Actualmente (noviembre de 2016) el WHATWG prosigue su desarrollo continuo del HTML y el W3C, <a href="https://dev.w3.org/html5/decision-policy/html5-2014-plan.html">de acuerdo con su plan de trabajo</a>, está desarrollando la próxima versión del HTML, HTML 5.2, que se espera publicar a finales de 2017. En agosto de 2016 se publicó el primer <a href="https://www.w3.org/TR/html52/">borrador de HTML 5.2</a>.</p>
+
+        <p><a href="https://github.com/w3c/WebPlatformWG/blob/gh-pages/timelines/HTML.md">Timeline HTML 5.1 / 5.2</a> - <a href="https://www.w3.org/2016/11/webplatform-charter.html">Web Platform Working Group 2016 Charter</a></p>
+      </section>
+
+      <section id="css">
+        <h3><a href="https://www.w3.org/Style/">CSS</a> (Cascading Style Sheets = Hojas de estilo en cascada)</h3>
+
+        <p class="centrado">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+            <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+            <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+            <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+            <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+            <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+            <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+            <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+            <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+            <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+            <circle cx="209" cy="0" r="7" fill="red" />
+            <text x="209" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">CSS 1.0</text>
+            <circle cx="251" cy="0" r="7" fill="red" />
+            <text x="251" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">CSS 2.0</text>
+            <circle cx="271" cy="0" r="7" fill="red" />
+            <text x="301" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">CSS 1.0 rev</text>
+            <circle cx="549" cy="0" r="7" fill="red" />
+            <text x="549" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">CSS 2.0 rev</text>
+            <circle cx="643" cy="0" r="7" fill="red" />
+            <text x="643" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">CSS 2.1</text>
+          </svg>
+        </p>
+
+        <p>Las hojas de estilo es el mecanismo elegido por el W3C para separar la presentación de una página web de su contenido. En las primeras versiones del html, el aspecto visual (tipos de letras, colores, etc) se incorporaba en la propia página web. Trabajando con hojas de estilo, la página web (el fichero .html) no contiene información sobre la forma de representar la página, sino que esa información se encuentra en la hoja de estilo (el fichero .css). Las ventajas son evidentes: se asegura la uniformidad del diseño (ya que varias páginas pueden utilizar la misma hoja de estilo) y se facilita su modificación (ya que sólo hay que cambiar el diseño en la hoja de estilo). Se denominan Hojas de Estilo en Cascada, porque la información de estilo se puede situar en varios lugares (hoja de estilo externa, hoja de estilo incluida en la página web o estilos incluidos en las etiquetas de la página web) y se aplican de forma jerárquica.</p>
+
+        <p>En diciembre de 1996 se aprobó la recomendación <a href="https://www.w3.org/TR/REC-CSS1-961217">CSS nivel 1</a>, escrita por Håkon Wium Lie y Bert Bos. En enero de 1999, se aprobó una versión revisada, <a href="https://www.w3.org/TR/1999/REC-CSS1-19990111#appendix-f">CSS nivel 1 revisada</a>, escrita por Håkon Wium Lie y Bert Bos, que básicamente corregía erratas y errores menores. En mayo de 1998 se aprobó la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/">CSS nivel 2</a>, editada por Bert Bos y otros, que manteniendo la compatibilidad con las hojas de estilo de nivel 1, incluía nuevas características (posicionamiento, estilos de tablas) y permitía la utilización de hojas de estilo adaptadas al medio de presentación (visual, oral, impreso, etc).</p>
+
+        <p>Como en el caso del XHTML, aunque por razones distintas, el grupo de trabajo sobre hojas de estilos prácticamente dejó de funcionar durante unos años. En el año 2001 Microsoft se hizo con más del 90% del mercado de los navegadores y dejó de sacar nuevas versiones de Internet Explorer. Internet Explorer 6 fue el navegador hegemónico hasta 2008 y su implementación de la recomendación CSS nivel 2 era pésima (no solamente no implementaba muchas características de la recomendación, sino que implementaba otras muchas al revés de lo que decía la recomendación). En esas condiciones, no tenía sentido continuar desarrollando nuevas recomendaciones cuando la antigua no se utilizaba.</p>
+
+        <p>Formalmente el grupo de trabajo siguió trabajando preparando:</p>
+
+        <ul>
+          <li>la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, una "puesta al día" de la recomendación CSS nivel 2, corrigiendo erratas, eliminando aspectos que los navegadores no han incluido en los últimos años y añadiendo aspectos que sí han incorporado los navegadores.</li>
+          <li>unas versiones reducidas de CSS 2 para <a href="https://www.w3.org/TR/css-mobile/">teléfonos móviles</a>, <a href="https://www.w3.org/TR/css-tv/">televisión</a> e <a href="https://www.w3.org/TR/css-print/">impresoras</a>.</li>
+          <li>la recomendación CSS nivel 3, con un enfoque distinto a las anteriores. En vez de elaborar una única recomendación como en las versiones anteriores, las diferentes partes se separaron en recomendaciones distintas (más de 30), en teoría para facilitar su actualización.</li>
+        </ul>
+
+        <p>Pero en la práctica apenas se publicaron algunos borradores, a un ritmo lentísimo.</p>
+
+        <p>Con la aparición del navegador Firefox en 2004, comprometido con el cumplimiento de las recomendaciones del W3C, y su uso creciente, Microsoft se vio obligado a actualizar Internet Explorer y mejorar el cumplimiento de las recomendaciones. En marzo de 2009 Microsoft publicó Internet Explorer 8 que ya cumplía correctamente la recomendación CSS 2, uniéndose al resto de navegadores que ya lo hacían (Firefox, Opera, Chrome, etc).</p>
+
+        <p>A medida que los navegadores fueron cumpliendo CSS nivel 2, el ritmo de trabajo se fue recuperando, y se publicaron algunas recomendaciones:</p>
+
+        <ul>
+          <li>abril de 2008: <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS nivel 2 (revisión)</a>, editada por Bert Bos y otros.</li>
+          <li>junio de 2011: <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, editada por Bert Bos y otros.</li>
+          <li>junio de 2011: <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/">CSS módulo de color nivel 3</a>, editada por Tantek Çelik y otros.</li>
+          <li>septiembre de 2011: <a href="https://www.w3.org/TR/2011/REC-css3-namespace-20110929/">Espacios de nombres CSS</a>, editada por Elika J. Etemad y Anne van Kesteren.</li>
+          <li>septiembre de 2011: <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/">CSS selectores nivel 3</a>, editada por Tantek Çelik y otros.</li>
+          <li>junio de 2012: <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">Media Queries</a>, editada por Håkon Wium Lie y otros.</li>
+          <li>noviembre de 2013: <a href="https://www.w3.org/TR/2013/REC-css-style-attr-20131107/">CSS atributo style</a>, editada por Tantek Çelik y Elika J. Etemad.</li>
+        </ul>
+
+        <p>En octubre de 2015 se publicó <a href="https://www.w3.org/TR/2015/NOTE-css-2015-20151013/">CSS Snapshot 2015</a>, una nota del grupo de trabajo que resumía el estado de las distintas recomendaciones CSS.</p>
+
+        <p>En abril de 2016 se empezó a trabajar en <a href="https://www.w3.org/TR/CSS22/">CSS 2.2</a>, otra actualización de CSS 2 para ajustar la recomendación a su implementación por los navegadores.</p>
+
+        <p>En enero de 2017 se ha publicado <a href="https://www.w3.org/TR/2017/NOTE-css-2017-20170131/">CSS Snapshot 2017</a>, una nota del grupo de trabajo que resume el estado de las distintas recomendaciones CSS.</p>
+
+        <p>Actualmente (enero de 2017) continuamente se publican nuevos borradores de trabajo de algunas de las futuras recomendaciones CSS 3, pero las versiones definitivas tardarán años en publicarse al ritmo actual. También existen un par de borradores de recomendaciones de CSS nivel 4. Para consultar las novedades sobre la elaboración de las recomendaciones, se puede consultar el <a href="https://www.w3.org/Style/CSS/Planet/">agregador de noticias del grupo de trabajo CSS del W3C</a>. La lección <a href="../css/css3.html">Hojas de estilo CSS3</a> contiene enlaces a las recomendaciones CSS3 aprobadas, a los últimos borradores publicados y a los borradores de los editores.</p>
+      </section>
+
+      <section id="javascript">
+        <h3>JavaScript, DOM y Web APIs</h3>
+
+        <p>JavaScript es un lenguaje de programación diseñado para ser incluido dentro de las páginas web. Para facilitar el acceso y manipulación de los elementos de las páginas web a cualquier lenguaje de programación (no solamente a JavaScript), el W3C desarrolló un interface denominado DOM (Document Object Model = Modelo de Objeto de Documento) que proporciona una representación estructurada del documento y una forma normalizada de acceder a sus elementos y modificarlos.</p>
+
+        <p>Desde hace unos años, el W3C ha empezado a normalizar también toda una serie de APIs (Application Programming Interface = Interfaz de programación de aplicaciones), para que JavaScript (y otros lenguajes) pueda acceder a los servicios proporcionados por los diferentes navegadores.</p>
+
+        <section id="ecmascript">
+          <h4>JavaScript</h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="224" cy="0" r="7" fill="red" />
+              <text x="224" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 1</text>
+              <circle cx="259" cy="0" r="7" fill="red" />
+              <text x="259" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 2</text>
+              <circle cx="284" cy="0" r="7" fill="red" />
+              <text x="284" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 3</text>
+              <circle cx="434" cy="0" r="7" fill="steelblue" />
+              <text x="434" y="25" text-anchor="middle" fill="steelblue" style="font-size: 90%; font-weight: bold">E4X 1º ed</text>
+              <circle cx="478" cy="0" r="7" fill="steelblue" />
+              <text x="478" y="-15" text-anchor="middle" fill="steelblue" style="font-size: 90%; font-weight: bold">E4X 2º ed</text>
+              <circle cx="598" cy="0" r="7" fill="red" />
+              <text x="598" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 5</text>
+              <circle cx="645" cy="0" r="7" fill="red" />
+              <text x="645" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 5.1</text>
+              <circle cx="764" cy="0" r="7" fill="red" />
+              <text x="764" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 6</text>
+              <circle cx="794" cy="0" r="7" fill="red" />
+              <text x="794" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 7</text>
+            </svg>
+          </p>
+
+          <p>JavaScript fue creado por Brendan Eich en 1995 para Netscape y su nombre se debe a que se trata de un lenguaje de script con una sintaxis similar a la del lenguaje de programación Java. Netscape delegó en la <a href="http://www.ecma-international.org/">ECMA</a> (European Computer Manufacturers Association) la normalización del lenguaje.</p>
+
+          <p>Por ello, el nombre oficial del lenguaje es ECMAScript, aunque todo el mundo le sigue llamando JavaScript. Estrictamente hablando, JavaScript debería utilizarse para referirse a la adaptación de ECMAScript incluida por Netscape/Mozilla, de la misma manera que jscript era la adaptación de ECMAScript incluida por Internet Explorer.</p>
+
+          <p>Desde 1997, ECMA ha publicado varias versiones de ECMAScript. A partir de 2015, ECMA pretende publicar una nueva versión cada año.</p>
+          <ul>
+            <li>junio de 1997: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%201st%20edition,%20June%201997.pdf">ECMAScript (1º edición)</a>, la norma ECMA-262.</li>
+            <li>agosto de 1998: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%202nd%20edition,%20August%201998.pdf">ECMAScript (2º edición)</a>.</li>
+            <li>diciembre de 1999: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf">ECMAScript (3º edición)</a>.</li>
+            <li>diciembre de 2009: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262%205th%20edition%20December%202009.pdf">ECMAScript (5º edición)</a> (la cuarta edición no se publicó nunca)</li>
+            <li>junio de 2011: <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript (versión 5.1)</a> (junto con un conjunto de pruebas de compatibilidad disponible en <a href="http://test262.ecmascript.org/#">http://test262.ECMAScript.org/#</a>).
+            </li>
+            <li>diciembre de 2012: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-402%201st%20edition%20December%202012.pdf">ECMAScript Internationalization API (1º edición)</a></li>
+            <li>junio de 2015: <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">ECMAScript (versión 6)</a></li>
+            <li>junio de 2015: <a href="http://www.ecma-international.org/ecma-402/2.0/ECMA-402.pdf">ECMAScript Internationalization API (2º edición)</a></li>
+            <li>junio de 2016: ECMAScript (versión 7) - <a href="http://www.ecma-international.org/ecma-262/7.0/">html</a> - <a href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">pdf</a></li>
+            <li>junio de 2016: ECMAScript Internationalization API (3º edición) - <a href="http://www.ecma-international.org/ecma-402/3.0/index.html">html</a> - <a href="http://www.ecma-international.org/ecma-402/3.0/ECMA-402.pdf">pdf</a></li>
+          </ul>
+
+          <p>En 2004 se publicó ECMA-357 (conocida también como E4X), una versión de ECMAScript que podía manipular documentos XML, pero que sólo se implementó en Firefox. En 2013 Firefox eliminó su soporte y en 2015 se retiró la norma.</p>
+          <ul>
+            <li>junio de 2004: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-WITHDRAWN/ECMA-357,%201st%20edition,%20June%202004.pdf">ECMA-357 (1º edición)</a>, que añade a ECMAScript su uso en documentos XML.</li>
+            <li>diciembre de 2005: <a href="http://www.ecma-international.org/publications/files/ECMA-ST-WITHDRAWN/Ecma-357.pdf">ECMA-357 (2º edición)</a>.</li>
+          </ul>
+
+          <p>En 2013, Firefox implementó <a href="http://asmjs.org/">asm.js</a>, un subconjunto de JavaScript que puede ser optimizado por los navegadores y al que se puede traducir código escrito en otros lenguajes (sobre todo, C/C++, pero también otros como Perl, Python o Ruby). Este subconjunto se incluyó en ECMAScript 6, por lo que tanto Internet Explorer como Chrome también lo admiten.</p>
+
+          <p>En 2015 empezó a desarrollarse <a href="http://webassembly.org/">WebAssembly</a>, un formato binario que será gestionado por el intérprete de JavaScript del navegador, pero con una velocidad mucho mayor y que permitirá crear programas escritos en otros lenguajes (inicialmente, C/C++). WebAssembly se ha incluido en marzo de 2017 en <a href="https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/">Firefox 52</a> y en Chrome 57.</p>
+        </section>
+
+        <section id="dom">
+          <h4>DOM (Document Object Model = Modelo de Objeto de Documento)</h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="263" cy="0" r="7" fill="red" />
+              <text x="263" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">DOM 1</text>
+              <circle cx="326" cy="0" r="7" fill="red" />
+              <text x="326" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">DOM 2 Core</text>
+              <circle cx="428" cy="0" r="7" fill="red" />
+              <text x="428" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">DOM 3 Core</text>
+              <circle cx="777" cy="0" r="7" fill="red" />
+              <text x="777" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">DOM 4</text>
+            </svg>
+          </p>
+
+          <p>El DOM es un interface que permite a los programas y scripts acceder y modificar dinámicamente el contenido, la estructura y el estilo de los documentos. El documento puede ser procesado posteriormente y el resultado del procesamiento se puede actualizar en el documento que se está mostrando. La recomendación DOM level 1 trataba sobre documentos HTML y XML. Las recomendaciones DOM level 2 añadieron al nivel 1 nuevos aspectos como el tratamiento de espacios de nombres XML o de eventos. Las recomendaciones DOM level 3 añadieron al nivel 2 nuevos aspectos como el tratamiento de XML Information Set o XML Base.</p>
+
+          <ul>
+            <li>octubre de 1998: <a href="https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/">Document Object Model (DOM) level 1</a>, editada por Vidur Apparao y otros.</li>
+            <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/">DOM Level 2 Core Specification 1.0</a>, editada por Arnaud Le Hors y otros.</li>
+            <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Views-20001113/">DOM Level 2 Views Specification 1.0</a>, editada por Arnaud Le Hors y otros.</li>
+            <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Events-20001113/">DOM Level 2 Events Specification 1.0</a>, editada por Tom Pixley.</li>
+            <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Style-20001113/">DOM Level 2 Style Specification 1.0</a>, editada por Chris Wilson y otros.</li>
+            <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Traversal-Range-20001113/">DOM Level 2 Traversal and Range Specification 1.0</a>, editada por Joe Kesselman.</li>
+            <li>enero de 2003: <a href="https://www.w3.org/TR/2003/REC-DOM-Level-2-HTML-20030109/">DOM Level 2 HTML Specification 1.0</a>, editada por Vidur Apparao y otros.</li>
+            <li>enero de 2004: <a href="https://www.w3.org/TR/2004/REC-DOM-Level-3-Val-20040127/">DOM Level 3 Validation Specification 1.0</a>, editada por Vidur Apparao y otros.</li>
+            <li>abril de 2004: <a href="https://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/">DOM Level 3 Core Specification 1.0</a>, editada por Arnaud Le Hors y otros.</li>
+            <li>abril de 2004: <a href="https://www.w3.org/TR/2004/REC-DOM-Level-3-LS-20040407/">DOM Level 3 Load and Save Specification 1.0</a>, editada por Johnny Stenback y Andy Heninger.</li>
+            <li>noviembre de 2015: <a href="https://www.w3.org/TR/2015/REC-dom-20151119/">DOM 4</a>, editada por Anne van Kesteren y otros.</li>
+          </ul>
+
+          <p>Actualmente (septiembre de 2016) el W3C está preparando las recomendaciones <a href="https://w3c.github.io/uievents/">UI Events</a>, <a href="https://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a> y <a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>. por su parte, el WHATWG mantiene la norma <a href="https://dom.spec.whatwg.org/">DOM</a> (living standard).</p>
+        </section>
+
+        <section id="apis">
+          <h4>APIs (Application Programming Interface = Interfaz de programación de aplicaciones)</h4>
+
+          <p>Desde hace unos años, la iniciativa <a href="https://www.w3.org/2007/uwa/Activity.html">Aplicaciones de Web Ubicuas</a> del W3C ha empezado a normalizar también toda una serie de APIs (Application Programming Interface = Interfaz de programación de aplicaciones), para que JavaScript (y otros lenguajes) pueda acceder a todos los servicios proporcionados por los diferentes navegadores.</p>
+
+          <p>Las recomendaciones ya aprobadas son las siguientes:</p>
+
+          <ul>
+            <li>diciembre de 2012: <a href="https://www.w3.org/TR/2012/REC-hr-time-20121217/">High Resolution Time</a></li>
+            <li>diciembre de 2012: <a href="https://www.w3.org/TR/2012/REC-navigation-timing-20121217/">Navigation Timing</a></li>
+            <li>febrero de 2013: <a href="https://www.w3.org/TR/2013/REC-selectors-api-20130221/">Selectors API Level 1</a></li>
+            <li>mayo de 2013: <a href="https://www.w3.org/TR/2013/REC-page-visibility-20130514/">Page visibility</a></li>
+            <li>julio de 2013: <a href="https://www.w3.org/TR/2013/REC-webstorage-20130730/">Web Storage</a></li>
+            <li>octubre de 2013: <a href="https://www.w3.org/TR/2013/REC-touch-events-20131010/">Touch</a></li>
+            <li>octubre de 2013: <a href="https://www.w3.org/TR/2013/REC-geolocation-API-20131024/">Geolocation API</a></li>
+            <li>octubre de 2013: <a href="https://www.w3.org/TR/2013/REC-page-visibility-20131029/">Page visibility (2º ed.)</a></li>
+            <li>octubre de 2013: <a href="https://www.w3.org/TR/2013/REC-widgets-apis-20131031/">Widget interface</a></li>
+            <li>diciembre de 2013: <a href="https://www.w3.org/TR/2013/REC-user-timing-20131212/">User timing</a></li>
+            <li>diciembre de 2013: <a href="https://www.w3.org/TR/2013/REC-performance-timeline-20131212/">Performance timeline</a></li>
+            <li>enero de 2015: <a href="https://www.w3.org/TR/2015/REC-IndexedDB-20150108/">Indexed Database API</a></li>
+            <li>febrero de 2015: <a href="https://www.w3.org/TR/2015/REC-eventsource-20150203/">Server-Sent Events</a></li>
+            <li>febrero de 2015: <a href="https://www.w3.org/TR/2015/REC-vibration-20150210/">Vibration API</a></li>
+            <li>febrero de 2015: <a href="https://www.w3.org/TR/2015/REC-pointerevents-20150224/">Pointer Events</a></li>
+            <li>mayo de 2015: <a href="https://www.w3.org/TR/2015/REC-webmessaging-20150519/">Web Messaging</a></li>
+            <li>octubre de 2015: <a href="https://www.w3.org/TR/2015/REC-notifications-20151022/">Web Notifications</a></li>
+            <li>noviembre de 2015: <a href="https://www.w3.org/TR/2015/REC-2dcontext-20151119/">Canvas 2D Context</a></li>
+            <li>abril de 2016: <a href="https://www.w3.org/TR/2016/REC-webstorage-20160419/">Web Storage (2º ed.)</a></li>
+            <li>junio de 2016: <a href="https://www.w3.org/TR/2016/REC-SRI-20160623/">Subresource Integrity</a></li>
+            <li>octubre de 2016: <a href="https://www.w3.org/TR/2016/REC-vibration-20161018/">Vibration API (2º ed.)</a></li>
+            <li>octubre de 2016: <a href="https://www.w3.org/TR/2016/REC-pointerlock-20161027/">Pointer Lock</a></li>
+          </ul>
+
+          <p class="incompleto">Completar con las recomendaciones en fase de borrador.</p>
+        </section>
+
+        <section id="dhtml">
+          <h4>DHTML (Dynamic HTML = HTML Dinámico)</h4>
+
+          <p>El término DHTML (Dynamic HTML = HTML Dinámico) no corresponde a ninguna recomendación del W3C. Es un término comercial utilizado a finales de los 90 para referirse a las páginas webs que utilizaban hojas de estilo y rutinas ECMAScript para aumentar la interactividad. El término ha caido en desuso.</p>
+        </section>
+
+        <section id="ajax">
+          <h4>AJAX y Web 2.0</h4>
+
+          <p class="incompleto">Completar.</p>
+        </section>
+      </section>
+
+      <section id="otros-lenguajes">
+        <h3>Otros lenguajes de marcas</h3>
+
+        <p>Además del XHTML, el W3C ha desarrollado otros lenguajes de marcas, dirigidos a dominios específicos, como por ejemplo:</p>
+
+        <ul>
+          <li>MathML (Lenguaje de Marcas Matemático)</li>
+          <li>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables)</li>
+          <li>XForms (formularios)</li>
+          <li>SMIL (Synchronized Multimedia Integration Language = Lenguaje de Integración Multimedia Sincronizada)</li>
+          <li>SSML (Speech Synthesis Markup Language = Lenguaje de Marcas para Síntesis de voz)</li>
+          <li>TTML (Timed Text Markup Language = Lenguaje de Marcas para Temporización de texto)</li>
+        </ul>
+
+        <section id="mathml">
+          <h4><a href="https://www.w3.org/Math/">MathML</a> (Mathematical Markup Language = Lenguaje de Marcas Matemático)</h4>
+
+          <p>Grupo de trabajo MathML en el W3C:
+            <a href="https://www.w3.org/Math/">Homepage</a> -
+            <a href="https://www.w3.org/Math/Documents/Charter2006.html">Plan de trabajo 2006-2016</a> -
+            <a href="https://www.w3.org/Math/Documents/Charter2004.html">Plan de trabajo 2004-2005</a> -
+            <a href="https://www.w3.org/Math/Documents/Charter2001.html">Plan de trabajo 2001-2003</a> -
+            <a href="https://www.w3.org/Math/Documents/Charter2006.html">Plan de trabajo 1998-2000</a>
+          </p>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="248" cy="0" r="7" fill="red" />
+              <text x="248" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 1</text>
+              <circle cx="286" cy="0" r="7" fill="red" />
+              <text x="286" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 1.01</text>
+              <circle cx="334" cy="0" r="7" fill="red" />
+              <text x="334" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 2.0</text>
+              <circle cx="414" cy="0" r="7" fill="red" />
+              <text x="414" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 2.0 (2ª ed)</text>
+              <circle cx="624" cy="0" r="7" fill="red" />
+              <text x="624" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 3.0</text>
+              <circle cx="729" cy="0" r="7" fill="red" />
+              <text x="729" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">MathML 3.0 (2º ed)</text>
+            </svg>
+          </p>
+
+          <p>MathML es un lenguaje de marcas dirigido a la representación de fórmulas matemáticas.</p>
+          <ul>
+            <li>abril de 1998: <a href="https://www.w3.org/TR/1998/REC-MathML-19980407/">MathML 1.0</a>, editada por Patrick Ion y Robert Miner.</li>
+            <li>julio de 1999: <a href="https://www.w3.org/1999/07/REC-MathML-19990707/">MathML 1.01</a>, editada por Patrick Ion y Robert Miner, que básicamente corregía errores de la primera versión.</li>
+            <li>febrero de 2001: <a href="https://www.w3.org/TR/2001/REC-MathML2-20010221/">MathML 2.0</a>, editada por Robert Carlisle y otros, en la que se introdujeron y eliminaron algunos elementos.</li>
+            <li>octubre de 2003: <a href="https://www.w3.org/TR/2003/REC-MathML2-20031021/">MathML 2.0 (2º edición)</a>, editada por David Carlisle y otros.</li>
+            <li>abril de 2010: <a href="https://www.w3.org/TR/2010/REC-xml-entity-names-20100401/">XML Entity Definitions for Characters</a>, editada por David Carlisle y Patrick Ion.</li>
+            <li>junio de 2011: <a href="https://www.w3.org/TR/2011/REC-mathml-for-css-20110607/">A MathML for CSS profile</a>, editada por Bert Bos y otros.</li>
+            <li>octubre de 2010: <a href="https://www.w3.org/TR/2010/REC-MathML3-20101021/">MathML 3.0</a>, editada por David Carlisle y otros, en la que se introdujeron algunos elementos (escritura bidireccional, notación para matemáticas elementales, etc.).</li>
+            <li>abril de 2014: <a href="https://www.w3.org/TR/2014/REC-xml-entity-names-20140410/">XML Entity Definitions for Characters (2º edición)</a>, editada por David Carlisle y Patrick Ion.</li>
+            <li>abril de 2014: <a href="https://www.w3.org/TR/2014/REC-MathML3-20140410/">MathML 3.0 (2º edición)</a>, editada por David Carlisle y otros.</li>
+          </ul>
+
+          <p>Actualmente (marzo de 2017), el grupo de trabajo MathML está cerrado, aunque podrá ponerse de nuevo en marcha si se necesita alguna recomendación relacionada con matemáticas en la web.</p>
+
+          <p>Se puede consultar el funcionamiento de MathML en Firefox, Internet Explorer y Chrome en la <a href="../html/html_mathml.html">lección sobre MathML</a>.</p>
+        </section>
+
+        <section id="svg">
+          <h4><a href="https://www.w3.org/Graphics/SVG/">SVG</a> (Scalable Vector Graphics = Gráficos Vectoriales Escalables)</h4>
+
+          <p>Grupo de trabajo SVG en el W3C:
+            <a href="https://www.w3.org/Graphics/SVG/">Homepage</a> -
+            <a href="https://www.w3.org/Graphics/SVG/2014/charter">Plan de trabajo 2014-2016</a> -
+            <a href="https://www.w3.org/Graphics/SVG/2012/charter">Plan de trabajo 2012-2014</a> -
+            <a href="https://www.w3.org/2007/11/SVG_rechartering/SVG-WG-charter.html">Plan de trabajo 2008-2010</a> -
+            <a href="https://www.w3.org/2004/10/svg-charter.html">Plan de trabajo 2004-2006</a> -
+            <a href="https://www.w3.org/Graphics/SVG/SVGcharter2.html">Plan de trabajo 2001-2003</a> -
+            <a href="https://www.w3.org/Math/Documents/Charter2006.html">Plan de trabajo 1998-2000</a>
+          </p>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="350" cy="0" r="7" fill="red" />
+              <text x="350" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SVG 1.0</text>
+              <circle cx="391" cy="0" r="7" fill="red" />
+              <text x="391" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SVG 1.1</text>
+              <circle cx="570" cy="0" r="7" fill="red" />
+              <text x="570" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SVG 1.2 Tiny</text>
+              <circle cx="649" cy="0" r="7" fill="red" />
+              <text x="649" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SVG 1.1 (2º ed)</text>
+              <circle cx="827" cy="0" r="7" fill="white" stroke-width="3" stroke="red" />
+              <text x="827" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SVG 2</text>
+            </svg>
+          </p>
+
+          <p>SVG es un lenguaje de marcas dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
+
+          <ul>
+            <li>septiembre de 2001: <a href="https://www.w3.org/TR/2001/REC-SVG-20010904/">SVG 1.0</a>, editada por Jon Ferraiolo.</li>
+            <li>enero de 2003: <a href="https://www.w3.org/TR/2003/REC-SVG11-20030114/">SVG 1.1</a>, editada por Dean Jackson.</li>
+            <li>enero de 2003: <a href="https://www.w3.org/TR/2003/REC-SVGMobile-20030114/">Mobile SVG Profiles</a>, editada por Tolga Capin, en la que se definían dos versiones para dispositivos móviles, SVG Tiny (para teléfonos móviles) y SVG Basic (para PDAs).</li>
+            <li>diciembre de 2008: <a href="https://www.w3.org/TR/2008/REC-SVGTiny12-20081222/">SVG Tiny 1.2</a>, editada por Ola Andersson y otros.</li>
+            <li>agosto de 2011: <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/">SVG 1.1 (2º edición)</a>, editada por Erik Dahlström y otros.</li>
+          </ul>
+
+          <p>Actualmente (marzo de 2017), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> (prevista para julio de 2017) y toda una serie de recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS (<a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>). Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
+
+          <p>Los proyectos de recomendaciones <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, y SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>), parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
+
+          <p>Poco a poco SVG se está imponiendo como formato común para gráficos vectoriales. Muchos editores gráficos permiten exportar los dibujos en formato SVG o incluso trabajan con SVG como formato nativo, por ejemplo <a href="https://inkscape.org/es/">Inkscape</a>, un editor con licencia GPL, la suite ofimática LibreOffice trabaja con gráficos SVG y los entornos de escritorio de GNU/Linux GNOME y KDE utilizan el formato SVG como formato gráfico. También cabe destacar la colección de imágenes en formato SVG <a href="https://openclipart.org/">Open Clip Art Library</a>, con licencia Creative Commons (dominio público).</p>
+
+          <p>Se puede consultar el funcionamiento de SVG en Firefox, Internet Explorer y Chrome en la <a href="../html/html_svg.html">lección sobre SVG</a>.</p>
+        </section>
+
+        <section id="xforms">
+          <h4><a href="https://www.w3.org/MarkUp/Forms/">XForms</a></h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="414" cy="0" r="7" fill="red" />
+              <text x="414" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">XForms 1.0</text>
+              <circle cx="486" cy="0" r="7" fill="red" />
+              <text x="486" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">XForms 1.0 (2ª ed)</text>
+              <circle cx="535" cy="0" r="7" fill="red" />
+              <text x="565" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">XForms 1.0 (3ª ed)</text>
+              <circle cx="594" cy="0" r="7" fill="red" />
+              <text x="614" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">XForms 1.1</text>
+            </svg>
+          </p>
+
+          <p>XForms se planteó como la evolución de los formularios HTML.</p>
+
+          <ul>
+            <li>octubre de 2003: <a href="https://www.w3.org/TR/2003/REC-xforms-20031014/">XForms 1.0</a>, editada por Micah Dubinko y otros.</li>
+            <li>marzo de 2006: <a href="https://www.w3.org/TR/2006/REC-xforms-20060314/">XForms 1.0 (segunda edición)</a>, editada por John M. Boyer y otros.</li>
+            <li>octubre de 2007: <a href="https://www.w3.org/TR/2007/REC-xforms-20071029/">XForms 1.0 (tercera edición)</a>, editada por John M. Boyer.</li>
+            <li>octubre de 2009: <a href="https://www.w3.org/TR/2009/REC-xforms-20091020/">XForms 1.1</a>, editada por John M. Boyer.</li>
+          </ul>
+
+          <p>Por diferentes motivos, Xforms no llegó a tener apenas implantación. Aunque en mayo de 2010 el grupo de trabajo Forms se renovó por dos años, en los debían prepararse las recomendaciones XForms 1.2 y <a href="https://www.w3.org/TR/xforms20/">XForms 2.0</a>, el trabajo no llegó a completar. Otros proyectos de recomendación como <a href="https://www.w3.org/TR/xforms-basic/">XForms 1.0 Perfil Básico</a> y <a href="https://www.w3.org/TR/XForms-for-HTML/">XForms para HTML</a> también se abandonaron.</p>
+
+          <p>La mejora de los formularios en HTML5, que incorporó bastantes características de XForms a los formulario HTML, acabó de sentenciar el futuro de XForms. Finalmente, en abril de 2015 el W3C cerró el grupo de trabajo Forms.</p>
+
+          <p><strong>Nota</strong>: Firefox llegó a incluir parte de XForms (<a href="https://developer.mozilla.org/en-US/docs/Archive/Web/XForms">XForms en Firefox</a>), pero lo eliminó en 2013.</p>
+        </section>
+
+        <section id="smil">
+          <h4><a href="https://www.w3.org/AudioVideo/">SMIL</a> (Synchronized Multimedia Integration Language = Lenguaje de Integración Multimedia Sincronizada)</h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="254" cy="0" r="7" fill="red" />
+              <text x="254" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SMIL 1.0</text>
+              <circle cx="348" cy="0" r="7" fill="red" />
+              <text x="348" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SMIL 2.0</text>
+              <circle cx="451" cy="0" r="7" fill="red" />
+              <text x="451" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SMIL 2.0 (2ª ed)</text>
+              <circle cx="479" cy="0" r="7" fill="red" />
+              <text x="479" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SMIL 2.1</text>
+              <circle cx="568" cy="0" r="7" fill="red" />
+              <text x="568" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SMIL 3.0</text>
+            </svg>
+          </p>
+
+          <p>SMIL es un lenguaje de marcas dirigido a la creación de presentaciones. Las recomendaciones publicadas por el grupo son las siguientes:</p>
+
+          <ul>
+            <li>junio de 1998: <a href="https://www.w3.org/TR/1998/REC-smil-19980615/">SMIL 1.0</a>, editada por Philipp Hoschka.</li>
+            <li>agosto de 2001: <a href="https://www.w3.org/TR/2001/REC-smil20-20010807/">SMIL 2.0</a>, editada por Jeff Ayars y otros.</li>
+            <li>enero de 2005: <a href="https://www.w3.org/TR/2005/REC-SMIL2-20050107/">SMIL 2.0 (2º edición)</a>, corrigiendo los errores de la primera edición.</li>
+            <li>diciembre de 2005: <a href="https://www.w3.org/TR/2005/REC-SMIL2-20051213/">SMIL 2.1</a>, que extiende el uso de SMIL a otros lenguajes XML y define perfiles móviles.
+            </li>
+            <li>diciembre de 2008: <a href="https://www.w3.org/TR/2008/REC-SMIL3-20081201/">SMIL 3.0</a> editada por Dick Bulterman y otros, que añade perfiles móviles.</li>
+            <li>marzo 2012: <a href="https://www.w3.org/TR/timesheets/">SMIL Timesheets 1.0</a>, editada por Petri Vuorimaa y otros (no es una recomendación, se ha publicado como nota del grupo de trabajo).</li>
+          </ul>
+
+          <p>El grupo de trabajo se cerró en marzo de 2012, por lo que no se esperan nuevas recomendaciones. Como en el caso de XForms, SMIL no ha llegado a tener apenas implantación, aunque muchas de las ideas de SMIL se han recuperado en las animaciones CSS o en la API animaciones Web.</p>
+
+          <p class="incompleto">Completar: SMIL en Internet Explorer y Firefox, <a href="http://www.ambulantplayer.org/">AmbulantPlayer</a>; ejemplos de SVGs animados con SMIL (funcionan directamente en Firefox y Chrome)</p>
+        </section>
+
+        <section id="ssml">
+          <h4><a href="https://www.w3.org/Voice/">VoiceXML / SSML</a></h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="310" cy="0" r="7" fill="red" />
+              <text x="310" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">VoiceXML 1.0</text>
+              <circle cx="426" cy="0" r="7" fill="red" />
+              <text x="406" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">VoiceXML 2.0</text>
+              <circle cx="441" cy="0" r="7" fill="red" />
+              <text x="461" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SSML 1.0</text>
+              <circle cx="524" cy="0" r="7" fill="red" />
+              <text x="524" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">VoiceXML 2.1</text>
+              <circle cx="621" cy="0" r="7" fill="red" />
+              <text x="621" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SSML 1.1</text>
+              <circle cx="770" cy="0" r="7" fill="red" />
+              <text x="770" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">SCXML</text>
+            </svg>
+          </p>
+
+          <p>La recomendación VoiceXML controla la interacción de las aplicaciones con el usuario, mientras que la recomendación SSML (Speech Synthesis Markup Language) se ocupa del control de la síntesis de voz y la recomendación SRGS (Speech Recognition Grammar Specification) está dirigida a los reconocedores de voz mediante gramáticas que describen la respuesta esperada de los usuarios.</p>
+
+          <ul>
+            <li>marzo 2000: <a href="https://www.w3.org/TR/2000/NOTE-voicexml-20000505/">VoiceXML 1.0</a> (no elaborada por el W3C, sino por el consorcio VoiceXML Forum).</li>
+            <li>marzo de 2004: <a href="https://www.w3.org/TR/2004/REC-voicexml20-20040316/">VoiceXML 2.0</a>, editada por Scott McGlashan y otros.</li>
+            <li>marzo de 2004: <a href="https://www.w3.org/TR/2004/REC-speech-grammar-20040316/">Speech Recognition Grammar Specification 1.0</a>, editada por Andrew Hunt y Scott McGlashan.</li>
+            <li>septiembre de 2004: <a href="https://www.w3.org/TR/2004/REC-speech-synthesis-20040907/">Speech Synthesis Markup Language (SSML) 1.0</a>, editada por Daniel C. Burnett y otros.</li>
+            <li>abril de 2007: <a href="https://www.w3.org/TR/2007/REC-semantic-interpretation-20070405/">Semantic Interpretation for Speech Recognition (SISR) 1.0</a>, editada por Luc Van Tichelen y Dave Burke.</li>
+            <li>junio de 2007: <a href="https://www.w3.org/TR/2007/REC-voicexml21-20070619/">VoiceXML 2.1</a>, editada por Matt Oshry y otros.</li>
+            <li>octubre de 2008: <a href="https://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/">Pronunciation Lexicon Specification (PLS) 1.0</a> , editada por Paolo Baggia.</li>
+            <li>septiembre de 2010: <a href="https://www.w3.org/TR/2010/REC-speech-synthesis11-20100907/">Speech Synthesis Markup Language (SSML) 1.1</a>, editada por Daniel C. Burnett y Zhi Wei Shuang.</li>
+            <li>julio de 2011: <a href="https://www.w3.org/TR/2011/REC-ccxml-20110705/">Voice Browser Call Control (CCXML) 1.0</a>, editada por RJ Auburn.</li>
+            <li>septiembre de 2015: <a href="https://www.w3.org/TR/2015/REC-scxml-20150901/">State Chart XML (SCXML)</a>, editada por Jim Barnett y otros.</li>
+          </ul>
+
+          <p>Actualmente (marzo de 2017) se pueden consultar los borradores de las recomendaciones <a href="https://www.w3.org/TR/voicexml30/">VoiceXML 3.0</a> y <a href="https://www.w3.org/TR/vxml30reqs/">VoiceXML 3.0 Requirements</a>, pero su desarrollo parece abandonado.</p>
+        </section>
+
+        <section id="ttml">
+          <h4><a href="https://www.w3.org/AudioVideo/TT/">TTML</a> (Timed Text Markup Language)</h4>
+
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1000" viewBox="-50 -60 1000 120">
+              <line x1="-50" y1="0" x2="950" y2="0" stroke-width="3" stroke="red" />
+              <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="0" y="-40" text-anchor="middle" style="font-size: 100%">1990</text>
+              <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="150" y="-40" text-anchor="middle" style="font-size: 100%">1995</text>
+              <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="300" y="-40" text-anchor="middle" style="font-size: 100%">2000</text>
+              <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="450" y="-40" text-anchor="middle" style="font-size: 100%">2005</text>
+              <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="600" y="-40" text-anchor="middle" style="font-size: 100%">2010</text>
+              <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="750" y="-40" text-anchor="middle" style="font-size: 100%">2015</text>
+              <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+              <text x="900" y="-40" text-anchor="middle" style="font-size: 100%">2020</text>
+              <circle cx="627" cy="0" r="7" fill="red" />
+              <text x="627" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">TTML 1.0</text>
+              <circle cx="712" cy="0" r="7" fill="red" />
+              <text x="712" y="25" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">TTML 1.0 (2ª ed)</text>
+              <circle cx="790" cy="0" r="7" fill="red" />
+              <text x="790" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">TTML profiles</text>
+            </svg>
+          </p>
+
+          <p>TTML es un lenguaje de marcas dirigido a la creación de subtítulos. Las recomendaciones publicadas por el grupo son las siguientes:</p>
+
+          <ul>
+            <li>noviembre de 2010: Timed Text Markup Language <a href="https://www.w3.org/TR/2010/REC-ttaf1-dfxp-20101118/">TTML 1.0</a>, editada por Glenn Adams.</li>
+            <li>septiembre de 2013: Timed Text Markup Language <a href="https://www.w3.org/TR/2013/REC-ttml1-20130924/">TTML 1.0 (segunda edición)</a>, editada por Glenn Adams.</li>
+            <li>abril de 2016: <a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/">TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1)</a>, editada por Pierre Lemieux.</li>
+          </ul>
+
+          <p>Además, el grupo ha publicado la nota:</p>
+          <ul>
+            <li>enero de 2017: <a href="https://www.w3.org/TR/2017/NOTE-ttml-profile-registry-20170117/">TTML Media Type Definition and Profile Registry</a>, editada por Mike Dolan.</li>
+          </ul>
+
+          <p>Actualmente (marzo de 2017), el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/ttml2/">TTML2</a> y <a href="https://www.w3.org/TR/webvtt1/">WebVTT</a>.</p>
+        </section>
+
+        <section id="ml-otros">
+          <h4>Otros</h4>
+
+          <p>El grupo de trabajo de <a href="https://www.w3.org/2002/mmi/Overview.html">Interacción Multimodal</a> ha publicado las siguientes recomendaciones:</p>
+
+          <ul>
+            <li>septiembre 2009: <a href="https://www.w3.org/TR/2009/REC-emma-20090210/">EMMA:  Extensible MultiModal Annotation markup language</a>, editada por Paolo Baggia y otros</li>
+            <li>mayo 2014: <a href="https://www.w3.org/TR/2014/REC-emotionml-20140522/">Emotion Markup language (EmotionML) 1.0</a>, editada por Felix Burkhardt y Marc Schröder.</li>
+          </ul>
+
+          <p>Actualmente (septiembre de 2016), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/emma20/">EMMA 2</a>.</p>
+
+          <p>El grupo de trabajo <a href="https://www.w3.org/2008/WebVideo/Fragments/">Fragmentos de medios</a> ha publicado la siguiente recomendación:</p>
+
+          <ul>
+            <li>septiembre de 2012: <a href="https://www.w3.org/TR/2012/REC-media-frags-20120925/">Media Fragments URI 1.0 (basic)</a>, editada por Raphaël Troncy y otros.</li>
+          </ul>
+
+          <p>Actualmente (septiembre de 2016), el W3C está preparando la recomendación <a href="https://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-reqs/">Use cases and requirements for Media Fragments</a>, pero su desarrollo parece abandonado.</p>
+
+        </section>
+      </section>
+    </section>
+
+    <section id="normas-graficos">
+      <h2>Estándares gráficos</h2>
+
+      <p>Las imágenes pueden almacenarse como imágenes de mapa de bits o como imágenes vectoriales. Dependiendo del contenido y del uso que quiera hacerse de las imágenes, resulta más conveniente utilizar un tipo u otro.</p>
+
+      <p>En este apartado se comentan únicamente tres formatos para los que el W3C ha publicado recomendaciones. Otros formatos se comentan en la lección sobre <a href="../html/html_imagenes.html">imágenes de mapa de bits</a>.</p>
+
+      <section id="png">
+        <h3>PNG</h3>
+
+        <p>El formato <a href="http://www.libpng.org/pub/png/">PNG</a> (Portable Network Graphics = Gráficos de Red Portátiles) surgió como alternativa a la reclamación de Unisys, poseedora de una patente del algoritmo LZW, usado en el formato GIF.</p>
+
+        <ul>
+          <li>enero de 1995: versión preliminar propuesta por <a href="https://boutell.com/boutell/">Thomas Boutell</a>.</li>
+          <li>octubre de 1996: <a href="https://www.w3.org/TR/REC-png-961001">Portable Network Graphics Specification 1.0</a>, editada por Thomas Boutell.</li>
+          <li>noviembre de 2003: <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">Portable Network Graphics Specification (2º edición)</a>, editada por David Duce y publicada también como norma ISO 15948.</li>
+        </ul>
+
+        <p>Las ventajas de PNG son muchas: se trata de un formato libre, sin pérdida, que consigue mayor compresión que GIF (alrededor de un 20%), con transparencia alfa (cada pixel puede tener su propio nivel de transparencia), canal gamma (para ajustar el brillo) y entrelazado.</p>
+      </section>
+
+      <section id="graficos-svg">
+        <h3>SVG</h3>
+
+        <p>Véase el apartado <a href="#svg">SVG</a> en la sección "Otros lenguajes de marcas".</p>
+      </section>
+
+      <section id="webcgm">
+        <h3>WebCGM</h3>
+
+        <p>Computer Graphics Metafile (CGM) es un formato de gráficos vectoriales 2D publicado como norma ISO (<a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32378">ISO 8632</a>) en 1987 (norma actualizada en 1999). WebCGM añade a los archivos CGM la posibilidad de integrarse en páginas web y ha sido desarrollado por el W3C y el <a href="http://www.cgmopen.org/">CGM Open</a>, una sección de <a href="https://www.oasis-open.org/">OASIS</a>, un consorcio de empresas dedicado al desarrollo de normas abiertas para la sociedad de la información.</p>
+        <ul>
+          <li>enero de 1999: recomendación <a href="https://www.w3.org/TR/1999/WebCGM/">WebCGM Profile</a>, escrita por David Cruikshank y otros.</li>
+          <li>diciembre de 2001: recomendación <a href="https://www.w3.org/TR/2001/REC-WebCGM-20011217/">WebCGM 1.0 (2º edición)</a>, escrita por David Cruikshank y otros.</li>
+          <li>enero de 2007: recomendación <a href="https://www.w3.org/TR/2007/REC-webcgm20-20070130/">WebCGM 2.0</a>, editada por Benoit Bezaire y otros.</li>
+          <li>marzo de 2010: recomendación <a    href="https://www.w3.org/TR/2010/REC-webcgm21-20100301/">WebCGM 2.1</a>, editada por Benoit Bezaire y Lofton Henderson.</li>
+        </ul>
+      </section>
+
+      <p>El <a href="https://www.w3.org/Graphics/WebCGM/WG/">grupo de trabajo WebCGM</a> del W3C se cerró en mayo de 2011. En 2013 se formó la <a href="http://www.cgmopen.org">fundación CGM Open</a>, ya sin vinculación con OASIS, para continuar el trabajo sobre WebCGM, pero no parece haber ningún desarrollo.</p>
+    </section>
+
+    <section id="otros">
+      <h2>Otros</h2>
+
+      <section id="webfonts">
+        <h3><a href="https://www.w3.org/Fonts/WG/">Web Fonts</a> (Fuentes Web)</h3>
+
+        <p>Grupo de trabajo Web Fonts en el W3C:
+          <a href="https://www.w3.org/Fonts/WG/">Homepage</a> -
+          <a href="https://www.w3.org/2012/06/WebFonts/charter-2012.html">Plan de trabajo 2012-2017</a> -
+          <a href="https://www.w3.org/2009/08/WebFonts/charter.html">Plan de trabajo 2009-2012</a>
+        </p>
+
+        <p>En 2009 se desarrolló un formato de fuentes llamado WOFF (Web Open Font Format) pensado para la web. En realidad no se trata de un nuevo formato, puesto que una fuente WOFF no es más que una fuente TrueType, OpenType, Open Font o SVG comprimida y con metadatos para indicar detalles como el origen de la fuente o la licencia.</p>
+
+        <p>En abril de 2010, Mozilla, Microsoft y Opera presentaron este formato al W3C, que aprobó la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> en diciembre de 2012.</p>
+
+        <p>Actualmente (septiembre de 2016) el W3C está preparando la recomendación <a href="https://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a> (<a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 13/11/2013</a>)</p>
+
+        <p>Se puede consultar el funcionamiento de las fuentes web en Firefox, Internet Explorer y Chrome en la <a href="../css/css_fuentes_web.html">lección sobre Web Fonts</a> .</p>
+      </section>
+
+      <section id="accesibilidad">
+        <h3>Accesibilidad</h3>
+
+        <p>Recomendaciones publicadas:</p>
+
+        <ul>
+          <li>mayo de 1999: <a href="https://www.w3.org/TR/1999/WAI-WEBCONTENT-19990505/">Web Content Accessibility Guidelines 1.0</a>, escrita por Wendy Chisholm y otros.</li>
+          <li>febrero de 2000: <a href="https://www.w3.org/TR/2000/REC-ATAG10-20000203/">Authoring Tool Accessibility Guidelines 1.0</a>, escrita por Jutta Treviranus y otros.</li>
+          <li>diciembre de 2002: <a href="https://www.w3.org/TR/2002/REC-UAAG10-20021217/">User Agent Accessibility Guidelines 1.0</a>, escrita por Ian Jacobs y otros.</li>
+          <li>diciembre de 2008: <a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/">Web Content Accessibility Guidelines (WCAG) 2.0</a>, escrita por Ben Caldwell y otros./li>
+          <li>marzo de 2014: <a href="https://www.w3.org/TR/2014/REC-wai-aria-20140320/">Accessible Rich Internet Applications (WAI-ARIA) 1.0</a>, escrita por James Craig y Michael Cooper.</li>
+          <li>septiembre de 2015: <a href="https://www.w3.org/TR/2015/REC-ATAG20-20150924/">Authoring Tool Accessibility Guidelines (ATAG) 2.0</a>, escrita por Jan Richards y otros.</li>
+        </ul>
+
+        <p>Borradores:</p>
+
+        <ul>
+          <li><a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a></li>
+        </ul>
+      </section>
+
+      <section id="epub">
+        <h3>Edición web</h3>
+
+        <p><a href="https://www.w3.org/blog/dpub/">Digital Publishing Activity News</a></p>
+
+        <ul>
+          <li>diciembre de 2014: <a href="https://www.w3.org/TR/2014/NOTE-dpub-annotation-uc-20141204/">Digital Publishing Annotation Use Cases</a></li>
+          <li><a href="https://www.w3.org/TR/pwp/">Web Publications</a></li>
+          <li><a href="https://www.w3.org/TR/pwp-ucr/">Web Publications Use Cases and Requirements</a></li>
+        </ul>
+      </section>
+
+      <section id="otros-recomendaciones">
+        <h3>Recomendaciones</h3>
+        <ul>
+          <li>enero de 1997: <a href="https://tools.ietf.org/html/rfc2070">RFC 2070: Internationalization of the Hypertext Markup Languag</a></li>
+          <li>septiembre de 2012: <a href="https://www.w3.org/TR/media-frags/">Media Fragments URI 1.0 (basic)</a></li>
+          <li><a href="https://www.w3.org/2010/webperf/">Web Performance Working Group</a></li>
+          <li>febrero de 2015: <a href="https://www.w3.org/TR/2015/REC-html-longdesc-20150226/">HTML5 Image Description Extension (longdesc)</a></li>
+          <li>noviembre de 2016: <a href="https://www.w3.org/TR/2016/REC-media-source-20161117/">Media Source Extensions</a></li>
+          <li>diciembre de 2016: <a href="https://www.w3.org/TR/2016/REC-CSP2-20161215/">Content Security Policy Level 2</a></li>
+          <li>diciembre de 2016: <a href="https://www.w3.org/TR/2016/REC-WebIDL-1-20161215/">WebIDL Level 1</a></li>
+          <li>enero de 2017: <a href="https://www.w3.org/TR/2017/REC-webmention-20170112/">Webmention</a></li>
+          <li>enero de 2017: <a href="https://www.w3.org/TR/2017/REC-dwbp-20170131/">Data on the Web Best Practices</a></li>
+        </ul>
+
+        <h3>Notas de grupos de trabajo</h3>
+
+        <ul>
+          <li><a href="https://www.w3.org/TR/html-alt-techniques/">HTML5: Techniques for providing useful text alternatives</a></li>
+        </ul>
+      </section>
+
+      <section id="otros-borradores">
+        <h3>Borradores</h3>
+        <ul>
+          <li>Do Not Track: <a href="https://www.w3.org/2011/tracking-protection/">W3C Tracking Protection Working Group</a> - Borrador <a href="https://www.w3.org/TR/tracking-dnt/">Tracking Preference Expression (DNT)</a> - <a href="https://www.w3.org/TR/tracking-compliance/">Tracking Compliance and Scope</a></li>
+          <li><a href="https://www.w3.org/TR/web-animations-1/">Web Animations</a></li>
+          <li><a href="https://www.w3.org/TR/webrtc/">WebRTC 1.0</a>: Comunicación en tiempo real entre navegadores</li>
+          <li><a href="https://www.w3.org/TR/workers/">Web Workers</a></li>
+          <li><a href="https://www.w3.org/TR/websockets/">WebSocket API</a></li>
+          <li><a href="https://www.w3.org/TR/html-media-capture/">HTML Media Capture</a></li>
+          <li><a href="https://www.w3.org/TR/mediacapture-streams/">Media Capture and Streams</a></li>
+          <li><a href="https://www.w3.org/TR/encrypted-media/">Encrypted Media Extensions</a></li>
+          <li><a href="https://www.w3.org/TR/media-source/">Media Source Extensions</a></li>
+          <li><a href="https://www.w3.org/TR/url-1/">URL</a></li>
+          <li><a href="https://www.w3.org/TR/webmention/">WebMention</a></li>
+          <li><a href="https://www.w3.org/TR/ldn/">Linked Data Notifications</a></li>
+          <li><a href="https://www.w3.org/TR/encoding/">Encoding</a></li>
+          <li><a href="https://www.w3.org/TR/preload/">Preload</a> (precarga de elementos enlazados)</li>
+        </ul>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 20 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Favicon. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Favicon</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Favicon</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-es">Qué es un favicon</a></li>
+          <li><a href="#ejemplos">Ejemplos</a></li>
+          <li><a href="#animados">Favicons animados</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="que-es">
+      <h2>Qué es un favicon</h2>
+
+      <p>Un favicon es una pequeña imagen que se muestra en la barra de dirección, en la lista de marcadores (favoritos) o en las pestañas del navegador.</p>
+
+      <hr class="corta" />
+
+      <p>El primer navegador en mostrar favicons fue el Internet Explorer 4. Hasta IE 8, Internet Explorer requería que el favicon fuera una imagen en formato ICO, y que el enlace <span class="html-eti">&lt;link&gt;</span> incluido en el <span class="html-eti">&lt;head&gt;</span> tuviera la siguiente sintaxis:</p>
+
+      <pre class="fuente">
+<code class="language-html">&lt;head&gt;
+  ...
+  &lt;link rel="shortcut icon" href="http://wwww.ejemplo.org/favicon.ico" /&gt;
+  ...
+&lt;/head&gt;</code>
+</pre>
+
+      <p>En la barra de dirección, el tamaño del favicon es bastante reducido, 16x16 píxeles, pero en otros lugares como los marcadores podía tener un tamaño mayor (24x24, 32x32, 48x48 o 64x64). Internet Explorer utilizaba el <a href="https://en.wikipedia.org/wiki/ICO_%28file_format%29" title="Formato ICO en Wikipedia (en inglés)">formato ICO</a> de Windows, que permite guardar varias imágenes independientes en un único archivo .ico.</p>
+
+      <p>Para crear una imagen en formato .ico, se pueden utilizar editores gráficos como <a href="http://icofx.ro/">IcoFX</a> (sólo para Windows), pero resulta más cómodo utilizar aplicaciones web como <a href="http://www.favicomatic.com/">http://www.favicomatic.com/</a> o <a href="https://realfavicongenerator.net/">https://realfavicongenerator.net/</a>, que crean todos los archivos necesarios a partir de una imagen. Como mínimo se aconseja incluir dos tamaños imágenes, 16x16 y 32x32, pero se pueden incluir también los tamaños 24x24, 48x48 y 64x64 (aunque eso aumenta bastante el tamaño del archivo .ico).</p>
+
+      <p>Si se incluye un archivo favicon.ico en la carpeta raíz del sitio web, los navegadores utilizan automáticamente esa imagen como favicon de todas las páginas del sitio, sin que sea necesario incluir la etiqueta <span class="html-eti">&lt;link&gt;</span>. La etiqueta <span class="html-eti">&lt;link&gt;</span> es necesaria si se quieren utilizar otros formatos de imagen, guardarlo en otras carpetas o hacer que diferentes páginas hagan referencia a favicons diferentes (dando diferentes valores al atributo <span class="html-atri">href</span>).</p>
+
+      <hr class="corta" />
+
+      <p>Con el paso del tiempo, otros navegadores permitieron que se pudieran utilizar otros formatos de imagen (GIF, PNG, SVG, etc.), pero este es un aspecto que todavía no está completamente resuelto. Por ejemplo, desde hace años muchos navegadores admiten favicons en formato PNG (<a href="http://caniuse.com/#feat=link-icon-png"><img src="../varios/iconos/icono_caniuse_oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>), pero el formato SVG sólo lo admite actualmente (enero de 2017) Firefox (<a href="http://caniuse.com/#feat=link-icon-svg"><img src="../varios/iconos/icono_caniuse_okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>).</p>
+
+      <hr class="corta" />
+
+      <p>La IANA definió en 2003 el <a href="http://www.iana.org/assignments/media-types/image/vnd.microsoft.icon">tipo MIME image/vnd.microsoft.icon</a> que define el formato de imagen ico.</p>
+
+      <p>En 2005, el W3C publicó <a href="https://www.w3.org/2005/10/howto-favicon">unos consejos sobre favicons</a>, en las que se aconsejaba utilizar el valor <span class="html-atri-valor">icon</span> para el atributo <span class="html-atri">rel</span> (en vez de <span class="html-atri-valor">shortcut icon</span>) e indicar los distintos tipos de imagen mediante el atributo <span class="html-atri">type</span>, como en los ejemplos siguientes:</p>
+
+      <pre class="fuente">
+<code class="language-html">&lt;link rel="icon" type="image/png" href="imagen.png" /&gt;
+
+&lt;link rel="icon" type="image/gif" href="imagen.gif" /&gt;
+
+&lt;link rel="icon" type="image/vnd.microsoft.icon" href="imagen.ico" /&gt;</code>
+</pre>
+
+      <hr class="corta" />
+
+      <p>La recomendación HTML 5 fue la primera en definir los favicons, añadiendo a los consejos del 2005 el atributo <span class="html-atri">sizes</span>, para indicar los tamaños de las imágenes (para imágenes escalables, como SVG, se puede utilizar el valor <span class="html-atri-valor">any</span>), como en los ejemplos siguientes:</p>
+
+      <pre class="fuente">
+<code class="language-html">&lt;link rel="icon" type="image/png" href="imagen.png" sizes="64x64" /&gt;
+
+&lt;link rel="icon" type="image/svg+xml" href="imagen.svg" sizes="any" /&gt;
+
+&lt;link rel="icon" type="image/vnd.microsoft.icon" href="imagen.ico" sizes="16x16 24x24 36x36 48x48" /&gt;</code>
+</pre>
+
+      <p>En vez de utilizar un fichero .ico con varias imágenes, se puede hacer referencia a varias imagenes para que el navegador elija la más conveniente en cada situación:</p>
+
+      <pre class="fuente">
+<code class="language-html">&lt;link rel="icon" type="image/png" href="imagen_16.png" sizes="16x16" /&gt;
+
+&lt;link rel="icon" type="image/png" href="imagen_32.png" sizes="32x32" /&gt;
+
+&lt;link rel="icon" type="image/png" href="imagen_64.png" sizes="64x64" /&gt;
+
+...</code>
+</pre>
+
+      <hr class="corta" />
+
+      <p>Desgraciadamente, en los últimos años, los navegadores de los móviles han complicado esta situación, ya que utilizan imágenes en muchos tamaños diferentes y con etiquetas no normalizadas para distintos fines.</p>
+
+      <p>En estos apuntes no se trata este problema, pero en la web se pueden encontrar artículos que tratan de aclarar esta situación, que ojalá se simplifique en los próximos años:</p>
+      <ul>
+        <li><a href="https://css-tricks.com/favicon-quiz/">Favicons, Touch Icons, Tile Icons, etc. Which Do You Need?</a>, de Philippe Bernard (18/08/14)</li>
+        <li><a href="https://github.com/audreyr/favicon-cheat-sheet">favicon-cheat-sheet</a>, de Audrey Roy Greenfeld</li>
+      </ul>
+
+      <p>Si se quieren incluir en una web todos los tamaños de imágenes y las etiquetas requeridas por los diferentes navegadores, lo más fácil es utilizar aplicaciones web especializadas en esta tarea (como <a href="http://www.favicomatic.com/">http://www.favicomatic.com/</a> o <a href="https://realfavicongenerator.net/">https://realfavicongenerator.net/</a>) y hacerlo periódicamente para comprobar las novedades en este campo.</p>
+    </section>
+
+    <section id="ejemplos">
+      <h2>Ejemplos</h2>
+
+      <p>La tabla siguiente contiene enlaces a diferentes páginas que contiene enlaces a favicons definidos de maneras distintas (en total, hay 8 ejemplos). Abriendo los enlaces en el navegador puede comprobarse si el navegador es capaz de mostrar los favicons.</p>
+
+      <table class="conborde">
+        <tbody>
+          <tr>
+            <th rowspan="2"></th>
+            <th rowspan="2">Sintaxis del enlace</th>
+            <th colspan="3">Tamaño de imagen (píxeles)</th>
+          </tr>
+          <tr>
+            <th>16x16</th>
+            <th>32x32</th>
+            <th>32x32+16x16</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            </td>
+            <td><pre><code class="language-html">&lt;link rel="shortcut icon" href="cdlibre.ico" /&gt;</code></pre></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16_shortcut.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            </td>
+            <td><pre><code class="language-html">&lt;link rel="icon" type="image/png" href="cdlibre.png" /&gt; </code></pre></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_png_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_png_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+            <td class="centrado"></td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            </td>
+            <td><pre><code class="language-html">&lt;link rel="icon" type="image/vnd.microsoft.icon" href="cdlibre.ico" /&gt;</code></pre></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+            <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Notas</strong>:</p>
+
+      <ul>
+        <li>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</li>
+        <li><span class="incompleto">Por completar</span>: Firefox admite iconos en formato SVG.</li>
+      </ul>
+
+    </section>
+
+    <section id="animados">
+      <h2>Favicons animados</h2>
+
+      <p>Un favicon animado es un gif animado al que se le ha cambiado la extensión .gif por la extensión .ico.</p>
+
+      <p>Firefox admite favicons animados, pero Internet Explorer y Google Chrome no.</p>
+
+      <table>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            </td>
+            <td><p><a href="../ejemplos/favicon/favicon_animado.html">Página de ejemplo</a> que usa el gif animado siguiente: <img alt="GIF animado" src="../ejemplos/favicon/gif_animado.ico" width="16" height="16" /></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Referencias:</p>
+      <ul>
+        <li><a href="http://gifmaker.me/">GIFmaker.me</a>: para hacer gifs animados a partir de imágenes individuales</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 6 de enero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

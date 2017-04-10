@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Márgenes exteriores e interiores. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 2: Márgenes exteriores e interiores</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS2: Márgenes</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#margin">Margen exterior: <span class="css-prop">margin</span></a>
+          <li><a href="#margin-lados"><span class="css-prop">margin-top</span>, ...</a></li>
+          <li><a href="#centrar-bloque">Centrar</a></li>
+          <li><a href="#padding">Margen interior: <span class="css-prop">padding</span></a></li>
+          <li><a href="#padding-lados"><span class="css-prop">padding-top</span>, ...</a></li>
+          <li><a href="#superposicion">Superposición de márgenes</a>
+            <ul>
+              <li><a href="#superposicion-html-body">Márgenes <span class="html-eti">&lt;html&gt;</span> <span class="html-eti">&lt;body&gt;</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Cualquier elemento de una página web puede tener un margen exterior y un margen interior.</p>
+
+    <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />La hoja de estilo por defecto de los navegadores establece márgenes exteriores en bastantes elementos, especialmente a los elementos de bloque y a los títulos, y márgenes itnerior en algunos elementos. Aunque los márgenes establecidos en la hoja de estilo por el autor tienen prioridad sobre los márgenes establecidos por la hoja de estilo por defecto, el resultado final es la combinación de todos los márgenes establecidos en ambas hojas de estilo.</p>
+
+    <section id="margin">
+      <h2 class="con-aside">Margen exterior: la propiedad compuesta <span class="css-prop">margin</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">margin</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-margin"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>El margen exterior de un elemento es el espacio transparente situado alrededor del borde del elemento, independientemente de que el borde sea o no visible.</p>
+
+      <p>La propiedad <span class="css-prop">margin</span> permite establecer el tamaño del margen exterior. Como en el caso de <a href="css_bordes.html#border-color-width-style">las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></a> se pueden escribir de uno a cuatro valores, que se interpretan de la siguiente manera:</p>
+
+      <ul>
+        <li>1 valor: este valor se aplica a los cuatro lados</li>
+        <li>2 valores: el primer valor se aplica a los lados inferior y superior y el segundo a los lados derecho e izquierdo</li>
+        <li>3 valores: el primer valor se aplica al lado superior, el segundo a los lados derecho e izquierdo y el tercer valor al lado inferior</li>
+        <li>4 valores: el primer valor se aplica al lado superior, el segundo al lado derecho, el tercer valor al lado inferior y el cuarto al lado izquierdo</li>
+      </ul>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-30,-30 384,-30 384,-5 -30,-5" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="384,-30 384,188 359,188 359,-30" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="384,188 -30,188 -30,163 384,163" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-30,188 -30,-30 -5,-30 -5,188" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-30" y="-30"  width="414" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="280" y1="0" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="280" cy="0" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="260" y1="-15" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="260" cy="-15" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">margin</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">margin: 20px</text>
+          <circle cx="90" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="90" y="-80" text-anchor="middle" font-size="14">1</text>
+
+          <text x="180" y="-12" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="-17" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="370" y="80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="370" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="180" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="175" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="-15" y="80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="-15" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-40,-30 394,-30 394,-5 -40,-5" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,-30 394,188 359,188 359,-30" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,188 -40,188 -40,163 394,163" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-40,188 -40,-30 -5,-30 -5,188" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-40" y="-30"  width="434" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="280" y1="0" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="280" cy="0" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="260" y1="-15" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="260" cy="-15" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">margin</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">margin: 20px &nbsp; 30px</text>
+          <circle cx="90" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="90" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="155" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="155" y="-80" text-anchor="middle" font-size="14">2</text>
+
+          <text x="180" y="-12" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="-17" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="375" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="375" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="180" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="175" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="-20" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="-20" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+      </p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-40,-30 394,-30 394,-5 -40,-5" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,-30 394,208 359,208 359,-30" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,208 -40,208 -40,163 394,163" fill="hsla(60, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-40,208 -40,-30 -5,-30 -5,208" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-40" y="-30"  width="434" height="238" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="280" y1="0" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="280" cy="0" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="260" y1="-15" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="260" cy="-15" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">margin</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">margin: 20px &nbsp; 30px &nbsp; 40px</text>
+          <circle cx="90" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="90" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="155" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="155" y="-80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="215" cy="-85" r="12" fill="hsla(60, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="215" y="-80" text-anchor="middle" font-size="14">3</text>
+
+          <text x="180" y="-12" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="-17" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="375" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="375" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="190" text-anchor="middle" font-size="14">3</text>
+          <circle cx="180" cy="185" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="-20" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="-20" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-20,-30 394,-30 394,-5 -20,-5" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,-30 394,208 359,208 359,-30" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="394,208 -20,208 -20,163 394,163" fill="hsla(60, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-20,208 -20,-30 -5,-30 -5,208" fill="hsla(120, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-20" y="-30"  width="414" height="238" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="280" y1="0" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="280" cy="0" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="260" y1="-15" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="260" cy="-15" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">margin</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">margin: 20px &nbsp; 30px &nbsp; 40px &nbsp; 10px</text>
+          <circle cx="90" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="90" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="155" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="155" y="-80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="215" cy="-85" r="12" fill="hsla(60, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="215" y="-80" text-anchor="middle" font-size="14">3</text>
+          <circle cx="275" cy="-85" r="12" fill="hsla(120, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="275" y="-80" text-anchor="middle" font-size="14">4</text>
+
+          <text x="180" y="-12" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="-17" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="375" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="375" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="190" text-anchor="middle" font-size="14">3</text>
+          <circle cx="180" cy="185" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="-13" y="80" text-anchor="middle" font-size="14">4</text>
+          <circle cx="-13" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+      </p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  margin: 20px;
+  border: red 2px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="margin: 20px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen de 20 pixeles alrededor. Fíjate en que los márgenes superior e inferior de dos párrafos seguidos se solapan.</p>
+
+              <p style="margin: 20px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen de 20 pixeles alrededor. Fíjate en que los márgenes superior e inferior de dos párrafos seguidos se solapan.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  margin: 0px;
+  border: red 2px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="margin: 0px; padding: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen alrededor. Fíjate en que los párrafos seguidos no tienen separación entre ellos.</p>
+
+              <p style="margin: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen alrededor. Fíjate en que los párrafos seguidos no tienen separación entre ellos.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="margin-lados">
+      <h2 class="con-aside">Márgenes exteriores: las propiedades <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span> y <span class="css-prop">margin-left</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">margin-top</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-margin-top"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-top"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">margin-right</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-margin-right"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-right"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">margin-bottom</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-margin-bottom"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">margin-left</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-margin-left"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin-left"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Las propiedades <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span> y <span class="css-prop">margin-left</span> permiten establecer el tamaño del margen exterior de forma independiente (arriba, derecha, abajo e izquierda respectivamente).</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="730" viewBox="-180 -90 730 340" font-family="sans-serif" font-size="18">
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="red" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+
+          <polygon points="-30,-30 384,-30 384,-5 -30,-5" fill="hsla(0, 100%, 90%, 0.5)" stroke="red" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="384,-30 384,188 359,188 359,-30" fill="hsla(240, 100%, 90%, 0.5)" stroke="blue" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="384,188 -30,188 -30,163 384,163" fill="hsla(60, 100%, 90%, 0.5)" stroke="hsl(60, 100%, 30%)" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="-30,188 -30,-30 -5,-30 -5,188" fill="hsla(120, 100%, 90%, 0.5)" stroke="green" stroke-width="2" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="180" y1="-20" x2="180" y2="-60" stroke-width="2" stroke="black" />
+          <circle cx="180" cy="-20" r="4" fill="black" />
+          <text x="180" y="-65" text-anchor="middle" font-size="16pt">margin-top</text>
+
+          <line x1="375" y1="80" x2="415" y2="80" stroke-width="2" stroke="black" />
+          <circle cx="375" cy="80" r="4" fill="black" />
+          <text x="425" y="85" text-anchor="start" font-size="16pt">margin-right</text>
+
+          <line x1="180" y1="178" x2="180" y2="218" stroke-width="2" stroke="black" />
+          <circle cx="180" cy="178" r="4" fill="black" />
+          <text x="180" y="238" text-anchor="middle" font-size="16pt">margin-bottom</text>
+
+          <line x1="-20" y1="80" x2="-60" y2="80" stroke-width="2" stroke="black" />
+          <circle cx="-20" cy="80" r="4" fill="black" />
+          <text x="-70" y="85" text-anchor="end" font-size="16pt">margin-left</text>
+        </svg>
+      </p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  margin-left: 20px;
+  border: red 2px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="margin-left: 20px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen izquierdo de 20 pixeles. El resto de márgenes los elige el navegador.</p>
+
+              <p style="margin-left: 20px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen izquierdo de 20 pixeles. El resto de márgenes los elige el navegador.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  margin-left: 0px;
+  border: red 2px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="margin-left: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen izquierdo. El resto de márgenes los elige el navegador.</p>
+
+              <p style="margin-left: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen izquierdo. El resto de márgenes los elige el navegador.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="centrar-bloque">
+      <h2>Centrar con <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span></h2>
+
+      <p>Para centrar un elemento de bloque, se utilizan las propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> con el valor <span class="css-valor">auto</span>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">table {
+  margin-left: auto;
+  margin-right: auto;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <table class="conborde" style="margin-left: auto; margin-right: auto;">
+                <tbody>
+                  <tr>
+                    <td>Casilla 1</td>
+                    <td>Casilla 2</td>
+                  </tr>
+                  <tr>
+                    <td>Casilla 3</td>
+                    <td>Casilla4</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%; <br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div style="border: black 3px solid; width: 50%; margin-left: auto; margin-right: auto;">
+                <p>Este párrafo está dentro de una división.</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="padding">
+      <h2 class="con-aside">Margen interior: la propiedad compuesta <span class="css-prop">padding</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">padding</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-padding"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>El margen interior de un elemento es el espacio transparente situado entre el elemento y el borde. Este espacio se puede de definir aunque el elemento no tenga borde. La hoja de estilo por defecto del navegador aplica márgenes interiores a muy pocos elementos.</p>
+
+      <p>La propiedad <span class="css-prop">padding</span> permite establecer el tamaño del margen interior. Como en el caso de <a href="css_bordes.html#border-color-width-style">las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></a> se pueden escribir de uno a cuatro valores, que se interpretan de la siguiente manera:</p>
+
+      <ul>
+        <li>1 valor: este valor se aplica a los cuatro lados</li>
+        <li>2 valores: el primer valor se aplica a los lados inferior y superior y el segundo a los lados derecho e izquierdo</li>
+        <li>3 valores: el primer valor se aplica al lado superior, el segundo a los lados derecho e izquierdo y el tercer valor al lado inferior</li>
+        <li>4 valores: el primer valor se aplica al lado superior, el segundo al lado derecho, el tercer valor al lado inferior y el cuarto al lado izquierdo</li>
+      </ul>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-10,-10 364,-10 364,27 -10,27" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="364,-10 364,170 327,170 327,-10" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="364,170 -10,170 -10,132 364,132" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-10,170 -10,-10 28,-10 28,170" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-10" y="-10"  width="374" height="178" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="290" y1="-10" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="290" cy="-10" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="235" y1="10" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="235" cy="10" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">padding</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">padding: 20px</text>
+          <circle cx="100" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="100" y="-80" text-anchor="middle" font-size="14">1</text>
+
+          <text x="180" y="16" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="11" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="345" y="80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="345" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="152" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="147" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="10" y="80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="10" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-20,-10 374,-10 374,27 -20,27" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,-10 364,170 327,170 327,-10" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,170 -20,170 -20,132 374,132" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-20,170 -20,-10 28,-10 28,170" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-20" y="-10"  width="394" height="178" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="290" y1="-10" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="290" cy="-10" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="235" y1="10" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="235" cy="10" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">padding</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">padding: 20px &nbsp; 30px</text>
+          <circle cx="100" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="100" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="165" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="165" y="-80" text-anchor="middle" font-size="14">2</text>
+
+          <text x="180" y="16" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="11" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="345" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="345" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="152" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="147" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="10" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="10" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+      </p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="-20,-10 374,-10 374,27 -20,27" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,-10 374,190 327,190 327,-10" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,190 -20,190 -20,132 374,132" fill="hsla(60, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="-20,190 -20,-10 28,-10 28,190" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="-20" y="-10"  width="394" height="198" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="290" y1="-10" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="290" cy="-10" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="235" y1="10" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="235" cy="10" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">padding</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">padding: 20px &nbsp; 30px &nbsp; 40px</text>
+          <circle cx="100" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="100" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="163" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="163" y="-80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="220" cy="-85" r="12" fill="hsla(60, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="220" y="-80" text-anchor="middle" font-size="14">3</text>
+
+          <text x="180" y="16" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="11" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="345" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="345" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="162" text-anchor="middle" font-size="14">3</text>
+          <circle cx="180" cy="157" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="10" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="10" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-50 -100 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+
+          <polygon points="10,-10 374,-10 374,27 10,27" fill="hsla(0, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,-10 374,190 327,190 327,-10" fill="hsla(240, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="374,190 10,190 10,132 374,132" fill="hsla(60, 100%, 90%, 0.5)" stroke="none" />
+          <polygon points="10,190 10,-10 28,-10 28,190" fill="hsla(120, 100%, 90%, 0.5)" stroke="none" />
+
+          <rect x="10" y="-10"  width="364" height="198" fill="none" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="290" y1="-10" x2="320" y2="-40" stroke-width="2" stroke="black" />
+          <circle cx="290" cy="-10" r="4" fill="black" />
+          <text x="325" y="-35" text-anchor="start" font-size="16pt">border</text>
+          <line x1="235" y1="10" x2="320" y2="-75" stroke-width="2" stroke="black" />
+          <circle cx="235" cy="10" r="4" fill="black" />
+          <text x="325" y="-70" text-anchor="start" font-size="16pt">padding</text>
+
+          <text x="0" y="-50" text-anchor="start" font-size="20">padding: 20px &nbsp; 30px &nbsp; 40px &nbsp; 10px</text>
+          <circle cx="100" cy="-85" r="12" fill="hsla(0, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="100" y="-80" text-anchor="middle" font-size="14">1</text>
+          <circle cx="163" cy="-85" r="12" fill="hsla(240, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="163" y="-80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="220" cy="-85" r="12" fill="hsla(60, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="220" y="-80" text-anchor="middle" font-size="14">3</text>
+          <circle cx="280" cy="-85" r="12" fill="hsla(120, 100%, 90%, 0.5)" stroke="black" stroke-width="2" />
+          <text x="280" y="-80" text-anchor="middle" font-size="14">4</text>
+
+          <text x="180" y="16" text-anchor="middle" font-size="14">1</text>
+          <circle cx="180" cy="11" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="345" y="80" text-anchor="middle" font-size="14">2</text>
+          <circle cx="345" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="180" y="162" text-anchor="middle" font-size="14">3</text>
+          <circle cx="180" cy="157" r="10" fill="none" stroke="black" stroke-width="2" />
+          <text x="20" y="80" text-anchor="middle" font-size="14">4</text>
+          <circle cx="20" cy="75" r="10" fill="none" stroke="black" stroke-width="2" />
+        </svg>
+      </p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: red 2px solid;
+  padding: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="padding: 10px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen interior de 10 pixeles entre el texto y el borde.</p>
+
+              <p style="padding: 10px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen interior de 10 pixeles entre el texto y el borde.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: red 2px solid;
+  padding: 0px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="padding: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen interior entre el texto y el borde.</p>
+
+              <p style="padding: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen interior entre el texto y el borde.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="padding-lados">
+      <h2 class="con-aside">Márgenes interiores: las propiedades <span class="css-prop">padding-top</span>, <span class="css-prop">padding-right</span>, <span class="css-prop">padding-bottom</span> y <span class="css-prop">padding-left</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">padding-top</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-padding-top"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-top"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">padding-right</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-padding-right"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-right"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">padding-bottom</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-padding-bottom"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+
+        <p><span class="css-prop">padding-left</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-padding-left"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding-left"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Las propiedades <span class="css-prop">padding-top</span>, <span class="css-prop">padding-right</span>, <span class="css-prop">padding-bottom</span> y <span class="css-prop">padding-left</span> permiten establecer el tamaño del margen interior de forma independiente (arriba, derecha, abajo e izquierda respectivamente).</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="730" viewBox="-180 -90 730 340" font-family="sans-serif" font-size="18">
+          <rect x="0" y="0"  width="354" height="158" fill="none" stroke="red" stroke-width="10" />
+          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+
+          <polygon points="5,5 349,5 349,28 5,28" fill="hsla(0, 100%, 90%, 0.5)" stroke="red" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="349,5 349,153 326,153 326,5" fill="hsla(240, 100%, 90%, 0.5)" stroke="blue" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="349,153 5,153 5,131 349,131" fill="hsla(60, 100%, 90%, 0.5)" stroke="hsl(60, 100%, 30%)" stroke-width="2" stroke-dasharray="5 5" />
+          <polygon points="5,153 5,5 28,5 28,153" fill="hsla(120, 100%, 90%, 0.5)" stroke="green" stroke-width="2" stroke-dasharray="5 5" />
+          <text x="10" y="4" text-anchor="start">
+            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+            <tspan x="30" y="84">metido dentro de una caja</tspan>
+            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+          </text>
+
+          <line x1="180" y1="15" x2="180" y2="-60" stroke-width="2" stroke="black" />
+          <circle cx="180" cy="15" r="4" fill="black" />
+          <text x="180" y="-65" text-anchor="middle" font-size="16pt">padding-top</text>
+
+          <line x1="340" y1="80" x2="415" y2="80" stroke-width="2" stroke="black" />
+          <circle cx="340" cy="80" r="4" fill="black" />
+          <text x="425" y="85" text-anchor="start" font-size="16pt">padding-right</text>
+
+          <line x1="180" y1="143" x2="180" y2="218" stroke-width="2" stroke="black" />
+          <circle cx="180" cy="143" r="4" fill="black" />
+          <text x="180" y="238" text-anchor="middle" font-size="16pt">padding-bottom</text>
+
+          <line x1="15" y1="80" x2="-60" y2="80" stroke-width="2" stroke="black" />
+          <circle cx="15" cy="80" r="4" fill="black" />
+          <text x="-70" y="85" text-anchor="end" font-size="16pt">padding-left</text>
+        </svg>
+      </p>
+
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: red 2px solid;
+  padding-left: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="padding-left: 10px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen interior de 10 pixeles entre el texto y el borde. El resto de márgenes interiores los elige el navegador.</p>
+
+              <p style="padding-left: 10px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y un margen interior de 10 pixeles entre el texto y el borde. El resto de márgenes interiores los elige el navegador.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  padding-left: 0px;
+  border: red 2px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="padding-left: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen interior entre el texto y el borde. El resto de márgenes interiores los elige el navegador.</p>
+
+              <p style="padding-left: 0px; border: red 2px solid; text-align: justify;">Esto es un párrafo con borde de color rojo y sin margen interior entre el texto y el borde. El resto de márgenes interiores los elige el navegador.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="superposicion">
+      <h2 >Superposición de márgenes exteriores e interiores</h2>
+
+      <p>Únicamente se superponen los márgenes exteriores de dos elementos contiguos (horizontal o verticalmente). Es decir, el espacio entre dos elementos es igual al mayor de los márgenes exteriores de los elementos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 2px solid;
+  font-weight: bold;
+  margin: 20px;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene un margen de 20 píxeles alrededor suyo. El párrafo siguiente también. El espacio entre ambos párrafos es de 20 píxeles, no de 40 (20+20).</p>
+
+              <p style="margin: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene un margen de 20 píxeles alrededor suyo. El párrafo anterior también. El espacio entre ambos párrafos es de 20 píxeles, no de 40 (20+20).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p.e2 {
+  margin: 20px;
+}
+
+p {
+  border: black 2px solid;
+  font-weight: bold;
+}
+
+p.e1 {
+  margin: 30px;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 30px; border: black 2px solid; font-weight: bold;">Este párrafo tiene clase e1, es decir, un margen de 30 píxeles alrededor suyo. El párrafo siguiente tiene clase e2, es decir, un margen de 20 píxeles alrededor suyo. El espacio entre ambos párrafos es de 30 píxeles, no de 50 (30+20).</p>
+
+              <p style="margin: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene clase e2, es decir, un margen de 20 píxeles alrededor suyo. El párrafo anterior tiene clase e1, es decir, un margen de 30 píxeles alrededor suyo. El espacio entre ambos párrafos es de 30 píxeles, no de 50 (30+20).</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Los márgenes interiores de dos elementos contiguos (horizontal o verticalmente) no se superponen, independientemente de que los elementos lleven borde o no:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 2px solid;
+  font-weight: bold;
+  margin: 0px;
+  padding: 20px;
+} </code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 0px; padding: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene un margen interior de 20 píxeles alrededor suyo. El párrafo siguiente también. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+
+              <p style="margin: 0px; padding: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene un margen interior de 20 píxeles alrededor suyo. El párrafo anterior también. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-weight: bold;
+  margin: 0px;
+  padding: 20px;
+} </code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 0px; padding: 20px; font-weight: bold;">Este párrafo tiene un margen interior de 20 píxeles alrededor suyo. El párrafo siguiente también. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+
+              <p style="margin: 0px; padding: 20px; font-weight: bold;">Este párrafo tiene un margen interior de 20 píxeles alrededor suyo. El párrafo anterior también. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="corta" />
+
+      <p>Los márgenes exteriores e interiores de dos elementos contiguos (horizontal o verticalmente) tampoco se superponen, independientemente de que los elementos lleven borde:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 2px solid;
+  font-weight: bold;
+}
+
+p.e1 {
+  margin: 0px;
+  padding: 20px;
+}
+
+p.e2 {
+  margin: 20px;
+  padding: 0px;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 0px; padding: 20px; border: black 2px solid; font-weight: bold;">Este párrafo tiene clase e1, es decir, un margen interior de 20 píxeles alrededor suyo. El párrafo siguiente tiene clase e2, es decir, un margen exterior de 20 píxeles alrededor suyo. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+
+              <p style="margin: 20px; padding: 0px; border: black 2px solid; font-weight: bold;">Este párrafo tiene clase e2, es decir, un margen exterior de 20 píxeles alrededor suyo. El párrafo anterior tiene clase e1, es decir, un margen interior de 20 píxeles alrededor suyo. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-weight: bold;
+}
+
+p.e1 {
+  margin: 0px;
+  padding: 20px;
+}
+
+p.e2 {
+  margin: 20px;
+  padding: 0px;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <p style="margin: 0px; padding: 20px; font-weight: bold;">Este párrafo tiene clase e1, es decir, un margen interior de 20 píxeles alrededor suyo. El párrafo siguiente tiene clase e2, es decir, un margen exterior de 20 píxeles alrededor suyo. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+
+              <p style="margin: 20px; padding: 0px; font-weight: bold;">Este párrafo tiene clase e2, es decir, un margen exterior de 20 píxeles alrededor suyo. El párrafo anterior tiene clase e1, es decir, un margen interior de 20 píxeles alrededor suyo. El espacio entre ambos párrafos es de 40 píxeles (20+20).</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Los márgenes exteriores e interiores de dos elementos anidados tampoco se superponen, independientemente de que los elementos lleven borde:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 2px solid;
+  font-weight: bold;
+  margin: 20px;
+  padding: 0px;
+}
+
+div {
+  border: red 2px solid;
+  padding: 20px
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <div style="border: red 2px solid; padding: 20px">
+                <p style="margin: 20px; padding: 0px; border: black 2px solid; font-weight: bold;">Este párrafo tiene un margen exterior de 20 píxeles alrededor suyo. El párrafo está dentro de una división con margen interior de 20 píxeles. La separación entre bordes es de 40 píxeles (20+20).</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-weight: bold;
+  margin: 20px;
+  padding: 0px;
+}
+
+div {
+  padding: 20px
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-image: url(&#34;../img/fondos/cuadricula_transp.png&#34;); padding: 0px;">
+              <div style="padding: 20px">
+                <p style="margin: 20px; padding: 0px; font-weight: bold;">Este párrafo tiene un margen exterior de 20 píxeles alrededor suyo. El párrafo está dentro de una división con margen interior de 20 píxeles. El espacio alrededor es de 40 píxeles (20+20).</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section id="superposicion-html-body">
+        <h3>Superposición de márgenes exteriores e interiores de <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span></h3>
+
+        <p>Los márgenes exteriores e interiores de <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span> no se superponen ya que son elementos anidados, como puede comprobarse en la siguiente <a href="../ejemplos/html_body_margin_padding.html">página de ejemplo</a> o en las siguientes capturas de pantalla de esa página en Firefox. En esa página, tanto <span class="html-eti">&lt;html&gt;</span> como <span class="html-eti">&lt;body&gt;</span> tienen un <span class="css-prop">margin</span> y <span class="css-prop">padding</span> de 10px, por lo que espacio alrededor del contenido es de 40px en total (10px+10px+10px+10px).</p>
+
+        <table>
+          <tbody>
+            <tr>
+              <td><img alt="FF - margin y padding en html y body" src="../img/ff-ie/html_body_margin_padding_ff.png" title="FF - margin y padding en html y body" height="190" width="250" /></td>
+              <td><img alt="margin y padding en html y body" src="../img/otros/ejemplo_margin_padding_html_body.png" width="250" height="225" title="margin y padding en html y body" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En las capturas anteriores:</p>
+        <ul>
+          <li>los 10px exteriores (de color de fondo azul) corresponden al <span class="css-prop">margin</span> de <span class="html-eti">&lt;html&gt;</span>, </li>
+          <li>los siguientes 10px (de color de fondo azul) corresponden al <span class="css-prop">padding</span> de <span class="html-eti">&lt;html&gt;</span>, </li>
+          <li>los siguientes 10px (de color de fondo azul) corresponden al <span class="css-prop">margin</span> de <span class="html-eti">&lt;body&gt;</span>, </li>
+          <li>y los últimos 10px (de color de fondo amarillo) corresponden al <span class="css-prop">padding</span> de <span class="html-eti">&lt;body&gt;</span>.</li>
+        </ul>
+
+        <p>Es importante señalar que la imagen de fondo (<img alt="Cuadricula transparente" src="../img/fondos/cuadricula_transp.png" width="50" height="50" title="Cuadricula transparente" />) de la página no se coloca en la esquina superior izquierda de la ventana y se repite a partir de esa posición, sino que se coloca desplazada 10px a la derecha y hacia abajo de la esquina superior izquierda y se repite a partir de esa posición debido al <span class="css-prop">margin</span> de 10px de <span class="html-eti">&lt;html&gt;</span>, como se comenta en la <a href="css_fondos.html#fondos-margenes">lección de fondos</a>.</p>
+
+        <hr class="corta" />
+
+        <p>Los navegadores aplican de forma predeterminada algunos de estos márgenes, como se observa en el ejemplo siguiente. El borde de color <span class="css-valor">teal</span> que se ve en el lado izquierdo, superior y derecho se debe a márgenes de algunos elementos.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">html {
+  background: url("cuadricula.png") teal;
+}
+
+body {
+  background: url("cuadricula.png") white;
+}
+
+pre {
+}</code>
+</pre>
+              </td>
+              <td class="resul"><object type="text/html" data="../ejemplos/html_body_margin_padding_hmp_bmp.html" style="width: 400px; height:200px">ERROR (no puede mostrarse el objeto)</object></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Concretamente, los navegadores aplican <span class="css-prop">margin</span> en <span class="css-unidad">px</span> a <span class="html-eti">&lt;body&gt;</span>. Para verlo, lo podemos poner a cero:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">html {
+  background: url("cuadricula.png") teal;
+}
+
+body {
+  background: url("cuadricula.png") white;
+  margin: 0px;
+}
+
+pre {
+}</code>
+</pre>
+              </td>
+              <td class="resul"><object type="text/html" data="../ejemplos/html_body_margin_padding_hmp_bm0p.html" style="width: 400px; height:200px">ERROR (no puede mostrarse el objeto)</object></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El margen superior se debe al <span class="css-prop">margin</span> (en <span class="css-unidad">em</span>) del elemento <span class="html-eti">&lt;pre&gt;</span>. Para verlo, lo podemos poner a cero:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">html {
+  background: url("cuadricula.png") teal;
+}
+
+body {
+  background: url("cuadricula.png") white;
+  margin: 0px;
+}
+
+pre {
+  margin: 0px;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><object type="text/html" data="../ejemplos/html_body_margin_padding_hmp_bm0p2.html" style="width: 400px; height:200px">ERROR (no puede mostrarse el objeto)</object></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 28 de octubre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

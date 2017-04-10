@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comentarios al ejercicio Leyes de Murphy. Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link rel="icon" href="../../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Comentarios al ejercicio Leyes de Murphy</h1>
+
+    <nav>
+      <p>
+        <a href="../../../index.html"><img src="../../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../../index.html"><img src="../../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
+      </p>
+
+      <h2>Leyes de Murphy</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#comentarios-cabecera">Cabecera</a></li>
+          <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
+          <li><a href="#comentarios-clases">Clases</a></li>
+          <li><a href="#comentarios-posicionamiento">Posicionamiento</a></li>
+          <li><a href="#comentarios-estilos">Estilos</a></li>
+          <li><a href="#comentarios-solucion">Solución</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="comentarios-cabecera">
+      <h2>Cabecera</h2>
+
+      <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
+      <ul>
+        <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... /&gt;</span> necesaria en dispositivos móviles</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... /&gt;</span> de enlace a la hoja de estilo</li>
+      </ul>
+    </section>
+
+    <section id="comentarios-etiquetas">
+      <h2>Etiquetas</h2>
+
+      <p>Al desactivar la hoja de estilo se puede observar que las etiquetas de bloque utilizadas son <span class="html-eti">&lt;h1&gt;</span> y <span class="html-eti">&lt;p&gt;</span>.</p>
+
+      <p>No es necesario crear secciones o divisiones alrededor de cada cita, la forma rectangular y el borde se puede dar directamente a cada párrafo <span class="html-eti">&lt;p&gt;</span>.</p>
+    </section>
+
+    <section id="comentarios-clases">
+      <h2>Clases</h2>
+
+      <p>Cada ley de Murphy tiene una posición, color y alineación distinto, así que hay que dar una clase o un <span class="html-atri">id</span> distinto a cada una.</p>
+
+      <p>En este caso se ha preferido utilizar <span class="html-atri">id</span>, porque los valores de esos atributos no se deberían repetir (no querríamos que dos leyes de Murphy se mostraran en el mismo lugar).</p>
+    </section>
+
+    <section id="comentarios-posicionamiento">
+      <h2>Posicionamiento</h2>
+
+      <p>La disposición de elementos en la página es la siguiente:</p>
+
+      <p><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+              width="650" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040"
+              fill="#4DB6AC" stroke="black" stroke-width="3" />
+        <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
+
+        <rect x="60" y="100" width="1800" height="80"
+              fill="white" stroke="black" stroke-width="3" />
+        <text x="80" y="160" font-family="sans-serif" font-size="50">h1</text>
+
+        <rect x="260" y="200" width="1400" height="150"
+              fill="#DBC9A6" stroke="black" stroke-width="3" />
+        <text x="280" y="260" font-family="sans-serif" font-size="50">p m1</text>
+
+        <rect x="60" y="420" width="800" height="250"
+              fill="#FFFFB3" stroke="black" stroke-width="3" />
+        <text x="80" y="480" font-family="sans-serif" font-size="50">p m3</text>
+
+        <rect x="1060" y="420" width="800" height="250"
+              fill="#C6FFFF" stroke="black" stroke-width="3" />
+        <text x="1080" y="480" font-family="sans-serif" font-size="50">p m4</text>
+
+        <rect x="60" y="760" width="800" height="250"
+              fill="#FFE5FF" stroke="black" stroke-width="3" />
+        <text x="80" y="820" font-family="sans-serif" font-size="50">p m5</text>
+
+        <rect x="1060" y="760" width="800" height="250"
+              fill="#FFB4B4" stroke="black" stroke-width="3" />
+        <text x="1400" y="820" font-family="sans-serif" font-size="50">p m6</text>
+
+        <rect x="580" y="590" width="800" height="250"
+              fill="#91FF91" stroke="black" stroke-width="3" />
+        <text x="600" y="650" font-family="sans-serif" font-size="50">p m2</text>
+        </svg></p>
+
+      <p>Cada ley de Murphy está una posición independiente e incluso se superponen. Eso se puede conseguir con posicionamiento absoluto.</p>
+
+      <p>Al variar el ancho de la ventana se puede observar que el tamaño de los párrafos cambia, pero su posición relativa no. Al hacer zoom, el tamaño de la letra cambia, pero su posición no. Eso indica que tanto el tamaño como todas las posiciones están definidos en porcentaje (<span class="css-unidad">%</span>).</p>
+
+      <p>El dibujo siguiente muestra cómo se podría definir el tamaño y la posición de un par de párrafos:</p>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="650" viewBox="0 0 1920 1080" style="background-color: #EEEEEE" font-family="sans-serif">
+
+          <marker id="triangle-start" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="180" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <marker id="triangle-end" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <marker id="triangle-up" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="-90" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <rect x="20" y="20" width="1880" height="1040"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="40" y="80" font-size="50">body</text>
+
+
+          <rect x="260" y="200" width="1400" height="150"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="280" y="260" font-family="sans-serif" font-size="50">p m1</text>
+
+          <line x1="20" y1="275" x2="230" y2="275"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" />
+          <text x="30" y="265" font-size="50" fill="red">left</text>
+
+          <line x1="900" y1="20" x2="900" y2="170"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" />
+          <text x="920" y="70" font-size="50" fill="red">top</text>
+
+          <line x1="295" y1="295" x2="1630" y2="295"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" marker-start="url(#triangle-start)" />
+          <text x="650" y="285" font-size="50" fill="red">width</text>
+
+          <line x1="1100" y1="230" x2="1100" y2="320"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" marker-start="url(#triangle-up)" />
+          <text x="1120" y="265" font-size="50" fill="red">height</text>
+
+
+          <rect x="60" y="420" width="800" height="250"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="80" y="480" font-family="sans-serif" font-size="50">p m3</text>
+
+          <rect x="1060" y="420" width="800" height="250"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="1080" y="480" font-family="sans-serif" font-size="50">p m4</text>
+
+          <rect x="60" y="760" width="800" height="250"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="80" y="820" font-family="sans-serif" font-size="50">p m5</text>
+
+
+          <rect x="1060" y="760" width="800" height="250"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="1400" y="820" font-family="sans-serif" font-size="50">p m6</text>
+
+          <line x1="1900" y1="860" x2="1890" y2="860"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" />
+          <text x="1800" y="840" font-size="50" fill="red">right</text>
+
+          <line x1="1460" y1="1060" x2="1460" y2="1040"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" />
+          <text x="1280" y="1050" font-size="50" fill="red">bottom</text>
+
+          <line x1="1090" y1="900" x2="1830" y2="900"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" marker-start="url(#triangle-start)" />
+          <text x="1200" y="890" font-size="50" fill="red">width</text>
+
+          <line x1="1550" y1="790" x2="1550" y2="980"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" marker-start="url(#triangle-up)" />
+          <text x="1570" y="830" font-size="50" fill="red">height</text>
+
+
+          <rect x="580" y="590" width="800" height="250"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="600" y="650" font-family="sans-serif" font-size="50">p m2</text>
+
+
+
+        </svg>
+      </p>
+
+
+      <p>La segunda ley de Murphy se superpone al resto. Eso se consigue utilizando la propiedad <span class="css-prop">z-index</span> en la segunda ley de Murphy. No es necesario utilizar la propiedad <span class="css-prop">z-index</span> en el resto de leyes de Murphy ya que los elementos sin <span class="css-prop">z-index</span> se muestran por detrás de los elementos con <span class="css-prop">z-index</span>.</p>
+
+      <p>Al situar el ratón sobre una ley de Murphy, esa ley se superpone a la segunda. Eso se consigue utilizando la propiedad <span class="css-prop">z-index</span> en la pseudo-clase <span class="css-pseudo">p:hover</span>, dándole un valor superior al que tiene el <span class="css-prop">z-index</span> de la segunda ley de Murphy.</p>
+    </section>
+
+    <section id="comentarios-estilos">
+      <h2>Estilos</h2>
+
+      <p>Estas son las propiedades CSS utilizadas:</p>
+
+      <ul>
+        <li>Página (<span class="html-eti">body</span>):
+          <ul>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>tipo de letra: <span class="css-prop">font-family</span></li>
+          </ul>
+        </li>
+        <li>Título principal (<span class="html-eti">h1</span>):
+          <ul>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Párrafo (<span class="html-eti">p</span>):
+          <ul>
+            <li>margen interior: <span class="css-prop">padding</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          </ul>
+        </li>
+        <li>Primera ley de Murphy (<span class="html-eti">p#m1</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde superior: <span class="css-prop">top</span></li>
+            <li>distancia al borde izquierdo: <span class="css-prop">left</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Segunda ley de Murphy (<span class="html-eti">p#m2</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde superior: <span class="css-prop">top</span></li>
+            <li>distancia al borde izquierdo: <span class="css-prop">left</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>profundidad: <span class="css-prop">z-index</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Tercera ley de Murphy (<span class="html-eti">p#m3</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde superior: <span class="css-prop">top</span></li>
+            <li>distancia al borde izquierdo: <span class="css-prop">left</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Cuarta ley de Murphy (<span class="html-eti">p#m4</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde superior: <span class="css-prop">top</span></li>
+            <li>distancia al borde derecho: <span class="css-prop">right</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Quinta ley de Murphy (<span class="html-eti">p#m5</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde inferior: <span class="css-prop">bottom</span></li>
+            <li>distancia al borde izquierdo: <span class="css-prop">left</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Sexta ley de Murphy (<span class="html-eti">p#m6</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde inferior: <span class="css-prop">bottom</span></li>
+            <li>distancia al borde derecho: <span class="css-prop">right</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>alto: <span class="css-prop">height</span></li>
+            <li>borde: <span class="css-prop">border</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Cursor sobre párrafo (<span class="html-eti">p:hover</span>):
+          <ul>
+            <li>profundidad: <span class="css-prop">z-index</span></li>
+          </ul>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="comentarios-solucion">
+      <h2>Solución del ejercicio</h2>
+
+      <p>El código HTML del ejercicio puede consultarse abriendo la <a href="murphy_1_formateado.html">página web del ejercicio Leyes de Murphy</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
+
+      <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="murphy_1.css">hoja de estilo del ejercicio Leyes de Murphy</a>.</p>
+
+      <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir el mismo resultado, por lo que la solución no es nunca única.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 16 de enero de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

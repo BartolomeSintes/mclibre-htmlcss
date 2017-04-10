@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comentarios al ejercicio HTML 5 + CSS 3. Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link rel="icon" href="../../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Comentarios al ejercicio HTML 5 + CSS 3</h1>
+
+    <nav>
+      <p>
+        <a href="../../../index.html"><img src="../../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../../index.html"><img src="../../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
+      </p>
+
+      <h2>Citas de HTML 5 + CSS 3</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#comentarios-cabecera">Cabecera</a></li>
+          <li><a href="#comentarios-hojas-estilo">Hojas de estilo</a></li>
+          <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
+          <li><a href="#comentarios-clases">Clases</a></li>
+          <li><a href="#comentarios-fuentes">Fuentes</a></li>
+          <li><a href="#comentarios-fuentes-iconos">Fuentes de iconos</a></li>
+          <li><a href="#comentarios-estilos">Estilos</a></li>
+          <li><a href="#comentarios-solucion">Solución</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="comentarios-cabecera">
+      <h2>Cabecera</h2>
+
+      <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
+      <ul>
+        <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... /&gt;</span> necesaria en dispositivos móviles</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... /&gt;</span> de enlace a la hoja de estilo</li>
+      </ul>
+    </section>
+
+    <section id="comentarios-hojas-estilo">
+      <h2>Hojas de estilo</h2>
+
+      <p>La hoja de estilo de la fuente icomoon personalizada presupone que la hoja de estilo style.css se encuentra en la misma carpeta que la página pero que la fuente icomoon.woff se encuentra en la carpeta <strong>fonts</strong>.</p>
+
+      <p>En el ejercicio resuelto:</p>
+
+      <ul>
+        <li>la hoja de estilo style.css se ha incluido en la hoja de estilo del ejercicio, por lo que la página web contiene sólo un enlace a hojas de estilo (la hoja style.css de icomoon no está enlazada).</li>
+        <li>la regla <span class="css-arroba">@font-face</span> hace referencia únicamente a la fuente en formato woff (que está incluida en la misma carpeta que la página web y la hoja de estilo).</li>
+      </ul>
+    </section>
+
+    <section id="comentarios-etiquetas">
+      <h2>Etiquetas</h2>
+
+      <p>Al desactivar la hoja de estilo se pueden identificar las siguientes etiquetas:</p>
+      <ul>
+        <li>Etiquetas de bloque: <span class="html-eti">&lt;p&gt;</span></li>
+        <li>Etiquetas en línea: <span class="html-eti">&lt;br /&gt;</span> en todos los párrafos</li>
+      </ul>
+
+      <p>Los dibujos desaparecen al quitar el estilo, lo que indica que se tratan de fuentes de iconos, por lo que se utilizará la etiqueta <span class="html-eti">&lt;i&gt;</span> (se podría hacer con cualquier otra etiqueta de texto en línea). Los dibujos se han obtenido de la fuente <a href="https://icomoon.io/app/#/select/">icomoon.io</a>, que se incluye en el fichero descargado. Los dos primeros iconos están en el primer párrafo (flotando a izquierda y derecha), el resto pueden estar en párrafos <span class="html-eti">&lt;p&gt;</span> que sólo contienen los iconos.</p>
+
+      <p>Las líneas dejan de verse, así que se trata de bordes. Esto se puede resolver de dos formas:</p>
+
+      <ul>
+        <li>Poniendo bordes a algunos párrafos (a los que habría que darle clases)</li>
+        <li>Creando divisiones con borde (la primera división sólo contiene el primer párrafo, las siguientes contienen un párrafo de texto y un párrafo con iconos).</li>
+      </ul>
+
+      <p>En este caso se ha hecho de la segunda manera.</p>
+    </section>
+
+    <section id="comentarios-clases">
+      <h2>Clases</h2>
+
+      <p>Los dos iconos incluidos en el primer párrafo están flotando a izquerda y derecha, por lo que se necesitarán dos clases de elementos <span class="html-eti">&lt;i&gt;</span>:</p>
+
+      <ul>
+        <li>clase <span class="css-valor">zquierda</span>: imagen a la izquierda.</li>
+        <li>clase <span class="css-valor">derecha</span>: imagen a la derecha.</li>
+      </ul>
+
+      <p>La propiedad <span class="css-prop">clear</span> se puede aplicar en las divisiones.</p>
+
+      <p>Además se utilizan clases para insertar los iconos, que se comentan a continación.</p>
+    </section>
+
+    <section id="comentarios-fuentes">
+      <h2>Fuentes</h2>
+
+      <p>En este ejercicio se utiliza la fuente de Google Fonts <span class="css-valor">Black Ops Font</span> y una fuente de iconos creada en <a href="https://icomoon.io/app/#/select/">icomoon.io</a>.</p>
+
+      <p>En el archivo comprimido se incluye la fuente de iconos que contiene únicamente los iconos utilizados en la página, pero se anima a los alumnos a que creen la fuente de icono utilizando la <a href="https://icomoon.io/app/#/select">aplicación web icomoon.io</a>.</p>
+    </section>
+
+    <section id="comentarios-fuentes-iconos">
+      <h2>Fuentes de iconos</h2>
+
+      <p><a href="https://icomoon.io/app/#/select/">icomoon.io</a>: Los dibujos utilizados corresponden a las clases de la fuente icomoon personalizada. Las clases de los iconos son las siguientes (en esta fuente sólo es necesario asignar una clase):</p>
+
+      <ul>
+        <li>clase <span class="css-valor">icon-html5</span></li>
+        <li>clase <span class="css-valor">icon-css3</span></li>
+        <li>clase <span class="css-valor">icon-windows8</span></li>
+        <li>clase <span class="css-valor">icon-apple</span></li>
+        <li>clase <span class="css-valor">icon-android</span></li>
+        <li>clase <span class="css-valor">icon-tux</span></li>
+        <li>clase <span class="css-valor">icon-firefox</span></li>
+        <li>clase <span class="css-valor">icon-chrome</span></li>
+        <li>clase <span class="css-valor">icon-IE</span></li>
+        <li>clase <span class="css-valor">icon-happy</span></li>
+      </ul>
+
+      <p>Como cada icono tiene un color distinto, el color se puede definir en la clase.</p>
+    </section>
+
+    <section id="comentarios-estilos">
+      <h2>Estilos</h2>
+
+      <p>Al restablecer el estilo se pueden identificar las propiedades utilizadas:</p>
+
+      <ul>
+        <li>Fuentes de iconos (<span class="css-arroba">@font-face</span>):
+          <ul>
+            <li>tipo de letra: <span class="css-prop">font-family</span></li>
+            <li>ubicación de la fuente: <span class="css-prop">src</span></li>
+          </ul>
+        </li>
+        <li>Página (<span class="html-eti">body</span>):
+          <ul>
+            <li>tipo de letra: <span class="css-prop">font-family</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>División (<span class="html-eti">div</span>):
+          <ul>
+            <li>fin de posicionamiento flotante: <span
+                                                       class="css-prop">clear</span></li>
+            <li>margen izquierdo: <span class="css-prop">margin-left</span></li>
+            <li>margen derecho: <span class="css-prop">margin-right</span></li>
+            <li>borde inferior: <span class="css-prop">border-bottom</span></li>
+          </ul>
+        </li>
+        <li>Iconos (todos) (<span class="html-eti">i</span>):
+          <ul>
+            <li>tipo de letra: <span class="css-prop">font-family</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+            <li>margen izquierdo: <span class="css-prop">margin-left</span></li>
+            <li>margen derecho: <span class="css-prop">margin-right</span></li>
+          </ul>
+        </li>
+        <li>Icono izquierdo en el primer párrafo (<span class="html-eti">i.izquierda</span>):
+          <ul>
+            <li>posicionamiento flotante: <span class="css-prop">float</span></li>
+            <li>margen derecho: <span class="css-prop">margin-right</span></li>
+          </ul>
+        </li>
+        <li>Icono derecho en el primer párrafo (<span class="html-eti">i.derecha</span>):
+          <ul>
+            <li>posicionamiento flotante: <span class="css-prop">float</span></li>
+            <li>margen izquierdo: <span class="css-prop">margin-left</span></li>
+          </ul>
+        </li>
+        <li>Icono (cada uno de ellos) (<span class="html-eti">i.icon-...</span>):
+          <ul>
+            <li>posicionamiento flotante: <span class="css-prop">float</span></li>
+            <li>color: <span class="css-prop">color</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="comentarios-solucion">
+      <h2>Solución del ejercicio</h2>
+
+      <p>El código HTML del ejercicio puede consultarse abriendo la <a href="html5css3_formateado.html">página web del ejercicio HTML 5 + CSS 3</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
+
+      <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="html5css3.css">hoja de estilo del ejercicio HTML 5 + CSS 3</a>.</p>
+
+      <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir lo mismo, por lo que la solución no es nunca única.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 6 de enero de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

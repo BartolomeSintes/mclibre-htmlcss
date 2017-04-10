@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tamaño. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      p.eje-tam1 { width: 330px; height: 50px; border: black 1px solid; }
+      p.eje-tam2 { width: 350px; height: 50px; border: black 1px solid; }
+      p.eje-tam3 { width: 80%; height: 50px; border: black 1px solid; }
+      p.eje-tam4 { width: 80%; min-width: 330px; height: 50px; border: black 1px solid; }
+      p.eje-tam5 { width: 80%; max-width: 350px; height: 50px; border: black 1px solid; }
+      p.eje-tam6 { width: 80%; min-width: 330px; max-width: 350px; height: 50px; border: black 1px solid; }
+      div.eje-overflow { width: 100px; height: 100px; border: black 1px solid; }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS 2: Tamaño</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS 2: Tamaño</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#width-height">Tamaño: <span class="css-prop">width</span> y <span class="css-prop">height</span></a>
+            <ul>
+              <li><a href="#tamano-imagenes">Tamaño imágenes</a></li>
+            </ul>
+          </li>
+          <li><a href="#min-max-width-height">Tamaño mínimo y máximo: <span class="css-prop">min-width</span>, <span class="css-prop">min-height</span>, <span class="css-prop">max-width</span> y <span class="css-prop">max-height</span></a></li>
+          <li><a href="#overflow">Desbordamiento: <span class="css-prop">overflow</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="width-height">
+      <h2 class="con-aside">Tamaño: <span class="css-prop">width</span> y <span class="css-prop">height</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">width</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#the-width-property"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/width"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">height</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#the-height-property"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/height"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">width</span> establece el ancho de un elemento mediante un valor numérico (con su unidad) o un porcentaje (con respecto al elemento padre). Si no se establece la anchura de un elemento, el elemento ocupa todo el ancho disponible.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid;">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  width: 50%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; width: 50%;">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  width: 20em;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; width: 20em;">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  width: 200px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; width: 200px;">Hola, mundo</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La propiedad <span class="css-prop">height</span> establece la altura de un elemento mediante un valor numérico (con su unidad), pero no en porcentaje. Si no se establece la altura de un elemento, el elemento ocupa el espacio necesario para mostrar su contenido (sin contar los elementos flotantes).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid;">Si no se establece la altura de un elemento, el elemento ocupa el espacio necesario para mostrar su contenido (sin contar los elementos flotantes).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  height: 50%;
+  /* Los navegadores no hacen caso de esta propiedad */
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; height: 50%;">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  height: 3em;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; height: 3em;">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid;
+  height: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="border: black 1px solid; height: 100px;">Hola, mundo</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si se establece la anchura y altura de un elemento, el contenido del elemento puede no caber en el tamaño asignado. La <a href="#overflow">propiedad <span class="css-prop">overflow</span></a> establece el comportamiento en esto casos.</p>
+
+      <section id="tamano-imagenes">
+        <h3>Tamaño de imágenes</h3>
+
+        <p>Las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span> también se pueden aplicar a imágenes (esos valores tienen prioridad sobre los establecidos en los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de la etiqueta <span class="html-eti">&lt;img&gt;</span>).</p>
+
+        <p>Si la etiqueta <span class="html-eti">&lt;img&gt;</span> no tiene los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>:</p>
+
+        <ul>
+          <li>si sólo se indica una propiedad (<span class="css-prop">width</span> o <span class="css-prop">height</span>), la imagen cambia de tamaño manteniendo la proporción.</li>
+          <li>si se indican las dos propiedades (<span class="css-prop">width</span> y <span class="css-prop">height</span>), la imagen cambia al tamaño indicado.</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td rowspan="2" class="resul"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td rowspan="2" class="resul"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" style="width: 200px;" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  width: 200px;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" style="height: 50px;" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  height: 50px;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml"><pre><code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" /&gt;&lt;/p&gt;</code></pre></td>
+              <td class="resul" rowspan="2"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" style="width: 200px; height: 50px" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  height: 50px;
+  width: 200px;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si la etiqueta <span class="html-eti">&lt;img&gt;</span> tiene los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>:</p>
+
+        <ul>
+          <li>si sólo se indica una propiedad (<span class="css-prop">width</span> o <span class="css-prop">height</span>), la imagen cambia de tamaño solamente en la dimensión indicada.</li>
+          <li>si se indican las dos propiedades (<span class="css-prop">width</span> y <span class="css-prop">height</span>), la imagen cambia al tamaño indicado.</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png"
+  width="59" height="35" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td rowspan="2" class="resul"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" width="59" height="35" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png"
+  width="59" height="35" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" width="159" height="35" style="width: 200px;" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  width: 200px;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png"
+  width="59" height="35" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2"><p><span style="height: 100px;"></span><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" width="59" height="35" style="height: 50px;" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  height: 100px;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org"
+  src="../img/cdlibre_logo.png"
+  width="59" height="35" /&gt;&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2"><p><span style="height: 100px; width: 200px"></span><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" width="59" height="35" style="height: 50px; width: 200px" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  height: 100px;
+  width: 200px;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si el tamaño se expresa en porcentaje, se interpreta con respecto al elemento que lo contiene. En el ejemplo siguiente, la imagen ocupa la mitad del espacio.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml"><pre><code class="language-html">&lt;p&gt;&lt;img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" /&gt;&lt;/p&gt;</code></pre>
+              </td>
+              <td class="resul" rowspan="2"><p><img alt="Logotipo de cdlibre.org" src="../img/cdlibre_logo.png" style="width: 50%;" /></p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">img {
+  width: 50%;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="min-max-width-height">
+      <h2 class="con-aside">Tamaño mínimo y máximo: <span class="css-prop">min-width</span>, <span class="css-prop">min-height</span>, <span class="css-prop">max-width</span> y <span class="css-prop">max-height</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">min-width</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-min-width"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-width"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">max-width</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-max-width"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-width"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">min-height</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-min-height"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/min-height"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">max-height</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-max-height"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/max-height"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Las propiedades <span class="css-prop">min-width</span> y <span class="css-prop">min-height</span> establecen el tamaño mínimo de un elemento mediante un valor numérico (con su unidad) o un porcentaje (con respecto al elemento padre).</p>
+
+      <p>Las propiedades <span class="css-prop">max-width</span> y <span class="css-prop">max-height</span> establecen el tamaño máximo de un elemento mediante un valor numérico (con su unidad) o un porcentaje (con respecto al elemento padre).</p>
+
+      <hr class="corta" />
+
+      <p>Los ejemplos siguientes muestran el funcionamiento de las propiedades anteriores. Los tamaños de división definidos en porcentaje se refieren a porcentajes con respecto al ancho de la celda de la tabla, que a su vez depende del ancho de la ventana del navegador. Al estrechar la ventana se puede observar cómo se estrechan las divisiones cuyo tamaño está expresado en porcentaje, mientras que permanecen iguales aquellas cuyo tamaño está expresado en píxeles, y cómo las propiedades <span class="css-prop">min-width</span> y <span class="css-prop">max-width</span> limitan el estrechamiento.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  width: 250px;<br />}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam2">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  width: 200px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam1">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  width: 80%; <br />}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam3">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  min-width: 200px;
+  width: 80%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam4">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  max-width: 250px;<br />  width: 80%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam5">Hola, mundo</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  border: black 1px solid; height: 50px;
+  max-width: 250px;<br />  min-width: 200px;
+  width: 80%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p class="eje-tam6">Hola, mundo</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="overflow">
+      <h2 class="con-aside">Desbordamiento: <span class="css-prop">overflow</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">overflow</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visufx.html#overflow"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">overflow</span> establece el tratamiento que debe dar el navegador al contenido que no cabe en el elemento padre. Los valores posibles de esta propiedad son: <span class="css-valor">visible</span>, <span class="css-valor">hidden</span> (oculto), <span class="css-valor">scroll</span> (mostrar siempre barras de desplazamiento), <span class="css-valor">auto</span> (mostrar barras cuando sea necesario). El valor por omisión es <span class="css-valor">visible</span>.</p>
+
+      <p>Si está definido el tamaño del elemento y <span class="css-prop">overflow</span> tiene el valor <span class="css-valor">visible</span>, el contenido desborda el elemento y se superpone a los siguientes elementos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr style="height: 150px">
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow">
+                <p>Esta división contiene un párrafo bastante largo que no cabe en el tamaño asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+          <tr style="height: 150px">
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  overflow: visible;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow" style="overflow: visible">
+                <p>Esta división contiene un párrafo bastante largo que no cabe en el tamaño asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+          <tr style="height: 150px">
+            <td class="codcss"><pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow" style="overflow: hidden">
+                <p>Esta división contiene un párrafo bastante largo que no cabe en el tamaño asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  overflow: scroll;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow" style="overflow: scroll">
+                <p>Esta división contiene un párrafo bastante largo que no cabe en el tamaño asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  overflow: auto;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow" style="overflow: auto">
+                <p>Esta división contiene un párrafo bastante largo que no cabe en el tamaño asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 1px solid;
+  height: 100px;
+  overflow: auto;
+  width: 100px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div class="eje-overflow" style="overflow: auto">
+                <p>Esta_división_contiene_un_párrafo_bastante_largo_que_no_cabe_en_el_tamaño_asignado.</p>
+              </div>
+
+              <p>Este párrafo ya está fuera de la división.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr class="corta" />
+
+    <p>El valor <span class="css-valor">auto</span> de la propiedad <span class="css-prop">overflow</span> también se puede utilizar para que los elementos flotantes se tengan en cuenta al calcular el tamaño de los elementos que los contienen, como se comenta en la <a href="css_posicionamiento_flotante.html#tamano-con-flotantes">lección sobre posicionamiento flotante</a>.</p>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 7 de enero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

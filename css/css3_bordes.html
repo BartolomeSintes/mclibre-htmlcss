@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bordes. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 3: Bordes</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS 3: Bordes</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#css2-border">Propiedades bordes CSS 2</a></li>
+          <li><a href="#imagenes">Imágenes de bordes</a>
+            <ul>
+              <li><a href="#border-image"><span class="css-prop">border-image</span></a></li>
+              <li><a href="#border-image-source">Imagen: <span class="css-prop">border-image-source</span></a></li>
+              <li><a href="#border-image-slice">Troceado: <span class="css-prop">border-image-slice</span></a></li>
+              <li><a href="#border-image-width">Área: <span class="css-prop">border-image-width</span></a></li>
+              <li><a href="#border-image-outset">Extensión: <span class="css-prop">border-image-outset</span></a></li>
+              <li><a href="#border-image-repeat">Repetición: <span class="css-prop">border-image-repeat</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#box-decoration-break">Bordes elementos cortados: <span class="css-prop">box-decoration-break</span></a></li>
+          <li><a href="#box-shadow">Sombras: <span class="css-prop">box-shadow</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css3-background/">CSS 3: Fondos y bordes</a>, actualmente (octubre de 2016) en elaboración, permite definir bordes en cualquier elemento.</p>
+
+    <section id="css2-border">
+      <h2>Propiedades de bordes CSS 2</h2>
+
+      <p>Las propiedades relacionadas con bordes definidas en la recomendación CSS 2.1 y que también se encuentran en la futura recomendación <a href="https://www.w3.org/TR/css3-background/">CSS 3: Fondos y bordes</a> son las siguientes:</p>
+
+      <ul>
+        <li><span class="css-prop">border</span></li>
+        <li><span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span></li>
+        <li><span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></li>
+        <li><span class="css-prop">border-top-color</span>, <span class="css-prop">border-right-color</span>, <span class="css-prop">border-bottom-color</span>, <span class="css-prop">border-left-color</span>, <span class="css-prop">border-top-width</span>, <span class="css-prop">border-right-width</span>, <span class="css-prop">border-bottom-width</span>, <span class="css-prop">border-left-width</span>, <span class="css-prop">border-top-style</span>, <span class="css-prop">border-right-style</span>, <span class="css-prop">border-bottom-style</span> y <span class="css-prop">border-left-style</span></li>
+      </ul>
+
+      <p>Estas propiedades se explican detalladamente en la lección <a href="css_bordes.html">CSS 2/3: Bordes</a>.</p>
+    </section>
+
+    <section id="imagenes">
+      <h2>Imágenes de bordes: <span class="css-prop">border-image</span></h2>
+
+      <section id="border-image">
+        <h3>La propiedad compuesta <span class="css-prop">border-image</span></h3>
+
+        <p class="incompleto">Por escribir</p>
+
+      </section>
+
+      <section id="border-image-source">
+        <h3>Imagen de borde: <span class="css-prop">border-image-source</span></h3>
+
+        <p>La propiedad <span class="css-prop">border-image-source</span> establece la imagen a utilizar como imagen de borde.</p>
+
+        <p>El elemento tiene que tener definido un borde y la imagen se amplía o reduce para mostrarse completa.</p>
+
+        <p>Si sólo se utiliza esta propiedad, la imagen se muestra en las cuatro esquinas del elemento.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: black 50px solid;
+  border-image-source: url("bola.png");
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; border: 50px solid black; border-image-source: url(&#34;../img/fondos/fo_bola_100.png&#34;);">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Bola azul" src="../img/fondos/fo_bola_100.png" width="100" height="105" title="Bola azul" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="border-image-slice">
+        <h3>Troceado de la imagen de borde: <span class="css-prop">border-image-slice</span></h3>
+
+        <p>La propiedad <span class="css-prop">border-image-slice</span> permite trocear la imagen de borde de manera que cada trozo se gaste en un lado del bordeestablece la imagen a utilizar como imagen de borde.</p>
+
+        <p>Los posibles valores de la propiedad <span class="css-prop">border-image-slice</span> son:</p>
+
+        <ul>
+          <li>de uno a cuatro valores numéricos (porcentajes o números sin unidades): se interpretan como píxeles en imágenes de mapa de bits o como coordenadas en imágenes vectoriales.
+
+            <p>Los valores numéricos indican a qué distancia de los bordes se recorta la imagen, como muestra la imagen siguiente:</p>
+
+            <p class="centrado"><img alt="Propiedad border-image-slice" src="../img/css/border-image-slice.png" width="343" height="277" title="Propiedad border-image-slice" /></p>
+
+            <p>Cada uno de lo ocho trozos (descartando el trozo central) se utiliza en cada una de las ocho zonas correspondientes del borde.</p>
+
+            <p>Como en otras propiedades en las que se pueden escribir de uno a cuatro valores:</p>
+
+            <ul>
+              <li>si sólo se escribe un valor, este se aplica a los cuatro lados</li>
+              <li>si se escriben dos valores, el primero se aplica arriba y abajo y el segundo a derecha e izquierda</li>
+              <li>si se escriben tres valores, el primero se aplica arriba, el segundo a derecha e izquierda y el tercero abajo</li>
+              <li>si se escriben cuatro valores, el primero se aplica arriba, el segundo a la derecha, el tercero abajo y el cuarto a la izquierda</li>
+            </ul>
+          </li>
+          <li><span class="css-valor">fill</span>:este valor hace que la parte central de la imagen se utilice para rellenar el elemento.</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 27px solid;
+  border-image-source: url("pastilla_60.png");
+  border-image-slice: 27;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: 27px solid silver; border-image-source: url(&#34;../img/fondos/fo_pastilla_60.png&#34;); border-image-slice: 27;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_pastilla_60.png" width="259" height="60" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 27px solid;
+  border-image-source: url("pastilla_60.png");
+  border-image-slice: 27 fill;
+
+  color: white;
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="color: white; text-align: justify; padding: 10px;  border: 27px solid silver; border-image-source: url(&#34;../img/fondos/fo_pastilla_60.png&#34;); border-image-slice: 27 fill;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_pastilla_60.png" width="259" height="60" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 75px solid;
+  border-image-source: url("marco_200.png");
+  border-image-slice: 75;
+
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; border: 75px solid silver; border-image-source: url(&#34;../img/fondos/fo_marco_200.png&#34;); border-image-slice: 75;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver black 10px;
+  border-width: 50px 80px 20px 80px;
+  border-image-source: url("ventana.png");
+  border-image-slice: 50 80 20 80;
+
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; border: 75px solid silver; border-width: 50px 80px 20px 80px; border-image-source: url(&#34;../img/fondos/fo_ventana.png&#34;); border-image-slice: 50 80 20 80;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de fondo" src="../img/fondos/fo_ventana.png" width="170" height="90" title="Ejemplo de imagen de fondo" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>La propiedad <span class="css-prop">border-image-slice</span> establece cómo se recorta la imagen, pero el tamaño de la imagen se escala al ancho del borde:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 40px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 40px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="border-image-width">
+        <h3>Área de la imagen de borde: <span class="css-prop">border-image-width</span></h3>
+
+        <p>La propiedad <span class="css-prop">border-image-width</span> permite definir el tamaño del espacio ocupado por la imagen de borde:</p>
+
+        <p>Los posibles valores de la propiedad <span class="css-prop">border-image-width</span> son:</p>
+
+        <ul>
+          <li>de uno a cuatro valores numéricos:
+            <ul>
+              <li><span class="css-valor">distancia</span>: se interpretan como tal</li>
+              <li><span class="css-valor">porcentajes</span>: se interpretan como porcentaje de todo el elemento con borde</li>
+              <li><span class="css-valor">números sin unidades</span>: se interpretan multplicando el valor por el tamaño del borde del elemento.</li>
+            </ul>
+            <p>Como en otras propiedades en las que se pueden escribir de uno a cuatro valores:</p>
+            <ul>
+              <li>si sólo se escribe un valor, este se aplica a los cuatro lados</li>
+              <li>si se escriben dos valores, el primero se aplica arriba y abajo y el segundo a derecha e izquierda</li>
+              <li>si se escriben tres valores, el primero se aplica arriba, el segundo a derecha e izquierda y el tercero abajo</li>
+              <li>si se escriben cuatro valores, el primero se aplica arriba, el segundo a la derecha, el tercero abajo y el cuarto a la izquierda</li>
+            </ul>
+          </li>
+          <li><span class="css-valor">auto</span>:se toma el valor definido con <span class="css-prop">border-image-slice</span></li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  <span class="codigo-resaltado">border-image-width: 20px 40px;</span>
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+ El tamaño de la imagen de borde es:
+ - 20 px arriba y abajo
+ - 40 px a derecha e izquierda
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21; border-image-width: 20px 40px;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  <span class="codigo-resaltado">border-image-width: 25%;</span>
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+ El tamaño de la imagen de borde es:
+ - 25% en los cuatro lados
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;   border-image-width: 25%;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  <span class="codigo-resaltado">border-image-width: 1 3;</span>
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+ El tamaño de la imagen de borde es:
+ - 10 px (1 * 10 px) arriba y abajo
+ - 30 px (3 * 10 px) a derecha e izquierda
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;   border-image-width: 1 3;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  <span class="codigo-resaltado">border-image-width: auto;</span>
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+ El tamaño de la imagen de borde es:
+ - 21 px en los cuatro lados
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;   border-image-width: auto;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="border-image-outset">
+        <h3>Extensión del área de la imagen de borde: <span class="css-prop">border-image-outset</span></h3>
+
+        <p>La propiedad <span class="css-prop">border-image-outset</span> permite extender la imagen de borde más allá del elemento.</p>
+
+        <p>Los posibles valores de la propiedad <span class="css-prop">border-image-outset</span> son:</p>
+
+        <ul>
+          <li>de uno a cuatro valores numéricos:
+            <ul>
+              <li><span class="css-valor">distancia</span>: se interpretan como tal</li>
+              <li><span class="css-valor">números sin unidades</span>: se interpretan multplicando el valor por el tamaño del borde del elemento.</li>
+            </ul>
+            <p>Como en otras propiedades en las que se pueden escribir de uno a cuatro valores:</p>
+            <ul>
+              <li>si sólo se escribe un valor, este se aplica a los cuatro lados</li>
+              <li>si se escriben dos valores, el primero se aplica arriba y abajo y el segundo a derecha e izquierda</li>
+              <li>si se escriben tres valores, el primero se aplica arriba, el segundo a derecha e izquierda y el tercero abajo</li>
+              <li>si se escriben cuatro valores, el primero se aplica arriba, el segundo a la derecha, el tercero abajo y el cuarto a la izquierda</li>
+            </ul>
+          </li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  border-image-outset: 10px;
+
+  padding: 10px;
+  text-align: justify;
+}
+
+p.sin-imagen-borde {
+  border: silver 10px solid;
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+ La imagen de borde se encuentra:
+ - 10 px alrededor del elemento
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;   border-image-outset: 10px;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 10px solid;
+  border-image-source: url("marco_dorado_200.png");
+  border-image-slice: 21;
+  border-image-outset: 3 1;
+
+  padding: 10px;
+  text-align: justify;
+}
+
+p.sin-imagen-borde {
+  border: silver 10px solid;
+
+  padding: 10px;
+  text-align: justify;
+}
+
+/*
+  La imagen de borde se encuentra:
+ - a 30 px (3 * 10 px) arriba y abajo
+ -  a10 px (1 * 10 px) a derecha e izquierda
+*/</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid; border-image-source: url(&#34;../img/fondos/fo_marco_dorado_200.png&#34;); border-image-slice: 21;   border-image-outset: 3 1;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p style="text-align: justify; padding: 10px;  border: silver 10px solid;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_marco_dorado_200.png" width="200" height="200" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="border-image-repeat">
+        <h3>Repetición de la imagen de borde: <span class="css-prop">border-image-repeat</span></h3>
+
+        <p>La propiedad <span class="css-prop">border-image-repeat</span> establece la forma de repetición de la imagen de borde a lo largo del borde.</p>
+
+        <p>Los posibles valores de la propiedad <span class="css-prop">border-image-repeat</span> son:</p>
+
+        <ul>
+          <li><span class="css-valor">stretch</span>: la imagen se estira o encoge para ocupar todo el espacio necesario</li>
+          <li><span class="css-valor">repeat</span>: la imagen se repite para ocupar todo el espacio necesario</li>
+          <li><span class="css-valor">round</span>: la imagen se repite el máximo número entero de veces posible y se estira o encoge para ocupar todo el espacio necesario</li>
+          <li><span class="css-valor">space</span>: la imagen se repite el máximo número entero de veces posible y el espacio sobrante se distribuye entre las imágenes (las imágenes no se estiran o encogen)</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 40px solid;
+  border-image-source: url("hormigas_210.png");
+  border-image-slice: 70;
+  border-image-repeat: stretch;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 40px solid; border-image-source: url(&#34;../img/fondos/fo_hormigas_210.png&#34;); border-image-slice: 70;   border-image-repeat: stretch;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_hormigas_210.png" width="210" height="210" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 40px solid;
+  border-image-source: url("hormigas_210.png");
+  border-image-slice: 70;
+  border-image-repeat: repeat;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 40px solid; border-image-source: url(&#34;../img/fondos/fo_hormigas_210.png&#34;); border-image-slice: 70;   border-image-repeat: repeat;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_hormigas_210.png" width="210" height="210" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 40px solid;
+  border-image-source: url("hormigas_210.png");
+  border-image-slice: 70;
+  border-image-repeat: round;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 40px solid; border-image-source: url(&#34;../img/fondos/fo_hormigas_210.png&#34;); border-image-slice: 70;   border-image-repeat: round;">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_hormigas_210.png" width="210" height="210" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border: silver 40px solid;
+  border-image-source: url("hormigas_210.png");
+  border-image-slice: 70;
+  border-image-repeat: space;
+
+  padding: 10px;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="text-align: justify; padding: 10px;  border: silver 40px solid; border-image-source: url(&#34;../img/fondos/fo_hormigas_210.png&#34;); border-image-slice: 70;   border-image-repeat: space">Las imágenes de bordes permiten utilizar imágenes en los bordes de los elementos. Las imágenes de bordes se introdujeron en CSS 3 y permiten ir más allá de los estilos clásicos de bordes.</p>
+
+                <p>Imagen utilizada en este ejemplo: <img alt="Ejemplo de imagen de borde" src="../img/fondos/fo_hormigas_210.png" width="210" height="210" title="Ejemplo de imagen de borde" /></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="box-decoration-break">
+        <h2>Bordes de elementos cortados: <span class="css-prop">box-decoration-break</span></h2>
+
+        <p class="incompleto">Por escribir</p>
+
+        <p>Esta propiedad se define en la recomendación CSS Fragmentation Module Level 3, actualmente (diciembre de 2016) en elaboración.</p>
+      </section>
+
+      <section id="box-shadow">
+        <h2>Sombras: <span class="css-prop">box-shadow</span></h2>
+
+        <p class="incompleto">Por escribir</p>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de octubre de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

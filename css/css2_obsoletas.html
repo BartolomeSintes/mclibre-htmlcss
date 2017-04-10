@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Propiedades obsoletas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 2.1: Propiedades obsoletas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#font-size-adjust"><span class="css-prop">font-size-adjust</span></a></li>
+          <li><a href="#font-stretch"><span class="css-prop">font-stretch</span></a></li>
+          <li><a href="#marker-offset"><span class="css-prop">marker-offset</span></a></li>
+          <li><a href="#colores-sistema">Colores del sistema</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se comentan:</p>
+    <ul>
+      <li>propiedades que estaban incluidas en la recomendación <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS 2</a> pero que no están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>.</li>
+      <li>propiedades que están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, pero que se consideran obsoletas y cuyo uso no se recomienda.</li>
+    </ul>
+
+    <section id="font-size-adjust">
+      <h2 class="con-aside">Tipo de letra. Ajuste de tamaño: <span class="css-prop">font-size-adjust</span></h2>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">font-size-adjust</span><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+      <p><strong>Nota</strong>: Esta propiedad no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a  href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (octubre de 2015) en elaboración.</p>
+
+      <p>La propiedad <span class="css-prop">font-size-adjust</span> permite establecer la proporción entre el tamaño del tipo y el de la letra x, indicándola como número decimal.</p>
+
+      <p>Cada tipo de letra tiene una proporción distinta entre el tamaño del tipo y el tamaño de la letra x de ese mismo tipo (para entendernos, una proporción distinta entre los tamaños de las letras mayúsculas y minúsculas). Es decir, que para un tamaño determinado, unos tipos de letras tienen las letras minusuculas más grandes que otros (y por tanto, son más legibles a tamaños pequeños).</p>
+
+      <p>Esto puede provocar problemas cuando el navegador no pueden mostrar el tipo de letra indicado por el autor y debe sustituirlo por otro. Si el tipo de letra que elige el navegador tiene unas minúsculas más pequeñas que las del tipo de letra elegido por el autor de la página, puede que el texto sea ilegible, ya que la propiedad <span class="css-prop">font-size</span> únicamente indica el tamaño del tipo.</p>
+
+      <p>Actualmente (octubre de 2015), Internet Explorer no interpreta esta propiedad, como se comenta en la <a href="../otros/otros_diferencias_listado.html#css-fuente-font-size-adjust">página de diferencias entre Firefox e Internet Explorer</a> (Chrome tampoco). Firefox la interpreta desde la versión 3. Lo que hace Firefox es multiplicar el valor de <span class="css-prop">font-size</span> por el de <span class="css-prop">font-size-adjust</span> y dar a la letra minúscula x ese tamaño.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+            <td class="codcss">
+              <pre><code class="language-css">p { <br />  font-size: 16px;<br />  font-size-adjust: 1.5; <br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="font-size: 16px; font-size-adjust: 1.5;">Esta letra x tiene 16 x 1.5 = 24 px de altura.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td><img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+            <td class="codcss">
+              <pre><code class="language-css">p { <br />  font-size: 16px;<br />  font-size-adjust: 0.5; <br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="font-size: 16px; font-size-adjust: 0.5;">Esta letra x tiene 16 x 0.5 = 8 px de altura.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="font-stretch">
+      <h2 class="con-aside">Tipo de letra. Anchura: <span class="css-prop">font-stretch</span></h2>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">font-stretch</span><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+      <p><strong>Nota</strong>: Esta propiedad no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (octubre de 2015) en elaboración.</p>
+
+      <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido.</p>
+
+      <p>Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
+
+      <p>Actualmente (octubre de 2015), los navegadores no son capaces de interpretar esta propiedad.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+            <td class="codcss">
+              <pre><code class="language-css">p { <br />  font-stretch: ultra-condensed;<br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="font-stretch: ultra-condensed;">Este párrafo está en el tipo ultra-condensado</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+            <td class="codcss">
+              <pre><code class="language-css">p {<br />  font-stretch: ultra-expanded;<br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="font-stretch: ultra-expanded;">Este párrafo está en el tipo ultra-extendido</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="marker-offset">
+      <h2 class="con-aside">Listas. Distancia del marcador: <span class="css-prop">marker-offset</span></h2>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">marker-offset</span><br />
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/marker-offset"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+      <p><strong>Nota</strong>: La propiedad <span class="css-prop">marker-offset</span> y el valor <span class="css-valor">marker</span> de la propiedad <span class="css-prop">display</span> no están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> ni tampoco en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (octubre de 2015) en elaboración. La futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a> introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
+
+      <p>La propiedad <span class="css-prop">marker-offset</span> debería establecer la distancia del marcador al elemento de la lista. Esta propiedad afectaría a los marcadores creados con los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span>.</p>
+
+      <p>Los navegadores no son capaces de interpretar esta propiedad, ni probablemente lo hagan nunca.</p>
+
+      <table class="ejemplo ej-marker-offset">
+        <tbody>
+          <tr>
+            <td>
+              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+            <td class="codcss">
+              <pre><code class="language-css">ul { <br />  list-style-type: none; <br />}<br /><br />li:before { <br />  content: "***"; <br />  display: marker;<br />  marker-offset: 40px; <br />}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <ul>
+                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es un punto de una lista</li>
+                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista</li>
+                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista, bastante más largo para que ocupe más de una línea y se pueda comprobar la posición del marcador</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="colores-sistema">
+      <h2>Colores del sistema</h2>
+
+      <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/REC-CSS2/ui.html#system-colors">CSS 2</a>, pero en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3:Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (mayo de 2016) en elaboración.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <td style="border-bottom: 2px black solid">Color</td>
+            <td style="border-bottom: 2px black solid">Nombre</td>
+            <td style="border-bottom: 2px black solid">Concepto</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background-color: ActiveBorder"></td>
+            <td>ActiveBorder</td>
+            <td>Borde de la ventana activa</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ActiveCaption"></td>
+            <td>ActiveCaption</td>
+            <td>Título de la ventana activa</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: AppWorkspace"></td>
+            <td>AppWorkspace</td>
+            <td>Color de fondo del interfaz de múltiplesdocumentos</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: Background"></td>
+            <td>Background</td>
+            <td>Color de fondo del escritorio</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ButtonFace"></td>
+            <td>ButtonFace</td>
+            <td>Color frontal de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ButtonHighlight"></td>
+            <td>ButtonHighlight</td>
+            <td>Sombra oscura de los elementos 3D (bordes opuestos a la fuente de luz)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ButtonShadow"></td>
+            <td>ButtonShadow</td>
+            <td>Sombra de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ButtonText"></td>
+            <td>ButtonText</td>
+            <td>Texto de los botones</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: CaptionText"></td>
+            <td>CaptionText</td>
+            <td>Texto en título, caja de tamaño y caja de flecha de desplazamiento</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: GrayText"></td>
+            <td>GrayText</td>
+            <td>Texto en gris (desactivado). Este color es #000000 si no se puede mostrar un colo gris sólido</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: Highlight"></td>
+            <td>Highlight</td>
+            <td>Elemento(s) seleccionado(s) en un control</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: HighlightText"></td>
+            <td>HighlightText</td>
+            <td>Texto de (de los) elemento(s) seleccionado(s) en un control</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: InactiveBorder"></td>
+            <td>InactiveBorder</td>
+            <td>Borde de la ventana inactiva</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: InactiveCaption"></td>
+            <td>InactiveCaption</td>
+            <td>Título de la ventana inactiva</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: InactiveCaptionText"></td>
+            <td>InactiveCaptionText</td>
+            <td>Texto de un título inactivo</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: InfoBackground"></td>
+            <td>InfoBackground</td>
+            <td>Color de fondo de los tooltips</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: InfoText"></td>
+            <td>InfoText</td>
+            <td>Texto de los tooltips</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: Menu"></td>
+            <td>Menu</td>
+            <td>Fondo de los menús</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: MenuText"></td>
+            <td>MenuText</td>
+            <td>Texto de los menús</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: Scrollbar"></td>
+            <td>Scrollbar</td>
+            <td>Área gris de la barra de desplazamiento</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ThreeDDarkShadow"></td>
+            <td>ThreeDDarkShadow</td>
+            <td>Sombra oscura de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ThreeDFace"></td>
+            <td>ThreeDFace</td>
+            <td>Color frontal de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ThreeDHighlight"></td>
+            <td>ThreeDHighlight</td>
+            <td>Color brillante de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ThreeDLightShadow"></td>
+            <td>ThreeDLightShadow</td>
+            <td>Color claro de los elementos 3D (bordes frente a la fuente de luz)</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: ThreeDShadow"></td>
+            <td>ThreeDShadow</td>
+            <td>Sombra oscura de los elementos 3D</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: Window"></td>
+            <td>Window</td>
+            <td>Fondo de la ventana</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: WindowFrame"></td>
+            <td>WindowFrame</td>
+            <td>Marco de la ventana</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td style="background-color: WindowText"></td>
+            <td>WindowText</td>
+            <td>Texto en las ventanas</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

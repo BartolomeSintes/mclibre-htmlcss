@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Propiedades no estándar. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Propiedades no estándar</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Propiedades no estándar</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#por-que-desaconsejadas">Por qué se desaconsejan</a></li>
+          <li><a href="#nombres-propiedades">Nombres propiedades</a></li>
+          <li><a href="#ejemplos-propiedades">Algunas propiedades</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="por-que-desaconsejadas">
+      <h2>Por qué se desaconsejan las propiedades no estándar</h2>
+
+      <p>Las propiedades no estándar son propiedades de las hojas de estilo CSS que no forman parte de ninguna recomendación o borrador y que funcionan únicamente en un navegador específico.</p>
+
+      <p>Las propiedades no estándar son un arma de doble filo:</p>
+
+      <ul>
+        <li>por un lado permiten que los navegadores presenten innovaciones a los usuarios sin esperar a que termine el largo proceso de aprobación de recomendaciones del W3C</li>
+        <li>pero por otro lado contribuyen a la fragmentación de la Web, ya que las páginas que utilizan esas propiedades no pueden verse de la misma manera en el resto de navegadores</li>
+      </ul>
+
+      <p>En principio, las propiedades no estándar deberían utilizarse de forma experimental y minoritaria, de manera que resulte fácil dejar de utilizarlas una vez se haya creado una propiedad estándar que funcione en todos los navegadores.</p>
+
+      <p>Pero si un navegador tiene un uso mayoritario en un segmento del mercado y las propiedades no estándar se utilizan de forma generalizada, puede resultar imposible dejar de utilizarlas puesto que los mercados cautivos tiene una inercia al cambio muy grande. Eso le puede venir muy bien a la empresa que desarrolla el navegador mayoritario, pero es nefasto para los usuarios y desarrolladores.</p>
+
+      <p>Entre 1999 y 2006 la web sufrió el dominio de Internet Explorer (véase el apartado sobre <a href="../otros/otros_diferencias_navegadores.html#microsoft">Microsoft y el cumplimiento de las recomendaciones del W3C</a>) y en los últimos está sufriendo el dominio de Google y Apple en la informática móvil.</p>
+
+      <p>Por ello, aunque el W3C ha permitido siempre la existencia de propiedades no estándar por sus posibles beneficios, periódicamente surgen debates para replantear el uso de las propiedades no estándar.</p>
+
+      <p>En 2011, Henri Sivonen planteó unas <a href="https://hsivonen.fi/vendor-prefixes/">interesantes reflexiones sobre este tema</a>, contestadas por <a href="https://groups.google.com/forum/#!msg/mozilla.dev.platform/itl6mtx2dxI/mbdPvbexB2EJ">David Baron</a> o <a href="http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/16/CSS-vendor-prefixes-an-answer-to-Henri-Sivonen">Daniel Glazman</a>. El tema sigue sin ser resuelto, aunque la propuesta de Mozilla es que las propiedades no estándar sólo estén activadas en las versiones experimentales o de prueba, pero no en las versiones finales.</p>
+
+      <p>Una solución curiosa para este problema lo proporciona la biblioteca JavaScript <a href="http://leaverou.github.io/prefixfree/">-prefix-free</a> (comentada en <a href="https://www.smashingmagazine.com/2011/10/prefixfree-break-free-from-css-prefix-hell/">este artículo</a>), que permite utilizar las propiedades con los nombres de las recomendaciones pero las convierte en caso necesario a las propiedades no estándar en el navegador.</p>
+    </section>
+
+    <section id="nombres-propiedades">
+      <h2>Nombres de las propiedades no estándar</h2>
+
+      <p>Si los borradores de las recomendaciones ya incluyen una propiedad con las mismas características, los navegadores suelen utilizar el nombre de la propiedad precedido de un prefijo. El prefijo que utiliza Firefox es <span class="css-prop">-moz-</span>, el que utiliza Internet Explorer es <span class="css-prop">-ms-</span>, el que utilizan Chrome y Safari es <span class="css-prop">-webkit-</span> y el que utiliza Opera es <span class="css-prop">-o-</span>.</p>
+
+      <p>Hay que tener en cuenta que las propiedades precedidas de un prefijo sólo funcionan en el navegador correspondiente y en cualquier momento pueden dejar de funcionar, por lo que deben utilizarse sólo en caso necesario.</p>
+
+      <ul>
+        <li>La web de documentación sobre Firefox <a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a> contiene una <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Mozilla_Extensions">lista de propiedades <span class="css-prop">-moz-</span></a>.</li>
+        <li>La web de documentación sobre <a href="https://developer.microsoft.com/es-es/windows/microsoft-edge-for-devs">Internet Explorer Dev Center</a> contiene una <a href="https://msdn.microsoft.com/library/hh869403(v=vs.85).aspx">lista de propiedades <span class="css-prop">-ms-</span></a>.</li>
+        <li>Listas no oficiales de propiedades <span class="css-prop">-webkit-</span> (Google Chrome): <a href="http://www.qooxdoo.org/docs/general/webkit_css_styles">qooxdoo.org</a></li>
+        <li>Listas no oficiales de <a href="https://gist.github.com/y0ssar1an/bb95223148e486acbe7a">Ryan Boehning</a> o de <a href="http://peter.sh/">Peter Beverloo</a>: <a href="http://peter.sh/experiments/vendor-prefixed-css-properties-gecko/">Firefox (Gecko)</a>, <a href="http://peter.sh/experiments/vendor-prefixed-css-properties-blink/">Google Chrome (Blink)</a>, <a href="http://peter.sh/experiments/vendor-prefixed-css-properties-trident/">Internet Explorer (Trident)</a>; </li>
+      </ul>
+    </section>
+
+    <section id="ejemplos-propiedades">
+      <h2>Algunas propiedades no estándar</h2>
+
+      <p>Se comentan aquí algunas propiedades no estándar que no tienen equivalentes en las recomendaciones del W3C. En general se desaconseja su uso puesto que sólo son admitidas por el navegador correspondiente y su uso contribuye a la fragmentación de la web, aunque pueden tener su interés como curiosidad (y porque si la propiedad es realmente interesante puede acabar formando parte de alguna recomendación)</p>
+
+      <section id="moz-border-colors">
+        <h3>Bordes de varios colores: <span class="css-prop">-moz-border-XXX-colors</span></h3>
+
+        <p>Las propiedades <span class="css-prop">-moz-border-bottom-colors</span>, <span class="css-prop">-moz-border-top-colors</span>, <span class="css-prop">-moz-border-left-colors</span> y <span class="css-prop">-moz-border-right-colors</span> permiten aplicar varios colores a un mismo borde. Hay que indicar una lista de colores y a cada pixel del borde se aplica un color (de afuera hacia dentro).</p>
+
+        <p>Los ejemplos siguientes sólo funcionan en Firefox.</p>
+
+        <p>Con las propiedades actuales de los bordes, este efecto puede conseguirse acumulando bordes.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">blockquote {
+  padding: 3px 10px;
+  border: black 10px solid;
+  -moz-border-bottom-colors: #FFA8FF #FFB0FF #FFB8FF #FFC0FF
+    #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF; <br />  -moz-border-top-colors: #FFA8FF #FFB0FF #FFB8FF #FFC0FF
+    #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF; <br />  -moz-border-left-colors: #FFA8FF #FFB0FF #FFB8FF #FFC0FF
+    #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;<br />  -moz-border-right-colors: #FFA8FF #FFB0FF #FFB8FF #FFC0FF
+    #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;<br />  background-color: #FFF0FF;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <blockquote style="padding:3px 10px;border:black 10px solid;-moz-border-bottom-colors:#FFA8FF #FFB0FF #FFB8FF #FFC0FF #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;-moz-border-top-colors:#FFA8FF #FFB0FF #FFB8FF #FFC0FF #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;-moz-border-left-colors:#FFA8FF #FFB0FF #FFB8FF #FFC0FF #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;-moz-border-right-colors:#FFA8FF #FFB0FF #FFB8FF #FFC0FF #FFC8FF #FFD0FF #FFD8FF #FFE0FF #FFE8FF #FFF0FF;background:#FFF0FF">
+                  <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
+
+                  <p style="text-align: right; font-style: oblique">Murphy</p>
+                </blockquote>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">blockquote {
+  padding:3px 10px;
+  border:black 10px solid;
+  -moz-border-bottom-colors: black black white white
+    black black white white black black; <br />  -moz-border-top-colors: black black white white
+    black black white white black black; <br />  -moz-border-left-colors:black black white white
+    black black white white black black; <br />  -moz-border-right-colors:black black white white
+    black black white white black black; <br />  background-color:#FFF0FF;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <blockquote style="padding:3px 10px;border:black 10px solid;-moz-border-bottom-colors:black black white white black black white white black black;-moz-border-top-colors:black black white white black black white white black black;-moz-border-left-colors:black black white white black black white white black black;-moz-border-right-colors:black black white white black black white white black black;background:#FFF0FF">
+                  <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
+
+                  <p style="text-align: right; font-style: oblique">Murphy</p>
+                </blockquote>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="ms-interpolation-mode">
+        <h3>Interpolación de imágenes en Internet Explorer: <span class="css-prop">-ms-interpolation-mode</span></h3>
+
+        <p>img { -ms-interpolation-mode:bicubic; } (visto en <a href="https://www.joelonsoftware.com/2008/12/22/from-the-department-of-badly-chosen-defaults/">https://www.joelonsoftware.com/2008/12/22/from-the-department-of-badly-chosen-defaults/</a>)</p>
+
+        <p class="aviso">Por escribir</p>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 9 de noviembre de 2014</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

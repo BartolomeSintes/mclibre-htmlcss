@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Atributos de tablas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      table.colgroup colgroup { background-color: lightgrey; }
+      table.colgroup col { background-color: lightblue; }
+      table.col col { background-color: lightblue; }
+      /*    td.resul table td { vertical-align: inherit; }*/
+    </style>
+  </head>
+
+  <body>
+    <h1>Atributos de tablas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Atributos de tablas</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#atributos-table">Atributos de <span class="html-eti">&lt;table&gt;</span></a>
+            <ul>
+              <li><a href="#atributo-table-border"><span class="html-atri">border</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#atributos-td-th">Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></a>
+            <ul>
+              <li><a href="#atributo-colspan-rowspan"><span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#atributos-col">Atributos de <span class="html-eti">&lt;col /&gt;</span></a>
+            <ul>
+              <li><a href="#atributo-col-span"><span class="html-atri">span</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#atributos-colgroup">Atributos de <span class="html-eti">&lt;colgroup&gt;</span></a>
+            <ul>
+              <li><a href="#atributo-colgroup-span"><span class="html-atri">span</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="atributos-table">
+      <h2>Atributos de <span class="html-eti">&lt;table&gt;</span></h2>
+
+      <section id="atributo-table-border">
+        <h3>El atributo <span class="html-atri">border</span></h3>
+
+        <p>El atributo <span class="html-atri">border</span> indica si se dibujan bordes alrededor de las celdas y un borde alrededor de la tabla. El único valor admitido es el valor 1, sin unidades.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table border="1">
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 3</td>
+                      <td>Celda 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border=""&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table border="">
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 3</td>
+                      <td>Celda 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table>
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 3</td>
+                      <td>Celda 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Normalmente, las tablas sin bordes se utilizan como elemento de diseño (para distribuir elementos) y las tablas con borde se utilizan para mostrar información en la que los elementos de la misma fila o de la misma columna están relacionados.</p>
+
+        <p>Si en la hoja de estilo se establece un borde para un elemento de la tabla, este borde se muestra aunque el atributo <span class="html- atri">border</span> sea vacío.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <table style="border: red 5px solid">
+                  <caption>Esto es la leyenda</caption>
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 3</td>
+                      <td>Celda 4</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-css">table {
+  border: red 5px solid;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+
+    <section id="atributos-td-th">
+      <h2>Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></h2>
+
+      <section id="atributo-colspan-rowspan">
+        <h3>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></h3>
+
+        <p>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> permiten unir una celda con las celdas contiguas, tanto horizontal como verticalmente. El valor de <span class="html-atri">colspan</span> indica la cantidad de celdas unidas en horizontal y el valor de <span class="html-atri">rowspan</span> indica la cantidad de celdas unidas en vertical.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;celdas a1 y b1 unidas&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda a2&lt;/td&gt;
+      &lt;td&gt;celda b2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table border="1">
+                  <caption>Esto es una tabla</caption>
+                  <tbody>
+                    <tr>
+                      <td colspan="2">celdas a1 y b1 unidas</td>
+                    </tr>
+                    <tr>
+                      <td>celda a2</td>
+                      <td>celda b2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;celdas a1 y a2 unidas&lt;/td&gt;
+      &lt;td&gt;celda b1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;celda b2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table border="1">
+                  <caption>Esto es una tabla</caption>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2">celdas a1 y a2 unidas</td>
+                      <td>celda b1</td>
+                    </tr>
+                    <tr>
+                      <td>celda b2</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2" colspan="2"&gt;celdas a1, a2, b1 y b2 unidas&lt;/td&gt;
+      &lt;td&gt;celda c1&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;td&gt;celda c2&lt;/td&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+     &lt;td&gt;celda a3&lt;/td&gt;
+     &lt;td&gt;celda b3&lt;/td&gt;
+     &lt;td&gt;celda c3&lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <table border="1">
+                  <caption>Esto es una tabla</caption>
+                  <tbody>
+                    <tr>
+                      <td rowspan="2" colspan="2">celdas a1, a2, b1 y b2 unidas</td>
+                      <td>celda c1</td>
+                    </tr>
+                    <tr>
+                      <td>celda c2</td>
+                    </tr>
+                    <tr>
+                      <td>celda a3</td>
+                      <td>celda b3</td>
+                      <td>celda c3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+
+    <section id="atributos-col">
+      <h2>Atributos de <span class="html-eti">&lt;col /&gt;</span></h2>
+
+      <section id="atributo-col-span">
+        <h3>El atributo <span class="html-atri">span</span></h3>
+
+        <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col /&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al hace referencia la etiqueta <span class="html-eti">&lt;col /&gt;</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;col span="2" /&gt;&lt;col /&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Celda 1&lt;/td&gt;
+      &lt;td&gt;Celda 2&lt;/td&gt;
+      &lt;td&gt;Celda 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Celda 4&lt;/td&gt;
+      &lt;td&gt;Celda 5&lt;/td&gt;
+      &lt;td&gt;Celda 6&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <table border="1" class="col">
+                  <caption>Esto es la leyenda</caption>
+                  <col span="2" /><col />
+                  <tbody>
+                    <tr>
+                      <td>Celda 1 A</td>
+                      <td>Celda 2</td>
+                      <td>Celda 3</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 4</td>
+                      <td>Celda 5</td>
+                      <td>Celda 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-css">col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="atributos-colgroup">
+      <h2>Atributos de <span class="html-eti">&lt;colgroup&gt;</span></h2>
+
+      <section id="atributo-colgroup-span">
+        <h3>El atributo <span class="html-atri">span</span></h3>
+
+        <p>Para indicar el número de columnas que forman parte de un grupo de columnas, se pueden utilizar etiquetas <span class="html-eti">&lt;col /&gt;</span> (con o sin atributo <span class="html-atri">span</span>) o el atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span>. Si se utiliza el atributo <span class="html-atri">span</span>, su valor indica el número de columnas que forman parte del grupo de columnas.</p>
+
+        <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup /&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col /&gt;</span> en el <span class="html-eti">&lt;colgroup /&gt;</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;&lt;col /&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <table border="1" class="colgroup">
+                  <caption>Esto es la leyenda</caption>
+                  <colgroup span="2"></colgroup><col />
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                      <td>Celda 3</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 4</td>
+                      <td>Celda 5</td>
+                      <td>Celda 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}<br />col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup&gt;&lt;col /&gt;&lt;col /&gt;&lt;/colgroup&gt;&lt;col /&gt;
+  &lt;tbody&gt;
+  ...
+  </code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <table border="1" class="colgroup">
+                  <caption>Esto es la leyenda</caption>
+                  <colgroup><col /><col /></colgroup><col />
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                      <td>Celda 3</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 4</td>
+                      <td>Celda 5</td>
+                      <td>Celda 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}
+col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup&gt;&lt;col span="2" /&gt;&lt;/colgroup&gt;&lt;col /&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <table border="1" class="colgroup">
+                  <caption>Esto es la leyenda</caption>
+                  <colgroup><col span="2" /></colgroup><col />
+                  <tbody>
+                    <tr>
+                      <td>Celda 1</td>
+                      <td>Celda 2</td>
+                      <td>Celda 3</td>
+                    </tr>
+                    <tr>
+                      <td>Celda 4</td>
+                      <td>Celda 5</td>
+                      <td>Celda 6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss"><pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}<br />col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 5 de octubre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Distancias y tamaños. CSS 3 . Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 3: Distancias y tamaños</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS3 distancias / tamaños</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#unidades-relativas">Unidades relativas</a>
+            <ul>
+              <li><a href="#rem"><span class="css-unidad">%</span></a></li>
+              <li><a href="#em"><span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span></a></li>
+              <li><a href="#rem"><span class="css-unidad">rem</span></a></li>
+              <li><a href="#v-units"><span class="css-unidad">vw</span>, <span class="css-unidad">vh</span>, <span class="css-unidad">vmin</span> y <span class="css-unidad">vmax</span></a></li>
+            </ul>
+          <li><a href="#unidades-absolutas">Unidades absolutas</a>
+            <ul>
+              <li><a href="#css3-px"><span class="css-unidad">px</span> en CSS 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#unidades-recomendadas">Unidades recomendadas</a></li>
+          <li><a href="#calc">La funcion <span class="css-funcion">calc()</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se comentan las unidades de distancia definidas en la recomendación <a href="https://www.w3.org/TR/css-values-3/">CSS 3 Valores y unidades</a>. Esta recomendación se encuentra actualmente (octubre de 2016) en fase de elaboración, pero los navegadores actuales la cumplen sobradamente (especialmente en lo que respecta al significado de la unidad <span class="css-unidad">px</span>), el cambio más significativo con respecto a CSS 2.</p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Esta lección se encuentra en elaboración.</p>
+
+    <section id="unidades">
+      <h2>Unidades de distancias y tamaños</h2>
+
+      <p>En una página web o en una hoja de estilo se pueden definir las distancias o tamaños como porcentajes o como valores numéricos (absolutos o relativos).</p>
+      <ul>
+        <li>los porcentajes se escriben con el símbolo de porcentaje pegado al valor numérico (sin espacio entre ellos). Por ejemplo, 100%, 50%, etc.</li>
+        <li>los valores numéricos pueden ser positivos o negativos, enteros o decimales (utilizando el punto como separador de las partes entera y decimal). Las unidades deben ir pegadas a los valores numéricos (sin espacio entre ellos). Por ejemplo, 10px, 0.5cm, -10pt, etc.</li>
+      </ul>
+
+      <p>Las unidades relativas disponibles son:</p>
+      <ul>
+        <li><span class="css-unidad">em</span>: el tamaño de fuente del elemento contenedor</li>
+        <li><span class="css-unidad">ex</span>: la altura de la letra x de la fuente del elemento contenedor</li>
+        <li><span class="css-unidad">ch</span>: la altura de la cifra 0 (cero) de la fuente  del elemento contenedor</li>
+        <li><span class="css-unidad">rem</span>: el tamaño de la fuente del elemento raíz de la página</li>
+      </ul>
+
+      <p>En la práctica, las unidades relativas más utilizadas son <span class="css-unidad">em</span> y <span class="css-unidad">rem</span>.</p>
+
+      <p>Las unidades absolutas disponibles son:</p>
+      <ul>
+        <li><span class="css-unidad">px</span>: píxeles, la 96ava parte de una pulgada (96 px = 1in = 2.54cm)</li>
+        <li><span class="css-unidad">cm</span>: centímetros</li>
+        <li><span class="css-unidad">mm</span>: milímetros</li>
+        <li><span class="css-unidad">q</span>: cuartos de milímetros</li>
+        <li><span class="css-unidad">in</span>: pulgadas (1in = 2.54cm = 25.4mm)</li>
+        <li><span class="css-unidad">pc</span>: picas, la sexta parte de una pulgada (1in = 6pc)</li>
+        <li><span class="css-unidad">pt</span>: puntos, la doceava parte de una pica, es decir, la 72ava parte de una pulgada (1in = 6pc = 72pt)</li>
+      </ul>
+
+      <p>En la práctica, las unidades absolutas más utilizadas son <span class="css-unidad">px</span> y <span class="css-unidad">pt</span>.</p>
+    </section>
+
+    <section id="unidades-relativas">
+      <h2>Unidades relativas</h2>
+
+      <p>Entre la unidades relativas, es necesario distinguir la unidad <span class="css-unidad">rem</span> del resto de unidades relativas o de los porcentajes.</p>
+
+      <section id="porcentajes">
+        <h3>Porcentajes <span class="css-unidad">%</span></h3>
+
+        <p>Cuando se emplean porcentajes para expresar el tamaño del tipo de letra, los valores superiores a 100% significan una ampliación y los valores inferiores a 100% significan reducción.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+p {
+  font-size: 200%;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="font-size: 200%;">Este párrafo está aumentado al 200% (el doble del tamaño normal).</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+p {
+  font-size: 75%;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="font-size: 75%;">Este párrafo está reducido al 75% del tamaño normal.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>Cuando se emplean porcentajes para expresar distancias o tamaños de elementos, los porcentajes se interpretan con respecto al elemento contenedor (cuando se refieren a distancias horizontales), o respecto al elemento contenedor o el tamaño de la ventana (cuando se refieren a distancias verticales).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+hr {
+  width: 50%;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
+
+                <hr style="width: 50%;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>Debido a que las propiedades se aplican en cascada, al cambiar el tamaño de un elemento, los elementos contenidos en él también modifican su tamaño. En el ejemplo siguiente, el párrafo situado en la división <span class="html-eti">&lt;div&gt;</span> aumenta su tamaño al 150%</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;Párrafo fuera de una división.&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;Párrafo dentro de una división.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <p>Párrafo fuera de una división.</p>
+
+                <div style="border: black 2px solid; font-size: 150%;">
+                  <p>Párrafo dentro de una división.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 2px solid;
+  font-size: 150%;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Si se cambia el tamaño en dos elementos anidados, los porcentajes se multiplican entre sí. A este fenómeno se le denomina "composición", es decir, el tamaño final es la composición de tamaños de cada elemento.</p>
+
+        <p>En el ejemplo siguiente, los párrafos están aumentados al 150%, por lo que el párrafo situado en la división (cuyo contenido está a su vez aumentado al 150%), está aumentado el 225% (el 150% del 150%, 150% x 150% = 225%).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;Este párrafo está aumentado al 150%.&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;Este párrafo está aumentado al 150%.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <p style="font-size: 150%;">Este párrafo está aumentado al 150%.</p>
+
+                <div style="font-size: 150%; border: black 1px solid;">
+                  <p style="font-size: 150%;">Este párrafo está aumentado al 150%.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+div {
+  border: black 1px solid;
+  font-size: 150%;
+}
+
+p {
+  font-size: 150%;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Esta composición de tamaños no siempre es conveniente y puede provocar cambios de tamaños indeseados debido a anidamientos no previstos. Para evitarlo, se puede utilizar la unidad relativa <span class="css-unidad">rem</span>, introducida en CSS 3.</p>
+
+        <p>En el ejemplo siguiente, las líneas horizontales ocupan el 50% del espacio disponible, por lo que la línea situada en la división (que a su vez ocupa el 50% del espacio disponible), ocupa en realidad el 25% del total (el 50% del 50%, 50% x 50% = 25%).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+div {
+  width: 50%;
+  border: black 1px solid;
+}
+
+hr {
+  width: 50%;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
+
+                <hr style="width: 50%;" />
+
+                <div style="width: 50%; border: black 1px solid;">
+                  <p>Esta división ocupa el 50% del espacio horizontal disponible.</p>
+
+                  <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
+
+                  <hr style="width: 50%;" />
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="em">
+        <h3>Unidades relativas <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span></h3>
+
+        <p>Las unidades relativas <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span> permiten expresar el tamaño en función de la altura de un carácter:</p>
+        <ul>
+          <li><span class="css-unidad">em</span> corresponde a la altura total del tipo de letra</li>
+          <li><span class="css-unidad">ex</span> corresponde a la altura del carácter "x"</li>
+          <li><span class="css-unidad">ch</span> corresponde a la altura del carácter "0"</li>
+        </ul>
+
+        <p>En el ejemplo siguiente, los párrafos tienen un borde con un grosor expresado en <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+p.borde-em {
+  border: red 1em solid;
+}
+
+p.borde-ex {
+  border: green 1ex solid;
+}
+
+p.borde-ch {
+  border: blue 1ch solid;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="border: red 1em solid;">Este párrafo tiene un borde de 1em de grosor (la altura total del tipo de letra).</p>
+
+                <p style="border: green 1ex solid;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
+
+                <p style="border: blue 1ch solid;">Este párrafo tiene un borde de 1ch de grosor (la altura de la cifra "0").</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En estas unidades, el tamaño depende del tipo de letra que se esté utilizando. En los ejemplos siguientes, los párrafos tienen un borde con un grosor <span class="css-unidad">1ex</span>. Como la letra "x" tiene una altura diferentre en cada tipo de letra (<span style="font-family: serif">x</span> <span style="font-family: sans-serif">x</span> <span style="font-family: monospace">x</span>) el grosor del borde es distinto en cada caso.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">
+p.borde-em-serif {
+  border: red 1ex solid;
+  font-family: serif;
+}
+
+p.borde-em-sans-serif {
+  border: green 1ex solid;
+  font-family: sans-serif;
+}
+
+p.borde-em-monospace {
+  border: blue 1ex solid;
+  font-family: monospace;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="border: red 1ex solid; font-family: serif;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
+
+                <p style="border: green 1ex solid; font-family: sans-serif;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
+
+                <p style="border: blue 1ex solid; font-family: monospace;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>La unidad relativa <span class="css-unidad">em</span> se puede relacionar directamente con los porcentajes, concretamente <span class="css-unidad">1em</span> = <span class="css-unidad">100%</span>.</p>
+
+        <hr class="corta" />
+
+        <p>Con las unidades relativas <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span> se produce también el fenómeno de composición comentado en el apartado anterior sobre porcentajes, es decir que si se cambia el tamaño en dos elementos anidados, los porcentajes se multiplican entre sí</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;Este párrafo está aumentado a 1.5em.&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;Este párrafo está aumentado a 1.5em.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <p style="font-size: 1.5em;">Este párrafo está aumentado a 1.5em.</p>
+
+                <div style="border: black 2px solid; font-size: 150%;">
+                  <p style="font-size: 1.5em;">Este párrafo está aumentado a 1.5em.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 2px solid;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.5em;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Esta composición de tamaños no siempre es conveniente y puede provocar cambios de tamaños indeseados debido a anidamientos no previstos. Para evitarlo, se puede utilizar la unidad relativa <span class="css-unidad">rem</span>, introducida en CSS 3.</p>
+      </section>
+
+      <section id="rem">
+        <h3>La unidad relativa <span class="css-unidad">rem</span></h3>
+
+        <p>La unidad relativa <span class="css-unidad">rem</span> corresponde a la altura total del tipo de letra, como <span class="css-unidad">em</span>, pero con la diferencia que la altura se interpreta siempre con respecto al elemento raíz de la página.</p>
+
+        <p>Por tanto, con la unidad relativa <span class="css-unidad">rem</span> no se produce el fenómeno de composición de tamaños en elementos anidados, como muestra el ejemplo siguiente, en el que los párrafos dentro de la divisón se ven del mismo tamaño que los párrafos de fuera de la división:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;p&gt;Este párrafo está aumentado a 1.5rem.&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;Este párrafo está aumentado a 1.5rem.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <p style="font-size: 1.5rem;">Este párrafo está aumentado a 1.5rem.</p>
+
+                <div style="border: black 2px solid; font-size:1.5rem;">
+                  <p style="font-size: 1.5rem;">Este párrafo está aumentado a 1.5rem.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 2px solid;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+}</code>
+</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Está unidad se introdujo en CSS 3, por lo que daba problemas en las versiones de Internet Explorer anteriores a IE 11. Aunque esas versiones tienen un uso cada vez menor (actualmente -octubre de 2016- inferior al 8%), su existencia ha frenado el uso generalizado de <span class="css-unidad">rem</span>. Seguramente, su uso se incrementará en los próximos años, a medida que vayan despareciendo esos navegadores.</p>
+      </section>
+
+      <section id="v-units">
+        <h3>Unidades relativas al tamaño de la pantalla <span class="css-unidad">vw</span>, <span class="css-unidad">vh</span>, <span class="css-unidad">vmin</span> y <span class="css-unidad">vmax</span></h3>
+
+        <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir.</p>
+
+      </section>
+    </section>
+
+    <section id="unidades-absolutas">
+      <h2>Unidades absolutas</h2>
+
+      <p>Todas las unidades absolutas están relacionadas, puesto que se trata de unidades de distancia: </p>
+      <ul>
+        <li><span class="css-unidad">px</span>: píxeles, la 96ava parte de una pulgada (96 px = 1in = 2.54cm)</li>
+        <li><span class="css-unidad">cm</span>: centímetros</li>
+        <li><span class="css-unidad">mm</span>: milímetros (10mm = 1cm)</li>
+        <li><span class="css-unidad">q</span>: cuartos de milímetros (4q = 1mm)</li>
+        <li><span class="css-unidad">in</span>: pulgadas (1in = 2.54cm = 25.4mm)</li>
+        <li><span class="css-unidad">pc</span>: picas, la sexta parte de una pulgada (6pc = 1in)</li>
+        <li><span class="css-unidad">pt</span>: puntos, la doceava parte de una pica, es decir, la 72ava parte de una pulgada (72pt = 6pc = 1in)</li>
+      </ul>
+
+      <p>La imagen siguiente muestra estas distancias a tamaño real y aumentado:</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="1100" viewBox="-110 -40 1100 280" style="background-color: white;" font-family="sans-serif" font-size="18">
+          <text x="-10"  y="0" text-anchor="end">Real:</text>
+          <line x1="0" y1="-10" x2="0" y2="10" stroke="red" stroke-width="2" />
+          <line x1="0" y1="0" x2="96" y2="0" stroke="red" stroke-width="2" />
+          <line x1="96" y1="-10" x2="96" y2="10" stroke="red" stroke-width="2" />
+          <text x="96"    y="-20" text-anchor="middle">1in</text>
+          <line x1="37.8" y1="-10"  x2="37.9" y2="10" stroke="red" stroke-width="2" />
+          <text x="37.8"  y="-20" text-anchor="start">1cm</text>
+          <line x1="16" y1="-10"  x2="16" y2="10" stroke="red" stroke-width="2" />
+          <text x="16"  y="-20" text-anchor="middle">1pc</text>
+
+          <line x1="0" y1="0" x2="0" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="16" y1="0" x2="160" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="37.8" y1="0" x2="378" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="96" y1="0" x2="960" y2="100" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+
+          <text x="-10"   y="100" text-anchor="end">Aumentado:</text>
+          <line x1="0"    y1="90"  x2="0"     y2="110" stroke="red" stroke-width="2" />
+          <line x1="0"    y1="100" x2="960"   y2="100" stroke="red" stroke-width="2" />
+          <line x1="960"  y1="90"  x2="960"   y2="110" stroke="red" stroke-width="2" />
+          <text x="960"   y="130" text-anchor="middle">1in</text>
+          <line x1="378"  y1="90"  x2="378"   y2="110" stroke="red" stroke-width="2" />
+          <text x="378"   y="130" text-anchor="middle">1cm</text>
+          <line x1="160"  y1="90"  x2="160"   y2="110" stroke="red" stroke-width="2" />
+          <text x="160"   y="130" text-anchor="middle">1pc</text>
+          <line x1="37.8" y1="90"  x2="37.8"  y2="110" stroke="red" stroke-width="2" />
+          <text x="37.8"  y="80" text-anchor="start">1mm</text>
+          <line x1="13.3" y1="90"  x2="13.3"  y2="110" stroke="red" stroke-width="2" />
+          <text x="13.3"  y="130" text-anchor="start">1pt</text>
+          <line x1="10"   y1="90"  x2="10"    y2="110" stroke="red" stroke-width="2" />
+          <text x="15"    y="80" text-anchor="middle">1px</text>
+          <line x1="9.4"  y1="90"  x2="9.4"   y2="110" stroke="red" stroke-width="2" />
+          <text x="9.4"   y="130" text-anchor="end">1q</text>
+
+          <line x1="0" y1="100" x2="0" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="9.4"  y1="100" x2="100" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="10"   y1="100" x2="105.8" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="13.3" y1="100" x2="141.1" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+          <line x1="37.8" y1="100" x2="400" y2="200" stroke="black" stroke-width="1" stroke-dasharray="5, 5" />
+
+          <text x="-10"    y="200" text-anchor="end">Aumentado:</text>
+          <line x1="0"     y1="190"  x2="0"     y2="210" stroke="red" stroke-width="2" />
+          <line x1="0"     y1="200"  x2="400"   y2="200" stroke="red" stroke-width="2" />
+          <line x1="400"   y1="190"  x2="400"   y2="210" stroke="red" stroke-width="2" />
+          <line x1="400"   y1="190"  x2="400"   y2="210" stroke="red" stroke-width="2" />
+          <text x="400"    y="180" text-anchor="start">1mm</text>
+          <line x1="141.1" y1="190"  x2="141.1"  y2="210" stroke="red" stroke-width="2" />
+          <text x="141.1"  y="230" text-anchor="start">1pt</text>
+          <line x1="105.8" y1="190"  x2="105.8" y2="210" stroke="red" stroke-width="2" />
+          <text x="100"  y="180" text-anchor="start">1px</text>
+          <line x1="100"   y1="190"  x2="100"   y2="210" stroke="red" stroke-width="2" />
+          <text x="100"    y="230" text-anchor="end">1q</text>
+        </svg>
+      </p>
+
+      <section id="css3-px">
+        <h3>Redefinición de la unidad <span class="css-unidad">px</span> en CSS 3</h3>
+
+        <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />En CSS 2 el píxel (<span class="css-unidad">px</span>) era una unidad relativa, ya que se refería al tamaño de un píxel físico de una pantalla. Cuando se redactó CSS 2, en los años 90, los píxeles de las pantallas tenían más o menos el mismo tamaño en todas las pantallas, por lo que al definir elementos en <span class="css-unidad">px</span>, el resultado era más o menos el mismo en todas las pantallas.</p>
+
+        <p>El problema es que desde hace unos años existen pantallas de alta densidad (sobre todo en los móviles) en los que los píxeles físicos son mucho más pequeños que en las pantallas de loas años 90. En estas pantallas, los elementos definidos en <span class="css-unidad">px</span> se ven mucho más pequeños, lo que convierte en ilegibles las páginas.</p>
+
+        <p>Este problema se ha resuelto en CSS 3 redefiniendo la unidad <span class="css-unidad">px</span>, convirtiéndola en una distancia absoluta, independiente del tamaño del píxel de la pantalla. Para mantener cierta compatibilidad con la definición antigua, se ha tenido en cuenta que las pantallas de los años 90 tenían una densidad de píxeles de 96dpi (96dpi = 96 dots per inch = 96 puntos por pulgada), definiendo el nuevo <span class="css-unidad">px</span> de manera que 96 píxeles miden 1 pulgada (96<span class="css-unidad">px</span> = 1<span class="css-unidad">in</span>).</p>
+      </section>
+    </section>
+
+    <section id="unidades-recomendadas">
+      <h2>Unidades recomendadas en estos apuntes</h2>
+
+      <p>La elección de unidades es algo muy personal, pero en estos apuntes se intentará utilizar siempre las siguientes unidades:</p>
+      <ul>
+        <li><span class="css-unidad">px</span> para distancias pequeñas (anchos de bordes, márgenes, etc.).</li>
+        <li><span class="css-unidad">rem</span> para tamaños de fuente, salvo que se quiera aprovechar en el diseño la composición de tamaños, en cuyo caso se usarán porcentajes <span class="css-unidad">%</span>.</li>
+        <li>porcentajes <span class="css-unidad">%</span> para tamaños de elementos grandes y distribución de elementos por la pantalla.</li>
+      </ul>
+    </section>
+
+    <section id="calc">
+      <h2>La función <span class="css-funcion">calc()</span></h2>
+
+      <p class="incompleto"><img src="../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir.</p>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 5 de octubre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

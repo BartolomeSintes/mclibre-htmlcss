@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Posicionamiento absoluto. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      div.eje-pos1 { position: relative; left:  30%; width: 60%; border: black 1px solid; }
+      div.eje-pos2 { position: relative; left:  30%; right: 10%; border: black 1px solid; }
+      div.eje-pos3 { position: relative; width: 60%; right: -10%; border: black 1px solid; }
+      div.eje-posrel1 p.posrel { position: relative; top: 3em; right: 100%;
+        border: black 1px solid; background-color: white; }
+      td.resul p.eje-z-index1 { }
+      td.resul p.eje-z-index2 { }
+      td.resul p.eje-z-index1b { width: 150px; height: 150px; background-color: lightblue;
+        position: relative; top: 50px; left: 50px; overflow: auto; }
+      td.resul p.eje-z-index2b { width: 150px; height: 150px; background-color: #DDDDDD;
+        overflow: auto;  }
+      p.eje-z-index3 { width: 150px; height: 150px; background-color: lightblue;
+        position: relative; top: 0%; left: 0%; overflow: auto; z-index: 1; }
+      p.eje-z-index4 { width: 150px; height: 150px; background-color: #DDDDDD;
+        position: relative; top: -50px; left: 50px; overflow: auto; z-index: 2; }
+      p.eje-z-index5 { width: 150px; height: 150px; background-color: lightblue;
+        position: relative; top: 0%; left: 0%; overflow: auto; z-index: 2; }
+      p.eje-z-index6 { width: 150px; height: 150px; background-color: #DDDDDD;
+        position: relative; top: -50px; left: 50px; overflow: auto; z-index: 1; }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS 2: Posicionamiento absoluto</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Esquema</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#posicionamiento-esquema-absoluto">Esquema absoluto: <span class="css-prop">position</span></a></li>
+          <li><a href="#posicionamiento-absoluto-estatico">Posicionamiento <span class="css-valor">static</span></a></li>
+          <li><a href="#posicionamiento-absoluto-relativo">Posicionamiento <span class="css-valor">relative</span></a></li>
+          <li><a href="#posicionamiento-absoluto-y-fijo"><span class="css-prop">top</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span>, <span class="css-prop">right</span>, <span class="css-prop">width</span> y <span class="css-prop">height</span></a></li>
+          <li><a href="#posicionamiento-absoluto-fijo">Posicionamiento <span class="css-valor">fixed</span></a></li>
+          <li><a href="#posicionamiento-absoluto-absoluto">Posicionamiento <span class="css-valor">absolute</span></a></li>
+          <li><a href="#z-index">Profundidad: <span class="css-prop">z-index</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="posicionamiento-esquema-absoluto">
+      <h2 class="con-aside">Esquema absoluto: <span class="css-prop">position</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">position</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#choose-position"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">position</span> establece el esquema de posicionamiento absoluto de un elemento. Existen cuatro tipos en el esquema de posicionamiento absoluto:</p>
+      <ul>
+        <li><span class="css-valor">static</span>: posicionamiento absoluto estático</li>
+        <li><span class="css-valor">relative</span>: posicionamiento absoluto relativo</li>
+        <li><span class="css-valor">fixed</span>: posicionamiento absoluto fijo</li>
+        <li><span class="css-valor">absolute</span>: posicionamiento absoluto absoluto</li>
+      </ul>
+    </section>
+
+    <section id="posicionamiento-absoluto-estatico">
+      <h2>Posicionamiento absoluto estático: <span class="css-valor">static</span></h2>
+
+      <p>Cuando se establece la propiedad <span class="css-prop">position</span> como <span class="css-valor">static</span>, el elemento se sitúa en la posición que le corresponde de acuerdo con el flujo normal del documento. Es decir, el posicionamiento absoluto estático es equivalente al esquema normal.</p>
+
+    </section>
+
+    <section id="posicionamiento-absoluto-relativo">
+      <h2>Posicionamiento absoluto relativo: <span class="css-valor">relative</span></h2>
+
+      <p>Cuando se establece la propiedad <span class="css-prop">position</span> como <span class="css-valor">relative</span>, el navegador reserva el espacio en la página que tendría el elemento de acuerdo con el flujo normal del documento, pero el elemento se puede desplazar con respecto a esa posición. Es decir, el "hueco" de la posición original se mantiene, aunque el elemento se haya desplazado, como muestran los siguientes ejemplos.</p>
+
+      <p>El desplazamiento relativo se establece mediante las propiedades <span class="css-prop">top</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span> y <span class="css-prop">right</span>.</p>
+
+      <p>El desplazamiento vertical se puede establecer tanto con la propiedad <span class="css-prop">top</span> como con la propiedad <span class="css-prop">bottom</span>:</p>
+
+      <ul>
+        <li>La propiedad <span class="css-prop">top</span> desplaza el elemento contando desde su borde superior. Si se da un valor positivo, el elemento se desplaza hacia abajo. Si se da un valor negativo, el elemento se desplaza hacia arriba.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  top: 20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; top: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  top: -20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; top: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>La propiedad <span class="css-prop">bottom</span> desplaza el elemento contando desde su borde inferior. Si se da un valor positivo, el elemento se desplaza hacia arriba. Si se da un valor negativo, el elemento se desplaza hacia abajo.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  bottom: 20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; bottom: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="codcss"><pre>
+<code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  bottom: -20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; bottom: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+
+      <p>El desplazamiento horizontal se puede establecer tanto con la propiedad <span class="css-prop">left</span> como con la propiedad <span class="css-prop">right</span>:</p>
+      <ul>
+        <li>La propiedad <span class="css-prop">left</span> desplaza el elemento contando desde su borde izquierdo. Si se da un valor positivo, el elemento se desplaza hacia la derecha. Si se da un valor negativo, el elemento se desplaza hacia la izquierda.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  left: 20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; left: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  left: -20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; left: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>La propiedad <span class="css-prop">right</span> desplaza el elemento contando desde su borde derecho. Si se da un valor positivo, el elemento se desplaza hacia la izquierda. Si se da un valor negativo, el elemento se desplaza hacia la derecha.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  right: 20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; right: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="codcss"><pre>
+<code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+  position: relative;
+  right: -20px;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <div class="eje-posrel1">
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                    <p style="background-color: white; border: black 1px solid; position: relative; right: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
+                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+
+    </section>
+
+    <section id="posicionamiento-absoluto-y-fijo">
+      <h2 class="con-aside">Posicionamiento absoluto fijo y absoluto: propiedades <span class="css-prop">top</span>, <span class="css-prop">right</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span>, <span class="css-prop">width</span> y <span class="css-prop">height</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">top</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-top"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/top"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">right</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-right"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/right"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">bottom</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-bottom"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/bottom"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">left</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-left"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/left"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Cuando se establece la propiedad <span class="css-prop">position</span> como <span class="css-valor">fixed</span> o como <span class="css-valor">absolute</span>, el elemento se puede situar en cualquier posición de la pantalla.</p>
+
+      <p>La posición del elemento se establece mediante las propiedades <span class="css-prop">top</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span> y <span class="css-prop">right</span> (aunque también se pueden utilizar las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>), como indica la imagen siguiente:</p>
+
+      <p class="centrado">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="650" viewBox="0 0 1920 1080" style="background-color: #EEEEEE" font-family="sans-serif">
+
+          <marker id="triangle-start" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto-start-reverse" stroke="black" fill="black">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <marker id="triangle-end" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto" stroke="black" fill="black">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <rect x="20" y="20" width="1880" height="1040"
+                fill="white" stroke="red" stroke-width="3" />
+          <text x="1300" y="120" font-size="50">Ventana del navegador</text>
+          <circle cx="1200" cy="20" r="10" fill="black" />
+          <line x1="1200" y1="20" x2="1300" y2="110"
+                stroke-width="7" stroke="black" />
+
+          <rect x="300" y="400" width="1000" height="400"
+                fill="none" stroke="red" stroke-width="5" />
+          <text x="1300" y="280" font-size="50">Elemento</text>
+          <circle cx="1200" cy="400" r="10" fill="black" />
+          <line x1="1200" y1="400" x2="1300" y2="270"
+                stroke-width="7" stroke="black" />
+
+          <line x1="20" y1="600" x2="270" y2="600"
+                stroke-width="5" stroke="black" marker-end="url(#triangle-end)" />
+          <text x="40" y="580" font-size="50" fill="black">left</text>
+
+          <line x1="1900" y1="600" x2="1330" y2="600"
+                stroke-width="5" stroke="black" marker-end="url(#triangle-end)" />
+          <text x="1760" y="580" font-size="50" fill="black">right</text>
+
+          <line x1="800" y1="20" x2="800" y2="370"
+                stroke-width="5" stroke="black" marker-end="url(#triangle-end)" />
+          <text x="820" y="70" font-size="50" fill="black">top</text>
+
+          <line x1="800" y1="1060" x2="800" y2="830"
+                stroke-width="5" stroke="black" marker-end="url(#triangle-end)" />
+          <text x="820" y="1040" font-size="50" fill="black">bottom</text>
+
+          <line x1="330" y1="700" x2="1270" y2="700"
+                stroke-width="5" stroke="black" marker-start="url(#triangle-start)" marker-end="url(#triangle-end)" />
+          <text x="1000" y="690" font-size="50" fill="black">width</text>
+
+          <line x1="500" y1="770" x2="500" y2="430"
+                stroke-width="5" stroke="black" marker-start="url(#triangle-start)" marker-end="url(#triangle-end)" />
+          <text x="520" y="550" font-size="50" fill="black">height</text>
+        </svg>
+      </p>
+
+      <ul>
+        <li><span class="css-prop">top</span>: posición del lado superior del elemento contando desde el borde superior de la ventana (de arriba a abajo, es decir, cuanto más grande es el valor más hacia abajo se coloca el elemento).</li>
+
+        <li><span class="css-prop">bottom</span>: posición del lado inferior del elemento contando desde el borde inferior de la ventana (de abajo a arriba, es decir, cuanto más grande es el valor más hacia arriba se coloca el elemento).</li>
+
+        <li><span class="css-prop">height</span>: altura del elemento.</li>
+
+        <li><span class="css-prop">left</span>: posición del lado izquierdo del elemento contando desde el borde izquierdo de la ventana (de izquierda a derecha, es decir, cuanto más grande es el valor más hacia la derecha se coloca el elemento).</li>
+
+        <li><span class="css-prop">right</span>: posición del lado derecho del elemento contando desde el borde derecho de la ventana (de izquierda a derecha, es decir, cuanto más grande es el valor más hacia la izquierda se coloca el elemento).</li>
+
+        <li><span class="css-prop">width</span>: anchura del elemento.</li>
+      </ul>
+
+      <hr class="corta" />
+
+      <p>Los elementos con posicionamiento absoluto absoluto o fijo no reservan espacio en la página, es decir, el navegador dibuja el resto de elementos de la página como si los elementos con posicionamiento no existieran, por lo que los elementos con posicionamiento pueden tapar otros elementos.</p>
+
+      <hr class="corta" />
+
+
+      <p>La página de <a href="../ejemplos/position_absolute.html">ejemplo de posicionamiento absoluto</a> muestra varios párrafos con posicionamiento absoluto. En esa página los valores están expresados en porcentaje (que se interpretan como porcentajes de la ventana completa).</p>
+
+      <hr class="corta" />
+
+      <p>De estas seis propiedades, basta con indicar cuatro de ellas: dos para la posición horizontal (a elegir entre <span class="css-prop">left</span>, <span class="css-prop">right</span> y <span class="css-prop">width</span>) y dos para la posición vertical (a elegir entre <span class="css-prop">top</span>, <span class="css-prop">bottom</span> y <span class="css-prop">height</span>). Si el elemento tiene un tamaño definido (por ejemplo, una imagen), es suficiente con utilizar una propiedad para la posición horizontal y otra para la vertical.</p>
+
+      <p>En caso de que se establezcan las tres propiedades de una dimensión:</p>
+
+      <ul>
+        <li>en horizontal, los navegadores hacen caso de las propiedades <span class="css-prop">left</span> y <span class="css-prop">width</span> y descartan el valor de <span class="css-prop">right</span>, como puede comprobarse en esta página de <a href="../ejemplos/position_absolute_contradictorio_1.html">ejemplo de posicionamiento</a>. En esa página los valores están expresados en porcentaje (que se interpretan como porcentajes de la ventana completa).</li>
+
+        <li>en vertical, los navegadores hacen caso de las propiedades <span class="css-prop">top</span> y <span class="css-prop">height</span> y descartan el valor de <span class="css-prop">bottom</span>, como puede comprobarse en esta página de <a href="../ejemplos/position_absolute_contradictorio_2.html">ejemplo de posicionamiento</a>. En esa página los valores están expresados en porcentaje (que se interpretan como porcentajes de la ventana completa).</li>
+      </ul>
+
+      <hr class="corta" />
+
+      <p>En caso de que no se indiquen todas las propiedades, el navegador asigna el resto de valores como hace normalmente:</p>
+
+      <ul>
+        <li>en vertical, dando el tamaño necesario para alojar todo el contenido del elemento</li>
+        <li>en horizontal, ocupando todo el espacio disponible hasta el extremo de la ventana (o hasta que aloje todo el contenido del elemento)</li>
+      </ul>
+
+    </section>
+
+    <section id="posicionamiento-absoluto-fijo">
+      <h2>Posicionamiento absoluto fijo: <span class="css-valor">fixed</span></h2>
+
+      <p>Cuando se establece la propiedad <span class="css-prop">position</span> como <span class="css-valor">fixed</span>, el elemento se sitúa en la posición indicada y no se puede desplazar. Aunque la página sea larga y se pueda desplazar verticalmente, el elemento fijo estará siempre en la misma posición de la pantalla.</p>
+
+      <p>La página de <a href="../ejemplos/position_fixed.html">ejemplo de posicionamiento fijo</a> muestra una lista en forma de menú con posicionamiento fijo. Al mover la barra de desplazamiento, el menú se mantiene siempre en la misma posición.</p>
+
+      <p>El navegador no tiene en cuenta la posición de los elementos con posicionamiento absoluto fijo al mostrar el resto de elementos de la página, es decir, que los elementos con posicionamiento absoluto fijo no reservan espacio.</p>
+    </section>
+
+    <section id="posicionamiento-absoluto-absoluto">
+      <h2>Posicionamiento absoluto absoluto: <span class="css-valor">absolute</span></h2>
+
+      <p>Cuando se establece la propiedad <span class="css-prop">position</span> como <span class="css-valor">absolute</span>, el elemento se sitúa en la posición exacta que se le indique. Pero si la página es larga y se puede desplazar verticalmente, el elemento absoluto se desplazará con el resto de elementos.</p>
+
+      <p>La página de <a href="../ejemplos/position_absolute_2.html">ejemplo de posicionamiento absoluto</a> muestra una lista en forma de menú con posicionamiento absoluto. Al mover la barra de desplazamiento o hacer clic en el menú, el menú desplaza.</p>
+
+      <p>El navegador no tiene en cuenta la posición de los elementos con posicionamiento absoluto absoluto al mostrar el resto de elementos de la página, es decir, que los elementos con posicionamiento absoluto absoluto no reservan espacio.</p>
+    </section>
+
+    <section id="z-index">
+      <h2 class="con-aside">Profundidad: <span class="css-prop">z-index</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">z-index</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#z-index"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Al utilizar posicionamiento absoluto (relativo, fijo o absoluto) dos o más elementos se pueden solapar. La propiedad <span class="css-prop">z-index</span>, que debe ser un número entero (positivo, cero o negativo), permite establecer qué elemento se muestra encima, pero también influye si los elementos tienen o no posicionamiento y el orden en que aparecen los elementos en el código fuente.</p>
+
+      <p>Las reglas a aplicar son las siguientes:</p>
+
+      <ul>
+        <li>Los elementos sin propiedad <span class="css-prop">z-index</span> se tratan como si tuviera un <span class="css-prop">z-index</span> igual a 0.</li>
+
+        <li>Los elementos sin posicionamiento se tratan como si tuvieran un <span class="css-prop">z-index</span> igual a 0 (aunque tengan propiedad <span class="css-prop">z-index</span>).</li>
+
+        <li>Los elementos con mayor <span class="css-prop">z-index</span> se colocan sobre los elementos con menor <span><span class="css-prop">z-index</span></span>, </li>
+
+        <li>Si los <span class="css-prop">z-index</span> son iguales, los elementos con posicionamiento se colocan sobre los elementos sin posicionamiento</li>
+
+        <li>Si los <span class="css-prop">z-index</span> son iguales y los elementos tienen posicionamiento, los elementos que aparecen después en el código fuente se colocan encima de los elementos que aparecen antes en el código fuente</li>
+      </ul>
+
+      <p>Los ejemplos siguientes ilustran algunas de las situaciones que puden darse.</p>
+
+      <hr class="corta" />
+
+      <p>Si no se utiliza la propiedad <span class="css-prop">z-index</span>, cuando un elemento con posicionamiento se solapa sobre un elemento sin posicionamiento, el elemento con posicionamiento se muestra siempre encima, como se muestra en los ejemplos siguientes:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; position: relative; top: -50px; left: 50px; overflow: auto;">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  width: 150px;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: -50px;
+  width: 150px;
+}</code>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 50px; left: 50px;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto;">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: 50px;
+  width: 150px;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  width: 150px;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si no se utiliza la propiedad <span class="css-prop">z-index</span>, cuando un elemento con posicionamiento se solapa sobre otro elemento con posicionamiento, los elementos se van solapando en el mismo orden en que aparecen en el código fuente, como se muestra en los ejemplos siguientes, en los que se puede observar cómo el segundo párrafo se superpone siempre al primero.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0px; left: 50px;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0px;">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: 0px;
+  width: 150px;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0px;<br />  position: relative;
+  top: -50px;
+  width: 150px;
+}</code>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 150px; left: 50px;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -150px; left: 0px;">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: 150px;
+  width: 150px;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0px;<br />  position: relative;
+  top: -150px;
+  width: 150px;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se utiliza la propiedad <span class="css-prop">z-index</span> y posicionamiento, los elementos con mayor <span class="css-prop">z-index</span> se colocan sobre los elementos con menor <span><span class="css-prop">z-index</span></span>. Los elementos sin <span class="css-prop">z-index</span> se tratan como si tuvieran un <span class="css-prop">z-index</span> igual a 0.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0px; left: 50px; z-index: 2;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0px; z-index: 1">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: 0px;
+  width: 150px;
+  z-index: 2;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0px;<br />  position: relative;
+  top: -50px;
+  width: 150px;
+  z-index: 1
+}</code>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+
+&lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0px; left: 50px; z-index: 1;">Este es el primer párrafo.</p>
+
+              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0px;">Este es el segundo párrafo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre><code class="language-css">p.p1 {
+  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+  top: 0px;
+  width: 150px;
+  z-index: 1;
+}
+<br />p.p2 {
+  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0px;<br />  position: relative;
+  top: -50px;
+  width: 150px;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 20 de enero de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

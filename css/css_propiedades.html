@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lista de propiedades CSS estables. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <!--    para imprimir en Chrome comentar css, descomentar css_print y style ( en vez de poner en element.style: zoom: 61%) -->
+    <!--<link href="../varios/htmlcss_print.css" rel="stylesheet" type="text/css" title="Imprimir" />
+    <style type="text/css">
+      html { zoom: 61%;}
+    </style>-->
+    <link rel="icon" href="../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Lista de propiedades CSS estables</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Propiedades CSS estables</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#tipos">Tipos</a></li>
+          <li><a href="#tipo-letra">Tipo de letra</a></li>
+          <li><a href="#texto">Texto</a></li>
+          <li><a href="#bordes">Bordes</a></li>
+          <li><a href="#margen-exterior">Margen exterior</a></li>
+          <li><a href="#margen-interior">Margen interior</a></li>
+          <li><a href="#fondos">Fondos</a></li>
+          <li><a href="#listas">Listas</a></li>
+          <li><a href="#tablas">Tablas</a></li>
+          <li><a href="#tamano">Tamaño</a></li>
+          <li><a href="#posicionamiento">Posicionamiento</a></li>
+          <li><a href="#impresora">Impresora</a></li>
+          <li><a href="#interface">Interface de usuario</a></li>
+          <li><a href="#pseudo-elementos">Pseudo-elementos</a></li>
+          <li><a href="#pseudo-clases">Pseudo-clases</a></li>
+          <li><a href="#eliminadas">No incluidas en CSS 2.1</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>La tabla siguiente resume las propiedades definidas en las recomendaciones de Hojas de Estilo en Cascada (CSS) y admitidas correctamente por los navegadores más utilizados:</p>
+    <ul>
+      <li>Se incluyen las propiedades CSS 2, excepto las propiedades relacionadas con las hojas de estilo auditivas (aural).</li>
+      <li>Las propiedades que han sido eliminadas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se listan al final.</li>
+      <li>Los valores de las propiedades añadidos o eliminados en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se indican con los símbolos <sup>(+)</sup> o <sup>(-)</sup>.</li>
+      <li>Algunas de las propiedades definidas en recomendaciones CSS 3 en elaboración que los navegadores actuales admiten correctamente. Se indican con el símbolo <sup>(3)</sup>.</li>
+    </ul>
+
+    <section id="propiedades">
+      <table class="listado franjas">
+        <col class="propiedad" />
+        <col class="descripcion" />
+        <col />
+        <tbody id="tipos">
+          <tr class="titulo">
+            <td colspan="3">Tipos</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td>contador</td>
+            <td>Contador</td>
+            <td>counter(nombre, estilo) </td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-family">familia-genérica</a></td>
+            <td>Familia genérica de fuente</td>
+            <td><span class="css-valor">cursive</span> | <span class="css-valor">fantasy</span> | <span class="css-valor">monospace</span> | <span class="css-valor">serif</span> | <span class="css-valor">sans-</span><span class="css-valor">serif</span></td>
+          </tr>
+          <tr>
+            <td>forma</td>
+            <td>Forma</td>
+            <td>rect(top, right, bottom, left)</td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#tamano-absoluto">tamaño-absoluto</a></td>
+            <td>Tamaño absoluto de fuente</td>
+            <td><span class="css-valor">xx-small</span> | <span class="css-valor">x-small</span> | <span class="css-valor">medium</span> | <span class="css-valor">large</span> | <span class="css-valor">x-large</span> | <span class="css-valor">xx-large</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#tamano-relativo">tamaño-relativo</a></td>
+            <td>Tamaño relativo de fuente</td>
+            <td><span class="css-valor">larger</span> | <span class="css-valor">smaller</span></td>
+          </tr>
+          <tr>
+            <td>uri (para <a href="css_fondos.html#background-image">imagen de fondo</a> o <a href="css_fuentes_web.html#webfonts">fuentes web</a>)</td>
+            <td>Dirección absoluta o relativa</td>
+            <td>url("ruta_y_nombre_de_archivo")</td>
+          </tr>
+        </tbody>
+        <tbody id="tipo-letra">
+          <tr class="titulo">
+            <td colspan="3">Tipo de letra (fuente)</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font">font</a></td>
+            <td>propiedad compuesta</td>
+            <td>[ [ font-style || font-variant || font-weight ]? font-size [ / line-height ]? font-family ] | <span class="css-valor">caption</span> | <span class="css-valor">icon</span> | <span class="css-valor">menu</span> | <span class="css-valor">message-box</span> | <span class="css-valor">small-caption</span> | <span class="css-valor">status-bar</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-family">font-family</a></td>
+            <td>tipo de letra (fuente)</td>
+            <td>[ nombre-fuente | familia-genérica ] [, nombre-fuente | familia-genérica ]* </td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-size">font-size</a></td>
+            <td>tamaño</td>
+            <td>tamaño-absoluto | tamaño-relativo | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-style">font-style</a></td>
+            <td>inclinación (cursiva)</td>
+            <td><span class="css-valor">normal</span> | <span class="css-valor">italic</span> | <span class="css-valor">oblique</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-variant">font-variant</a></td>
+            <td>versalitas</td>
+            <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#font-weight">font-weight</a></td>
+            <td>grosor del trazo (negrita)</td>
+            <td><span class="css-valor">normal</span> | <span class="css-valor">bold</span> | <span class="css-valor">bolder</span> | <span class="css-valor">lighter</span> | <span class="css-valor">100</span> | <span class="css-valor">200</span> | <span class="css-valor">300</span> | <span class="css-valor">400</span> | <span class="css-valor">500</span> | <span class="css-valor">600</span> | <span class="css-valor">700</span> | <span class="css-valor">800</span> | <span class="css-valor">900</span><br />
+            </td>
+          </tr>
+        </tbody>
+        <tbody id="texto">
+          <tr class="titulo">
+            <td colspan="3">Texto</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#color">color</a></td>
+            <td>color del texto</td>
+            <td>color</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#direction">direction</a></td>
+            <td>dirección del texto</td>
+            <td><span class="css-valor">ltr</span> | <span class="css-valor">rtl</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#letter-spacing">letter-spacing</a></td>
+            <td>espacio entre caracteres</td>
+            <td><span class="css-valor">normal</span> | distancia</td>
+          </tr>
+          <tr>
+            <td><a href="css_fuente.html#line-height">line-height</a></td>
+            <td>espaciado entre líneas</td>
+            <td><span class="css-valor">normal</span> | número | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#text-align">text-align</a></td>
+            <td>alineación del texto</td>
+            <td><span class="css-valor">center</span> | <span class="css-valor">justify</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#text-decoration">text-decoration</a></td>
+            <td>decoración del texto</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">blink</span> | <span class="css-valor">line-through</span> | <span class="css-valor">overline</span> | <span class="css-valor">underline</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#text-indent">text-indent</a></td>
+            <td>sangría de la primera línea</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#text-transform">text-transform</a></td>
+            <td>mayúsculas / minúsculas</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">capitalize</span> | <span class="css-valor">lowercase</span> | <span class="css-valor">uppercase</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#text-shadow">text-shadow</a><sup>(3)</sup></td>
+            <td>sombreado</td>
+            <td>desplazamiento horizontal, desplazamiento vertical, tamaño desenfoque, color</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#unicode-bidi">unicode-bidi</a></td>
+            <td>dirección del texto</td>
+            <td><span class="css-valor">normal</span> | <span class="css-valor">embed</span> | <span class="css-valor">bidi-override</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#vertical-align">vertical-align</a></td>
+            <td>alineación vertical</td>
+            <td><span class="css-valor">baseline</span> | <span class="css-valor">bottom</span> | <span class="css-valor">middle</span> | <span class="css-valor">sub</span> | <span class="css-valor">super</span> | <span class="css-valor">text-bottom</span> | <span class="css-valor">text-top</span> | <span class="css-valor">top</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#white-space">white-space</a></td>
+            <td>espacios en blanco, saltos de línea y wrap</td>
+            <td><span class="css-valor">normal</span> | <span class="css-valor">nowrap</span> | <span class="css-valor">pre</span> | <span class="css-valor">pre-line</span><sup>(+)</sup> | <span class="css-valor">pre-wrap</span><sup>(+)</sup></td>
+          </tr>
+          <tr>
+            <td><a href="css_texto.html#word-spacing">word-spacing</a></td>
+            <td>espacio entre palabras</td>
+            <td><span class="css-valor">normal</span> | distancia</td>
+          </tr>
+        </tbody>
+        <tbody id="bordes">
+          <tr class="titulo">
+            <td colspan="3">Bordes</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border">border</a></td>
+            <td>cuatro bordes simultáneamente</td>
+            <td>border-color || border-width || border-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-lados">border-top</a></td>
+            <td>borde superior</td>
+            <td>border-color || border-width || border-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-lados">border-right</a></td>
+            <td>borde derecho</td>
+            <td>border-color || border-width || border-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-lados">border-bottom</a></td>
+            <td>borde inferior</td>
+            <td>border-color || border-width || border-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-lados">border-left</a></td>
+            <td>borde izquierdo</td>
+            <td>border-color || border-width || border-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-radius">border-radius</a><sup>(3)</sup></td>
+            <td>esquinas redondeadas</td>
+            <td>[ distancia | porcentaje ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-radius">border-top-right-radius</a><sup>(3)</sup></td>
+            <td>esquina superior derecha redondeada</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-radius">border-bottom-right-radius</a><sup>(3)</sup></td>
+            <td>esquina inferior derecha redondeada</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-radius">border-bottom-left-radius</a><sup>(3)</sup></td>
+            <td>esquina inferior izquierda redondeada</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-radius">border-top-left-radius</a><sup>(3)</sup></td>
+            <td>esquina superior izquierda redondeada</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-color-width-style">border-color</a></td>
+            <td>color de los bordes</td>
+            <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-color-width-style">border-width</a></td>
+            <td>grosor de los bordes</td>
+            <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-color-width-style">border-style</a></td>
+            <td>estilos de los bordes</td>
+            <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-top-color</a></td>
+            <td>color del borde superior</td>
+            <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-top-width</a></td>
+            <td>grosor del borde superior</td>
+            <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-top-style</a></td>
+            <td>estilo del borde superior</td>
+            <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-right-color</a></td>
+            <td>color del borde derecho</td>
+            <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-right-width</a></td>
+            <td>grosor del borde derecho</td>
+            <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-right-style</a></td>
+            <td>estilo del borde derecho</td>
+            <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-bottom-color</a></td>
+            <td>color del borde inferior</td>
+            <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-bottom-width</a></td>
+            <td>grosor del borde inferior</td>
+            <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-bottom-style</a></td>
+            <td>estilo del borde inferior</td>
+            <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-left-color</a></td>
+            <td>color del borde izquierdo</td>
+            <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-left-width</a></td>
+            <td>grosor del borde izquierdo</td>
+            <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_bordes.html#border-individuales">border-left-style</a></td>
+            <td>estilo del borde izquierdo</td>
+            <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+          </tr>
+        </tbody>
+        <tbody id="margen-exterior">
+          <tr class="titulo">
+            <td colspan="3">Margen exterior</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#margin">margin</a></td>
+            <td>cuatro márgenes exterior simultáneamente</td>
+            <td>[ <span class="css-valor">auto</span> | distancia | porcentaje ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#margin-lados">margin-top</a></td>
+            <td>margen exterior superior</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#margin-lados">margin-right</a></td>
+            <td>margen exterior derecho</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#margin-lados">margin-bottom</a></td>
+            <td>margen exterior inferior</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#margin-lados">margin-left</a></td>
+            <td>margen exterior izquierdo</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+        </tbody>
+        <tbody id="margen-interior">
+          <tr class="titulo">
+            <td colspan="3">Margen interior</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#padding">padding</a></td>
+            <td>cuatro márgenes interiores simultáneamente</td>
+            <td>[ distancia | porcentaje ] {1, 4}</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#padding-lados">padding-top</a></td>
+            <td>margen interior superior</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#padding-lados">padding-right</a></td>
+            <td>margen interior derecho</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#padding-lados">padding-bottom</a></td>
+            <td>margen interior inferior</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_margenes.html#padding-lados">padding-left</a></td>
+            <td>margen interior izquierdo</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+        </tbody>
+        <tbody id="fondos">
+          <tr class="titulo">
+            <td colspan="3">Fondos</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background">background</a></td>
+            <td>propiedad compuesta</td>
+            <td>background-attachment || background-color || background-image || background-position || background-repeat </td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#fondos-multiples">background</a><sup>(3)</sup></td>
+            <td>fondos múltiples</td>
+            <td>separados por comas</td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-attachment">background-attachment</a></td>
+            <td>ligadura de la imagen</td>
+            <td><span class="css-valor">fixed</span> | <span class="css-valor">scroll</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-color">background-color</a></td>
+            <td>color de fondo</td>
+            <td><span class="css-valor">transparent</span> | color</td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-image">background-image</a></td>
+            <td>imagen de fondo</td>
+            <td><span class="css-valor">none</span> | uri</td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-position">background-position</a></td>
+            <td>posición de la imagen de fondo</td>
+            <td>[ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> | distancia | porcentaje] [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> | distancia | porcentaje] ]? | [ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> ] || [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> ] ]</td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-repeat">background-repeat</a></td>
+            <td>repetición de la imagen de fondo</td>
+            <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span><sup>(3)</sup> | <span class="css-valor">round</span><sup>(3)</sup></td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-clip">background-clip</a><sup>(3)</sup></td>
+            <td>límite de la imagen de fondo</td>
+            <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-size">background-size</a><sup>(3)</sup></td>
+            <td>tamaño de la imagen de fondo</td>
+            <td><span class="css-valor">auto</span> | [ distancia | porcentaje ] {2} | <span class="css-valor">contain</span> | <span class="css-valor">cover</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_fondos.html#background-origin">background-origin</a><sup>(3)</sup></td>
+            <td>origen de la imagen de fondo</td>
+            <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
+          </tr>
+        </tbody>
+        <tbody id="listas">
+          <tr class="titulo">
+            <td colspan="3">Listas</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_listas.html#list-style">list-style</a></td>
+            <td>propiedad compuesta</td>
+            <td>list-style-image || list-style-position || list-style-type</td>
+          </tr>
+          <tr>
+            <td><a href="css_listas.html#list-style-image">list-style-image</a></td>
+            <td>imagen del marcador</td>
+            <td><span class="css-valor">none</span> | uri</td>
+          </tr>
+          <tr>
+            <td><a href="css_listas.html#list-style-position">list-style-position</a></td>
+            <td>posición del marcador</td>
+            <td><span class="css-valor">inside</span> | <span class="css-valor">outside</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_listas.html#list-style-type">list-style-type</a></td>
+            <td>tipo de marcador</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">circle</span> | <span class="css-valor">disc</span> | <span class="css-valor">square</span> | <span class="css-valor">decimal</span> | <span class="css-valor">decimal-leading-zero</span> | <span class="css-valor">lower-alpha</span> | <span class="css-valor">upper-alpha</span> | <span class="css-valor">lower-greek</span> | <span class="css-valor">lower-latin</span> | <span class="css-valor">upper-latin</span> | <span class="css-valor">lower-roman</span> | <span class="css-valor">upper-roman</span> | <span class="css-valor">armenian</span> | <span class="css-valor">georgian</span> | <span class="css-valor">hebrew</span><sup>(-)</sup> | <span class="css-valor">cjk-ideographic</span><sup>(-)</sup> | <span class="css-valor">hiragana </span><sup>(-)</sup> | <span class="css-valor">katakana </span><sup>(-)</sup> | <span class="css-valor">hiragana-iroha</span><sup>(-)</sup> | <span class="css-valor">katakana-iroha</span><sup>(-)</sup></td>
+          </tr>
+        </tbody>
+        <tbody id="tablas">
+          <tr class="titulo">
+            <td colspan="3">Tablas</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_tablas.html#border-collapse">border-collapse</a></td>
+            <td>modo de bordes</td>
+            <td><span class="css-valor">collapse</span> | <span class="css-valor">separate</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_tablas.html#border-spacing">border-spacing</a></td>
+            <td>separación entre celdas</td>
+            <td><span class="css-valor">distancia</span> <span class="css-valor">distancia</span>?</td>
+          </tr>
+          <tr>
+            <td><a href="css_tablas.html#caption-side">caption-side</a></td>
+            <td>posición de la leyenda</td>
+            <td><span class="css-valor">top</span> | <span class="css-valor">bottom</span> | <span class="css-valor">left</span><sup>(-)</sup> | <span class="css-valor">right</span><sup>(-)</sup></td>
+          </tr>
+          <tr>
+            <td><a href="css_tablas.html#empty-cells">empty-cells</a></td>
+            <td>borde de casillas vacías</td>
+            <td><span class="css-valor">hide</span> | <span class="css-valor">show</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_tablas.html#table-layout">table-layout</a></td>
+            <td>algoritmo ancho de tabla</td>
+            <td><span class="css-valor">auto</span> | <span class="css-valor">fixed</span></td>
+          </tr>
+        </tbody>
+        <tbody id="tamano">
+          <tr class="titulo">
+            <td colspan="3">Tamaño</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#width-height">width</a></td>
+            <td>anchura</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje </td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#min-max-width-height">min-width</a></td>
+            <td>anchura mínima</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#min-max-width-height">max-width</a></td>
+            <td>anchura máxima</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#width-height">height</a></td>
+            <td>altura</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#min-max-width-height">min-height</a></td>
+            <td>altura mínima</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#min-max-width-height">max-height</a></td>
+            <td>anchura máxima</td>
+            <td>distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_tamano.html#overflow">overflow</a></td>
+            <td>si el contenido desborda al elemento</td>
+            <td><span class="css-valor">auto</span> | <span class="css-valor">hidden</span> | <span class="css-valor">scroll</span> | <span class="css-valor">visible</span></td>
+          </tr>
+        </tbody>
+        <tbody id="posicionamiento">
+          <tr class="titulo">
+            <td colspan="3">Posicionamiento</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_modelocaja.html#display">display</a></td>
+            <td>tipo de caja</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">compact</span><sup>(-)</sup> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span><sup>(+)</sup> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">marker</span><sup>(-)</sup> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_flotante.html">float</a></td>
+            <td>modo de posicionamiento flotante</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_flotante.html">clear</a></td>
+            <td>lado en el que no puede haber elementos flotantes</td>
+            <td><span class="css-valor">none</span> | <span class="css-valor">both</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html">position</a></td>
+            <td>modo de posicionamiento</td>
+            <td><span class="css-valor">absolute</span> | <span class="css-valor">fixed</span> | <span class="css-valor">relative</span> | <span class="css-valor">static</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html#posicionamiento-absoluto-y-fijo">top</a></td>
+            <td>posición del borde superior del elemento</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html#posicionamiento-absoluto-y-fijo">right</a></td>
+            <td>posición del borde derecho del elemento</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html#posicionamiento-absoluto-y-fijo">bottom</a></td>
+            <td>posición del borde inferior del elemento</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html#posicionamiento-absoluto-y-fijo">left</a></td>
+            <td>posición del borde izquierdo del elemento</td>
+            <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+          </tr>
+          <tr>
+            <td>clip</td>
+            <td>recorta el elemento</td>
+            <td><span class="css-valor">auto</span> | forma</td>
+          </tr>
+          <tr>
+            <td>visibility</td>
+            <td>visibilidad</td>
+            <td><span class="css-valor">hidden</span> | <span class="css-valor">collapse</span> | <span class="css-valor">visible</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_posicionamiento_absoluto.html#z-index">z-index</a></td>
+            <td>apilamiento</td>
+            <td><span class="css-valor">auto</span> | número-entero</td>
+          </tr>
+        </tbody>
+        <tbody id="impresora">
+          <tr class="titulo">
+            <td colspan="3">Impresora</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td>page-break-after</td>
+            <td>salto de página después de</td>
+            <td><span class="css-valor">auto</span> | <span class="css-valor">always</span> | <span class="css-valor">avoid</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+          </tr>
+          <tr>
+            <td>page-break-before</td>
+            <td>salto de página antes de</td>
+            <td><span class="css-valor">auto</span> | <span class="css-valor">always</span> | <span class="css-valor">avoid</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+          </tr>
+          <tr>
+            <td>page-break-inside</td>
+            <td>salto de página dentro de</td>
+            <td><span class="css-valor">auto</span> | <span class="css-valor">avoid</span></td>
+          </tr>
+          <tr>
+            <td>orphans</td>
+            <td>número de líneas al final de página</td>
+            <td>número-entero</td>
+          </tr>
+          <tr>
+            <td>widows</td>
+            <td>número de líneas al principio de la página</td>
+            <td>número-entero</td>
+          </tr>
+        </tbody>
+        <tbody id="interface">
+          <tr class="titulo">
+            <td colspan="3">Interface de usuario</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_interface.html#cursor">cursor</a></td>
+            <td>tipo de cursor</td>
+            <td><span>[uri,]*</span> | <span class="css-valor">auto</span> | <span class="css-valor">crosshair</span> | <span class="css-valor">default</span> | <span class="css-valor">help</span> | <span class="css-valor">move</span> | <span class="css-valor">pointer</span> | <span class="css-valor">progress</span> | <span class="css-valor">n-resize</span> | <span class="css-valor">ne-resize</span> | <span class="css-valor">e-resize</span> | <span class="css-valor">se-resize</span> | <span class="css-valor">s-resize</span> | <span class="css-valor">sw-resize</span> | <span class="css-valor">w-resize</span> | <span class="css-valor">nw-resize</span> | <span class="css-valor">text</span> | <span class="css-valor">wait</span></td>
+          </tr>
+          <tr>
+            <td><a href="css_interface.html#outline">outline</a></td>
+            <td>cuatro bordes simultáneamente</td>
+            <td>outline-color || outline-width || outline-style</td>
+          </tr>
+          <tr>
+            <td><a href="css_interface.html#outline-color-width-style">outline-color</a></td>
+            <td>color de los bordes</td>
+            <td>color</td>
+          </tr>
+          <tr>
+            <td><a href="css_interface.html#outline-color-width-style">outline-width</a></td>
+            <td>grosor de los bordes</td>
+            <td>border-width</td>
+          </tr>
+          <tr>
+            <td><a href="css_interface.html#outline-color-width-style">outline-style</a></td>
+            <td>estilos de los bordes</td>
+            <td>border-style</td>
+          </tr>
+        </tbody>
+        <tbody id="pseudo-elementos">
+          <tr class="titulo">
+            <td colspan="3">Pseudo-elementos</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Nombre</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-elementos-before-after">:after</a></td>
+            <td>inserta contenido después del elemento</td>
+            <td>content: contenido</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-elementos-before-after">:before</a></td>
+            <td>inserta contenido antes del elemento</td>
+            <td>content: contenido</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-elementos-first">:first-letter</a></td>
+            <td>primera letra</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-elementos-first">:first:line</a></td>
+            <td>primera línea de texto</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#content">content</a></td>
+            <td>contenido generado</td>
+            <td><span class="css-valor">normal</span><sup>(+)</sup> | <span class="css-valor">none</span><sup>(+)</sup> | [ texto | uri | contador | attr(atributo) | <span class="css-valor">open-quote</span> | <span class="css-valor">close-quote</span> | <span class="css-valor">no-open-quote</span> | <span class="css-valor">no-close-quote</span> ]+</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#counter">counter-increment</a></td>
+            <td>incremento de contador</td>
+            <td><span class="css-valor">none</span> | [ identificador número-entero? ]+</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#counter">counter-reset</a></td>
+            <td>puesto a cero de contador</td>
+            <td><span class="css-valor">none</span> | [ identificador número-entero? ]+</td>
+          </tr>
+          <tr>
+            <td>quotes</td>
+            <td>comillas</td>
+            <td><span class="css-valor">none</span> | [ texto-apertura texto-cierre ]+</td>
+          </tr>
+        </tbody>
+        <tbody id="pseudo-clases">
+          <tr class="titulo">
+            <td colspan="3">Pseudo-clases</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Nombre</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-dinamicas">:active</a></td>
+            <td>cuando se hace clic sobre el elemento</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#first-child">:first-child</a></td>
+            <td>primer elemento hijo</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-dinamicas">:focus</a></td>
+            <td>cuando el elemento tiene el foco</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-dinamicas">:hover</a></td>
+            <td>cuando el ratón pasa sobre el elemento</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-lang">:lang</a></td>
+            <td>idioma</td>
+            <td>:lang(en) | :lang(es) | :lang(fr) etc.</td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-enlace">:link</a></td>
+            <td>enlaces no visitados</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><a href="css_pseudoclases.html#pseudo-clase-enlace">:visited</a></td>
+            <td>enlaces ya visitados</td>
+            <td></td>
+          </tr>
+        </tbody>
+        <tbody id="eliminadas">
+          <tr class="titulo">
+            <td colspan="3">Propiedades no incluidas en CSS 2.1</td>
+          </tr>
+          <tr class="cabecera">
+            <td>Propiedad</td>
+            <td>Descripción</td>
+            <td>Valores</td>
+          </tr>
+          <tr>
+            <td><a href="css2_obsoletas.html#font-size-adjust">font-size-adjust</a></td>
+            <td>ajuste de tamaño</td>
+            <td>número-decimal</td>
+          </tr>
+          <tr>
+            <td><a href="css2_obsoletas.html#font-stretch">font-stretch</a></td>
+            <td>anchura</td>
+            <td><span class="css-valor">ultra-condensed</span> | <span class="css-valor">extra-condensed</span> | <span class="css-valor">condensed</span> | <span class="css-valor">semi-condensed</span> | <span class="css-valor">semi-expanded</span> | <span class="css-valor">expanded</span> | <span class="css-valor">extra-expanded</span> | <span class="css-valor">ultra-expanded</span> <span class="css-valor">normal</span> | <span class="css-valor">wider</span> | <span class="css-valor">narrower</span></td>
+          </tr>
+          <tr>
+            <td><a href="css2_obsoletas.html#marker-offset">marker-offset</a></td>
+            <td>distancia entre marcador y elemento</td>
+            <td>distancia</td>
+          </tr>
+          <tr>
+            <td>marks</td>
+            <td>marcas de corte de papel</td>
+            <td><span class="css-valor">crop</span> | <span class="css-valor">cross</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 2 de diciembre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

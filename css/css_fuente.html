@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tipo de letra (fuente). CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 2: Tipo de letra (fuente)</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS2: Fuente</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#font"><span class="css-prop">font</span></a></li>
+          <li><a href="#font-family">Tipo de letra: <span class="css-prop">font-family</span></a></li>
+          <li><a href="#font-size">Tamaño: <span class="css-prop">font-size</span></a>
+            <ul>
+              <li><a href="#tamano-absoluto">Tamaño absoluto</a></li>
+              <li><a href="#tamano-relativo">Tamaño relativo</a></li>
+              <li><a href="#valor-numerico">Valor numérico</a></li>
+              <li><a href="#valor-relativo">Valor relativo</a></li>
+            </ul>
+          </li>
+          <li><a href="#subfamilias-tipograficas">Subfamilias tipográficas</a>
+            <ul>
+              <li><a href="#font-style">Itálica: <span class="css-prop">font-style</span></a></li>
+              <li><a href="#font-variant">Versalitas: <span class="css-prop">font-variant</span></a></li>
+              <li><a href="#font-weight">Negrita: <span class="css-prop">font-weight</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#line-height">Interlineado: <span class="css-prop">line-height</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Los tipos de letra pueden ser tan diferentes que no existe un método universal de clasificación y denominación de los tipos de letra. En las hojas de estilo esta situación se resuelve mediante propiedades que permiten describir el aspecto general del tipo de letra y es el navegador el que escoge, de entre los tipos de letra instalados en el ordenador, el que mejor se adapta a esa descripción.</p>
+
+    <section id="font">
+      <h2 class="con-aside">La propiedad compuesta <span class="css-prop">font</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">font</span><br />
+          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad compuesta <span class="css-prop">font</span> permite definir simultáneamente las propiedades relacionadas con el tipo de letra: <span class="css-prop">font-style</span>, <span class="css-prop">font-variant</span>, <span class="css-prop">font-weight</span>, <span class="css-prop">font-size</span> , <span class="css-prop">line-height</span> y <span class="css-prop">font-family</span> (explicadas más adelante en esta misma página).</p>
+
+      <p>Al escribir la propiedad compuesta, el orden en que deben aparecer los valores es el orden en que aparecen las propiedades simples en el párrafo anterior. Las únicas propiedades que deben aparecer obligatoriamente son <span class="css-prop">font-size</span> y <span class="css-prop">font-family</span>. Si se escribe la propiedad <span class="css-prop">line-height</span> debe aparecer separada de <span class="css-prop">font-size</span> por una barra (/).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: 150% sans-serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: 150% sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 150%.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: bold 90% monospace;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: bold 90% monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 90% y en negrita.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: oblique bold 120% cursive;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: oblique bold 120% cursive;">Esto es un párrafo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans) al 120%, en negrita y en cursiva.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: small-caps 100%/200% serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: small-caps 100%/200% serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman) al 100%, con un interlineado doble, y en versalitas.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si no están las propiedades en el orden correcto, o falta alguna de las propiedades obligatorias, los navegadores no hacen caso.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+            <td class="codcss"><pre>
+<code class="language-css">p {
+  font: monospace 150%;
+  /* el orden no es correcto */
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font:  monospace 150%;">Esto debería ser un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 150%.</p></td>
+          </tr>
+          <tr>
+            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+            <td class="codcss"><pre>
+<code class="language-css">p {
+  font: bold 90%;
+  /* falta font-type */
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: bold 90%;">Esto debería ser un párrafo al 90% y en negrita.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si los primeros valores son correctos, pero al final hay valores que deberían estar en otro lugar, los navegadores aplican los valores correctos e ignoran los valores finales (<span class="css-prop">font-family</span> también se ignora).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: oblique 120% sans-serif bold;
+  /* bold debería estar al principio */
+}</code></pre>
+            </td>
+            <td class="resul"><p style="font: oblique 120% sans-serif bold;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120%, y en negrita.</p>
+            </td>
+          </tr>
+          <tr>
+            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: 120% sans-serif small-caps;
+/* small-caps debería estar al principio */
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: 120% sans-serif small-caps;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120% y en versalitas.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Además, la propiedad <span class="css-prop">font</span> admite los valores <span class="css-valor">caption</span>, <span class="css-valor">icon</span>, <span class="css-valor">menu</span>, <span class="css-valor">message-box</span>, <span class="css-valor">small-caption</span> y <span class="css-valor">status-bar</span>, que hacen referencia a los tipos de letra que utiliza el sistema operativo para esos elementos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: caption;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: caption;">Este párrafo se muestra como un caption.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: icon;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: icon;">Este párrafo se muestra como un icon.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: menu;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: menu;">Este párrafo se muestra como un menu.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: message-box;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: message-box;">Este párrafo se muestra como un message-box.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: small-caption;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: small-caption;">Este párrafo se muestra como un small-caption.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font: status-bar;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font: status-bar;">Este párrafo se muestra como un status-bar.</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="font-family">
+      <h2 class="con-aside">Tipo de letra: <span class="css-prop">font-family</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">font-family</span><br />
+          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">font-family</span> permite establecer el tipo de letra (fuente) del elemento. Se puede escribir el nombre concreto de una fuente (escribiéndolo entre comillas si el nombre contiene espacios), pero hay que tener en cuenta que si la persona que ve la página no tiene esa fuente instalada en su ordenador (o la tiene, pero con otro nombre), su navegador utilizará una fuente distinta. Para evitar este problema se puede utilizar uno de los nombres genéricos (<span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">cursive</span>, <span class="css-valor">fantasy</span> o <span class="css-valor">monospace</span>). Los navegadores tienen asociados a cada nombre genérico una fuente que sí que está instalada en el ordenador.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: cursive;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: cursive;">Esto es un párra<span style="font-family: cursive;"></span>fo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: fantasy;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: fantasy;">Esto es un párrafo con fuente <span class="css-valor">fantasy</span> (en Windows suele ser Verdana)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: monospace;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier)</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista. Los nombres de las fuentes deben escribirse entre comillas si contienen espacios.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "Palatino", sans-serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;Palatino&#34;, sans-serif;">Esto es un párrafo con fuente "Palatino" o, si no está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "Tahoma", "Geneva", sans-serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;Tahoma&#34;, &#34;Geneva&#34;, sans-serif;">Esto es un párrafo con fuente "Tahoma" o, si no está instalada en el ordenador cliente, "Geneva" o, si tampoco está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "Homer Simpson", cursive;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;Homer Simpscon&#34;, cursive;">Esto es un párrafo con fuente "Homer Simpson" o, si no está instalada en el ordenador cliente, <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "Arial", serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;Arial&#34;, serif;">Esto es un párrafo con fuente "Arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "arial", serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;arial&#34;, serif;">Esto es un párrafo con fuente "arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-family: "ARIAL", serif;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="font-family: &#34;ARIAL&#34;, serif;">Esto es un párrafo con fuente "ARIAL" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="font-size">
+      <h2 class="con-aside">Tamaño del tipo de letra: <span class="css-prop">font-size</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">font-size</span><br />
+          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">font-size</span> permite establecer el tamaño del tipo de letra (fuente) del elemento. Se puede expresar el tamaño de varias maneras: tamaño absoluto, tamaño relativo, distancia o porcentaje, aunque generalmente se aconseja utilizar unidades relativas (<span class="css-unidad">%</span> o <span class="css-unidad">em</span>).</p>
+
+      <section id="tamano-absoluto">
+        <h3>Tamaño absoluto</h3>
+
+        <p>El navegador tiene definidos una serie de tamaños que se llaman <span class="css-valor">xx-small</span>, <span class="css-valor">x-small</span>, <span class="css-valor">small</span>, <span class="css-valor">medium</span>, <span class="css-valor">large</span>, <span class="css-valor">x-large</span> y <span class="css-valor">xx-large</span>. Estos tamaños el navegador los elige en función de la resolución de la pantalla, el tamaño de la fuente, etc.</p>
+
+        <p>A continuación se encuentra cada uno de los nombres de tamaños absolutos a su propio tamaño: <span class="css-valor" style="font-size: xx-small;">xx-small</span>, <span class="css-valor" style="font-size: x-small;">x-small</span>, <span class="css-valor" style="font-size: small">small</span>, <span class="css-valor" style="font-size: medium;">medium</span>, <span class="css-valor" style="font-size: large;">large</span>, <span class="css-valor" style="font-size: x-large;">x-large</span> y <span class="css-valor" style="font-size: xx-large;">xx-large</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-size: x-large;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-size: x-large">Esto es un párrafo de tamaño x-large.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="tamano-relativo">
+        <h3>Tamaño relativo</h3>
+
+        <p>Se pueden utilizar los valores <span class="css-valor">larger</span> o <span class="css-valor">smaller</span>. Estos valores se interpretan con respecto al elemento padre y se toman el valor siguiente o anterior de la lista de tamaños absolutos.</p>
+
+        <p>En el ejemplo siguiente, la hoja de estilo establece que una lista tiene que tener un tamaño menor que el elemento padre. Si se escriben listas anidadas, cada sublista es cada vez más pequeña. Cuando se llega al límite inferior, el navegador puede seguir reduciendo la letra o dejarla en <span class="css-valor">xx-small</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">ul {
+  font-size: smaller;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <ul style="font-size: smaller;">
+                  <li>Lista 1
+                    <ul style="font-size: smaller;">
+                      <li>Lista 2
+                        <ul>
+                          <li style="font-size: smaller;">Lista 3
+                            <ul>
+                              <li style="font-size: smaller;">Lista 4</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="valor-numerico">
+        <h3>Valor numérico con unidades absolutas</h3>
+
+        <p>Se puede definir un tamaño concreto, por ejemplo, 14pt, 3cm, etc.</p>
+
+        <p><strong>Nota</strong>: Hace años (antes de 2010) se desaconsejaba utilizar estas unidades de forma indiscriminada porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación. Esta forma de definir el tamaño se reservaba para diseños de página pensados para una resolución determinada y cuando se quería conservar un determinado diseño (distribución de elementos en la página, etc.).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-size: 16pt;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-size: 16pt;">Esto es un párrafo de tamaño 16pt.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="valor-relativo">
+        <h3>Valor numérico con unidades relativas</h3>
+
+        <p>Se puede definir el tamaño de cada elemento mediante porcentajes (o <span class="css-unidad">em</span>, teniendo en cuenta que 1em = 100%), que se interpretan con respecto al tamaño base.</p>
+
+        <p><strong>Nota</strong>: Hace años (antes de 2010) se aconsejaba utilizar preferentemente estas unidades porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-size: 150%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-size: 150%;">Esto es un párrafo de tamaño 150%.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-size: 120%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-size: 120%;">Esto es un párrafo de tamaño 120%.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-size: 80%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-size: 80%;">Esto es un párrafo de tamaño 80%.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="subfamilias-tipograficas">
+      <h2>Subfamilias tipográficas</h2>
+
+      <p>En Tipografía existen lo que se llaman subfamilias tipográficas, es decir, fuentes que son variaciones de una fuente determinada. Algunas de las posibles variaciones son:</p>
+
+      <ul>
+        <li>la <a href="#font-style">inclinación</a></li>
+        <li><a href="#font-variant">versalitas</a></li>
+        <li>el <a href="#font-weight">grosor</a> del trazo</li>
+      </ul>
+
+      <p>Las propiedades <span class="css-prop">font-style</span>, <span class="css-prop">font-weight</span> y <span class="css-prop">font-variant</span> le indican al navegador qué variación es la que debería mostrar. El navegador es el que tiene que decidir qué fuente (de las instaladas en el ordenador en el que se están viendo las páginas) debe utilizar o, si es capaz de ello, simular.</p>
+
+      <section id="font-style">
+        <h3 class="con-aside">Inclinación (itálica): <span class="css-prop">font-style</span></h3>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">font-style</span><br />
+            <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+        <p>Una forma de obtener una variante de un tipo de letra es inclinar las letras. En Tipografía se distinguen dos formas de inclinación:</p>
+
+        <ul>
+          <li>oblicua: la forma de la letra no cambia, simplemente se inclina</li>
+          <li>itálicas: además de inclinarse, la forma de algunas letras cambia</li>
+        </ul>
+
+        <p>Para distinguir si una fuente es oblicua o itálica, es necesario fijarse en letras como la "a". La imagen siguiente muestra un ejemplo: la primera línea corresponde a la fuente Aldine (normal e itálica) y la segunda línea corresponde a la fuente Arial (normal y oblicua).</p>
+
+        <p class="centrado"><img alt="Ejemplo de fuente oblique e italic" src="../img/otros/ejemplo_font-style.png" title="Ejemplo de fuente oblique e italic" /></p>
+
+        <p>La propiedad <span class="css-prop">font-style</span> permite elegir la inclinación: <span class="css-valor">normal</span>, <span class="css-valor">oblique</span> o <span class="css-valor">italic</span>. Desgraciadamente, los navegadores no distinguen entre itálica y oblicua y muestran en los dos casos la variante oblicua, como puede verse en el ejemplo siguiente. Por tanto, al utilizar esta propiedad es más apropiado dar el valor <span class="css-valor">oblique</span>, que es el que aplican realmente los navegadores.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size: 200%;
+  font-style: normal;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-family: sans-serif; font-size: 200%; font-style: normal;">Este párrafo está en el tipo normal</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size: 200%;
+  font-style: italic;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-family: sans-serif; font-size: 200%; font-style: italic;">Este párrafo está en el tipo itálica</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-family: sans-serif;
+  font-size: 200%;
+  font-style: oblique;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-family: sans-serif; font-size: 200%; font-style: oblique;">Este párrafo está en el tipo oblicuo</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="font-variant">
+        <h3 class="con-aside">Versalitas: <span class="css-prop">font-variant</span></h3>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">font-variant</span><br />
+            <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+        <p>Las versalitas son tipos en las que todos los caracteres están en mayúsculas, aunque con el tamaño de las minúsculas (en principio, con la altura de la letra x del tipo, aunque no siempre es así). La propiedad <span class="css-prop">font-variant</span> permite elegir esta variante (los valores posibles son <span class="css-valor">normal</span> y <span class="css-valor">small-caps</span>).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-variant: normal;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-variant: normal;">Este párrafo está en el tipo normal: aAbBcCdDeEfF</p></td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  font-variant: small-caps;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p style="font-variant: small-caps;">Este párrafo está en versalitas: aAbBcCdDeEfF</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="font-weight">
+        <h3 class="con-aside">Grosor del trazo (negrita): <span class="css-prop">font-weight</span></h3>
+
+        <aside class="enlace-norma">
+          <p><span class="css-prop">font-weight</span><br />
+            <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        </aside>
+
+        <p>La propiedad <span class="css-prop">font-weight</span> permite elegir el grosor del trazo. Existen nueve valores numéricos (<span class="css-valor">100</span>, <span class="css-valor">200</span>, <span class="css-valor">300</span>, <span class="css-valor">400</span>, <span class="css-valor">500</span>, <span class="css-valor">600</span>, <span class="css-valor">700</span>, <span class="css-valor">800</span>, <span class="css-valor">900</span>), del más fino al más grueso. Además, existen los valores <span class="css-valor">normal</span> y <span class="css-valor">bold</span> que deben coincidir respectivamente, con los valores numéricos <span class="css-valor">400</span> y <span class="css-valor">700</span>. Y por último, existen los valores <span class="css-valor">lighter</span> y <span class="css-valor">bolder</span> que significan, respectivamente, un valor inferior y superior en la lista de valores numéricos y se interpretan respecto del elemento padre.</p>
+
+        <p>Al definir el grosor con valores numéricos, Firefox, Chrome e Internet Explorer muestran tres grosores distintos (de <span class="css-valor">100</span> a <span class="css-valor">500</span> como <span class="css-valor">normal</span>, <span class="css-valor">600</span> y <span class="css-valor">700</span> como <span class="css-valor">bold</span> y <span class="css-valor">800</span> y <span class="css-valor">900</span> más grueso que <span class="css-valor">bold</span>). Esos grosores no se aprecian de la misma manera en cada tipo de letra. En la siguiente lista, cada valor está en el grosor indicado por el propio valor:</p>
+
+        <ul>
+          <li>Fuente <span class="css-valor">sans-serif</span>
+            <ul>
+              <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+              <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+              <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+            </ul>
+          </li>
+          <li>Fuente <span class="css-valor">serif</span>
+            <ul style="font-family: serif;">
+              <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+              <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+              <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+            </ul>
+          </li>
+          <li>Fuente <span class="css-valor">monospace</span>
+            <ul style="font-family: monospace;">
+              <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+              <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+              <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+            </ul>
+          </li>
+          <li>Fuente <span class="css-valor">cursive</span>
+            <ul style="font-family: cursive;">
+              <li><span style="font-weight: 100;">100</span>, <span style="font-weight: 200;">200</span>, <span style="font-weight: 300;">300</span>, <span style="font-weight: 400;">400</span>, <span style="font-weight: 500;">500</span>, <span style="font-weight: 600;">600</span>, <span style="font-weight: 700;">700</span>, <span style="font-weight: 800;">800</span>, <span style="font-weight: 900;">900</span></li>
+              <li><span style="font-weight: normal;">normal</span> y <span style="font-weight: bold;">bold</span></li>
+              <li><span style="font-weight: lighter;">lighter</span> y <span style="font-weight: bolder;">bolder</span></li>
+            </ul>
+          </li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p { font-family: sans-serif; }
+
+p.g400 { font-weight: 400; }
+
+p.n { font-weight: normal; }
+
+p.g700 { font-weight: 700; }
+
+p.b { font-weight: bold; }
+
+p.g900 { font-weight: 900;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p style="font-weight: 400; font-family: sans-serif;">Este párrafo está en negrita (400)</p>
+
+                <p style="font-weight: normal; font-family: sans-serif;">Este párrafo está en negrita (normal)</p>
+
+                <p style="font-weight: 700; font-family: sans-serif;">Este párrafo está en negrita (700)</p>
+
+                <p style="font-weight: bold; font-family: sans-serif;">Este párrafo está en negrita (bold)</p>
+
+                <p style="font-weight: 900; font-family: sans-serif;">Este párrafo está en negrita (900)</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El valor <span class="css-valor">bolder</span> hace que el elemento se muestre, si es posible, con un grosor mayor que el del elemento en el que está incluido. En el siguiente ejemplo, cada lista se muestra con un grosor mayor que la anterior:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+<span class="font-weight: normal;">  font-weight: normal;</span>
+}<br />
+ul {
+  font-weight: bolder;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Este es un párrafo normal</p>
+                <ul style="font-weight: bolder; font-family: sans-serif;">
+                  <li>Lista con trazo más grueso
+                    <ul style="font-weight: bolder;">
+                      <li>Lista con trazo todavía más grueso
+                        <ul style="font-weight: bolder;">
+                          <li>Lista con trazo todavía más grueso
+                            <ul style="font-weight: bolder;">
+                              <li>Lista con trazo todavía más grueso</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="line-height">
+      <h2 class="con-aside">Interlineado: <span class="css-prop">line-height</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">line-height</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-line-height"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">line-height</span> permite establecer el interlineado de un bloque de texto. El valor se puede expresar en cualquier unidad de longitud, aunque lo más lógico es utilizar porcentajes o em. Si se expresa en porcentajes, el valor 100% corresponde al interlineado normal.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  line-height: 100%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="line-height: 100%">Este párrafo tiene un interlineado del 100%, es decir un interlineado sencillo. Este es el mismo interlineado que se aplica si no se utiliza esta propiedad.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  line-height: 200%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="line-height: 200%">Este párrafo tiene un interlineado del 200%, es decir un interlineado doble. Las líneas de texto están separadas el doble de lo normal.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  line-height: 150%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="line-height: 150%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  line-height: 75%;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="line-height: 75%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 3/4 líneas. Las líneas de texto están más juntas de lo normal, lo que puede dificultar su lectura.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  line-height: 1.5em;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="line-height: 1.5em">Este párrafo tiene un interlineado del 1.5em, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 15 de octubre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

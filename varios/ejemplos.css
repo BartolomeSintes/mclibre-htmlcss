@@ -1,0 +1,243 @@
+@charset "utf-8";
+/* HTML/XHTML y CSS
+   Bartolome Sintes Marco
+   http://www.mclibre.org
+
+   CSS curso: XHTML y CSS
+   CSS para ejemplos en las explicaciones, basada en la hoja de estilo por omision de Firefox 3
+   13 de octubre de 2015
+*/
+
+/* blocks */
+
+td.resul {
+  padding: 4px;
+  background-color: white;
+  text-align: left;
+  font-family: serif;
+}
+
+td.resul p, td.resul dl {
+  margin: 1em 0;
+}
+
+td.resul dd {
+  -moz-margin-start: 40px;
+}
+
+td.resul blockquote {
+  margin: 1em 40px;
+}
+
+td.resul address {
+  font-style: italic;
+}
+
+td.resul blockquote[type=cite] {
+  display: block;
+  margin: 1em 0;
+  -moz-padding-start: 1em;
+  -moz-border-start: solid;
+  border-color: blue;
+  border-width: thin;
+}
+
+td.resul h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: .67em 0;
+  text-align: left;
+}
+
+td.resul h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: .83em 0;
+}
+
+td.resul h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+td.resul h4 {
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+td.resul h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+td.resul h6 {
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+td.resul pre {
+  font-family: -moz-fixed;
+  white-space: pre;
+  margin: 1em 0;
+}
+
+/* tables */
+
+td.resul table {
+  display: table;
+/*  border-spacing: 2px; */
+/*  comento esa propiedad para que el atributo cellspacing funcione en los ejemplos */
+/*  border-collapse: separate; */
+/*  comento esa propiedad para que el atributo rules funcione en los ejemplos */
+  margin-top: 0;
+  margin-bottom: 0;
+  /* XXXldb do we want this if we're border-collapse:collapse ? */
+  -moz-box-sizing: border-box;
+  text-indent: 0;
+}
+
+td.resul table[align="left"] {
+  float: left;
+}
+
+td.resul table[align="right"] {
+  float: right;
+}
+
+/* caption inherits from table not table-outer */
+
+td.resul caption {
+  display: table-caption;
+  text-align: center;
+  -moz-box-sizing: border-box;
+}
+
+td.resul table[align="center"] > caption {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td.resul table[align="center"] > caption[align="left"] {
+  margin-right: 0;
+}
+
+td.resul table[align="center"] > caption[align="right"] {
+  margin-left: 0;
+}
+
+/* for XHTML tables without tbody */
+
+td.resul td {
+/*  padding: 1px;*/
+/*  comento esa propiedad para que el atributo cellpadding funcione en los ejemplos */
+}
+
+td.resul th {
+  font-weight: bold;
+  padding: 1px;
+}
+
+/* inlines */
+
+td.resul b, strong {
+  font-weight: bolder;
+}
+
+td.resul i, cite, em, var, dfn {
+  font-style: italic;
+}
+
+td.resul tt, code, kbd, samp {
+  font-family: -moz-fixed;
+}
+
+td.resul u, ins {
+  text-decoration: underline;
+}
+
+td.resul s, strike, del {
+  text-decoration: line-through;
+}
+
+/* titles */
+/* 13/10/15 Comentado porque me sacaba un subrayado doble */
+/*
+td.resul abbr[title], acronym[title] {
+  border-bottom: dotted 1px;
+}
+*/
+/* lists */
+
+td.resul ul, td.resul menu, td.resul dir {
+/*  list-style-type: disc; */
+/* He comentado esta linea porque si no el ejemplo de listas anidadas
+de la pagina de listas css se veian todas con disco */
+/*  margin: 1em 0 ;*/
+/* He comentado esta linea porque en IE 7 se veia mal la pagina de listas css */
+  -moz-padding-start: 40px;
+}
+
+td.resul ol {
+  list-style-type: decimal;
+/*  margin: 1em 0 ;*/
+/* He comentado esta linea porque en IE 7 se veia mal la pagina de listas css */
+  -moz-padding-start: 40px;
+}
+
+td.resul li {
+  display: list-item;
+}
+
+/* nested lists have no top/bottom margins */
+ul ul,   ul ol,   ul dir,   ul menu,   ul dl,
+ol ul,   ol ol,   ol dir,   ol menu,   ol dl,
+dir ul,  dir ol,  dir dir,  dir menu,  dir dl,
+menu ul, menu ol, menu dir, menu menu, menu dl,
+dl ul,   dl ol,   dl dir,   dl menu,   dl dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* leafs */
+
+/* <hr> noshade and color attributes are handled completely by
+ * the nsHTMLHRElement attribute mapping code
+ */
+/* 20/10/2009 He comentado estas dos sentencias porque si no
+   en la pagina de lineas horizontales el IE hacia lo mismo que Firefox
+   en el apartado de margin-left o margin-right con width
+
+td.resul hr {
+  display: block;
+  height: 2px;
+  border: 1px inset;
+  margin: 0.5em auto 0.5em auto;
+  color: gray;
+  -moz-float-edge: margin-box;
+  -moz-box-sizing: border-box;
+}
+
+td.resul hr[size="1"] {
+  border-style: solid none none none;
+}
+*/
+/* la linea original era
+  td.resul *|*:-moz-any-link img,
+pero amaya daba un error de validacion, asi que lo he cambiado por
+  td.resul a img,
+*/
+
+td.resul a img, td.resul img[usemap], td.resul object[usemap] {
+  border: 2px solid;
+}
+
+td.resul img[usemap], td.resul object[usemap] {
+  color: blue;
+}
+
+td.resul iframe.conborde {
+  border: 2px inset;
+}

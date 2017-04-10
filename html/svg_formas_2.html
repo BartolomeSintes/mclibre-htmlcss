@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formas avanzadas. SVG. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Formas avanzadas SVG</h1>
+
+    <p>En esta lección se tratan las formas avanzadas SVG y su principales atributos. La etiqueta principal de SVG, la etiqueta <span class="html-eti">&lt;svg&gt;</span>, se comenta en la lección <a href="../html/html_svg.html">SVG</a>. Las formas básicas SVG (líneas, rectángulos, círculos, cuvas, etc.) se comentan en la lección <a href="svg_formas_1.html">Formas básicas SVG</a>.</p>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Formas SVG</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#svg-etiqueta-path">Camino <span class="html-eti">&lt;path /&gt;</span></a>
+            <ul>
+              <li><a href="#svg-path-segmento">Segmentos</a></li>
+              <li><a href="#svg-path-arco-eliptico">Arcos elípticos</a></li>
+              <li><a href="#svg-path-bezier-cubica">Bézier cúbicas</a></li>
+              <li><a href="#svg-path-bezier-cuadratica">Bézier cuadráticas</a></li>
+              <li><a href="#svg-path-cerrar">Cerrar caminos</a></li>
+              <li><a href="#svg-path-compuesto">Caminos compuestos</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="svg-etiqueta-path">
+      <h2 class="con-aside">Forma general: <span class="html-eti">&lt;path /&gt;</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;path /&gt;</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La forma general SVG es el camino <span class="html-eti">&lt;path /&gt;</span>. La etiqueta <span class="html-eti">&lt;path /&gt;</span> permite dibujar cualquier tipo de curva.</p>
+
+      <p>El atributo principal propio de <span class="html-eti">&lt;path /&gt;</span> es:</p>
+      <ul>
+        <li><span class="html-atri">d</span>: lista de puntos y/o curvas entre ellos</li>
+      </ul>
+
+      <p>A continuación se comenta cómo especificar los diferentes tipos de curvas que se pueden dibujar entre los puntos: segmentos, curvas elípticas, curvas de Bézier cúbicas y curvas de Bézier cuadráticas.</p>
+
+      <section id="svg-path-segmento">
+        <h3 class="con-aside">Segmentos</h3>
+
+        <aside class="enlace-norma">
+          <p><span class="html-atri">d</span> L<br />
+            <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html#PathDataLinetoCommands"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a></p>
+        </aside>
+
+        <ul>
+          <li>Salto absoluto: M x,y</li>
+          <li>Salto relativo: m x,y</li>
+          <li>Segmento absoluto: L x,y</li>
+          <li>Segmento relativo: l x,y</li>
+          <li>Segmento horizontal absoluto: H x</li>
+          <li>Segmento horizontal relativo: H x</li>
+          <li>Segmento vertical absoluto: V x</li>
+          <li>Segmento vertical relativo: v x</li>
+        </ul>
+
+        <p>Un salto desplaza el cursor sin dibujar ningún trazo. Los segmentos dibujan un segmento recto desde la posición anterior del cursor. Saltos y segmentos se pueden definir de forma absoluta (coordenadas del cursor) o relativa (desplazamiento entre posiciones del cursor).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"<br />  width="140" height="110" viewBox="0 0 140 110"&gt;<br/>  &lt;path d="M 10,70 L 30,40 L 70,100 L 130,10" <br />    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;<br />&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="140" height="110" viewBox="0 0 140 110">
+                  <path d="M 10,70 L 30,40 L 70,100 L 130,10" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"<br />  width="140" height="110" viewBox="0 0 140 110"&gt;<br/>  &lt;path d="m 10,70 l 20,-30 l 40,60 l 60,-90" <br />    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;<br />&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="140" height="110" viewBox="0 0 140 110">
+                  <path d="m 10,70 l 20,-30 l 40,60 l 60,-90" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"<br />  width="140" height="90" viewBox="0 0 140 90"&gt;<br/>  &lt;path d="M 10,80 H 130 V 10 H 60 V 40" <br />    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;<br />&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="140" height="90" viewBox="0 0 140 90">
+                  <path d="M 10,80 H 130 V 10 H 60 V 40" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"<br />  width="140" height="90" viewBox="0 0 140 90"&gt;<br/>  &lt;path d="m 10,80 h 120 v -70 h -70 v 30" <br />    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;<br />&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="140" height="90" viewBox="0 0 140 90">
+                  <path d="m 10,80 h 120 v -70 h -70 v 30" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="svg-path-arco-eliptico">
+        <h3 class="con-aside">Arcos elípticos</h3>
+
+        <aside class="enlace-norma">
+          <p><span class="html-atri">d</span> A<br />
+            <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html#PathDataEllipticalArcCommands"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a></p>
+        </aside>
+
+        <p>Un arco elíptico dibuja una curva elíptica desde la posición anterior del cursor hasta la posición siguiente. Como hay infinitas curvas elípticas que pasan por dos puntos, se necesitan parámetros adicionales adicionales para especificar la curva deseada. La expresión general del arco es la siguiente:</p>
+
+        <ul>
+          <li>Arco absoluto: A rx,ry rotacionEjeX arcoGrande,sentidoGiro x,y</li>
+          <li>Arco relativo: A rx,ry rotacionEjeX arcoGrande,sentidoGiro x,y</li>
+        </ul>
+
+        <p>siendo:</p>
+
+        <ul>
+          <li>x,y: punto final del arco</li>
+          <li>rx,ry: semiejes de la elipse que pasa por el punto inicial y el final.</li>
+          <li>rotacionEjeX: inclinación de la elipse (entre 0 y 360 grados)</li>
+        </ul>
+
+        <p><strong>Notas:</strong>
+        <ul>
+          <li>Para que las elipses tengan un semieje horizontal y el otro vertical, los valores de los semiejes deben ser las distancias entre los puntos.</li>
+          <li class="incompleto">No tengo claro cómo funciona el parámetro inclinación.</li>
+        </ul>
+
+        <p>Puesto que hay dos elipses que cumplen las condiciones anteriores (pasan por los dos puntos, tienen esos semiejes y esa inclinación), hay cuatro posibles arcos, que se especifican con dos parámetros:</p>
+
+        <ul>
+          <li>arcoGrande: indica si es el arco más corto (0) o el más largo (1) </li>
+          <li>sentidoGiro: indica si se recorre el arco en sentido horario (0) o antihorario (1)</li>
+        </ul>
+
+        <p>En los ejemplos siguientes se dibujan los cuatro arcos posibles para unos semiejes e inclinación dados:</p>
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="300" height="200" viewBox="0 0 300 200"&gt;
+  &lt;path d="M 80,70 A 70,30 0 0,0 150,40"
+    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;
+  &lt;path d="M 80,70 A 70,30 0 0,1 150,40"
+    fill="none" stroke="red" stroke-width="3" /&gt;
+  &lt;path d="M 80,70 A 70,30 0 1,0 150,40"
+    fill="none" stroke="green" stroke-width="3" /&gt;
+  &lt;path d="M 80,70 A 70,30 0 1,1 150,40"
+    fill="none" stroke="gold" stroke-width="3" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+                  <path d="M 80,70 A 70,30 0 0,0 150,40" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                  <path d="M 80,70 A 70,30 0 0,1 150,40" fill="none" stroke="red" stroke-width="3" />
+                  <path d="M 80,70 A 70,30 0 1,0 150,40" fill="none" stroke="green" stroke-width="3" />
+                  <path d="M 80,70 A 70,30 0 1,1 150,40" fill="none" stroke="gold" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="svg-path-bezier-cubica">
+        <h3 class="con-aside">Curvas de Bézier cúbicas</h3>
+
+        <aside class="enlace-norma">
+          <p><span class="html-atri">d</span> C S<br />
+            <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html#PathDataCubicBezierCommands"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a></p>
+        </aside>
+
+        <p class="incompleto">Por escribir.</p>
+      </section>
+
+      <section id="svg-path-bezier-cuadratica">
+        <h3 class="con-aside">Curvas de Bézier cuadráticas</h3>
+
+        <aside class="enlace-norma">
+          <p><span class="html-atri">d</span> Q T<br />
+            <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html#PathDataQuadraticBezierCommands"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a></p>
+        </aside>
+
+        <p class="incompleto">Por escribir.</p>
+      </section>
+
+      <section id="svg-path-cerrar">
+        <h3 class="con-aside">Cerrar caminos</h3>
+
+        <aside class="enlace-norma">
+          <p><span class="html-atri">d</span> Z<br />
+          <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/paths.html#PathDataClosePathCommand"><img src="../varios/iconos/icono_svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a></p>
+        </aside>
+
+        <ul>
+          <li>Cerrar caminos: Z o z</li>
+        </ul>
+
+        <p>Al cerrar una curva se une el último punto con el primero.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"<br />  width="140" height="110" viewBox="0 0 140 110"&gt;<br/>  &lt;path d="M 10,70 L 30,40 L 70,100 L 130,10 L 130,70 Z" <br />    fill="none" stroke="RoyalBlue" stroke-width="3" /&gt;<br />&lt;/svg&gt;</code>
+</pre>
+              </td>
+              <td class="resul">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="140" height="110" viewBox="0 0 140 110">
+                  <path d="M 10,70 L 30,40 L 70,100 L 130,10 L 130,70 Z" fill="none" stroke="RoyalBlue" stroke-width="3" />
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="svg-path-compuesto">
+        <h3>Caminos compuestos</h3>
+
+        <p class="incompleto">Por escribir.</p>
+
+      </section>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 10 de abril de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

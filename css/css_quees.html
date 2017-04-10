@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Qué es una hoja de estilo. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Qué es una hoja de estilo</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Hojas de estilo</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-es">Qué es una hoja de estilo</a></li>
+          <li><a href="#sintaxis">Sintaxis CSS</a>
+            <ul>
+              <li><a href="#varios-selectores">Definir varias selectores</a></li>
+            </ul>
+          </li>
+          <li><a href="#comentarios">Comentarios en CSS</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="que-es">
+      <h2>Qué es una hoja de estilo</h2>
+
+      <p>En las primeras versiones del HTML, el código fuente de una página web contenía tanto la información (el contenido) como la forma de representarse (el diseño o formato). Actualmente, estos dos aspectos se pueden separar. La página web (el documento html) sólo debe contener información, mientras que el formato se debe definir en las llamadas hojas de estilo (en inglés, CSS, Cascading Style Sheets, es decir, Hojas de Estilo en Cascada).</p>
+
+      <hr class="corta" />
+
+      <p>El funcionamiento de las hojas de estilo es el siguiente:</p>
+      <ul>
+        <li>En la página web (archivo .html) se escriben las etiquetas que definen categorías o elementos.</li>
+        <li>En la hoja de estilo (archivo .css) se escribe cómo queremos que sea el estilo de presentación de las etiquetas (color, tamaño, fuente, bordes, máragenes, posición, etc).</li>
+        <li>En la página web se escribe qué hoja de estilo queremos utilizar.´</li>
+      </ul>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="1000" viewBox="-10 -100 1000 500" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="18">
+          <defs>
+            <marker id="markerArrow" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto">
+              <path d="M0,4 L0,8 L6,6" style="fill: green;" />
+            </marker>
+          </defs>
+
+          <text x="250" y="5" text-anchor="middle">página web (ejemplo.html)</text>
+          <rect x="0" y="20"  width="500" height="190" fill="#eee" stroke="black" stroke-width="1" />
+
+          <text x="20" y="50" text-anchor="start">...</text>
+
+          <text x="20" y="80" text-anchor="start">&lt;link rel="stylesheet" type="text/css" href="estilo.css" /&gt;</text>
+          <rect x="5" y="55" rx="10" ry="10" width="480" height="40" fill="none" stroke="blue" stroke-width="2" />
+          <line x1="30" y1="55" x2="70" y2="-37" stroke-width="2" stroke="blue" />
+          <text x="75" y="-30" text-anchor="start" fill="blue" font-size="24">enlace a la hoja de estilo</text>
+
+          <text x="20" y="110" text-anchor="start">...</text>
+
+          <text x="20" y="140" text-anchor="start">&lt;p>Esto es un párrafo.&lt;/p></text>
+          <rect x="15" y="115" rx="10" ry="10" width="40" height="40" fill="none" stroke="blue" stroke-width="2" />
+          <line x1="35" y1="155" x2="70" y2="240" stroke-width="2" stroke="blue" />
+          <text x="75" y="247" text-anchor="start" fill="blue" font-size="24">etiqueta html</text>
+
+          <text x="20" y="180" text-anchor="start">...</text>
+
+
+          <ellipse cx="400" cy="75" rx="50" ry="25" stroke="green" stroke-width="3" fill="none" />
+          <path d="M405 50 c 30 -60, 100 -60, 220 -53" stroke="green" stroke-width="3" fill="transparent" style="marker-end: url(#markerArrow)" />
+
+
+          <text x="750" y="5" text-anchor="middle">hoja de estilo (estilo.css)</text>
+          <rect x="600" y="20"  width="300" height="190" fill="#eee" stroke="black" stroke-width="1" />
+          <text x="640" y="110" text-anchor="start">color: red;</text>
+          <text x="620" y="140" text-anchor="start">}</text>
+          <text x="620" y="80" text-anchor="start">p &nbsp;&nbsp;{</text>
+          <rect x="610" y="60" rx="10" ry="10" width="30" height="35" fill="none" stroke="blue" stroke-width="2" />
+
+          <line x1="625" y1="95" x2="650" y2="240" stroke-width="2" stroke="blue" />
+          <text x="655" y="247" text-anchor="start" fill="blue" font-size="24">etiqueta html</text>
+
+
+          <path d="M52 152 c 200 50, 400 100, 545 -45" stroke="green" stroke-width="3" fill="transparent" style="marker-end: url(#markerArrow)" />
+
+
+          <text x="520" y="140" text-anchor="start" fill="green" font-size="100">+</text>
+          <line x1="549" y1="150" x2="549" y2="240" stroke="green" stroke-width="4" style="marker-end: url(#markerArrow)" />
+
+          <text x="550" y="290" text-anchor="middle">resultado en el navegador</text>
+          <rect x="400" y="310"  width="300" height="70" fill="white" stroke="black" stroke-width="2" />
+
+          <text x="420" y="350" text-anchor="start" fill="red">Esto es un párrafo.</text>
+        </svg>
+      </p>
+
+      <p>Las ventajas de utilizar hojas de estilo son muchas, sobre todo permiten hacer un diseño consistente y fácil de modificar. Si varias páginas web hacen referencia a la misma hoja de estilo, para cambiar la apariencia de todas las páginas es suficiente con hacer los cambios en un único lugar, en la hoja de estilo.</p>
+    </section>
+
+    <section id="sintaxis">
+      <h2>Sintaxis de las hojas de estilo</h2>
+
+      <p>Una hoja de estilo es un fichero de texto plano (sin formato) en el que se define el aspecto de las etiquetas de una página web:</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="600" viewBox="-10 10 600 320" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="18">
+          <text x="20" y="50" text-anchor="start">@charset "utf-8";</text>
+          <text x="20" y="80" text-anchor="start">h1 {</text>
+          <text x="40" y="110" text-anchor="start">color: white;</text>
+          <text x="40" y="140" text-anchor="start">background-color: black;</text>
+          <text x="20" y="170" text-anchor="start">}</text>
+          <text x="20" y="200" text-anchor="start">p {</text>
+          <text x="40" y="230" text-anchor="start">color: red;</text>
+          <text x="40" y="260" text-anchor="start">background-color: lightyellow;</text>
+          <text x="20" y="290" text-anchor="start">}</text>
+        </svg>
+      </p>
+
+      <p>Una hoja de estilo está formada por una o varias <strong>sentencias</strong>:</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="600" viewBox="-10 10 600 320" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="18">
+
+          <text x="20" y="50" text-anchor="start">@charset "utf-8";</text>
+          <text x="20" y="80" text-anchor="start">h1 {</text>
+          <text x="40" y="110" text-anchor="start">color: white;</text>
+          <text x="40" y="140" text-anchor="start">background-color: black;</text>
+          <text x="20" y="170" text-anchor="start">}</text>
+          <text x="20" y="200" text-anchor="start">p {</text>
+          <text x="40" y="230" text-anchor="start">color: red;</text>
+          <text x="40" y="260" text-anchor="start">background-color: lightyellow;</text>
+          <text x="20" y="290" text-anchor="start">}</text>
+
+          <rect x="10" y="32" rx="10" ry="10" width="300" height="25" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="10" y="62" rx="10" ry="10" width="300" height="115" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="10" y="182" rx="10" ry="10" width="300" height="115" fill="none" stroke="blue" stroke-width="3" />
+          <line x1="310" y1="45" x2="400" y2="112" stroke-width="3" stroke="blue" />
+          <line x1="310" y1="117" x2="400" y2="117" stroke-width="3" stroke="blue" />
+          <line x1="310" y1="239" x2="400" y2="123" stroke-width="3" stroke="blue" />
+          <text x="410" y="123" text-anchor="start" fill="blue" font-size="24">sentencias</text>
+        </svg>
+      </p>
+
+      <p>Existen dos tipos de sentencias: las <strong>reglas-arroba</strong> y las <strong>reglas</strong>:</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="600" viewBox="-10 10 600 320" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="18">
+
+          <text x="20" y="50" text-anchor="start">@charset "utf-8";</text>
+          <text x="20" y="80" text-anchor="start">h1 {</text>
+          <text x="40" y="110" text-anchor="start">color: white;</text>
+          <text x="40" y="140" text-anchor="start">background-color: black;</text>
+          <text x="20" y="170" text-anchor="start">}</text>
+          <text x="20" y="200" text-anchor="start">p {</text>
+          <text x="40" y="230" text-anchor="start">color: red;</text>
+          <text x="40" y="260" text-anchor="start">background-color: lightyellow;</text>
+          <text x="20" y="290" text-anchor="start">}</text>
+
+          <rect x="10" y="32" rx="10" ry="10" width="300" height="25" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="10" y="62" rx="10" ry="10" width="300" height="115" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="10" y="182" rx="10" ry="10" width="300" height="115" fill="none" stroke="blue" stroke-width="3" />
+          <line x1="310" y1="45" x2="400" y2="45" stroke-width="3" stroke="blue" />
+          <text x="410" y="52" text-anchor="start" fill="blue" font-size="24">regla-arroba</text>
+          <line x1="310" y1="117" x2="400" y2="180" stroke-width="3" stroke="blue" />
+          <line x1="310" y1="239" x2="400" y2="180" stroke-width="3" stroke="blue" />
+          <text x="410" y="187" text-anchor="start" fill="blue" font-size="24">reglas</text>
+        </svg>
+      </p>
+
+      <p>Las reglas-arroba empiezan por el símbolo de arroba (<strong>@</strong>) pegado a un <strong>identificador</strong> y terminan por un punto y coma (;):</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="600" viewBox="-50 -50 600 190" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="36">
+
+          <text x="20" y="100" text-anchor="start">@charset "utf-8";</text>
+
+          <rect x="16" y="70" rx="2" ry="2" width="40" height="42" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="60" y="70" rx="2" ry="2" width="120" height="42" fill="none" stroke="blue" stroke-width="3" />
+          <rect x="282" y="70" rx="2" ry="2" width="15" height="42" fill="none" stroke="blue" stroke-width="3" />
+
+          <line x1="36" y1="70" x2="36" y2="30" stroke-width="3" stroke="blue" />
+          <text x="36" y="20" text-anchor="middle" fill="blue" font-size="24">regla-arroba</text>
+          <line x1="120" y1="70" x2="120" y2="-10" stroke-width="3" stroke="blue" />
+          <text x="120" y="-16" text-anchor="middle" fill="blue" font-size="24">identificador</text>
+          <line x1="289" y1="70" x2="289" y2="30" stroke-width="3" stroke="blue" />
+          <text x="289" y="20" text-anchor="middle" fill="blue" font-size="24">punto y coma</text>
+        </svg>
+      </p>
+
+      <p>Algunas reglas-arroba (<span class="css-arroba">@charset</span>, <span class="css-arroba">@import</span> o <span class="css-arroba">@namespace</span>) deben aparecer al principio de la hoja de estilo, pero el resto (<span class="css-arroba">@font-face</span>, <span class="css-arroba">@media</span>, etc.) pueden escribirse en cualquier lugar de la hoja de estilo.</p>
+
+      <p>Las reglas están formadas por un <strong>selector</strong> y un bloque de <strong>declaración</strong>. El bloque de declaración empieza y acaba con llaves { }.</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="660" viewBox="-155 20 660 300" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="18">
+
+          <text x="20" y="80" text-anchor="start">h1 &nbsp; {</text>
+          <text x="40" y="110" text-anchor="start">color: white;</text>
+          <text x="40" y="140" text-anchor="start">background-color: black;</text>
+          <text x="20" y="170" text-anchor="start">}</text>
+          <text x="20" y="200" text-anchor="start">p  &nbsp; {</text>
+          <text x="40" y="230" text-anchor="start">color: red;</text>
+          <text x="40" y="260" text-anchor="start">background-color: lightyellow;</text>
+          <text x="20" y="290" text-anchor="start">}</text>
+
+          <rect x="12" y="61" rx="2" ry="2" width="29" height="25" fill="none" stroke="red" stroke-width="3" />
+          <rect x="12" y="183" rx="2" ry="2" width="24" height="25" fill="none" stroke="red" stroke-width="3" />
+          <line x1="12" y1="75" x2="-20" y2="121" stroke-width="3" stroke="red" />
+          <line x1="12" y1="195" x2="-20" y2="121" stroke-width="3" stroke="red" />
+          <text x="-25" y="128" text-anchor="end" fill="red" font-size="24">selectores</text>
+          <rect x="52" y="64" rx="2" ry="2" width="15" height="25" fill="none" stroke="blue" stroke-width="3" />
+          <line x1="67" y1="75" x2="150" y2="37" stroke-width="3" stroke="blue" />
+          <rect x="16" y="152" rx="2" ry="2" width="13" height="24" fill="none" stroke="blue" stroke-width="3" />
+          <line x1="29" y1="165" x2="150" y2="37" stroke-width="3" stroke="blue" />
+          <text x="155" y="45" text-anchor="start" fill="blue" font-size="24">llaves</text>
+
+          <polyline points="47,61 300,61 300,178 12,178 12,93 47,93 47,61" fill="none" stroke="green" stroke-width="3" />
+          <polyline points="42,183 300,183 300,300 12,300 12,214 42,214 42,183" fill="none" stroke="green" stroke-width="3" />
+          <line x1="300" y1="122" x2="340" y2="182" stroke-width="3" stroke="green" />
+          <line x1="300" y1="242" x2="340" y2="182" stroke-width="3" stroke="green" />
+          <text x="345" y="189" text-anchor="start" fill="green" font-size="24">declaraciones</text>
+        </svg>
+      </p>
+
+      <p>Cada declaración está formada por una o varias <strong>propiedades</strong> y sus <strong>valores</strong> correspondientes. Las propiedades van separadas entre sí por <strong>puntos y comas</strong>. El valor (o valores) van separados de las propiedades por <strong>dos puntos</strong>. En general, si una propiedad necesita varios valores, los valores van separados por espacios en blanco. En general, si una propiedad admite varios valores alternativos, los valores van separados por comas.</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="650" viewBox="-155 -10 650 250" style="background-color: white; border: black solid 2px" font-family="sans-serif" font-size="24">
+
+          <text x="20" y="80" text-anchor="start">h1 &nbsp; {</text>
+          <text x="40" y="120" text-anchor="start">color : &nbsp; white ;</text>
+          <text x="40" y="160" text-anchor="start">background-color : &nbsp; black ;</text>
+          <text x="20" y="200" text-anchor="start">}</text>
+
+          <rect x="35" y="100" rx="2" ry="2" width="57" height="25" fill="none" stroke="purple" stroke-width="3" />
+          <rect x="97" y="100" rx="2" ry="2" width="10" height="25" fill="none" stroke="darkorange" stroke-width="3" />
+          <rect x="122" y="100" rx="2" ry="2" width="59" height="25" fill="none" stroke="olive" stroke-width="3" />
+          <rect x="186" y="100" rx="2" ry="2" width="10" height="25" fill="none" stroke="dodgerblue" stroke-width="3" />
+
+          <rect x="35" y="140" rx="2" ry="2" width="191" height="25" fill="none" stroke="purple" stroke-width="3" />
+          <rect x="231" y="140" rx="2" ry="2" width="10" height="25" fill="none" stroke="darkorange" stroke-width="3" />
+          <rect x="255" y="140" rx="2" ry="2" width="60" height="25" fill="none" stroke="olive" stroke-width="3" />
+          <rect x="320" y="140" rx="2" ry="2" width="10" height="25" fill="none" stroke="dodgerblue" stroke-width="3" />
+
+          <line x1="35" y1="100" x2="0" y2="80" stroke-width="3" stroke="purple" />
+          <text x="-5" y="87" text-anchor="end" fill="purple" font-size="24">propiedad</text>
+          <line x1="102" y1="100" x2="102" y2="40" stroke-width="3" stroke="darkorange" />
+          <text x="102" y="35" text-anchor="middle" fill="darkorange" font-size="24">dos puntos</text>
+          <line x1="115" y1="100" x2="179" y2="38" stroke-width="3" stroke="black" />
+          <text x="184" y="45" text-anchor="start" fill="black" font-size="24">espacio en blanco</text>
+          <line x1="169" y1="100" x2="199" y2="70" stroke-width="3" stroke="olive" />
+          <text x="204" y="77" text-anchor="start" fill="olive" font-size="24">valor</text>
+          <line x1="195" y1="112" x2="240" y2="112" stroke-width="3" stroke="dodgerblue" />
+          <text x="245" y="119" text-anchor="start" fill="dodgerblue" font-size="24">punto y coma</text>
+        </svg>
+      </p>
+
+      <section id="varios-selectores">
+        <h3>Definir varias selectores simultáneamente</h3>
+
+        <p>Se pueden definir varios selectores simultáneamente escribiendo los selectores separados por comas, como muestran los siguientes ejemplos:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p, address {
+  color: red
+}</code>
+</pre>
+              </td>
+              <td class="resul eje1">
+                <p style="color: red">Esto es un párrafo.</p>
+
+                <p style="color: red">Esto es una dirección &lt;address&gt;.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Lo que no es correcto es definir varias propiedades simultáneamente, como muestran los siguientes ejemplos:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border-top, border-bottom: red 3px solid;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje1"><p style="border-top, border-bottom: red 3px solid;">Esto es un párrafo.</p></td>
+            </tr>
+            <tr>
+              <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  border-top: red 3px solid;
+  border-bottom: red 3px solid;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje1"><p style="border-top: red 3px solid; border-bottom: red 3px solid;">Esto es un párrafo.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="comentarios">
+      <h2>Comentarios en las hojas de estilo</h2>
+
+      <p>Una hoja de estilo puede contener comentarios. Los delimitadores del comentario son /* ... */ (como en el lenguaje de programación C). Los comentarios pueden extenderse varias líneas, como ilustra el siguiente ejemplo:</p>
+
+      <div class="codcss">
+        <pre>
+<code class="language-css">/* Autor: Bartolome Sintes Marco
+   Fecha: 3 de octubre de 2014
+*/
+h1 {
+  color : white ;                 /* texto blanco */
+  background-color : black <strong>;</strong>      /* sobre fondo negro */
+}</code>
+</pre>
+      </div>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Entidades de carácter y entidades numéricas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Entidades de carácter y entidades numéricas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Entidades</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-son">Qué son</a></li>
+          <li><a href="#secuencias-zwj">Secuencias ZWJ</a></li>
+          <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
+          <li><a href="#entidades-caracter">Entidades de carácter</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se explica cómo incluir cualquier carácter o secuencia de caracteres Unicode en una página web, mediante entidades de carácter o entidades numéricas.</p>
+
+    <p>Antes de leer esta lección se recomienda leer la lección <a href="html_utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</p>
+
+    <p>Después de esta lección se recomienda leer las páginas, que contienen ejemplos de entidades numéricas:</p>
+
+    <ul>
+      <li><a href="html_unicode_simbolos.html">Símbolos gráficos en Unicode</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos</li>
+      <li><a href="html_unicode_dibujos.html">Dibujos en Unicode</a>, que muestra los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+      <li><a href="html_unicode_secuencias.html">Secuencias ZWJ</a>, que muestra algunas secuencias ZWJ que corresponden a dibujos (banderas, emojis, etc.)</li>
+    </ul>
+
+    <section id="que-son">
+      <h2>Qué son las entidades de carácter y las entidades numéricas</h2>
+
+      <p>En las primeras versiones de HTML se especificaba que el juego de caracteres utilizado por las páginas web debía ser el juego de caracteres <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>, más conocido como Latin-1.</p>
+
+      <p>Para poder incluir en un página web caracteres no incluidos en ese juego de caracteres se debían utilizar las entidades de carácter. Una entidad de carácter es una referencia a un carácter y se escribe con la sintaxis &amp;nombre; es decir, empieza por el símbolo &amp; (en inglés, <i>ampersand</i>, en español, <i>et</i>), a continuación se escribe el nombre del carácter y termina por un punto y coma.</p>
+
+      <p>Por ejemplo, la letra griega alfa (&alpha;) se podía incluir en una página web con la entidad de carácter &amp;alpha;.</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-10 10 450 180" font-family="sans-serif" font-size="18">
+          <text x="100" y="60" text-anchor="start" font-size="40">&amp;alpha;</text>
+          <text x="300" y="60" text-anchor="start" font-size="40" fill="green">&rArr;</text>
+          <text x="400" y="60" text-anchor="start" font-size="40">&alpha;</text>
+
+          <path d="M100,70 Q 113,80 126,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="113" y1="75" x2="95" y2="115" stroke-width="3" stroke="green" />
+          <text x="0" y="120" text-anchor="start">ampersand</text>
+
+          <path d="M130,70 Q 175,85 220,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="175" y1="77" x2="175" y2="140" stroke-width="3" stroke="green" />
+          <text x="180" y="160" text-anchor="middle">nombre de la entidad de carácter</text>
+
+          <path d="M225,70 Q 230,80 235,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="230" y1="75" x2="246" y2="115" stroke-width="3" stroke="green" />
+          <text x="250" y="120" text-anchor="start">punto y coma</text>
+        </svg>
+      </p>
+
+      <p>En las primeras versiones de HTML se fueron añadiendo entidades de carácter hasta llegar en HTML 4 a 252 entidades de carácter, que se muestran al final de esta lección, en el apartado <a href="#entidades-caracter">Lista de entididades de carácter</a>.</p>
+
+      <p>La norma <a href="https://tools.ietf.org/html/rfc2070">RFC 2070</a>, publicada en enero de 1997, permitió el uso de Unicode como juego de caracteres en HTML, por lo que se amplió el concepto de entidad de carácter a entidad numérica, para permitr la referencia a cualquier carácter Unicode, con la sintaxis &amp;número; es decir empieza por el símbolo &amp;, a continuación se escribe el código Unicode del carácter (en notación decimal o en notación hexadecimal precedida por una letra "x") y termina por un punto y coma.</p>
+
+      <p>Por ejemplo, la letra griega alfa (&alpha;), cuyo código de carácter Unicode es 945 (3B1 en hexadecimal) se podía incluir en una página web con la entidad de carácter &amp;alpha; o con las entidades numéricas &amp;#945; o &amp;#x3b1;.</p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="450" viewBox="-10 10 450 180" font-family="sans-serif" font-size="18">
+          <text x="100" y="60" text-anchor="start" font-size="40">&amp;#945;</text>
+          <text x="300" y="60" text-anchor="start" font-size="40" fill="green">&rArr;</text>
+          <text x="400" y="60" text-anchor="start" font-size="40">&#945;</text>
+
+          <path d="M100,70 Q 113,80 126,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="113" y1="75" x2="95" y2="115" stroke-width="3" stroke="green" />
+          <text x="0" y="120" text-anchor="start">ampersand</text>
+
+          <path d="M128,70 Q 138,80 148,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="138" y1="75" x2="105" y2="150" stroke-width="3" stroke="green" />
+          <text x="10" y="155" text-anchor="start">almohadilla</text>
+
+          <path d="M150,70 Q 182,83 215,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="180" y1="75" x2="180" y2="165" stroke-width="3" stroke="green" />
+          <text x="180" y="185" text-anchor="middle">código Unicode decimal</text>
+
+          <path d="M217,70 Q 222,80 227,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="222" y1="75" x2="242" y2="115" stroke-width="3" stroke="green" />
+          <text x="247" y="120" text-anchor="start">punto y coma</text>
+        </svg>
+      </p>
+
+      <p class="captura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="470" viewBox="-10 10 470 180" font-family="sans-serif" font-size="18">
+          <text x="100" y="60" text-anchor="start" font-size="40">&amp;#x3b1;</text>
+          <text x="300" y="60" text-anchor="start" font-size="40" fill="green">&rArr;</text>
+          <text x="400" y="60" text-anchor="start" font-size="40">&#x3b1;</text>
+
+          <path d="M100,70 Q 113,80 126,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="113" y1="75" x2="95" y2="115" stroke-width="3" stroke="green" />
+          <text x="0" y="120" text-anchor="start">ampersand</text>
+
+          <path d="M128,70 Q 138,80 148,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="138" y1="75" x2="105" y2="150" stroke-width="3" stroke="green" />
+          <text x="10" y="155" text-anchor="start">almohadilla</text>
+
+          <path d="M150,70 Q 158,80 166,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="158" y1="75" x2="115" y2="180" stroke-width="3" stroke="green" />
+          <text x="110" y="185" text-anchor="end">letra "x"</text>
+
+          <path d="M168,70 Q 200,83 233,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="200" y1="75" x2="225" y2="180" stroke-width="3" stroke="green" />
+          <text x="230" y="185" text-anchor="start">código Unicode hexadecimal</text>
+
+          <path d="M235,70 Q 240,80 245,70 " stroke="green" stroke-width="3" fill="transparent" />
+          <line x1="240" y1="75" x2="252" y2="115" stroke-width="3" stroke="green" />
+          <text x="257" y="120" text-anchor="start">punto y coma</text>
+        </svg>
+      </p>
+
+      <p>Otras recomendaciones (por ejemplo, MathML), han definido más entidades de carácter que los navegadores también reconocen. La recomendación <a href="https://www.w3.org/TR/2014/REC-xml-entity-names-20140410/">XML Entity Definitions for Characters (2º edición, publicada en abril de 2014)</a> recopiló las entidades de carácter más empleadas en páginas web. En la web del W3C se puede consultar un lista de entidades de carácter visualmente atractiva en <a href="https://dev.w3.org/html5/html-author/charref">https://dev.w3.org/html5/html-author/charref</a>, pero no sé si está actualizada.</p>
+
+      <p>La recomendación HTML 5 ya no hace incluye un listado de entidades de carácter, en favor de las entidades numéricas.</p>
+
+      <p>Las entidades de carácter son más fáciles de utilizar porque es más fácil recordar un nombre que un código, pero al no existir entidades de carácter para todos los caracteres Unicode, en la mayoría de casos se tiene que utilizar la entidad numérica.</p>
+
+      <p>Por supuesto, el navegador sólo podrá representar un carácter Unicode si tiene instalado una fuente que contenga ese carácter.</p>
+    </section>
+
+    <section id="secuencias-zwj">
+      <h2>Secuencias Zero-width Joiner (ZWJ) de caracteres Unicode</h2>
+
+      <p>El carácter ZWJ (Zero-Width Joiner, es decir Conector sin anchura) es el carácter Unicode U+200D. Se introdujo para indicar que dos o más caracteres se deben escribir en forma conectada, y se utiliza de forma habitual en escrituras como la árabe o las indias. El carácter ZWJ se escribe entre los dos caracteres que se quieren considerar conjuntamente.</p>
+
+      <p>Posteriormente, el uso del carácter ZWJ se ha extendido para otros usos, permitiendo unir caracteres para producir un nuevo carácter. Es importante señalar que los navegadores parecen mostrar el resultado aunque se omita el carácter ZWJ, simplemente escribiendo los caracteres uno a continuación del otro, sin separación.</p>
+
+      <p>Por ejemplo, los pictogramas de las banderas del mundo se pueden expresar combinado dos caracteres Unicode del rango U+1F1E6 al U+1F1FF (que representan los caracteres de la A a la Z, pero para su uso como indicadores regionales). Los dos caracteres a elegir en cada caso son los que corresponden al código <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1</a> del país. Por ejemplo, como el código ISO 3166-1 de España es ES, al unir los caracteres U+1F1EA (letra E) y U+1F1F8 (letra S) se mostrará la bandera de España (aunque el resultado depende del sistema operativo y del navegador utilizado <span class="incompleto">[completar]</span>).</p>
+
+      <table class="centrado">
+        <tr>
+          <th>Entidades</th>
+          <th>Resultado</th>
+        </tr>
+        <tr>
+          <td>&amp;#x1F1EA; &amp;#x1F1F8; (separados)</td>
+          <td><span style="font-size: 100px">&#x1F1EA; &#x1F1F8;</span></td>
+        </tr>
+        <tr>
+          <td>&amp;#x1F1EA;&amp;#x200D;&amp;#x1F1F8; (juntos)</td>
+          <td><span style="font-size: 100px">&#x1F1EA;&#x200D;&#x1F1F8;</span></td>
+        </tr>
+        <tr>
+          <td>&amp;#x1F1EA;&amp;#x1F1F8; (juntos)</td>
+          <td><span style="font-size: 100px">&#x1F1EA;&#x1F1F8;</span></td>
+        </tr>
+      </table>
+
+      <p>Este carácter también se puede utilizar para combinar dos o más <em>emojis</em> en un único <em>emoji</em>. Por ejemplo para mostrar personajes humanos con diferente color de piel:</p>
+
+      <table class="centrado">
+        <tr>
+          <th>Entidades</th>
+          <th>Resultado</th>
+        </tr>
+        <tr>
+          <td>&amp;#x1F467; &amp;#x1F3FF; (separados)</td>
+          <td><span style="font-size: 100px">&#x1F467; &#x1F3FF;</span></td>
+        </tr>
+        <tr>
+          <td>&amp;#x1F467;&amp;#x200D;&amp;#x1F3FF; (juntos)</td>
+          <td><span style="font-size: 100px">&#x1F467;&#x200D;&#x1F3FF;</span></td>
+        </tr>
+        <tr>
+          <td>&amp;#x1F467;&amp;#x1F3FF; (juntos)</td>
+          <td><span style="font-size: 100px">&#x1F467;&#x1F3FF;</span></td>
+        </tr>
+      </table>
+
+      <p>Las secuencias de <em>emojis</em> de Unicode están definidas en el <a href="http://www.unicode.org/emoji/charts/emoji-zwj-sequences.html">catálogo de secuencias emoji ZWJ</a>.</p>
+    </section>
+
+    <section id="caracteres-especiales">
+      <h2>Los caracteres especiales de HTML</h2>
+
+      <p>En HTML hay cinco caracteres que tienen un significado especial. Si se quiere mostrar esos carácteres en una página web, escribirlos directamente puede hacer que la página no sea válida o puede hacer que el navegador no muestre el resultado esperado. En lugar de escribirlos directamente, se deben utilizar las entidades de carácter o las entidades numéricas correspondientes, que se muestran en la tabla siguiente.</p>
+
+      <table class="listado franjas">
+        <thead>
+          <tr>
+            <th>Carácter&nbsp;&nbsp;</th>
+            <th>Nombre&nbsp;&nbsp;</th>
+            <th>Entidad de carácter&nbsp;&nbsp;</th>
+            <th>Entidad numérica&nbsp;&nbsp;</th>
+            <th>Recomendación&nbsp;&nbsp;</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lt;</td>
+            <td>lt</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#x3C;</td>
+            <td>HTML 2.0</td>
+            <td>menor</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&gt;</td>
+            <td>gt</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#x3E;</td>
+            <td>HTML 2.0</td>
+            <td>mayor</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&amp;</td>
+            <td>amp</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#x26;</td>
+            <td>HTML 2.0</td>
+            <td>et (en inglés, ampersand)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&quot;</td>
+            <td>quot</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#x22;</td>
+            <td>HTML 2.0</td>
+            <td>comillas</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&apos;</td>
+            <td>apos</td>
+            <td>&amp;apos;</td>
+            <td>&amp;#x27;</td>
+            <td>XHTML 1.0</td>
+            <td>apóstrofo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta"/>
+
+      <p>Estos son los problemas que provoca utilizar los caracteres en vez de las entidades de carácter:</p>
+
+      <ul>
+        <li>El carácter "menor que" (&lt;) en HTML indica que se abre una etiqueta, por lo que no se debe escribir en una página web si no es por ese motivo. Aunque los navegadores sean capaces de mostrar el resultado esperado, la página no es válida. Para que la página sea correcta, se debe escribir la entidad de carácter <strong>&amp;lt;</strong>.
+
+          <p>En el ejemplo siguiente, los navegadores consiguen mostrar el resultado esperado, pero la página no es válida:</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;0 &amp;lt; 1 &lt;/p&gt;</code></pre>
+                </td>
+                <td class="resul"><p>0 &lt; 1</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;0 < 1 &lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>0 < 1</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En el ejemplo siguiente, los navegadores ni siquiera consiguen sacar el resultado esperado:</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;0&amp;lt;x&amp;lt;5&lt;/p&gt;</code></pre>
+                </td>
+                <td class="resul"><p>0&lt;x&lt;5</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;0&lt;x&lt;5&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>0<x<5</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </li>
+        <li>El carácter "mayor que" (&gt;) en HTML indica que se cierra una etiqueta y puede dar problemas en navegadores antiguos, por lo que se aconseja escribir la entidad de carácter <strong>&amp;gt;</strong>, aunque su uso no es incorrecto (las páginas son válidas).
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;1 &amp;gt; 0 &lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>1 &gt; 0</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;1 > 0 &lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>1 > 0</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El carácter <i>ampersand</i> (&amp;) es el carácter inicial de las entidades de carácter o de las entidades numéricas. En HTML 5 se puede escribir el carácter &amp; directamente y la página será válida, salvo si el texto que sigue al &amp; se puede interpretar como una entidad de carácter. En ese caso, además, el navegador puede mostrar un resultado no esperado. Por ello se aconseja utilizar siempre la entidad de carácter <strong>&amp;amp;</strong> cuando se quiera mostrar el carácter &amp;, para no tener que pensar en cada caso si el navegador va a mostrar el resultado esperado.
+
+          <p>En el ejemplo siguiente el navegador muestra el resultado esperado puesto que el texto que sigue al carácter &amp; no corresponde a ninguna entidad de carácter o numérica. La página es válida.</p>
+
+          <p><strong>Nota</strong>: El ejemplo se ha marcado con un aspa amarilla porque, aunque es correcto, se desaconseja no utilizar la entidad de carácter.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;Calvin &amp;amp; Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>Calvin &amp; Hobbes es una de las grandes tiras cómicas del siglo XX.</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>En el ejemplo siguiente el navegador no muestra el resultado esperado porque <strong>&amp;micro;</strong> es la entidad de carácter del carácter <strong>&micro;</strong>. La página, además, no es válida por el mismo motivo (la posible entidad de carácter no termina por punto y coma).</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;amp;microsoft.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>Durante años la informática personal ha estado dominada por intel&amp;microsoft.</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;microsoft.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p>Durante años la informática personal ha estado dominada por intel&microsoft.</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>Los carácteres comillas dobles (") y simples (') en HTML indica el principio y final de los valores de los atributos, por tanto no se pueden escribir en un atributo y en su lugar se deben escribir las entidades de carácter <strong>&amp;quot;</strong> o <strong>&amp;apos;</strong>.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p title="&amp;quot;Hola&amp;quot;"&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p title="&quot;Hola&quot;">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p></td>
+              </tr>
+              <tr>
+                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
+                <td class="codhtml"><pre><code class="language-html">&lt;p title=""Hola""&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code></pre></td>
+                <td class="resul"><p title=""Hola"">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+
+    </section>
+
+    <section id="entidades-caracter">
+      <h2>Lista de entidades de carácter</h2>
+
+      <p>La tabla siguiente muestra las 252 entidades de carácter definidas en la recomendación HTML 4. De cada carácter se muestra:</p>
+
+      <ul>
+        <li>el carácter</li>
+        <li>el nombre del carácter</li>
+        <li>la entidad de carácter con la notación &amp;<i>nombre</i>;</li>
+        <li>la entidad numérica con la notación &amp;<i>código</i>;, en la que el código se expresa como número hexadecimal</li>
+        <li>la recomendación HTML en la que se introdujo la entidad de carácter</li>
+        <li>la descripción del carácter</li>
+      </ul>
+
+      <p>Referencia: <a href="https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references">Lista de entidades de carácterde HTML en Wikipedia</a></p>
+
+      <table class="listado franjas">
+        <thead>
+          <tr>
+            <th>Carácter&nbsp;&nbsp;</th>
+            <th>Nombre&nbsp;&nbsp;</th>
+            <th>Entidad de carácter&nbsp;&nbsp;</th>
+            <th>Entidad numérica&nbsp;&nbsp;</th>
+            <th>Recomendación&nbsp;&nbsp;</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&quot;</td>
+            <td>quot</td>
+            <td>&amp;quot;</td>
+            <td>&amp;#x22;</td>
+            <td>HTML 2.0</td>
+            <td>comillas</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&amp;</td>
+            <td>amp</td>
+            <td>&amp;amp;</td>
+            <td>&amp;#x26;</td>
+            <td>HTML 2.0</td>
+            <td>et (en inglés, ampersand)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&apos;</td>
+            <td>apos</td>
+            <td>&amp;apos;</td>
+            <td>&amp;#x27;</td>
+            <td>XHTML 1.0</td>
+            <td>apóstrofo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lt;</td>
+            <td>lt</td>
+            <td>&amp;lt;</td>
+            <td>&amp;#x3C;</td>
+            <td>HTML 2.0</td>
+            <td>menor</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&gt;</td>
+            <td>gt</td>
+            <td>&amp;gt;</td>
+            <td>&amp;#x3E;</td>
+            <td>HTML 2.0</td>
+            <td>mayor</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&nbsp;</td>
+            <td>nbsp</td>
+            <td>&amp;nbsp;</td>
+            <td>&amp;#xA0;</td>
+            <td>HTML 3.2</td>
+            <td>espacio en blanco</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&iexcl;</td>
+            <td>iexcl</td>
+            <td>&amp;iexcl;</td>
+            <td>&amp;#xA1;</td>
+            <td>HTML 3.2</td>
+            <td>exclamación (apertura)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&cent;</td>
+            <td>cent</td>
+            <td>&amp;cent;</td>
+            <td>&amp;#xA2;</td>
+            <td>HTML 3.2</td>
+            <td>céntimo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&pound;</td>
+            <td>pound</td>
+            <td>&amp;pound;</td>
+            <td>&amp;#xA3;</td>
+            <td>HTML 3.2</td>
+            <td>libra</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&curren;</td>
+            <td>curren</td>
+            <td>&amp;curren;</td>
+            <td>&amp;#xA4;</td>
+            <td>HTML 3.2</td>
+            <td>moneda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&yen;</td>
+            <td>yen</td>
+            <td>&amp;yen;</td>
+            <td>&amp;#xA5;</td>
+            <td>HTML 3.2</td>
+            <td>yen</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&brvbar;</td>
+            <td>brvbar</td>
+            <td>&amp;brvbar;</td>
+            <td>&amp;#xA6;</td>
+            <td>HTML 3.2</td>
+            <td>tubería</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sect;</td>
+            <td>sect</td>
+            <td>&amp;sect;</td>
+            <td>&amp;#xA7;</td>
+            <td>HTML 3.2</td>
+            <td>sección</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&uml;</td>
+            <td>uml</td>
+            <td>&amp;uml;</td>
+            <td>&amp;#xA8;</td>
+            <td>HTML 3.2</td>
+            <td>diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&copy;</td>
+            <td>copy</td>
+            <td>&amp;copy;</td>
+            <td>&amp;#xA9;</td>
+            <td>HTML 3.2</td>
+            <td>copyright</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ordf;</td>
+            <td>ordf</td>
+            <td>&amp;ordf;</td>
+            <td>&amp;#xAA;</td>
+            <td>HTML 3.2</td>
+            <td>ordinal femenino</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&laquo;</td>
+            <td>laquo</td>
+            <td>&amp;laquo;</td>
+            <td>&amp;#xAB;</td>
+            <td>HTML 3.2</td>
+            <td>apertura comillas angulares (guillemets)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&not;</td>
+            <td>not</td>
+            <td>&amp;not;</td>
+            <td>&amp;#xAC;</td>
+            <td>HTML 3.2</td>
+            <td>negación</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&shy;</td>
+            <td>shy</td>
+            <td>&amp;shy;</td>
+            <td>&amp;#xAD;</td>
+            <td>HTML 3.2</td>
+            <td>guión de corte automático</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&reg;</td>
+            <td>reg</td>
+            <td>&amp;reg;</td>
+            <td>&amp;#xAE;</td>
+            <td>HTML 3.2</td>
+            <td>marca registrada</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&macr;</td>
+            <td>macr</td>
+            <td>&amp;macr;</td>
+            <td>&amp;#xAF;</td>
+            <td>HTML 3.2</td>
+            <td>acento macron</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&deg;</td>
+            <td>deg</td>
+            <td>&amp;deg;</td>
+            <td>&amp;#xB0;</td>
+            <td>HTML 3.2</td>
+            <td>grado</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&plusmn;</td>
+            <td>plusmn</td>
+            <td>&amp;plusmn;</td>
+            <td>&amp;#xB1;</td>
+            <td>HTML 3.2</td>
+            <td>más menos</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sup2;</td>
+            <td>sup2</td>
+            <td>&amp;sup2;</td>
+            <td>&amp;#xB2;</td>
+            <td>HTML 3.2</td>
+            <td>al cuadrado</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sup3;</td>
+            <td>sup3</td>
+            <td>&amp;sup3;</td>
+            <td>&amp;#xB3;</td>
+            <td>HTML 3.2</td>
+            <td>al cubo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&acute;</td>
+            <td>acute</td>
+            <td>&amp;acute;</td>
+            <td>&amp;#xB4;</td>
+            <td>HTML 3.2</td>
+            <td>acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&micro;</td>
+            <td>micro</td>
+            <td>&amp;micro;</td>
+            <td>&amp;#xB5;</td>
+            <td>HTML 3.2</td>
+            <td>micro</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&para;</td>
+            <td>para</td>
+            <td>&amp;para;</td>
+            <td>&amp;#xB6;</td>
+            <td>HTML 3.2</td>
+            <td>párrafo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&middot;</td>
+            <td>middot</td>
+            <td>&amp;middot;</td>
+            <td>&amp;#xB7;</td>
+            <td>HTML 3.2</td>
+            <td>punto medio</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&cedil;</td>
+            <td>cedil</td>
+            <td>&amp;cedil;</td>
+            <td>&amp;#xB8;</td>
+            <td>HTML 3.2</td>
+            <td>cedilla</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sup1;</td>
+            <td>sup1</td>
+            <td>&amp;sup1;</td>
+            <td>&amp;#xB9;</td>
+            <td>HTML 3.2</td>
+            <td>superíndice 1</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ordm;</td>
+            <td>ordm</td>
+            <td>&amp;ordm;</td>
+            <td>&amp;#xBA;</td>
+            <td>HTML 3.2</td>
+            <td>ordinal masculino</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&raquo;</td>
+            <td>raquo</td>
+            <td>&amp;raquo;</td>
+            <td>&amp;#xBB;</td>
+            <td>HTML 3.2</td>
+            <td>cierre comillas angulares (guillemets)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&frac14;</td>
+            <td>frac14</td>
+            <td>&amp;frac14;</td>
+            <td>&amp;#xBC;</td>
+            <td>HTML 3.2</td>
+            <td>fracción un cuarto</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&frac12;</td>
+            <td>frac12</td>
+            <td>&amp;frac12;</td>
+            <td>&amp;#xBD;</td>
+            <td>HTML 3.2</td>
+            <td>fracción un medio</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&frac34;</td>
+            <td>frac34</td>
+            <td>&amp;frac34;</td>
+            <td>&amp;#xBE;</td>
+            <td>HTML 3.2</td>
+            <td>fracción tres cuartos</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&iquest;</td>
+            <td>iquest</td>
+            <td>&amp;iquest;</td>
+            <td>&amp;#xBF;</td>
+            <td>HTML 3.2</td>
+            <td>interrogación (cierre)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Agrave;</td>
+            <td>Agrave</td>
+            <td>&amp;Agrave;</td>
+            <td>&amp;#xC0;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Aacute;</td>
+            <td>Aacute</td>
+            <td>&amp;Aacute;</td>
+            <td>&amp;#xC1;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Acirc;</td>
+            <td>Acirc</td>
+            <td>&amp;Acirc;</td>
+            <td>&amp;#xC2;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Atilde;</td>
+            <td>Atilde</td>
+            <td>&amp;Atilde;</td>
+            <td>&amp;#xC3;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con tilde</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Auml;</td>
+            <td>Auml</td>
+            <td>&amp;Auml;</td>
+            <td>&amp;#xC4;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Aring;</td>
+            <td>Aring</td>
+            <td>&amp;Aring;</td>
+            <td>&amp;#xC5;</td>
+            <td>HTML 2.0</td>
+            <td>letra a mayúscula con anillo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&AElig;</td>
+            <td>AElig</td>
+            <td>&amp;AElig;</td>
+            <td>&amp;#xC6;</td>
+            <td>HTML 2.0</td>
+            <td>ligadura ae mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ccedil;</td>
+            <td>Ccedil</td>
+            <td>&amp;Ccedil;</td>
+            <td>&amp;#xC7;</td>
+            <td>HTML 2.0</td>
+            <td>letra c cedilla mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Egrave;</td>
+            <td>Egrave</td>
+            <td>&amp;Egrave;</td>
+            <td>&amp;#xC8;</td>
+            <td>HTML 2.0</td>
+            <td>letra e mayúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Eacute;</td>
+            <td>Eacute</td>
+            <td>&amp;Eacute;</td>
+            <td>&amp;#xC9;</td>
+            <td>HTML 2.0</td>
+            <td>letra e mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ecirc;</td>
+            <td>Ecirc</td>
+            <td>&amp;Ecirc;</td>
+            <td>&amp;#xCA;</td>
+            <td>HTML 2.0</td>
+            <td>letra e mayúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Euml;</td>
+            <td>Euml</td>
+            <td>&amp;Euml;</td>
+            <td>&amp;#xCB;</td>
+            <td>HTML 2.0</td>
+            <td>letra e mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Igrave;</td>
+            <td>Igrave</td>
+            <td>&amp;Igrave;</td>
+            <td>&amp;#xCC;</td>
+            <td>HTML 2.0</td>
+            <td>letra i mayúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Iacute;</td>
+            <td>Iacute</td>
+            <td>&amp;Iacute;</td>
+            <td>&amp;#xCD;</td>
+            <td>HTML 2.0</td>
+            <td>letra i mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Icirc;</td>
+            <td>Icirc</td>
+            <td>&amp;Icirc;</td>
+            <td>&amp;#xCE;</td>
+            <td>HTML 2.0</td>
+            <td>letra i mayúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Iuml;</td>
+            <td>Iuml</td>
+            <td>&amp;Iuml;</td>
+            <td>&amp;#xCF;</td>
+            <td>HTML 2.0</td>
+            <td>letra i mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ETH;</td>
+            <td>ETH</td>
+            <td>&amp;ETH;</td>
+            <td>&amp;#xD0;</td>
+            <td>HTML 2.0</td>
+            <td>letra eth islandesa mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ntilde;</td>
+            <td>Ntilde</td>
+            <td>&amp;Ntilde;</td>
+            <td>&amp;#xD1;</td>
+            <td>HTML 2.0</td>
+            <td>letra eñe mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ograve;</td>
+            <td>Ograve</td>
+            <td>&amp;Ograve;</td>
+            <td>&amp;#xD2;</td>
+            <td>HTML 2.0</td>
+            <td>letra o mayúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Oacute;</td>
+            <td>Oacute</td>
+            <td>&amp;Oacute;</td>
+            <td>&amp;#xD3;</td>
+            <td>HTML 2.0</td>
+            <td>letra o mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ocirc;</td>
+            <td>Ocirc</td>
+            <td>&amp;Ocirc;</td>
+            <td>&amp;#xD4;</td>
+            <td>HTML 2.0</td>
+            <td>letra o mayúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Otilde;</td>
+            <td>Otilde</td>
+            <td>&amp;Otilde;</td>
+            <td>&amp;#xD5;</td>
+            <td>HTML 2.0</td>
+            <td>letra o mayúscula con tilde</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ouml;</td>
+            <td>Ouml</td>
+            <td>&amp;Ouml;</td>
+            <td>&amp;#xD6;</td>
+            <td>HTML 2.0</td>
+            <td>letra o mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&times;</td>
+            <td>times</td>
+            <td>&amp;times;</td>
+            <td>&amp;#xD7;</td>
+            <td>HTML 3.3</td>
+            <td>multiplicación</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Oslash;</td>
+            <td>Oslash</td>
+            <td>&amp;Oslash;</td>
+            <td>&amp;#xD8;</td>
+            <td>HTML 2.0</td>
+            <td>letra o tachada mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ugrave;</td>
+            <td>Ugrave</td>
+            <td>&amp;Ugrave;</td>
+            <td>&amp;#xD9;</td>
+            <td>HTML 2.0</td>
+            <td>letra u mayúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Uacute;</td>
+            <td>Uacute</td>
+            <td>&amp;Uacute;</td>
+            <td>&amp;#xDA;</td>
+            <td>HTML 2.0</td>
+            <td>letra u mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Ucirc;</td>
+            <td>Ucirc</td>
+            <td>&amp;Ucirc;</td>
+            <td>&amp;#xDB;</td>
+            <td>HTML 2.0</td>
+            <td>letra u mayúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Uuml;</td>
+            <td>Uuml</td>
+            <td>&amp;Uuml;</td>
+            <td>&amp;#xDC;</td>
+            <td>HTML 2.0</td>
+            <td>letra u mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Yacute;</td>
+            <td>Yacute</td>
+            <td>&amp;Yacute;</td>
+            <td>&amp;#xDD;</td>
+            <td>HTML 2.0</td>
+            <td>letra y mayúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&THORN;</td>
+            <td>THORN</td>
+            <td>&amp;THORN;</td>
+            <td>&amp;#xDE;</td>
+            <td>HTML 2.0</td>
+            <td>letra thorn islandesa mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&szlig;</td>
+            <td>szlig</td>
+            <td>&amp;szlig;</td>
+            <td>&amp;#xDF;</td>
+            <td>HTML 2.0</td>
+            <td>ligadura sz minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&agrave;</td>
+            <td>agrave</td>
+            <td>&amp;agrave;</td>
+            <td>&amp;#xE0;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&aacute;</td>
+            <td>aacute</td>
+            <td>&amp;aacute;</td>
+            <td>&amp;#xE1;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&acirc;</td>
+            <td>acirc</td>
+            <td>&amp;acirc;</td>
+            <td>&amp;#xE2;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&atilde;</td>
+            <td>atilde</td>
+            <td>&amp;atilde;</td>
+            <td>&amp;#xE3;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con tilde</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&auml;</td>
+            <td>auml</td>
+            <td>&amp;auml;</td>
+            <td>&amp;#xE4;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&aring;</td>
+            <td>aring</td>
+            <td>&amp;aring;</td>
+            <td>&amp;#xE5;</td>
+            <td>HTML 2.0</td>
+            <td>letra a minúscula con anillo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&aelig;</td>
+            <td>aelig</td>
+            <td>&amp;aelig;</td>
+            <td>&amp;#xE6;</td>
+            <td>HTML 2.0</td>
+            <td>ligadura ae minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ccedil;</td>
+            <td>ccedil</td>
+            <td>&amp;ccedil;</td>
+            <td>&amp;#xE7;</td>
+            <td>HTML 2.0</td>
+            <td>letra c cedilla minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&egrave;</td>
+            <td>egrave</td>
+            <td>&amp;egrave;</td>
+            <td>&amp;#xE8;</td>
+            <td>HTML 2.0</td>
+            <td>letra e minúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&eacute;</td>
+            <td>eacute</td>
+            <td>&amp;eacute;</td>
+            <td>&amp;#xE9;</td>
+            <td>HTML 2.0</td>
+            <td>letra e minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ecirc;</td>
+            <td>ecirc</td>
+            <td>&amp;ecirc;</td>
+            <td>&amp;#xEA;</td>
+            <td>HTML 2.0</td>
+            <td>letra e minúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&euml;</td>
+            <td>euml</td>
+            <td>&amp;euml;</td>
+            <td>&amp;#xEB;</td>
+            <td>HTML 2.0</td>
+            <td>letra e minúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&igrave;</td>
+            <td>igrave</td>
+            <td>&amp;igrave;</td>
+            <td>&amp;#xEC;</td>
+            <td>HTML 2.0</td>
+            <td>letra i minúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&iacute;</td>
+            <td>iacute</td>
+            <td>&amp;iacute;</td>
+            <td>&amp;#xED;</td>
+            <td>HTML 2.0</td>
+            <td>letra i minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&icirc;</td>
+            <td>icirc</td>
+            <td>&amp;icirc;</td>
+            <td>&amp;#xEE;</td>
+            <td>HTML 2.0</td>
+            <td>letra i minúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&iuml;</td>
+            <td>iuml</td>
+            <td>&amp;iuml;</td>
+            <td>&amp;#xEF;</td>
+            <td>HTML 2.0</td>
+            <td>letra i minúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&eth;</td>
+            <td>eth</td>
+            <td>&amp;eth;</td>
+            <td>&amp;#xF0;</td>
+            <td>HTML 2.0</td>
+            <td>letra eth islandesa minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ntilde;</td>
+            <td>ntilde</td>
+            <td>&amp;ntilde;</td>
+            <td>&amp;#xF1;</td>
+            <td>HTML 2.0</td>
+            <td>letra eñe minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ograve;</td>
+            <td>ograve</td>
+            <td>&amp;ograve;</td>
+            <td>&amp;#xF2;</td>
+            <td>HTML 2.0</td>
+            <td>letra o minúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&oacute;</td>
+            <td>oacute</td>
+            <td>&amp;oacute;</td>
+            <td>&amp;#xF3;</td>
+            <td>HTML 2.0</td>
+            <td>letra o minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ocirc;</td>
+            <td>ocirc</td>
+            <td>&amp;ocirc;</td>
+            <td>&amp;#xF4;</td>
+            <td>HTML 2.0</td>
+            <td>letra o minúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&otilde;</td>
+            <td>otilde</td>
+            <td>&amp;otilde;</td>
+            <td>&amp;#xF5;</td>
+            <td>HTML 2.0</td>
+            <td>letra o minúscula con tilde</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ouml;</td>
+            <td>ouml</td>
+            <td>&amp;ouml;</td>
+            <td>&amp;#xF6;</td>
+            <td>HTML 2.0</td>
+            <td>letra o minúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&divide;</td>
+            <td>divide</td>
+            <td>&amp;divide;</td>
+            <td>&amp;#xF7;</td>
+            <td>HTML 3.2</td>
+            <td>división</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&oslash;</td>
+            <td>oslash</td>
+            <td>&amp;oslash;</td>
+            <td>&amp;#xF8;</td>
+            <td>HTML 2.0</td>
+            <td>letra o tachada minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ugrave;</td>
+            <td>ugrave</td>
+            <td>&amp;ugrave;</td>
+            <td>&amp;#xF9;</td>
+            <td>HTML 2.0</td>
+            <td>letra u minúscula con acento grave</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&uacute;</td>
+            <td>uacute</td>
+            <td>&amp;uacute;</td>
+            <td>&amp;#xFA;</td>
+            <td>HTML 2.0</td>
+            <td>letra u minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ucirc;</td>
+            <td>ucirc</td>
+            <td>&amp;ucirc;</td>
+            <td>&amp;#xFB;</td>
+            <td>HTML 2.0</td>
+            <td>letra u minúscula con acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&uuml;</td>
+            <td>uuml</td>
+            <td>&amp;uuml;</td>
+            <td>&amp;#xFC;</td>
+            <td>HTML 2.0</td>
+            <td>letra u minúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&yacute;</td>
+            <td>yacute</td>
+            <td>&amp;yacute;</td>
+            <td>&amp;#xFD;</td>
+            <td>HTML 2.0</td>
+            <td>letra y minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&thorn;</td>
+            <td>thorn</td>
+            <td>&amp;thorn;</td>
+            <td>&amp;#xFE;</td>
+            <td>HTML 2.0</td>
+            <td>letra thorn islandesa minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&yuml;</td>
+            <td>yuml</td>
+            <td>&amp;yuml;</td>
+            <td>&amp;#xFF;</td>
+            <td>HTML 2.0</td>
+            <td>letra y minúscula con acento agudo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&OElig;</td>
+            <td>OElig</td>
+            <td>&amp;OElig;</td>
+            <td>&amp;#x152;</td>
+            <td>HTML 4.0</td>
+            <td>ligadura oe mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&oelig;</td>
+            <td>oelig</td>
+            <td>&amp;oelig;</td>
+            <td>&amp;#x153;</td>
+            <td>HTML 4.0</td>
+            <td>ligadura oe minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Scaron;</td>
+            <td>Scaron</td>
+            <td>&amp;Scaron;</td>
+            <td>&amp;#x160;</td>
+            <td>HTML 4.0</td>
+            <td>letra s mayúscula con caron</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&scaron;</td>
+            <td>scaron</td>
+            <td>&amp;scaron;</td>
+            <td>&amp;#x161;</td>
+            <td>HTML 4.0</td>
+            <td>letra s minúscula con caron</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Yuml;</td>
+            <td>Yuml</td>
+            <td>&amp;Yuml;</td>
+            <td>&amp;#x178;</td>
+            <td>HTML 4.0</td>
+            <td>letra y mayúscula con diéresis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&fnof;</td>
+            <td>fnof</td>
+            <td>&amp;fnof;</td>
+            <td>&amp;#x192;</td>
+            <td>HTML 4.0</td>
+            <td>letra f cursiva minúscula (florín)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&circ;</td>
+            <td>circ</td>
+            <td>&amp;circ;</td>
+            <td>&amp;#x2C6;</td>
+            <td>HTML 4.0</td>
+            <td>acento circunflejo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&tilde;</td>
+            <td>tilde</td>
+            <td>&amp;tilde;</td>
+            <td>&amp;#x2DC;</td>
+            <td>HTML 4.0</td>
+            <td>tilde de la eñe</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Alpha;</td>
+            <td>Alpha</td>
+            <td>&amp;Alpha;</td>
+            <td>&amp;#x391;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega alfa mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Beta;</td>
+            <td>Beta</td>
+            <td>&amp;Beta;</td>
+            <td>&amp;#x392;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega beta mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Gamma;</td>
+            <td>Gamma</td>
+            <td>&amp;Gamma;</td>
+            <td>&amp;#x393;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega gamma mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Delta;</td>
+            <td>Delta</td>
+            <td>&amp;Delta;</td>
+            <td>&amp;#x394;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega delta mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Epsilon;</td>
+            <td>Epsilon</td>
+            <td>&amp;Epsilon;</td>
+            <td>&amp;#x395;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega epsilon mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Zeta;</td>
+            <td>Zeta</td>
+            <td>&amp;Zeta;</td>
+            <td>&amp;#x396;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega zeta mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Eta;</td>
+            <td>Eta</td>
+            <td>&amp;Eta;</td>
+            <td>&amp;#x397;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega eta mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Theta;</td>
+            <td>Theta</td>
+            <td>&amp;Theta;</td>
+            <td>&amp;#x398;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega theta mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Iota;</td>
+            <td>Iota</td>
+            <td>&amp;Iota;</td>
+            <td>&amp;#x399;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega iota mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Kappa;</td>
+            <td>Kappa</td>
+            <td>&amp;Kappa;</td>
+            <td>&amp;#x39A;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega kappa mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Lambda;</td>
+            <td>Lambda</td>
+            <td>&amp;Lambda;</td>
+            <td>&amp;#x39B;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega lambda mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Mu;</td>
+            <td>Mu</td>
+            <td>&amp;Mu;</td>
+            <td>&amp;#x39C;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega mu mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Nu;</td>
+            <td>Nu</td>
+            <td>&amp;Nu;</td>
+            <td>&amp;#x39D;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega nu mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Xi;</td>
+            <td>Xi</td>
+            <td>&amp;Xi;</td>
+            <td>&amp;#x39E;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega xi mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Omicron;</td>
+            <td>Omicron</td>
+            <td>&amp;Omicron;</td>
+            <td>&amp;#x39F;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega omicron mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Pi;</td>
+            <td>Pi</td>
+            <td>&amp;Pi;</td>
+            <td>&amp;#x3A0;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega pi mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Rho;</td>
+            <td>Rho</td>
+            <td>&amp;Rho;</td>
+            <td>&amp;#x3A1;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega rho mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Sigma;</td>
+            <td>Sigma</td>
+            <td>&amp;Sigma;</td>
+            <td>&amp;#x3A3;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega sigma mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Tau;</td>
+            <td>Tau</td>
+            <td>&amp;Tau;</td>
+            <td>&amp;#x3A4;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega tau mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Upsilon;</td>
+            <td>Upsilon</td>
+            <td>&amp;Upsilon;</td>
+            <td>&amp;#x3A5;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega upsilon mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Phi;</td>
+            <td>Phi</td>
+            <td>&amp;Phi;</td>
+            <td>&amp;#x3A6;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega phi mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Chi;</td>
+            <td>Chi</td>
+            <td>&amp;Chi;</td>
+            <td>&amp;#x3A7;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega chi mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Psi;</td>
+            <td>Psi</td>
+            <td>&amp;Psi;</td>
+            <td>&amp;#x3A8;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega psi mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Omega;</td>
+            <td>Omega</td>
+            <td>&amp;Omega;</td>
+            <td>&amp;#x3A9;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega omega mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&alpha;</td>
+            <td>alpha</td>
+            <td>&amp;alpha;</td>
+            <td>&amp;#x3B1;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega alfa minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&beta;</td>
+            <td>beta</td>
+            <td>&amp;beta;</td>
+            <td>&amp;#x3B2;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega beta minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&gamma;</td>
+            <td>gamma</td>
+            <td>&amp;gamma;</td>
+            <td>&amp;#x3B3;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega gamma minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&delta;</td>
+            <td>delta</td>
+            <td>&amp;delta;</td>
+            <td>&amp;#x3B4;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega delta minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&epsilon;</td>
+            <td>epsilon</td>
+            <td>&amp;epsilon;</td>
+            <td>&amp;#x3B5;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega epsilon minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&zeta;</td>
+            <td>zeta</td>
+            <td>&amp;zeta;</td>
+            <td>&amp;#x3B6;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega zeta minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&eta;</td>
+            <td>eta</td>
+            <td>&amp;eta;</td>
+            <td>&amp;#x3B7;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega eta minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&theta;</td>
+            <td>theta</td>
+            <td>&amp;theta;</td>
+            <td>&amp;#x3B8;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega theta minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&iota;</td>
+            <td>iota</td>
+            <td>&amp;iota;</td>
+            <td>&amp;#x3B9;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega iota minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&kappa;</td>
+            <td>kappa</td>
+            <td>&amp;kappa;</td>
+            <td>&amp;#x3BA;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega kappa minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lambda;</td>
+            <td>lambda</td>
+            <td>&amp;lambda;</td>
+            <td>&amp;#x3BB;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega lambda minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&mu;</td>
+            <td>mu</td>
+            <td>&amp;mu;</td>
+            <td>&amp;#x3BC;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega mu minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&nu;</td>
+            <td>nu</td>
+            <td>&amp;nu;</td>
+            <td>&amp;#x3BD;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega nu minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&xi;</td>
+            <td>xi</td>
+            <td>&amp;xi;</td>
+            <td>&amp;#x3BE;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega xi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&omicron;</td>
+            <td>omicron</td>
+            <td>&amp;omicron;</td>
+            <td>&amp;#x3BF;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega omicron minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&pi;</td>
+            <td>pi</td>
+            <td>&amp;pi;</td>
+            <td>&amp;#x3C0;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega pi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rho;</td>
+            <td>rho</td>
+            <td>&amp;rho;</td>
+            <td>&amp;#x3C1;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega rho minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sigmaf;</td>
+            <td>sigmaf</td>
+            <td>&amp;sigmaf;</td>
+            <td>&amp;#x3C2;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega sigma final minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sigma;</td>
+            <td>sigma</td>
+            <td>&amp;sigma;</td>
+            <td>&amp;#x3C3;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega sigma minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&tau;</td>
+            <td>tau</td>
+            <td>&amp;tau;</td>
+            <td>&amp;#x3C4;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega tau minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&upsilon;</td>
+            <td>upsilon</td>
+            <td>&amp;upsilon;</td>
+            <td>&amp;#x3C5;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega upsilon minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&phi;</td>
+            <td>phi</td>
+            <td>&amp;phi;</td>
+            <td>&amp;#x3C6;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega phi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&chi;</td>
+            <td>chi</td>
+            <td>&amp;chi;</td>
+            <td>&amp;#x3C7;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega chi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&psi;</td>
+            <td>psi</td>
+            <td>&amp;psi;</td>
+            <td>&amp;#x3C8;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega psi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&omega;</td>
+            <td>omega</td>
+            <td>&amp;omega;</td>
+            <td>&amp;#x3C9;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega omega minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&thetasym;</td>
+            <td>thetasym</td>
+            <td>&amp;thetasym;</td>
+            <td>&amp;#x3D1;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega theta cursiva minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&upsih;</td>
+            <td>upsih</td>
+            <td>&amp;upsih;</td>
+            <td>&amp;#x3D2;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega upsilon con gancho mayúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&piv;</td>
+            <td>piv</td>
+            <td>&amp;piv;</td>
+            <td>&amp;#x3D6;</td>
+            <td>HTML 4.0</td>
+            <td>letra griega omega pi minúscula</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ensp;</td>
+            <td>ensp</td>
+            <td>&amp;ensp;</td>
+            <td>&amp;#x2002;</td>
+            <td>HTML 4.0</td>
+            <td>espacio en (medio em)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&emsp;</td>
+            <td>emsp</td>
+            <td>&amp;emsp;</td>
+            <td>&amp;#x2003;</td>
+            <td>HTML 4.0</td>
+            <td>espacio em</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&thinsp;</td>
+            <td>thinsp</td>
+            <td>&amp;thinsp;</td>
+            <td>&amp;#x2009;</td>
+            <td>HTML 4.0</td>
+            <td>espacio pequeño (1/5 em)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&zwnj;</td>
+            <td>zwnj</td>
+            <td>&amp;zwnj;</td>
+            <td>&amp;#x200C;</td>
+            <td>HTML 4.0</td>
+            <td>no-ensamblador de anchura cero</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&zwj;</td>
+            <td>zwj</td>
+            <td>&amp;zwj;</td>
+            <td>&amp;#x200D;</td>
+            <td>HTML 4.0</td>
+            <td>ensamblador de anchura cero</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lrm;</td>
+            <td>lrm</td>
+            <td>&amp;lrm;</td>
+            <td>&amp;#x200E;</td>
+            <td>HTML 4.0</td>
+            <td>marca de izquierda a derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rlm;</td>
+            <td>rlm</td>
+            <td>&amp;rlm;</td>
+            <td>&amp;#x200F;</td>
+            <td>HTML 4.0</td>
+            <td>marca de derecha a izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ndash;</td>
+            <td>ndash</td>
+            <td>&amp;ndash;</td>
+            <td>&amp;#x2013;</td>
+            <td>HTML 4.0</td>
+            <td>semirraya (guión medio)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&mdash;</td>
+            <td>mdash</td>
+            <td>&amp;mdash;</td>
+            <td>&amp;#x2014;</td>
+            <td>HTML 4.0</td>
+            <td>raya (guión largo)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lsquo;</td>
+            <td>lsquo</td>
+            <td>&amp;lsquo;</td>
+            <td>&amp;#x2018;</td>
+            <td>HTML 4.0</td>
+            <td>comilla simple izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rsquo;</td>
+            <td>rsquo</td>
+            <td>&amp;rsquo;</td>
+            <td>&amp;#x2019;</td>
+            <td>HTML 4.0</td>
+            <td>comilla simple derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sbquo;</td>
+            <td>sbquo</td>
+            <td>&amp;sbquo;</td>
+            <td>&amp;#x201A;</td>
+            <td>HTML 4.0</td>
+            <td>comilla simple inferior</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ldquo;</td>
+            <td>ldquo</td>
+            <td>&amp;ldquo;</td>
+            <td>&amp;#x201C;</td>
+            <td>HTML 4.0</td>
+            <td>comilla doble izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rdquo;</td>
+            <td>rdquo</td>
+            <td>&amp;rdquo;</td>
+            <td>&amp;#x201D;</td>
+            <td>HTML 4.0</td>
+            <td>comilla doble derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&bdquo;</td>
+            <td>bdquo</td>
+            <td>&amp;bdquo;</td>
+            <td>&amp;#x201E;</td>
+            <td>HTML 4.0</td>
+            <td>comilla doble inferior</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&dagger;</td>
+            <td>dagger</td>
+            <td>&amp;dagger;</td>
+            <td>&amp;#x2020;</td>
+            <td>HTML 4.0</td>
+            <td>cruz</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Dagger;</td>
+            <td>Dagger</td>
+            <td>&amp;Dagger;</td>
+            <td>&amp;#x2021;</td>
+            <td>HTML 4.0</td>
+            <td>doble cruz</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&bull;</td>
+            <td>bull</td>
+            <td>&amp;bull;</td>
+            <td>&amp;#x2022;</td>
+            <td>HTML 4.0</td>
+            <td>punto (de lista)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&hellip;</td>
+            <td>hellip</td>
+            <td>&amp;hellip;</td>
+            <td>&amp;#x2026;</td>
+            <td>HTML 4.0</td>
+            <td>elipsis</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&permil;</td>
+            <td>permil</td>
+            <td>&amp;permil;</td>
+            <td>&amp;#x2030;</td>
+            <td>HTML 4.0</td>
+            <td>por mil</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&prime;</td>
+            <td>prime</td>
+            <td>&amp;prime;</td>
+            <td>&amp;#x2032;</td>
+            <td>HTML 4.0</td>
+            <td>prima</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&Prime;</td>
+            <td>Prime</td>
+            <td>&amp;Prime;</td>
+            <td>&amp;#x2033;</td>
+            <td>HTML 4.0</td>
+            <td>segunda (prima)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lsaquo;</td>
+            <td>lsaquo</td>
+            <td>&amp;lsaquo;</td>
+            <td>&amp;#x2039;</td>
+            <td>HTML 4.0</td>
+            <td>comilla angular simple izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rsaquo;</td>
+            <td>rsaquo</td>
+            <td>&amp;rsaquo;</td>
+            <td>&amp;#x203A;</td>
+            <td>HTML 4.0</td>
+            <td>comilla simple angular derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&oline;</td>
+            <td>oline</td>
+            <td>&amp;oline;</td>
+            <td>&amp;#x203E;</td>
+            <td>HTML 4.0</td>
+            <td>guión alto</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&frasl;</td>
+            <td>frasl</td>
+            <td>&amp;frasl;</td>
+            <td>&amp;#x2044;</td>
+            <td>HTML 4.0</td>
+            <td>barra de fracción</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&euro;</td>
+            <td>euro</td>
+            <td>&amp;euro;</td>
+            <td>&amp;#x20AC;</td>
+            <td>HTML 4.0</td>
+            <td>euro</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&image;</td>
+            <td>image</td>
+            <td>&amp;image;</td>
+            <td>&amp;#x2111;</td>
+            <td>HTML 4.0</td>
+            <td>parte imaginaria</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&weierp;</td>
+            <td>weierp</td>
+            <td>&amp;weierp;</td>
+            <td>&amp;#x2118;</td>
+            <td>HTML 4.0</td>
+            <td>función elíptica de Weierstrass</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&real;</td>
+            <td>real</td>
+            <td>&amp;real;</td>
+            <td>&amp;#x211C;</td>
+            <td>HTML 4.0</td>
+            <td>parte real</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&trade;</td>
+            <td>trade</td>
+            <td>&amp;trade;</td>
+            <td>&amp;#x2122;</td>
+            <td>HTML 4.0</td>
+            <td>marca registrada</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&alefsym;</td>
+            <td>alefsym</td>
+            <td>&amp;alefsym;</td>
+            <td>&amp;#x2135;</td>
+            <td>HTML 4.0</td>
+            <td>primer cardinal transfinito (numerable)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&larr;</td>
+            <td>larr</td>
+            <td>&amp;larr;</td>
+            <td>&amp;#x2190;</td>
+            <td>HTML 4.0</td>
+            <td>flecha hacia la izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&uarr;</td>
+            <td>uarr</td>
+            <td>&amp;uarr;</td>
+            <td>&amp;#x2191;</td>
+            <td>HTML 4.0</td>
+            <td>flecha hacia arriba</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rarr;</td>
+            <td>rarr</td>
+            <td>&amp;rarr;</td>
+            <td>&amp;#x2192;</td>
+            <td>HTML 4.0</td>
+            <td>flecha hacia la derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&darr;</td>
+            <td>darr</td>
+            <td>&amp;darr;</td>
+            <td>&amp;#x2193;</td>
+            <td>HTML 4.0</td>
+            <td>flecha hacia abajo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&harr;</td>
+            <td>harr</td>
+            <td>&amp;harr;</td>
+            <td>&amp;#x2194;</td>
+            <td>HTML 4.0</td>
+            <td>flecha derecha izquierda (relación en notación z)</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&crarr;</td>
+            <td>crarr</td>
+            <td>&amp;crarr;</td>
+            <td>&amp;#x21B5;</td>
+            <td>HTML 4.0</td>
+            <td>retorno de carro</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lArr;</td>
+            <td>lArr</td>
+            <td>&amp;lArr;</td>
+            <td>&amp;#x21D0;</td>
+            <td>HTML 4.0</td>
+            <td>flecha doble hacia la izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&uArr;</td>
+            <td>uArr</td>
+            <td>&amp;uArr;</td>
+            <td>&amp;#x21D1;</td>
+            <td>HTML 4.0</td>
+            <td>flecha doble hacia arriba</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rArr;</td>
+            <td>rArr</td>
+            <td>&amp;rArr;</td>
+            <td>&amp;#x21D2;</td>
+            <td>HTML 4.0</td>
+            <td>flecha doble hacia la derecha</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&dArr;</td>
+            <td>dArr</td>
+            <td>&amp;dArr;</td>
+            <td>&amp;#x21D3;</td>
+            <td>HTML 4.0</td>
+            <td>flecha doble hacia abajo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&hArr;</td>
+            <td>hArr</td>
+            <td>&amp;hArr;</td>
+            <td>&amp;#x21D4;</td>
+            <td>HTML 4.0</td>
+            <td>flecha doble derecha izquierda</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&forall;</td>
+            <td>forall</td>
+            <td>&amp;forall;</td>
+            <td>&amp;#x2200;</td>
+            <td>HTML 4.0</td>
+            <td>para todo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&part;</td>
+            <td>part</td>
+            <td>&amp;part;</td>
+            <td>&amp;#x2202;</td>
+            <td>HTML 4.0</td>
+            <td>diferencial parcial</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&exist;</td>
+            <td>exist</td>
+            <td>&amp;exist;</td>
+            <td>&amp;#x2203;</td>
+            <td>HTML 4.0</td>
+            <td>existe</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&empty;</td>
+            <td>empty</td>
+            <td>&amp;empty;</td>
+            <td>&amp;#x2205;</td>
+            <td>HTML 4.0</td>
+            <td>conjunto vacío</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&nabla;</td>
+            <td>nabla</td>
+            <td>&amp;nabla;</td>
+            <td>&amp;#x2207;</td>
+            <td>HTML 4.0</td>
+            <td>operador nabla</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&isin;</td>
+            <td>isin</td>
+            <td>&amp;isin;</td>
+            <td>&amp;#x2208;</td>
+            <td>HTML 4.0</td>
+            <td>pertenece a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&notin;</td>
+            <td>notin</td>
+            <td>&amp;notin;</td>
+            <td>&amp;#x2209;</td>
+            <td>HTML 4.0</td>
+            <td>no pertenece a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ni;</td>
+            <td>ni</td>
+            <td>&amp;ni;</td>
+            <td>&amp;#x220B;</td>
+            <td>HTML 4.0</td>
+            <td>contiene a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&prod;</td>
+            <td>prod</td>
+            <td>&amp;prod;</td>
+            <td>&amp;#x220F;</td>
+            <td>HTML 4.0</td>
+            <td>productorio</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sum;</td>
+            <td>sum</td>
+            <td>&amp;sum;</td>
+            <td>&amp;#x2211;</td>
+            <td>HTML 4.0</td>
+            <td>sumatorio</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&minus;</td>
+            <td>minus</td>
+            <td>&amp;minus;</td>
+            <td>&amp;#x2212;</td>
+            <td>HTML 4.0</td>
+            <td>menos</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lowast;</td>
+            <td>lowast</td>
+            <td>&amp;lowast;</td>
+            <td>&amp;#x2217;</td>
+            <td>HTML 4.0</td>
+            <td>operador asterisco</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&radic;</td>
+            <td>radic</td>
+            <td>&amp;radic;</td>
+            <td>&amp;#x221A;</td>
+            <td>HTML 4.0</td>
+            <td>raíz cuadrada</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&prop;</td>
+            <td>prop</td>
+            <td>&amp;prop;</td>
+            <td>&amp;#x221D;</td>
+            <td>HTML 4.0</td>
+            <td>proporcional a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&infin;</td>
+            <td>infin</td>
+            <td>&amp;infin;</td>
+            <td>&amp;#x221E;</td>
+            <td>HTML 4.0</td>
+            <td>infinito</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ang;</td>
+            <td>ang</td>
+            <td>&amp;ang;</td>
+            <td>&amp;#x2220;</td>
+            <td>HTML 4.0</td>
+            <td>ángulo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&and;</td>
+            <td>and</td>
+            <td>&amp;and;</td>
+            <td>&amp;#x2227;</td>
+            <td>HTML 4.0</td>
+            <td>operador lógico y</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&or;</td>
+            <td>or</td>
+            <td>&amp;or;</td>
+            <td>&amp;#x2228;</td>
+            <td>HTML 4.0</td>
+            <td>operador lógico o</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&cap;</td>
+            <td>cap</td>
+            <td>&amp;cap;</td>
+            <td>&amp;#x2229;</td>
+            <td>HTML 4.0</td>
+            <td>intersección</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&cup;</td>
+            <td>cup</td>
+            <td>&amp;cup;</td>
+            <td>&amp;#x222A;</td>
+            <td>HTML 4.0</td>
+            <td>unión</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&int;</td>
+            <td>int</td>
+            <td>&amp;int;</td>
+            <td>&amp;#x222B;</td>
+            <td>HTML 4.0</td>
+            <td>integral</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&there4;</td>
+            <td>there4</td>
+            <td>&amp;there4;</td>
+            <td>&amp;#x2234;</td>
+            <td>HTML 4.0</td>
+            <td>por lo tanto</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sim;</td>
+            <td>sim</td>
+            <td>&amp;sim;</td>
+            <td>&amp;#x223C;</td>
+            <td>HTML 4.0</td>
+            <td>operador tilde</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&cong;</td>
+            <td>cong</td>
+            <td>&amp;cong;</td>
+            <td>&amp;#x2245;</td>
+            <td>HTML 4.0</td>
+            <td>aproximadamente igual a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&asymp;</td>
+            <td>asymp</td>
+            <td>&amp;asymp;</td>
+            <td>&amp;#x2248;</td>
+            <td>HTML 4.0</td>
+            <td>casi igual a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ne;</td>
+            <td>ne</td>
+            <td>&amp;ne;</td>
+            <td>&amp;#x2260;</td>
+            <td>HTML 4.0</td>
+            <td>distinto de</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&equiv;</td>
+            <td>equiv</td>
+            <td>&amp;equiv;</td>
+            <td>&amp;#x2261;</td>
+            <td>HTML 4.0</td>
+            <td>idéntico a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&le;</td>
+            <td>le</td>
+            <td>&amp;le;</td>
+            <td>&amp;#x2264;</td>
+            <td>HTML 4.0</td>
+            <td>inferior o igual</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&ge;</td>
+            <td>ge</td>
+            <td>&amp;ge;</td>
+            <td>&amp;#x2265;</td>
+            <td>HTML 4.0</td>
+            <td>superior o igual</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sub;</td>
+            <td>sub</td>
+            <td>&amp;sub;</td>
+            <td>&amp;#x2282;</td>
+            <td>HTML 4.0</td>
+            <td>subconjunto de</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sup;</td>
+            <td>sup</td>
+            <td>&amp;sup;</td>
+            <td>&amp;#x2283;</td>
+            <td>HTML 4.0</td>
+            <td>superconjunto de</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&nsub;</td>
+            <td>nsub</td>
+            <td>&amp;nsub;</td>
+            <td>&amp;#x2284;</td>
+            <td>HTML 4.0</td>
+            <td>no subconjunto de</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sube;</td>
+            <td>sube</td>
+            <td>&amp;sube;</td>
+            <td>&amp;#x2286;</td>
+            <td>HTML 4.0</td>
+            <td>subconjunto de o igual a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&supe;</td>
+            <td>supe</td>
+            <td>&amp;supe;</td>
+            <td>&amp;#x2287;</td>
+            <td>HTML 4.0</td>
+            <td>superconjunto de o igual a</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&oplus;</td>
+            <td>oplus</td>
+            <td>&amp;oplus;</td>
+            <td>&amp;#x2295;</td>
+            <td>HTML 4.0</td>
+            <td>signo más rodeado por un círculo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&otimes;</td>
+            <td>otimes</td>
+            <td>&amp;otimes;</td>
+            <td>&amp;#x2297;</td>
+            <td>HTML 4.0</td>
+            <td>signo por rodeado por un círculo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&perp;</td>
+            <td>perp</td>
+            <td>&amp;perp;</td>
+            <td>&amp;#x22A5;</td>
+            <td>HTML 4.0</td>
+            <td>perpendicular</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&sdot;</td>
+            <td>sdot</td>
+            <td>&amp;sdot;</td>
+            <td>&amp;#x22C5;</td>
+            <td>HTML 4.0</td>
+            <td>operador punto</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lceil;</td>
+            <td>lceil</td>
+            <td>&amp;lceil;</td>
+            <td>&amp;#x2308;</td>
+            <td>HTML 4.0</td>
+            <td>corchete superior izquierdo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rceil;</td>
+            <td>rceil</td>
+            <td>&amp;rceil;</td>
+            <td>&amp;#x2309;</td>
+            <td>HTML 4.0</td>
+            <td>corchete superior derecho</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lfloor;</td>
+            <td>lfloor</td>
+            <td>&amp;lfloor;</td>
+            <td>&amp;#x230A;</td>
+            <td>HTML 4.0</td>
+            <td>corchete inferior izquierdo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rfloor;</td>
+            <td>rfloor</td>
+            <td>&amp;rfloor;</td>
+            <td>&amp;#x230B;</td>
+            <td>HTML 4.0</td>
+            <td>corchete inferior derecho</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&lang;</td>
+            <td>lang</td>
+            <td>&amp;lang;</td>
+            <td>&amp;#x2329;</td>
+            <td>HTML 4.0</td>
+            <td>corchete angular izquierdo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&rang;</td>
+            <td>rang</td>
+            <td>&amp;rang;</td>
+            <td>&amp;#x232A;</td>
+            <td>HTML 4.0</td>
+            <td>corchete angular derecho</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&loz;</td>
+            <td>loz</td>
+            <td>&amp;loz;</td>
+            <td>&amp;#x25CA;</td>
+            <td>HTML 4.0</td>
+            <td>rombo</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&spades;</td>
+            <td>spades</td>
+            <td>&amp;spades;</td>
+            <td>&amp;#x2660;</td>
+            <td>HTML 4.0</td>
+            <td>picas</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&clubs;</td>
+            <td>clubs</td>
+            <td>&amp;clubs;</td>
+            <td>&amp;#x2663;</td>
+            <td>HTML 4.0</td>
+            <td>tréboles</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&hearts;</td>
+            <td>hearts</td>
+            <td>&amp;hearts;</td>
+            <td>&amp;#x2665;</td>
+            <td>HTML 4.0</td>
+            <td>corazones</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-size: 150%">&diams;</td>
+            <td>diams</td>
+            <td>&amp;diams;</td>
+            <td>&amp;#x2666;</td>
+            <td>HTML 4.0</td>
+            <td>rombos</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 15 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

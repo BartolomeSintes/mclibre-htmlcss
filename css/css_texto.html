@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Texto. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 2: Texto</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS 2: Texto</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#color">Color de texto: <span class="css-prop">color</span></a></li>
+          <li><a href="#background-color">Color de fondo: <span class="css-prop">background-color</span></a></li>
+          <li><a href="#text-align">Alineación horizontal: <span class="css-prop">text-align</span></a></li>
+          <li><a href="#vertical-align">Alineación vertical: <span class="css-prop">vertical-align</span></a></li>
+          <li><a href="#text-indent">Sangría: <span class="css-prop">text-indent</span></a></li>
+          <li><a href="#letter-spacing">Espaciado letras: <span class="css-prop">letter-spacing</span></a></li>
+          <li><a href="#word-spacing">Espaciado palabras: <span class="css-prop">word-spacing</span></a></li>
+          <li><a href="#text-decoration">Decoración: <span class="css-prop">text-decoration</span></a></li>
+          <li><a href="#text-transform">Mayúsculas / minúsculas: <span class="css-prop">text-transform</span></a></li>
+          <li><a href="#text-shadow">Sombreado: <span class="css-prop">text-shadow</span></a></li>
+          <li><a href="#white-space">Espacios en blanco: <span class="css-prop">white-space</span></a></li>
+          <li><a href="#direction">Dirección: <span class="css-prop">direction</span></a></li>
+          <li><a href="#unicode-bidi">Dirección: <span class="css-prop">unicode-bidi</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se comentan las propiedades que se pueden aplicar al texto de una página web:</p>
+
+    <section id="color">
+      <h2 class="con-aside">Color del texto: <span class="css-prop">color</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">color</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#foreground"><img src="../varios/iconos/icono_css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">color</span> permite establecer el color del texto. Las formas de expresar colores se comentan en la lección <a href="css_color.html">CSS: Colores</a>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">
+h2 {
+  color: magenta ;
+}
+
+p {
+  color: blue;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <h2 style="color: magenta;">Esto es un encabezado h2</h2>
+
+              <p style="color: blue;">Esto es un párrafo &lt;p&gt; normal y corriente.</p>
+
+              <p style="color: blue;">Esto es otro párrafo p.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="background-color">
+      <h2 class="con-aside">Color de fondo: <span class="css-prop">background-color</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">background-color</span><br />
+          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-color"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">background-color</span> permite establecer el color de fondo del elemento.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">body {
+  background-color: aqua;
+}
+
+h2 {
+  background-color: gold;
+}
+
+p {
+  background-color: lightblue;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: aqua;">
+              <h2 style="background-color: gold;">Esto es un encabezado h2</h2>
+
+              <p style="background-color: lightblue;">Esto es un párrafo &lt;p&gt; normal y corriente.</p>
+
+              <p style="background-color: lightblue;">Esto es otro párrafo p.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>El color de fondo de la página se establece en la etiqueta <span class="html-eti">&lt;body&gt;</span> (o en <span class="html-eti">&lt;html&gt;</span></p>
+
+      <p>El color de fondo de una etiqueta no se aplica solamente al texto, sino a la caja que contiene el texto (por eso el color de fondo se extiende hasta el extremo derecho de la línea).</p>
+    </section>
+
+    <section id="text-align">
+      <h2 class="con-aside">Alineación horizontal: <span class="css-prop">text-align</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">text-align</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-text-align"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">text-align</span> permite establecer la alineación horizontal de un bloque de texto. Los posibles valores de <span class="css-prop">text-align</span> son <span class="css-valor">left</span> (izquierda), <span class="css-valor">right</span> (derecha), <span class="css-valor">center</span> (centro) y <span class="css-valor">justify</span> (justificado a derecha e izquierda).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">body {
+  text-align: justify;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: right;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="text-align: justify;">
+              <h2 style="text-align: center;">Esto es un encabezado h2</h2>
+
+              <h3 style="text-align: right;">Esto es un encabezado h3</h3>
+
+              <p>Esto es un párrafo &lt;p&gt; normal y corriente que se muestra justificado a derecha e izquierda porque se ha establecido la propiedad en <span class="html-eti">&lt;body&gt;</span> y, por tanto, afecta a todos los elementos menos a los que tienen la propiedad explícitamente establecida con otro valor</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Para centrar una imagen, el elemento que contiene la imagen tiene que tener su contenido centrado. Por ejemplo, si la imagen está en un párrafo, se puede definir la clase "p.centrado" con el atributo <span class="html-atri">text-align</span> establecido con el valor <span class="html-atri-valor">center</span> y después dar al párrafo que contiene la imagen la clase "centrado". Lógicamente, si se añade texto al párrafo, el texto también se centrará.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p.centrado {
+  text-align: center;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-align: center"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" width="129" height="122" /></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="vertical-align">
+      <h2 class="con-aside">Alineación vertical: <span class="css-prop">vertical-align</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">vertical-align</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visudet.html#propdef-vertical-align"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">vertical-align</span> permite establecer la alineación vertical de un elemento respecto al elemento que lo contiene. Los posibles valores de <span class="css-prop">vertical-align</span> son <span class="css-valor">baseline</span>, <span class="css-valor">sub</span>, <span class="css-valor">super</span>, <span class="css-valor">top</span>, <span class="css-valor">text-top</span>, <span class="css-valor">middle</span>, <span class="css-valor">bottom</span> y <span class="css-valor">text-bottom</span>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="solores" style="text-align: justify;">
+              <pre style="font-weight: bold">Alineación:  sub,   bottom,  middle, text-bottom, baseline, text-top, top,    super.
+<span style="text-decoration:underline overline">Ejemplo:    <span style="font-size: 300%"><span style="vertical-align: sub">bq</span> <span style="vertical-align: bottom">bq</span> <span style="vertical-align:  middle">bq</span> <span style="vertical-align: text-bottom">bq</span>  <span style="vertical-align: baseline">bq</span>  <span style="vertical-align: text-top">bq</span> <span style="vertical-align: top">bq</span> <span style="vertical-align: super">bq</span></span>  </span></pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="resul" style="text-align: justify;">
+              <pre>Alineación:  sub,      bottom,   middle, text-bottom, baseline, text-top,   top,      super.
+<span style="text-decoration:underline overline">Ejemplo:    <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: sub" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: bottom" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: middle" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: text-bottom" />    <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: baseline" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: text-top" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: top" />  <img src="../img/gnu-head-sm2.jpg" width="64" height="61" alt="Logotipo de GNU" title="Logotipo de GNU" style="vertical-align: super" />  </span></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Nota</strong>: La posición relativa de los elementos es la misma en Firefox, Internet Explorer y Chrome, aunque las líneas horizontales que se han añadido a los ejemplos para facilitar la comparación no se muestran de la misma manera en los tres navegadores, como se explica en el <a href="#text-decoration">apartado dedicado a la propiedad <span class="css-prop">text-decoration</span></a>.</p>
+    </section>
+
+    <section id="text-indent">
+      <h2 class="con-aside">Sangría: <span class="css-prop">text-indent</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">text-indent</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-text-indent"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">text-indent</span> permite establecer la sangría de un bloque de texto. Su valor se puede establecer como cualquier otra longitud.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p { <span style="text-indent: 8em">
+  text-indent: 25px</span>;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-indent: 25px">Esto es un párrafo &lt;p&gt; normal y corriente cuya primera línea tiene sangría, es decir, empieza más a la derecha que el resto de líneas del párrafo. La sangría es habitual en España (y no sólo para beberla).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p { <span style="text-indent: 8em">
+  text-indent: -25px</span>;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-indent: -25px">Esto es un párrafo p normal y corriente cuya primera línea tiene sangría negativa (sangría francesa), por ello la primera línea empieza más a la izquierda que el resto de líneas del párrafo. Como se sale de la celda, se ve bastante mal, pero poniendo margen al párrafo se corrige este problema (ver ejemplo siguiente).</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p { <span style="text-indent: 8em">
+  margin-left: 25px;
+  text-indent: -25px</span>;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="margin-left: 25px; text-indent: -25px">Esto es un párrafo &lt;p&gt; normal y corriente con margen izquierdo y cuya primera línea tiene sangría negativa del mismo valor que el margen (sangría francesa), por ello la primera línea empieza más a la izquierda que el resto de líneas del párrafo.</p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="letter-spacing">
+      <h2 class="con-aside">Espaciado de letras: <span class="css-prop">letter-spacing</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">letter-spacing</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-letter-spacing"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">letter-spacing</span> permite establecer un espaciado entre cada una de las letras de un bloque de texto. Estos valores, positivos o negativos, se establecen como cualquier otra longitud y se añaden al espaciado normal.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  letter-spacing: 5px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="letter-spacing: 5px;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  letter-spacing: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="letter-spacing: 10px;">Esto es un párrafo normal y corriente.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  letter-spacing: -2px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="letter-spacing: -2px;">Esto es un párrafo normal y corriente.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La propiedad <span class="css-prop">letter-spacing</span> se aplica a todas las letras, incluida la última, como muestran los ejemplos siguientes en los que se añade un espacio final:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">span {
+  letter-spacing: 10px;
+  text-decoration: underline;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p><span style="text-decoration: underline; letter-spacing: 10px;">Letras separadas</span></p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">span {
+  background-color: lightblue;
+  letter-spacing: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p><span style="background-color: lightblue; letter-spacing: 10px;">Letras separadas</span></p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Este espacio final puede producir efectos no deseados, como en los ejemplos siguientes en que el texto parece no estar centrado (al poner color de fondo al texto se ve que el texto sí que está centrado, pero el espacio final hace que parezca que no).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  letter-spacing: 50px;
+  text-align: center;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="letter-spacing: 100px; text-align: center;">XX</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  letter-spacing: 50px;
+  text-align: center;
+}
+
+span {
+  background-color: lightblue;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="letter-spacing: 100px; text-align: center;"><span style=" background-color: lightblue;">XX</span></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="word-spacing">
+      <h2 class="con-aside">Espaciado de palabras: <span class="css-prop">word-spacing</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">word-spacing</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-word-spacing"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">word-spacing</span> permite establecer un espaciado entre cada una de las palabras de un bloque de texto. Estos valores, positivos o negativos, se establecen como cualquier otra longitud y se añaden al espaciado normal.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  word-spacing: 5px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="word-spacing: 5px;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  word-spacing: 10px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="word-spacing: 10px;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  word-spacing: -5px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="word-spacing: -5px;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La propiedad <span class="css-prop">word-spacing</span> no se aplica a la última palabra.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-align: center
+  word-spacing: 50px;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="word-spacing: 100px; text-align: center;">XX</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">span {
+  text-decoration: underline;
+  word-spacing: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p><span style="text-decoration: underline; word-spacing: 10px;">Palabras separadas</span></p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">span {
+  background-color: lightblue;
+  word-spacing: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p><span style="background-color: lightblue; word-spacing: 10px;">Palabras separadas</span></p></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="text-decoration">
+      <h2 class="con-aside">Decoración: <span class="css-prop">text-decoration</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">text-decoration</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-text-decoration"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">text-decoration</span> permite añadir a un bloque de texto distintos tipos de rayado. Los posibles valores de <span class="css-prop">text-decoration</span> son <span class="css-valor">none</span> (ninguno), <span class="css-valor">underline</span> (subrayado), <span class="css-valor">overline</span> (sobrerayado) y <span class="css-valor">line-through</span> (tachado).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-decoration: none;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-decoration: none">Esto es un párrafo p normal y corriente.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-decoration: underline;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-decoration: underline">Esto es un párrafo &lt;p&gt; normal y corriente.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-decoration: overline;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-decoration: overline">Esto es un párrafo &lt;p&gt; normal y corriente.</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-decoration: line-through;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-decoration: line-through;">Esto es un párrafo &lt;p&gt; normal y corriente.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><strong>Nota</strong>: Los navegadores no muestran el valor <span class="css-valor">overline</span> de la misma manera, como se comenta en la página de <a href="../otros/otros_diferencias_listado.html#text-decoration-overline">diferencias entre Firefox e Internet Explorer</a>).</p>
+    </section>
+
+    <section id="text-transform">
+      <h2 class="con-aside">Mayúsculas / minúsculas: <span class="css-prop">text-transform</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">text-transform</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-text-transform"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">text-transform</span> permite cambiar el texto a minúsculas o mayúsculas. Los posibles valores de <span class="css-prop">text-transform</span> son <span class="css-valor">none</span> (ninguno), <span class="css-valor">capitalize</span> (la primera letra de cada palabra en mayúsculas), <span class="css-valor">uppercase</span> (todas las letras en mayúsculas) y <span class="css-valor">lowercase</span> (todas las letras en minúsculas).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-transform: capitalize;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style=" text-transform: capitalize;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-transform: uppercase;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style=" text-transform: uppercase;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-transform: lowercase;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style=" text-transform: lowercase;">Esto es un párrafo normal y corriente.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>El valor <span class="css-valor">capitalize</span> únicamente transforma la primera letra de cada palabra, el resto de letras se mantienen como estén (minúsculas o mayúsculas).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  text-transform: capitalize;
+}</code></pre>
+            </td>
+            <td class="resul"><p style=" text-transform: capitalize;">Este PÁRRAFO tiene una palabra en mayúsculas.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="text-shadow">
+      <h2 class="con-aside">Sombreado: <span class="css-prop">text-shadow</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">text-shadow</span><br />
+          <a href="https://drafts.csswg.org/css-text-decor-3/#text-shadow-property"><img src="../varios/iconos/icono_css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+          <a href="http://caniuse.com/#feat=css-textshadow"><img src="../varios/iconos/icono_caniuse_oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">text-shadow</span> permite añadir una o varias sombras al texto. Para definir cada sombra hay que indicar el color de la sombra (si se omite, se utiliza el color del texto), la distancia horizontal (positiva o negativa), la distancia vertical (positiva o negativa) y el diámetro de desenfoque.</p>
+
+      <p>Esta propiedad estaba incluida en la recomendación <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS 2</a> y no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, pero está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-text-decor-3/">CSS 3: Text decoration</a> (actualmente -octubre de 2016- en elaboración).</p>
+
+      <hr class="corta" />
+
+      <p>Si se escriben dos distancias, la primera distancia es la distancia horizontal y la segunda la distancia vertical de la sombra con respecto al texto:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray 6px 0;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray 6px 0; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray -6px 0;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray -6px 0; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray 0 6px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray 0 6px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray 0 -6px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray 0 -6px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray 6px 6px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray 6px 6px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se escriben tres distancias, la tercera distancia indica el tamaño del difuminado de la sombra.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: black 6px 6px 2px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: black 6px 6px 2px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: black 6px 6px 4px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: black 6px 6px 4px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: black 6px 6px 6px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: black 6px 6px 6px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: black 6px 6px 8px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: black 6px 6px 8px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Se pueden definir varias sombras simultáneamente, escribiéndolas separadas por comas (,).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  <span class="codigo-resaltado">text-shadow: gray 8px 8px, gray -8px -8px;</span>
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul" style="background-color: white;"><p style="text-shadow: gray 8px 8px, gray -8px -8px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p><strong>Nota</strong>:</p>
+
+      <ul>
+        <li>Internet Explorer admite cuatro valores numéricos, pero eso no está permitido por la recomendación. En IE, el cuarto valor extiende la sombra en todas las direcciones.
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                  <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+                </td>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">p {
+  <span class="codigo-resaltado">text-shadow: gray 0 0 0 6px;</span>
+  font-size: 200%;
+  font-weight: bold;
+  letter-spacing: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}</code>
+</pre>
+                </td>
+                <td class="resul" style="background-color: white;"><p style="text-shadow: gray 0 0 0 6px; font-size: 200%; font-weight: bold; letter-spacing: 10px; text-align: center; text-transform: uppercase;">Texto sombreado</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <section id="white-space">
+      <h2 class="con-aside">Espacios en blanco: <span class="css-prop">white-space</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">white-space</span><br />
+          <a href="https://www.w3.org/TR/CSS2/text.html#propdef-white-space"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/white-space"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">white-space</span> permite establecer el comportamiento del navegador con respecto a los espacios en blanco repetidos o con los saltos de línea del código fuente. Los posibles valores de <span class="css-prop">white-space</span> son <span class="css-valor">normal</span>, <span class="css-valor">pre</span>, <span class="css-valor">nowrap</span>, <span class="css-valor">pre-wrap</span> y <span class="css-valor">pre-line</span>.</p>
+
+      <p>El comportamiento habitual de los navegadores (salvo en el caso de la etiqueta <span class="html-eti">&lt;pre&gt;</span>, en la que hace todo lo contrario) es:</p>
+
+      <ul>
+        <li>colapsar los espacios en blanco, es decir, mostrar un único espacio en blanco cuando en el código fuente hay varios espacios en blanco seguidos</li>
+        <li>colapsar los saltos de línea, es decir, no hacer caso de los saltos de línea que haya en el código fuente</li>
+        <li>hacer ajuste de líneas (<i>wrap</i>), es decir, pasar el texto a la línea siguiente si el texto no cabe en una sola línea en el espacio disponible.</li>
+      </ul>
+
+      <p>La tabla siguiente resume el comportamiento de cada uno de los valores de <span class="css-prop">white-space</span></p>
+      <table>
+        <tr>
+          <td></td>
+          <th>&nbsp; <span class="css-valor">normal</span> &nbsp;</th>
+          <th>&nbsp; <span class="css-valor">pre</span> &nbsp;</th>
+          <th>&nbsp; <span class="css-valor">nowrap</span> &nbsp;</th>
+          <th>&nbsp; <span class="css-valor">pre-wrap</span> &nbsp;</th>
+          <th>&nbsp; <span class="css-valor">pre-line</span> &nbsp;</th>
+        </tr>
+        <tr>
+          <td>colapsar espacios en blanco</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+        </tr>
+        <tr>
+          <td>colapsar saltos de línea</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+        </tr>
+        <tr>
+          <td>hacer ajuste de línea</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2717;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+          <td style="text-align: center; font-size: 1.5em;">&#x2713;</td>
+        </tr>
+      </table>
+
+      <p>Los ejemplos siguientes muestran la diferencia entre los cinco valores. Los ejemplos se aplican al siguiente elemento &lt;pre&gt;:</p>
+
+      <div class="codhtml">
+        <pre>
+<code class="language-html">&lt;pre&gt;Primera línea.
+Segunda línea, seguida de una línea en blanco.
+
+Cuarta línea, con cinco espacios en blanco entre paréntesis: (     ).
+Quinta línea. Esta línea es muy larga para ver si el navegador mantiene todo en la misma línea o si lo muestra en varías líneas, de acuerdo con el espacio disponible.
+&lt;/pre&gt;</code>
+</pre>
+      </div>
+
+      <ul>
+        <li>El valor <span class="css-valor">normal</span> hace que el navegador colapse los espacios en blanco, colapse los saltos de línea y haga ajuste de línea (nota: para ver que el navegador hace ajuste de línea, puede hacer falta estrechar la ventana del navegador):
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">pre {
+  white-space: normal;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <object type="text/html" data="ejemplos/ej_white_space_normal.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El valor <span class="css-valor">pre</span> hace que el navegador no colapse los espacios en blanco, no colapse los saltos de línea y no haga ajuste de línea:
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">pre {
+  white-space: pre;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <object type="text/html" data="ejemplos/ej_white_space_pre.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El valor <span class="css-valor">nowrap</span> hace que el navegador colapse los espacios en blanco, colapse los saltos de línea y no haga ajuste de línea:
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">pre {
+  white-space: nowrap;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <object type="text/html" data="ejemplos/ej_white_space_nowrap.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El valor <span class="css-valor">pre-wrap</span> hace que el navegador no colapse los espacios en blanco, no colapse los saltos de línea y haga ajuste de línea (nota: para ver que el navegador hace ajuste de línea, puede hacer falta estrechar la ventana del navegador):
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">pre {
+  white-space: pre-wrap;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <object type="text/html" data="ejemplos/ej_white_space_pre_wrap.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>El valor <span class="css-valor">pre-line</span> hace que el navegador colapse los espacios en blanco, no colapse los saltos de línea y haga ajuste de línea (nota: para ver que el navegador hace ajuste de línea, puede hacer falta estrechar la ventana del navegador):
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codcss">
+                  <pre>
+<code class="language-css">pre {
+  white-space: pre-line;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <object type="text/html" data="ejemplos/ej_white_space_pre_line.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <section id="direction">
+      <h2 class="con-aside">Dirección: <span class="css-prop">direction</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">direction</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-direction"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/direction"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">direction</span> permite establecer la dirección de escritura. Los posibles valores de <span class="css-prop">direction</span> son <span class="css-valor">ltr</span> (de izquierda a derecha) y <span class="css-valor">rtl</span> (de derecha a izquierda).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  direction: ltr;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="direction: ltr;">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  direction: rtl;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="text-align: right; direction: rtl">Esto es un párrafo normal y corriente.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Para que la propiedad <span class="css-prop">direction</span> se imponga al algoritmo de dirección de escritura del navegador, es necesario utilizar también la propiedad <span class="css-prop">unicode-bidi</span>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+} </code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: bidi-override; text-align: right; direction: rtl">Esto es un párrafo normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Cuando se aplica a una tabla, la propiedad <span class="css-prop">direction</span> establece el orden de las columnas de la tabla.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">table {
+  direction: ltr;
+} </code>
+</pre>
+            </td>
+            <td class="resul">
+              <table class="conborde" style="direction: ltr">
+                <caption></caption>
+                <tbody>
+                  <tr>
+                    <td>Columna 1 - Fila 1</td>
+                    <td>Columna 2 - Fila 1</td>
+                  </tr>
+                  <tr>
+                    <td>Columna 1 - Fila 2</td>
+                    <td>Columna 2 - Fila 2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">table {
+  direction: rtl;
+} </code>
+</pre>
+            </td>
+            <td class="resul">
+              <table class="conborde" style="direction: rtl">
+                <caption></caption>
+                <tbody>
+                  <tr>
+                    <td>Columna 1 - Fila 1</td>
+                    <td>Columna 2 - Fila 1</td>
+                  </tr>
+                  <tr>
+                    <td>Columna 1 - Fila 2</td>
+                    <td>Columna 2 - Fila 2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="unicode-bidi">
+      <h2 class="con-aside">Dirección: <span class="css-prop">unicode-bidi</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">unicode-bidi</span><br />
+          <a href="https://www.w3.org/TR/CSS2/visuren.html#propdef-unicode-bidi"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">unicode-bidi</span> permite establecer el algoritmo de establecimiento de direccionalidad. Los posibles valores de <span class="css-prop">unicode-bidi</span> son <span class="css-valor">normal</span> (no modifica el algoritmo utilizado por el navegador), <span class="css-valor">embed</span> (para elementos en-línea, la dirección se puede redefinir en ellos) y <span class="css-valor">bidi-override</span> (para elementos en-línea y bloques, la dirección se puede redefinir en cualquier elemento y sub-elemento del bloque).</p>
+
+      <p><strong>Nota</strong>: No tengo muy clara la diferencia entre <span class="css-valor">embed</span> y <span class="css-valor">bidi-override</span>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+strong {
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: bidi-override; direction: rtl; text-align: right">Esto es un <strong style="direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+strong {
+  unicode-bidi: bidi-override;
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: bidi-override; direction: rtl; text-align: right">Esto es un <strong style="unicode-bidi: bidi-override; direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+strong {
+  unicode-bidi: embed;
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: bidi-override; direction: rtl; text-align: right">Esto es un <strong style="unicode-bidi: embed; direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi:embed;
+  direction: rtl;
+}
+
+strong {
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: embed; direction: rtl; text-align: right">Esto es un <strong style="direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi:embed;
+  direction: rtl;
+}
+
+strong {
+  unicode-bidi: bidi-override;
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: embed; direction: rtl; text-align: right">Esto es un <strong style="unicode-bidi: bidi-override; direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  unicode-bidi:embed;
+  direction: rtl;
+}
+
+strong {
+  unicode-bidi: embed;
+  direction: ltr;
+}</code>
+</pre>
+            </td>
+            <td class="resul"><p style="unicode-bidi: embed; direction: rtl; text-align: right">Esto es un <strong style="unicode-bidi: embed; direction: ltr;">párrafo</strong> normal y corriente.</p></td>
+            <!-- He tenido que añadir text-align: right porque eso es lo que ocurre en los navegadores, pero en el ejemplo la hoja de estilo anula esa propiedad -->
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 19 de noviembre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

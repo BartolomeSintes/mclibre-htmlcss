@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>SVG. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>SVG</h1>
+
+    <p>En esta lección se trata la etiqueta principal de SVG, la etiqueta <span class="html-eti">&lt;svg&gt;</span>. Las formas básicas SVG (líneas, rectángulos, círculos, cuvas, etc.) se comentan en la lección <a href="svg_formas_1.html">Formas básicas SVG</a>. Algunas formas más avanzadas se comentan en la lección <a href="svg_formas_2.html">Formas avanzadas SVG</a>.</p>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>SVG</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#svg-introduccion">Introducción</a></li>
+          <li><a href="#svg-svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a></li>
+          <li><a href="#svg-plano">Plano SVG</a></li>
+          <li><a href="#svg-atributos">Atributos de <span class="html-eti">&lt;svg&gt;</span></a>
+            <ul>
+              <li><a href="#svg-atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
+              <li><a href="#svg-atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
+              <li><a href="#svg-atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#reutilizar-inkscape">Reutilizar Inkscape</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="svg-introduccion">
+      <h2>Qué es SVG</h2>
+
+      <p>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables) es un lenguaje de marcas creado por el W3C y dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
+
+      <p>En la <a href="../otros/otros_historia.html#svg">lección sobre Historia de la Web</a>) se comentan las recomendaciones de SVG publicadas o en preparación por el W3C.</p>
+
+      <p>En un gráfico vectorial, los elementos de la imagen están definidos como formas elementales (líneas, rectángulos, círculos, curvas, polígonos, etc.), definidas mediante etiquetas simlares a las del HTML. Por ello SVG no es un formato adecuada para fotografías, pero es idóneo para cualquier tipo de dibujo, técnico o artístico.</p>
+
+      <p>Las ventajas de SVG son muchas:</p>
+      <ul>
+        <li>Las imágenes SVG se pueden ampliar a cualquier escala sin perder calidad, ya que están definidas como formas que el navegador dibuja con la precisión necesaria.</li>
+        <li>Las imágenes SVG suelen ocupar poco espacio, ya que están definidas mediante etiquetas. El tamaño en KB de la imagen es además independiente del tamaño con el que se ve en la página web.</li>
+        <li>Las imágenes se pueden reutilizar y combinar fácilmente ya que basta con copiar el código fuente de una imagen a otra.</li>
+        <li>Las imágenes se pueden modificar de forma dinámica mediante hojas de estilo o javascript porque forman parte de la página web.</li>
+      </ul>
+
+      <p>Un gráfico SVG puede incluirse en una página web de dos maneras, como objeto interno o como objeto externo.</p>
+
+      <p>Desgraciadamente, el uso de SVG se vió frenado porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9 y de forma deficiente. Actulamente (marzo de 2017), los principales obstáculos al uso de SVG siguen siendo que las implementaciones en los navegadores todavía son incompletas y los potenciales riesgos de seguridad (debido a que las imágenes SVG pueden contener código Javascript, se recomienda no incorporar imágenes SVG sin haber comprobado antes su contenido).</p>
+
+      <p>De todas formas, SVG se ha ido imponiendo poco a poco como formato estándar de gráficos vectoriales frente a otros formatos propietarios y numerosos programas de edición de gráficos son capaces de importar y exportar en formato SVG.</p>
+
+      <h3>Para saber más</h3>
+
+      <ul>
+        <li><a href="https://inkscape.org/en/">Inkscape</a>, editor de gráficos vectoriales libre. <a href="../otros/otros_inkscape.html">lección sobre Inkscape</a></li>
+        <li><a href="https://openclipart.org/">Open Clip Art</a>: Repositorio de imágenes SVG libres</li>
+        <li><a href="https://www.w3.org/Graphics/SVG/">Grupo de trabajo SVG en el W3C</a>, </li>
+        <li>Información sobre SVG en <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">Mozilla Development Network</a></li>
+        <li>Otros programas: <a href="https://github.com/SVG-Edit/svgedit">Editor svg-edit</a> que funciona en el navegador. Página de <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html">demostración de svg-edit</a> - Por probar: SVGCleaner <a href="https://sourceforge.net/projects/svgcleaner/">https://sourceforge.net/projects/svgcleaner/</a></li>
+        <li>Webs que hace tiempo que no se actualizan: <a href="http://www.codedread.com/svg-support.php">codedread de Jeff Schiller</a> (soporte de SVG en diferentes navegadores) - <a href="http://svg-whiz.com/">SVG-Whiz</a></li>
+      </ul>
+    </section>
+
+    <section id="svg-svg">
+      <h2>La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+
+      <p>La etiqueta <span class="html-eti">&lt;svg&gt;</span> engloba la imagen SVG e incluye las formas que forman la imagen.</p>
+
+      <p>Una imagen SVG puede incluirse en una página web directamente o mediante la etiqueta <span class="html-eti">&lt;img /&gt;</span>, como se comenta en la lección <a href="html_imagenes.html">Imágenes</a>.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" <br />  width="170" height="165" viewBox="0 0 170 165"&gt; <br />  &lt;polygon fill="yellow" stroke="red" stroke-width="7" <br />    points="129,150 85,119 41,150 57,104 15,66 <br />            68,66 85,15 102,65 156,66 113,98" /&gt; <br />&lt;/svg&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                   width="170" height="165" viewBox="0 0 170 165">
+                <polygon fill="yellow" stroke="red" stroke-width="7"
+                         points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
+              </svg>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="svg-plano">
+      <h2>El plano SVG</h2>
+
+      <p>Los dibujos SVG se definen en un plano infinito en el que el eje Y está orientado hacia abajo, como muestra el dibujo siguiente en el que se muestran los ejes de coordenadas, cuatro puntos en rojo y sus coordenadas.</p>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+           width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
+        <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+        <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+        <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
+        <polyline points="-5,190 0,200 5,190" fill="none" stroke-width="1" stroke="black" />
+        <text x="180" y="-10" font-family="sans-serif" font-size="20" fill="black">X</text>
+        <polyline points="190,5 200,0 190,-5" fill="none" stroke-width="1" stroke="black" />
+        <polygon points="100,100 -100,100 -100,-100, 100,-100" fill="none" stroke-width="1" stroke="black" stroke-dasharray="5,5" />
+        <circle cx="100" cy="100" r="4" fill="red" />
+        <text x="105" y="120" font-family="sans-serif" font-size="18" fill="black">(100, 100)</text>
+        <circle cx="100" cy="-100" r="4" fill="red" />
+        <text x="105" y="-105" font-family="sans-serif" font-size="18" fill="black">(100, -100)</text>
+        <circle cx="-100" cy="-100" r="4" fill="red" />
+        <text x="-105" y="-105" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, -100)</text>
+        <circle cx="-100" cy="100" r="4" fill="red" />
+        <text x="-105" y="120" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, 100)</text>
+      </svg>
+    </section>
+
+    <section id="svg-atributos">
+      <h2>Atributos de <span class="html-eti">&lt;svg&gt;</span></h2>
+
+      <section id="svg-atributos-version-xmlns">
+        <h3>Los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
+
+        <p>El atributo <span class="html-atri">version</span> indica la versión de SVG empleada en el dibujo. En estos apuntes se utiliza la versión <span class="html-atri-valor">1.1</span>.</p>
+
+        <p>El atributo <span class="html-atri">xmlns</span> indica el espacio de nombres empleada en el dibujo, es siempre <span class="html-atri-valor">https://www.w3.org/2000/svg</span>.</p>
+      </section>
+
+      <section id="svg-atributos-viewBox">
+        <h3>El atributo <span class="html-atri">viewBox</span></h3>
+
+        <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que muestra la imagen. Este atributo se establece con cuatro valores:</p>
+
+        <ul>
+          <li>primer valor: abcisa (X) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
+          <li>segundo valor: ordenada (Y) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
+          <li>tercer valor: ancho de la porción del plano que muestra la imagen</li>
+          <li>cuarto valor: alto de la porción del plano que muestra la imagen</li>
+        </ul>
+
+        <p>El ejemplo siguiente muestra con una línea roja a trazos la porción del plano SVG que se mostraría con unos valores determinados en el atributo <span class="html-atri">viewbox</span>.</p>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
+          <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+          <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+          <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
+          <polyline points="-5,190 0,200 5,190" fill="none" stroke-width="1" stroke="black" />
+          <text x="180" y="-10" font-family="sans-serif" font-size="20" fill="black">X</text>
+          <polyline points="190,5 200,0 190,-5" fill="none" stroke-width="1" stroke="black" />
+
+          <text x="-168" y="-170" font-family="sans-serif" font-size="20" fill="black">viewBox="-100 -50 200 150"</text>
+
+          <polygon points="-100,-50 100,-50 100,100, -100,100" fill="none" stroke-width="1" stroke="red" stroke-dasharray="5,5" />
+          <text x="-105" y="-55" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, -50)</text>
+          <text x="105" y="120" font-family="sans-serif" font-size="18" fill="black">(100, 100)</text>
+
+          <path fill="none" stroke="red" stroke-width="2" d="M -80,-165 A 50 30, 0, 0, 0, 0,-165"/>
+          <line x1="-50" y1="-155" x2="-95" y2="-60" stroke-width="1" stroke="red" />
+          <polyline points="-97,-67 -95,-60 -88,-64" fill="none" stroke-width="1" stroke="red" />
+
+          <path fill="none" stroke="red" stroke-width="2" d="M 5,-165 A 50 90, 0, 0, 0, 40,-165"/>
+          <line x1="20" y1="-160" x2="0" y2="-55" stroke-width="1" stroke="red" />
+          <polyline points="-4,-65 0,-55 7,-63" fill="none" stroke-width="1" stroke="red" />
+
+          <path fill="none" stroke="red" stroke-width="2" d="M 45,-165 A 50 90, 0, 0, 0, 80,-165"/>
+          <line x1="62" y1="-160" x2="94" y2="20" stroke-width="1" stroke="red" />
+          <polyline points="88,12 95,20 98,10" fill="none" stroke-width="1" stroke="red" />
+        </svg>
+
+        <p>La zona visible es independiente de los elementos dibujados, es decir, sólo se mostrarán los elementos (o la parte de los elementos) que se encuentren en la zona visible definida por el atributo <span class="html-atri">viewbox</span>.</p>
+
+        <p>Los ejemplos siguientes muestran tres dibujos con los mismos elementos SVG: los ejes de coordenadas y un círculo de radio 100 centrado en el origen, pero con diferentes atributos <span class="html-atri">viewbox</span></p>
+        <ul>
+          <li>
+            <p>En el primer ejemplo, se ve todo el círculo porque la zona visible definida por <span class="html-atri">viewBox</span> empieza arriba a la izquierda en el punto (-100, -100) y tiene un tamaño de 200 x 200. El tamaño de la imagen es también de 200 x 200.</p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+                  </td>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
+  &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <p>Si en ese mismo dibujo la zona visible definida por <span class="html-atri">viewBox</span> empieza en el punto (-5, -5) y tiene un tamaño de 105 x 105 sólo se verá el primer cuadrante (valores X e Y positivos). El tamaño de la imagen es también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+                  </td>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-5 -5 105 105</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
+  &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>
+            <p>Si quiséramo mostrar el tercer cuadrante (valores X e Y negativos, la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105.  El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+                  </td>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-100 -100 105 105</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
+  &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </section>
+
+      <section id="svg-atributos-width-height">
+        <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
+
+        <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen , mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web.</p>
+
+        <p>Así, una misma imagen en el plano SVG se puede ver en la página web más o menos grande, como muestran los ejemplos siguientes:</p>
+        <ul>
+          <li>En este primer ejemplo, el tamaño de la imagen coincide con el tamaño de la zona visible
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>En este segundo ejemplo, el tamaño de la imagen es el cuádruple (el doble en horizontal y el doble en vertical) de la zona visible.
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>En este tercer ejemplo, el tamaño de la imagen es la cuarta parte (la mitad en horizontal y la mitad en vertical) de la zona visible.
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td class="codhtml">
+                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span class="codigo-resaltado">50</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+  style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+                  </td>
+                  <td class="resul">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                         width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                    </svg>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section id="reutilizar-inkscape">
+      <h2>Simplificar una imagen hecha con Inkscape</h2>
+
+      <p>Las imágenes SVG se pueden crear escribiendo las etiquetas directamente en un procesador de textos (como Brackets), pero también se pueden utilizar editores gráficos como Inkscape o descargar de repositorios como <a href="https://openclipart.org/">Open Clip Art</a>. El problema es que Inkscape genera más código del necesario, por lo que a veces puede resultar conveniente simplificar ese código.</p>
+
+      <p>Si se crea con Inkscape la imagen de la estrella de los ejemplos anteriores y se guarda la imagen como SVG plano, se obtendría un código fuente similar a este:</p>
+
+      <pre class="fuente"><code class="language-html">&lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
+&lt;!-- Created with Inkscape (https://inkscape.org/es/) --&gt;
+
+&lt;svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="https://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="100"
+   height="100"
+   id="svg2"&gt;
+  &lt;defs
+     id="defs4" /&gt;
+  &lt;metadata
+     id="metadata7"&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=""&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;
+  &lt;g
+     transform="translate(-100.10292,-228.90234)"
+     id="layer1"&gt;
+    &lt;polygon
+       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
+       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
+       id="polygon4069"
+       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code>
+</pre>
+
+      <p>Para insertarla en un documento html 5 es necesario eliminar parte de este código:</p>
+
+      <pre class="fuente"><code class="language-html"><del>&lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
+&lt;!-- Created with Inkscape (https://inkscape.org/es/) --&gt;</del>
+
+&lt;svg
+   <del>xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="https://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"</del>
+   width="100"
+   height="100"
+   id="svg2"&gt;
+  <del>&lt;defs
+     id="defs4" /&gt;
+  &lt;metadata
+     id="metadata7"&gt;
+    &lt;rdf:RDF&gt;
+      &lt;cc:Work
+         rdf:about=""&gt;
+        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
+        &lt;dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
+        &lt;dc:title&gt;&lt;/dc:title&gt;
+      &lt;/cc:Work&gt;
+    &lt;/rdf:RDF&gt;
+  &lt;/metadata&gt;</del>
+  &lt;g
+     transform="translate(-100.10292,-228.90234)"
+     id="layer1"&gt;
+    &lt;polygon
+       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
+       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
+       id="polygon4069"
+       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code>
+</pre>
+
+      <p>Por lo que la imagen quedaría:</p>
+
+      <pre class="fuente"><code class="language-html">&lt;svg
+   width="100"
+   height="100"
+   id="svg2"&gt;
+  &lt;g
+     transform="translate(-100.10292,-228.90234)"
+     id="layer1"&gt;
+    &lt;polygon
+       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
+       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
+       id="polygon4069"
+       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;</code>
+</pre>
+
+      <p>Ese código se puede simplificar todavía más, hasta obtener el código que se ha utilizado en esta lección:</p>
+
+      <pre class="fuente"><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="170" height="165" viewBox="0 0 170 165"&gt;
+  &lt;polygon fill="yellow" stroke="red" stroke-width="7"
+    points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 29 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

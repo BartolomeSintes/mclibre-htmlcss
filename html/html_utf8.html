@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>El juego de caracteres UTF-8. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>El juego de caracteres UTF-8</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>UTF-8</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#bits">Bits</a></li>
+          <li><a href="#bytes">Bytes</a></li>
+          <li><a href="#ascii">ASCII</a></li>
+          <li><a href="#unicode">Unicode</a></li>
+          <li><a href="#html">Juego caracteres en HTML</a></li>
+          <li><a href="#fuentes">Tipos de letra Unicode</a></li>
+          <li><a href="#pictogramas">Pictogramas en Unicode</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta lección se explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8 y su uso en HTML.</p>
+
+    <p>Tras esta lección se recomienda leer las lecciones:</p>
+
+    <ul>
+      <li><a href="html_entidades_caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres y secuencias de caracteres Unicode en una página web</li>
+      <li><a href="html_unicode_simbolos.html">Símbolos gráficos en Unicode</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos</li>
+      <li><a href="html_unicode_dibujos.html">Dibujos en Unicode</a>, que muestra los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+      <li><a href="html_unicode_secuencias.html">Secuencias ZWJ</a>, que muestra algunas secuencias ZWJ que corresponden a dibujos (banderas, emojis, etc.)</li>
+    </ul>
+
+    <section id="bits">
+      <h3>Bits</h3>
+
+      <p>En informática, los números no se guardan en notación decimal (con las cifras del 0 al 9), sino en notación binaria, utilizando únicamente el 0 y el 1. Como en la notación decimal, para escribir números, se utilizan varias cifras seguidas.</p>
+
+      <table  style="text-align: right">
+        <tr>
+          <th>Número en notación decimal</th>
+          <th>Número en notación binaria</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td style="text-align">1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>100</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>101</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>110</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>111</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>1000</td>
+        </tr>
+        <tr>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </table>
+
+      <p>En la notación decimal, con <i>n</i> cifras podemos escribir 10<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 10 números (del 0 al 9), con 2 cifras podemos escribir 100 números (del 00 al 99), con 3 cifras podemos escribir 1000 números (del 000 al 999). En la notación binaria, con <i>n</i> cifras podemos escribir 2<sup><i>n</i></sup>. Es decir, con 1 cifra podemos escribir 2 números (0 y 1), con 2 cifras podemos escribir 4 números (del 00 al 11, es decir, del 0 al 3), con 3 cifras podemos escribir 8 números (del 000 al 111, es decir, del 0 al 7).</p>
+
+      <p>A las cifras binarias se les llama <i>bit</i>, es decir el número binario 1001 es un número de 4 bits, de la misma manera que el número decimal 329 es un número de 3 cifras.</p>
+    </section>
+
+    <section id="bytes">
+      <h3>Bytes</h3>
+
+      <p>Para realizar su trabajo más rápido, los ordenadores no trabajan con cifras individuales (<i>bits</i>), sino con varias cifras a la vez simultáneamente. La agrupación más utilizada es el <i>byte</i>, que es la agrupación de 8 bits.  Un byte puede representar por tanto 256 valores distintos (2<sup>8</sup>, del 00000000 al 11111111, es decir, del 0 al 255).</p>
+
+      <p>A medida que ha avanzado la informática, los ordenadores han ido trabajando con grupos de bits cada vez más grandes. En 1981, el primer PC tenía un procesador que trabajaba con grupos de 8 bits (1 byte). En 1984 los PCs empezaron a utilizar procesadores de 16 bits (2 bytes). En 1985 los PCs empezaron a utilizar procesadores de 32 bits (4 bytes). En 2003 los PCs empezaron a utilizar procesadores de 64 bits (8 bytes). Actualmente no existen PCs con procesadores de 128 bits (16 bytes), pero algunos componentes de los PCs ya trabajan con grupos de 256 o incluso 512 bits.</p>
+
+      <p>El byte se utiliza en Informática como unidad de medida en el almcenamiento de información (capacidad de los discos duros o memorias). Como las capacidades son tan grandes, se expresan en múltiplos: Kilobyte, Megabyte, Gigabyte, Terabyte, etc. Hay que tener en cuenta que, en este contexto, Kilo no significa mil (1000), sino 1024, ya que 1024 es una potencia de dos (2<sup>10</sup>= 1024), Mega no significa millón sino 1.048.576 (1024 x 1024), etc.</p>
+
+    </section>
+
+    <section id="ascii">
+      <h3>El juego de caracteres ASCII</h3>
+
+      <p>En Informática toda la información se guarda en forma numérica, por lo que para guardar caracteres (letras, números, signos de puntuación, etc.) se necesita establecer una correspondencia entre los códigos numéricos y los caracteres. Al conjunto de correspondencias se le llama juego de caracteres. Los primeros ordenadores usaban cada uno su propio juego de caracteres, pero en los años 50 empezaron a proponerse estándares que facilitasen la comunicación entre diferentes sistemas. En los años 60 se creó el código ASCII, que definía 128 caracteres (33 caracteres de control y 95 imprimibles -letras minúsculas, mayúsculas, cifras, puntuación, etc.-) y que se convirtió en el estándar en informática.</p>
+
+      <p>En el código ASCII cada carácter ocupaba precisamente 1 byte, es decir, 8 bits: 7 bits para codificar los 128 caracteres y 1 bit de paridad para comprobar errores. Ese juego de caracteres era suficiente para el idioma inglés, pero era insuficiente para otros idiomas, por lo que a medida que la informática se extendía por el mundo se tuvieron que crear otros juegos de caracteres.</p>
+
+      <p>Pero pronto los juegos de caracteres se encontraron con barreras importantes:</p>
+
+      <ul>
+        <li>por un lado, muchos lenguajes escritos (sobre todo los asiáticos) utilizan más de 256 caracteres escritos, por lo que 1 byte era insuficiente para codificar su juego de caracteres</li>
+        <li>por otro lado, escribir sistemas operativos y programas capaces de gestionar tantos juegos de caracteres diferentes es muy complicado.</li>
+      </ul>
+    </section>
+
+    <section id="unicode">
+      <h3>El juego de caracteres universal: Unicode</h3>
+
+      <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, que utilizaba dos bytes para codificar cada carácter.</p>
+
+      <p class="centrado">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="950" viewBox="-20 -60 950 120">
+          <text x="-10" y="5" text-anchor="start" fill="#990000" style="font-size: 120%; font-weight: bold">Unicode</text>
+          <line x1="80" y1="0" x2="950" y2="0" stroke-width="3" stroke="#990000" />
+          <line x1="100" y1="-30" x2="100" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="100" y="-40" text-anchor="middle">1990</text>
+          <line x1="250" y1="-30" x2="250" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="250" y="-40" text-anchor="middle">1995</text>
+          <line x1="400" y1="-30" x2="400" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="400" y="-40" text-anchor="middle">2000</text>
+          <line x1="550" y1="-30" x2="550" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="550" y="-40" text-anchor="middle">2005</text>
+          <line x1="700" y1="-30" x2="700" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="700" y="-40" text-anchor="middle">2010</text>
+          <line x1="850" y1="-30" x2="850" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="850" y="-40" text-anchor="middle">2015</text>
+
+          <circle cx="154" cy="0" r="5" fill="#990000" />
+          <text x="154" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">1.0</text>
+          <circle cx="204" cy="0" r="5" fill="#990000" />
+          <text x="204" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">1.1</text>
+          <circle cx="296" cy="0" r="5" fill="#990000" />
+          <text x="296" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">2.0</text>
+          <circle cx="351" cy="0" r="5" fill="#990000" />
+          <text x="351" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">2.1</text>
+          <circle cx="391" cy="0" r="5" fill="#990000" />
+          <text x="391" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.0</text>
+          <circle cx="436" cy="0" r="5" fill="#990000" />
+          <text x="436" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.1</text>
+          <circle cx="466" cy="0" r="5" fill="#990000" />
+          <text x="466" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">3.2</text>
+          <circle cx="499" cy="0" r="5" fill="#990000" />
+          <text x="499" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">4.0</text>
+          <circle cx="556" cy="0" r="5" fill="#990000" />
+          <text x="556" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">4.1</text>
+          <circle cx="596" cy="0" r="5" fill="#990000" />
+          <text x="596" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.0</text>
+          <circle cx="649" cy="0" r="5" fill="#990000" />
+          <text x="649" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.1</text>
+          <circle cx="694" cy="0" r="5" fill="#990000" />
+          <text x="694" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">5.2</text>
+          <circle cx="724" cy="0" r="5" fill="#990000" />
+          <text x="724" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.0</text>
+          <circle cx="762" cy="0" r="5" fill="#990000" />
+          <text x="762" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.1</text>
+          <circle cx="782" cy="0" r="5" fill="#990000" />
+          <text x="782" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.2</text>
+          <circle cx="812" cy="0" r="5" fill="#990000" />
+          <text x="812" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">6.3</text>
+          <circle cx="834" cy="0" r="5" fill="#990000" />
+          <text x="834" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">7.0</text>
+          <circle cx="864" cy="0" r="5" fill="#990000" />
+          <text x="864" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">8.0</text>
+          <circle cx="894" cy="0" r="5" fill="#990000" />
+          <text x="894" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">9.0</text>
+        </svg>
+      </p>
+
+
+      <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y actualmente (noviembre de 2016) la última versión publicada, Unicode 9.0, contiene más de 128.000 caracteres. Los dos bytes de la propuesta inicial se quedaron cortos y la norma actual utiliza cuatro byes para codificar los caracteres.</p>
+
+      <p>El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede decir que existen tres opciones:</p>
+
+      <ul>
+        <li>UTF-32: cada carácter ocupa 4 bytes</li>
+        <li>UTF-16: cada carácter ocupa dos bytes si está entre los primeros 65.536 (256x256) caracteres de Unicode o cuatro bytes para el resto de caracteres.</li>
+        <li>UTF-8: cada carácter ocupa 1 byte si está entre los primeros 256 caracteres de Unicode, o dos bytes si está entre los primeros 65.536 (256x256) caracteres o cuatro bytes para el resto de caracteres</li>
+      </ul>
+
+      <p>Desde 2008, UTF-8 es el formato más utilizado en la web y es también el formato recomendado en estos apuntes.</p>
+
+      <p>Se puede consultar el <a href="http://www.unicode.org/charts/">juego de caracteres Unicode completo</a>, dividido en secciones correspondientes a sistemas de escritura y conjuntos de símbolos.</p>
+    </section>
+
+    <section id="html">
+      <h3>Juegos de caracteres en páginas web</h3>
+
+      <p>En las primeras versiones de HTML se especificaba que el juego de caracteres utilizado por las páginas web debía ser el juego de caracteres ISO-8859-1, más conocido como Latin-1.</p>
+
+      <p>En 1997 con la norma <a href="https://tools.ietf.org/html/rfc2070">RFC 2070</a> se permitió el juego de caracteres ISO 10646 (equivalente a Unicode).</p>
+
+      <p>En 2014, la recomendación HTML 5 prácticamente exige el uso de UTF-8.</p>
+    </section>
+
+    <section id="fuentes">
+      <h2>Tipos de letra Unicode</h2>
+
+      <p>Para poder mostrar los caracteres Unicode, se necesita disponer de tipos de letra que los incluyen.</p>
+
+      <p>Cada sistema operativo incluye sus propios tipos de letra predeterminados, que poco a poco van incluyendo más caracteres Unicode</p>
+
+      <ul>
+        <li>En Windows, la fuente que incluye los símbolos es la fuente <a href="https://en.wikipedia.org/wiki/Segoe">Segoe UI Symbol</a></li>
+        <li>Las distribuciones GNU/Linux suelen incluir la fuente <a href="http://users.teilar.gr/~g1951d/">Symbola</a>, a veces bajo un nombre distinto.</li>
+        <li><span class="incompleto">falta hacer referencia a las fuentes usadas en otros sistemas operativos</span></li>
+      </ul>
+
+      <p>Actualmente existen varios proyectos de creación de tipos de letra libres que incluyan todos los caracteres Unicode:</p>
+      <ul>
+        <li><a href="http://users.teilar.gr/~g1951d/">Symbola</a>, una fuente de dominio público que contiene casi todos los pictogramas Unicode, con un diseño sencillo y realista</li>
+        <li><a href="http://emojione.com/">EmojiOne</a>, un proyecto creado en 2014 que se centra principalmente en los carateres emoji, aunque incluye muchos otros símbolos, con un diseño bastante trabajado y a todo color.</li>
+        <li><a href="https://www.google.com/get/noto/">Noto</a>, un proyecto de Google.</li>
+      </ul>
+
+      <p>Estas fuentes se pueden emplear en una página web utilizando el mecanismo de las fuentes web, que se comenta en la <a href="../css/css_fuentes_web.html">lección CSS: Fuentes web</a></p>
+    </section>
+
+    <section id="pictogramas">
+      <h2>Pictogramas en Unicode</h2>
+
+      <p>Unicode no solamente contiene caracteres para todas las lenguas del mundo, sino que también incluye una grana cantidad de pictogramas. Un gran parte de ellos son símbolos gráficos e iconos de ampklia difusión que ya estaban incluidos en juegos de caracteres anteriores, pero a partir de 2010 se están incorporando también imágenes más sofisticadas, como los <a href="https://es.wikipedia.org/wiki/Emoticono">emoticonos</a> o los <a href="https://es.wikipedia.org/wiki/Emoji"><i>emojis</i></a>, creados en Japón a finales de los 90 para los dispositivos móviles.</p>
+
+      <p>La última versión de Unicode (Unicode 9.0, publicada en junio de 2016) contiene en total casi 1500 símbolos gráficos, clasificados en varios grupos:</p>
+
+      <p>Unicode sigue aceptando nuevos símbolos gráficos (véase <a href="http://www.unicode.org/alloc/Pipeline.html">Unicode roadmap</a>) que se irán incluyendo en las próximas versiones.</p>
+
+      <p>Como hay tantos símbolos gráficos, los he divido en dos páginas:</p>
+
+      <p>En la página <a href="html_unicode_simbolos.html">Símbolos gráficos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos</p>
+
+      <ul>
+        <li><a href="unicode/U00000.pdf">PDF</a> - Controles y Latín básico</li>
+        <li><a href="unicode/U00080.pdf">PDF</a> - Controles y Latín 1 (suplemento)</li>
+        <li><a href="unicode/U02000.pdf">PDF</a> - Puntuación</li>
+        <li><a href="unicode/U02100.pdf">PDF</a> - Símbolos con letras</li>
+        <li><a href="unicode/U02190.pdf">PDF</a> - Flechas</li>
+        <li><a href="unicode/U02300.pdf">PDF</a> - Símbolos técnicos misceláneos</li>
+        <li><a href="unicode/U02460.pdf">PDF</a> - Símbolos alfanuméricos con círculo alrededor</li>
+        <li><a href="unicode/U02500.pdf">PDF</a> - Cajas</li>
+        <li><a href="unicode/U025A0.pdf">PDF</a> - Formas geométricas</li>
+        <li><a href="unicode/U02700.pdf">PDF</a> - Dingbats</li>
+        <li><a href="unicode/U02900.pdf">PDF</a> - Flechas suplementarias B</li>
+        <li><a href="unicode/U02B00.pdf">PDF</a> - Símbolos misceláneos y flechas</li>
+        <li><a href="unicode/U03000.pdf">PDF</a> - Símbolos y puntuación CJK</li>
+        <li><a href="unicode/U03200.pdf">PDF</a> - Símbolos CJK con círculo alrededor</li>
+        <li><a href="unicode/U1F000.pdf">PDF</a> - Fichas de Mahjong</li>
+        <li><a href="unicode/U1F0A0.pdf">PDF</a> - Cartas</li>
+        <li><a href="unicode/U1F100.pdf">PDF</a> - Alfanuméricos con círculo alrededor (suplemento)</li>
+        <li><a href="unicode/U1F200.pdf">PDF</a> - Ideográficos con círculo alrededor (suplemento)</li>
+      </ul>
+
+      <p>En la página <a href="html_unicode_dibujos.html">Dibujos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos:</p>
+
+      <ul>
+        <li><a href="unicode/U1F300.pdf">PDF</a> - Símbolos y pictogramas misceláneos</li>
+        <li><a href="unicode/U1F600.pdf">PDF</a> - Emoticonos</li>
+        <li><a href="unicode/U1F680.pdf">PDF</a> - Símbolos de transporte y mapas</li>
+        <li><a href="unicode/U1F900.pdf">PDF</a> - Símbolos y pictogramas misceláneos suplementarios</li>
+      </ul>
+
+      <p>En la página <a href="html_unicode_secuencias.html">Secuencias ZWJ</a> se muestran secuencias de caracteres Unicode que también producen pictogramas.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 15 de marzo de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ejemplos de posicionamiento absoluto. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS 2: Ejemplos de posicionamiento absoluto</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS 2: Ejemplos posic.</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#simulacion-frames-1">Simulación de frames 1</a></li>
+          <li><a href="#simulacion-frames-2">Simulación de frames 2</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="simulacion-frames-1">
+      <h2>Simulación de frames 1</h2>
+
+      <p>Los frames son una etiqueta introducida en HTML 4.0 y que permite dividir la pantalla en varias zonas en las que se pueden mostrar documentos distintos. Los frames fueron muy populares a finales de los 90 pues permitían diseños de página atractivos y facilitaban el mantenimiento de sitios grandes. Pero los frames crean también problemas de navegabilidad y de indexado de los sitios lo que, unido a la utilización de lenguajes de programación para la generación de las páginas en los sitios grandes, ha acabado desaconsejando su uso.</p>
+
+      <p>Una característica de los frames es que permite utilizar un enlace situado en una de las zonas de la página para cambiar el contenido de otra zona. Esa característica es la que se va a simular aquí utilizando posicionamiento.</p>
+
+      <p>El resultado es que haciendo clic en un enlace se cambia el contenido visible de la página. El ejemplo siguiente se puede probar en esta misma página o bien abrirlo en otra página haciendo clic derecho sobre el ejemplo en Firefox y eligiendo la opción "<span class="soft-menu">Este marco &gt; Abrir marco en una pestaña nueva</span>".</p>
+
+      <p class="enlace-ejercicio"><a href="../ejemplos/simulacion_frames/simulacion_frames_1_b.html">Enlace a ejemplo Simulación de frames 1 b</a></p>
+
+      <p class="centrado"><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_1_b.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+
+      <hr class="corta" />
+
+      <p>La estructura es la siguiente:</p>
+      <ul>
+        <li>El índice se encuentra en una división con <span class="html-atri">id</span> (o clase), en este caso "indice".</li>
+        <li>Cada uno de los apartados se encuentran en una división, con <span class="html-atri">id</span>.</li>
+        <li>Las dos divisiones de los apartados se encuentran en una división con <span class="html-atri">id</span> (o clase), en este caso "contenido".</li>
+      </ul>
+
+      <table style="width: 100%">
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <td>
+              <div style="border: black 1px solid; margin: 10px;">
+                <p>Índice</p>
+              </div>
+            </td>
+            <td><ul>
+              <li>La división "indice" tiene <span class="html-atri">id</span> para darle posicionamiento</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="border: black 1px solid; margin: 10px;">
+                <p>Contenido</p>
+
+                <div style="border: black 1px solid; margin: 10px;">
+                  <p>Apartado 1</p>
+                </div>
+
+                <div style="border: black 1px solid; margin: 10px;">
+                  <p>Apartado 2</p>
+                </div>
+              </div>
+            </td>
+            <td><ul>
+              <li>Las divisiones de los apartados tienen <span class="html-atri">id</span> para servir de destinos de los enlaces</li>
+              <li>La división "contenido" tiene <span class="html-atri">id</span> para darle posicionamiento</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>El código HTML es el siguiente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre>
+<code class="language-html">&lt;h1&gt;Simulación de frames 1&lt;/h1&gt;
+
+&lt;div id="indice"&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#apartado-1"&gt;Apartado 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#apartado-2"&gt;Apartado 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="contenido"&gt;
+&lt;div id="apartado-1"&gt;
+&lt;h2&gt;Apartado 1&lt;/h2&gt;
+&lt;p&gt;Este es el apartado 1&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="apartado-2"&gt;
+&lt;h2&gt;Apartado 2&lt;/h2&gt;
+&lt;p&gt;Este es el apartado 2&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_1_a.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>El código CSS es el siguiente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div#indice {
+  background-color: lightblue;
+  height: 70%;
+  left: 5%;
+  position: absolute;
+  top: 20%;
+  width: 15%;
+}
+
+div#contenido {
+  background-color: orange;
+  height: 70%;
+  left: 25%;
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  width: 70%;
+}
+
+div div {
+  height: 100%;
+  width: 100%;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_1_b.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>El posicionamiento de la división "indice" es absoluto.</li>
+        <li>El posicionamiento de la división "contenido" es absoluto y hay que ocultar el texto que desborde.</li>
+        <li>Las divisiones de los apartados no necesitan posicionamiento, basta con decir que la anchura y la altura es del 100%. Ese 100% se interpreta con respecto a la división "contenido".</li>
+      </ul>
+
+      <p>El motivo por el que cada vez sólo se ve uno de los apartados es que cada división de apartado tiene el mismo tamaño que la división "contenido" y lo que no cabe en la división "contenido" no se muestra. Al hacer clic en un enlace se muestra la división de apartado correspondiente.</p>
+    </section>
+
+    <section id="simulacion-frames-2">
+      <h2>Simulación de frames 2</h2>
+
+      <p>El ejemplo anterior se puede complicar introduciendo elementos con posicionamiento en las divisiones de los apartados, como puede verse en el ejemplo siguiente, en el que cada apartado incluye un enlace al otro apartado situado en la parte inferior derecha:</p>
+
+      <p class="enlace-ejercicio"><a href="../ejemplos/simulacion_frames/simulacion_frames_2_b.html">Enlace a ejemplo Simulación de frames 2</a></p>
+
+      <p class="centrado"><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_2_b.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+
+      <hr class="corta" />
+
+      <p>La estructura es la siguiente:</p>
+      <ul>
+        <li>El índice se encuentra en una división con <span class="html-atri">id</span> (o clase), en este caso "indice".</li>
+        <li>Cada uno de los apartados se encuentran en una división, con <span class="html-atri">id</span>.</li>
+        <li>Las dos divisiones de los apartados se encuentran en una división con <span class="html-atri">id</span> (o clase), en este caso "contenido".</li>
+      </ul>
+
+      <table style="width: 100%">
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <td>
+              <div style="border: black 1px solid; margin: 10px;">
+                <p>Índice</p>
+              </div>
+            </td>
+            <td><ul>
+              <li>La división "indice" tiene <span class="html-atri">id</span> para darle posicionamiento</li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div style="border: black 1px solid; margin: 10px;">
+                <p>Contenido</p>
+
+                <div style="border: black 1px solid; margin: 10px;">
+                  <p>Apartado 1</p>
+
+                  <p>Enlace al apartado 2</p>
+                </div>
+
+                <div style="border: black 1px solid; margin: 10px;">
+                  <p>Apartado 2</p>
+
+                  <p>Enlace al apartado 1</p>
+                </div>
+              </div>
+            </td>
+            <td><ul>
+              <li>Las divisiones de los apartados tienen <span class="html-atri">id</span> para servir de destinos de los enlaces</li>
+              <li>La división "contenido" tiene <span class="html-atri">id</span> para darle posicionamiento</li>
+              <li>Los párrafos con enlaces tienen clase para darle posicionamiento</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>El código HTML es el siguiente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre>
+<code class="language-html">&lt;h1&gt;Simulación de frames 2&lt;/h1&gt;
+
+&lt;div id="indice"&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="#apartado-1"&gt;Apartado 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#apartado-2"&gt;Apartado 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="contenido"&gt;
+&lt;div id="apartado-1"&gt;
+&lt;h2&gt;Apartado 1&lt;/h2&gt;
+&lt;p&gt;Este es el apartado 1&lt;/p&gt;
+&lt;p class="enlace"&gt;Ir al &lt;a href="#apartado-2"&gt;apartado 2&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="apartado-2"&gt;
+&lt;h2&gt;Apartado 2&lt;/h2&gt;
+&lt;p&gt;Este es el apartado 2&lt;/p&gt;
+&lt;p class="enlace"&gt;Volver al &lt;a href="#apartado-1"&gt;apartado 1&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_2_a.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>El código CSS es el siguiente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div#indice {
+  background-color: lightblue;
+  height: 70%;
+  left: 5%;
+  position: absolute;
+  top: 20%;
+  width: 15%;
+}
+
+div#contenido {
+  background-color: orange;
+  height: 70%;
+  left: 25%;
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  width: 70%;
+}
+
+div div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+p.enlace {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p><object type="text/html" data="../ejemplos/simulacion_frames/simulacion_frames_2_b.html" class="ejercicio">ERROR (no puede mostrarse el objeto)</object></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li>El posicionamiento de la división "indice" es absoluto.</li>
+        <li>El posicionamiento de la división "contenido" es absoluto y hay que ocultar el texto que desborde.</li>
+        <li>A las divisiones de los apartados hay que darles anchura y altura del 100%. Ese 100% se interpreta con respecto a la división "contenido".</li>
+        <li>Las divisiones de los apartados necesitan posicionamiento relativo, aunque no se desplacen de su posición. La propiedad <span class="css-prop">position</span>: <span class="css-valor">relative</span> es necesaria para que el posicionamiento de los elementos interiores (en este caso, de los párrafos con enlaces) se interprete con respecto a las divisiones de los apartados y no respecto a la división "contenido".</li>
+        <li>Los párrafos tienen posicionamiento absoluto, pero sólo se ve un enlace cada vez porque ese posicionamiento se interpreta respecto de la división del apartado (el enlace de la otra división de apartado está oculta, igual que la división que lo contiene). Es importante señalar que si las divisiones de los apartados no tuvieran la propiedad <span class="css-prop">position</span> o la tuvieran con los valores <span class="css-valor">static</span> o <span class="css-valor">absolute</span>, entonces sí que se verían los dos párrafos superpuestos ya que su posición se interpretaría respecto a la división "contenido".</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de octubre de 2013</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

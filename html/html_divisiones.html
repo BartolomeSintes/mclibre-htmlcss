@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Divisiones. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Divisiones <span class="html-eti">&lt;div&gt;</span></h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Divisiones</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-es">Qué es una división <span class="html-eti">&lt;div&gt;</span></a></li>
+          <li><a href="#anidadas">Divisiones anidadas</a></li>
+          <li><a href="#cuando-utilizar">Cuándo utilizarlas</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="que-es">
+      <h2 class="con-aside">Qué es una división <span class="html-eti">&lt;div&gt;</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;div&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-div-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La etiqueta <span class="html-eti">&lt;div&gt;</span> define una división. Esta etiqueta permite agrupar varios elementos de bloque (párrafos, encabezados, listas, tablas, divisiones, etc). En principio, los navegadores no muestran nada especial cuando se crea una división, salvo que se dé formato a la división con la hoja de estilo.</p>
+
+      <p><strong>Nota</strong>: Hay gente y programas que llaman "capas" a las divisiones. No estoy seguro, pero supongo que ese término se debe a que Netscape 4.0 introdujo una etiqueta llamada &lt;layer&gt; (etiqueta que no formó parte de ninguna recomendación del W3C) que jugaba un papel similar a la etiqueta <span class="html-eti">&lt;div&gt;</span>.</p>
+
+      <p>En los ejemplos siguientes hay dos divisiones que incluyen tres párrafos cada una. En el primer ejemplo no puede reconocerse si hay divisiones o no, mientras que en el segundo sí.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre>
+<code class="language-html">&lt;div&gt;
+&lt;p&gt;El hombre es fuego; la mujer, estopa; llega el diablo y sopla.&lt;/p&gt;
+&lt;p&gt;Para el amor y la muerte, no hay cosa fuerte.&lt;/p&gt;
+&lt;p&gt;Viejo el pajar, malo de encender y peor de apagar.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;p&gt;¿Enseñas sin saber? Como no sea el culo, no sé qué.&lt;/p&gt;
+&lt;p&gt;Practicar hace maestro; que no leer en el cuaderno.&lt;/p&gt;
+&lt;p&gt;Lo que natura no da, Salamanca no presta&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <div>
+                <p>El hombre es fuego; la mujer, estopa; llega el diablo y sopla.</p>
+
+                <p>Para el amor y la muerte, no hay cosa fuerte.</p>
+
+                <p>Viejo el pajar, malo de encender y peor de apagar.</p>
+              </div>
+
+              <div>
+                <p>¿Enseñas sin saber? Como no sea el culo, no sé qué.</p>
+
+                <p>Practicar hace maestro; que no leer en el cuaderno.</p>
+
+                <p>Lo que natura no da, Salamanca no presta</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+}</code>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  background-color: lightblue;
+  margin: 10px;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <div style="background-color: lightblue; margin: 10px">
+                <p>El hombre es fuego; la mujer, estopa; llega el diablo y sopla.</p>
+
+                <p>Para el amor y la muerte, no hay cosa fuerte.</p>
+
+                <p>Viejo el pajar, malo de encender y peor de apagar.</p>
+              </div>
+
+              <div style="background-color: lightblue; margin: 10px">
+                <p>¿Enseñas sin saber? Como no sea el culo, no sé qué.</p>
+
+                <p>Practicar hace maestro; que no leer en el cuaderno.</p>
+
+                <p>Lo que natura no da, Salamanca no presta</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Una división no puede insertarse dentro de una etiqueta en-línea (<span class="html-eti">&lt;strong&gt;</span>,<span class="html-eti">&lt;em&gt;</span>, etc.) o de un bloque de texto (párrafo <span class="html-eti">&lt;p&gt;</span>, encabezado <span class="html-eti">&lt;h1&gt;</span> ... <span class="html-eti">&lt;h6&gt;</span>, dirección <span class="html-eti">&lt;address&gt;</span>, pre-formateado <span class="html-eti">&lt;pre&gt;</span>, lista, etc), pero si puede insertarse dentro de una tabla, de un bloque de cita <span class="html-eti">&lt;blockquote&gt;</span> o de una división <span class="html-eti">&lt;div&gt;</span>.</p>
+
+    </section>
+
+    <section id="anidadas">
+      <h2 id="anidadas">Divisiones anidadas</h2>
+
+      <p>La etiqueta <span class="html-eti">&lt;div&gt;</span> se puede anidar (es decir, que una división puede contener otras divisiones), por lo que se utiliza para estructurar en bloques el contenido de la página web.</p>
+
+      <p>Para distinguir unas divisiones de otras en la hoja de estilo se pueden utilizar clases o <a href="../css/css_selectores.html#tipo">selectores de tipo</a> o <a href="../css/css_selectores.html#descendientes">selectores de descendientes</a>, como en el ejemplo siguiente:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-html">&lt;div&gt;
+&lt;div&gt;
+&lt;p&gt;El hombre es fuego; la mujer, estopa; llega el diablo y sopla.&lt;/p&gt;
+&lt;p&gt;Para el amor y la muerte, no hay cosa fuerte.&lt;/p&gt;
+&lt;p&gt;Viejo el pajar, malo de encender y peor de apagar.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+&lt;p&gt;¿Enseñas sin saber? Como no sea el culo, no sé qué.&lt;/p&gt;
+&lt;p&gt;Practicar hace maestro; que no leer en el cuaderno.&lt;/p&gt;
+&lt;p&gt;Lo que natura no da, Salamanca no presta&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <div style="border: black 3px solid; margin: 10px; padding: 10px;">
+
+                <div style="background-color: lightblue; margin: 10px; padding: 10px;">
+                  <p>El hombre es fuego; la mujer, estopa; llega el diablo y sopla.</p>
+
+                  <p>Para el amor y la muerte, no hay cosa fuerte.</p>
+
+                  <p>Viejo el pajar, malo de encender y peor de apagar.</p>
+                </div>
+
+                <div style="background-color: lightblue; margin: 10px; padding: 10px;">
+                  <p>¿Enseñas sin saber? Como no sea el culo, no sé qué.</p>
+
+                  <p>Practicar hace maestro; que no leer en el cuaderno.</p>
+
+                  <p>Lo que natura no da, Salamanca no presta.</p>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+div div {
+  background-color: lightblue;
+  border: none;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>En este ejemplo tenemos una división que contiene dos divisiones que a su vez contienen tres párrafos cada una. El primer selector de la hoja de estilo (div) se aplica a las tres divisiones, pero el segundo selector (div div) se aplica a las divisiones contenidas dentro de divisiones, es decir, las dos divisiones interiores.</p>
+
+      <p>A las divisiones interiores se le aplican tanto las propiedades del primer selector (div) como las del segundo (div div). Por eso, para que las divisiones interiores no tengan el borde definido en el primer selector (div), hace falta quitarlo en el segundo selector (div div).</p>
+    </section>
+
+    <section id="cuando-utilizar">
+      <h2>Cuándo utilizar una división</h2>
+
+      <p>Las divisiones son elementos muy útiles, puesto que permiten agrupar elementos, pero hay que evitar las divisiones innecesarias. Por ejemplo, en general no suele ser necesario crear divisiones cuando sólo contienen un elemento.</p>
+
+      <p>Los dos ejemplos siguientes ilustran esa situación. En el primer ejemplo, se han creado tres divisiones (una por cada párrafo) para dar el color de fondo. Esas divisiones son innecesarias, directamente se podía haber dado color de fondo a los párrafos, como se ha hecho en el segundo ejemplo. El resultado es idéntico en ambos casos.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-html">&lt;div&gt;
+&lt;p&gt;El hombre es fuego; la mujer, estopa; llega el diablo y sopla.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;&lt;p&gt;Para el amor y la muerte, no hay cosa fuerte.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div&gt;&lt;p&gt;Viejo el pajar, malo de encender y peor de apagar.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <div style="background-color: lightblue">
+                <p>El hombre es fuego; la mujer, estopa; llega el diablo y sopla.</p>
+              </div>
+
+              <div style="background-color: lightblue">
+                <p>Para el amor y la muerte, no hay cosa fuerte.</p>
+              </div>
+
+              <div style="background-color: lightblue">
+                <p>Viejo el pajar, malo de encender y peor de apagar.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  background-color: lightblue;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p></p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-html">&lt;p&gt;El hombre es fuego; la mujer, estopa; llega el diablo y sopla.&lt;/p&gt;
+
+&lt;p&gt;Para el amor y la muerte, no hay cosa fuerte.&lt;/p&gt;
+
+&lt;p&gt;Viejo el pajar, malo de encender y peor de apagar.&lt;/p&gt;</code>
+</pre>
+            </td>
+            <td class="resul" rowspan="2">
+              <p style="background-color: lightblue">El
+                hombre es fuego; la mujer, estopa; llega el diablo y sopla.</p>
+
+              <p style="background-color: lightblue">Para el amor y la muerte, no hay
+                cosa fuerte.</p>
+
+              <p style="background-color: lightblue">Viejo el pajar, malo de encender
+                y peor de apagar.</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  background-color: lightblue;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 22 de diciembre de 2011</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

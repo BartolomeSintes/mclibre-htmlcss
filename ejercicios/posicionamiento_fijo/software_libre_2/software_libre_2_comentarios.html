@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Comentarios al ejercicio Software libre 2. Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link rel="icon" href="../../../varios/favicon.ico" />
+  </head>
+
+  <body>
+    <h1>Comentarios al ejercicio Software libre 2</h1>
+
+    <nav>
+      <p>
+        <a href="../../../index.html"><img src="../../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+        <a href="../../index.html"><img src="../../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
+      </p>
+
+      <h2>Software libre 2</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#comentarios-cabecera">Cabecera</a></li>
+          <li><a href="#comentarios-secciones">Secciones</a></li>
+          <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
+          <li><a href="#comentarios-clases">Clases</a></li>
+          <li><a href="#comentarios-posicionamiento">Posicionamiento</a></li>
+          <li><a href="#comentarios-estilos">Estilos</a></li>
+          <li><a href="#comentarios-solucion">Solución</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="comentarios-cabecera">
+      <h2>Cabecera</h2>
+
+      <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
+      <ul>
+        <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... /&gt;</span> necesaria en dispositivos móviles</li>
+        <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... /&gt;</span> de enlace a la hoja de estilo</li>
+      </ul>
+    </section>
+
+    <section id="comentarios-secciones">
+      <h2>Secciones</h2>
+
+      <p>En la vista con estilo se reconocen agrupaciones con color de fondo común o con un borde común, para las que tiene sentido utilizar secciones.</p>
+
+      <p>El dibujo siguiente muestra una posible elección de elementos de secciones para esta página:</p>
+
+      <ul>
+        <li>la página tiene un título principal <span class="html-eti">&lt;h1&gt;</span> insertado en una sección <span class="html-eti">&lt;header&gt;</span>.</li>
+        <li>los programas se agrupan en dos secciones <span class="html-eti">&lt;section&gt;</span>, agrupadas en un bloque <span class="html-eti">&lt;main&gt;</span></li>
+        <li>en cada <span class="html-eti">&lt;section&gt;</span> hay:
+          <ul>
+            <li>un título <span class="html-eti">&lt;h2&gt;</span> con la categoría de programas</li>
+            <li>la información sobre los programas</li>
+          </ul>
+        </li>
+        <li>cada programa se describe en un artículo <span class="html-eti">&lt;article&gt;</span></li>
+        <li>en cada <span class="html-eti">&lt;article&gt;</span> hay:
+          <ul>
+            <li>un título <span class="html-eti">&lt;h3&gt;</span> con el nombre del programa</li>
+            <li>un párrafo <span class="html-eti">&lt;p&gt;</span> con una breve descripción del programa</li>
+          </ul>
+      </ul>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="650" viewBox="0 0 1920 1540" style="background-color: #EEEEEE">
+          <rect x="20" y="20" width="1880" height="1500"
+                fill="#E0E1EB" stroke="black" stroke-width="3" />
+          <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
+
+          <rect x="60" y="100" width="1800" height="180"
+                fill="#31334D" stroke="black" stroke-width="3" />
+          <text x="80" y="160" font-family="sans-serif" font-size="50" fill="white">header</text>
+
+          <rect x="80" y="180" width="1760" height="80"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="100" y="240" font-family="sans-serif" font-size="50">h1</text>
+
+
+          <rect x="60" y="300" width="1800" height="1200"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="80" y="360" font-family="sans-serif" font-size="50">main</text>
+
+
+          <rect x="160" y="380" width="1600" height="530"
+                fill="#E0E1EB" stroke="black" stroke-width="3" />
+          <text x="180" y="440" font-family="sans-serif" font-size="50">section</text>
+
+          <rect x="200" y="460" width="1520" height="80"
+                fill="#31334D" stroke="black" stroke-width="3" />
+          <text x="220" y="520" font-family="sans-serif" font-size="50" fill="white">h2</text>
+
+          <rect x="200" y="560" width="1520" height="290"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="220" y="620" font-family="sans-serif" font-size="50">article</text>
+
+          <rect x="240" y="640" width="1440" height="80"
+                fill="#2CAB32" stroke="black" stroke-width="3" />
+          <text x="260" y="700" font-family="sans-serif" font-size="50" fill="white">h3</text>
+
+          <rect x="240" y="740" width="1440" height="80"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="260" y="800" font-family="sans-serif" font-size="50">p</text>
+
+          <circle cx="900" cy="880" r="8" stroke-width="3" stroke="black" fill="white" />
+          <circle cx="950" cy="880" r="8" stroke-width="3" stroke="black" fill="white" />
+          <circle cx="1000" cy="880" r="8" stroke-width="3" stroke="black" fill="white" />
+
+
+          <rect x="160" y="940" width="1600" height="530"
+                fill="#E0E1EB" stroke="black" stroke-width="3" />
+          <text x="180" y="1000" font-family="sans-serif" font-size="50">section</text>
+
+          <rect x="200" y="1020" width="1520" height="80"
+                fill="#31334D" stroke="black" stroke-width="3" />
+          <text x="220" y="1080" font-family="sans-serif" font-size="50" fill="white">h2</text>
+
+          <rect x="200" y="1120" width="1520" height="290"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="220" y="1180" font-family="sans-serif" font-size="50">article</text>
+
+          <rect x="240" y="1200" width="1440" height="80"
+                fill="#2CAB32" stroke="black" stroke-width="3" />
+          <text x="260" y="1260" font-family="sans-serif" font-size="50" fill="white">h3</text>
+
+          <rect x="240" y="1300" width="1440" height="80"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="260" y="1360" font-family="sans-serif" font-size="50">p</text>
+
+          <circle cx="900" cy="1440" r="8" stroke-width="3" stroke="black" fill="white" />
+          <circle cx="950" cy="1440" r="8" stroke-width="3" stroke="black" fill="white" />
+          <circle cx="1000" cy="1440" r="8" stroke-width="3" stroke="black" fill="white" />
+
+        </svg>
+      </p>
+
+      <p>Al encabezado <span class="html-eti">&lt;header&gt;</span> se le da posicionamiento fijo, pero se podría haber dado posicionamiento fijo a <span class="html-eti">&lt;h1&gt;</span> y no haber creado la sección <span class="html-eti">&lt;header&gt;</span>.</p>
+
+      <p>Al bloque <span class="html-eti">&lt;main&gt;</span> se le da un margen superior bastante grande para que se muestre inicialmente por debajo del <span class="html-eti">&lt;header&gt;</span>. Se podría no haber creado el bloque <span class="html-eti">&lt;main&gt;</span>, pero entonces a la primera sección <span class="html-eti">&lt;section&gt;</span> se le tendría que haber dado una clase o un id para darle un margen superior mayor que a la segunda sección.</p>
+
+      <p>En este ejercicio se han utilizado secciones <span class="html-eti">&lt;section&gt;</span>, pero no se les aplica ninguna propiedad CSS, por lo que se podrían omitir.</p>
+
+      <p>En vez de las etiquetas <span class="html-eti">&lt;article&gt;</span> y <span class="html-eti">&lt;section&gt;</span>, se podrían haber utilizado sólo una u otra, o haberlas utilizado al revés.</p>
+
+    </section>
+
+    <section id="comentarios-etiquetas">
+      <h2>Etiquetas</h2>
+
+      <p>Además de las etiquetas que se muestran en la imagen del apartado anterior (<span class="html-eti">&lt;header&gt;</span>, <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;main&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, <span class="html-eti">&lt;article&gt;</span> y <span class="html-eti">&lt;h3&gt;</span>), la página sólo contiene párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
+    </section>
+
+    <section id="comentarios-clases">
+      <h2>Clases</h2>
+
+      <p>En esta página no se necesitan definir clases o <span class="html-atri">id</span>.</p>
+    </section>
+
+    <section id="comentarios-posicionamiento">
+      <h2>Posicionamiento</h2>
+
+      <p>El único elemento con posicionamiento de esta página es el encabezado <span class="html-eti">&lt;header&gt;</span>, concretamente con posicionamiento fijo. Se sitúa al principio de la página con <span class="css-prop">top</span>: <span class="css-valor">0</span>, <span class="css-prop">left</span>: <span class="css-valor">0</span>, ocupando todo el espacio con <span class="css-prop">width</span>: <span class="css-valor">100%</span>. No hace falta darle altura.</p>
+
+      <p>Como el encabezado tiene posicionamiento, no se tiene en cuenta al colocar el resto de elementos de la página. Para que el bloque <span class="html-eti">&lt;main&gt;</span> no se oculte detrás del encabezado, se le puede dar un <span class="css-prop">margin</span> grande (expresado en <span class="css-prop">rem</span>, para que sea proporcional al tipo de letra).</p>
+
+      <p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+             width="650" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+          <marker id="triangle-start" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="180" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <marker id="triangle-end" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <marker id="triangle-up" viewBox="0 0 10 10" refX="0" refY="5"
+                  markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="-90" stroke="red" fill="red">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+
+          <rect x="20" y="20" width="1880" height="1040"
+                fill="white" stroke="black" stroke-width="3" />
+          <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
+
+          <rect x="22" y="22" width="1876" height="300"
+                fill="#FFEBEB" stroke="red" stroke-width="3" />
+          <text x="180" y="80" font-family="sans-serif" font-size="50" fill="red">header</text>
+
+          <text x="30" y="240" font-size="50" fill="red">left: 0</text>
+
+          <text x="920" y="70" font-size="50" fill="red">top: 0</text>
+
+          <line x1="50" y1="275" x2="1870" y2="275"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" marker-start="url(#triangle-start)" />
+          <text x="1050" y="265" font-size="50" fill="red">width</text>
+
+          <rect x="80" y="100" width="1760" height="80"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="100" y="160" font-family="sans-serif" font-size="50">h1</text>
+
+
+          <rect x="60" y="390" width="1800" height="640"
+                fill="none" stroke="black" stroke-width="3" />
+          <text x="80" y="450" font-family="sans-serif" font-size="50">main</text>
+
+          <line x1="700" y1="390" x2="700" y2="50"
+                stroke-width="5" stroke="red" marker-end="url(#triangle-end)" />
+          <text x="720" y="370" font-size="50" fill="red">margin</text>
+
+        </svg>
+      </p>
+
+    </section>
+
+    <section id="comentarios-estilos">
+      <h2>Estilos</h2>
+
+      <p>Estas son las propiedades CSS utilizadas:</p>
+
+      <ul>
+        <li>Página (<span class="html-eti">body</span>):
+          <ul>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>tipo de letra: <span class="css-prop">font-family</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Cabecera (<span class="html-eti">header</span>):
+          <ul>
+            <li>posicionamiento: <span class="css-prop">position</span></li>
+            <li>distancia al borde superior: <span class="css-prop">top</span></li>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>color: <span class="css-prop">color</span></li>
+          </ul>
+        </li>
+        <li>Título principal (<span class="html-eti">h1</span>):
+          <ul>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          </ul>
+        </li>
+        <li>Bloque principal (<span class="html-eti">main</span>):
+          <ul>
+            <li>tipo de caja: <span class="css-prop">display</span></li>
+            <li>margen: <span class="css-prop">margin</span></li>
+          </ul>
+        </li>
+        <li>Título de sección (<span class="html-eti">h2</span>):
+          <ul>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>color: <span class="css-prop">color</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+            <li>alineación: <span class="css-prop">text-align</span></li>
+          </ul>
+        </li>
+        <li>Artículo (<span class="html-eti">article</span>):
+          <ul>
+            <li>ancho: <span class="css-prop">width</span></li>
+            <li>radio del borde: <span class="css-prop">border-radius</span></li>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>margen interior inferior: <span class="css-prop">padding-bottom</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+          </ul>
+        </li>
+        <li>Título de artículo (<span class="html-eti">h3</span>):
+          <ul>
+            <li>radio del borde superior izquierdo: <span class="css-prop">border-top-left-radius</span></li>
+            <li>radio del borde superior derecho: <span class="css-prop">border-top-right-radius</span></li>
+            <li>margen: <span class="css-prop">margin</span></li>
+            <li>margen interior izquierdo: <span class="css-prop">padding-left</span></li>
+            <li>color de fondo: <span class="css-prop">background-color</span></li>
+            <li>color: <span class="css-prop">color</span></li>
+            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          </ul>
+        </li>
+        <li>Párrafo (<span class="html-eti">p</span>):
+          <ul>
+            <li>margen: <span class="css-prop">margin</span></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="comentarios-solucion">
+      <h2>Solución del ejercicio</h2>
+
+      <p>El código HTML del ejercicio puede consultarse abriendo la <a href="software_libre_2_formateado.html">página web del ejercicio Software libre 2</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
+
+      <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="software_libre_2.css">hoja de estilo del ejercicio Software libre 2</a>.</p>
+
+      <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir el mismo resultado, por lo que la solución no es nunca única.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 6 de enero de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

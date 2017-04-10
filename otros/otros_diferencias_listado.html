@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Diferencias entre Chrome, Firefox e Internet Explorer. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      a.ahover:hover {  color: white; background-color: black; }
+      p.phover {  color: black; background-color: white; }
+      p.phover:hover {  color: white; background-color: black; }
+      a.aactive:active {  color: white; background-color: black; }
+      p.pactive {  color: black; background-color: white; }
+      p.pactive:active {  color: white; background-color: black; }
+      input.ifocus:focus { border: red 2px dotted; padding: 2px; }
+      p.fili:first-line { text-transform: uppercase; }
+      p.file1:first-letter { color: red; }
+      p.file2:first-letter { float: left; font-size: 300%; font-family: monospace; color: red; }
+      a.visited1:visited { text-decoration: line-through; font-weight: bold; background-color: #dddddd; }
+      td.alink1 a { background-color: lightblue; }
+      td.alink2 a:link { background-color: lightblue; }
+      table.firstchild div { border: black 5px solid; margin: 10px; padding: 10px;}
+      table.firstchild div p:first-child { color: red; }
+      table.beforeafter p.cuidado:before { content:"Aviso: "; }
+      table.beforeafter p.autor-barto:after { content:" (escrito por Barto)"; }
+      table.beforeafter p.cuidado2:before { content:"<em>Aviso:</em> "; }
+      table.beforeafter p.ff:before { content:url("../varios/iconos/icono_ff.svg"); }
+      table.contadores1 td.resul pre { counter-reset: cuenta-parrafos; }
+      table.contadores1 td.resul p:before { content: counter(cuenta-parrafos);
+        counter-increment: cuenta-parrafos; }
+      table.contadores2 td.resul pre { counter-reset: cuenta-parrafos; }
+      table.contadores2 td.resul p:before { content: counter(cuenta-parrafos)". ";
+        counter-increment: cuenta-parrafos; }
+      table.contadores3 td.resul pre { counter-reset: cuenta-parrafos; }
+      table.contadores3 td.resul p:before { content: counter(cuenta-parrafos, upper-roman)". ";
+        counter-increment: cuenta-parrafos; }
+      table.contadores4 td.resul h2 { font-size: 120%;
+        counter-reset: cuenta-parrafos; counter-reset: cuenta-apartados; }
+      table.contadores4 td.resul h3 { counter-reset: cuenta-parrafos; margin-left: 0px;  }
+      table.contadores4 td.resul h3:before { content: counter(cuenta-apartados, upper-alpha)". ";
+        counter-increment: cuenta-apartados; }
+      table.contadores4 td.resul p:before { content: counter(cuenta-apartados, upper-alpha)"-"counter(cuenta-parrafos)". ";
+        counter-increment: cuenta-parrafos; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Diferencias entre Chrome, Firefox e Internet Explorer 11</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Diferencias GC/FF/IE</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#uso">Utilización del navegador</a></li>
+          <li><a href="#html">HTML</a></li>
+          <li><a href="#css">CSS</a></li>
+          <li><a href="#otros">Otros</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>En esta página se comentan algunas de las diferencias entre Chrome, Firefox e Internet Explorer 11. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />, <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /> o <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />, <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /> o <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />.</p>
+
+    <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes, agrupándolas por temas:</p>
+
+    <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" /> Esta página está pendiente de actualizar, haciendo referencia a Chrome en todos los ejemplos. Además, algunas diferencias están pendientes de confirmar en IE11.</p>
+
+    <section id="por-incluir">
+      <h2>Diferencias por incluir</h2>
+
+      <ul>
+        <li>A partir de Firefox 50, Firefox utiliza <a href="http://emojione.com/">EmojiOne</a> para mostrar los caracteres Unicode incluidos en esa fuente (aunque no todos, parece que sólo en los <i>emoji</i>). Véase el <a href="../como/como_texto_imagenes.html#distinguir-imagenes-caracteres">ejemplo de cómo distinguir imágenes de caracteres</a>.</li>
+      </ul>
+    </section>
+
+    <section id="uso">
+      <h2>Utilización del navegador</h2>
+
+      <section id="css-utf">
+        <h3>Archivos CSS en UTF-8</h3>
+
+        <p>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8.</p>
+      </section>
+
+      <section id="uso-zoom">
+        <h3>Zoom</h3>
+
+        <p>Internet Explorer 11 dispone de dos tipos de zoom:</p>
+
+        <ul>
+          <li>el clásico, que sólo cambia el tamaño del texto y sólo permite elegir entre cinco tamaños de texto (Muy grande, Grande, Mediano, Pequeño, Muy pequeño), mediante el menú <span class="soft-menu">Ver &gt; Tamaño de texto</span>.</li>
+          <li>el introducido en Internet Explorer 7, que aumenta todos los elementos de la página (texto e imágenes), mediante el menú <span class="soft-menu">Herramientas &gt; Zoom</span>, las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>,</li>
+        </ul>
+
+        <p>Firefox dispone de dos tipos de zoom:</p>
+
+        <ul>
+          <li>uno que sólo cambia el tamaño de texto,</li>
+          <li>otro que aumenta todos los elementos de la página (texto e imágenes)</li>
+        </ul>
+
+        <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
+      </section>
+
+      <section id="uso-teclas-formularios">
+        <h3>Teclas de acceso en formularios</h3>
+
+        <p>Para acceder a las teclas de acceso, cada navegador utiliza una combinación de teclas distinta:</p>
+
+        <ul>
+          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Internet Explorer utiliza tanto la combinación <kbd>Alt+tecla</kbd> como la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, aunque en algunos casos también permite utilizar <kbd>Alt+Shift+tecla</kbd></li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+              </td>
+              <td class="codhtml"><pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con a" <span class="codigo-resaltado">accesskey="a"</span> /&gt;<br />&lt;input type="text" name="texto2" value="Acceso con e" <span class="codigo-resaltado">accesskey="e"</span> /&gt;<br />&lt;input type="text" name="texto3" value="Acceso con i" <span class="codigo-resaltado">accesskey="i"</span> /&gt;<br />&lt;input type="text" name="texto4" value="Acceso con o" <span class="codigo-resaltado">accesskey="o"</span> /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><input type="text" value="Acceso con a" size="12" accesskey="a" /> <input type="text" value="Acceso con e" size="12" accesskey="e" /> <input type="text" value="Acceso con i" size="12" accesskey="i" /> <input type="text" value="Acceso con o" size="12" accesskey="o" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
+
+        <ul>
+          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Internet Explorer utiliza únicamente la combinación <kbd>Alt+tecla</kbd></li>
+          <li>Google Chrome no permite utilizarlas</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /></td>
+              <td class="codhtml"><pre>
+<code class="language-css">&lt;input type="text" name="texto1" value="Acceso con 1" <span class="codigo-resaltado">accesskey="1"</span> /&gt;<br />&lt;input type="text" name="texto2" value="Acceso con 2" <span class="codigo-resaltado">accesskey="2"</span> /&gt;<br />&lt;input type="text" name="texto3" value="Acceso con 3" <span class="codigo-resaltado">accesskey="3"</span> /&gt;<br />&lt;input type="text" name="texto4" value="Acceso con 4" <span class="codigo-resaltado">accesskey="4"</span> /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><input type="text" value="Acceso con 1" size="12"
+                                       accesskey="1" /> <input type="text" value="Acceso con 2" size="12"
+                                                               accesskey="2" /> <input type="text" value="Acceso con 3" size="12"
+                                                                                       accesskey="3" /> <input type="text" value="Acceso con 4" size="12"
+                                                                                                               accesskey="4" /></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codhtml"><pre>
+<code class="language-css">&lt;input type="text" name="texto1" value="Acceso con ," <span class="codigo-resaltado">accesskey=","</span> /&gt;<br />&lt;input type="text" name="texto2" value="Acceso con -" <span class="codigo-resaltado">accesskey="."</span> /&gt;<br />&lt;input type="text" name="texto3" value="Acceso con +" <span class="codigo-resaltado">accesskey="+"</span> /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><input type="text" value="Acceso con ," size="12" accesskey="," /> <input type="text" value="Acceso con ." size="12" accesskey="." /> <input type="text" value="Acceso con +" size="12" accesskey="+" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
+
+        <ul>
+          <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Internet Explorer avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Google Chrome no avanza de uno a otro</li>
+        </ul>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codhtml"><pre><code class="language-css">&lt;input type="text" name="texto1" value="Acceso con z" <span class="codigo-resaltado">accesskey="z"</span> /&gt;<br />&lt;input type="text" name="texto2" value="Acceso con z" <span class="codigo-resaltado">accesskey="z"</span> /&gt;<br />&lt;input type="text" name="texto3" value="Acceso con z" <span class="codigo-resaltado">accesskey="z"</span> /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><input type="text" value="Acceso con z" size="12" accesskey="z" /> <input type="text" value="Acceso con z" size="12" accesskey="z" /> <input type="text" value="Acceso con z" size="12" accesskey="z" /></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codhtml"><pre>
+<code class="language-css">&lt;input type="text" name="texto1" value="Acceso con w" <span class="codigo-resaltado">accesskey="w"</span> /&gt;
+&lt;input type="text" name="texto2" value="Acceso con W" <span class="codigo-resaltado">accesskey="W"</span> /<br />&lt;input type="text" name="texto3" value="Acceso con W" <span class="codigo-resaltado">accesskey="W"</span> /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><input type="text" value="Acceso con w" size="12" accesskey="w" /> <input type="text" value="Acceso con W" size="12" accesskey="W" /> <input type="text" value="Acceso con W" size="12" accesskey="W" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <section id="html">
+      <h2>HTML</h2>
+
+      <section id="html-main">
+        <h3>Elemento <span class="html-eti">&lt;main&gt;</span></h3>
+
+        <p>Internet Explorer 11 no reconoce la etiqueta <span class="html-eti">&lt;main&gt;</span>, aunque se puede corregir este problema añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td rowspan="2">
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+              </td>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code></pre>
+              </td>
+              <td class="resul" rowspan="2">
+                <main style="background-color: red"><p>Esto es un párrafo</p></main>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre><code class="language-css">main {<br />  background-color: red;<br />}</code></pre></td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+              </td>
+              <td class="codhtml">
+                <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code></pre></td>
+              <td class="resul" rowspan="2">
+                <main style="display: block; background-color: red"><p>Esto es un párrafo</p></main>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre><code class="language-css">main {<br />  display: block;<br />  background-color: red;<br />}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="text-decoration-overline">
+        <h3>Propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">overline</span></h3>
+
+        <p>Si un párrafo tiene suprarayado y el tamaño de las palabras no es siempre el mismo:</p>
+
+        <ul>
+          <li>Firefox mantiene la línea de suprayado a la misma altura a lo largo de todo el párrafo, pero no tengo claro cómo elige la altura</li>
+          <li>Internet Explorer también mantiene la línea de suprarayado a la misma altura a lo largo de todo el párrafo, basándose en el carácter más alto</li>
+          <li>Chrome dibuja la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
+        </ul>
+
+        <p>Probablemente, la recomendación no especifica qué hacer en este caso particular y cada navegador ha adoptado una solución diferente (<span class="incompleto">por confirmar</span>)</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff_unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32" />
+                <img src="../varios/iconos/icono_ie_unknown.svg" alt="Por determinar en Internet Explorer" title="Por determinar en Internet Explorer" width="53" height="32" />
+                <img src="../varios/iconos/icono_gc_unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32" />
+              <td class="codcss"><pre>
+<code class="language-html">&lt;p style="text-decoration: overline"&gt;Este es
+  &lt;span style="font-size: 200%"&gt;un párrafo&lt;/span&gt;
+  &lt;span style="font-size: 200%"&gt;suprarayado&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><p style="text-decoration: overline;"> Este es <span style="font-size: 200%">un párrafo</span> <span style="font-size: 300%">suprayado</span>.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="listas">
+        <h3>Listas</h3>
+
+        <section id="listas-anidadas">
+          <h4>Lista dentro de lista</h4>
+
+          <p>La lista siguiente se ve de forma distinta en Firefox y en Internet Explorer 11:</p>
+          <ul>
+            <li><ul>
+              <li>Elemento de lista</li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>Se trata de una lista no ordenada dentro de otra lista no ordenada. La lista superior no contiene ningún texto, salvo la lista inferior. Firefox muestra dos marcadores a la misma altura. Internet Explorer 11 los muestra a diferentes alturas.</p>
+        </section>
+      </section>
+
+      <section id="tablas">
+        <h3>Tablas</h3>
+
+        <section id="tablas-rules">
+          <h4>El atributo <span class="html-atri">rules</span></h4>
+
+          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
+
+          <p>En Firefox, cuando el modo de bordes no está establecido las tablas se ven en modo de bordes separado, pero si está el atributo <span class="html-atri">rules</span> las tablas se ven en modo colapsado. Pero en Internet Explorer, aunque esté el atributo <span class="html-atri">rules</span> las tablas se ven en modo separado.</p>
+
+          <p><strong>Nota</strong>: En este caso no sé cuál de los dos no hace las cosas correctamente, porque aunque Firefox suele seguir mejor las normas, Firefox tiene bugs relacionados con los modos de bordes de las tablas.</p>
+        </section>
+      </section>
+
+      <section id="posicionamiento">
+        <h3>Posicionamiento</h3>
+
+        <section id="posicionamiento-fijo">
+          <h4>Posicionamiento fijo</h4>
+
+          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
+
+          <p>Internet Explorer no aplica correctamente el posicionamiento fijo (<span class="css-prop">position</span>: <span class="css-valor">fixed</span>) a una tabla. Coloca la leyenda (<span class="html-eti">caption</span>) en el lugar correcto, pero no las celdas de la tabla. Firefox lo hace bien. Si la tabla está metida en una división y el posicionamiento lo tiene la división, Internet Explorer ya lo hace bien.</p>
+        </section>
+      </section>
+
+      <section id="formularios">
+        <h3>Formularios</h3>
+
+        <section id="formularios-boton">
+          <h4>Botón <span class="html-eti">button</span> sin atributo <span class="html-atri">type</span></h4>
+
+          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
+
+          <p>Si en un botón no lleva el atributo <span class="html-atri">type</span>, Firefox se comporta como si fuera un botón de tipo <span class="html-atri-valor">reset</span>, pero Internet Explorer se comporta como si fuera un botón de tipo <span class="html-atri-valor">button</span>.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td></td>
+                <td class="codhtml"><pre><code class="language-css">&lt;button&gt;Botón&lt;/button&gt;</code></pre></td>
+                <td class="resul"><button>Botón</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="formularios-teclas">
+          <h4>Teclas de acceso</h4>
+
+          <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas, Firefox e Internet Explorer 10 avanzan de uno en uno (FF con <kbd>Alt+Shift+tecla</kbd>, IE10 con <kbd>Alt+tecla</kbd>). > usa <kbd>Alt+Shift+tecla</kbd> para retroceder de uno en uno.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codhtml"><pre><code class="language-html">&lt;input type="text" value="Acceso con z" accesskey="z" /&gt;<br />&lt;input type="text" value="Acceso con z" accesskey="z" /&gt;<br />&lt;input type="text" value="Acceso con z" accesskey="z" /&gt;</code></pre>
+                </td>
+                <td class="resul"><input type="text" value="Acceso con z" size="12" accesskey="z" /> <input type="text" value="Acceso con z" size="12" accesskey="z" /> <input type="text" value="Acceso con z" size="12" accesskey="z" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codhtml"><pre><code class="language-html">&lt;input type="text" value="Acceso con w" accesskey="w" /&gt;<br />&lt;input type="text" value="Acceso con W" accesskey="W" /&gt;</code></pre>
+                </td>
+                <td class="resul"><input type="text" value="Acceso con w" size="12" accesskey="w" /> <input type="text" value="Acceso con W" size="12" accesskey="W" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="input-number">
+          <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span> /&gt;</span></h4>
+          <p>Internet Explorer sólo muestra mensajes de error en algunos casos muy concretos, si se mezclan letras y números envía el dato y si se escriben sólo letras no muestra mensajes de error aunque no envía nada en el control.</p>
+
+          <p>En el caso de los números decimales:</p>
+          <ul>
+            <li>Chrome admite la coma (,) y el punto (.) como separadores de la parte decimal.</li>
+            <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
+            <li>Internet Explorer 11 no reconoce el atributo <span class="html-atri">step</span> y no muestra mensajes de error; además envía cualquier cosa que no tenga letras, aunque no sea un número válido.</li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="favicons">
+        <h3>Favicons</h3>
+
+        <section id="favicons-enlaces">
+          <h4>Enlaces a favicons</h4>
+
+          <p>Internet Explorer 11 no admite la forma de enlazar los favicons recomendada por el W3C, mientras que Firefox sí lo hace. Además, Internet Explorer 11 tampoco muestra los favicons si las páginas no están colgadas en un servidor.</p>
+
+          <p>La tabla siguiente contiene enlaces a diferentes páginas que contiene enlaces a favicons definidos de maneras distintas. Abriendo los enlaces en el navegador puede comprobarse si el navegador es capaz de mostrar los favicons.</p>
+
+          <table class="conborde">
+            <tbody>
+              <tr>
+                <th rowspan="2"></th>
+                <th rowspan="2">Sintaxis del enlace</th>
+                <th colspan="3">Tamaño de imagen (píxeles)</th>
+              </tr>
+              <tr>
+                <th>16x16</th>
+                <th>32x32</th>
+                <th>32x32+16x16</th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td><pre><code class="language-html">&lt;link rel="shortcut icon" href="cdlibre.ico" /&gt;</code></pre></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16_shortcut.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td><pre><code class="language-html">&lt;link rel="icon" type="image/png" href="cdlibre.png" /&gt; </code></pre></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_png_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_png_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+                <td class="centrado"></td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td><pre><code class="language-html">&lt;link rel="icon" type="image/vnd.microsoft.icon" href="cdlibre.ico" /&gt;</code></pre>
+                </td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="favicons-locales">
+          <h3>favicons en archivos locales</h3>
+
+          <p>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</p>
+        </section>
+
+        <section id="favicons-animados">
+          <h3>Favicons animados</h3>
+
+          <p>Firefox admite favicons animados, en forma de gifs animados, pero Internet Explorer y Google Chrome no.</p>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                  <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+                </td>
+                <td>La siguiente página muestra un ejemplo de favicon animado:
+                  <ul>
+                    <li><a href="http://www.animatedfavicon.com/">http://www.animatedfavicon.com/</a></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+    </section>
+
+    <section id="css">
+      <h2>CSS</h2>
+
+      <section id="css-pseudo">
+        <h3>Pseudo-clases y pseudo-elementos</h3>
+
+        <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Internet Explorer 11 los recuerda mientras no se recargue la página, mientras que Firefox los recuerda hasta que se borra el historial en el navegador.</p>
+
+        <section id="diferencias-seleccion-generado">
+          <h4>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h4>
+
+          <p>En Firefox, el contenido generado no puede seleccionarse con el ratón, pero en Internet Explorer 11 sí.</p>
+
+          <table class="ejemplo beforeafter">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p.cuidado:before {
+  content: "Aviso: ";
+}</code>
+</pre>
+                </td>
+                <td class="resul">Este párrafo es un párrafo sin clase.
+
+                  <p class="cuidado">Este párrafo es un párrafo con clase "cuidado".</p>
+
+                  <p>Este párrafo es un párrafo sin clase.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p.autor-barto:after {
+  content: " (escrito por Barto).";
+}</code>
+</pre>
+                </td>
+                <td class="resul">Este párrafo es un párrafo sin clase.
+
+                  <p class="autor-barto">Este párrafo es un párrafo con clase
+                    "autor-barto".</p>
+
+                  <p>Este párrafo es un párrafo sin clase.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="css-fuente">
+        <h3>Fuente</h3>
+
+        <section id="css-fuente-font-size-adjust">
+          <h4>Propiedad <span class="css-prop">font-size-adjust</span></h4>
+
+          <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona en Firefox, pero no en Internet Explorer 11. Lo que hace Firefox es multiplicar el valor de <span class="css-prop">font-size</span> por el de <span class="css-prop">font-size-adjust</span> y dar a la letra minúscula x ese tamaño.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p {
+  font-size: 16px;
+  font-size-adjust: 1.5;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p style="font-size: 16px; font-size-adjust: 1.5;">Esta letra x tiene 16 x 1.5 = 24 px de altura.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p {
+  font-size: 16px;
+  font-size-adjust: 0.5;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p style="font-size: 16px; font-size-adjust: 0.5;">Esta letra x tiene 16 x 0.5 = 8 px de altura.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="css-lineas">
+        <h3>Líneas horizontales</h3>
+
+        <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Internet Explorer 11 no.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="color: red; " />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  color: red;
+  height: 1px;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="color: red; height: 1px;" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  color: red;
+  height: 10px;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="color: red; height: 10px;" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Si se usa la propiedad <span class="css-prop">width</span> junto con <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span>, Internet Explorer 11 no la interpreta como Firefox:</p>
+        <ul>
+          <li>En Firefox, la línea se dibuja a la izquierda del espacio definido por los márgenes.</li>
+          <li>En Internet Explorer 11, la línea se dibuja en el centro del espacio definido por los márgenes.</li>
+        </ul>
+
+        <p>En el ejemplo siguiente, la línea se sitúa a la izquierda del todo en Firefox, pero en el centro en Internet Explorer 11:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  background-color: red;
+  height: 10px;
+  margin-left: 0%;
+  width: 50%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="background-color: red; height: 10px; margin-left: 0%; width: 50%;  " />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En el ejemplo siguiente, la línea se sitúa a la derecha del todo en Firefox, pero en el centro en Internet Explorer 11:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  background-color: red;
+  height: 10px;
+  margin-right: 0%;
+  width: 50%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="background-color: red; height: 10px; margin-right: 0%; width: 50%;  " />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>En el ejemplo siguiente, la línea se sitúa a partir del centro en Firefox, pero en el centro de la mitad derecha en Internet Explorer 11:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-css">hr {
+  background-color: red;
+  height: 10px;
+  margin-left: 50%;
+  width: 25%;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><hr style="background-color: red; height: 10px; margin-left: 50%; width: 25%;  " />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="css-listas">
+        <h3>Listas</h3>
+
+        <section id="css-listas-list-style-type">
+          <h4>Tipo predefinidos de marcador: <span class="css-prop">list-style-type</span></h4>
+
+          <p>Firefox aplica algunos valores de la propiedad <span class="css-prop">list-style-type</span> que Internet Explorer 11 no aplica.</p>
+
+          <p>Firefox es capaz de representar todos los estilos, pero en algunos casos es necesario tener instaladas las fuentes correspondientes. Si no están instaladas las fuentes, Firefox muestra un cuadro con el código Unicode del carácter no mostrado (en Firefox 2 y anteriores se mostraba un signo de interrogación (?)). Internet Explorer muestra el punto de las listas no ordenadas cuando no es capaz de representar el estilo.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td><img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /> <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /><br />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: hebrew;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: hebrew;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: cjk-ideographic;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: cjk-ideographic;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: hiragana;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: hiragana;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: katakana;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: katakana;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: hiragana-iroha;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: hiragana-iroha;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">ul {
+  list-style-type: katakana-iroha;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <ul style="list-style-type: katakana-iroha;">
+                    <li>Esto es un punto de una lista</li>
+                    <li>Esto es otro punto de la misma lista</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="css-tablas">
+        <h3>Tablas</h3>
+
+        <section id="css-tablas-caption-side">
+          <h4>La propiedad <span class="css-prop">caption-side</span></h4>
+
+          <p>Firefox aplica los valores left y right de la propiedad <span class="css-prop">caption-side</span> que Internet Explorer 11 no aplica.</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">caption {
+  caption-side: left;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <table class="conborde">
+                    <caption style="caption-side: left;">Esto es la leyenda</caption>
+                    <tbody>
+                      <tr>
+                        <td>Celda 1</td>
+                        <td>Celda 2</td>
+                      </tr>
+                      <tr>
+                        <td>Celda 3</td>
+                        <td>Celda 4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">caption {
+  caption-side: right;
+}</code>
+</pre>
+                </td>
+                <td class="resul">
+                  <table class="conborde">
+                    <caption style="caption-side: right;">Esto es la leyenda</caption>
+                    <tbody>
+                      <tr>
+                        <td>Celda 1</td>
+                        <td>Celda 2</td>
+                      </tr>
+                      <tr>
+                        <td>Celda 3</td>
+                        <td>Celda 4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <section id="css-interface-usuario">
+        <h3>Interface de usuario</h3>
+
+        <section id="diferencias-cursor">
+          <h4>La propiedad <span class="css-prop">cursor</span></h4>
+
+          <p>Internet Explorer 11 solamente admite en la propiedad <span class="css-prop">cursor</span> e cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a>, (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO).</p>
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.png"), wait;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p style="cursor: url(&#34;../img/exclamacion.png&#34;), wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.cur"), wait;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p style="cursor: url(&#34;../img/exclamacion.cur&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                </td>
+                <td class="codcss"><pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.ico"), wait;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p style="cursor: url(&#34;../img/exclamacion.ico&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="css-outline">
+          <h4>La propiedad <span class="css-prop">outline</span></h4>
+
+          <section id="diferencias-outline-en-linea">
+            <h5>Contorno de un elemento en-línea</h5>
+
+            <p>El contorno de un elemento en-línea no se muestra de la misma manera en Internet Explorer que en Firefox.</p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                    <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                  </td>
+                  <td class="codcss"><pre>
+<code class="language-css">span.con-outline {
+  outline: black 3px solid;
+}</code>
+</pre>
+                  </td>
+                  <td class="resul"><p>Esto es un párrafo normal y corriente. <span class="outline-2" style="outline: black 3px solid;">Esta frase tiene un contorno de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section id="diferencias-outline-invert">
+            <h5>Color <span class="css-valor">invert</span> en la propiedad <span class="css-prop">outline</span></h5>
+
+            <p>Firefox no muestra el valor <span class="css-valor">invert</span> (desde la versión FF3.0), mientras que Internet Explorer sí lo hace. En la <a href="bugs_mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
+
+            <table class="ejemplo">
+              <tbody>
+                <tr>
+                  <td>
+                    <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+                    <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+                  </td>
+                  <td class="codcss"><pre>
+<code class="language-css">body {
+  background-color: black;
+  color:white;
+}
+<br />p {
+  outline: invert 3px solid;
+}</code>
+</pre>
+                  </td>
+                  <td class="resul" style="background-color: black; color: white;"><p style="outline: invert 3px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p></td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+      </section>
+    </section>
+
+    <section id="otros">
+      <h2>Otros</h2>
+
+      <section id="otros-svg">
+        <h3>SVG</h3>
+
+        <p>Internet Explorer muestra los elementos svg situados fuera de la zona definida por <span class="html-atri">viewBox</span>, mientras que Firefox y Google Chrome sólo muestran los elementos o la parte de los elementos situados dentro de la zona definida por <span class="html-atri">viewBox</span>.</p>
+      </section>
+
+      <section id="otros-mathml">
+        <h3>MathML</h3>
+
+        <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Internet Explorer 11 requiere un plug-in para mostrar elementos MathML.</p>
+
+        <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Internet Explorer no. El motivo es es que Internet Explorer carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
+      </section>
+
+      <section id="otros-apng">
+        <h3>Formato de imágenes de mapa de bits APNG</h3>
+
+        <p>Firefox muestra las imágenes en formato APNG, pero Internet Explorer 11 no lo hace.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;img alt="Ejempo de imagen en formato APNG"
+src="apng_balon.png" /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><img alt="Ejempo de imagen en formato APNG" src="../img/otros/apng_balon.png" title="Ejempo de imagen en formato APNG" height="100" width="100" /></td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              </td>
+              <td class="codcss"><pre>
+<code class="language-html">&lt;img alt="Ejempo de imagen en formato APNG"
+src="apng_balon.png"
+style="background-colo: lightblue" /&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><img alt="Ejempo de imagen en formato APNG" src="../img/otros/apng_balon.png" title="Ejempo de imagen en formato APNG" height="100" width="100" style="background-color: lightblue" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 15 de noviembre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

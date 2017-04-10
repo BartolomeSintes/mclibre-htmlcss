@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Estilos en cascada. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      td.eje01a div { border: black 3px solid; color: red; }
+      td.eje01b div { border: black 3px solid; color: red; }
+      td.eje01b p { color: black; }
+      td.eje01c p { color: black; }
+      td.eje01c div { border: black 3px solid; color: red; }
+
+      td.eje11a p#nuevo11a { color:red;}
+      td.eje11a p { color:black;}
+      td.eje11b p { color:black;}
+      td.eje11b p#nuevo11b { color:red;}
+
+      td.eje12a div#viejo12a { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje12a p#nuevo12a { color: red; }
+      td.eje12a div#viejo12a p#nuevo12a { color: black; }
+      td.eje12b div#viejo12b { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje12b div#viejo12b p#nuevo12b { color: black; }
+      td.eje12b p#nuevo12b { color: red; }
+
+      td.eje13a div#viejo13a { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje13a p#nuevo13a { color: red; }
+      td.eje13a div#viejo13a { color: black; }
+      td.eje13b div#viejo13b { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje13b div#viejo13b { color: black; }
+      td.eje13b p#nuevo13b { color: red; }
+
+      td.eje21a div.viejo { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje21a div.viejo p { color: red; }
+      td.eje21a div p { color: black; }
+      td.eje21b div.viejo { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje21b div p { color: black; }
+      td.eje21b div.viejo p { color: red; }
+
+      td.eje31a div { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje31a div p { color: red; }
+      td.eje31a p { color: black; }
+      td.eje31b div { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje31b p { color: black; }
+      td.eje31b div p { color: red; }
+
+      td.eje32a li { color: black; }
+      td.eje32a ul li { color: red; }
+      td.eje32b ul li { color: red; }
+      td.eje32b li { color: black; }
+
+      td.eje33a p.nuevo { color: black; }
+
+      td.eje41a div { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje41a div p { color: red; }
+      td.eje41a div p { color: black; }
+      td.eje41b div { border: black 3px solid; padding: 2px; margin: 2px; }
+      td.eje41b div p { color: black; }
+      td.eje41b div p { color: red; }
+
+      td.eje42a p.viejo { color: red; }
+      td.eje42a p.nuevo { color: black; }
+      td.eje42b p.nuevo { color: black; }
+      td.eje42b p.viejo { color: red; }
+    </style>
+  </head>
+
+  <body>
+    <h1>Estilos en cascada</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Estilos en cascada</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-es">Qué son</a></li>
+          <li><a href="#ubicacion">Ubicación propiedades</a></li>
+          <li><a href="#reglas-aplicacion">Reglas aplicación estilos</a></li>
+          <li><a href="#elementos-anidados">Elementos anidados</a></li>
+          <li><a href="#reglas-simultaneas">Reglas aplicables</a>
+            <ul>
+              <li><a href="#numero-ids"><span class="html-atri">id</span></a></li>
+              <li><a href="#numero-atributos">Atributos y pseudo-clases</a></li>
+              <li><a href="#numero-elementos">Nº de elementos</a></li>
+              <li><a href="#posicion">Posición</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="que-es">
+      <h2>Por qué se llaman estilos en cascada</h2>
+
+      <p>Las hojas de estilo se llaman hojas de estilo "en cascada" porque:</p>
+
+      <ul>
+        <li>Las propiedades de estilo pueden estar escritas en varios sitios (en varios lugares de la página web o de la hoja de estilo) y dependiendo del sitio, afectan a más o menos elementos.</li>
+        <li>Cuando un elemento está contenido en otro (por ejemplo, un párrafo <span class="html-eti">&lt;p&gt;</span> dentro de una división <span class="html-eti">&lt;div&gt;</span>), al elemento de dentro se le aplican también las propiedades definidas para el elemento de fuera (al párrafo <span class="html-eti">&lt;p&gt;</span> se le aplicarían las propiedades definidas para la división <span class="html-eti">&lt;div&gt;</span>).</li>
+        <li>Dos reglas distintas pueden ser de aplicación a un mismo elemento (por ejemplo, a un párrafo <span class="html-eti">&lt;p&gt;</span> con clase <span class="html-atri-valor">nombre</span>, le es de aplicación tanto el selector <span class="css-sele">.nombre</span> como el selector <span class="css-sele">p</span>).</li>
+      </ul>
+
+      <p>Si las propiedades (escritas en diferentes sitios o para diferentes elementos) no entran en conflicto, el navegador aplica todas las propiedades. Por ejemplo, si el color de fondo de un elemento está definido en un sitio y el tamaño de letra en otro sitio, el navegador aplicará ambas propiedades al elemento.</p>
+
+      <p>Pero si las propiedades entran en conflicto (por ejemplo, el color del fondo del elemento está definido en varios sitios con colores distintos), existen reglas para decidir qué propiedad tiene preferencia.</p>
+    </section>
+
+    <section id="ubicacion">
+      <h2>Dónde pueden aparecer las propiedades de estilo</h2>
+
+      <p>Las propiedades de estilo pueden aparecer en tres lugares distintos:</p>
+
+      <ul>
+        <li>en un archivo distinto a la página web (el archivo recibe el nombre de hoja de estilo)
+          <p>En ese caso, la página web debe incluir un enlace (<span class="html-eti">&lt;link /&gt;</span>) a la hoja de estilo, como muestra el ejemplo siguiente:</p>
+
+          <div class="fuente">
+            <pre>
+<code class="language-html">  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Ejemplo de enlace a hoja de estilo&lt;/title&gt;
+    <span class="codigo-resaltado">&lt;link href=&quot;../varios/htmlcss.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; title=&quot;Mi estilo&quot; /&gt;</span>
+  &lt;/head&gt;</code>
+</pre>
+          </div>
+
+          <p>Las propiedades definidas en una hoja de estilo se aplican en todas las páginas web que enlacen a la misma hoja de estilo.</p>
+        </li>
+        <li>en la etiqueta <span class="html-eti">&lt;style&gt;</span> situada al principio de la página web (concretamente, en el bloque <span class="html-eti">&lt;head&gt;</span>)
+          <p>En ese caso, la página web debe incluir una etiqueta <span class="html-eti">&lt;style&gt;</span> que contenga las propiedades de estilo, como muestra el ejemplo siguiente:</p>
+
+          <div class="fuente">
+            <pre>
+<code class="language-html">  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;Ejemplo de enlace a hoja de estilo&lt;/title&gt;</code></pre>
+            <div class="codigo-resaltado">
+              <pre><code class="language-html">    &lt;style type=&quot;text/css&quot;&gt;
+      body { background-color: red; }
+    &lt;/style&gt;</code>
+</pre></div>
+            <pre><code class="language-html">  &lt;/head&gt;</code></pre>
+          </div>
+
+          <p>Las propiedades definidas en la etiqueta <span class="html-eti">&lt;style&gt;</span> se aplican únicamente en la página que contiene a la etiqueta <span class="html-eti">&lt;style&gt;</span>.</p>
+        </li>
+        <li>en el atributo <span class="html-atri">style</span> de cualquier elemento
+          <p>En ese caso, el elemento debe incluir el atributo <span class="html-atri">style</span>, como muestra el ejemplo siguiente:</p>
+
+          <div class="fuente">
+            <pre>
+<code class="language-html">  &lt;p&gt;Esto es una párrafo normal y corriente.&lt;/p&gt;
+
+  &lt;p <span class="codigo-resaltado">style="background-color:red"</span>&gt;Este párrafo tiene el fondo de color rojo&lt;/p&gt;</code>
+</pre>
+          </div>
+
+          <p>Las propiedades definidas en el atributo <span class="html-atri">style</span> de un elemento se aplican únicamente al elemento en el que se ha definido la etiqueta <span class="html-atri">style</span>.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="reglas-aplicacion">
+      <h2>Reglas de aplicación de los estilos</h2>
+
+      <p>Si se define la misma propiedad para la misma etiqueta con el mismo selector en dos sitios distintos, las reglas de precedencia son las siguientes:</p>
+
+      <ul>
+        <li>Las propiedades definidas en un atributo <span class="html-atri">style</span> se imponen a las propiedades definidas en la etiqueta <span class="html-eti">&lt;style&gt;</span>.</li>
+        <li>Las propiedades definidas en la etiqueta <span class="html-eti">&lt;style&gt;</span> se imponen a las propiedades definidas en una hoja de estilo enlazada.</li>
+        <li>Las propiedades definidas en un atributo <span class="html-atri">style</span> se imponen a las propiedades definidas en una hoja de estilo enlazada.</li>
+      </ul>
+
+      <p>Además de estas propiedades definidas por el creador de la página web, hay que tener en cuenta que también se aplican las propiedades definidas en la hoja de estilo por defecto del navegador.</p>
+
+      <p>Si las propiedades se encuentran definidas en diferentes hojas de estilo, el navegador aplica el valor definido en la última hoja de estilo enlazada (es decir, en el último enlace <span class="html-eti">&lt;link /&gt;</span> del <span class="html-eti">&lt;head&gt;</span>).</p>
+    </section>
+
+    <section id="elementos-anidados">
+      <h2>Elementos dentro de otros</h2>
+
+      <p>Cuando un elemento está contenido en otro (por ejemplo, un párrafo <span class="html-eti">&lt;p&gt;</span> dentro de una división <span class="html-eti">&lt;div&gt;</span>), al elemento de dentro se le aplican también las propiedades definidas para el elemento de fuera.</p>
+
+      <p>En el ejemplo siguiente, el párrafo incluido dentro de la división se muestra de color rojo porque el párrafo está incluido dentro de la división.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre>
+<code class="language-html">&lt;div&gt;
+  &lt;p&gt;Esto es un párrafo dentro de una división.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul eje01a" rowspan="2">
+              <div style="border: black 3px solid; color: red">
+                <p>Esto es un párrafo dentro de una división.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 3px solid; color: red;
+}</code>
+</pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Si una misma propiedad está definida para el elemento inferior y para el superior, se aplica el valor establecido para el elemento inferior.</p>
+
+      <p>En el ejemplo siguiente, el párrafo se muestra de color negro, independientemente del orden en que se escriban las reglas.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre>
+<code class="language-html">&lt;div&gt;
+  &lt;p&gt;Esto es un párrafo dentro de una división.&lt;/p&gt;
+&lt;/div&gt;</code>
+</pre>
+            </td>
+            <td class="resul eje01b" rowspan="2">
+              <div>
+                <p>Esto es un párrafo dentro de una división.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  color: red;
+}
+
+p {
+  color: black;
+}</code>
+</pre>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  color: black;
+}
+
+div {
+  border: black 3px solid;
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul eje01c">
+              <div>
+                <p>Esto es un párrafo dentro de una división.</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="reglas-simultaneas">
+      <h2>Reglas distintas que se aplican al mismo elemento </h2>
+
+      <p>Dos reglas distintas se aplican a un mismo elemento cuando el elemento coincide con los selectores de ambas reglas. La regla que se aplica es la del selector de mayor especificidad. La especificidad de un selector se calcula atendiendo a los siguientes criterios:</p>
+      <ol>
+        <li>Número de atributos <span class="html-atri">id</span> en el selector</li>
+        <li>Número de otros atributos y pseudo-clases en el selector (los pseudo-elementos se ignoran)</li>
+        <li>Número de elementos en el selector</li>
+        <li>Posición en la hoja de estilo</li>
+      </ol>
+
+      <p>Estos criterios se aplican en orden, es decir, primero se comparan el número de atributos <span class="html-atri">id</span> de cada selector. Si un selector tiene más que el otro, se aplica esa regla, si el número es el mismo, entonces se calcula el segundo criterio (número de otros atributos y pseudo-clases). Y así sucesivamente.</p>
+
+      <p>A continuación se muestran varios ejemplos de aplicación de estas reglas.</p>
+
+      <section id="numero-ids">
+        <h3>Número de atributos <span class="html-atri">id</span> en el selector</h3>
+
+        <p>El ejemplo siguiente muestra dos selectores con un número de atributos <span class="html-atri">id</span> diferente (1 o 0). Puede comprobarse que se aplica siempre el selector con atributo <span class="html-atri">id</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-html">&lt;p id="nuevo"&gt;Esto es un párrafo con atributo id "nuevo"&lt;/p&gt;
+
+&lt;p&gt;Esto es un párrafo sin atributo id.&lt;/p&gt;</code>
+</pre>
+              </td>
+              <td class="resul eje11a" rowspan="2">
+                <p id="nuevo11a">Esto es un párrafo con atributo id "nuevo"</p>
+
+                <p>Esto es un párrafo sin atributo id.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p#nuevo {
+  color: red;
+}
+
+p {
+  color: black;
+}</code>
+</pre>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p {
+  color: black;
+}
+
+p#nuevo {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje11b">
+                <p id="nuevo11b">Esto es un párrafo con atributo id "nuevo"</p>
+
+                <p>Esto es un párrafo sin atributo id.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El ejemplo siguiente muestra también dos selectores con un número de atributos <span class="html-atri">id</span> diferente (2 o 1). Puede comprobarse que se aplica siempre el selector con dos atributos <span class="html-atri">id</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div#viejo {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div p#nuevo {
+  color: red;
+}
+
+div#viejo p#nuevo {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje12a">
+                <div id="viejo12a">
+                  <p id="nuevo12a">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
+                </div>
+
+                <p>Esto es un párrafo sin atributo id.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div#viejo {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div#viejo p#nuevo {
+  color: black;
+}
+
+div p#nuevo {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje12b">
+                <div id="viejo12b">
+                  <p id="nuevo12b">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
+                </div>
+
+                <p>Esto es un párrafo sin atributo id.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="numero-atributos">
+        <h3>Número de otros atributos y pseudo-clases en el selector</h3>
+
+        <p>El ejemplo siguiente muestra dos selectores con el mismo número do atributos <span class="html-atri">id</span> (0), pero con un número diferente de atributos <span class="html-atri">class</span> (1 o 0). Puede comprobarse que se aplica siempre el selector con más atributos <span class="html-atri">class</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div.viejo {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div.viejo p {
+  color: red;
+}
+
+div p {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje21a">
+                <div class="viejo">
+                  <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
+                </div>
+
+                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div.viejo {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div p {
+  color: black;
+}
+
+div.viejo p {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje21b">
+                <div class="viejo">
+                  <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
+                </div>
+
+                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="numero-elementos">
+        <h3>Número de elementos en el selector</h3>
+
+        <p>El ejemplo siguiente muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div p {
+  color: red;
+}
+
+p {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje31a">
+                <div>
+                  <p>Esto es un párrafo dentro de una división.</p>
+                </div>
+
+                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+p {
+  color: black;
+}
+
+div p {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje31b">
+                <div>
+                  <p>Esto es un párrafo dentro de una división.</p>
+                </div>
+
+                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">li {
+  color: black;
+}
+
+ul li {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje32a"><ul>
+                <li>Esto es un elemento de lista</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">ul li {
+  color: red;
+}
+
+li {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje32b">
+                <ul>
+                  <li>Esto es un elemento de lista</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (1 o 0). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p.nuevo {
+  color: black;
+}
+
+.nuevo {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje33a">
+                <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
+
+                <p>Esto es un párrafo sin clase.</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">.nuevo {
+  color: red;
+}
+
+p.nuevo {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje33b">
+                <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
+
+                <p>Esto es un párrafo sin clase.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="posicion">
+        <h3>Posición en la hoja de estilo</h3>
+
+        <p>Si a un elemento le afectan dos selectores con la misma especificidad, el navegador aplica la propiedad que aparece después en la hoja de estilo.</p>
+
+        <p>El ejemplo siguiente muestra dos selectores idénticos. Puede comprobarse que se aplica siempre el selector que aparece después en la hoja de estilo. En este caso, la penúltima regla es superflua y puede eliminarse sin afectar al resultado.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div p {
+  color: red;
+}
+
+div p {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje41a">
+                <div>
+                  <p>Esto es un párrafo dentro de una división.</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">div {
+  border: black 3px solid;
+  margin: 2px;
+  padding: 2px;
+}
+
+div p {
+  color: black;
+}
+
+div p {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje41b">
+                <div>
+                  <p>Esto es un párrafo dentro de una división.</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>El ejemplo siguiente muestra una situación diferente y más habitual. Se trata de un párrafo con dos clases. Puede comprobarse que se aplica siempre el selector que aparece después en la hoja de estilo.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p.viejo {
+  color: red;
+}
+
+p.nuevo {
+  color: black;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje42a"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p>
+              </td>
+            </tr>
+            <tr>
+              <td class="codcss">
+                <pre>
+<code class="language-css">p.nuevo {
+  color: black;
+}
+
+p.viejo {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul eje42b"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 21 de mayo de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

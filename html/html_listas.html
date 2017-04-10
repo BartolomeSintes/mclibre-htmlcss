@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Listas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Listas</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Listas</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#listas-tipos">Tipos</a></li>
+          <li><a href="#listas-ordenadas-no-ordenadas"><span class="html-eti">&lt;ol&gt;</span> y <span class="html-eti">&lt;ul&gt;</span></a></li>
+          <li><a href="#listas-definicion"><span class="html-eti">&lt;dl&gt;</span>, <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span></a></li>
+          <li><a href="#listas-anidamiento">Anidamiento</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="listas-tipos">
+      <h2>Tipos de listas</h2>
+
+      <p>Existen tres tipos de listas:</p>
+
+      <ul>
+        <li>listas ordenadas (<span class="html-eti">&lt;ol&gt; ... &lt;/ol&gt;</span></li>
+        <li>listas no ordenadas (<span class="html-eti">&lt;ul&gt; ... &lt;/ul&gt;</span>)</li>
+        <li>listas de definición (<span class="html-eti">&lt;dl&gt; ... &lt;/dl&gt;</span>)</li>
+      </ul>
+
+      <p>Dentro de un elemento de lista se puede insertar cualquier otro elemento (texto, imágenes, divisiones, tablas, listas, etc).</p>
+    </section>
+
+    <section id="listas-ordenadas-no-ordenadas">
+      <h2 class="con-aside">Listas ordenadas y no ordenadas</h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;ol&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-ol-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="html-eti">&lt;ul&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-ul-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="html-eti">&lt;li&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-li-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Tanto las listas ordenadas (<span class="html-eti">&lt;ol&gt;</span>) como las listas desordenadas (<span class="html-eti">&lt;ul&gt;</span>) tienen la misma estructura:</p>
+
+      <ul>
+        <li>las etiquetas <span class="html-eti">&lt;ul&gt; ... &lt;/ul&gt;</span> o <span class="html-eti">&lt;ol&gt; ... &lt;/ol&gt;</span> delimitan la lista completa</li>
+        <li>las etiquetas <span class="html-eti">&lt;li&gt; ... &lt;/li&gt;</span> delimitan cada elemento de la lista</li>
+      </ul>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss codhtml">
+              <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a
+    tus necesidades. &lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a
+    los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+              <ol>
+                <li>La libertad de usar el programa, con cualquier propósito.</li>
+                <li>La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.</li>
+                <li>La libertad de distribuir copias del programa.</li>
+                <li>La libertad de mejorar el programa y hacer públicas las mejoras a los demás.</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss codhtml">
+              <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a
+    tus necesidades. &lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a
+    los demás.&lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+              <ul>
+                <li>La libertad de usar el programa, con cualquier propósito.</li>
+                <li>La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.</li>
+                <li>La libertad de distribuir copias del programa.</li>
+                <li>La libertad de mejorar el programa y hacer públicas las mejoras a los demás.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La diferencia entre ambos tipos de listas es que los navegadores numeran (con letras o números) los elementos de las listas ordenadas, mientras que en las listas no ordenadas se dibuja un símbolo gráfico.</p>
+    </section>
+
+    <section id="listas-definicion">
+      <h2 class="con-aside">Listas de definición</h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;dl&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-dl-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="html-eti">&lt;dt&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-dt-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="html-eti">&lt;dd&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/grouping-content.html#the-dd-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>Las listas de definición tienen una estructura distinta:</p>
+
+      <ul>
+        <li>las etiquetas <span class="html-eti">&lt;dl&gt; ... &lt;/dl&gt;</span> delimitan la lista completa</li>
+        <li>las etiquetas <span class="html-eti">&lt;dt&gt; ... &lt;/dt&gt;</span> delimitan los términos</li>
+        <li>las etiquetas <span class="html-eti">&lt;dd&gt; ... &lt;/dd&gt;</span> delimitan las definiciones</li>
+      </ul>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss codhtml">
+              <pre>
+<code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;software&lt;/dt&gt;
+  &lt;dd&gt;Conjunto de programas, instrucciones y reglas informáticas para
+      ejecutar ciertas tareas en una computadora.&lt;/dd&gt;
+  &lt;dt&gt;libre&lt;/dt&gt;
+  &lt;dd&gt;Que tiene facultad para obrar o no obrar.&lt;/dd&gt;
+  &lt;dd&gt;Que no es esclavo.&lt;/dd&gt;
+  &lt;dd&gt;Que no está preso.&lt;/dd&gt;
+  &lt;dd&gt;Licencioso,&lt;/dd&gt;
+&lt;/dl&gt;</code>
+</pre>
+            </td>
+            <td class="resul"><dl>
+              <dt>software</dt>
+              <dd>Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en una computadora.</dd>
+              <dt>libre</dt>
+              <dd>Que tiene facultad para obrar o no obrar.</dd>
+              <dd>Que no es esclavo.</dd>
+              <dd>Que no está preso.</dd>
+              <dd>Licencioso,</dd>
+              </dl>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Las etiquetas <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span> pueden encontrarse en cualquier orden dentro de un lista de definición, aunque lo razonable es que aparezcan cada <span class="html-eti">&lt;dt&gt;</span> seguido por uno o varios <span class="html-eti">&lt;dd&gt;</span>.</p>
+    </section>
+
+    <section id="listas-anidamiento">
+      <h2>Anidamiento</h2>
+
+      <p>Las listas pueden presentar cualquier nivel de anidamiento.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss codhtml">
+              <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Item 1
+    &lt;ol&gt;
+      &lt;li&gt;Item 1 de sublista
+        &lt;ul&gt;
+          &lt;li&gt;Item 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Item 2 de sub-sublista&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 2 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Item 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Item 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 3 de sublista&lt;/li&gt;
+      &lt;li&gt;Item 4 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2
+    &lt;ul&gt;
+      &lt;li&gt;Item 1 de sublista&lt;/li&gt;
+      &lt;li&gt;Item 2 de sublista&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+            </td>
+            <td class="resul">
+          <ul>
+              <li>Item 1
+                <ol>
+                  <li>Item 1 de sublista
+                    <ul>
+                      <li>Item 1 de sub-sublista</li>
+                      <li>Item 2 de sub-sublista</li>
+                    </ul>
+                  </li>
+                  <li>Item 2 de sublista
+                    <ol>
+                      <li>Item 1 de sub-sublista</li>
+                      <li>Item 2 de sub-sublista</li>
+                    </ol>
+                  </li>
+                  <li>Item 3 de sublista</li>
+                  <li>Item 4 de sublista</li>
+                </ol>
+              </li>
+              <li>Item 2
+                <ul>
+                  <li>Item 1 de sublista</li>
+                  <li>Item 2 de sublista</li>
+                </ul>
+              </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Los navegadores suelen utilizar estilos de marcadores distintos para las sublistas no ordenadas (hasta el tercer nivel), pero no en las listas ordenadas:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss"> </td>
+            <td class="resul">
+          <ul>
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista
+                <ul>
+                  <li>Esto es un punto de una sublista</li>
+                  <li>Esto es otro punto de la misma sublista
+                    <ul>
+                      <li>Esto es un punto de una sub-sublista</li>
+                      <li>Esto es otro punto de la misma sub-sublista
+                        <ul>
+                          <li>Esto es un punto de una sub-sub-sublista</li>
+                          <li>Esto es otro punto de la misma sub-sub-sublista</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss"> </td>
+            <td class="resul"><ol>
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista
+                <ol>
+                  <li>Esto es un punto de una sublista</li>
+                  <li>Esto es otro punto de la misma sublista
+                    <ol>
+                      <li>Esto es un punto de una sub-sublista</li>
+                      <li>Esto es otro punto de la misma sub-sublista
+                        <ol>
+                          <li>Esto es un punto de una sub-sub-sublista</li>
+                          <li>Esto es otro punto de la misma sub-sub-sublista</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <hr class="corta" />
+
+      <p>Cada lista ordenada sigue su propia numeración, independiente de las demás.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss codhtml">
+              <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Item 1
+    &lt;ol&gt;
+      &lt;li&gt;Item 1 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Item 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Item 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 2 de sublista
+        &lt;ol&gt;
+          &lt;li&gt;Item 1 de sub-sublista&lt;/li&gt;
+          &lt;li&gt;Item 2 de sub-sublista&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Item 3 de sublista&lt;/li&gt;
+      &lt;li&gt;Item 4 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2
+    &lt;ol&gt;
+      &lt;li&gt;Item 1 de sublista&lt;/li&gt;
+      &lt;li&gt;Item 2 de sublista&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+            </td>
+            <td class="resul"><ol>
+              <li>Item 1
+                <ol>
+                  <li>Item 1 de sublista
+                    <ol>
+                      <li>Item 1 de sub-sublista</li>
+                      <li>Item 2 de sub-sublista</li>
+                    </ol>
+                  </li>
+                  <li>Item 2 de sublista
+                    <ol>
+                      <li>Item 1 de sub-sublista</li>
+                      <li>Item 2 de sub-sublista</li>
+                    </ol>
+                  </li>
+                  <li>Item 3 de sublista</li>
+                  <li>Item 4 de sublista</li>
+                </ol>
+              </li>
+              <li>Item 2
+                <ol>
+                  <li>Item 1 de sublista</li>
+                  <li>Item 2 de sublista</li>
+                </ol>
+              </li>
+              </ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 7 de noviembre de 2011</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selectores. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      td.tipsel1 * { color: red; }
+      td.tipsel3 div { border: red 3px solid; margin: 10px; padding: 10px;}
+      td.tipsel3 div p { color: red; }
+      td.tipsel31 div { border: red 3px solid; margin: 10px; padding: 10px;}
+      td.tipsel31 div li p { color: red; }
+      td.tipsel32 div { border: red 3px solid; margin: 10px; padding: 10px;}
+      td.tipsel32 div > p { color: red; }
+      td.tipsel33 div { border: red 3px solid; margin: 10px; padding: 10px;}
+      td.tipsel33 div + p { color: red; }
+      td.tipsel41 p.p1 { color: red; }
+      td.tipsel41 p.p2 { color: blue; }
+      td.tipsel41 p[class] { text-transform: uppercase; }
+      td.tipsel42 p.p1 { color: red; }
+      td.tipsel42 p.p2 { color: blue; }
+      td.tipsel42 p[class="p1 p2"] { text-transform: uppercase; }
+      /* no sé si estas reglas se usan o no  tendría que comprobarlo */
+      a.ahover:hover {  color: white; background-color: black; }
+      p.phover {  color: black; background-color: white; }
+      p.phover:hover {  color: white; background-color: black; }
+      a.aactive:active {  color: white; background-color: black; }
+      p.pactive {  color: black; background-color: white; }
+      p.pactive:active {  color: white; background-color: black; }
+      p.fili:first-line { text-transform: uppercase; }
+      p.file1:first-letter { color: red; }
+      p.file2:first-letter { float: left; font-size: 300%; font-family: monospace; color: red; }
+      p.aviso100 { color: green; }
+      .aviso100 { color: red; }
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS 2: Selectores</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS: Selectores</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#tipo">Tipo: E, E.e y E#e</a></li>
+          <li><a href="#universales">Universales: *, . y #</a></li>
+          <li><a href="#descendientes">Descendientes: E F</a></li>
+          <li><a href="#hijos">Hijos: E &gt; F</a></li>
+          <li><a href="#adyacentes">Adyacentes: E+F</a></li>
+          <li><a href="#atributo">Atributo</a></li>
+          <li><a href="#pseudo">Pseudo-clases y pseudo-elementos</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="tipo">
+      <h2>Selectores de tipo: E, E.e y E#e</h2>
+
+      <p>Si se escribe una etiqueta (E), las propiedades afectan a todos los elementos con etiqueta E. En el ejemplo siguiente, todos los párrafos <span class="html-eti">&lt;p&gt;</span> se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p style="color:red">Esto es un párrafo &lt;p&gt;.</p>
+
+              <p style="color:red">Esto es otro párrafo &lt;p&gt;.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida de un punto y un nombre de clase (E.e), las propiedades afectan a todos los elementos con etiqueta E cuyo atributo <span class="html-atri">class</span> tenga el valor e. En el ejemplo siguiente, sólo los párrafos <span class="html-eti">&lt;p&gt;</span> de clase "aviso" se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p.aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <p style="color:red">Esto es un párrafo &lt;p&gt; de clase "aviso".</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida de una almohadilla y un nombre de <span class="html-atri">id</span> (E#e), las propiedades afectan al elemento con etiqueta E cuyo atributo <span class="html-atri">id</span> tenga el valor e. En el ejemplo siguiente, sólo el párrafo <span class="html-eti">&lt;p&gt;</span> de <span class="html-atri">id</span> aviso se ve de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p#aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul">
+              <p>Esto es un párrafo &lt;p&gt; de clase "aviso".</p>
+
+              <p style="color:red">Esto es un párrafo &lt;p&gt; con id "aviso".</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Hay que tener en cuenta que el atributo <span class="html-atri">id</span> no se puede repetir, es decir, no puede haber dos elementos con el mismo valor del atributo <span class="html-atri">id</span> (independientemente de que los elementos tengan etiquetas iguales o distintas).</p>
+    </section>
+
+    <section id="universales">
+      <h2>Selectores universales: *, . y #</h2>
+
+      <p>Si se escribe un asterisco (*), las propiedades afectan a todos los elementos de la página. En el ejemplo siguiente, tanto el párrafo <span class="html-eti">&lt;p&gt;</span> como la dirección <span class="html-eti">&lt;address&gt;</span> se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">* {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel1">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <address>Esto es una dirección &lt;address&gt;.</address>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Para definir una clase que afecte a cualquier etiqueta, se debe escribir un punto y el nombre de la clase. En el ejemplo siguiente, cualquier elemento de clase "aviso" se verá de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">.aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul eje1">
+              <p>Esto es un párrafo sin clase <span style="color:red">pero</span> con un &lt;span&gt; de clase "aviso" (en la palabra "pero").</p>
+
+              <p style="color:red">Esto es un párrafo &lt;p&gt; de clase "aviso".</p>
+
+              <address style="color:red">Esto es una dirección &lt;address&gt; de clase "aviso".</address>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>También se podría utilizar el selector *.clase</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">*.aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul eje1">
+              <p>Esto es un párrafo sin clase <span style="color:red">pero</span> con un &lt;span&gt; de clase "aviso" (en la palabra "pero").</p>
+
+              <p style="color:red">Esto es un párrafo &lt;p&gt; de clase "aviso".</p>
+
+              <address style="color:red">Esto es una dirección &lt;address&gt; de clase "aviso".</address>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Para definir un id que afecte a cualquier etiqueta, se debe escribir una almohadilla y el nombre del <span class="html-atri">id</span>. En el ejemplo siguiente, el elemento de <span class="html-atri">id</span> "aviso" se verá de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">#aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul eje1">Esto es un párrafo &lt;p&gt; de clase "aviso".
+
+              <p style="color:red">Esto es un párrafo &lt;p&gt; con id "aviso".</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">#aviso {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul eje1">
+              <address>Esto es una dirección &lt;address&gt; de clase "aviso".</address>
+
+              <address style="color:red">Esto es una dirección &lt;address&gt; con id "aviso".</address>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Hay que tener en cuenta que el atributo <span class="html-atri">id</span> no se puede repetir, es decir, que no puede haber en una página web dos elementos con el mismo valor del atributo <span class="html-atri">id</span> (independientemente de que los elementos tengan etiquetas iguales o distintas). Pero una misma hoja de estilo se puede llamar desde varias páginas web y en cada una de esas páginas puede haber elementos distintos con el mismo atributo <span class="html-atri">id</span>.</p>
+    </section>
+
+    <section id="descendientes">
+      <h2>Selectores de descendientes: E F</h2>
+
+      <p>Si se escriben dos etiquetas seguidas (E F), las propiedades afectan a los elementos con la segunda etiqueta (F) contenidos dentro de la primera etiqueta (E), aunque haya etiquetas intermedias. En el ejemplo siguiente, todos los párrafos <span class="html-eti">&lt;p&gt;</span> dentro de una división <span class="html-eti">&lt;div&gt;</span> se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: red 3px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+div p {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel3">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <div>
+                <p>Esto es un párrafo &lt;p&gt;.</p>
+
+                <ul>
+                  <li>Esto es una lista
+                    <p>Esto es un párrafo &lt;p&gt; dentro de una lista</p>
+                  </li>
+                </ul>
+
+                <p>Esto es otro párrafo &lt;p&gt;.</p>
+
+                <address>Esto no es un párrafo &lt;p&gt;, sino una dirección &lt;address&gt;.</address>
+              </div>
+
+              <p>Esto es otro párrafo &lt;p&gt;.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>En general, si se escriben varias etiquetas seguidas (E F G ... ), las propiedades afectan a los elementos con la última etiqueta contenidos dentro de la etiqueta anterior, contenidos a su vez dentro de etiqueta anterior y así sucesivamente, aunque haya etiquetas intermedias. En el ejemplo siguiente, únicamente los párrafos <span class="html-eti">&lt;p&gt;</span> dentro de un elemento de lista <span class="html-eti">&lt;li&gt;</span> dentro de una división <span class="html-eti">&lt;div&gt;</span> se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss"><pre>
+<code class="language-css">div {
+  border: red 3px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+div li p {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel31">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <div>
+                <p>Esto es un párrafo &lt;p&gt;.</p>
+                <ul>
+                  <li>Esto es una lista
+                    <p>Esto es un párrafo &lt;p&gt; dentro de una lista</p>
+                  </li>
+                </ul>
+
+                <p>Esto es otro párrafo &lt;p&gt;.</p>
+
+                <address>Esto no es un párrafo &lt;p&gt;, sino una dirección &lt;address&gt;.</address>
+              </div>
+
+              <p>Esto es otro párrafo &lt;p&gt;.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="hijos">
+      <h2>Selectores de hijos: E &gt; F</h2>
+
+      <p>Si se escriben dos etiquetas seguidas separadas por un signo "mayor que" (E &gt; F), las propiedades afectan a los elementos con la segunda etiqueta (F) contenidos dentro de la primera etiqueta (E), pero no afecta si hay etiquetas intermedias entre ellos. En el ejemplo siguiente, únicamente los párrafos <span class="html-eti">&lt;p&gt;</span> dentro de una división <span class="html-eti">&lt;div&gt;</span> sin elementos intermedios se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: red 3px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+div &gt; p {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel32">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <div>
+                <p>Esto es un párrafo &lt;p&gt;.</p>
+                <ul>
+                  <li>Esto es una lista
+                    <p>Esto es un párrafo &lt;p&gt; dentro de una lista</p>
+                  </li>
+                </ul>
+
+                <p>Esto es otro párrafo &lt;p&gt;.</p>
+
+                <address>Esto no es un párrafo &lt;p&gt;, sino una dirección &lt;address&gt;.</address>
+              </div>
+
+              <p>Esto es otro párrafo &lt;p&gt;.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="adyacentes">
+      <h2>Selectores de adyacentes: E+F</h2>
+
+      <p>Si se escriben dos etiquetas seguidas separadas por un signo "más" (E + F), las propiedades afectan únicamente a los elementos con la segunda etiqueta (F) que van justo después de un elemento con la primera etiqueta (E). En el ejemplo siguiente, únicamente el párrafo <span class="html-eti">&lt;p&gt;</span> inmediatamente posterior a la división <span class="html-eti">&lt;div&gt;</span> se ven de color rojo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">div {
+  border: red 3px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+div + p {
+  color: red;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel33">
+              <p>Esto es un párrafo &lt;p&gt;.</p>
+
+              <div>
+                <p>Esto es un párrafo &lt;p&gt;.</p>
+                <ul>
+                  <li>Esto es una lista
+                    <p>Esto es un párrafo &lt;p&gt; dentro de una lista</p>
+                  </li>
+                </ul>
+
+                <p>Esto es otro párrafo &lt;p&gt;.</p>
+
+                <address>Esto no es un párrafo &lt;p&gt;, sino una dirección &lt;address&gt;.</address>
+              </div>
+
+              <p>Esto es otro párrafo &lt;p&gt;.</p>
+
+              <p>Esto es otro párrafo &lt;p&gt;.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="atributo">
+      <h2>Selectores de atributo</h2>
+
+      <p>Hay cuatro formas de seleccionar elementos con determinados atributos: E[atributo], E[atributo="valor"], E[atributo~="valor"], E[atributo|="valor"].</p>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida del nombre de un atributo entre corchetes, E[atributo], las propiedades afectan a todos los elementos que tengan establecidos ese atributo. En el ejemplo siguiente, los párrafos con clase, independientemente de la clase asignada, se muestran en mayúsculas.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p.p1 {
+  color: red;
+}
+
+p.p2 {
+  color: blue;
+}
+
+p[class] {
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel41">
+              <p class="p1">Esto es un párrafo &lt;p&gt; de clase p1.</p>
+
+              <p class="p2">Esto es un párrafo &lt;p&gt; de clase p2.</p>
+
+              <p>Esto es un párrafo &lt;p&gt; sin clase.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida del nombre de un atributo igual a un valor entre corchetes, E[atributo="valor"], las propiedades afectan a todos los elementos que tengan establecidos ese atributo exactamente con ese valor. En el ejemplo siguiente, el párrafo con dos clases (asignadas en el mismo orden en el que aparecen entre corchetes en la hoja de estilo), se muestran en mayúsculas. Además, los párrafos con dos clases se ven de color azul porque las clases no se aplican en el orden en el que aparecen en el atributo clase, sino en el orden en que aparecen en la hoja de estilo.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss"><pre>
+<code class="language-css">p.p1 {
+  color: red;
+}
+
+p.p2 {
+  color: blue;
+}
+
+p[class="p1 p2"] {
+  text-transform: uppercase;
+}</code>
+</pre>
+            </td>
+            <td class="resul tipsel42">
+              <p class="p1">Esto es un párrafo &lt;p&gt; de clase p1.</p>
+
+              <p class="p2">Esto es un párrafo &lt;p&gt; de clase p2.</p>
+
+              <p class="p1 p2">Esto es un párrafo &lt;p&gt; con clase p1 y p2 (en ese orden).</p>
+
+              <p class="p2 p1">Esto es un párrafo &lt;p&gt; con clase p2 y p1 (en ese orden).</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida del nombre de un atributo tilde-igual a un valor entre corchetes, E[atributo~="valor"], las propiedades afectan a todos los elementos que tengan establecidos ese atributo con ese valor (entre otros).</p>
+
+      <hr class="corta" />
+
+      <p>Si se escribe una etiqueta seguida del nombre de un atributo |-igual a un valor entre corchetes, E[atributo|="valor"], las propiedades afectan a todos los elementos que tengan establecidos ese atributo con un valor que comience por ese valor seguido de un guión -. Este selector esta pensado para seleccionar elementos con diferentes variantes de un mismo idioma.</p>
+    </section>
+
+    <section id="pseudo">
+      <h2>Selectores de pseudo-clases y pseudo-elementos</h2>
+
+      <p>Las pseudo-clases y los pseudo-elementos están explicados en <a href="css_pseudoclases.html">otra página</a>.</p>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 13 de octubre de 2013</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

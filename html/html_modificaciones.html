@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Modificaciones. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>Modificaciones</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>Modificaciones</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#etiqueta-del">Suprimido <span class="html-eti">&lt;del&gt;</span></a></li>
+          <li><a href="#etiqueta-ins">Añadido <span class="html-eti">&lt;ins&gt;</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>Las etiquetas <span class="html-eti">&lt;del&gt;</span> y <span class="html-eti">&lt;ins&gt;</span> están pensadas para identificar las modificaciones que se han realizado en un texto.</p>
+
+    <p class="incompleto">Falta comentar los atributos <span class="html-atri">cite</span> y <span class="html-atri">datetime</span>.</p>
+
+    <section id="etiqueta-del">
+      <h2 class="con-aside">Suprimido: <span class="html-eti">&lt;del&gt;</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;del&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/edits.html#the-del-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La etiqueta <span class="html-eti">&lt;del&gt;</span> está pensada para identificar el texto que se ha eliminado de una página al revisarlo (si se quiere que se sepa que se ha eliminado, claro).</p>
+
+      <p>Los navegadores suelen mostrar el contenido de la etiqueta <span class="html-eti">&lt;del&gt;</span> tachado (propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">line-through</span>).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p&gt;Internet Explorer 6 era un navegador bastante <br />&lt;del&gt;malo&lt;/del&gt; mejorable. Internet Explorer 7 <br />cumplía mejor las recomendaciones del W3C.&lt;/p&gt;</code></pre>
+            </td>
+            <td class="resul">
+              <p>Internet Explorer 6 era un navegador bastante <del>malo</del> mejorable. Internet Explorer 7 cumplía mejor las recomendaciones del W3C.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <section id="etiqueta-ins">
+      <h2 class="con-aside">Añadido: <span class="html-eti">&lt;ins&gt;</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="html-eti">&lt;ins&gt;</span><br />
+          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/edits.html#the-ins-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La etiqueta <span class="html-eti">&lt;ins&gt;</span> está pensada para identificar el texto que se ha añadido a una página al revisarlo (si se quiere que se sepa que se ha añadido, claro).</p>
+
+      <p>Los navegadores suelen mostrar el contenido de la etiqueta <span class="html-eti">&lt;ins&gt;</span> subrayado (propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">underline</span>).</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codhtml">
+              <pre><code class="language-html">&lt;p&gt;La verdad es que Microsoft podría haber mejorado antes<br />su navegador&lt;ins&gt;, respetando las recomendaciones <br />del W3C&lt;/ins&gt;.&lt;/p&gt; </code>
+</pre>
+            </td>
+            <td class="resul">
+              <p>La verdad es que Microsoft podría mejorar haber mejorado antes su navegador<ins>, respetando las recomendaciones del W3C</ins>.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 19 de octubre de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

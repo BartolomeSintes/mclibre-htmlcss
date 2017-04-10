@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS Lint. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <h1>CSS Lint</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS Lint</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#que-es">Qué es CSS Lint</a></li>
+          <li><a href="#errores">Errores</a></li>
+          <li><a href="#consejos">Consejos</a></li>
+          <li><a href="#consejos-no-atendidos">Consejos no atendidos</a>
+            <ul>
+              <li><a href="#disallow-overqualified">overqualified elements</a></li>
+              <li><a href="#disallow-import">disallow @import</a></li>
+              <li><a href="#headings-once">headings only once</a></li>
+              <li><a href="#alphabetical-order">alphabetical order</a></li>
+              <li><a href="#bulletproof-syntax">bulletproof @font-faxce</a></li>
+              <li><a href="#disallow-adjoining">adjoining classes</a></li>
+              <li><a href="#disallow-ids">IDs in selectors</a></li>
+              <li><a href="#beware-box">broken box size</a></li>
+              <li><a href="#disallow-regexs">selectors like regexs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr />
+
+    <section id="que-es">
+      <h2>Qué es CSS Lint</h2>
+
+      <p><strong>lint</strong> fue el nombre de un programa creado a finales de los 70 para analizar programas escritos en C en busca de expresiones sintácticamente correctas pero que pudieran dar lugar a errores en los programas. Actualmente, <strong>lint</strong> se utiliza para referirse a las heramientas que analizan programas o documentos en busca de errores sintáctivos, de posibles fuentes de errores, o incluso programas que no siguen reglas de estilo.</p>
+
+      <p>La <a href="../software/brackets/brackets_extensiones.html#brackets-extensiones-csslint">extensión <strong>CSSLint</strong> de Brackets</a> permite validar una hoja de estilo CSS mediante el validador <a href="http://csslint.net/">http://csslint.net/</a>.</p>
+
+      <p>CSS Lint es un validador de hojas de estilo que nos da dos tipos de avisos:</p>
+
+      <ul>
+        <li><a href="#errores">Errores</a></li>
+        <li><a href="#consejos">Consejos</a></li>
+      </ul>
+
+      <p>Los errores deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga errores. Pero los consejos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos.</p>
+    </section>
+
+    <section id="errores">
+      <h2>Errores</h2>
+
+      <p>CSS Lint nos indica varios tipos de errores, que debemos corregir necesariamente:</p>
+
+      <ul>
+        <li>los errores de sintaxis se indican con la frase "Parsing errors":
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codhtml">
+                  <pre>
+<code class="language-html">p
+  color: black;</code>
+</pre>
+                </td>
+                <td class="resul"><p>Parsing Errors - Expected LBRACE at line 1, col 15. (errors)</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>errores en el nombre de las propiedades:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codhtml">
+                  <pre>
+<code class="language-html">p {
+  colour: black;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p>Require use of known properties - Unknown property 'colour'. (known-properties)</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+        <li>errores en los valores de las propiedades:
+
+          <table class="ejemplo">
+            <tbody>
+              <tr>
+                <td class="codhtml">
+                  <pre>
+<code class="language-html">p {
+  color: negro;
+}</code>
+</pre>
+                </td>
+                <td class="resul"><p>Require use of known properties - Expected (&lt;color&gt; | inherit) but found 'negro'. (known-properties)</p></td>
+              </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </section>
+
+    <section id="consejos">
+      <h2>Consejos</h2>
+
+      <p>CSS Lint nos indica toda una serie de consejos para evitar problemas en diferentes ámbitos:</p>
+
+      <ul>
+        <li>posibles errores</li>
+        <li>compatibilidad</li>
+        <li>rendimiento</li>
+        <li>mantenibilidad</li>
+        <li>accesibilidad</li>
+        <li>orientación a objetos</li>
+      </ul>
+
+      <p>Se puede consultar la <a href="http://csslint.net/about.html">lista comentada de consejos de CSS Lint</a> o la <a href="https://github.com/CSSLint/csslint/wiki/Rules">lista resumida de consejos</a>.</p>
+
+      <p>Estos avisos no tiene por qué corregirse, pero conviene tenerlos en cuenta.</p>
+    </section>
+
+    <section id="consejos-no-atendidos">
+      <h2>Consejos no atendidos en estos apuntes</h2>
+
+      <p>Por diferentes motivos, en los ejercicios propuestos en estos apuntes no se siguen algunas de las recomendaciones de CSS Lint. Estos avisos se comentan a continuación.</p>
+
+      <p>CSS Lint permite desactivar avisos de forma individual, como se explica en el <a href="../software/brackets/brackets_extensiones.html#brackets-extensiones-csslint-desactivar">apartado "Desactivar avisos de CSS Lint"</a> de la lección sobre extensiones de Brackets. En ese apartado se muestra un ejemplo de fichero de configuración de CSS Lint que desactiva los avisos que se comentan a continuación.</p>
+
+      <section id="disallow-overqualified">
+        <h3>Disallow overqualified elements </h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-overqualified-elements">overqualified-elements</a></p>
+
+        <p>Si en la hoja de estilo se escribe un selector que contenga una etiqueta y una clase, CSS Lint genera un aviso "Disallow overqualified elements".</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">p.ejemplo {
+  color: gray;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Disallow overqualified elements - Element (p.ejemplo) is overqualified, just use .ejemplo without element name. (overqualified-elements)</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>CSSLint aconseja utilizar selectores universales para facilitar la reutilización de clases (es decir, para que la clase se pueda aplicar a cualquier elemento en la página web).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">.ejemplo {
+  color: gray;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>CSS Lint admite etiquetas con clase cuando especifican casos particulares de un selector universal:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">.ejemplo {
+  color: blue;
+}
+
+p.ejemplo {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y los selectores contienen las etiquetas y las clases, salvo cuando la clase se aplica a varias etiquetas.</p>
+      </section>
+
+      <section id="disallow-import">
+        <h3>Disallow @import</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-@import">import</a></p>
+
+        <p>Si en la hoja de estilo se utilizan reglas-arroba @import, CSS Lint genera un aviso "Disallow @import".</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml"><pre><code class="language-css">@import url("http://fonts.googleapis.com/css?family=Ribeye+Marrow");</code></pre></td>
+              <td class="resul"><p>Disallow @import - @import prevents parallel downloads, use &lt;link&gt; instead. (import)</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Cuando se utiliza una regla-arroba @import, el navegador descarga el archivo al que se hace referencia y se espera a que termine la descarga para continuar leyendo la hoja de estilo. Eso ralentiza la carga de la página completa, por lo que CSS Lint aconseja utilizar en su lugar un enlace <span class="html-eti">&lt;link&gt;</span> en la página web (en la hoja de estilo no haría falta escribir nada), ya que la descarga de varios ficheros sí que se gestiona en paralelo. Pero entonces la asignación de la fuente a los elementos se debe hacer también en la página web.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-html">&lt;link href="http://fonts.googleapis.com/css?family=Ribeye+Marrow" rel="stylesheet" type="text/css"&gt;
+&lt;style&gt;
+  h1 {
+    font-family: "RibEye Marrow", cursive;
+  }
+&lt;/style&gt;</code>
+</pre>
+              </td>
+              <td class="resul"><p></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y las fuentes de Google Fonts se llaman desde la hoja de estilo.</p>
+      </section>
+
+      <section id="headings-once">
+        <h3>Headings should only be defined once / Disallow qualified headings</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Headings-should-only-be-defined-once">unique-headings</a> - <a href="https://github.com/CSSLint/csslint/wiki/Disallow-qualified-headings">qualified-headings</a></p>
+
+        <p>CSS Lint aconseja que en un sitio web todos los títulos (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) se muestren con el mismo estilo. Por ello, CSS Lint genera un aviso si se definen varios estilos de una misma etiqueta de título, o incluso si se escriben selectores que pudieran permitir definir varios estilos de una misma etiqueta de título (aunque no lo hagan).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">h2 {
+  color: blue;
+}
+
+h2.aviso  {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Headings should only be defined once - heading (h2) has already been defined.</p></td>
+            </tr>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">div h2  {
+  color: red;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Disallow qualified headings - Heading (h2) should not be qualified.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+      </section>
+
+      <section id="alphabetical-order">
+        <h3>Alphabetical order</h3>
+
+        <p>Explicación en la web CSS Lint: No disponible</p>
+
+        <p>Si en la hoja de estilo no se escriben las propiedades en orden alfabético, CSS Lint genera un aviso "Alphabetical order".</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">p.intro {
+  margin-left: 30%;
+  margin-right: 30%;
+  font-family: sans-serif;
+  line-height: 200%;
+  text-align: justify;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Alphabetical order - Rule doesn't have all its properties in alphabetical order.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y las propiedades están en otro orden (primero las propiedades relacionadas con el posicionamiento, después las relacionadas con el modelo de caja, después los colores y después el resto de propiedades, como se comenta en <a href="css_guia_estilo.html#orden-propiedades">la guía de estilo de las hojas de estilo</a>).</p>
+      </section>
+
+      <section id="bulletproof-syntax">
+        <h3>Use the bulletproof @font-faxce syntax</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Bulletproof-font-face">bulletproof-font-face</a></p>
+
+        <p>En los ejercicios propuestos en estos apuntes, se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que provoca un aviso de CSS Lint:</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">@font-face {
+  font-family: "MyFontFamily";
+  src: url("myfont.woff")
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Use the bulletproof @font-faxce syntax - @font-face declaration doesn't follow the fontspring bulletproof syntax.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>CSS Lint aconseja utilizar una declaración <span class="css-arroba">@font-face</span> más complicada, que funcione en todos los navegadores (sobre todo, en versiones antiguas de Internet Explorer).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">@font-face {
+  font-family: 'MyFontFamily';
+  src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),
+       url('myfont-webfont.woff') format('woff'),
+       url('myfont-webfont.ttf')  format('truetype'),
+       url('myfont-webfont.svg#svgFontName') format('svg');
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p></p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes se ha utilizado la versión sencilla para no tener que manejar tantos formatos de fuentes y porque el objetivo de estos apuntes no es tratar las particularidades de cada navegador (aunque en algunos casos se comenten).</p>
+      </section>
+
+      <section id="disallow-adjoining">
+        <h3>Disallow adjoining classes</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-adjoining-classes">adjoining-classes</a></p>
+
+        <p>CSS Lint desaconseja el uso de clases múltiples, ya que estas no funcionan en Internet Explorer 6 (y anteriores).</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">div.a.b {
+  background-color: #E56F60;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Disallow adjoining classes - Don't use adjoining classes.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo. El objetivo de estos apuntes no es tratar las particularidades de navegadores obsoletos.</p>
+      </section>
+
+      <section id="disallow-ids">
+        <h3>Disallow IDs in selectors</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-ids-in-selectors">ids</a></p>
+
+        <p>CSS Lint desaconseja el uso de ids en los selectores porque no se pueden reutilizar en una misma página web y aconseja utilizar clases en su lugar.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">div#intro {
+  background-color: #E56F60;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Disallow IDs in selectors - Don't use IDs in selectors.</p></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo ya que en la mayoría de los casos las hojas de estilo sólo se utilizan en una página.</p>
+      </section>
+
+      <section id="beware-box">
+        <h3>Beware of broken box size / Disallow use of box-sizing</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Beware-of-box-model-size">box-model</a> - <a href="https://github.com/CSSLint/csslint/wiki/Disallow-box-sizing">box-sizing</a></p>
+
+        <p>CSS Lint incluye dos avisos complementarios relativos al modelo de caja.</p>
+
+        <p>Por un lado, CSS Lint genera un aviso cuando se utilizan las propiedades <span class="css-prop">border</span> o <span class="css-prop">padding</span> junto con <span class="css-prop">width</span>. Este aviso simplemente nos recuerda que en el modelo de caja CSS 2, el tamaño del borde y del margen interior se añaden al tamaño del elemento definido con la propiedad <span class="css-prop">width</span>.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">div {
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p>Beware of broken box size. Using width with border can sometimes make elements larger than you expect.</p>
+
+                <p>Beware of broken box size. Using width with padding can sometimes make elements larger than you expect.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Ese aviso se puede evitar utilizando la propiedad CSS 3 <span class="css-prop">box-sizing</span>: <span class="css-valor">border-box</span>, que hace que los tamaños del borde y del margen interior se descuenten del tamaño definido con la propiedad <span class="css-prop">width</span>. Pero, al usar esa propiedad, CSS Lint genera un aviso que nos recuerda que esa propiedad no funciona en versiones antiguas de los navegadores.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">div {
+  box-sizing: border-box;
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}</code>
+</pre>
+              </td>
+              <td class="resul"><p>Disallow use of box-sizing - The box-sizing property isn't supported in IE6 and IE7</p>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de ninguno de estos consejos.</p>
+      </section>
+
+      <section id="disallow-regexs">
+        <h3>Disallow selectors that look like regexs / Disallow unqualified attribute selectors</h3>
+
+        <p>Explicación en la web CSS Lint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-selectors-that-look-like-regular-expressions">regex-selectors</a> - <a href="https://github.com/CSSLint/csslint/wiki/Disallow-unqualified-attribute-selectors">unqualified-attributes</a></p>
+
+        <p>En los ejercicios sobre fuentes de iconos incluidos en estos apuntes en los que se utilizan las <a href="https://icomoon.io/app/#/select">fuentes de icomoon.io</a>, se utiliza la hoja de estilo generada por icomoon que provoca dos avisos.</p>
+
+        <p>Por un lado, un aviso desaconseja el uso de selectores de atributos CSS 3 que utilicen expresiones regulares, en este caso, ^= (empieza por ...) y *= (incluye ...) por su lentitud. Por otro lado, desaconseja el uso de selectores de atributos que no incluyan etiquetas, también debido a su lentitud.</p>
+
+        <table class="ejemplo">
+          <tbody>
+            <tr>
+              <td class="codhtml">
+                <pre>
+<code class="language-css">[class^="icon-"], [class*="icon-"] {
+ ...
+}</code>
+</pre>
+              </td>
+              <td class="resul">
+                <p>Disallow selectors that look like regexs - Attribute selectors with ^= are slow!</p>
+
+                <p>Disallow unqualified attribute selectors - Unqualified attrbiute selectors are known to be solw.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <hr class="corta" />
+
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de ninguno de estos consejos.</p>
+      </section>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 12 de enero de 2015</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>

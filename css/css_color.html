@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Colores. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
+    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="../varios/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+    <style type="text/css">
+      table.colorhsl { margin-bottom: 20px; margin-right: 20px; float: left; }
+      table.colorhsl td, table.colorhsl th { width: 40px; height: 40px; text-align: center; }
+
+      /* http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
+      input[type=range] { /*required for proper track sizing in FF*/ width: 500px; }
+      input[type=range]::-webkit-slider-runnable-track { width: 500px; }
+      input[type=range]::-moz-range-track { width: 500px; }
+      input[type=range]::-ms-track { width: 500px; }
+    </style>
+  </head>
+
+  <body onload="rgbaLeeColor(); leecolor(); leecolorHsl(); ">
+    <h1>CSS 3: Colores</h1>
+
+    <nav>
+      <p>
+        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      </p>
+
+      <h2>CSS3: Colores</h2>
+
+      <div class="toc">
+        <ul>
+          <li><a href="#rgb">Códigos RGB</a></li>
+          <li><a href="#rgba">Códigos RGBA</a></li>
+          <li><a href="#hsl">Códigos HSL</a></li>
+          <li><a href="#hsla">Códigos HSLA</a></li>
+          <li><a href="#html32">Nombres HTML 3.2</a></li>
+          <li><a href="#svg">Nombres X11 / SVG</a></li>
+          <li><a href="#sistema">Nombres del sistema</a></li>
+          <li><a href="#opacidad">Opacidad: <span class="css-prop">opacity</span></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>La recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3: Color</a> (junio de 2011) describe los sistemas de definición de colores (nombres o códigos numéricos) que se pueden utilizar en las hojas de estilo, así como la forma de definir la opacidad de los elementos.</p>
+
+    <p>Los colores se pueden expresar mediante varios sistemas de unidades: RGB, RGBA, HSL y HSLA, así como mediante nombre de colores (básicos o extendidos)</p>
+
+    <p>En esta lección se explica únicamente cómo se hace referencia a un color en una hoja de estilo. Para encontrar combinaciones de colores visualmente atractivas, se puede recurrir a sitios como <a href="http://paletton.com/">Paletton</a> o <a href="https://coolors.co/">Coolors</a>.</p>
+
+    <section id="rgb">
+      <h2>Códigos de colores RGB</h2>
+
+      <p>Los códigos de colores RGB ya formaban parte de la recomendación <a href="https://www.w3.org/TR/REC-CSS1-961217">CSS 1</a> (diciembre de 1996).</p>
+
+      <p>Las pantallas de ordenador consiguen los colores mezclando tres colores básicos (<span style="color: red; font-weight: bold;">rojo</span>, <span style="color: green; font-weight: bold;">verde</span> y <span style="color: blue; font-weight: bold">azul</span>). Cada color admite 256 niveles de intensidad, lo que hace un total de 256 x 256 x 256 = 16.777.216 colores distintos. Para hacer referencia a un color concreto, basta con indicar las intensidades de cada uno de los tres colores básicos.</p>
+
+      <p>Los códigos RGB se pueden expresar de distintas formas:</p>
+      <ul>
+        <li><strong>rgb(rojo, verde, azul)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255.</li>
+        <li><strong>rgb(rojo, verde, azul)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100%.</li>
+        <li><strong>#RRGGBB</strong>, donde RR, GG y BB son números hexadecimales desde 00 hasta FF.</li>
+        <li><strong>#RGB</strong>, donde RR, GG y BB son números hexadecimales desde 0 hasta F (el navegador transforma esos números en números de dos cifras repitiendo el valor, es decir, F se convierte en FF, 6 en 66, etc.</li>
+      </ul>
+
+      <p>Las más utilizadas son la tercera y la primera.</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  background-color: #14B76E;
+}</code></pre>
+            </td>
+            <td class="resul"><p style="background-color: #14B76E">Si algo puede ir mal, irá mal.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>El color negro se consigue con la ausencia de cualquier color, así que su código RGB es rgb(0, 0, 0), rgb(0%, 0%, 0%), #000000 o #000.</p>
+
+      <p>El color blanco se consigue mezclando los tres colores con la máxima intensidad, así que su código RGB es rgb(255, 255, 255), rgb(100%, 100%, 100%), #FFFFFF o #FFF.</p>
+
+      <p class="centrado"><img src="../img/css/css_cuadros_colores_rgb.svg" alt="Cuadros de colores RGB" width="920" height="125" /></p>
+
+      <hr class="corta" />
+
+      <p>El cuadro siguiente permite generar códigos de colores RGB moviendo los deslizadores:</p>
+
+      <table class="centrado" style="border: black 2px solid; padding: 10px">
+        <caption>Generador de códigos RGB</caption>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Decimal</td>
+            <td>Hexadecimal</td>
+          </tr>
+          <tr>
+            <td>Rojo:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rojo"></td>
+            <td class="centrado"><span id="nRojoDec"></span></td>
+            <td class="centrado"><span id="nRojoHex"></span></td>
+          </tr>
+          <tr>
+            <td>Verde:</td>
+            <td><input type="range" name="points" min="0" max="255" id="verde"></td>
+            <td class="centrado"><span id="nVerdeDec"></span></td>
+            <td class="centrado"><span id="nVerdeHex"></span></td>
+          </tr>
+          <tr>
+            <td>Azul:</td>
+            <td><input type="range" name="points" min="0" max="255" id="azul"></td>
+            <td class="centrado"><span id="nAzulDec"></span></td>
+            <td class="centrado"><span id="nAzulHex"></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="centrado">
+              <p>Códigos RGB: <strong id="colorHex"></strong></p>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+                <rect x="10" y="10" width="380" height="80" stroke="black" fill="white" id="rectangulo2" />
+              </svg>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script>
+        var rojo = document.getElementById("rojo");
+        var azul = document.getElementById("azul");
+        var verde = document.getElementById("verde");
+        var nRojoD = document.getElementById("nRojoDec");
+        var nRojoH = document.getElementById("nRojoHex");
+        var nVerdeD = document.getElementById("nVerdeDec");
+        var nVerdeH = document.getElementById("nVerdeHex");
+        var nAzulD = document.getElementById("nAzulDec");
+        var nAzulH = document.getElementById("nAzulHex");
+        var colorH = document.getElementById("colorHex");
+        var rectangulo = document.getElementById("rectangulo2");
+        function leecolor(e) {
+          nRojoD.textContent = rojo.value;
+          nRojoH.textContent = ("00"+(+rojo.value).toString(16)).slice(-2).toUpperCase();
+          nVerdeD.textContent = verde.value;
+          nVerdeH.textContent = ("00"+(+verde.value).toString(16)).slice(-2).toUpperCase();
+          nAzulD.textContent = azul.value;
+          nAzulH.textContent = ("00"+(+azul.value).toString(16)).slice(-2).toUpperCase();
+          colorH.textContent = ("#" + ("00"+(+rojo.value).toString(16)).slice(-2) + ("00"+(+verde.value).toString(16)).slice(-2) + ("00"+(+azul.value).toString(16)).slice(-2)).toUpperCase() + " - rgb(" + rojo.value + ", " + verde.value + ", " + azul.value + ")";
+          rectangulo.style.fill = ("#" + ("00"+(+rojo.value).toString(16)).slice(-2) + ("00"+(+verde.value).toString(16)).slice(-2) + ("00"+(+azul.value).toString(16)).slice(-2)).toUpperCase();
+        }
+        rojo.addEventListener("change", leecolor, false);
+        verde.addEventListener("change", leecolor, false);
+        azul.addEventListener("change", leecolor, false);
+      </script>
+    </section>
+
+    <section id="rgba">
+      <h2>Códigos de colores RGBA</h2>
+
+      <p>Los códigos de colores RGBA se incorporaron a CSS en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3: Color</a> (junio de 2011).</p>
+
+      <p>Estos códigos incorporan la transparencia alpha a los <a href="#rgb">códigos RGB</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco.</p>
+
+      <p>Los códigos RGBA se pueden expresar de distintas formas:</p>
+      <ul>
+        <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255 y transparencia un número decimal entre 0 y 1.</li>
+        <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100% y transparencia un número decimal entre 0 y 1.</li>
+      </ul>
+
+      <hr class="corta" />
+
+      <p>El cuadro siguiente permite generar colores RGBA moviendo los deslizadores. Para poder apreciar el funcionamiento de la transparencia, el cuadro muestra dos rectángulos de color, en el que el color del rectángulo situado por delante permite transparencia:</p>
+
+      <table class="centrado" style="border: black 2px solid; padding: 10px">
+        <caption>Generador de códigos RGBA</caption>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Decimal</td>
+          </tr>
+          <tr>
+            <th colspan="3">Color trasero</th>
+          </tr>
+          <tr>
+            <td>Rojo:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaRT"></td>
+            <td class="centrado"><span id="nRgbaRT"></span></td>
+          </tr>
+          <tr>
+            <td>Verde:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaGT"></td>
+            <td class="centrado"><span id="nRgbaGT"></span></td>
+          </tr>
+          <tr>
+            <td>Azul:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaBT"></td>
+            <td class="centrado"><span id="nRgbaBT"></span></td>
+          </tr>
+          <tr>
+            <th colspan="3">Color delantero</th>
+          </tr>
+          <tr>
+            <td>Rojo:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaR"></td>
+            <td class="centrado"><span id="nRgbaR"></span></td>
+          </tr>
+          <tr>
+            <td>Verde:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaG"></td>
+            <td class="centrado"><span id="nRgbaG"></span></td>
+          </tr>
+          <tr>
+            <td>Azul:</td>
+            <td><input type="range" name="points" min="0" max="255" id="rgbaB"></td>
+            <td class="centrado"><span id="nRgbaB"></span></td>
+          </tr>
+          <tr>
+            <td>Transparencia:</td>
+            <td><input type="range" name="points" min="0" max="100" id="rgbaA"></td>
+            <td class="centrado"><span id="nRgbaA"></span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="centrado">
+              <p>Código RGBA: <strong id="rgbaTexto"></strong></p>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="420" height="110" viewBox="-20 -20 420 110">
+                <rect x="-10" y="-10" width="400" height="100" stroke="black" fill="white" id="rgbaMuestraT" />
+                <rect x="5" y="5" width="365" height="65" stroke="black" fill="white" id="rgbaMuestra" />
+              </svg>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script>
+        var rgbaRT = document.getElementById("rgbaRT");
+        var rgbaGT = document.getElementById("rgbaGT");
+        var rgbaBT = document.getElementById("rgbaBT");
+        var nRgbaRT = document.getElementById("nRgbaRT");
+        var nRgbaGT = document.getElementById("nRgbaGT");
+        var nRgbaBT = document.getElementById("nRgbaBT");
+        var rgbaMuestraT = document.getElementById("rgbaMuestraT");
+
+        var rgbaR = document.getElementById("rgbaR");
+        var rgbaG = document.getElementById("rgbaG");
+        var rgbaB = document.getElementById("rgbaB");
+        var rgbaA = document.getElementById("rgbaA");
+        var nRgbaR = document.getElementById("nRgbaR");
+        var nRgbaG = document.getElementById("nRgbaG");
+        var nRgbaB = document.getElementById("nRgbaB");
+        var nRgbaA = document.getElementById("nRgbaA");
+        var rgbaTexto = document.getElementById("rgbaTexto");
+        var rgbaMuestra = document.getElementById("rgbaMuestra");
+
+        function rgbaLeeColor(e) {
+          nRgbaRT.textContent = rgbaRT.value;
+          nRgbaGT.textContent = rgbaGT.value;
+          nRgbaBT.textContent = rgbaBT.value;
+          rgbaMuestraT.style.fill = "rgb(" + rgbaRT.value + ", " + rgbaGT.value + ", " + rgbaBT.value + ")";
+
+          nRgbaR.textContent = rgbaR.value;
+          nRgbaG.textContent = rgbaG.value;
+          nRgbaB.textContent = rgbaB.value;
+          nRgbaA.textContent = rgbaA.value/100;
+          rgbaTexto.textContent = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value/100) + ")";
+          rgbaMuestra.style.fill = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value/100) + ")";
+        }
+        rgbaRT.addEventListener("change", rgbaLeeColor, false);
+        rgbaGT.addEventListener("change", rgbaLeeColor, false);
+        rgbaBT.addEventListener("change", rgbaLeeColor, false);
+        rgbaR.addEventListener("change", rgbaLeeColor, false);
+        rgbaG.addEventListener("change", rgbaLeeColor, false);
+        rgbaB.addEventListener("change", rgbaLeeColor, false);
+        rgbaA.addEventListener("change", rgbaLeeColor, false);
+      </script>
+    </section>
+
+    <section id="hsl">
+      <h2 class="con-aside">Códigos de colores HSL</h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">colores HSL</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#hsl-color"><img src="../varios/iconos/icono_css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+          <a href="http://caniuse.com/#feat=css3-colors"><img src="../varios/iconos/icono_caniuse_oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+      </aside>
+
+      <p>Los códigos de colores HSL se incorporaron a CSS en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3: Color</a> (junio de 2011).</p>
+
+      <p>En el <a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSL">modelo de color HSL</a> el color se define mediante tres valores:</p>
+
+      <ul>
+        <li>Hue (Matiz) es un entero entre 0 y 360 y recorre todos los colores
+          <p class="centrado">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="760" height="100" viewBox="0 -30 760 100">
+              <text x="10" y="0" text-anchor="middle">0</text>
+              <text x="740" y="0" text-anchor="middle">360</text>
+              <line x1="20" y1="-5" x2="330" y2="-5" stroke="black" stroke-width="2" />
+              <line x1="30" y1="3" x2="21" y2="-5" stroke="black" stroke-width="2" />
+              <line x1="30" y1="-12" x2="21" y2="-5" stroke="black" stroke-width="2" />
+              <line x1="440" y1="-5" x2="720" y2="-5" stroke="black" stroke-width="2" />
+              <line x1="710" y1="3" x2="719" y2="-5" stroke="black" stroke-width="2" />
+              <line x1="710" y1="-12" x2="719" y2="-5" stroke="black" stroke-width="2" />
+              <text x="390" y="0" text-anchor="middle">Hue (Matiz)</text>
+              <rect x="10" y="10" width="10" height="50" stroke="none" fill="hsl(0, 100%, 50%)" />
+              <rect x="20" y="10" width="10" height="50" stroke="none" fill="hsl(5, 100%, 50%)" />
+              <rect x="30" y="10" width="10" height="50" stroke="none" fill="hsl(10, 100%, 50%)" />
+              <rect x="40" y="10" width="10" height="50" stroke="none" fill="hsl(15, 100%, 50%)" />
+              <rect x="50" y="10" width="10" height="50" stroke="none" fill="hsl(20, 100%, 50%)" />
+              <rect x="60" y="10" width="10" height="50" stroke="none" fill="hsl(25, 100%, 50%)" />
+              <rect x="70" y="10" width="10" height="50" stroke="none" fill="hsl(30, 100%, 50%)" />
+              <rect x="80" y="10" width="10" height="50" stroke="none" fill="hsl(35, 100%, 50%)" />
+              <rect x="90" y="10" width="10" height="50" stroke="none" fill="hsl(40, 100%, 50%)" />
+              <rect x="100" y="10" width="10" height="50" stroke="none" fill="hsl(45, 100%, 50%)" />
+              <rect x="110" y="10" width="10" height="50" stroke="none" fill="hsl(50, 100%, 50%)" />
+              <rect x="120" y="10" width="10" height="50" stroke="none" fill="hsl(55, 100%, 50%)" />
+              <rect x="130" y="10" width="10" height="50" stroke="none" fill="hsl(60, 100%, 50%)" />
+              <rect x="140" y="10" width="10" height="50" stroke="none" fill="hsl(65, 100%, 50%)" />
+              <rect x="150" y="10" width="10" height="50" stroke="none" fill="hsl(70, 100%, 50%)" />
+              <rect x="160" y="10" width="10" height="50" stroke="none" fill="hsl(75, 100%, 50%)" />
+              <rect x="170" y="10" width="10" height="50" stroke="none" fill="hsl(80, 100%, 50%)" />
+              <rect x="180" y="10" width="10" height="50" stroke="none" fill="hsl(85, 100%, 50%)" />
+              <rect x="190" y="10" width="10" height="50" stroke="none" fill="hsl(90, 100%, 50%)" />
+              <rect x="200" y="10" width="10" height="50" stroke="none" fill="hsl(95, 100%, 50%)" />
+              <rect x="210" y="10" width="10" height="50" stroke="none" fill="hsl(100, 100%, 50%)" />
+              <rect x="220" y="10" width="10" height="50" stroke="none" fill="hsl(105, 100%, 50%)" />
+              <rect x="230" y="10" width="10" height="50" stroke="none" fill="hsl(110, 100%, 50%)" />
+              <rect x="240" y="10" width="10" height="50" stroke="none" fill="hsl(115, 100%, 50%)" />
+              <rect x="250" y="10" width="10" height="50" stroke="none" fill="hsl(120, 100%, 50%)" />
+              <rect x="260" y="10" width="10" height="50" stroke="none" fill="hsl(125, 100%, 50%)" />
+              <rect x="270" y="10" width="10" height="50" stroke="none" fill="hsl(130, 100%, 50%)" />
+              <rect x="280" y="10" width="10" height="50" stroke="none" fill="hsl(135, 100%, 50%)" />
+              <rect x="290" y="10" width="10" height="50" stroke="none" fill="hsl(140, 100%, 50%)" />
+              <rect x="300" y="10" width="10" height="50" stroke="none" fill="hsl(145, 100%, 50%)" />
+              <rect x="310" y="10" width="10" height="50" stroke="none" fill="hsl(150, 100%, 50%)" />
+              <rect x="320" y="10" width="10" height="50" stroke="none" fill="hsl(155, 100%, 50%)" />
+              <rect x="330" y="10" width="10" height="50" stroke="none" fill="hsl(160, 100%, 50%)" />
+              <rect x="340" y="10" width="10" height="50" stroke="none" fill="hsl(165, 100%, 50%)" />
+              <rect x="350" y="10" width="10" height="50" stroke="none" fill="hsl(170, 100%, 50%)" />
+              <rect x="360" y="10" width="10" height="50" stroke="none" fill="hsl(175, 100%, 50%)" />
+              <rect x="370" y="10" width="10" height="50" stroke="none" fill="hsl(180, 100%, 50%)" />
+              <rect x="380" y="10" width="10" height="50" stroke="none" fill="hsl(185, 100%, 50%)" />
+              <rect x="390" y="10" width="10" height="50" stroke="none" fill="hsl(190, 100%, 50%)" />
+              <rect x="400" y="10" width="10" height="50" stroke="none" fill="hsl(195, 100%, 50%)" />
+              <rect x="410" y="10" width="10" height="50" stroke="none" fill="hsl(200, 100%, 50%)" />
+              <rect x="420" y="10" width="10" height="50" stroke="none" fill="hsl(205, 100%, 50%)" />
+              <rect x="430" y="10" width="10" height="50" stroke="none" fill="hsl(210, 100%, 50%)" />
+              <rect x="440" y="10" width="10" height="50" stroke="none" fill="hsl(215, 100%, 50%)" />
+              <rect x="450" y="10" width="10" height="50" stroke="none" fill="hsl(220, 100%, 50%)" />
+              <rect x="460" y="10" width="10" height="50" stroke="none" fill="hsl(225, 100%, 50%)" />
+              <rect x="470" y="10" width="10" height="50" stroke="none" fill="hsl(230, 100%, 50%)" />
+              <rect x="480" y="10" width="10" height="50" stroke="none" fill="hsl(235, 100%, 50%)" />
+              <rect x="490" y="10" width="10" height="50" stroke="none" fill="hsl(240, 100%, 50%)" />
+              <rect x="500" y="10" width="10" height="50" stroke="none" fill="hsl(245, 100%, 50%)" />
+              <rect x="510" y="10" width="10" height="50" stroke="none" fill="hsl(250, 100%, 50%)" />
+              <rect x="520" y="10" width="10" height="50" stroke="none" fill="hsl(255, 100%, 50%)" />
+              <rect x="530" y="10" width="10" height="50" stroke="none" fill="hsl(260, 100%, 50%)" />
+              <rect x="540" y="10" width="10" height="50" stroke="none" fill="hsl(265, 100%, 50%)" />
+              <rect x="550" y="10" width="10" height="50" stroke="none" fill="hsl(270, 100%, 50%)" />
+              <rect x="560" y="10" width="10" height="50" stroke="none" fill="hsl(275, 100%, 50%)" />
+              <rect x="570" y="10" width="10" height="50" stroke="none" fill="hsl(280, 100%, 50%)" />
+              <rect x="580" y="10" width="10" height="50" stroke="none" fill="hsl(285, 100%, 50%)" />
+              <rect x="590" y="10" width="10" height="50" stroke="none" fill="hsl(290, 100%, 50%)" />
+              <rect x="600" y="10" width="10" height="50" stroke="none" fill="hsl(295, 100%, 50%)" />
+              <rect x="610" y="10" width="10" height="50" stroke="none" fill="hsl(300, 100%, 50%)" />
+              <rect x="620" y="10" width="10" height="50" stroke="none" fill="hsl(305, 100%, 50%)" />
+              <rect x="630" y="10" width="10" height="50" stroke="none" fill="hsl(310, 100%, 50%)" />
+              <rect x="640" y="10" width="10" height="50" stroke="none" fill="hsl(315, 100%, 50%)" />
+              <rect x="650" y="10" width="10" height="50" stroke="none" fill="hsl(320, 100%, 50%)" />
+              <rect x="660" y="10" width="10" height="50" stroke="none" fill="hsl(325, 100%, 50%)" />
+              <rect x="670" y="10" width="10" height="50" stroke="none" fill="hsl(330, 100%, 50%)" />
+              <rect x="680" y="10" width="10" height="50" stroke="none" fill="hsl(335, 100%, 50%)" />
+              <rect x="690" y="10" width="10" height="50" stroke="none" fill="hsl(340, 100%, 50%)" />
+              <rect x="700" y="10" width="10" height="50" stroke="none" fill="hsl(345, 100%, 50%)" />
+              <rect x="710" y="10" width="10" height="50" stroke="none" fill="hsl(350, 100%, 50%)" />
+              <rect x="720" y="10" width="10" height="50" stroke="none" fill="hsl(355, 100%, 50%)" />
+              <rect x="730" y="10" width="10" height="50" stroke="none" fill="hsl(360, 100%, 50%)" />
+            </svg>
+          </p>
+        </li>
+        <li>Saturation (Saturación) es un porcentaje que define la intensidad del color</li>
+        <li>Lightness (Luminosidad) es un porcentaje que indica la claridad u oscuridad del color</li>
+      </ul>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p {
+  background-color: hsl(153, 80%, 40%)
+}</code></pre>
+            </td>
+            <td class="resul"><p style="background-color: hsl(153, 80%, 40%)">Si algo puede ir mal, irá mal.</p></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>El modelo HSL es más intuitivo que el modelo RGB y su uso probablemente se generalice en el futuro.</p>
+
+      <hr class="corta" />
+
+      <p>El cuadro siguiente permite generar colores HSL moviendo los deslizadores:</p>
+
+      <table class="centrado" style="border: black 2px solid; padding: 10px">
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Valor</td>
+          </tr>
+          <tr>
+            <td>Matiz:</td>
+            <td><input type="range" name="points" min="0" max="360" id="matiz"></td>
+            <td class="centrado"><span id="nMatiz"></span></td>
+          </tr>
+          <tr>
+            <td>Saturación:</td>
+            <td><input type="range" name="points" min="0" max="100" id="saturacion"></td>
+            <td class="centrado"><span id="nSaturacion"></span></td>
+          </tr>
+          <tr>
+            <td>Luminosidad:</td>
+            <td><input type="range" name="points" min="0" max="100" id="luminosidad"></td>
+            <td class="centrado"><span id="nLuminosidad"></span></td>
+          </tr>
+          <tr>
+            <td colspan="3" class="centrado">
+              <p>Código HSL: <strong id="colorHsl"></strong></p>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+                <rect x="10" y="10" width="380" height="80" stroke="black" fill="black" id="rectanguloHsl" />
+              </svg>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script>
+        var matiz = document.getElementById("matiz");
+        var saturacion = document.getElementById("saturacion");
+        var luminosidad = document.getElementById("luminosidad");
+        var nMatiz = document.getElementById("nMatiz");
+        var nSaturacion = document.getElementById("nSaturacion");
+        var nLuminosidad = document.getElementById("nLuminosidad");
+        var colorHs = document.getElementById("colorHsl");
+        var rectanguloHs = document.getElementById("rectanguloHsl");
+        function leecolorHsl(e) {
+          nMatiz.textContent = matiz.value;
+          nSaturacion.textContent = saturacion.value + "%";
+          nLuminosidad.textContent = luminosidad.value + "%";
+          colorHs.textContent = "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)";
+          rectanguloHs.setAttribute("fill", "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)");
+        }
+        matiz.addEventListener("change", leecolorHsl, false);
+        saturacion.addEventListener("change", leecolorHsl, false);
+        luminosidad.addEventListener("change", leecolorHsl, false);
+      </script>
+    </section>
+
+    <section id="hsla">
+      <h2>Códigos de colores HSLA</h2>
+
+      <p>Los códigos de colores HSLA se incorporaron a CSS en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3: Color</a> (junio de 2011).</p>
+
+      <p>Estos códigos incorporan la transparencia alpha a los <a href="#hsl">códigos HSL</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco.</p>
+
+    </section>
+
+    <section id="html32">
+      <h2>Nombres de colores HTML 3.2</h2>
+
+      <p>En la recomendación <a href="https://www.w3.org/TR/REC-html32.html">HTML 3.2</a> (aprobada el 14 de enero de 1997) se incluyeron dieciséis nombres de colores: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white y yellow. Estos colores son los colores de la paleta VGA de Windows. La tabla e ilustración siguientes muestran estos 16 colores, sus nombres y códigos RGB.</p>
+
+      <table>
+        <tbody>
+          <tr>
+            <td style="border-bottom: 2px black solid">Color</td>
+            <td style="border-bottom: 2px black solid">Nombre</td>
+            <td style="border-bottom: 2px black solid; padding-right: 50px;">Código RGB</td>
+            <td></td>
+            <td style="border-bottom: 2px black solid">Color</td>
+            <td style="border-bottom: 2px black solid">Nombre</td>
+            <td style="border-bottom: 2px black solid; padding-right: 50px;">Código RGB</td>
+            <td rowspan="9">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                   width="200" viewBox="-55 -55 110 140" style="background-color: white;" font-family="sans-serif">
+                <path fill="aqua" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" />
+                <path fill="lime" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(60 0 0)" />
+                <path fill="yellow" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(120 0 0)" />
+                <path fill="red" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(180 0 0)" />
+                <path fill="fuchsia" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(240 0 0)" />
+                <path fill="blue" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(300 0 0)" />
+                <path fill="teal" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" />
+                <path fill="green" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(60 0 0)" />
+                <path fill="olive" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(120 0 0)" />
+                <path fill="maroon" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(180 0 0)" />
+                <path fill="purple" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(240 0 0)" />
+                <path fill="navy" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0,  -15 -25.981 z" transform="rotate(300 0 0)" />
+                <rect x="-50" y="55" width="25" height="25" fill="white" stroke="black" stroke-width="1" />
+                <rect x="-25" y="55" width="25" height="25" fill="silver" stroke="black" stroke-width="1" />
+                <rect x="0" y="55" width="25" height="25" fill="gray" stroke="black" stroke-width="1" />
+                <rect x="25" y="55" width="25" height="25" fill="black" stroke="black" stroke-width="1" />
+              </svg>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color: blue"></td>
+            <td>blue</td>
+            <td>#0000FF</td>
+            <td></td>
+            <td style="background-color: navy"></td>
+            <td>navy</td>
+            <td>#000080</td>
+          </tr>
+          <tr>
+            <td style="background-color: fuchsia"></td>
+            <td>fuchsia</td>
+            <td>#FF00FF</td>
+            <td></td>
+            <td style="background-color: purple"></td>
+            <td>purple</td>
+            <td>#800080</td>
+          </tr>
+          <tr>
+            <td style="background-color: red"></td>
+            <td>red</td>
+            <td>#FF0000</td>
+            <td></td>
+            <td style="background-color: maroon"></td>
+            <td>maroon</td>
+            <td>#800000</td>
+          </tr>
+          <tr>
+            <td style="background-color: yellow"></td>
+            <td>yellow</td>
+            <td>#FFFF00</td>
+            <td></td>
+            <td style="background-color: olive"></td>
+            <td>olive</td>
+            <td>#808000</td>
+          </tr>
+          <tr>
+            <td style="background-color: lime"></td>
+            <td>lime</td>
+            <td>#00FF00</td>
+            <td></td>
+            <td style="background-color: green"></td>
+            <td>green</td>
+            <td>#008000</td>
+          </tr>
+          <tr>
+            <td style="background-color: aqua;"></td>
+            <td>aqua</td>
+            <td>#00FFFF</td>
+            <td></td>
+            <td style="background-color: teal"></td>
+            <td>teal</td>
+            <td>#008080</td>
+          </tr>
+          <tr>
+            <td style="background-color: gray"></td>
+            <td>gray</td>
+            <td>#808080</td>
+            <td></td>
+            <td style="background-color: black;"></td>
+            <td>black</td>
+            <td>#000000</td>
+          </tr>
+          <tr>
+            <td style="background-color: white"></td>
+            <td>white</td>
+            <td>#FFFFFF</td>
+            <td></td>
+            <td style="background-color: silver"></td>
+            <td>silver</td>
+            <td>#C0C0C0</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="svg">
+      <h2>Nombres de colores X11 / SVG</h2>
+
+      <p>Los nombres de colores SVG (o X11) se incluyeron en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3:Color</a> (junio de 2011), aunque los navegadores los aceptaban desde hacía tiempo. La tabla siguiente muestra los 140 colores, sus nombres y códigos RGB.</p>
+
+      <p><strong>Notas</strong>:</p>
+      <ul>
+        <li>Los colores Fuchsia y Magenta son el mismo color y los colores Aqua y Cyan son también el mismo color, por lo que la tabla contiene en realidad 138 colores distintos.</li>
+        <li>También están duplicados los nombres de los colores grises, que pueden incluir los términos "gray" o "grey" (DarkGrey/DarkGray, etc). En X11 sólo era válida una de las dos variantes, pero en la recomendación SVG 1.0 ya se admitían ambas variantes.</li>
+      </ul>
+
+      <table class="x11colortable">
+        <thead>
+          <tr>
+            <td style="border-bottom: 2px black solid">Color</td>
+            <td style="border-bottom: 2px black solid">Nombre</td>
+            <td style="border-bottom: 2px black solid; padding-right: 100px;">Código RGB</td>
+            <td style="border-bottom: 2px black solid">Color</td>
+            <td style="border-bottom: 2px black solid">Nombre</td>
+            <td style="border-bottom: 2px black solid">Código RGB</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background:aliceblue"> </td>
+            <td>AliceBlue</td>
+            <td>#F0F8FF</td>
+            <td style="background:lightpink"> </td>
+            <td>LightPink</td>
+            <td>#FFB6C1</td>
+          </tr>
+          <tr>
+            <td style="background:antiquewhite"> </td>
+            <td>AntiqueWhite</td>
+            <td>#FAEBD7</td>
+            <td style="background:lightsalmon"> </td>
+            <td>LightSalmon</td>
+            <td>#FFA07A</td>
+          </tr>
+          <tr>
+            <td style="background:aqua"> </td>
+            <td>Aqua</td>
+            <td>#00FFFF</td>
+            <td style="background:lightseagreen"> </td>
+            <td>LightSeaGreen</td>
+            <td>#20B2AA</td>
+          </tr>
+          <tr>
+            <td style="background:aquamarine"> </td>
+            <td>Aquamarine</td>
+            <td>#7FFFD4</td>
+            <td style="background:lightskyblue"> </td>
+            <td>LightSkyBlue</td>
+            <td>#87CEFA</td>
+          </tr>
+          <tr>
+            <td style="background:azure"> </td>
+            <td>Azure</td>
+            <td>#F0FFFF</td>
+            <td style="background:lightslategray"> </td>
+            <td>LightSlateGray</td>
+            <td>#778899</td>
+          </tr>
+          <tr>
+            <td style="background:beige"> </td>
+            <td>Beige</td>
+            <td>#F5F5DC</td>
+            <td style="background:lightslategrey"> </td>
+            <td>LightSlateGrey</td>
+            <td>#778899</td>
+          </tr>
+          <tr>
+            <td style="background:bisque"> </td>
+            <td>Bisque</td>
+            <td>#FFE4C4</td>
+            <td style="background:lightsteelblue"> </td>
+            <td>LightSteelBlue</td>
+            <td>#B0C4DE</td>
+          </tr>
+          <tr>
+            <td style="background:black"> </td>
+            <td>Black</td>
+            <td>#000000</td>
+            <td style="background:lightyellow"> </td>
+            <td>LightYellow</td>
+            <td>#FFFFE0</td>
+          </tr>
+          <tr>
+            <td style="background:blanchedalmond"> </td>
+            <td>BlanchedAlmond</td>
+            <td>#FFEBCD</td>
+            <td style="background:lime"> </td>
+            <td>Lime</td>
+            <td>#00FF00</td>
+          </tr>
+          <tr>
+            <td style="background:blue"> </td>
+            <td>Blue</td>
+            <td>#0000FF</td>
+            <td style="background:limegreen"> </td>
+            <td>LimeGreen</td>
+            <td>#32CD32</td>
+          </tr>
+          <tr>
+            <td style="background:blueviolet"> </td>
+            <td>BlueViolet</td>
+            <td>#8A2BE2</td>
+            <td style="background:linen"> </td>
+            <td>Linen</td>
+            <td>#FAF0E6</td>
+          </tr>
+          <tr>
+            <td style="background:brown"> </td>
+            <td>Brown</td>
+            <td>#A52A2A</td>
+            <td style="background:magenta"> </td>
+            <td>Magenta</td>
+            <td>#FF00FF</td>
+          </tr>
+          <tr>
+            <td style="background:burlywood"> </td>
+            <td>BurlyWood</td>
+            <td>#DEB887</td>
+            <td style="background:maroon"> </td>
+            <td>Maroon</td>
+            <td>#800000</td>
+          </tr>
+          <tr>
+            <td style="background:cadetblue"> </td>
+            <td>CadetBlue</td>
+            <td>#5F9EA0</td>
+            <td style="background:mediumaquamarine"> </td>
+            <td>MediumAquamarine</td>
+            <td>#66CDAA</td>
+          </tr>
+          <tr>
+            <td style="background:chartreuse"> </td>
+            <td>Chartreuse</td>
+            <td>#7FFF00</td>
+            <td style="background:mediumblue"> </td>
+            <td>MediumBlue</td>
+            <td>#0000CD</td>
+          </tr>
+          <tr>
+            <td style="background:chocolate"> </td>
+            <td>Chocolate</td>
+            <td>#D2691E</td>
+            <td style="background:mediumorchid"> </td>
+            <td>MediumOrchid</td>
+            <td>#BA55D3</td>
+          </tr>
+          <tr>
+            <td style="background:coral"> </td>
+            <td>Coral</td>
+            <td>#FF7F50</td>
+            <td style="background:mediumpurple"> </td>
+            <td>MediumPurple</td>
+            <td>#9370DB</td>
+          </tr>
+          <tr>
+            <td style="background:cornflowerblue"> </td>
+            <td>CornflowerBlue</td>
+            <td>#6495ED</td>
+            <td style="background:mediumseagreen"> </td>
+            <td>MediumSeaGreen</td>
+            <td>#3CB371</td>
+          </tr>
+          <tr>
+            <td style="background:cornsilk"> </td>
+            <td>Cornsilk</td>
+            <td>#FFF8DC</td>
+            <td style="background:mediumslateblue"> </td>
+            <td>MediumSlateBlue</td>
+            <td>#7B68EE</td>
+          </tr>
+          <tr>
+            <td style="background:crimson"> </td>
+            <td>Crimson</td>
+            <td>#DC143C</td>
+            <td style="background:mediumspringgreen"> </td>
+            <td>MediumSpringGreen</td>
+            <td>#00FA9A</td>
+          </tr>
+          <tr>
+            <td style="background:cyan"> </td>
+            <td>Cyan</td>
+            <td>#00FFFF</td>
+            <td style="background:mediumturquoise"> </td>
+            <td>MediumTurquoise</td>
+            <td>#48D1CC</td>
+          </tr>
+          <tr>
+            <td style="background:darkblue"> </td>
+            <td>DarkBlue</td>
+            <td>#00008B</td>
+            <td style="background:mediumvioletred"> </td>
+            <td>MediumVioletRed</td>
+            <td>#C71585</td>
+          </tr>
+          <tr>
+            <td style="background:darkcyan"> </td>
+            <td>DarkCyan</td>
+            <td>#008B8B</td>
+            <td style="background:midnightblue"> </td>
+            <td>MidnightBlue</td>
+            <td>#191970</td>
+          </tr>
+          <tr>
+            <td style="background:darkgoldenrod"> </td>
+            <td>DarkGoldenrod</td>
+            <td>#B8860B</td>
+            <td style="background:mintcream"> </td>
+            <td>MintCream</td>
+            <td>#F5FFFA</td>
+          </tr>
+          <tr>
+            <td style="background:darkgray"> </td>
+            <td>DarkGray</td>
+            <td>#A9A9A9</td>
+            <td style="background:mistyrose"> </td>
+            <td>MistyRose</td>
+            <td>#FFE4E1</td>
+          </tr>
+          <tr>
+            <td style="background:darkgrey"> </td>
+            <td>DarkGrey</td>
+            <td>#A9A9A9</td>
+            <td style="background:moccasin"></td>
+            <td>Moccasin</td>
+            <td>#FFE4B5</td>
+          </tr>
+          <tr>
+            <td style="background:darkgreen"> </td>
+            <td>DarkGreen</td>
+            <td>#006400</td>
+            <td style="background:navajowhite"> </td>
+            <td>NavajoWhite</td>
+            <td>#FFDEAD</td>
+          </tr>
+          <tr>
+            <td style="background:darkkhaki"> </td>
+            <td>DarkKhaki</td>
+            <td>#BDB76B</td>
+            <td style="background:navy"> </td>
+            <td>Navy</td>
+            <td>#000080</td>
+          </tr>
+          <tr>
+            <td style="background:darkmagenta"> </td>
+            <td>DarkMagenta</td>
+            <td>#8B008B</td>
+            <td style="background:oldlace"> </td>
+            <td>OldLace</td>
+            <td>#FDF5E6</td>
+          </tr>
+          <tr>
+            <td style="background:darkolivegreen"> </td>
+            <td>DarkOliveGreen</td>
+            <td>#556B2F</td>
+            <td style="background:olive"> </td>
+            <td>Olive</td>
+            <td>#808000</td>
+          </tr>
+          <tr>
+            <td style="background:darkorange"> </td>
+            <td>DarkOrange</td>
+            <td>#FF8C00</td>
+            <td style="background:olivedrab"> </td>
+            <td>OliveDrab</td>
+            <td>#6B8E23</td>
+          </tr>
+          <tr>
+            <td style="background:darkorchid"> </td>
+            <td>DarkOrchid</td>
+            <td>#9932CC</td>
+            <td style="background:orange"> </td>
+            <td>Orange</td>
+            <td>#FFA500</td>
+          </tr>
+          <tr>
+            <td style="background:darkred"> </td>
+            <td>DarkRed</td>
+            <td>#8B0000</td>
+            <td style="background:orangered"> </td>
+            <td>OrangeRed</td>
+            <td>#FF4500</td>
+          </tr>
+          <tr>
+            <td style="background:darksalmon"> </td>
+            <td>DarkSalmon</td>
+            <td>#E9967A</td>
+            <td style="background:orchid"> </td>
+            <td>Orchid</td>
+            <td>#DA70D6</td>
+          </tr>
+          <tr>
+            <td style="background:darkseagreen"> </td>
+            <td>DarkSeaGreen</td>
+            <td>#8FBC8F</td>
+            <td style="background:palegoldenrod"> </td>
+            <td>PaleGoldenrod</td>
+            <td>#EEE8AA</td>
+          </tr>
+          <tr>
+            <td style="background:darkslateblue"> </td>
+            <td>DarkSlateBlue</td>
+            <td>#483D8B</td>
+            <td style="background:palegreen"> </td>
+            <td>PaleGreen</td>
+            <td>#98FB98</td>
+          </tr>
+          <tr>
+            <td style="background:darkslategray"> </td>
+            <td>DarkSlateGray</td>
+            <td>#2F4F4F</td>
+            <td style="background:paleturquoise"> </td>
+            <td>PaleTurquoise</td>
+            <td>#AFEEEE</td>
+          </tr>
+          <tr>
+            <td style="background:darkslategrey"></td>
+            <td>DarkSlateGrey</td>
+            <td>#2F4F4F</td>
+            <td style="background:palevioletred"></td>
+            <td>PaleVioletRed</td>
+            <td>#DB7093</td>
+          </tr>
+          <tr>
+            <td style="background:darkturquoise"> </td>
+            <td>DarkTurquoise</td>
+            <td>#00CED1</td>
+            <td style="background:papayawhip"> </td>
+            <td>PapayaWhip</td>
+            <td>#FFEFD5</td>
+          </tr>
+          <tr>
+            <td style="background:darkviolet"> </td>
+            <td>DarkViolet</td>
+            <td>#9400D3</td>
+            <td style="background:peachpuff"> </td>
+            <td>PeachPuff</td>
+            <td>#FFDAB9</td>
+          </tr>
+          <tr>
+            <td style="background:deeppink"> </td>
+            <td>DeepPink</td>
+            <td>#FF1493</td>
+            <td style="background:peru"> </td>
+            <td>Peru</td>
+            <td>#CD853F</td>
+          </tr>
+          <tr>
+            <td style="background:deepskyblue"> </td>
+            <td>DeepSkyBlue</td>
+            <td>#00BFFF</td>
+            <td style="background:pink"> </td>
+            <td>Pink</td>
+            <td>#FFC0CB</td>
+          </tr>
+          <tr>
+            <td style="background:dimgray"> </td>
+            <td>DimGray</td>
+            <td>#696969</td>
+            <td style="background:plum"> </td>
+            <td>Plum</td>
+            <td>#DDA0DD</td>
+          </tr>
+          <tr>
+            <td style="background:dimgrey"></td>
+            <td>DimGrey</td>
+            <td>#696969</td>
+            <td style="background:powderblue"></td>
+            <td>PowderBlue</td>
+            <td>#B0E0E6</td>
+          </tr>
+          <tr>
+            <td style="background:dodgerblue"> </td>
+            <td>DodgerBlue</td>
+            <td>#1E90FF</td>
+            <td style="background:purple"> </td>
+            <td>Purple</td>
+            <td>#800080</td>
+          </tr>
+          <tr>
+            <td style="background:firebrick"> </td>
+            <td>FireBrick</td>
+            <td>#B22222</td>
+            <td style="background:red"> </td>
+            <td>Red</td>
+            <td>#FF0000</td>
+          </tr>
+          <tr>
+            <td style="background:floralwhite"> </td>
+            <td>FloralWhite</td>
+            <td>#FFFAF0</td>
+            <td style="background:rosybrown"> </td>
+            <td>RosyBrown</td>
+            <td>#BC8F8F</td>
+          </tr>
+          <tr>
+            <td style="background:forestgreen"> </td>
+            <td>ForestGreen</td>
+            <td>#228B22</td>
+            <td style="background:royalblue"> </td>
+            <td>RoyalBlue</td>
+            <td>#4169E1</td>
+          </tr>
+          <tr>
+            <td style="background:fuchsia"> </td>
+            <td>Fuchsia</td>
+            <td>#FF00FF</td>
+            <td style="background:saddlebrown"> </td>
+            <td>SaddleBrown</td>
+            <td>#8B4513</td>
+          </tr>
+          <tr>
+            <td style="background:gainsboro"> </td>
+            <td>Gainsboro</td>
+            <td>#DCDCDC</td>
+            <td style="background:salmon"> </td>
+            <td>Salmon</td>
+            <td>#FA8072</td>
+          </tr>
+          <tr>
+            <td style="background:ghostwhite"> </td>
+            <td>GhostWhite</td>
+            <td>#F8F8FF</td>
+            <td style="background:sandybrown"> </td>
+            <td>SandyBrown</td>
+            <td>#F4A460</td>
+          </tr>
+          <tr>
+            <td style="background:gold"> </td>
+            <td>Gold</td>
+            <td>#FFD700</td>
+            <td style="background:seagreen"> </td>
+            <td>SeaGreen</td>
+            <td>#2E8B57</td>
+          </tr>
+          <tr>
+            <td style="background:goldenrod"> </td>
+            <td>Goldenrod</td>
+            <td>#DAA520</td>
+            <td style="background:seashell"> </td>
+            <td>Seashell</td>
+            <td>#FFF5EE</td>
+          </tr>
+          <tr>
+            <td style="background:gray"> </td>
+            <td>Gray</td>
+            <td>#808080</td>
+            <td style="background:sienna"> </td>
+            <td>Sienna</td>
+            <td>#A0522D</td>
+          </tr>
+          <tr>
+            <td style="background:grey"> </td>
+            <td>Grey</td>
+            <td>#808080</td>
+            <td style="background:silver"></td>
+            <td>Silver</td>
+            <td>#C0C0C0</td>
+          </tr>
+          <tr>
+            <td style="background:green"> </td>
+            <td>Green</td>
+            <td>#008000</td>
+            <td style="background:skyblue"> </td>
+            <td>SkyBlue</td>
+            <td>#87CEEB</td>
+          </tr>
+          <tr>
+            <td style="background:greenyellow"> </td>
+            <td>GreenYellow</td>
+            <td>#ADFF2F</td>
+            <td style="background:slateblue"> </td>
+            <td>SlateBlue</td>
+            <td>#6A5ACD</td>
+          </tr>
+          <tr>
+            <td style="background:honeydew"> </td>
+            <td>Honeydew</td>
+            <td>#F0FFF0</td>
+            <td style="background:slategray"> </td>
+            <td>SlateGray</td>
+            <td>#708090</td>
+          </tr>
+          <tr>
+            <td style="background:hotpink"> </td>
+            <td>HotPink</td>
+            <td>#FF69B4</td>
+            <td style="background:slategrey"> </td>
+            <td>SlateGrey</td>
+            <td>#708090</td>
+          </tr>
+          <tr>
+            <td style="background:indianred"> </td>
+            <td>IndianRed</td>
+            <td>#CD5C5C</td>
+            <td style="background:snow"> </td>
+            <td>Snow</td>
+            <td>#FFFAFA</td>
+          </tr>
+          <tr>
+            <td style="background:indigo"> </td>
+            <td>Indigo</td>
+            <td>#4B0082</td>
+            <td style="background:springgreen"> </td>
+            <td>SpringGreen</td>
+            <td>#00FF7F</td>
+          </tr>
+          <tr>
+            <td style="background:ivory"> </td>
+            <td>Ivory</td>
+            <td>#FFFFF0</td>
+            <td style="background:steelblue"> </td>
+            <td>SteelBlue</td>
+            <td>#4682B4</td>
+          </tr>
+          <tr>
+            <td style="background:khaki"> </td>
+            <td>Khaki</td>
+            <td>#F0E68C</td>
+            <td style="background:tan"> </td>
+            <td>Tan</td>
+            <td>#D2B48C</td>
+          </tr>
+          <tr>
+            <td style="background:lavender"> </td>
+            <td>Lavender</td>
+            <td>#E6E6FA</td>
+            <td style="background:teal"> </td>
+            <td>Teal</td>
+            <td>#008080</td>
+          </tr>
+          <tr>
+            <td style="background:lavenderblush"> </td>
+            <td>LavenderBlush</td>
+            <td>#FFF0F5</td>
+            <td style="background:thistle"> </td>
+            <td>Thistle</td>
+            <td>#D8BFD8</td>
+          </tr>
+          <tr>
+            <td style="background:lawngreen"> </td>
+            <td>LawnGreen</td>
+            <td>#7CFC00</td>
+            <td style="background:tomato"> </td>
+            <td>Tomato</td>
+            <td>#FF6347</td>
+          </tr>
+          <tr>
+            <td style="background:lemonchiffon"> </td>
+            <td>LemonChiffon</td>
+            <td>#FFFACD</td>
+            <td style="background:turquoise"> </td>
+            <td>Turquoise</td>
+            <td>#40E0D0</td>
+          </tr>
+          <tr>
+            <td style="background:lightblue"> </td>
+            <td>LightBlue</td>
+            <td>#ADD8E6</td>
+            <td style="background:violet"> </td>
+            <td>Violet</td>
+            <td>#EE82EE</td>
+          </tr>
+          <tr>
+            <td style="background:lightcoral"> </td>
+            <td>LightCoral</td>
+            <td>#F08080</td>
+            <td style="background:wheat"> </td>
+            <td>Wheat</td>
+            <td>#F5DEB3</td>
+          </tr>
+          <tr>
+            <td style="background:lightcyan"> </td>
+            <td>LightCyan</td>
+            <td>#E0FFFF</td>
+            <td style="background:white"> </td>
+            <td>White</td>
+            <td>#FFFFFF</td>
+          </tr>
+          <tr>
+            <td style="background:lightgoldenrodyellow"> </td>
+            <td>LightGoldenrodYellow</td>
+            <td>#FAFAD2</td>
+            <td style="background:whitesmoke"> </td>
+            <td>WhiteSmoke</td>
+            <td>#F5F5F5</td>
+          </tr>
+          <tr>
+            <td style="background:lightgray"> </td>
+            <td>LightGray</td>
+            <td>#D3D3D3</td>
+            <td style="background:yellow"> </td>
+            <td>Yellow</td>
+            <td>#FFFF00</td>
+          </tr>
+          <tr>
+            <td style="background:lightgreen"> </td>
+            <td>LightGreen</td>
+            <td>#90EE90</td>
+            <td style="background:yellowgreen"> </td>
+            <td>YellowGreen</td>
+            <td>#9ACD32</td>
+          </tr>
+          <tr>
+            <td style="background:lightgrey"> </td>
+            <td>LightGrey</td>
+            <td>#D3D3D3</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="sistema">
+      <h2>Nombres de colores del sistema</h2>
+
+      <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/REC-CSS2/ui.html#system-colors">CSS 2</a>, pero en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3:Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (mayo de 2016) en elaboración.</p>
+
+      <p>Estos colores se comentan en la <a href="css2_obsoletas.html#colores-sistema">lección de elementos obsoletos</a></p>
+    </section>
+
+    <section id="opacidad">
+      <h2 class="con-aside">Opacidad: <span class="css-prop">opacity</span></h2>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">opacity</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#transparency"><img src="../varios/iconos/icono_css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+          <a href="http://caniuse.com/#feat=css-opacity"><img src="../varios/iconos/icono_caniuse_oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">opacity</span> permite hacer que un elemento sea parcialmente transparente. El valor de esta propiedad debe ser un valor decimal entre 0 y 1 (el valor 0 hace que el elemento sea completamente transparente y el valor 1 hace que el elemento sea completamente opaco).</p>
+
+      <p>Si un elemento parcialmente transparente se superpone a otro elemento de otro color, el navegador mezcla los colores de los elementos, como muestra el siguiente ejemplo:</p>
+
+      <table class="ejemplo">
+        <tbody>
+          <tr>
+            <td class="codcss">
+              <pre>
+<code class="language-css">p1 {
+  background-color: lightblue;
+}
+
+p2 {
+  background-color: coral;
+  color: white;
+  opacity: 0.5;
+}
+
+/* En el ejemplo también se utilizan propiedades
+de posicionamiento que no aparecen aquí. */</code></pre>
+            </td>
+            <td class="resul" style="background-color: white;">
+              <p style="margin-bottom: 0px; background-color: lightblue; width: 50%; height: 100px; position: relative; left: 10%;">Este texto se encuentra situado a la izquierda, a la izquierda, a la izquierda, a la izquierda, a la izquierda, a la izquierda, a la izquierda, a la izquierda, a la izquierda</p>
+
+              <p style="margin-top: 0px; background-color: coral; color: white; width: 50%;height: 100px; position: relative; top: -3em; left: 20%; opacity: 0.5;">Este texto se encuentra situado a la derecha, a la derecha, a la derecha, a la derecha, a la derecha, a la derecha, a la derecha, a la derecha, a la derecha</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p class="ultmod">Última modificación de esta página: 2 de octubre de 2016</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+  </body>
+</html>
