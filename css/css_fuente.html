@@ -62,80 +62,75 @@
 
       <p>Al escribir la propiedad compuesta, el orden en que deben aparecer los valores es el orden en que aparecen las propiedades simples en el párrafo anterior. Las únicas propiedades que deben aparecer obligatoriamente son <span class="css-prop">font-size</span> y <span class="css-prop">font-family</span>. Si se escribe la propiedad <span class="css-prop">line-height</span> debe aparecer separada de <span class="css-prop">font-size</span> por una barra (/).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codcss">
-              <pre>
+      <div class="filaflex">
+        <div class="codcss">
+          <pre>
 <code class="language-css">p {
   font: 150% sans-serif;
 }</code>
 </pre>
-            </td>
-            <td class="resul"><p style="font: 150% sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 150%.</p></td>
-          </tr>
-          <tr>
-            <td class="codcss">
-              <pre>
+        </div>
+        <div class="resul"><p style="font: 150% sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 150%.</p></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codcss">
+          <pre>
 <code class="language-css">p {
   font: bold 90% monospace;
 }</code>
 </pre>
-            </td>
-            <td class="resul"><p style="font: bold 90% monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 90% y en negrita.</p></td>
-          </tr>
-          <tr>
-            <td class="codcss">
-              <pre>
+        </div>
+        <div class="resul"><p style="font: bold 90% monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 90% y en negrita.</p></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codcss">
+          <pre>
 <code class="language-css">p {
   font: oblique bold 120% cursive;
 }</code>
 </pre>
-            </td>
-            <td class="resul"><p style="font: oblique bold 120% cursive;">Esto es un párrafo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans) al 120%, en negrita y en cursiva.</p></td>
-          </tr>
-          <tr>
-            <td class="codcss">
-              <pre>
+        </div>
+        <div class="resul"><p style="font: oblique bold 120% cursive;">Esto es un párrafo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans) al 120%, en negrita y en cursiva.</p></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codcss">
+          <pre>
 <code class="language-css">p {
   font: small-caps 100%/200% serif;
 }</code>
 </pre>
-            </td>
-            <td class="resul"><p style="font: small-caps 100%/200% serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman) al 100%, con un interlineado doble, y en versalitas.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resul"><p style="font: small-caps 100%/200% serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman) al 100%, con un interlineado doble, y en versalitas.</p></div>
+      </div>
 
       <p>Si no están las propiedades en el orden correcto, o falta alguna de las propiedades obligatorias, los navegadores no hacen caso.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-            <td class="codcss"><pre>
+      <div class="filaflex">
+        <div class="icono"><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></div>
+        <div class="codcss"><pre>
 <code class="language-css">p {
   font: monospace 150%;
   /* el orden no es correcto */
 }</code>
 </pre>
-            </td>
-            <td class="resul"><p style="font:  monospace 150%;">Esto debería ser un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 150%.</p></td>
-          </tr>
-          <tr>
-            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-            <td class="codcss"><pre>
+        </div>
+        <div class="resul"><p style="font:  monospace 150%;">Esto debería ser un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier) al 150%.</p></div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono"><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></div>
+        <div class="codcss"><pre>
 <code class="language-css">p {
   font: bold 90%;
   /* falta font-type */
 } </code>
 </pre>
-            </td>
-            <td class="resul"><p style="font: bold 90%;">Esto debería ser un párrafo al 90% y en negrita.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resul"><p style="font: bold 90%;">Esto debería ser un párrafo al 90% y en negrita.</p></div>
+      </div>
 
       <p>Si los primeros valores son correctos, pero al final hay valores que deberían estar en otro lugar, los navegadores aplican los valores correctos e ignoran los valores finales (<span class="css-prop">font-family</span> también se ignora).</p>
 
