@@ -194,57 +194,36 @@
 
       <p>En el ejemplo siguiente, el párrafo incluido dentro de la división se muestra de color rojo porque el párrafo está incluido dentro de la división.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;div&gt;
   &lt;p&gt;Esto es un párrafo dentro de una división.&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-            </td>
-            <td class="resul eje01a" rowspan="2">
-              <div style="border: black 3px solid; color: red">
-                <p>Esto es un párrafo dentro de una división.</p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 3px solid; color: red;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/cascada/cascada_elementos_dentro_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>Si una misma propiedad está definida para el elemento inferior y para el superior, se aplica el valor establecido para el elemento inferior.</p>
 
       <p>En el ejemplo siguiente, el párrafo se muestra de color negro, independientemente del orden en que se escriban las reglas.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
-<code class="language-html">&lt;div&gt;
-  &lt;p&gt;Esto es un párrafo dentro de una división.&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
-            </td>
-            <td class="resul eje01b" rowspan="2">
-              <div>
-                <p>Esto es un párrafo dentro de una división.</p>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">div {
   border: black 3px solid;
   color: red;
@@ -254,11 +233,16 @@ p {
   color: black;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/cascada/cascada_elementos_dentro_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   color: black;
 }
@@ -268,15 +252,12 @@ div {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resul eje01c">
-              <div>
-                <p>Esto es un párrafo dentro de una división.</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/cascada/cascada_elementos_dentro_3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="reglas-simultaneas">
@@ -299,25 +280,17 @@ div {
 
         <p>El ejemplo siguiente muestra dos selectores con un número de atributos <span class="html-atri">id</span> diferente (1 o 0). Puede comprobarse que se aplica siempre el selector con atributo <span class="html-atri">id</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p id="nuevo"&gt;Esto es un párrafo con atributo id "nuevo"&lt;/p&gt;
 
 &lt;p&gt;Esto es un párrafo sin atributo id.&lt;/p&gt;</code>
 </pre>
-              </td>
-              <td class="resul eje11a" rowspan="2">
-                <p id="nuevo11a">Esto es un párrafo con atributo id "nuevo"</p>
-
-                <p>Esto es un párrafo sin atributo id.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">p#nuevo {
   color: red;
 }
@@ -326,11 +299,17 @@ p {
   color: black;
 }</code>
 </pre>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   color: black;
 }
@@ -339,15 +318,12 @@ p#nuevo {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resul eje11b">
-                <p id="nuevo11b">Esto es un párrafo con atributo id "nuevo"</p>
+          </div>
 
-                <p>Esto es un párrafo sin atributo id.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El ejemplo siguiente muestra también dos selectores con un número de atributos <span class="html-atri">id</span> diferente (2 o 1). Puede comprobarse que se aplica siempre el selector con dos atributos <span class="html-atri">id</span>.</p>
 
@@ -371,7 +347,7 @@ div#viejo p#nuevo {
 }</code>
 </pre>
               </td>
-              <td class="resul eje12a">
+              <td class="resultado eje12a">
                 <div id="viejo12a">
                   <p id="nuevo12a">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
                 </div>
@@ -397,7 +373,7 @@ div p#nuevo {
 }</code>
 </pre>
               </td>
-              <td class="resul eje12b">
+              <td class="resultado eje12b">
                 <div id="viejo12b">
                   <p id="nuevo12b">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
                 </div>
@@ -434,7 +410,7 @@ div p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje21a">
+              <td class="resultado eje21a">
                 <div class="viejo">
                   <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
                 </div>
@@ -460,7 +436,7 @@ div.viejo p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje21b">
+              <td class="resultado eje21b">
                 <div class="viejo">
                   <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
                 </div>
@@ -497,7 +473,7 @@ p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje31a">
+              <td class="resultado eje31a">
                 <div>
                   <p>Esto es un párrafo dentro de una división.</p>
                 </div>
@@ -523,7 +499,7 @@ div p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje31b">
+              <td class="resultado eje31b">
                 <div>
                   <p>Esto es un párrafo dentro de una división.</p>
                 </div>
@@ -550,7 +526,7 @@ ul li {
 }</code>
 </pre>
               </td>
-              <td class="resul eje32a"><ul>
+              <td class="resultado eje32a"><ul>
                 <li>Esto es un elemento de lista</li>
                 </ul>
               </td>
@@ -567,7 +543,7 @@ li {
 }</code>
 </pre>
               </td>
-              <td class="resul eje32b">
+              <td class="resultado eje32b">
                 <ul>
                   <li>Esto es un elemento de lista</li>
                 </ul>
@@ -592,7 +568,7 @@ li {
 }</code>
 </pre>
               </td>
-              <td class="resul eje33a">
+              <td class="resultado eje33a">
                 <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
 
                 <p>Esto es un párrafo sin clase.</p>
@@ -610,7 +586,7 @@ p.nuevo {
 }</code>
 </pre>
               </td>
-              <td class="resul eje33b">
+              <td class="resultado eje33b">
                 <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
 
                 <p>Esto es un párrafo sin clase.</p>
@@ -647,7 +623,7 @@ div p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje41a">
+              <td class="resultado eje41a">
                 <div>
                   <p>Esto es un párrafo dentro de una división.</p>
                 </div>
@@ -671,7 +647,7 @@ div p {
 }</code>
 </pre>
               </td>
-              <td class="resul eje41b">
+              <td class="resultado eje41b">
                 <div>
                   <p>Esto es un párrafo dentro de una división.</p>
                 </div>
@@ -696,7 +672,7 @@ p.nuevo {
 }</code>
 </pre>
               </td>
-              <td class="resul eje42a"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p>
+              <td class="resultado eje42a"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p>
               </td>
             </tr>
             <tr>
@@ -711,7 +687,7 @@ p.viejo {
 }</code>
 </pre>
               </td>
-              <td class="resul eje42b"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p></td>
+              <td class="resultado eje42b"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p></td>
             </tr>
           </tbody>
         </table>

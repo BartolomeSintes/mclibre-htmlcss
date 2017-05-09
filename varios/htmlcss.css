@@ -196,15 +196,47 @@ div.filaflex {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: stretch;
-  margin-bottom: 10px;
+  margin: 5px 0px;
 }
 
-div.filaflex div.codigo, div.filaflex div.resultado {
+div.filaflex.cabecera {
+  margin-bottom: -5px;
+  padding-bottom: 0;
+}
+
+div.filaflex.nogrow div:not([class="icono"]) {
+  width: auto;
+  flex-grow: 0;
+}
+
+div.filaflex.nogrow h2 {
+  margin: 0;
+}
+
+div.filaflex div:not([class="icono"]) {
   width: 100px;
-  flex-basis: content;
   flex-grow: 1;
-  margin: 0 3px 0 3px;
+  margin: 3px;
   padding: 2px 10px 0;
+}
+
+div.filaflex div.nogrow {
+  width: auto;
+  flex-grow: 0;
+}
+
+div.filaflex div.columnaflex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+div.filaflex div.columnaflex div {
+  width: auto;
 }
 
 div.filaflex div.icono {
@@ -212,24 +244,24 @@ div.filaflex div.icono {
   padding: 5px;
 }
 
-div.filaflex div.resultado object {
-  _display: block;
-  _overflow: auto;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-} /* He tenido que poner div.resultado y width para Chrome */
-
 div.filaflex pre {
   margin: 5px 0;
   white-space: pre-wrap;
 }
 
 div.codigo, div.resultado {
-  border: 2px solid black;
-  margin: 5px 20px;
-  padding: 10px 10px;
+  clear: both;
+  border: 2px black solid;
+  margin: 5px 10px;
+  padding: 5px;
   background-color: white;
+  color: black;
+  font-size: 100%;
+  line-height: 110%;
+}
+
+div.codigo {
+  font-family: "Inconsolata", monospace;
 }
 
 div.obsoleto {
@@ -333,6 +365,7 @@ col.centrado {
 ol, ul {
   margin-top: 3px;
   margin-bottom: 6px;
+  padding-left: 1em;
 }
 
 ul ul {
@@ -439,13 +472,25 @@ img#vpp {
     text-align: left;
     white-space: pre-wrap;
   }
+
+  div.filaflex {
+    display: block;
+  }
+
+  div.filaflex.cabecera {
+    display: none;
+  }
+
+  div.filaflex div:not([class="icono"]) {
+    width: auto;
+  }
 }
 
 /* Pantallas grandes */
 @media screen and (min-width: 768px) {
   html {
     margin-left: 12em;
-    margin-right: 4em;
+    margin-right: 2em;
   }
 
   nav, div.nav {

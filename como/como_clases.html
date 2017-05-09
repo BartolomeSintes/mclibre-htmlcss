@@ -37,11 +37,10 @@
 
       <p>El ejemplo siguiente se puede conseguir de varias formas distintas:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;div&gt;
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;div&gt;
   &lt;p&gt;Si algo puede salir mal, saldrá mal&lt;/p&gt;
   &lt;p&gt;Ley de Murphy&lt;/p&gt;
 &lt;/div&gt;
@@ -51,22 +50,21 @@
   &lt;p&gt;Comentario de O'Toole&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <object type="text/html" data="ejemplos/murphy_1.html" style="width: 100%; height: 300px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/murphy_1.html" style="width: 100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <ul>
         <li>La manera más simple consiste en asignar una clase distinta a cada elemento:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-html">&lt;div class="a"&gt;
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;div class="a"&gt;
   &lt;p class="c"&gt;Si algo puede salir mal, saldrá mal&lt;/p&gt;
   &lt;p class="d"&gt;Ley de Murphy&lt;/p&gt;
 &lt;/div&gt;
@@ -76,35 +74,33 @@
   &lt;p class="f"&gt;Comentario de O'Toole&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-                </td>
-                <td class="resultado" rowspan="2">
-                  <object type="text/html" data="ejemplos/murphy_1.html" style="width: 100%; height: 300px">ERROR (no puede mostrarse el objeto)</object>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">div { margin: 10px; }
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">div { margin: 10px; }
 p { margin: 10px; padding: 10px; }
 div.a { border: #FD7300 4px solid; }
 div.b { border: #3914AE 4px solid; }
 p.c { background-color: #FFF7AA; text-align: center; }
 p.d { background-color: #D4BA6A; text-align: right; }
 p.e { background-color: #8C7C87; text-align: center; }
-p.f { background-color: #8F78AD; text-align: right;
-}</code>
+p.f { background-color: #8F78AD; text-align: right; }</code>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </div>
+            </div>
+
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/murphy_1.html" style="width: 100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
         </li>
         <li>Otra manera de hacerlo es aprovechar los <a href="../css/css_selectores.html#descendientes">selectores de descendientes</a>. De esta manera sólo se necesitan cuatro clases.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-html">&lt;div class="a"&gt;
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;div class="a"&gt;
   &lt;p class="cita"&gt;Si algo puede salir mal, saldrá mal&lt;/p&gt;
   &lt;p class="nombre"&gt;Ley de Murphy&lt;/p&gt;
 &lt;/div&gt;
@@ -114,35 +110,33 @@ p.f { background-color: #8F78AD; text-align: right;
   &lt;p class="nombre"&gt;Comentario de O'Toole&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-                </td>
-                <td class="resultado" rowspan="2">
-                  <object type="text/html" data="ejemplos/murphy_2.html" style="width: 100%; height: 300px">ERROR (no puede mostrarse el objeto)</object>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">div { margin: 10px; }
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">div { margin: 10px; }
 p { margin: 10px; padding: 10px; }
 div.a { border: #FD7300 4px solid; }
 div.b { border: #3914AE 4px solid; }
 div.a p.cita { background-color: #FFF7AA; text-align: center; }
 div.a p.nombre { background-color: #D4BA6A; text-align: right; }
 div.b p.cita { background-color: #8C7C87; text-align: center; }
-div.b p.nombre { background-color: #8F78AD; text-align: right;
-}</code>
+div.b p.nombre { background-color: #8F78AD; text-align: right; }</code>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </div>
+            </div>
+
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/murphy_2.html" style="width: 100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
         </li>
         <li>Otra manera de hacerlo es aprovechar que se pueden <a href="../html/html_clases.html#combinar">asignar varias clases a un mismo elemento</a>. De esta manera sólo se necesitan cuatro clases.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-html">&lt;div class="a"&gt;
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;div class="a"&gt;
   &lt;p class="a cita"&gt;Si algo puede salir mal, saldrá mal&lt;/p&gt;
   &lt;p class="a nombre"&gt;Ley de Murphy&lt;/p&gt;
 &lt;/div&gt;
@@ -152,27 +146,25 @@ div.b p.nombre { background-color: #8F78AD; text-align: right;
   &lt;p class="b nombre"&gt;Comentario de O'Toole&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-                </td>
-                <td class="resultado" rowspan="2">
-                  <object type="text/html" data="ejemplos/murphy_3.html" style="width: 100%; height: 300px">ERROR (no puede motrarse el objeto)</object>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">div { margin: 10px; }
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">div { margin: 10px; }
 p { margin: 10px; padding: 10px; }
 div.a { border: #FD7300 4px solid; }
 div.b { border: #3914AE 4px solid; }
 p.a.cita { background-color: #FFF7AA; text-align: center; }
 p.a.nombre { background-color: #D4BA6A; text-align: right; }
 p.b.cita { background-color: #8C7C87; text-align: center; }
-p.b.nombre { background-color: #8F78AD; text-align: right;
-}</code>
+p.b.nombre { background-color: #8F78AD; text-align: right; }</code>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </div>
+            </div>
+
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/murphy_3.html" style="width: 100%; height: 24em;">ERROR (no puede motrarse el objeto)</object>
+            </div>
+          </div>
         </li>
       </ul>
       <hr class="corta" />

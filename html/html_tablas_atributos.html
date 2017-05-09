@@ -135,40 +135,39 @@
 
         <p>Si en la hoja de estilo se establece un borde para un elemento de la tabla, este borde se muestra aunque el atributo <span class="html- atri">border</span> sea vacío.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre>
-<code class="language-html">&lt;table&gt;</code>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;table&gt;
+...</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <table style="border: red 5px solid">
-                  <caption>Esto es la leyenda</caption>
-                  <tbody>
-                    <tr>
-                      <td>Celda 1</td>
-                      <td>Celda 2</td>
-                    </tr>
-                    <tr>
-                      <td>Celda 3</td>
-                      <td>Celda 4</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">table {
   border: red 5px solid;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
 
+          <div class="resultado">
+            <table style="border: red 5px solid">
+              <caption>Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -299,10 +298,10 @@
 
         <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col /&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al hace referencia la etiqueta <span class="html-eti">&lt;col /&gt;</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;col span="2" /&gt;&lt;col /&gt;
@@ -320,36 +319,35 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <table border="1" class="col">
-                  <caption>Esto es la leyenda</caption>
-                  <col span="2" /><col />
-                  <tbody>
-                    <tr>
-                      <td>Celda 1 A</td>
-                      <td>Celda 2</td>
-                      <td>Celda 3</td>
-                    </tr>
-                    <tr>
-                      <td>Celda 4</td>
-                      <td>Celda 5</td>
-                      <td>Celda 6</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">col {
   background-color: lightblue;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <table border="1" class="col">
+              <caption>Esto es la leyenda</caption>
+              <col span="2" /><col />
+              <tbody>
+                <tr>
+                  <td>Celda 1 A</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -363,48 +361,53 @@
 
         <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup /&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col /&gt;</span> en el <span class="html-eti">&lt;colgroup /&gt;</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup span="2"&gt;&lt;/colgroup&gt;&lt;col /&gt;
   &lt;tbody&gt;
   ...</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <table border="1" class="colgroup">
-                  <caption>Esto es la leyenda</caption>
-                  <colgroup span="2"></colgroup><col />
-                  <tbody>
-                    <tr>
-                      <td>Celda 1</td>
-                      <td>Celda 2</td>
-                      <td>Celda 3</td>
-                    </tr>
-                    <tr>
-                      <td>Celda 4</td>
-                      <td>Celda 5</td>
-                      <td>Celda 6</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }<br />col {
   background-color: lightblue;
 }</code>
 </pre>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <table border="1" class="colgroup">
+              <caption>Esto es la leyenda</caption>
+              <colgroup span="2"></colgroup><col />
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col /&gt;&lt;col /&gt;&lt;/colgroup&gt;&lt;col /&gt;
@@ -412,28 +415,9 @@
   ...
   </code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <table border="1" class="colgroup">
-                  <caption>Esto es la leyenda</caption>
-                  <colgroup><col /><col /></colgroup><col />
-                  <tbody>
-                    <tr>
-                      <td>Celda 1</td>
-                      <td>Celda 2</td>
-                      <td>Celda 3</td>
-                    </tr>
-                    <tr>
-                      <td>Celda 4</td>
-                      <td>Celda 5</td>
-                      <td>Celda 6</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }
@@ -441,48 +425,70 @@ col {
   background-color: lightblue;
 }</code>
 </pre>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <table border="1" class="colgroup">
+              <caption>Esto es la leyenda</caption>
+              <colgroup><col /><col /></colgroup><col />
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col span="2" /&gt;&lt;/colgroup&gt;&lt;col /&gt;
   &lt;tbody&gt;
   ...</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <table border="1" class="colgroup">
-                  <caption>Esto es la leyenda</caption>
-                  <colgroup><col span="2" /></colgroup><col />
-                  <tbody>
-                    <tr>
-                      <td>Celda 1</td>
-                      <td>Celda 2</td>
-                      <td>Celda 3</td>
-                    </tr>
-                    <tr>
-                      <td>Celda 4</td>
-                      <td>Celda 5</td>
-                      <td>Celda 6</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }<br />col {
   background-color: lightblue;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <table border="1" class="colgroup">
+              <caption>Esto es la leyenda</caption>
+              <colgroup><col span="2" /></colgroup><col />
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </section>
 
