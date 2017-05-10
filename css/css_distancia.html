@@ -97,27 +97,25 @@
             <tr>
               <td class="codigo">
                 <pre>
-<code class="language-css">
-p {
+<code class="language-css">p {
   font-size: 200%;
 }</code>
 </pre>
               </td>
               <td class="resultado">
-                <p style="font-size: 200%;">Este párrafo está aumentado al 200% (el doble del tamaño normal).</p>
+                <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_1.html" style="width:100%; height: 9em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
             <tr>
               <td class="codigo">
                 <pre>
-<code class="language-css">
-p {
+<code class="language-css">p {
   font-size: 75%;
 }</code>
 </pre>
               </td>
               <td class="resultado">
-                <p style="font-size: 75%;">Este párrafo está reducido al 75% del tamaño normal.</p>
+                <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_2.html" style="width:100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
           </tbody>
@@ -132,16 +130,13 @@ p {
             <tr>
               <td class="codigo">
                 <pre>
-<code class="language-css">
-hr {
+<code class="language-css">hr {
   width: 50%;
 }</code>
 </pre>
               </td>
               <td class="resultado">
-                <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
-
-                <hr style="width: 50%;" />
+                <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_3.html" style="width:100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
           </tbody>
@@ -151,38 +146,31 @@ hr {
 
         <p>Debido a que las propiedades se aplican en cascada, al cambiar el tamaño de un elemento, los elementos contenidos en él también modifican su tamaño. En el ejemplo siguiente, el párrafo situado en la división <span class="html-eti">&lt;div&gt;</span> aumenta su tamaño al 150%</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p&gt;Párrafo fuera de una división.&lt;/p&gt;
 
 &lt;div&gt;
   &lt;p&gt;Párrafo dentro de una división.&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <p>Párrafo fuera de una división.</p>
-
-                <div style="border: black 2px solid; font-size: 150%;">
-                  <p>Párrafo dentro de una división.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">div {
   border: black 2px solid;
   font-size: 150%;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_4.html" style="width:100%; height: 12em">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -190,29 +178,19 @@ hr {
 
         <p>En el ejemplo siguiente, los párrafos están aumentados al 150%, por lo que el párrafo situado en la división (cuyo contenido está a su vez aumentado al 150%), está aumentado el 225% (el 150% del 150%, 150% x 150% = 225%).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p&gt;Este párrafo está aumentado al 150%.&lt;/p&gt;
 
 &lt;div&gt;
   &lt;p&gt;Este párrafo está aumentado al 150%.&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <p style="font-size: 150%;">Este párrafo está aumentado al 150%.</p>
-
-                <div style="font-size: 150%; border: black 1px solid;">
-                  <p style="font-size: 150%;">Este párrafo está aumentado al 150%.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">
 div {
   border: black 1px solid;
@@ -223,10 +201,13 @@ p {
   font-size: 150%;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_5.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>Esta composición de tamaños no siempre es conveniente y puede provocar cambios de tamaños indeseados debido a anidamientos no previstos. Para evitarlo, se puede utilizar la unidad relativa <span class="css-unidad">rem</span>, introducida en CSS 3.</p>
 
@@ -249,17 +230,7 @@ hr {
 </pre>
               </td>
               <td class="resultado">
-                <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
-
-                <hr style="width: 50%;" />
-
-                <div style="width: 50%; border: black 1px solid;">
-                  <p>Esta división ocupa el 50% del espacio horizontal disponible.</p>
-
-                  <p>Este separador ocupa el 50% del espacio horizontal disponible:</p>
-
-                  <hr style="width: 50%;" />
-                </div>
+                <object type="text/html" data="ejemplos/distancia/distancia_porcentajes_6.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
           </tbody>
@@ -298,11 +269,7 @@ p.borde-ch {
 </pre>
               </td>
               <td class="resultado">
-                <p style="border: red 1em solid;">Este párrafo tiene un borde de 1em de grosor (la altura total del tipo de letra).</p>
-
-                <p style="border: green 1ex solid;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
-
-                <p style="border: blue 1ch solid;">Este párrafo tiene un borde de 1ch de grosor (la altura de la cifra "0").</p>
+                <object type="text/html" data="ejemplos/distancia/distancia_relativas_1.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
           </tbody>
@@ -333,11 +300,7 @@ p.borde-em-monospace {
 </pre>
               </td>
               <td class="resultado">
-                <p style="border: red 1ex solid; font-family: serif;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
-
-                <p style="border: green 1ex solid; font-family: sans-serif;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
-
-                <p style="border: blue 1ex solid; font-family: monospace;">Este párrafo tiene un borde de 1ex de grosor (la altura de la letra "x").</p>
+                <object type="text/html" data="ejemplos/distancia/distancia_relativas_2.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
               </td>
             </tr>
           </tbody>
@@ -351,29 +314,19 @@ p.borde-em-monospace {
 
         <p>Con las unidades relativas <span class="css-unidad">em</span>, <span class="css-unidad">ex</span> y <span class="css-unidad">ch</span> se produce también el fenómeno de composición comentado en el apartado anterior sobre porcentajes, es decir que si se cambia el tamaño en dos elementos anidados, los porcentajes se multiplican entre sí</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p&gt;Este párrafo está aumentado a 1.5em.&lt;/p&gt;
 
 &lt;div&gt;
   &lt;p&gt;Este párrafo está aumentado a 1.5em.&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <p style="font-size: 1.5em;">Este párrafo está aumentado a 1.5em.</p>
-
-                <div style="border: black 2px solid; font-size: 150%;">
-                  <p style="font-size: 1.5em;">Este párrafo está aumentado a 1.5em.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">div {
   border: black 2px solid;
   font-size: 1.5em;
@@ -383,10 +336,13 @@ p {
   font-size: 1.5em;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/distancia/distancia_relativas_3.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>Esta composición de tamaños no siempre es conveniente y puede provocar cambios de tamaños indeseados debido a anidamientos no previstos. Para evitarlo, se puede utilizar la unidad relativa <span class="css-unidad">rem</span>, introducida en CSS 3.</p>
       </section>
@@ -398,29 +354,19 @@ p {
 
         <p>Por tanto, con la unidad relativa <span class="css-unidad">rem</span> no se produce el fenómeno de composición de tamaños en elementos anidados, como muestra el ejemplo siguiente, en el que los párrafos dentro de la divisón se ven del mismo tamaño que los párrafos de fuera de la división:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p&gt;Este párrafo está aumentado a 1.5rem.&lt;/p&gt;
 
 &lt;div&gt;
   &lt;p&gt;Este párrafo está aumentado a 1.5rem.&lt;/p&gt;
 &lt;/div&gt;</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <p style="font-size: 1.5rem;">Este párrafo está aumentado a 1.5rem.</p>
-
-                <div style="border: black 2px solid; font-size:1.5rem;">
-                  <p style="font-size: 1.5rem;">Este párrafo está aumentado a 1.5rem.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">div {
   border: black 2px solid;
   font-size: 1.5rem;
@@ -430,10 +376,13 @@ p {
   font-size: 1.5rem;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/distancia/distancia_relativas_4.html" style="width:100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>Está unidad se introdujo en CSS 3, por lo que daba problemas en las versiones de Internet Explorer anteriores a IE 11. Aunque esas versiones tienen un uso cada vez menor (actualmente -octubre de 2016- inferior al 8%), su existencia ha frenado el uso generalizado de <span class="css-unidad">rem</span>. Seguramente, su uso se incrementará en los próximos años, a medida que vayan despareciendo esos navegadores.</p>
       </section>
