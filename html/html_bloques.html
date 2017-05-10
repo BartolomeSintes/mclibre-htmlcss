@@ -210,7 +210,7 @@ India      Asia       1250 millones</pre>
     </section>
 
     <section id="etiqueta-main">
-      <h2class="con-aside">Contenido principal: <span class="html-eti">&lt;main&gt;</span></h2>
+      <h2 class="con-aside">Contenido principal: <span class="html-eti">&lt;main&gt;</span></h2>
 
       <aside class="enlace-norma">
         <p><span class="html-eti">&lt;main&gt;</span><br />
@@ -259,44 +259,60 @@ India      Asia       1250 millones</pre>
 
       <p>Internet Explorer 11 no reconoce la etiqueta <span class="html-eti">&lt;main&gt;</span>, aunque se puede corregir este problema añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td rowspan="2">
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code>
-</pre></td>
-            <td class="resultado" rowspan="2">
-              <main style="background-color: red"><p>Esto es un párrafo</p></main></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">main {<br />  background-color: red;<br />}</code>
-</pre></td>
-          </tr>
-          <tr>
-            <td rowspan="2">
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code>
-</pre></td>
-            <td class="resultado" rowspan="2">
-              <main style="display: block; background-color: red"><p>Esto es un párrafo</p></main></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">main {<br />  display: block;<br />  background-color: red;<br />}</code>
-</pre></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+        </div>
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;main&gt;
+  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
+&lt;/main&gt;</code>
+</pre>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">main {
+  background-color: red;
+}</code>
+</pre>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/bloques/bloques_main_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+        </div>
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;main&gt;
+  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
+&lt;/main&gt;</code>
+</pre>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">main {
+  display: block;
+  background-color: red;
+}</code>
+</pre>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/bloques/bloques_main_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <footer>

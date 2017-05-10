@@ -10,27 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
     <script type="text/javascript" src="../varios/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-    <style type="text/css">
-      div.eje-pos1 { position: relative; left:  30%; width: 60%; border: black 1px solid; }
-      div.eje-pos2 { position: relative; left:  30%; right: 10%; border: black 1px solid; }
-      div.eje-pos3 { position: relative; width: 60%; right: -10%; border: black 1px solid; }
-      div.eje-posrel1 p.posrel { position: relative; top: 3em; right: 100%;
-        border: black 1px solid; background-color: white; }
-      td.resul p.eje-z-index1 { }
-      td.resul p.eje-z-index2 { }
-      td.resul p.eje-z-index1b { width: 150px; height: 150px; background-color: lightblue;
-        position: relative; top: 50px; left: 50px; overflow: auto; }
-      td.resul p.eje-z-index2b { width: 150px; height: 150px; background-color: #DDDDDD;
-        overflow: auto;  }
-      p.eje-z-index3 { width: 150px; height: 150px; background-color: lightblue;
-        position: relative; top: 0%; left: 0%; overflow: auto; z-index: 1; }
-      p.eje-z-index4 { width: 150px; height: 150px; background-color: #DDDDDD;
-        position: relative; top: -50px; left: 50px; overflow: auto; z-index: 2; }
-      p.eje-z-index5 { width: 150px; height: 150px; background-color: lightblue;
-        position: relative; top: 0%; left: 0%; overflow: auto; z-index: 2; }
-      p.eje-z-index6 { width: 150px; height: 150px; background-color: #DDDDDD;
-        position: relative; top: -50px; left: 50px; overflow: auto; z-index: 1; }
-    </style>
   </head>
 
   <body>
@@ -94,81 +73,71 @@
       <ul>
         <li>La propiedad <span class="css-prop">top</span> desplaza el elemento contando desde su borde superior. Si se da un valor positivo, el elemento se desplaza hacia abajo. Si se da un valor negativo, el elemento se desplaza hacia arriba.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   top: 20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; top: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   top: -20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; top: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
         </li>
         <li>La propiedad <span class="css-prop">bottom</span> desplaza el elemento contando desde su borde inferior. Si se da un valor positivo, el elemento se desplaza hacia arriba. Si se da un valor negativo, el elemento se desplaza hacia abajo.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   bottom: 20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; bottom: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo"><pre>
-<code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_3.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   bottom: -20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; bottom: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_4.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
         </li>
       </ul>
 
@@ -176,84 +145,74 @@
       <ul>
         <li>La propiedad <span class="css-prop">left</span> desplaza el elemento contando desde su borde izquierdo. Si se da un valor positivo, el elemento se desplaza hacia la derecha. Si se da un valor negativo, el elemento se desplaza hacia la izquierda.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   left: 20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; left: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_5.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   left: -20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; left: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_6.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+
         </li>
         <li>La propiedad <span class="css-prop">right</span> desplaza el elemento contando desde su borde derecho. Si se da un valor positivo, el elemento se desplaza hacia la izquierda. Si se da un valor negativo, el elemento se desplaza hacia la derecha.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre><code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   right: 20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; right: 20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo"><pre>
-<code class="language-css">p.desplazado { <br />  background-color: white; <br />  border: black 1px solid;
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_7.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p.desplazado {
+  background-color: white;
+  border: black 1px solid;
   position: relative;
   right: -20px;
 }</code>
 </pre>
-                </td>
-                <td class="resultado">
-                  <div class="eje-posrel1">
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                    <p style="background-color: white; border: black 1px solid; position: relative; right: -20px;">Este párrafo sí tiene posicionamiento absoluto relativo.</p>
-                    <p>Este párrafo no tiene posicionamiento absoluto relativo.</p>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_relative_8.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
         </li>
       </ul>
-
     </section>
 
     <section id="posicionamiento-absoluto-y-fijo">
@@ -429,195 +388,226 @@
 
       <p>Si no se utiliza la propiedad <span class="css-prop">z-index</span>, cuando un elemento con posicionamiento se solapa sobre un elemento sin posicionamiento, el elemento con posicionamiento se muestra siempre encima, como se muestra en los ejemplos siguientes:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; position: relative; top: -50px; left: 50px; overflow: auto;">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  width: 150px;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  width: 150px;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: -50px;
   width: 150px;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_1.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 50px; left: 50px;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto;">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: 50px;
   width: 150px;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  width: 150px;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px;
+  width: 150px;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_2.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Si no se utiliza la propiedad <span class="css-prop">z-index</span>, cuando un elemento con posicionamiento se solapa sobre otro elemento con posicionamiento, los elementos se van solapando en el mismo orden en que aparecen en el código fuente, como se muestra en los ejemplos siguientes, en los que se puede observar cómo el segundo párrafo se superpone siempre al primero.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0; left: 50px;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0;">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: 0;
   width: 150px;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0;<br />  position: relative;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px; left: 0;
+  position: relative;
   top: -50px;
   width: 150px;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_3.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 150px; left: 50px;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -150px; left: 0;">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: 150px;
   width: 150px;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0;<br />  position: relative;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px;
+  left: 0;
+  position: relative;
   top: -150px;
   width: 150px;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_4.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Si se utiliza la propiedad <span class="css-prop">z-index</span> y posicionamiento, los elementos con mayor <span class="css-prop">z-index</span> se colocan sobre los elementos con menor <span><span class="css-prop">z-index</span></span>. Los elementos sin <span class="css-prop">z-index</span> se tratan como si tuvieran un <span class="css-prop">z-index</span> igual a 0.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0; left: 50px; z-index: 2;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0; z-index: 1">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: 0;
   width: 150px;
   z-index: 2;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0;<br />  position: relative;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px;
+  left: 0;
+  position: relative;
   top: -50px;
   width: 150px;
-  z-index: 1
+  z-index: 1;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_5.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="p1"&gt;Este es el primer párrafo.&lt;/p&gt;
 
 &lt;p class="p2"&gt;Este es el segundo párrafo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="width: 150px; height: 150px; background-color: lightblue; overflow: auto; position: relative; top: 0; left: 50px; z-index: 1;">Este es el primer párrafo.</p>
-
-              <p style="width: 150px; height: 150px; background-color: #DDDDDD; overflow: auto; position: relative; top: -50px; left: 0;">Este es el segundo párrafo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-css">p.p1 {
-  background-color: lightblue;<br />  height: 150px; <br />  left: 50px;<br />  position: relative;
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.p1 {
+  background-color: lightblue;
+  height: 150px;
+  left: 50px;
+  position: relative;
   top: 0;
   width: 150px;
   z-index: 1;
 }
-<br />p.p2 {
-  background-color: #DDDDDD; <br />  height: 150px; <br />  left: 0;<br />  position: relative;
+
+p.p2 {
+  background-color: #DDDDDD;
+  height: 150px;
+  left: 0;
+  position: relative;
   top: -50px;
   width: 150px;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_absoluto/pos_absoluto_zindex_6.html" style="width:100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
     </section>
 
     <footer>

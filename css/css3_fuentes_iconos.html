@@ -56,11 +56,10 @@
 
       <p>El ejemplo siguiente muestra los primeros iconos de una de las fuentes de iconos más populares: <a href="http://fontawesome.io/">Font Awesome</a></p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p&gt;a b c d e f g ... &lt;/p&gt;
 
 &lt;p&gt;&amp;#xf000; &amp;#xf001; &amp;#xf002; &amp;#xf003; &amp;#xf004;
@@ -69,12 +68,9 @@
 &amp;#xf015; &amp;#xf016; &amp;#xf017; &amp;#xf018; &amp;#xf019;&lt;br /&gt;
  ... &lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2"><object type="text/html" data="../como/ejemplos/fuentes_iconos_1.html" style="width: 100%; height: 350px">ERROR (no puede mostrarse el objeto)</object></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">@font-face {
   font-family: "FontAwesome";
   src: url("fontawesome-webfont.woff");
@@ -85,30 +81,28 @@ p {
   font-size: 200%;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="../como/ejemplos/fuentes_iconos_1.html" style="width: 100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Para facilitar la inserción de iconos, se recurre a insertar los iconos mediante la hoja de estilo. La idea consiste en crear una clase con el nombre del icono y hacer que la hoja de estilo inserte el carácter mediante el pseudo elemento <span class="css-pseudo">:before</span>. De esta manera no hace falta conocer el código Unicode del carácter, sino únicamente el nombre de la clase. Lógicamente, la clase se puede asignar a cualquier etiqueta.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="fa-check-circle"&gt; Me gusta&lt;/p&gt;
 
 &lt;p&gt;&lt;span class="fa-times-circle"&gt;&lt;/span&gt; No me gusta&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2"><object type="text/html" data="../como/ejemplos/fuentes_iconos_2.html" style="width: 100%; height: 220px">ERROR (no puede mostrarse el objeto)</object></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">@font-face {
   font-family: "FontAwesome";
   src: url("fontawesome-webfont.woff");
@@ -128,10 +122,12 @@ p {
   content: "\f058";
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="../como/ejemplos/fuentes_iconos_2.html" style="width: 100%; height: 16em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
@@ -141,11 +137,10 @@ p {
 
       <p><strong>Nota</strong>: En FontAwesome se asignan dos clases, la clase general <span class="css-valor">fa</span> y la clase específica con el nombre del icono.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">...
   &lt;link rel="stylesheet" type="text/css" href="css/font-awesome.css" /&gt;
   &lt;link rel="stylesheet" type="text/css" href="css/estilo.css" /&gt;
@@ -156,29 +151,28 @@ p {
 &lt;p&gt;&lt;i class="fa fa-times-circle"&gt;&lt;/i&gt; No me gusta&lt;/p&gt;
 &lt;/body&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2"><object type="text/html" data="../como/ejemplos/fuentes_iconos_3.html" style="width: 100%; height: 220px">ERROR (no puede mostrarse el objeto)</object></td>
-          </tr>
-          <tr>
-            <td class="codigo"><pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 200%;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="../como/ejemplos/fuentes_iconos_3.html" style="width: 100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Los iconos de una fuente de iconos se tratan como un cáracter más, por lo que se le pueden aplicar las propiedades de hojas de estilo.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">...
   &lt;link rel="stylesheet" type="text/css" href="css/font-awesome.css" /&gt;
   &lt;link rel="stylesheet" type="text/css" href="css/estilo.css" /&gt;
@@ -189,12 +183,9 @@ p {
 &lt;p&gt;&lt;i class="fa fa-times-circle rojo"&gt;&lt;/i&gt; No me gusta&lt;/p&gt;
 &lt;/body&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2"><object type="text/html" data="../como/ejemplos/fuentes_iconos_4.html" style="width: 100%; height: 220px">ERROR (no puede mostrarse el objeto)</object></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 200%;
 }
@@ -207,10 +198,12 @@ p {
   color: green;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="../como/ejemplos/fuentes_iconos_4.html" style="width: 100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 

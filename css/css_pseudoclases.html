@@ -277,7 +277,7 @@ a:visited {
             <td class="resultado alink1">
               <p>Este párrafo contiene <a href="#destino-1" class="aactive">un enlace</a> al párrafo siguiente.</p>
 
-              <p><a name="destino-1" id="destino-1">Destino definido con la etiqueta &lt;a&gt;.</a></p>
+              <p><a id="destino-1">Destino definido con la etiqueta &lt;a&gt;.</a></p>
             </td>
           </tr>
           <tr>
@@ -291,7 +291,7 @@ a:visited {
             <td class="resultado alink2">
               <p>Este párrafo contiene <a href="#destino-2" class="aactive">un enlace</a> al párrafo siguiente.</p>
 
-              <p><a name="destino-2" id="destino-2">Destino definido con la etiqueta &lt;a&gt;.</a></p>
+              <p><a id="destino-2">Destino definido con la etiqueta &lt;a&gt;.</a></p>
             </td>
           </tr>
         </tbody>
@@ -411,11 +411,11 @@ p:active {
 
       <p>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span> permite especificar el aspecto de los elementos de un idioma determinado. En el ejemplo siguiente se cambia las comillas utilizadas en una cita <span class="html-eti">&lt;q&gt;</span> según el idioma indicado en el atributo <span class="html-atri">lang</span>.</p>
 
-      <table class="ejemplo lang">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p&gt;Ambrose Bierce dijo (más o menos) que
 &lt;q lang="es"&gt;una cita es una manera de repetir
 erróneamente las palabras de otros&lt;/q&gt;.&lt;/p&gt;
@@ -424,16 +424,9 @@ erróneamente las palabras de otros&lt;/q&gt;.&lt;/p&gt;
 &lt;q lang="en"&gt;a quotation is the act of repeating
 erroneously the words of another&lt;/q&gt;.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2"><p>Ambrose Bierce dijo (más o menos) que <q xml:lang="es" lang="es">una cita es una manera de repetir erróneamente las palabras de otros</q>.</p>
-
-              <p>Ambrose Bierce dijo (más o menos) que <q xml:lang="en" lang="en">a quotation is the act of repeating erroneously the words of another</q>.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">q:lang(es) {
   quotes: "«" "»";
 }
@@ -442,10 +435,12 @@ q:lang(en) {
   quotes: '"' '"';
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_lang.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="pseudo-elementos-first">

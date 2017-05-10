@@ -165,11 +165,10 @@
 
         <p>Si queremos tener una imagen a la izquierda y otra a la derecha, debemos definir clases y asignarlas a la imagen correspondiente</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-css">img.izquierda {
   float: left;
 }
@@ -178,14 +177,14 @@ img.derecha {
   float: right;
 }</code>
 </pre>
-              </td>
-              <td class="resultado" rowspan="2"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.</td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre></td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+            <div class="codigo">
+              <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre>                       </div>
+          </div>
+        <div class="resultado">
+            <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -309,31 +308,28 @@ img {
 
         <p>Por ejemplo, si la imagen está en un párrafo, se puede definir la clase "p.centrado" con el atributo <span class="html-atri">text-align</span> establecido con el valor <span class="html-atri-valor">center</span> y después dar al párrafo que contiene la imagen la clase "centrado". Lógicamente, si se añade texto al párrafo, el texto también se centrará.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;p class="centrado"&gt;
   &lt;img
     alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)"
   /&gt;
 &lt;/p&gt;</code>
 </pre>
-              </td>
-              <td rowspan="2" class="resultado"><p style="text-align: center"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" /></p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">p.centrado {
   text-align: center;
 }</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+        <div class="resultado">
+            <p style="text-align: center"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" /></p>        </div>
+        </div>
       </section>
     </section>
 
