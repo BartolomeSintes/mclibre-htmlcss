@@ -40,84 +40,71 @@
 
       <p>Las clases se asignan con el atributo <span class="html-atri">class</span>. El valor del atributo <span class="html-atri">class</span> (el nombre de la clase) sólo pueden contener caracteres ingleses, números, guiones y subrayados, aunque el primer carácter no puede ser ni un número ni un guión.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... la parte contratante de la primera parte será considerada como la parte contratante de la primera parte. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p class="aviso"&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_01.html" style="width: 100%; height: 250px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr><td class="codigo">
+          </div>
+          <div class="codigo">
             <pre>
 <code class="language-css">p.aviso {
   color: red;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_01.html" style="width: 100%; height: 250px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Cuando se define una clase de elemento, la regla se aplica únicamente a los elementos de ese tipo que tienen esa clase. En el ejemplo siguiente, en la hoja de estilo está definida la clase <span class="html-atri-valor">aviso</span> para la etiqueta <span class="html-eti">&lt;span&gt;</span>. Esa regla no se aplica a ningún elemento, puesto que en la página web la etiqueta <span class="html-eti">&lt;span&gt;</span> no tiene atributo <span class="html-atri">class</span> y la clase <span class="html-atri-valor">aviso</span> está asignada a una etiqueta diferente (<span class="html-eti">&lt;p&gt;</span>).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... &lt;span&gt;la parte contratante de la primera parte será considerada como la parte contratante de la primera parte&lt;/span&gt;. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p class="aviso"&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p>- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... <span>la parte contratante de la primera parte será considerada como la parte contratante de la primera parte</span>. ¿Qué tal, está muy bien, eh?</p>
-
-              <p>- No, eso no está bien. Quisiera volver a oírlo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">span.aviso {
   color: red;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <p>- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... <span>la parte contratante de la primera parte será considerada como la parte contratante de la primera parte</span>. ¿Qué tal, está muy bien, eh?</p>
+
+          <p>- No, eso no está bien. Quisiera volver a oírlo.</p>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Los navegadores distinguen los nombres de clases escritos en mayúsculas o minúsculas. En estos apuntes se recomienda utilizar únicamente minúsculas.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="aviso"&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... la parte contratante de la primera parte será considerada como la parte contratante de la primera parte. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p class="Aviso"&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_02.html" style="width: 100%; height: 150px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.aviso {
   color: red;
 }
@@ -126,10 +113,12 @@ p.Aviso {
   color: blue;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_02.html" style="width: 100%; height: 150px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
@@ -137,37 +126,32 @@ p.Aviso {
 
       <p>En el ejemplo siguiente, en la hoja de estilo se ha escrito una regla para párrafos <span class="html-eti">&lt;p&gt;</span> en general y otra regla para los párrafos de clase <span class="html-atri-valor">aviso</span>. El elemento con clase hereda las propiedades de los elementos sin clase.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... la parte contratante de la primera parte será considerada como la parte contratante de la primera parte. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p class="aviso"&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <p style="font-style: oblique;">1º. La parte contratante de la primera parte será considerada como la parte contratante de la primera parte.</p>
-
-              <p style="font-style: oblique; color: red;">2º. La parte contratante de la segunda parte será considerada como ...</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-style: oblique;
-}<br />
+}
 p.aviso {
   color: red;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <p style="font-style: oblique;">1º. La parte contratante de la primera parte será considerada como la parte contratante de la primera parte.</p>
 
+          <p style="font-style: oblique; color: red;">2º. La parte contratante de la segunda parte será considerada como ...</p>
+        </div>
+      </div>
     </section>
 
     <section id="combinar">
@@ -175,25 +159,19 @@ p.aviso {
 
       <p>Un elemento puede tener asignado varias clases. Para asignar varias clases a un elemento, hay que escribir en el atributo <span class="html-atri">class</span> los nombres de todas las clases que se quieren aplicar, separados por espacios.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="groucho"&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... la parte contratante de la primera parte será considerada como la parte contratante de la primera parte. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;
 
 &lt;p class="groucho aviso"&gt;- Dice que… la parte contratante de la primera parte será considerada como la parte contratante de la primera parte.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_11.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.groucho {
   font-style: oblique;
 }
@@ -202,32 +180,28 @@ p.aviso {
   color: red;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_11.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>El orden en que se escriban los nombres de las clases en el atributo <span class="html-atri">class</span> no es importante, aunque sí que es importante el orden de las reglas en la hoja de estilo. Como muestran los dos ejemplos siguientes, si la misma propiedad está definida en varias clases y a un elemento tiene asignado varias clases, se aplica la definición de la clase que aparece después en la hoja de estilo (esta es una característica del mecanismo de cascada de las hojas de estilo).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="borde-1 borde-2"&gt;Este párrafo tiene como clase "borde-1 borde-2".&lt;/p&gt;
 
 &lt;p class="borde-2 borde-1"&gt;Este párrafo tiene como clase "borde-2 borde-1".&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_12.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.borde-1 {
   border: red 3px solid;
 }
@@ -236,23 +210,24 @@ p.borde-2 {
   border: blue 3px dotted;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_12.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="borde-1 borde-2"&gt;Este párrafo tiene como clase "borde-1 borde-2".&lt;/p&gt;
 
 &lt;p class="borde-2 borde-1"&gt;Este párrafo tiene como clase "borde-2 borde-1".&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_13.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.borde-2 {
   border: blue 3px dotted;
 }
@@ -261,34 +236,30 @@ p.borde-1 {
   border: red 3px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_13.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Se puede escribir un selector que se aplique únicamente a los elementos que tienen definidas varias clases.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="borde-1"&gt;Este párrafo tiene como clase "borde-1".&lt;/p&gt;
 
 &lt;p class="borde-2"&gt;Este párrafo tiene como clase "borde-2".&lt;/p&gt;
 
 &lt;p class="borde-1 borde-2"&gt;Este párrafo tiene como clase "borde-1 borde-2".&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_14.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.borde-1.borde-2 {
   border: red 3px dotted;
 }
@@ -299,15 +270,14 @@ p.borde-1 {
 
 p.borde-2 {
   border: blue 3px dotted;
-}
-
-
-</code>
+}</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_14.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="universal">
@@ -317,23 +287,17 @@ p.borde-2 {
 
       <ul>
         <li>definiendo la clase para cada elemento, en cuyo caso cada elemento puede tener propiedades distintas aunque el nombre de la clase sea el mismo,
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre>
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;p class="borde-1"&gt;Este párrafo tiene como clase "borde-1".&lt;/p&gt;
 
 &lt;p&gt;Este párrafo tiene esta &lt;span class="borde-1"&gt;palabra&lt;/span&gt; con clase "borde-1".&lt;/p&gt;</code>
 </pre>
-                </td>
-                <td class="resultado" rowspan="2">
-                  <object type="text/html" data="ejemplos/clases/clases_21.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-css">p.borde-1 {
   border: red 3px solid;
 }
@@ -342,28 +306,25 @@ span.borde-1 {
   border: red 3px dotted;
 }</code>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table></li>
+              </div>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/clases/clases_21.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+        </li>
         <li>definiendo una clase universal, en cuyo caso todos los elementos tienen las mismas propiedades,
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre>
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;p class="borde-1"&gt;Este párrafo tiene como clase "borde-1".&lt;/p&gt;
 
 &lt;p&gt;Este párrafo tiene esta &lt;span class="borde-1"&gt;palabra&lt;/span&gt; con clase "borde-1".&lt;/p&gt;</code>
 </pre>
-                </td>
-                <td class="resultado" rowspan="2">
-                  <object type="text/html" data="ejemplos/clases/clases_22.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
-                </td>
-              </tr>
-              <tr>
-                <td class="codigo">
-                  <pre>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-css">.borde-1 {
   border: red 3px solid;
 }
@@ -376,10 +337,13 @@ span.borde-1 {
 
 */</code>
 </pre>
-                </td>
-              </tr>
-            </tbody>
-          </table></li>
+              </div>
+            </div>
+            <div class="resultado">
+              <object type="text/html" data="ejemplos/clases/clases_22.html" style="width: 100%; height: 200px">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+          </div>
+        </li>
       </ul>
     </section>
 
@@ -390,11 +354,10 @@ span.borde-1 {
 
       <p>En este primer ejemplo, para distinguir las intervenciones de los dos personajes en un diálogo, se da clase a todos los párrafos. Los nombres de la clase son los nombres de los personajes.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="groucho"&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... &lt;span class="aviso"&gt;la parte contratante de la primera parte será considerada como la parte contratante de la primera parte&lt;/span&gt;. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p class="chico"&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;
@@ -411,14 +374,9 @@ span.borde-1 {
 
 &lt;p class="chico"&gt;- No, solo la parte de la parte contratante de la primera parte.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_31.html" style="width: 100%; height: 400px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.groucho {
   color: red;
 }
@@ -427,18 +385,19 @@ p.chico {
   color: blue;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_31.html" style="width: 100%; height: 400px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>En este segundo ejemplo, para distinguir las intervenciones de los dos personajes en un diálogo, sólo se da clase a los párrafos de uno de ellos. El nombre de la clase es el nombre del personaje. La propiedad que antes se establecía en la clase del segundo personaje, esta vez se establdece para la etiqueta general (sin clase).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p class="groucho"&gt;- Haga el favor de poner atención en la primera cláusula porque es muy importante. Dice que ... &lt;span class="aviso"&gt;la parte contratante de la primera parte será considerada como la parte contratante de la primera parte&lt;/span&gt;. ¿Qué tal, está muy bien, eh?&lt;/p&gt;
 
 &lt;p&gt;- No, eso no está bien. Quisiera volver a oírlo.&lt;/p&gt;
@@ -455,14 +414,9 @@ p.chico {
 
 &lt;p&gt;- No, solo la parte de la parte contratante de la primera parte.&lt;/p&gt;</code>
 </pre>
-            </td>
-            <td class="resultado" rowspan="2">
-              <object type="text/html" data="ejemplos/clases/clases_32.html" style="width: 100%; height: 400px">ERROR (no puede mostrarse el objeto)</object>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.groucho {
   color: red;
 }
@@ -471,10 +425,12 @@ p {
   color: blue;
 }</code>
 </pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </div>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/clases/clases_32.html" style="width: 100%; height: 400px">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>La ventaja del segundo método es que hay que asignar menos clases. El inconveniente es que las propiedades de la clase no definida hay que asignarla a la etiqueta general y se aplican a todos los elementos.</p>
 

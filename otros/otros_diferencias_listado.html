@@ -228,46 +228,64 @@
       <section id="html-main">
         <h3>Elemento <span class="html-eti">&lt;main&gt;</span></h3>
 
-        <p>Internet Explorer 11 no reconoce la etiqueta <span class="html-eti">&lt;main&gt;</span>, aunque se puede corregir este problema añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
+        <p>Internet Explorer 11 no reconoce la etiqueta <span class="html-eti">&lt;main&gt;</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td rowspan="2">
-                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-              </td>
-              <td class="codigo">
-                <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code></pre>
-              </td>
-              <td class="resultado" rowspan="2">
-                <main style="background-color: red"><p>Esto es un párrafo</p></main>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre><code class="language-css">main {<br />  background-color: red;<br />}</code></pre></td>
-            </tr>
-            <tr>
-              <td rowspan="2">
-                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-              </td>
-              <td class="codigo">
-                <pre><code class="language-html">&lt;main&gt;<br />  &lt;p&gt;Esto es un párrafo&lt;/p&gt;<br />&lt;/main&gt;</code></pre></td>
-              <td class="resultado" rowspan="2">
-                <main style="display: block; background-color: red"><p>Esto es un párrafo</p></main>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre><code class="language-css">main {<br />  display: block;<br />  background-color: red;<br />}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="filaflex">
+          <div class="icono">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;main&gt;
+  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
+&lt;/main&gt;</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-css">main {
+  background-color: red;
+}</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="../html/ejemplos/bloques/bloques_main_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <p>Esta limitación se puede corregir añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
+
+        <div class="filaflex">
+          <div class="icono">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+          </div>
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;main&gt;
+  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
+&lt;/main&gt;</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-css">main {
+  display: block;
+  background-color: red;
+}</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="../html/ejemplos/bloques/bloques_main_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="text-decoration-overline">
@@ -416,62 +434,8 @@
       <section id="favicons">
         <h3>Favicons</h3>
 
-        <section id="favicons-enlaces">
-          <h4>Enlaces a favicons</h4>
-
-          <p>Internet Explorer 11 no admite la forma de enlazar los favicons recomendada por el W3C, mientras que Firefox sí lo hace. Además, Internet Explorer 11 tampoco muestra los favicons si las páginas no están colgadas en un servidor.</p>
-
-          <p>La tabla siguiente contiene enlaces a diferentes páginas que contiene enlaces a favicons definidos de maneras distintas. Abriendo los enlaces en el navegador puede comprobarse si el navegador es capaz de mostrar los favicons.</p>
-
-          <table class="conborde">
-            <tbody>
-              <tr>
-                <th rowspan="2"></th>
-                <th rowspan="2">Sintaxis del enlace</th>
-                <th colspan="3">Tamaño de imagen (píxeles)</th>
-              </tr>
-              <tr>
-                <th>16x16</th>
-                <th>32x32</th>
-                <th>32x32+16x16</th>
-              </tr>
-              <tr>
-                <td>
-                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                  <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-                </td>
-                <td><pre><code class="language-html">&lt;link rel="shortcut icon" href="cdlibre.ico" /&gt;</code></pre></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16_shortcut.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16_shortcut.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                </td>
-                <td><pre><code class="language-html">&lt;link rel="icon" type="image/png" href="cdlibre.png" /&gt; </code></pre></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_png_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_png_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
-                <td class="centrado"></td>
-              </tr>
-              <tr>
-                <td>
-                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                </td>
-                <td><pre><code class="language-html">&lt;link rel="icon" type="image/vnd.microsoft.icon" href="cdlibre.ico" /&gt;</code></pre>
-                </td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_16.html"><img alt="favicon tamaño 16x16" src="../ejemplos/favicon/favicon_cdlibre_16.png" width="16" height="16" /></a></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
-                <td class="centrado"><a href="../ejemplos/favicon/favicon_ico_32-16.html"><img alt="favicon tamaño 32x32" src="../ejemplos/favicon/favicon_cdlibre_32.png" width="31" height="32" /></a></td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
         <section id="favicons-locales">
-          <h3>favicons en archivos locales</h3>
+          <h3>Favicons en archivos locales</h3>
 
           <p>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</p>
         </section>
@@ -479,24 +443,18 @@
         <section id="favicons-animados">
           <h3>Favicons animados</h3>
 
-          <p>Firefox admite favicons animados, en forma de gifs animados, pero Internet Explorer y Google Chrome no.</p>
+          <p>Firefox admite favicons animados, pero Internet Explorer y Google Chrome no.</p>
 
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-                  <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                  <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                </td>
-                <td>La siguiente página muestra un ejemplo de favicon animado:
-                  <ul>
-                    <li><a href="http://www.animatedfavicon.com/">http://www.animatedfavicon.com/</a></li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+            </div>
+            <div class="resultado">
+              <p><a href="../ejemplos/favicon/favicon_animado.html">Página de ejemplo</a> que usa el gif animado siguiente: <img alt="GIF animado" src="../ejemplos/favicon/gif_animado.ico" width="16" height="16" /></p>
+            </div>
+          </div>
         </section>
       </section>
 

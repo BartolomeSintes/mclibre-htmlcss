@@ -1268,23 +1268,26 @@
 
         <hr class="corta" />
 
-        <p>Los controles ocultos se pueden utilizar, por ejemplo, para dividir en varias páginas un formulario largo. El problema de dividir en varias páginas es que cada página es independiente de las demás y HTMl no permite relacionar una con otra por lo que no se sabría que la información enviada en el segundo formulario completa la del primero  (los lenguajes de programación de servidor, como PHP, sí que disponen de mecanismos para relacionar unas páginas con otras, por ejemplo mediante <i>cookies</i>). Una solución es guardar en el segundo formulario la información enviada en el primer formulario en controles ocultos, de manera que cuando el usuario envía el segundo formulario, está enviando a la vez la información del primero y así sucesivamente en los siguientes formularios.</p>
+        <p>Los controles ocultos se pueden utilizar, por ejemplo, para dividir en varias páginas un formulario largo. El problema de dividir en varias páginas es que cada página es independiente de las demás y HTML no permite relacionar una con otra por lo que no se sabría que la información enviada en el segundo formulario completa la del primero  (los lenguajes de programación de servidor, como PHP, sí que disponen de mecanismos para relacionar unas páginas con otras, por ejemplo mediante <i>cookies</i> o <i>sesiones</i>). Una solución es guardar en el segundo formulario la información enviada en el primer formulario en controles ocultos, de manera que cuando el usuario envía el segundo formulario, está enviando a la vez la información del primero y así sucesivamente en los siguientes formularios.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">Escriba su nombre: &lt;input type="text" name="nombre" /&gt;</code></pre></td>
-              <td class="resultado" rowspan="2">
-                <object type="text/html" data="ejemplos/formularios/formularios_hidden_2.html" style="width: 100%; height: 140px">ERROR (no puede mostrarse el objeto)</object>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-html">Escriba su nombre: &lt;input type="text" name="nombre" /&gt;</code>
+</pre>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-html">Escriba su edad: &lt;input type="number" name="edad" /&gt;&lt;br /&gt;
-&lt;input type="hidden" name="nombre" value="pepito" /&gt;</code></pre></td>
-            </tr>
-          </tbody>
-        </table>
+&lt;input type="hidden" name="nombre" value=" ... " /&gt;</code>
+</pre>
+            </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/formularios/formularios_hidden_2.html" style="width: 100%; height: 140px">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="control-textarea">
