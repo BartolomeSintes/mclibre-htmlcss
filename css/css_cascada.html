@@ -10,65 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
     <script type="text/javascript" src="../varios/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-    <style type="text/css">
-      td.eje01a div { border: black 3px solid; color: red; }
-      td.eje01b div { border: black 3px solid; color: red; }
-      td.eje01b p { color: black; }
-      td.eje01c p { color: black; }
-      td.eje01c div { border: black 3px solid; color: red; }
-
-      td.eje11a p#nuevo11a { color:red;}
-      td.eje11a p { color:black;}
-      td.eje11b p { color:black;}
-      td.eje11b p#nuevo11b { color:red;}
-
-      td.eje12a div#viejo12a { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje12a p#nuevo12a { color: red; }
-      td.eje12a div#viejo12a p#nuevo12a { color: black; }
-      td.eje12b div#viejo12b { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje12b div#viejo12b p#nuevo12b { color: black; }
-      td.eje12b p#nuevo12b { color: red; }
-
-      td.eje13a div#viejo13a { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje13a p#nuevo13a { color: red; }
-      td.eje13a div#viejo13a { color: black; }
-      td.eje13b div#viejo13b { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje13b div#viejo13b { color: black; }
-      td.eje13b p#nuevo13b { color: red; }
-
-      td.eje21a div.viejo { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje21a div.viejo p { color: red; }
-      td.eje21a div p { color: black; }
-      td.eje21b div.viejo { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje21b div p { color: black; }
-      td.eje21b div.viejo p { color: red; }
-
-      td.eje31a div { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje31a div p { color: red; }
-      td.eje31a p { color: black; }
-      td.eje31b div { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje31b p { color: black; }
-      td.eje31b div p { color: red; }
-
-      td.eje32a li { color: black; }
-      td.eje32a ul li { color: red; }
-      td.eje32b ul li { color: red; }
-      td.eje32b li { color: black; }
-
-      td.eje33a p.nuevo { color: black; }
-
-      td.eje41a div { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje41a div p { color: red; }
-      td.eje41a div p { color: black; }
-      td.eje41b div { border: black 3px solid; padding: 2px; margin: 2px; }
-      td.eje41b div p { color: black; }
-      td.eje41b div p { color: red; }
-
-      td.eje42a p.viejo { color: red; }
-      td.eje42a p.nuevo { color: black; }
-      td.eje42b p.nuevo { color: black; }
-      td.eje42b p.viejo { color: red; }
-    </style>
   </head>
 
   <body>
@@ -275,7 +216,7 @@ div {
       <section id="numero-ids">
         <h3>Número de atributos <span class="html-atri">id</span> en el selector</h3>
 
-        <p>El ejemplo siguiente muestra dos selectores con un número de atributos <span class="html-atri">id</span> diferente (1 o 0). Puede comprobarse que se aplica siempre el selector con atributo <span class="html-atri">id</span>.</p>
+        <p>El ejemplo siguiente muestra dos selectores con un número de atributos <span class="html-atri">id</span> diferente (1 o 0). Puede comprobarse que se aplica siempre el selector con atributo <span class="html-atri">id</span>, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
         <div class="filaflex">
           <div class="columnaflex">
@@ -298,7 +239,7 @@ p {
 </pre>
             </div>
           </div>
-        <div class="resultado">
+          <div class="resultado">
             <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_1.html" style="width:100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
           </div>
         </div>
@@ -315,18 +256,16 @@ p#nuevo {
 }</code>
 </pre>
           </div>
-        <div class="resultado">
+          <div class="resultado">
             <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
           </div>
         </div>
 
-        <p>El ejemplo siguiente muestra también dos selectores con un número de atributos <span class="html-atri">id</span> diferente (2 o 1). Puede comprobarse que se aplica siempre el selector con dos atributos <span class="html-atri">id</span>.</p>
+        <p>El ejemplo siguiente muestra también dos selectores con un número de atributos <span class="html-atri">id</span> diferente (2 o 1). Puede comprobarse que se aplica siempre el selector con más atributos <span class="html-atri">id</span>, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div#viejo {
   border: black 3px solid;
   margin: 2px;
@@ -341,18 +280,15 @@ div#viejo p#nuevo {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje12a">
-                <div id="viejo12a">
-                  <p id="nuevo12a">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
-                </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Esto es un párrafo sin atributo id.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div#viejo {
   border: black 3px solid;
   margin: 2px;
@@ -367,29 +303,21 @@ div p#nuevo {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje12b">
-                <div id="viejo12b">
-                  <p id="nuevo12b">Esto es un párrafo con atributo id "nuevo" dentro de una división con atributo id "viejo"</p>
-                </div>
-
-                <p>Esto es un párrafo sin atributo id.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_id_4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="numero-atributos">
         <h3>Número de otros atributos y pseudo-clases en el selector</h3>
 
-        <p>El ejemplo siguiente muestra dos selectores con el mismo número do atributos <span class="html-atri">id</span> (0), pero con un número diferente de atributos <span class="html-atri">class</span> (1 o 0). Puede comprobarse que se aplica siempre el selector con más atributos <span class="html-atri">class</span>.</p>
+        <p>El ejemplo siguiente muestra dos selectores con el mismo número do atributos <span class="html-atri">id</span> (0), pero con un número diferente de atributos <span class="html-atri">class</span> (1 o 0). Puede comprobarse que se aplica siempre el selector con más atributos <span class="html-atri">class</span>, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div.viejo {
   border: black 3px solid;
   margin: 2px;
@@ -404,18 +332,15 @@ div p {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje21a">
-                <div class="viejo">
-                  <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
-                </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_pseudoclases_1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div.viejo {
   border: black 3px solid;
   margin: 2px;
@@ -430,29 +355,22 @@ div.viejo p {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje21b">
-                <div class="viejo">
-                  <p>Esto es un párrafo dentro de una división con atributo class "viejo".</p>
-                </div>
-
-                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_atributos_pseudoclases_2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="numero-elementos">
         <h3>Número de elementos en el selector</h3>
 
-        <p>El ejemplo siguiente muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
+        <p>El ejemplo siguiente muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 3px solid;
   margin: 2px;
@@ -467,18 +385,15 @@ p {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje31a">
-                <div>
-                  <p>Esto es un párrafo dentro de una división.</p>
-                </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 3px solid;
   margin: 2px;
@@ -493,25 +408,17 @@ div p {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje31b">
-                <div>
-                  <p>Esto es un párrafo dentro de una división.</p>
-                </div>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Esto es un párrafo que no está dentro de ninguna división..</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
-        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (2 o 1). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
-
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">li {
   color: black;
 }
@@ -520,15 +427,15 @@ ul li {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje32a"><ul>
-                <li>Esto es un elemento de lista</li>
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul li {
   color: red;
 }
@@ -537,23 +444,17 @@ li {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje32b">
-                <ul>
-                  <li>Esto es un elemento de lista</li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (1 o 0). Puede comprobarse que se aplica siempre el selector con más elementos.</p>
+        <p>El ejemplo siguiente también muestra dos selectores con un número diferente de elementos (1 o 0). Puede comprobarse que se aplica siempre el selector con más elementos, independientemente del orden en que aparezcan en la hoja de estilo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.nuevo {
   color: black;
 }
@@ -562,16 +463,15 @@ li {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje33a">
-                <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Esto es un párrafo sin clase.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">.nuevo {
   color: red;
 }
@@ -580,15 +480,11 @@ p.nuevo {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje33b">
-                <p class="nuevo">Esto es un párrafo de clase "nuevo".</p>
-
-                <p>Esto es un párrafo sin clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_numero_elementos_selector_6.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="posicion">
@@ -598,15 +494,11 @@ p.nuevo {
 
         <p>El ejemplo siguiente muestra dos selectores idénticos. Puede comprobarse que se aplica siempre el selector que aparece después en la hoja de estilo. En este caso, la penúltima regla es superflua y puede eliminarse sin afectar al resultado.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 3px solid;
-  margin: 2px;
-  padding: 2px;
 }
 
 div p {
@@ -617,20 +509,17 @@ div p {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje41a">
-                <div>
-                  <p>Esto es un párrafo dentro de una división.</p>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_posicion_css_1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 3px solid;
-  margin: 2px;
-  padding: 2px;
 }
 
 div p {
@@ -641,23 +530,17 @@ div p {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje41b">
-                <div>
-                  <p>Esto es un párrafo dentro de una división.</p>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_posicion_css_2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El ejemplo siguiente muestra una situación diferente y más habitual. Se trata de un párrafo con dos clases. Puede comprobarse que se aplica siempre el selector que aparece después en la hoja de estilo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.viejo {
   color: red;
 }
@@ -666,13 +549,15 @@ p.nuevo {
   color: black;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje42a"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_posicion_css_3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.nuevo {
   color: black;
 }
@@ -681,11 +566,11 @@ p.viejo {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado eje42b"><p class="viejo nuevo">Esto es un párrafo con atributo class "viejo" y "nuevo"</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/cascada/cascada_posicion_css_4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
     </section>
 

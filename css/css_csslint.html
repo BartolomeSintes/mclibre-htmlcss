@@ -45,8 +45,6 @@
       </div>
     </nav>
 
-    <hr />
-
     <section id="que-es">
       <h2>Qué es CSS Lint</h2>
 
@@ -72,53 +70,47 @@
       <ul>
         <li>los errores de sintaxis se indican con la frase "Parsing errors":
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">p
   color: black;</code>
 </pre>
-                </td>
-                <td class="resultado"><p>Parsing Errors - Expected LBRACE at line 1, col 15. (errors)</p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <p>Parsing Errors - Expected LBRACE at line 1, col 15. (errors)</p>
+            </div>
+          </div>
         </li>
         <li>errores en el nombre de las propiedades:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">p {
   colour: black;
 }</code>
 </pre>
-                </td>
-                <td class="resultado"><p>Require use of known properties - Unknown property 'colour'. (known-properties)</p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <p>Require use of known properties - Unknown property 'colour'. (known-properties)</p>
+            </div>
+          </div>
         </li>
         <li>errores en los valores de las propiedades:
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td class="codigo">
-                  <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-html">p {
   color: negro;
 }</code>
 </pre>
-                </td>
-                <td class="resultado"><p>Require use of known properties - Expected (&lt;color&gt; | inherit) but found 'negro'. (known-properties)</p></td>
-              </tr>
-            </tbody>
-          </table>
+            </div>
+            <div class="resultado">
+              <p>Require use of known properties - Expected (&lt;color&gt; | inherit) but found 'negro'. (known-properties)</p>
+            </div>
+          </div>
         </li>
       </ul>
     </section>
@@ -156,45 +148,38 @@
 
         <p>Si en la hoja de estilo se escribe un selector que contenga una etiqueta y una clase, CSS Lint genera un aviso "Disallow overqualified elements".</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.ejemplo {
   color: gray;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Disallow overqualified elements - Element (p.ejemplo) is overqualified, just use .ejemplo without element name. (overqualified-elements)</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Disallow overqualified elements - Element (p.ejemplo) is overqualified, just use .ejemplo without element name. (overqualified-elements)</p>
+          </div>
+        </div>
 
         <p>CSSLint aconseja utilizar selectores universales para facilitar la reutilización de clases (es decir, para que la clase se pueda aplicar a cualquier elemento en la página web).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">.ejemplo {
   color: gray;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p></p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+          </div>
+        </div>
 
         <p>CSS Lint admite etiquetas con clase cuando especifican casos particulares de un selector universal:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">.ejemplo {
   color: blue;
 }
@@ -203,11 +188,10 @@ p.ejemplo {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p></p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -221,22 +205,22 @@ p.ejemplo {
 
         <p>Si en la hoja de estilo se utilizan reglas-arroba @import, CSS Lint genera un aviso "Disallow @import".</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre><code class="language-css">@import url("http://fonts.googleapis.com/css?family=Ribeye+Marrow");</code></pre></td>
-              <td class="resultado"><p>Disallow @import - @import prevents parallel downloads, use &lt;link&gt; instead. (import)</p></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">@import url("http://fonts.googleapis.com/css?family=Ribeye+Marrow");</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <p>Disallow @import - @import prevents parallel downloads, use &lt;link&gt; instead. (import)</p>
+          </div>
+        </div>
 
         <p>Cuando se utiliza una regla-arroba @import, el navegador descarga el archivo al que se hace referencia y se espera a que termine la descarga para continuar leyendo la hoja de estilo. Eso ralentiza la carga de la página completa, por lo que CSS Lint aconseja utilizar en su lugar un enlace <span class="html-eti">&lt;link&gt;</span> en la página web (en la hoja de estilo no haría falta escribir nada), ya que la descarga de varios ficheros sí que se gestiona en paralelo. Pero entonces la asignación de la fuente a los elementos se debe hacer también en la página web.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;link href="http://fonts.googleapis.com/css?family=Ribeye+Marrow" rel="stylesheet" type="text/css"&gt;
 &lt;style&gt;
   h1 {
@@ -244,11 +228,10 @@ p.ejemplo {
   }
 &lt;/style&gt;</code>
 </pre>
-              </td>
-              <td class="resultado"><p></p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -262,11 +245,9 @@ p.ejemplo {
 
         <p>CSS Lint aconseja que en un sitio web todos los títulos (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) se muestren con el mismo estilo. Por ello, CSS Lint genera un aviso si se definen varios estilos de una misma etiqueta de título, o incluso si se escriben selectores que pudieran permitir definir varios estilos de una misma etiqueta de título (aunque no lo hagan).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">h2 {
   color: blue;
 }
@@ -275,21 +256,24 @@ h2.aviso  {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Headings should only be defined once - heading (h2) has already been defined.</p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <p>Headings should only be defined once - heading (h2) has already been defined.</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div h2  {
   color: red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Disallow qualified headings - Heading (h2) should not be qualified.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Disallow qualified headings - Heading (h2) should not be qualified.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -303,11 +287,9 @@ h2.aviso  {
 
         <p>Si en la hoja de estilo no se escriben las propiedades en orden alfabético, CSS Lint genera un aviso "Alphabetical order".</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.intro {
   margin-left: 30%;
   margin-right: 30%;
@@ -316,11 +298,11 @@ h2.aviso  {
   text-align: justify;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Alphabetical order - Rule doesn't have all its properties in alphabetical order.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Alphabetical order - Rule doesn't have all its properties in alphabetical order.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -334,29 +316,25 @@ h2.aviso  {
 
         <p>En los ejercicios propuestos en estos apuntes, se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que provoca un aviso de CSS Lint:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">@font-face {
   font-family: "MyFontFamily";
   src: url("myfont.woff")
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Use the bulletproof @font-faxce syntax - @font-face declaration doesn't follow the fontspring bulletproof syntax.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Use the bulletproof @font-faxce syntax - @font-face declaration doesn't follow the fontspring bulletproof syntax.</p>
+          </div>
+        </div>
 
         <p>CSS Lint aconseja utilizar una declaración <span class="css-arroba">@font-face</span> más complicada, que funcione en todos los navegadores (sobre todo, en versiones antiguas de Internet Explorer).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">@font-face {
   font-family: 'MyFontFamily';
   src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),
@@ -365,11 +343,10 @@ h2.aviso  {
        url('myfont-webfont.svg#svgFontName') format('svg');
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p></p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -383,20 +360,18 @@ h2.aviso  {
 
         <p>CSS Lint desaconseja el uso de clases múltiples, ya que estas no funcionan en Internet Explorer 6 (y anteriores).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div.a.b {
   background-color: #E56F60;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Disallow adjoining classes - Don't use adjoining classes.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Disallow adjoining classes - Don't use adjoining classes.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -410,20 +385,18 @@ h2.aviso  {
 
         <p>CSS Lint desaconseja el uso de ids en los selectores porque no se pueden reutilizar en una misma página web y aconseja utilizar clases en su lugar.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div#intro {
   background-color: #E56F60;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Disallow IDs in selectors - Don't use IDs in selectors.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Disallow IDs in selectors - Don't use IDs in selectors.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -439,11 +412,9 @@ h2.aviso  {
 
         <p>Por un lado, CSS Lint genera un aviso cuando se utilizan las propiedades <span class="css-prop">border</span> o <span class="css-prop">padding</span> junto con <span class="css-prop">width</span>. Este aviso simplemente nos recuerda que en el modelo de caja CSS 2, el tamaño del borde y del margen interior se añaden al tamaño del elemento definido con la propiedad <span class="css-prop">width</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   width: 100px;
   border: 1px solid black;
@@ -451,23 +422,19 @@ h2.aviso  {
   padding: 5px;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Beware of broken box size. Using width with border can sometimes make elements larger than you expect.</p>
+          </div>
+          <div class="resultado">
+            <p>Beware of broken box size. Using width with border can sometimes make elements larger than you expect.</p>
 
-                <p>Beware of broken box size. Using width with padding can sometimes make elements larger than you expect.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <p>Beware of broken box size. Using width with padding can sometimes make elements larger than you expect.</p>
+          </div>
+        </div>
 
         <p>Ese aviso se puede evitar utilizando la propiedad CSS 3 <span class="css-prop">box-sizing</span>: <span class="css-valor">border-box</span>, que hace que los tamaños del borde y del margen interior se descuenten del tamaño definido con la propiedad <span class="css-prop">width</span>. Pero, al usar esa propiedad, CSS Lint genera un aviso que nos recuerda que esa propiedad no funciona en versiones antiguas de los navegadores.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   box-sizing: border-box;
   width: 100px;
@@ -476,13 +443,11 @@ h2.aviso  {
   padding: 5px;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Disallow use of box-sizing - The box-sizing property isn't supported in IE6 and IE7</p>
-              </td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p>Disallow use of box-sizing - The box-sizing property isn't supported in IE6 and IE7</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -498,24 +463,20 @@ h2.aviso  {
 
         <p>Por un lado, un aviso desaconseja el uso de selectores de atributos CSS 3 que utilicen expresiones regulares, en este caso, ^= (empieza por ...) y *= (incluye ...) por su lentitud. Por otro lado, desaconseja el uso de selectores de atributos que no incluyan etiquetas, también debido a su lentitud.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">[class^="icon-"], [class*="icon-"] {
  ...
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Disallow selectors that look like regexs - Attribute selectors with ^= are slow!</p>
+          </div>
+          <div class="resultado">
+            <p>Disallow selectors that look like regexs - Attribute selectors with ^= are slow!</p>
 
-                <p>Disallow unqualified attribute selectors - Unqualified attrbiute selectors are known to be solw.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <p>Disallow unqualified attribute selectors - Unqualified attrbiute selectors are known to be solw.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
