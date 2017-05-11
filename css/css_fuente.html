@@ -134,104 +134,120 @@
 
       <p>Si los primeros valores son correctos, pero al final hay valores que deberían estar en otro lugar, los navegadores aplican los valores correctos e ignoran los valores finales (<span class="css-prop">font-family</span> también se ignora).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: oblique 120% sans-serif bold;
   /* bold debería estar al principio */
 }</code></pre>
-            </td>
-            <td class="resultado"><p style="font: oblique 120% sans-serif bold;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120%, y en negrita.</p>
-            </td>
-          </tr>
-          <tr>
-            <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: oblique 120% sans-serif bold;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120%, y en negrita.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: 120% sans-serif small-caps;
 /* small-caps debería estar al principio */
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: 120% sans-serif small-caps;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120% y en versalitas.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font: 120% sans-serif small-caps;">Esto debería ser un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial) al 120% y en versalitas.</p>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Además, la propiedad <span class="css-prop">font</span> admite los valores <span class="css-valor">caption</span>, <span class="css-valor">icon</span>, <span class="css-valor">menu</span>, <span class="css-valor">message-box</span>, <span class="css-valor">small-caption</span> y <span class="css-valor">status-bar</span>, que hacen referencia a los tipos de letra que utiliza el sistema operativo para esos elementos.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: caption;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: caption;">Este párrafo se muestra como un caption.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: caption;">Este párrafo se muestra como un caption.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: icon;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: icon;">Este párrafo se muestra como un icon.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: icon;">Este párrafo se muestra como un icon.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: menu;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: menu;">Este párrafo se muestra como un menu.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: menu;">Este párrafo se muestra como un menu.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: message-box;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: message-box;">Este párrafo se muestra como un message-box.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: message-box;">Este párrafo se muestra como un message-box.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: small-caption;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: small-caption;">Este párrafo se muestra como un small-caption.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font: small-caption;">Este párrafo se muestra como un small-caption.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font: status-bar;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: status-bar;">Este párrafo se muestra como un status-bar.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font: status-bar;">Este párrafo se muestra como un status-bar.</p>
+        </div>
+      </div>
     </section>
 
     <section id="font-family">
@@ -245,136 +261,152 @@
 
       <p>La propiedad <span class="css-prop">font-family</span> permite establecer el tipo de letra (fuente) del elemento. Se puede escribir el nombre concreto de una fuente (escribiéndolo entre comillas si el nombre contiene espacios), pero hay que tener en cuenta que si la persona que ve la página no tiene esa fuente instalada en su ordenador (o la tiene, pero con otro nombre), su navegador utilizará una fuente distinta. Para evitar este problema se puede utilizar uno de los nombres genéricos (<span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">cursive</span>, <span class="css-valor">fantasy</span> o <span class="css-valor">monospace</span>). Los navegadores tienen asociados a cada nombre genérico una fuente que sí que está instalada en el ordenador.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: serif;">Esto es un párrafo con fuente <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: sans-serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: sans-serif;">Esto es un párrafo con fuente <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: cursive;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: cursive;">Esto es un párra<span style="font-family: cursive;"></span>fo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: cursive;">Esto es un párra<span style="font-family: cursive;"></span>fo con fuente <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: fantasy;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: fantasy;">Esto es un párrafo con fuente <span class="css-valor">fantasy</span> (en Windows suele ser Verdana)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: fantasy;">Esto es un párrafo con fuente <span class="css-valor">fantasy</span> (en Windows suele ser Verdana)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: monospace;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier)</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font-family: monospace;">Esto es un párrafo con fuente <span class="css-valor">monospace</span> (en Windows suele ser Courier)</p>
+        </div>
+      </div>
 
       <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista. Los nombres de las fuentes deben escribirse entre comillas si contienen espacios.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "Palatino", sans-serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;Palatino&#34;, sans-serif;">Esto es un párrafo con fuente "Palatino" o, si no está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;Palatino&#34;, sans-serif;">Esto es un párrafo con fuente "Palatino" o, si no está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "Tahoma", "Geneva", sans-serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;Tahoma&#34;, &#34;Geneva&#34;, sans-serif;">Esto es un párrafo con fuente "Tahoma" o, si no está instalada en el ordenador cliente, "Geneva" o, si tampoco está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;Tahoma&#34;, &#34;Geneva&#34;, sans-serif;">Esto es un párrafo con fuente "Tahoma" o, si no está instalada en el ordenador cliente, "Geneva" o, si tampoco está instalada en el ordenador cliente, <span class="css-valor">sans-serif</span> (en Windows suele ser Arial)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "Homer Simpson", cursive;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;Homer Simpscon&#34;, cursive;">Esto es un párrafo con fuente "Homer Simpson" o, si no está instalada en el ordenador cliente, <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;Homer Simpscon&#34;, cursive;">Esto es un párrafo con fuente "Homer Simpson" o, si no está instalada en el ordenador cliente, <span class="css-valor">cursive</span> (en Windows suele ser Comic Sans)</p>
+        </div>
+      </div>
 
       <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "Arial", serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;Arial&#34;, serif;">Esto es un párrafo con fuente "Arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;Arial&#34;, serif;">Esto es un párrafo con fuente "Arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "arial", serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;arial&#34;, serif;">Esto es un párrafo con fuente "arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;arial&#34;, serif;">Esto es un párrafo con fuente "arial" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: "ARIAL", serif;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font-family: &#34;ARIAL&#34;, serif;">Esto es un párrafo con fuente "ARIAL" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font-family: &#34;ARIAL&#34;, serif;">Esto es un párrafo con fuente "ARIAL" o, si no está instalada en el ordenador cliente, <span class="css-valor">serif</span> (en Windows suele ser Times New Roman)</p>
+        </div>
+      </div>
     </section>
 
     <section id="font-size">
@@ -395,20 +427,18 @@
 
         <p>A continuación se encuentra cada uno de los nombres de tamaños absolutos a su propio tamaño: <span class="css-valor" style="font-size: xx-small;">xx-small</span>, <span class="css-valor" style="font-size: x-small;">x-small</span>, <span class="css-valor" style="font-size: small">small</span>, <span class="css-valor" style="font-size: medium;">medium</span>, <span class="css-valor" style="font-size: large;">large</span>, <span class="css-valor" style="font-size: x-large;">x-large</span> y <span class="css-valor" style="font-size: xx-large;">xx-large</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+      <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: x-large;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-size: x-large">Esto es un párrafo de tamaño x-large.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+        <div class="resultado">
+          <p style="font-size: x-large">Esto es un párrafo de tamaño x-large.</p>
+        </div>
+      </div>
       </section>
 
       <section id="tamano-relativo">
