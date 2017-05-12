@@ -71,11 +71,9 @@
 
       <p>La futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a> (actualmente -octubre de 2016- en elaboración) permite la utilización de fuentes web mediante el uso de la regla-arroba <span class="css-sele">@font-face</span>, como muestra el ejemplo siguiente:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">@font-face {
   font-family: "Mystery Quest";
   src: url("fuentes/mystery-quest.woff");
@@ -86,19 +84,17 @@ p {
   font-size: 150%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="font: 150% mystery-quest-woff-local, cursive;">Esto es un párrafo con fuente web Mystery Quest al 150%.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font: 150% mystery-quest-woff-local, cursive;">Esto es un párrafo con fuente web Mystery Quest al 150%.</p>
+        </div>
+      </div>
 
       <p>En la regla <span class="css-sele">@font-face</span>:</p>
       <ul>
         <li>La propiedad <span class="css-prop">font-family</span> establece cómo tenemos que llamar a la fuente en la hoja de estilo. Si el nombre contiene espacios en blanco, es necesario escribir el nombre entre comillas.</li>
         <li>La propiedad <span class="css-prop">src</span> indica el camino (absoluto o relativo) del fichero de la fuente.</li>
       </ul>
-
-
 
       <p>Una vez definido el nombre de la fuente, se puede hacer referencia a ella en las propiedades <span class="css-prop">font-family</span>.</p>
 
@@ -128,11 +124,9 @@ p {
         <ol>
           <li>Incluir al principio de la hoja de estilo una regla-arroba <span class="css-sele">@import</span> y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
 
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td class="codigo">
-                    <pre>
+            <div class="filaflex">
+              <div class="codigo">
+                <pre>
 <code class="language-css">@import url(https://fonts.googleapis.com/css?family=Mystery+Quest);
 
 p {
@@ -140,11 +134,11 @@ p {
   font-size: 150%;
 }</code>
 </pre>
-                  </td>
-                  <td class="resultado"><p style="font-family: mystery-quest-woff-internet; font-size: 150%;">Esto es un párrafo con fuente web Mystery Quest al 150% alojada en Google Fonts.</p></td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+              <div class="resultado">
+                <p style="font-family: mystery-quest-woff-internet; font-size: 150%;">Esto es un párrafo con fuente web Mystery Quest al 150% alojada en Google Fonts.</p>
+              </div>
+            </div>
           </li>
           <li>Incluir en el documento html un enlace como si fuera un enlace a una hoja de estilo y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
 

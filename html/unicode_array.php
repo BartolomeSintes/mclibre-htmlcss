@@ -2272,7 +2272,6 @@ $caracteres_unicode = array(
 */
 
 
-
   // Combinaciones: Color de piel
   // En principio no hace falta usarlos porque
   array(array("0261D", "1F3FB"), "white up pointing finger", "emojione"),

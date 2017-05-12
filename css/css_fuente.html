@@ -427,7 +427,7 @@
 
         <p>A continuación se encuentra cada uno de los nombres de tamaños absolutos a su propio tamaño: <span class="css-valor" style="font-size: xx-small;">xx-small</span>, <span class="css-valor" style="font-size: x-small;">x-small</span>, <span class="css-valor" style="font-size: small">small</span>, <span class="css-valor" style="font-size: medium;">medium</span>, <span class="css-valor" style="font-size: large;">large</span>, <span class="css-valor" style="font-size: x-large;">x-large</span> y <span class="css-valor" style="font-size: xx-large;">xx-large</span>.</p>
 
-      <div class="filaflex">
+        <div class="filaflex">
           <div class="codigo">
             <pre>
 <code class="language-css">p {
@@ -435,10 +435,10 @@
 }</code>
 </pre>
           </div>
-        <div class="resultado">
-          <p style="font-size: x-large">Esto es un párrafo de tamaño x-large.</p>
+          <div class="resultado">
+            <p style="font-size: x-large">Esto es un párrafo de tamaño x-large.</p>
+          </div>
         </div>
-      </div>
       </section>
 
       <section id="tamano-relativo">
@@ -448,36 +448,32 @@
 
         <p>En el ejemplo siguiente, la hoja de estilo establece que una lista tiene que tener un tamaño menor que el elemento padre. Si se escriben listas anidadas, cada sublista es cada vez más pequeña. Cuando se llega al límite inferior, el navegador puede seguir reduciendo la letra o dejarla en <span class="css-valor">xx-small</span>.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   font-size: smaller;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
+          </div>
+          <div class="resultado">
+            <ul style="font-size: smaller;">
+              <li>Lista 1
                 <ul style="font-size: smaller;">
-                  <li>Lista 1
-                    <ul style="font-size: smaller;">
-                      <li>Lista 2
+                  <li>Lista 2
+                    <ul>
+                      <li style="font-size: smaller;">Lista 3
                         <ul>
-                          <li style="font-size: smaller;">Lista 3
-                            <ul>
-                              <li style="font-size: smaller;">Lista 4</li>
-                            </ul>
-                          </li>
+                          <li style="font-size: smaller;">Lista 4</li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section id="valor-numerico">
@@ -487,20 +483,18 @@
 
         <p><strong>Nota</strong>: Hace años (antes de 2010) se desaconsejaba utilizar estas unidades de forma indiscriminada porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación. Esta forma de definir el tamaño se reservaba para diseños de página pensados para una resolución determinada y cuando se quería conservar un determinado diseño (distribución de elementos en la página, etc.).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 16pt;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-size: 16pt;">Esto es un párrafo de tamaño 16pt.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-size: 16pt;">Esto es un párrafo de tamaño 16pt.</p>
+          </div>
+        </div>
       </section>
 
       <section id="valor-relativo">
@@ -510,51 +504,44 @@
 
         <p><strong>Nota</strong>: Hace años (antes de 2010) se aconsejaba utilizar preferentemente estas unidades porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 150%;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-size: 150%;">Esto es un párrafo de tamaño 150%.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-size: 150%;">Esto es un párrafo de tamaño 150%.</p>
+          </div>
+        </div>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 120%;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-size: 120%;">Esto es un párrafo de tamaño 120%.</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-size: 120%;">Esto es un párrafo de tamaño 120%.</p>
+          </div>
+        </div>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-size: 80%;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-size: 80%;">Esto es un párrafo de tamaño 80%.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-size: 80%;">Esto es un párrafo de tamaño 80%.</p>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -593,49 +580,50 @@
 
         <p>La propiedad <span class="css-prop">font-style</span> permite elegir la inclinación: <span class="css-valor">normal</span>, <span class="css-valor">oblique</span> o <span class="css-valor">italic</span>. Desgraciadamente, los navegadores no distinguen entre itálica y oblicua y muestran en los dos casos la variante oblicua, como puede verse en el ejemplo siguiente. Por tanto, al utilizar esta propiedad es más apropiado dar el valor <span class="css-valor">oblique</span>, que es el que aplican realmente los navegadores.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-family: sans-serif;
   font-size: 200%;
   font-style: normal;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-family: sans-serif; font-size: 200%; font-style: normal;">Este párrafo está en el tipo normal</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <p style="font-family: sans-serif; font-size: 200%; font-style: normal;">Este párrafo está en el tipo normal</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-family: sans-serif;
   font-size: 200%;
   font-style: italic;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-family: sans-serif; font-size: 200%; font-style: italic;">Este párrafo está en el tipo itálica</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <p style="font-family: sans-serif; font-size: 200%; font-style: italic;">Este párrafo está en el tipo itálica</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-family: sans-serif;
   font-size: 200%;
   font-style: oblique;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-family: sans-serif; font-size: 200%; font-style: oblique;">Este párrafo está en el tipo oblicuo</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-family: sans-serif; font-size: 200%; font-style: oblique;">Este párrafo está en el tipo oblicuo</p>
+          </div>
+        </div>
       </section>
 
       <section id="font-variant">
@@ -649,30 +637,31 @@
 
         <p>Las versalitas son tipos en las que todos los caracteres están en mayúsculas, aunque con el tamaño de las minúsculas (en principio, con la altura de la letra x del tipo, aunque no siempre es así). La propiedad <span class="css-prop">font-variant</span> permite elegir esta variante (los valores posibles son <span class="css-valor">normal</span> y <span class="css-valor">small-caps</span>).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-variant: normal;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-variant: normal;">Este párrafo está en el tipo normal: aAbBcCdDeEfF</p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <p style="font-variant: normal;">Este párrafo está en el tipo normal: aAbBcCdDeEfF</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   font-variant: small-caps;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p style="font-variant: small-caps;">Este párrafo está en versalitas: aAbBcCdDeEfF</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p style="font-variant: small-caps;">Este párrafo está en versalitas: aAbBcCdDeEfF</p>
+          </div>
+        </div>
       </section>
 
       <section id="font-weight">
@@ -719,11 +708,9 @@
           </li>
         </ul>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p { font-family: sans-serif; }
 
 p.g400 { font-weight: 400; }
@@ -737,57 +724,53 @@ p.b { font-weight: bold; }
 p.g900 { font-weight: 900;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p style="font-weight: 400; font-family: sans-serif;">Este párrafo está en negrita (400)</p>
+          </div>
+          <div class="resultado">
+            <p style="font-weight: 400; font-family: sans-serif;">Este párrafo está en negrita (400)</p>
 
-                <p style="font-weight: normal; font-family: sans-serif;">Este párrafo está en negrita (normal)</p>
+            <p style="font-weight: normal; font-family: sans-serif;">Este párrafo está en negrita (normal)</p>
 
-                <p style="font-weight: 700; font-family: sans-serif;">Este párrafo está en negrita (700)</p>
+            <p style="font-weight: 700; font-family: sans-serif;">Este párrafo está en negrita (700)</p>
 
-                <p style="font-weight: bold; font-family: sans-serif;">Este párrafo está en negrita (bold)</p>
+            <p style="font-weight: bold; font-family: sans-serif;">Este párrafo está en negrita (bold)</p>
 
-                <p style="font-weight: 900; font-family: sans-serif;">Este párrafo está en negrita (900)</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <p style="font-weight: 900; font-family: sans-serif;">Este párrafo está en negrita (900)</p>
+          </div>
+        </div>
 
         <p>El valor <span class="css-valor">bolder</span> hace que el elemento se muestre, si es posible, con un grosor mayor que el del elemento en el que está incluido. En el siguiente ejemplo, cada lista se muestra con un grosor mayor que la anterior:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
 <span class="font-weight: normal;">  font-weight: normal;</span>
-}<br />
+}
+
 ul {
   font-weight: bolder;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Este es un párrafo normal</p>
-                <ul style="font-weight: bolder; font-family: sans-serif;">
-                  <li>Lista con trazo más grueso
+          </div>
+          <div class="resultado">
+            <p>Este es un párrafo normal</p>
+            <ul style="font-weight: bolder; font-family: sans-serif;">
+              <li>Lista con trazo más grueso
+                <ul style="font-weight: bolder;">
+                  <li>Lista con trazo todavía más grueso
                     <ul style="font-weight: bolder;">
                       <li>Lista con trazo todavía más grueso
                         <ul style="font-weight: bolder;">
-                          <li>Lista con trazo todavía más grueso
-                            <ul style="font-weight: bolder;">
-                              <li>Lista con trazo todavía más grueso</li>
-                            </ul>
-                          </li>
+                          <li>Lista con trazo todavía más grueso</li>
                         </ul>
                       </li>
                     </ul>
                   </li>
                 </ul>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -802,60 +785,70 @@ ul {
 
       <p>La propiedad <span class="css-prop">line-height</span> permite establecer el interlineado de un bloque de texto. El valor se puede expresar en cualquier unidad de longitud, aunque lo más lógico es utilizar porcentajes o em. Si se expresa en porcentajes, el valor 100% corresponde al interlineado normal.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   line-height: 100%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="line-height: 100%">Este párrafo tiene un interlineado del 100%, es decir un interlineado sencillo. Este es el mismo interlineado que se aplica si no se utiliza esta propiedad.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="line-height: 100%">Este párrafo tiene un interlineado del 100%, es decir un interlineado sencillo. Este es el mismo interlineado que se aplica si no se utiliza esta propiedad.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   line-height: 200%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="line-height: 200%">Este párrafo tiene un interlineado del 200%, es decir un interlineado doble. Las líneas de texto están separadas el doble de lo normal.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="line-height: 200%">Este párrafo tiene un interlineado del 200%, es decir un interlineado doble. Las líneas de texto están separadas el doble de lo normal.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   line-height: 150%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="line-height: 150%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="line-height: 150%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   line-height: 75%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="line-height: 75%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 3/4 líneas. Las líneas de texto están más juntas de lo normal, lo que puede dificultar su lectura.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <p style="line-height: 75%">Este párrafo tiene un interlineado del 150%, es decir un interlineado de 3/4 líneas. Las líneas de texto están más juntas de lo normal, lo que puede dificultar su lectura.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   line-height: 1.5em;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="line-height: 1.5em">Este párrafo tiene un interlineado del 1.5em, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="line-height: 1.5em">Este párrafo tiene un interlineado del 1.5em, es decir un interlineado de 1,5 líneas. Las líneas de texto están separadas un 50% más de lo normal.</p>
+        </div>
+      </div>
     </section>
 
     <footer>

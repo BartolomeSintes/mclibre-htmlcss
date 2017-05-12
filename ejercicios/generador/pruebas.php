@@ -38,7 +38,6 @@ $texto = preg_replace("/text-shadow: (#?\w+) /", "text-shadow: black ", $texto);
 print "<pre>$texto</pre>\n";
 
 
-
 // eliminar las reglas que no tienen propiedades
 print "<h2>Reglas vacías</h2>\n";
 
@@ -85,7 +84,3 @@ $texto = preg_replace("/^(\w+([\.#:]?[-\w]+)* )+{[[:space:]]*}/m", "", $texto, -
 print "<p>Sustituciones: $contador";
 print "<h3>Después</h3>\n";
 print "<pre>$texto</pre>\n";
-
-
-
-
