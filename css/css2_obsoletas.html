@@ -47,51 +47,69 @@
 
       <p><strong>Nota</strong>: Esta propiedad no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a  href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (octubre de 2015) en elaboración.</p>
 
-      <p>La propiedad <span class="css-prop">font-size-adjust</span> permite establecer la proporción entre el tamaño del tipo y el de la letra x, indicándola como número decimal.</p>
-
       <p>Cada tipo de letra tiene una proporción distinta entre el tamaño del tipo y el tamaño de la letra x de ese mismo tipo (para entendernos, una proporción distinta entre los tamaños de las letras mayúsculas y minúsculas). Es decir, que para un tamaño determinado, unos tipos de letras tienen las letras minusuculas más grandes que otros (y por tanto, son más legibles a tamaños pequeños).</p>
 
       <p>Esto puede provocar problemas cuando el navegador no pueden mostrar el tipo de letra indicado por el autor y debe sustituirlo por otro. Si el tipo de letra que elige el navegador tiene unas minúsculas más pequeñas que las del tipo de letra elegido por el autor de la página, puede que el texto sea ilegible, ya que la propiedad <span class="css-prop">font-size</span> únicamente indica el tamaño del tipo.</p>
 
-      <p>Actualmente (octubre de 2015), Internet Explorer no interpreta esta propiedad, como se comenta en la <a href="../otros/otros_diferencias_listado.html#css-fuente-font-size-adjust">página de diferencias entre Firefox e Internet Explorer</a> (Chrome tampoco). Firefox la interpreta desde la versión 3. Lo que hace Firefox es multiplicar el valor de <span class="css-prop">font-size</span> por el de <span class="css-prop">font-size-adjust</span> y dar a la letra minúscula x ese tamaño.</p>
+      <p>La propiedad <span class="css-prop">font-size-adjust</span> permite establecer la proporción entre el tamaño del tipo y el de la letra x, indicándolo como número decimal, mediante</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-css">p { <br />  font-size: 16px;<br />  font-size-adjust: 1.5; <br />}</code>
-</pre>
-            </td>
-            <td class="resultado">
-              <p style="font-size: 16px; font-size-adjust: 1.5;">Esta letra x tiene 16 x 1.5 = 24 px de altura.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <p>Firefox interpreta parcialmente esta propiedad. Google Chrome e Internet Explorer no interpretan esta propiedad, como se comenta en la <a href="../otros/otros_diferencias_listado.html#css-fuente-font-size-adjust">página de diferencias entre Firefox e Internet Explorer</a>.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-css">p { <br />  font-size: 16px;<br />  font-size-adjust: 0.5; <br />}</code>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 20px;
+}</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p style="font-size: 16px; font-size-adjust: 0.5;">Esta letra x tiene 16 x 0.5 = 8 px de altura.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font-size: 20px; ">Esta letra x tiene 20 px de altura.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 20px;
+  font-size-adjust: 1.5;
+}</code>
+</pre>
+        </div>
+        <div class="resultado">
+          <p style="font-size: 20px; font-size-adjust: 1.5;">Esta letra x debería tener 20 x 1.5 = 30 px de altura.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-size: 20px;
+  font-size-adjust: 0.5;
+}</code>
+</pre>
+        </div>
+        <div class="resultado">
+          <p style="font-size: 20px; font-size-adjust: 0.5;">Esta letra x debería tener 20 x 0.5 = 10 px de altura.</p>
+        </div>
+      </div>
     </section>
 
     <section id="font-stretch">
@@ -102,46 +120,45 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
       </aside>
 
-      <p><strong>Nota</strong>: Esta propiedad no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (octubre de 2015) en elaboración.</p>
+      <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido. Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
 
-      <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido.</p>
+      <p>Los navegadores no son capaces de interpretar esta propiedad, que no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (mayo de 2017) en elaboración.</p>
 
-      <p>Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
-
-      <p>Actualmente (octubre de 2015), los navegadores no son capaces de interpretar esta propiedad.</p>
-
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-css">p { <br />  font-stretch: ultra-condensed;<br />}</code>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-stretch: ultra-condensed;
+}</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p style="font-stretch: ultra-condensed;">Este párrafo está en el tipo ultra-condensado</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-css">p {<br />  font-stretch: ultra-expanded;<br />}</code>
+        </div>
+        <div class="resultado">
+          <p style="font-stretch: ultra-condensed;">Este párrafo está en el tipo ultra-condensado</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  font-stretch: ultra-expanded;
+}</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p style="font-stretch: ultra-expanded;">Este párrafo está en el tipo ultra-extendido</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <p style="font-stretch: ultra-expanded;">Este párrafo está en el tipo ultra-extendido</p>
+        </div>
+      </div>
     </section>
 
     <section id="marker-offset">
@@ -158,28 +175,33 @@
 
       <p>Los navegadores no son capaces de interpretar esta propiedad, ni probablemente lo hagan nunca.</p>
 
-      <table class="ejemplo ej-marker-offset">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre><code class="language-css">ul { <br />  list-style-type: none; <br />}<br /><br />li:before { <br />  content: "***"; <br />  display: marker;<br />  marker-offset: 40px; <br />}</code>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">ul {
+  list-style-type: none;
+}
+
+li:before {
+  content: "***";
+  display: marker;
+  marker-offset: 40px;
+}</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <ul>
-                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es un punto de una lista</li>
-                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista</li>
-                <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista, bastante más largo para que ocupe más de una línea y se pueda comprobar la posición del marcador</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <ul>
+            <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es un punto de una lista</li>
+            <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista</li>
+            <li style="content: &#34;***&#34; display: marker; marker-offset: 40px;">Esto es otro punto de la misma lista, bastante más largo para que ocupe más de una línea y se pueda comprobar la posición del marcador</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section id="colores-sistema">
@@ -370,7 +392,7 @@
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2016</p>
+      <p class="ultmod">Última modificación de esta página: 14 de mayo de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />

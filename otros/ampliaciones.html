@@ -61,9 +61,9 @@
 
       <p>En el año 2000 el W3C se marcó como objetivo que el XHTML sustituyera completamente al HTML, pero en 2006, el W3C tuvo que reconocer el fracaso de ese proyecto. En mi opinión, el fracaso se debió a la combinación de dos problemas:</p>
       <ul>
-        <li>Internet Explorer, el explorador hegemónico en aquellos años, no admitía el tipo MIME del XHTML application/xhtml+xml. Para que las páginas se pudieran ver en Internet Explorer, los servidores servían las páginas XHTML con el tipo MIME text/html. Pero como el tipo MIME tiene preferencia a la hora de identificar el documento, todos los navegadores tenían que interpretar los documentos XHTML como HTML (aunque hubieran admitido el tipo MIME application/xhtml+xml). El problema es que si se interpreta un documento XHTML como si fuera HTML, el documento parece tener errores.<br />
+        <li>Internet Explorer, el explorador hegemónico en aquellos años, no admitía el tipo MIME del XHTML application/xhtml+xml. Para que las páginas se pudieran ver en Internet Explorer, los servidores servían las páginas XHTML con el tipo MIME text/html. Pero como el tipo MIME tiene preferencia a la hora de identificar el documento, todos los navegadores tenían que interpretar los documentos XHTML como HTML (aunque hubieran admitido el tipo MIME application/xhtml+xml). El problema es que si se interpreta un documento XHTML como si fuera HTML, el documento parece tener errores.
 
-          Es algo parecido a lo que pasaría si una persona que sólo sabe español, al entrar en una librería y pedir un libro en español, el librero cogiera ese mismo libro pero en inglés, lo envolviera y en el papel de envolver escribiera el título del libro en español y se lo vendiera al cliente. Cuando el cliente intentara leerlo, lógicamente no entendería nada.</li>
+          <p>Es algo parecido a lo que pasaría si una persona que sólo sabe español, al entrar en una librería y pedir un libro en español, el librero cogiera ese mismo libro pero en inglés, lo envolviera y en el papel de envolver escribiera el título del libro en español y se lo vendiera al cliente. Cuando el cliente intentara leerlo, lógicamente no entendería nada.</p></li>
         <li>Una de las restricciones que impone el XML al XHTML es que los documentos no pueden tener errores sintácticos y que los navegadores deben negarse a mostrar documentos con errores. Esta imposición se entiende porque el XML está pensado para el intercambio de información entre máquinas, es decir, documentos creados automáticamente por programas y recibidos por otros programas, sin intervención de humanos. Pero muchas páginas web están escritas por humanos que cometen errores o por programas para los que no tener errores no es la prioridad. Si de la noche a la mañana los navegadores se negaran a mostrar páginas con errores, la web sería inutilizable.</li>
       </ul>
 
@@ -107,15 +107,13 @@
 
         <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página HTML 5 con sintaxis HTML.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>HTML 5, sintaxis XHTML, tipo MIME text/html</td>
-              <td>HTML 5, sintaxis HTML, tipo MIME text/html</td>
-            </tr>
-            <tr style="font-size: 90%">
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div>
+              <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -128,8 +126,15 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-              </td>
-              <td class="codigo"><pre><code class="language-html">&lt;!DOCTYPE html&gt;
+            </div>
+          </div>
+          <div class="columnaflex">
+            <div>
+              <p>HTML 5, sintaxis HTML, tipo MIME text/html</p>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -141,10 +146,9 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+        </div>
 
         <p>Las etiquetas que aparecen en ambos documentos son las mismas, las diferencias son simplemente sintácticas. Las diferencias entre la sintaxis HTML y la sintaxis XHTML se explican en la lección <a href="../html/html_xhtml_diferencias.html">Diferencias entre HTML y XHTML</a>.</p>
       </section>
@@ -154,14 +158,15 @@
 
         <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página XHTML 5.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>HTML 5, sintaxis XHTML, tipo MIME text/html</td>
-              <td>XHTML 5, sintaxis XHTML, tipo MIME application/xhtml+xml</td>
-            </tr>
-            <tr style="font-size: 90%">
-              <td class="codigo"><pre><code class="language-html"><br />&lt;!DOCTYPE html&gt;
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div>
+              <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">
+&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
@@ -173,8 +178,15 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-              </td>
-              <td class="codigo"><pre><code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+            </div>
+          </div>
+          <div class="columnaflex">
+            <div>
+              <p>XHTML 5, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="es" xmlns="https://www.w3.org/1999/xhtml"&gt;
 &lt;head&gt;
@@ -187,15 +199,14 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+        </div>
 
         <p>Las etiquetas que aparecen en ambos documentos son las mismas, excepto la primera línea de la página XHTML 5 y los atributos de la etiqueta <span class="html-eti">html</span>:</p>
         <ul>
           <li>La primera línea <span class="html-eti">&lt;?xml ... ?&gt;</span> de la página XHTML 5 se llama declaración XML. La declaración XML es obligatoria en los documentos XML e indica la versión de XML y el juego de caracteres del documento. Esta declaración es también obligatoria cuando la página se sirve con el tipo application/xhtml+xml.</li>
-          <li>En la etiqueta <span class="html-eti">&lt;html&gt; ... &lt;/html&gt;</span> el atributo <span class="html-atri">lang</span> indica el idioma del documento, el atributo <span class="html-atri">xmlns</span> indica el espacio de nombres del documento, y el atributo <span class="html-atri">xml:lang</span> indica el idioma del documento para xml. Estos atributos son necesarios para la validación como XHTML 5.</li>
+          <li>En la etiqueta <span class="html-eti">&lt;html&gt; ...&lt;/html&gt;</span> el atributo <span class="html-atri">lang</span> indica el idioma del documento, el atributo <span class="html-atri">xmlns</span> indica el espacio de nombres del documento, y el atributo <span class="html-atri">xml:lang</span> indica el idioma del documento para xml. Estos atributos son necesarios para la validación como XHTML 5.</li>
         </ul>
       </section>
 
@@ -204,14 +215,15 @@
 
         <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 4.01 y una página XHTML 1.0.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>HTML 4.01, sintaxis HTML, tipo MIME text/html</td>
-              <td>XHTML 1.0, sintaxis XHTML, tipo MIME application/xhtml+xml</td>
-            </tr>
-            <tr style="font-size: 90%">
-              <td class="codigo"><pre><code class="language-html"><br />&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        <div class="filaflex">
+          <div class="columnaflex">
+            <div>
+              <p>HTML 4.01, sintaxis HTML, tipo MIME text/html</p>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;HTML&gt;
 &lt;HEAD&gt;
@@ -224,8 +236,15 @@
 &lt;/BODY&gt;
 &lt;/HTML&gt;</code>
 </pre>
-              </td>
-              <td class="codigo"><pre><code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+            </div>
+          </div>
+          <div class="columnaflex">
+            <div>
+              <p>XHTML 1.0, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
 &lt;html xmlns="https://www.w3.org/1999/xhtml"&gt;
@@ -239,10 +258,9 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+        </div>
 
         <p>Las diferencias entre ambas versiones son similares a las diferencias entre HTML 5 y XHTML 5</p>
 
