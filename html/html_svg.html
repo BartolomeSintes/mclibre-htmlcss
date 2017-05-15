@@ -84,23 +84,25 @@
 
       <p>Una imagen SVG puede incluirse en una página web directamente o mediante la etiqueta <span class="html-eti">&lt;img /&gt;</span>, como se comenta en la lección <a href="html_imagenes.html">Imágenes</a>.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" <br />  width="170" height="165" viewBox="0 0 170 165"&gt; <br />  &lt;polygon fill="yellow" stroke="red" stroke-width="7" <br />    points="129,150 85,119 41,150 57,104 15,66 <br />            68,66 85,15 102,65 156,66 113,98" /&gt; <br />&lt;/svg&gt;</code>
+      <div class="filaflex">
+        <div class="resultado nogrow">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+               width="170" height="165" viewBox="0 0 170 165">
+            <polygon fill="yellow" stroke="red" stroke-width="7"
+                     points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
+          </svg>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="170" height="165" viewBox="0 0 170 165"&gt;
+  &lt;polygon fill="yellow" stroke="red" stroke-width="7"
+           points="129,150 85,119 41,150 57,104 15,66
+                   68,66 85,15 102,65 156,66 113,98" /&gt;
+&lt;/svg&gt;</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                   width="170" height="165" viewBox="0 0 170 165">
-                <polygon fill="yellow" stroke="red" stroke-width="7"
-                         points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
-              </svg>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+      </div>
     </section>
 
     <section id="svg-plano">
@@ -188,101 +190,92 @@
           <li>
             <p>En el primer ejemplo, se ve todo el círculo porque la zona visible definida por <span class="html-atri">viewBox</span> empieza arriba a la izquierda en el punto (-100, -100) y tiene un tamaño de 200 x 200. El tamaño de la imagen es también de 200 x 200.</p>
 
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td>
-                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                  </td>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="icono">
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </div>
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
   &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
           <li>
             <p>Si en ese mismo dibujo la zona visible definida por <span class="html-atri">viewBox</span> empieza en el punto (-5, -5) y tiene un tamaño de 105 x 105 sólo se verá el primer cuadrante (valores X e Y positivos). El tamaño de la imagen es también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td>
-                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                  </td>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-5 -5 105 105</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="icono">
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </div>
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-5 -5 105 105</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
   &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
           <li>
-            <p>Si quiséramo mostrar el tercer cuadrante (valores X e Y negativos, la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105.  El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
+            <p>Si quiséramos mostrar el tercer cuadrante (valores X e Y negativos, la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105.  El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td>
-                    <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-                    <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-                    <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-                  </td>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-100 -100 105 105</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="icono">
+                <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
+                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+                <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+              </div>
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-100 -100 105 105</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" /&gt;
   &lt;line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" /&gt;
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                      <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                      <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
         </ul>
       </section>
@@ -295,70 +288,61 @@
         <p>Así, una misma imagen en el plano SVG se puede ver en la página web más o menos grande, como muestran los ejemplos siguientes:</p>
         <ul>
           <li>En este primer ejemplo, el tamaño de la imagen coincide con el tamaño de la zona visible
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
           <li>En este segundo ejemplo, el tamaño de la imagen es el cuádruple (el doble en horizontal y el doble en vertical) de la zona visible.
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
           <li>En este tercer ejemplo, el tamaño de la imagen es la cuarta parte (la mitad en horizontal y la mitad en vertical) de la zona visible.
-            <table class="ejemplo">
-              <tbody>
-                <tr>
-                  <td class="codigo">
-                    <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span class="codigo-resaltado">50</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
-  style="background-color: lightgray"&gt;
+            <div class="filaflex">
+              <div class="resultado nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">50</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+     style="background-color: lightgray"&gt;
   &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-                  </td>
-                  <td class="resultado">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                         width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                      <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-                    </svg>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+              </div>
+            </div>
           </li>
         </ul>
       </section>
@@ -471,16 +455,56 @@
 
       <p>Ese código se puede simplificar todavía más, hasta obtener el código que se ha utilizado en esta lección:</p>
 
-      <pre class="fuente"><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="170" height="165" viewBox="0 0 170 165"&gt;
+      <div class="filaflex">
+        <div class="resultado nogrow">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+               width="170" height="165" viewBox="0 0 170 165">
+            <polygon fill="yellow" stroke="red" stroke-width="7"
+                     points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" />
+          </svg>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="170" height="165" viewBox="0 0 170 165"&gt;
   &lt;polygon fill="yellow" stroke="red" stroke-width="7"
-    points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
+           points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>Para simplificar imágenes SVG se puede utilizar la página <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> (el tamaño y calidad del resultado depende de las opciones elegidas).</p>
+
+      <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGOMG produciría el siguiente resultado:</p>
+
+
+      <div class="filaflex">
+        <div class="resultado nogrow">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="100" height="100">
+            <path fill="#ff3" stroke="red" stroke-width="7.3"
+                  d="M124 145l-44-31-44 31 16-52-42-32h53l17-51 17 50 54 1-43 32z"
+                  transform="matrix(.6069 0 0 .60646 1.146 3)"/>
+          </svg>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg"
+     width="100" height="100">
+  &lt;path fill="#ff3" stroke="red" stroke-width="7.3"
+      d="M124 145l-44-31-44 31 16-52-42-32h53l17-51 17 50 54 1-43 32z"
+      transform="matrix(.6069 0 0 .60646 1.146 3)"/>
+&lt;/svg></code>
+</pre>
+        </div>
+      </div>
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 29 de marzo de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 15 de mayo de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />

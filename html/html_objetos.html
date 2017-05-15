@@ -50,56 +50,55 @@
 
       <p>La etiqueta <span class="html-eti">&lt;iframe&gt;</span> permite insertar un documento html dentro de otro. La etiqueta <span class="html-eti">&lt;iframe&gt;</span> puede aparecer como elemento de bloque o como elemento en-línea.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;iframe
   src="ejemplo_iframe.html"&gt;
 &lt;/iframe&gt;</code>
 </pre>
-            </td>
-            <td class="resultado"><iframe src="ejemplo_iframe.html" class="conborde"></iframe></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <iframe src="ejemplo_iframe.html" class="conborde"></iframe>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;iframe
   src="ejemplo_iframe.html"
   style="width: 400px; height: 200px;"&gt;
 &lt;/iframe&gt;</code>
 </pre>
-            </td>
-            <td class="resultado"><iframe src="ejemplo_iframe.html" style="width: 400px; height: 200px;" class="conborde"></iframe></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <iframe src="ejemplo_iframe.html" style="width: 400px; height: 200px;" class="conborde"></iframe>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>El documento puede estar en otro servidor, como en este ejemplo en el que se inserta un mapa de Google Maps:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
-<code class="language-html">&lt;iframe width="425" height="350" src="https://maps.google.es/maps?f=q&amp;amp;source=s_q&amp;amp;
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;iframe width="425" height="350"
+         src="https://maps.google.es/maps?f=q&amp;amp;source=s_q&amp;amp;
          hl=es&amp;amp;geocode=&amp;amp;q=ies+abastos&amp;amp;
          ie=UTF8&amp;amp;cid=11271517402525668942&amp;amp;
          s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;amp;
-         ll=39.477148,-0.382204&amp;amp;spn=0.023188,0.036478&amp;amp;
-         z=14&amp;amp;iwloc=A&amp;amp;output=embed"&gt;
+         ll=39.477148,-0.382204&amp;amp;
+         spn=0.023188,0.036478&amp;amp;z=14&amp;amp;
+         iwloc=A&amp;amp;output=embed"&gt;
 &lt;/iframe&gt;</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <iframe width="425" height="350" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=ies+abastos&amp;ie=UTF8&amp;cid=11271517402525668942&amp;s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;ll=39.477148,-0.382204&amp;spn=0.023188,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado nogrow">
+          <iframe width="425" height="350" src="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=ies+abastos&amp;ie=UTF8&amp;cid=11271517402525668942&amp;s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;ll=39.477148,-0.382204&amp;spn=0.023188,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+        </div>
+      </div>
     </section>
 
     <section id="object-param">
@@ -125,11 +124,9 @@
 
         <p>Se puede insertar una página web en una página web mediante la etiqueta <span class="html-eti">&lt;object&gt;</span>, como muestra el siguiente ejemplo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;object
   type="text/html"
   data="ejemplo_object.html"
@@ -137,31 +134,33 @@
   ERROR (no puede mostrarse el objeto)
 &lt;/object&gt;</code>
 </pre>
-              </td>
-              <td class="resultado"><object type="text/html" data="ejemplo_object.html" style="width: 400px; height:200px;">ERROR (no puede mostrarse el objeto)</object></td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplo_object.html" style="width: 400px; height:200px;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;object
   type="text/html"
   data="https://maps.google.es/maps?f=q&amp;amp;source=s_q&amp;amp;
          hl=es&amp;amp;geocode=&amp;amp;q=ies+abastos&amp;amp;
          ie=UTF8&amp;amp;cid=11271517402525668942&amp;amp;
          s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;amp;
-         ll=39.477148,-0.382204&amp;amp;spn=0.023188,0.036478&amp;amp;
-         z=14&amp;amp;iwloc=A&amp;amp;output=embed"
+         ll=39.477148,-0.382204&amp;amp;
+         spn=0.023188,0.036478&amp;amp;z=14&amp;
+         amp;iwloc=A&amp;amp;output=embed"
   style="width: 425px; height:350px;"&gt;
   ERROR (no puede mostrarse el objeto)
 &lt;/object&gt;</code>
 </pre>
-              </td>
-              <td class="resultado"><object type="text/html" data="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=ies+abastos&amp;ie=UTF8&amp;cid=11271517402525668942&amp;s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;ll=39.477148,-0.382204&amp;spn=0.023188,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed" style="width: 425px; height:350px;">ERROR (no puede mostrarse el objeto)</object></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="https://maps.google.es/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=ies+abastos&amp;ie=UTF8&amp;cid=11271517402525668942&amp;s=AARTsJqO2-JJ63RN_BaPYqsXhy19-WrrDw&amp;ll=39.477148,-0.382204&amp;spn=0.023188,0.036478&amp;z=14&amp;iwloc=A&amp;output=embed" style="width: 425px; height:350px;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="object-ejemplo-flash">
@@ -169,11 +168,9 @@
 
         <p>Se puede insertar un archivo flash SWF en cualquier página web, como muestra el siguiente ejemplo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;object
   type="application/x-shockwave-flash"
   data="ejemplo_flash.swf"
@@ -184,43 +181,41 @@
   ERROR (no puede mostrarse el objeto)
 &lt;/object&gt;</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <object type="application/x-shockwave-flash" data="ejemplo_flash.swf" style="width: 200px; height: 50px;">
-                  <param name="movie" value="ejemplo_flash.swf" />
-                  ERROR (no puede mostrarse el objeto)
-                </object>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="application/x-shockwave-flash" data="ejemplo_flash.swf" style="width: 200px; height: 50px;">
+              <param name="movie" value="ejemplo_flash.swf" />
+              ERROR (no puede mostrarse el objeto)
+            </object>
+          </div>
+        </div>
       </section>
 
       <section id="object-ejemplo-youtube">
         <h3>Insertar un vídeo de YouTube</h3>
 
-        <p>Los vídeos de YouTube pueden obtenerse en formato Flash, por lo que se
-          pueden insertar en una página web mediante la etiqueta <span
-                                                                       class="html-eti">&lt;object&gt;</span>, como muestra el siguiente ejemplo. Para
-          insertar otro vídeo habría que sustituir el código del vídeo en el atributo
-          <span class="html-atri">data</span> (en el ejemplo, el código del vídeo es
-          <strong>vZV-t3KzTpw</strong>).</p>
+        <p>Los vídeos de YouTube pueden obtenerse en formato Flash, por lo que se pueden insertar en una página web mediante la etiqueta <span class="html-eti">&lt;object&gt;</span>, como muestra el siguiente ejemplo. Para insertar otro vídeo habría que sustituir el código del vídeo en el atributo <span class="html-atri">data</span> (en el ejemplo, el código del vídeo es <strong>vZV-t3KzTpw</strong>).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;object
-  type="application/x-shockwave-flash"<br />  data="https://www.youtube.com/v/vZV-t3KzTpw"<br />  style="width: 425px; height:350px;" &gt;<br />  &lt;param
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;object
+  type="application/x-shockwave-flash"
+  data="https://www.youtube.com/v/vZV-t3KzTpw"
+  style="width: 425px; height:350px;"&gt;
+  &lt;param
     name="movie"
-    value="https://www.youtube.com/v/vZV-t3KzTpw" /&gt;<br />  ERROR (no puede mostrarse el objeto)<br />&lt;/object&gt;</code>
+    value="https://www.youtube.com/v/vZV-t3KzTpw" /&gt;
+  ERROR (no puede mostrarse el objeto)
+&lt;/object&gt;</code>
 </pre>
-              </td>
-              <td class="resultado"><object type="application/x-shockwave-flash" data="https://www.youtube.com/v/vZV-t3KzTpw" style="width: 425px; height:350px;">
-                <param name="movie" value="https://www.youtube.com/v/aI0BmQaIIR4" />
-                ERROR (no puede mostrarse el objeto)</object></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="application/x-shockwave-flash" data="https://www.youtube.com/v/vZV-t3KzTpw" style="width: 425px; height:350px;">
+              <param name="movie" value="https://www.youtube.com/v/aI0BmQaIIR4" />
+              ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="object-ejemplo-pdf">
@@ -228,11 +223,9 @@
 
         <p>Se puede insertar un archivo PDF en cualquier página web, como muestra el siguiente ejemplo. Para insertar otro archivo PDF habría que indicar la URI del archivo mediante el atributo <span class="html-atri">data</span> (en el ejemplo, es simplemente <strong>ejemplo.pdf</strong>).</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;object
   type="application/pdf"
   data="ejemplo.pdf"
@@ -240,11 +233,11 @@
   ERROR (no puede mostrarse el objeto)
 &lt;/object&gt;</code>
 </pre>
-              </td>
-              <td class="resultado"><object type="application/pdf" data="ejemplo.pdf" style="width: 400px; height: 550px;">ERROR (no puede mostrarse el objeto)</object></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="application/pdf" data="ejemplo.pdf" style="width: 400px; height: 550px;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
     </section>
 

@@ -150,50 +150,47 @@
 
         <p>Las imágenes son elementos en línea, es decir, que se insertan como si fueran caracteres, formando parte del párrafo o del elemento de bloque en el que se insertan. La altura de la línea en la que está insertado el elemento aumenta lo necesario para poder alojar la imagen, como muestra el siguiente ejemplo, en el que la hoja de estilo no contiene ninguna propiedad relacionada con la imagen.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">img {
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen forma parte del párrafo, es una letra más en la primera línea.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen forma parte del párrafo, es una letra más en la primera línea.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
         <p>Si se quiere que una imagen aparezca a la izquierda (o a la derecha) de un texto, es decir, que el texto fluya a lo largo de la imagen, hay que utilizar la propiedad <span class="css-prop">float</span>. Esta propiedad sólo admite dos valores, <span class="css-valor">left</span> y <span class="css-valor">right</span>, que sitúan la imagen a la izquierda o a la derecha, como muestran los ejemplos siguientes.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">img {
   float: left;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen debe "flotar" a la izquierda y el texto debe fluir a su derecha.</p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+          </div>
+          <div class="resultado">
+            <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen debe "flotar" a la izquierda y el texto debe fluir a su derecha.</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">img {
   float: right;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: right" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen debe "flotar" a la derecha y el texto debe fluir a su izquierda.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: right" /> Este párrafo tiene insertada una imagen al principio del párrafo. Se trata del logotipo de GNU. GNU es un acrónimo recursivo que significa "GNU is Not Unix" (GNU No es Unix). GNU es un proyecto de software libre iniciado por Richard Stallman en 1984. La imagen debe "flotar" a la derecha y el texto debe fluir a su izquierda.</p>
+          </div>
+        </div>
 
         <hr class="corta" />
 
@@ -215,7 +212,7 @@ img.derecha {
             <div class="codigo">
               <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre>                       </div>
           </div>
-        <div class="resultado">
+          <div class="resultado">
             <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.
           </div>
         </div>
@@ -224,51 +221,64 @@ img.derecha {
 
         <p>Para que las imágenes salgan correctamente alineadas con el texto, la imagen debe insertarse al principio del texto, independientemente de la posición final que vaya a tener la imagen. Los siguientes ejemplos muestran las diferencias</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">Las dos imágenes están insertadas antes del texto:
+        <div class="filaflex">
+          <div class="codigo">
+            Las dos imágenes están insertadas antes del texto:
 
-                <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre>
-              </td>
-              <td class="resultado"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.</td>
-            </tr>
-            <tr>
-              <td class="codigo">La imagen izquierda está situada antes del texto y la imagen derecha al final del texto:
+            <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado">
+            <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.
+          </div>
+        </div>
 
-                <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;Texto&lt;img class="derecha" /&gt;&lt;/p&gt;</code></pre>
-              </td>
-              <td class="resultado"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.<img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /></td>
-            </tr>
-            <tr>
-              <td class="codigo">Las dos imágenes están insertadas al final del texto:
+        <div class="filaflex">
+          <div class="codigo">
+            La imagen izquierda está situada antes del texto y la imagen derecha al final del texto:
 
-                <pre><code class="language-html">&lt;p&gt;Texto&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;&lt;/p&gt;</code></pre></td>
-              <td class="resultado">GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.<img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /></td>
-            </tr>
-          </tbody>
-        </table>
+            <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;Texto&lt;img class="derecha" /&gt;&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado">
+            <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.<img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" />
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            Las dos imágenes están insertadas al final del texto:
+
+            <pre><code class="language-html">&lt;p&gt;Texto&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado">
+            GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.<img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" />
+          </div>
+        </div>
 
         <hr class="corta" />
 
         <p>Si las dos imágenes están situadas antes del texto, el orden de inserción no es importante</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">Las dos imágenes están insertadas antes del texto:
+        <div class="filaflex">
+          <div class="codigo">
+            Las dos imágenes están insertadas antes del texto:
 
-                <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre></td>
-              <td class="resultado"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.</td>
-            </tr>
-            <tr>
-              <td class="codigo">Las dos imágenes están insertadas antes del texto:
+            <pre><code class="language-html">&lt;p&gt;&lt;img class="izquierda" /&gt;&lt;img class="derecha" /&gt;Texto&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado">
+            <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.
+          </div>
+        </div>
 
-                <pre><code class="language-html">&lt;p&gt;&lt;img class="derecha" /&gt;&lt;img class="izquierda" /&gt;Texto&lt;/p&gt;</code></pre></td>
-              <td class="resultado"><img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del         proyecto GNU en la creación de sistemas operativos libres.</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="filaflex">
+          <div class="codigo">
+            Las dos imágenes están insertadas antes del texto:
+
+            <pre><code class="language-html">&lt;p&gt;&lt;img class="derecha" /&gt;&lt;img class="izquierda" /&gt;Texto&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado">
+            <img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:right" title="Tux, la mascota de Linux" /> <img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> GNU + Linux = GNU/Linux. El término GNU/Linux reconoce la contribución del proyecto GNU en la creación de sistemas operativos libres.
+          </div>
+        </div>
       </section>
 
       <section id="clear-imagenes">
@@ -276,26 +286,22 @@ img.derecha {
 
         <p>Al crear una imagen flotante, el navegador sitúa los elementos que se encuentran a continuación de la imagen a su lado mientras haya sitio, aunque no pertenezcan al mismo bloque, como muestra el siguiente ejemplo:</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">img {
   float: left;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> El logotipo de GNU debe "flotar" a la izquierda y el párrafo debe fluir a su derecha.</p>
+          </div>
+          <div class="resultado">
+            <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> El logotipo de GNU debe "flotar" a la izquierda y el párrafo debe fluir a su derecha.</p>
 
-                <hr style="clear: none" />
+            <hr style="clear: none" />
 
-                <p><img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:left" title="Tux, la mascota de Linux" /> El logotipo de Linux, Tux, debe "flotar" a la izquierda y el párrafo debe fluir a su derecha. Seguramente tanto la imagen como el párrafo están a la derecha del logotipo de GNU.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <p><img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:left" title="Tux, la mascota de Linux" /> El logotipo de Linux, Tux, debe "flotar" a la izquierda y el párrafo debe fluir a su derecha. Seguramente tanto la imagen como el párrafo están a la derecha del logotipo de GNU.</p>
+          </div>
+        </div>
 
         <p>Para impedir que ocurra esto, es necesario que la flotación de la imagen se interrumpa. La propiedad <span class="css-prop">clear</span> hace que un elemento no tenga elementos flotantes a su lado. Los posibles valores de <span class="css-prop">clear</span> son:</p>
         <ul>
@@ -307,12 +313,9 @@ img.derecha {
 
         <p>Se puede asignar la propiedad <span class="css-prop">clear</span> a cualquier elemento. En el ejemplo siguiente se ha asignado a una línea horizontal, de manera que la línea ya no flota a la derecha de la imagen, sino que se muestra a continuación de la imagen:</p>
 
-        <table class="ejemplo">
-          <caption></caption>
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">hr {
   clear: both;
 }
@@ -322,17 +325,15 @@ img {
 }
  </code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> El logotipo de GNU debe "flotar" a la izquierda y el párrafo debe fluir a su derecha.</p>
+          </div>
+          <div class="resultado">
+            <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float: left" /> El logotipo de GNU debe "flotar" a la izquierda y el párrafo debe fluir a su derecha.</p>
 
-                <hr style="clear:both" />
+            <hr style="clear:both" />
 
-                <p><img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:left" title="Tux, la mascota de Linux" /> El logotipo de Linux, Tux, debe "flotar" a la izquierda y el párrafo debe fluir a su derecha. La línea intermedia impide que se monten sobre el párrafo anterior.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+            <p><img alt="Tux, la mascota de Linux" src="../img/tux.jpg" style="float:left" title="Tux, la mascota de Linux" /> El logotipo de Linux, Tux, debe "flotar" a la izquierda y el párrafo debe fluir a su derecha. La línea intermedia impide que se monten sobre el párrafo anterior.</p>
+          </div>
+        </div>
       </section>
 
       <section id="centrar-imagenes">
@@ -361,7 +362,7 @@ img {
 </pre>
             </div>
           </div>
-        <div class="resultado">
+          <div class="resultado">
             <p style="text-align: center"><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" /></p>        </div>
         </div>
       </section>

@@ -359,54 +359,93 @@
 
           <p><strong>Nota</strong>: El ejemplo se ha marcado con un aspa amarilla porque, aunque es correcto, se desaconseja no utilizar la entidad de carácter.</p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p&gt;Calvin &amp;amp; Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p>Calvin &amp; Hobbes es una de las grandes tiras cómicas del siglo XX.</p></td>
-              </tr>
-              <tr>
-                <td><img src="../varios/iconos/icono_oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p&gt;Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p>Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.</p></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p&gt;Calvin &amp;amp; Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p>Calvin &amp; Hobbes es una de las grandes tiras cómicas del siglo XX.</p>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p&gt;Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p>Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.</p>
+            </div>
+          </div>
 
           <p>En el ejemplo siguiente el navegador no muestra el resultado esperado porque <strong>&amp;micro;</strong> es la entidad de carácter del carácter <strong>&micro;</strong>. La página, además, no es válida por el mismo motivo (la posible entidad de carácter no termina por punto y coma).</p>
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;amp;microsoft.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p>Durante años la informática personal ha estado dominada por intel&amp;microsoft.</p></td>
-              </tr>
-              <tr>
-                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;microsoft.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p>Durante años la informática personal ha estado dominada por intel&microsoft.</p></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;amp;microsoft.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p>Durante años la informática personal ha estado dominada por intel&amp;microsoft.</p>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;microsoft.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p>Durante años la informática personal ha estado dominada por intel&microsoft.</p>
+            </div>
+          </div>
         </li>
         <li>Los carácteres comillas dobles (") y simples (') en HTML indica el principio y final de los valores de los atributos, por tanto no se pueden escribir en un atributo y en su lugar se deben escribir las entidades de carácter <strong>&amp;quot;</strong> o <strong>&amp;apos;</strong>.
 
-          <table class="ejemplo">
-            <tbody>
-              <tr>
-                <td><img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p title="&amp;quot;Hola&amp;quot;"&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p title="&quot;Hola&quot;">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p></td>
-              </tr>
-              <tr>
-                <td><img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" /></td>
-                <td class="codigo"><pre><code class="language-html">&lt;p title=""Hola""&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code></pre></td>
-                <td class="resultado"><p title=""Hola"">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p title="&amp;quot;Hola&amp;quot;"&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p title="&quot;Hola&quot;">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="icono">
+              <img src="../varios/iconos/icono_okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;p title=""Hola""&gt;Sitúe el cursor sobre este párrafo para ver un mensaje oculto.&lt;/p&gt;</code>
+</pre>
+            </div>
+            <div class="resultado">
+              <p title=""Hola"">Sitúe el cursor sobre este párrafo para ver un mensaje oculto.</p>
+            </div>
+          </div>
         </li>
       </ul>
     </section>
