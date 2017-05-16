@@ -11,28 +11,6 @@
     <script type="text/javascript" src="../varios/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
     <style type="text/css">
-      a.ahover:hover {  color: white; background-color: black; }
-      p.phover {  color: black; background-color: white; }
-      p.phover:hover {  color: white; background-color: black; }
-      a.aactive:active {  color: white; background-color: black; }
-      p.pactive {  color: black; background-color: white; }
-      p.pactive:active {  color: white; background-color: black; }
-      input.ifocus:focus { border: red 2px dotted; padding: 2px; }
-      p.fili:first-line { text-transform: uppercase; }
-      p.file1:first-letter { color: red; }
-      p.file2:first-letter { float: left; font-size: 400%; font-family: monospace; color: red;
-        background-color: pink; }
-      a.avisited1:visited { color: red; border: red 2px solid; }
-      a.avisited2 { background-color: white; color: blue; border: orange 3px solid; outline: green 3px solid;}
-      a.avisited2:visited { background-color: yellow; color: red; border-color: black; outline-color: red;}
-      td.alink1 a { background-color: lightblue; }
-      td.alink2 a:link { background-color: lightblue; }
-      table.firstchild div { border: black 5px solid; margin: 10px; padding: 10px;}
-      table.firstchild div p:first-child { color: red; }
-      table.firstchild2 div { border: black 5px solid; margin: 10px; padding: 10px;}
-      table.firstchild2 div :first-child { color: red; }
-      table.lang q:lang(es) { quotes: "«" "»"; }
-      table.lang q:lang(en) { quotes: '"' '"'; }
       table.beforeafter p.cuidado:before { content:"Aviso: "; font-weight: bold; text-decoration: underline; }
       table.beforeafter p.autor-barto:after { content:" (escrito por Barto)"; }
       table.beforeafter p.cuidado2:before { content:"<em>Aviso:</em> "; }
@@ -96,42 +74,31 @@
 
       <p>La pseudo-clase <span class="css-pseudo">:first-child</span> hace referencia al primer elemento de un tipo contenido dentro de otro. El ejemplo siguiente muestra cómo identificar al primer párrafo dentro de una división sin necesidad de asignar ninguna clase al párrafo.</p>
 
-      <table class="ejemplo firstchild">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
-<code class="language-css">div p:first-child {
-  color: red;
-}
-
-div {
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
   padding: 10px;
-}</code>
+}
+
+div p:first-child {
+  color: red;
+}
+</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <div>
-                <p>Este es el primer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_child_1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
-                <p>Este es el segundo párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
+      <p>Es necesario que el tipo del primer elemento hijo en la página web sea el indicado en la hoja de estilo. En el ejemplo siguiente, el primer elemento dentro de la división no es un <span class="html-eti">&lt;p&gt;</span>, sino un <span class="html-eti">&lt;pre&gt;</span>, así que no se le aplica el estilo indicado en la hoja de estilo.</p>
 
-                <p>Este es el tercer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>Es necesario que el tipo del primer elemento hijo en la página web sea el indicado en la hoja de estilo. En el ejemplo siguiente, el primer elemento dentro de la división es un <span class="html-eti">&lt;pre&gt;</span>, no un <span class="html-eti">&lt;p&gt;</span>, así que no se le aplica el estilo indicado en la hoja de estilo.</p>
-
-      <table class="ejemplo firstchild">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
@@ -142,29 +109,17 @@ div p:first-child {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <div>
-                <pre>El primer hijo no es párrafo &lt;p&gt;, sino un &lt;pre&gt;.</pre>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_child_2.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
-                <p>Este es el primer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
+      <p>En el ejemplo siguiente, la pseudo-clase <span class="css-pseudo">:first-child</span> se aplica al primer elemento dentro de la división, sea cual sea el elemento, ya que en la hoja de estilo no se especifica el elemento.</p>
 
-                <p>Este es el segundo párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-
-                <p>Este es el tercer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>En el ejemplo siguiente, la psuedo-clase <span class="css-pseudo">:first-child</span> se aplica al primer elemento dentro de la división, ya que en la hoja de estilo no se especifica el elemento.</p>
-
-      <table class="ejemplo firstchild2">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
@@ -175,21 +130,11 @@ div :first-child {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <div>
-                <pre>El primer hijo no es párrafo &lt;p&gt;, sino un &lt;pre&gt;.</pre>
-
-                <p>Este es el primer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-
-                <p>Este es el segundo párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-
-                <p>Este es el tercer párrafo &lt;p&gt; en una división que contiene tres párrafos.</p>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_child_3.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="pseudo-clase-enlace">
@@ -201,30 +146,31 @@ div :first-child {
 
       <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Internet Explorer 8 los recuerda mientras no se recargue la página, mientras que Firefox los recuerda hasta que se borra el historial en el navegador.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">a:link {
   color: green;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p id="este-1">Este párrafo tiene un <a href="#este-1" style="color: green;">enlace a sí mismo</a>. El enlace no aparece como suele ser habitual, porque se muestra en verde.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_link_visited_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">a:visited {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p id="este-2">Este párrafo tiene un <a href="#este-2" class="avisited1">enlace a sí mismo</a>. Si el navegador reconoce que el enlace se ha visitado, en vez de en morado, se muestra en rojo.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_link_visited_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
@@ -234,11 +180,9 @@ div :first-child {
 
       <p>Teóricamente, las propiedades que podrían modificarse sin riesgo son las relacionadas con colores. El siguiente ejemplo prueba esas cuatro propiedades. En el ejemplo se establecen antes las propiedades en la etiqueta <span class="html-eti">&lt;a&gt;</span> porque si no Firefox y Chrome no la modifican.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">a {
   background-color: white;
   color: blue;
@@ -253,49 +197,41 @@ a:visited {
   outline-color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p id="este-3">Este párrafo tiene un <a href="#este-3" class="avisited2">enlace a sí mismo</a>. Si el navegador reconoce que el enlace se ha visitado, se muestra en rojo y con el fondo amarillo (y puede que con un borde verde y un contorno azul).</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_link_visited_3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Si se asignan propiedades a la etiqueta <span class="html-eti">a</span> en la hoja de estilo, estas propiedades afectarán tanto a los enlaces como a los destinos que utilicen la etiqueta <span class="html-eti">a</span>. Pero si se asigna propiedades a la pseudo-clase <span class="css-pseudo">a:link</span>, estas propiedades sólo afectarán a los enlaces.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">a {
   background-color: lightblue;
 }</code>
 </pre>
-            </td>
-            <td class="resultado alink1">
-              <p>Este párrafo contiene <a href="#destino-1" class="aactive">un enlace</a> al párrafo siguiente.</p>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_link_visited_4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
-              <p><a id="destino-1">Destino definido con la etiqueta &lt;a&gt;.</a></p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">a:link {
   background-color: lightblue;
 }</code>
 </pre>
-            </td>
-            <td class="resultado alink2">
-              <p>Este párrafo contiene <a href="#destino-2" class="aactive">un enlace</a> al párrafo siguiente.</p>
-
-              <p><a id="destino-2">Destino definido con la etiqueta &lt;a&gt;.</a></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_link_visited_5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="pseudo-clase-dinamicas">
@@ -303,11 +239,9 @@ a:visited {
 
       <p>La pseudo-clase <span class="css-pseudo">:hover</span> permite especificar el aspecto del elemento sobre el que se encuentra el ratón.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -318,12 +252,15 @@ a:hover {
   color: white;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="color: black; background-color: white;" id="este-4">Este párrafo está escrito en negro sobre blanco, pero cuando se pasa el ratón por encima de <a href="#este-4" class="ahover">este enlace,</a> el enlace se muestra de color blanco sobre fondo negro.</p></td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_dinamicas_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -334,11 +271,11 @@ p:hover {
   color: white;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p class="phover">Este párrafo está escrito en negro sobre blanco, pero cuando se pasa el ratón por encima del párrafo, se muestra de color blanco sobre fondo negro.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_dinamicas_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p class="incompleto">Contar lo que pasa cuando se utiliza a la vez :link :visited y :hover (diferencias entre Firefox e Internet Explorer antiguos).</p>
 
@@ -346,11 +283,9 @@ p:hover {
 
       <p>La pseudo-clase <span class="css-pseudo">:active</span> permite especificar el aspecto de un elemento cuando se hace clic sobre él (y mientras se mantiene el botón del ratón apretado).</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -361,13 +296,15 @@ a:active {
   color: white;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p style="color: black; background-color: white;" id="este-5">Este párrafo está escrito en negro sobre blanco, pero cuando se hace clic en <a href="#este-5" class="aactive">este enlace,</a> el enlace se muestra de color blanco sobre fondo negro.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_dinamicas_3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -378,32 +315,29 @@ p:active {
   color: white;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p class="pactive">Este párrafo está escrito en negro sobre blanco, pero cuando se hace clic en él, se muestra de color blanco sobre fondo negro.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_dinamicas_4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>La pseudo-clase <span class="css-pseudo">:focus</span> permite especificar el aspecto de un elemento cuando este tiene el foco. Los elementos que admiten el foco en una página web son aquellos que reaccionan a entrada por teclado (por ejemplo, los elementos de los formularios o los enlaces). En el ejemplo siguiente, al hacer clic en un campo de texto (o cambiar de campo con el tabulador), el campo seleccionado se resalta con un borde rojo.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td></td>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">input:focus {
   border: red 2px dotted;
   padding: 2px;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><input type="text" value="Texto 1" size="8" tabindex="1" class="ifocus" /> <input type="text" value="Texto 2" size="8" tabindex="1" class="ifocus" /> <input type="text" value="Texto 3" size="8" tabindex="1" class="ifocus" /> <input type="text" value="Texto 4" size="8" tabindex="1" class="ifocus" /></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_dinamicas_5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="pseudo-clase-lang">
@@ -448,26 +382,23 @@ q:lang(en) {
 
       <p>El pseudo-elemento <span class="css-pseudo">:first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-            </td>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-line {
   text-transform: uppercase;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p class="fili">La primera línea de este párrafo se tiene que ver en mayúsculas. Modifica el tamaño de la fuente o el tamaño de la ventana para ver cómo se modifica el aspecto del párrafo.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_1.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>En el ejemplo anterior, al hacer zoom se observa como siempre y únicamente la primea línea cambia a mayúsculas.</p>
 
@@ -475,27 +406,22 @@ q:lang(en) {
 
       <p>El pseudo-elemento <span class="css-pseudo">:first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p class="file1">La primera letra de este párrafo se tiene que ver en rojo.</p>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
-              <p class="file1">Y la primera de éste también.</p>
-
-              <p class="file1">1 Si es número, también se ve en rojo.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   background-color: pink;
   color: red;
@@ -504,47 +430,39 @@ q:lang(en) {
   font-size: 400%;
 }</code>
 </pre>
-            </td>
-            <td class="resultado"><p class="file2">La primera letra de este párrafo es una letra capital, es decir, una letra más grande que ocupa varias líneas de texto. Para ello, en la hoja de estilo tienes que hacer la letra flotante y aumentar su tamaño. En este caso también he cambiado el color y el tipo de letra.</p></td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <hr class="corta" />
 
       <p>Si hay una imagen al principio del elemento, el aspecto de la primera letra de texto no se modifica.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p class="file1"><img alt="Smiley" src="../img/smiley.png" title="Smiley" width="20" height="20" /> La primera letra de este párrafo no se ve en rojo porque hay una imagen.</p>
-
-              <p class="file1">Pero la primera de éste sí.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_4.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>Pero si la imagen es una imagen flotante, Firefox no modifica el aspecto de la primera letra de texto, aunque Internet Explorer y Chrome sí lo hacen.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }
@@ -553,38 +471,33 @@ img {
   float: right;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p class="file1"><img alt="Smiley" src="../img/smiley.png" title="Smiley" width="20" height="20" style="float:right;" /> La primera letra de este párrafo se ve rojo en algunos navegadores y en otros no porque hay una imagen flotante (la imagen se vea a la derecha porque tiene <span class="css-prop">float</span>: <span class="css-valor">right</span>).</p>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_5.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
-              <p class="file1">Pero la primera de éste sí.</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </td>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="icono">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }
 
 img {
-  float: lef;
+  float: left;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p class="file1"><img alt="Smiley" src="../img/smiley.png" title="Smiley" width="20" height="20" style="float:left;" /> La primera letra de este párrafo se ve rojo en algunos navegadores y en otros no porque hay una imagen flotante (la imagen se vea a la derecha porque tiene <span class="css-prop">float</span>: <span class="css-valor">left</span>).</p>
-
-              <p class="file1">Pero la primera de éste sí.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_6.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p><strong>Nota</strong>: En realidad no tengo claro si quien lo hace bien es Firefox o Chrome e IE.</p>
 
@@ -592,40 +505,18 @@ img {
 
       <p>Si el primer carácter no es un carácter alfanumérico, el pseudo-elemento se aplica hasta el primer carácter alfanumérico:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p class="file1">¿Cuántas letras se ven en rojo?</p>
-
-              <p class="file1">¡En Firefox 1.0.X se ven varias!</p>
-
-              <p class="file1">¿¿Cuántas letras se ven en rojo??</p>
-
-              <p class="file1">¿¿¿¿Cuántas letras se ven en rojo????</p>
-
-              <p class="file1">{Llaves}</p>
-
-              <p class="file1">{{Llaves}}</p>
-
-              <p class="file1">#Almohadilla</p>
-
-              <p class="file1">[Corchetes]</p>
-
-              <p class="file1">@arroba</p>
-
-              <p class="file1">@[{}]@</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_first_7.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="pseudo-elementos-before-after">
@@ -640,90 +531,63 @@ img {
 
         <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir texto:</p>
 
-        <table class="ejemplo beforeafter">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.cuidado:before {
   content: "Aviso: ";
   font-weight: bold;
   text-decoration: underline;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_before_after_1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p class="cuidado">Este párrafo es un párrafo &lt;p&gt; con clase "cuidado".</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.autor-barto:after {
   content: " (escrito por Barto).";
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p class="autor-barto">Este párrafo es un párrafo &lt;p&gt; con clase "autor-barto".</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_before_after_2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir una imagen indicando su URI:</p>
 
-        <table class="ejemplo beforeafter">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.ff:before {
-  content: url("../varios/iconos/icono_ff.svg");
+  content: url("../icono_ff.svg");
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p class="ff">Este párrafo es un párrafo &lt;p&gt; con clase "ff".</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_before_after_3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>No es válido incluir etiquetas html en la propiedad <span class="css-prop">content</span>, es decir que no sólo los navegadores no hacen caso y lo incluyen como texto, no como código html, sino que al validar la hoja de estilo daría error:</p>
 
-        <table class="ejemplo beforeafter">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">p.cuidado2:before {
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">p.cuidado:before {
   content: "&lt;em&gt;Aviso:&lt;/em&gt; ";
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p class="cuidado2">Este párrafo es un párrafo &lt;p&gt; con clase "cuidado2".</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_before_after_4.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
 
       <section id="counter">
@@ -733,11 +597,9 @@ img {
 
         <p>En los ejemplos siguientes se ha definido un contador que se llama cuenta-parrafos. Este contador se genera al principio de cada párrafo, se pone a cero con el elemento <span class="html-eti">&lt;pre&gt;</span> y se incrementa en cada párrafo.</p>
 
-        <table class="ejemplo contadores1">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -747,24 +609,15 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_1.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo s&lt;p&gt; in clase.</p>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -774,33 +627,17 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_2.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El contador puede incrementarse en cualquier cantidad entera, como muestra el ejemplo siguiente:</p>
 
-        <table class="ejemplo contadores1b">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -810,31 +647,17 @@ p:before {
   counter-increment: cuenta-parrafos 10;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
-
-                <p>Este párrafo es un párrafo s&lt;p&gt; in clase.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_3.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>Junto con el contador se puede generar texto, como muestra el ejemplo siguiente:</p>
 
-        <table class="ejemplo contadores2">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -844,33 +667,17 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_4.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El contador predeterminado muestra números enteros, pero se puede utilizar cualquiera de los <a href="css_listas.html#list-style-type">estilos de listas</a> como estilo de contador. El estilo se indica en la propiedad <span class="css-prop">content</span> mediante el valor <span class="css-valor">counter(nombre_de_contador, estilo_de_lista)</span>, como muestra el ejemplo siguiente:</p>
 
-        <table class="ejemplo contadores3">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -880,43 +687,27 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-              </td>
-              <td class="resultado">
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_5.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>Se pueden utilizar varios contadores simultáneamente, como muestra el ejemplo siguiente:</p>
 
-        <table class="ejemplo contadores4">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">h4 {
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">h1 {
   counter-reset: cuenta-parrafos;
   counter-reset: cuenta-apartados;
 }
 
-h5 {
+h2 {
   counter-reset: cuenta-parrafos;
 }
 
-h5:before {
+h2:before {
   content: counter(cuenta-apartados, upper-alpha)". ";
   counter-increment: cuenta-apartados;
 }
@@ -926,26 +717,11 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><h4>Ejemplo de contadores</h4>
-
-                <h5>Apartado 1</h5>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <h5>Apartado 2</h5>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-
-                <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases_contadores_6.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
       </section>
     </section>
 

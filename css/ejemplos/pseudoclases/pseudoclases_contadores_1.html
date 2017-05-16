@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Generar contadores: counter, counter-increment y counter-reset (1). Pseudo-clases y pseudo-elementos. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      pre {
+        counter-reset: cuenta-parrafos;
+      }
+
+      p:before {
+        content: counter(cuenta-parrafos);
+        counter-increment: cuenta-parrafos;
+      }
+    </style>
+  </head>
+
+  <body>
+    <pre>Ejemplo de contadores (este párrafo es un &lt;pre&gt;)</pre>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; sin clase.</p>
+
+    <p>Este párrafo es un párrafo s&lt;p&gt; in clase.</p>
+  </body>
+</html>

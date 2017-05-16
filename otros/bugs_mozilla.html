@@ -36,9 +36,7 @@
           <li><a href="#bugs-pendientes">Bugs pendientes</a>
             <ul>
               <li><a href="#bug-2212">B2.212: align="char"</a></li>
-              <li><a href="#bug-13944">B13.944: <span class="css-prop">-moz-border-radius</span></a></li>
               <li><a href="#bug-15499">B15.499: <span class="css-prop">cellpadding</span></a></li>
-              <li><a href="#bug-125390">B125.390: <span class="css-prop">letter-spacing</span></a></li>
               <li><a href="#bug-320451">B320.451: <span class="css-sele">p:</span><span class="css-pseudo">first-letter</span></a></li>
               <li><a href="#bug-359497">B359.497: <span class="css-prop">outline</span> y <span class="css-prop">outline-color</span></a></li>
             </ul>
@@ -86,101 +84,69 @@
 
         <p>El valor <span class="html-atri-valor">char</span> del atributo <span class="html-atri">align</span> de <span class="html-eti">&lt;tbody&gt;</span> debería permitir alinear los valores de una columna a un carácter. En el primer ejemplo, las comas deberían estar en la misma vertical. En el segundo ejemplo, las a deberían estar en la misma vertical. Ni Firefox ni Internet Explorer lo hacen.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;tbody align="char" char="a"&gt;</code></pre></td>
-              <td class="resultado">
-                <table border="1">
-                  <tbody char="a" align="char">
-                    <tr>
-                      <td>100,3</td>
-                      <td>abbbbbbbb</td>
-                    </tr>
-                    <tr>
-                      <td>3,124</td>
-                      <td>bbbbbab</td>
-                    </tr>
-                    <tr>
-                      <td>2456,4567</td>
-                      <td>bbbbbba</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;tbody align="char" char=","&gt;</code></pre></td>
-              <td class="resultado">
-                <table border="1">
-                  <tbody char="," align="char">
-                    <tr>
-                      <td>100,3</td>
-                      <td>abbbbbbbb</td>
-                    </tr>
-                    <tr>
-                      <td>3,124</td>
-                      <td>bbbbbab</td>
-                    </tr>
-                    <tr>
-                      <td>2456,4567</td>
-                      <td>bbbbbba</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="filaflex">
+          <div class="icono">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;tbody align="char" char="a"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1">
+              <caption>Esto es la leyenda</caption>
+              <tbody char="a" align="char">
+                <tr>
+                  <td>100,3</td>
+                  <td>abbbbbbbb</td>
+                </tr>
+                <tr>
+                  <td>3,124</td>
+                  <td>bbbbbab</td>
+                </tr>
+                <tr>
+                  <td>2456,4567</td>
+                  <td>bbbbbba</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;tbody align="char" char=","&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1">
+              <caption>Esto es la leyenda</caption>
+              <tbody char="," align="char">
+                <tr>
+                  <td>100,3</td>
+                  <td>abbbbbbbb</td>
+                </tr>
+                <tr>
+                  <td>3,124</td>
+                  <td>bbbbbab</td>
+                </tr>
+                <tr>
+                  <td>2456,4567</td>
+                  <td>bbbbbba</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2212">bug 2.212</a> se abrió el 06/01/99 y no ha tenido prácticamente ninguna actividad.</p>
-      </section>
-
-      <section id="bug-13944">
-        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">Bug 13.944</a>: Si se utiliza la propiedad <span class="css-prop">-moz-border-radius</span>, los estilos <span class="css-valor">dotted</span> y <span class="css-valor">dashed</span> se muestran como <span class="css-valor">solid</span></h3>
-
-        <p>El módulo de bordes de la futura recomendación CSS 3 define la propiedad <span class="css-prop">border-radius</span>, que permitirá redondear las esquinas de los bordes. En Firefox existe la propiedad <span class="css-prop">-moz-border-radius</span> que realiza la misma función. El problema es que si el estilo del borde es <span class="css-valor">dotted</span> o <span class="css-valor">dashed</span>, Firefox muestra el borde como <span class="css-valor">solid</span>.</p>
-
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue dotted 5px;
-  -moz-border-radius: 20px;
-}</code>
- </pre>
-              </td>
-              <td>
-                <blockquote style="padding: 3px 10px;  border: PowderBlue dotted 5px; -moz-border-radius: 20px;">
-                  <p style="text-align: center">El borde de este párrafo debería verse a puntos, y no como una línea contínua. En Firefox deberían verse además las esquinas redondeadas.</p>
-                </blockquote>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue dashed 5px;
-  -moz-border-radius: 20px;
-}</code>
-  </pre>
-              </td>
-              <td class="resultado">
-                <blockquote style="padding: 3px 10px;  border: PowderBlue dashed 5px; -moz-border-radius: 20px;">
-                  <p style="text-align: center">El borde de este párrafo debería verse a trazos, y no como una línea contínua. En Firefox deberían verse además las esquinas redondeadas.</p>
-                </blockquote>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Este bug lo encontró en clase el alumno Pello Ziarsolo Areitioaurtena el 25/10/04. Me pareció que este bug no estaba en bugzilla, así que el 26/10/04 abrí el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=266099">bug 266.099</a>. El mismo día Gary van der Merwe cerró este bug, ya que es un duplicado del <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">bug 13.944</a></p>
-
-        <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=13944">bug 13.994</a> se abrió el 15/09/99 y desde entonces no ha habido ninguna actividad para resolverlo.</p>
       </section>
 
       <section id="bug-15499">
@@ -188,120 +154,95 @@
 
         <p>En Firefox, si una tabla tiene cellpadding (o cellspacing) en porcentaje, lo muestra como píxeles. Internet Explorer hace lo mismo.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;table cellpadding="10%"&gt;</code></pre></td>
-              <td class="resultado">
-                <table border="1" cellpadding="10">
-                  <caption>Esto es la leyenda</caption>
-                  <tbody>
-                    <tr>
-                      <td>Casilla 1</td>
-                      <td>Casilla 2</td>
-                    </tr>
-                    <tr>
-                      <td>Casilla 3</td>
-                      <td>Casilla 4</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td class="codigo"><pre><code class="language-html">&lt;table cellspacing="10%"&gt;</code></pre></td>
-              <td class="resultado">
-                <table border="1" cellspacing="10">
-                  <caption>Esto es la leyenda</caption>
-                  <tbody>
-                    <tr>
-                      <td>Casilla 1</td>
-                      <td>Casilla 2</td>
-                    </tr>
-                    <tr>
-                      <td>Casilla 3</td>
-                      <td>Casilla 4</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;table cellspacing="10"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1" cellspacing="10">
+              <caption>Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;table cellspacing="10%"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1" cellspacing="10">
+              <caption>Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;table cellpadding="10"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1" cellpadding="10">
+              <caption>Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;table cellpadding="10%"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado">
+            <table border="1" cellpadding="10%">
+              <caption>Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=159403">bug 15.499</a> se abrió el 04/10/99 y no ha tenido prácticamente ninguna actividad.</p>
-      </section>
-
-      <section id="bug-125390">
-        <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=125390">Bug 125.390</a>: la propiedad <span class="css-prop">letter-spacing</span> se aplica a la última letra</h3>
-
-        <p>En Firefox, la propiedad <span class="css-prop">letter-spacing</span> se aplica siempre a la última letra, lo que puede causar efectos no deseados.</p>
-
-        <p>Por ejemplo, si el texto tiene algún estilo, el estilo se extiende al espacio final.</p>
-
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">span {
-  letter-spacing: 10px;
-  text-decoration: underline;
-}</code>
-</pre>
-              </td>
-              <td class="resultado"><p><span style="text-decoration: underline; letter-spacing: 10px;">Letras separadas</span></p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">span {
-  letter-spacing: 10px;
-  background-color: lightblue;
-}</code>
-</pre>
-              </td>
-              <td class="resultado"><p><span style="background-color: lightblue; letter-spacing: 10px;">Letras separadas</span></p></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>O si el párrafo está centrado y la propiedad <span class="css-prop">letter-spacing</span> tiene un valor grande, el texto no se verá centrado.</p>
-
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">p {
-  letter-spacing: 50px;
-  text-align: center;
-}</code>
-</pre>
-              </td>
-              <td class="resultado"><p style="letter-spacing: 100px; text-align: center;">XX</p></td>
-            </tr>
-            <tr>
-              <td class="codigo">
-                <pre>
-<code class="language-css">p {
-  letter-spacing: 50px;
-  text-align: center;
-}
-
-span {
-  background-color: lightblue;
-  }</code>
-  </pre>
-              </td>
-              <td class="resultado"><p style="letter-spacing: 100px; text-align: center;"><span style=" background-color: lightblue;">XX</span></p></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Yo pensaba que ese comportamiento era un bug de Firefox y que Internet Explorer 7 y anteriores lo hacían correctamente al no mostrar ese espacio final. Incluso hay un bug relacionado, el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=125390">bug 125.390</a> que se abrió el 13/02/02 y en el que nadie ha dicho nunca que Firefox lo estuviera haciendo bien, aunque tampoco han avanzado nada en su resolución.</p>
-
-        <p>Pero resulta que Internet Explorer 8 lo hace como Firefox, así que tengo que tengo que pensar que el comportamiento correcto es mostrar ese espacio final y que no se trata de un bug.</p>
       </section>
 
       <section id="bug-320451">

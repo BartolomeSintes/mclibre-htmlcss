@@ -10,15 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
     <script type="text/javascript" src="../varios/highlight.pack.js"></script>
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-    <style type="text/css">
-      p.file2:first-letter { float: left; font-size: 400%; font-family: monospace; color: red;
-        background-color: pink; }
-      table.otros1 td.resul p { float: left; width: 100px; height: 100px; border: black 2px solid;
-        margin: 3px; padding: 3px; }
-      table.otros2 td.resul p { float: left; width: 5em; height: 5em; border: black 2px solid;
-        margin: 3px; padding: 3px; }
-      td.resul img { border: black 1px solid; }
-    </style>
   </head>
 
   <body>
@@ -84,7 +75,7 @@
 </pre>
         </div>
         <div class="resultado">
-          <p><span style="background-color: pink; color: red; float: left; font-family: monospace; font-size: 400%;">L</span>a primera letra de este párrafo es una letra capital, es decir, una letra más grande que ocupa varias líneas de texto. Para ello, en la hoja de estilo hay que hacer la letra flotante y aumentar su tamaño. En este caso se ha cambiado también el color y el tipo de letra para resaltar el espacio ocupado por la primera letra.</p>
+          <object type="text/html" data="ejemplos/pos_flotante/float_capital_1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
       </div>
 
@@ -101,45 +92,11 @@
 </pre>
         </div>
         <div class="resultado">
-          <p class="file2">La primera letra de este párrafo es una letra capital, es decir, una letra más grande que ocupa varias líneas de texto. Para ello, en la hoja de estilo hay que hacer la letra flotante y aumentar su tamaño. En este caso se ha cambiado también el color y el tipo de letra para resaltar el espacio ocupado por la primera letra.</p>
+          <object type="text/html" data="ejemplos/pos_flotante/float_capital_2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
       </div>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
-<code class="language-css">span.capital {
-  background-color: pink;
-  color: red;
-  float: left;
-  font-family: monospace;
-  font-size: 400%;
-}</code>
-</pre>
-            </td>
-            <td class="resultado"><p><span style="background-color: pink; color: red; float: left; font-family: monospace; font-size: 400%;">L</span>a primera letra de este párrafo es una letra capital, es decir, una letra más grande que ocupa varias líneas de texto. Para ello, en la hoja de estilo hay que hacer la letra flotante y aumentar su tamaño. En este caso se ha cambiado también el color y el tipo de letra para resaltar el espacio ocupado por la primera letra.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="codigo">
-              <pre>
-<code class="language-css">p.capital:first-letter {
-  background-color: pink;
-  color: red;
-  float: left;
-  font-family: monospace;
-  font-size: 400%;
-}</code>
-</pre>
-            </td>
-            <td class="resultado"><p class="file2">La primera letra de este párrafo es una letra capital, es decir, una letra más grande que ocupa varias líneas de texto. Para ello, en la hoja de estilo hay que hacer la letra flotante y aumentar su tamaño. En este caso se ha cambiado también el color y el tipo de letra para resaltar el espacio ocupado por la primera letra.</p></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="incompleto"><strong>Nota</strong>: Firefox no muestra este ejemplo igual que Internet Explorer y Chrome. En Firefox, la primera letra se ve más pequeña.</p>
+      <p><strong>Nota</strong>: Firefox no muestra este ejemplo igual que Internet Explorer y Chrome. En Firefox, la primera letra se ve más pequeña.</p>
     </section>
 
     <section id="posicionamiento-flotante-imagenes">
@@ -373,72 +330,46 @@ img {
 
       <p>La propiedad <span class="css-prop">float</span> se puede aplicar a cualquier elemento. En el ejemplo siguiente se ha aplicado la propiedad <span class="css-prop">float</span> a los párrafos (para que los párrafos floten uno al lado del otro en vez de ocupar de lado a lado, es necesario asignarles tamaño con las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>).</p>
 
-      <table class="ejemplo otros1">
-        <tbody>
-          <tr>
-            <td class="codigo"><pre>
+      <p><strong>Nota</strong>: Estrechando (o ensanchando) la ventana del navegador puede observarse como los párrafos que no caben en la una fila bajan a la siguiente (o suben a la anterior si caben).</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
- border: black 2px solid;
- float: left;
- height: 100px;
- margin: 3px;
- padding: 3px;
- width: 100px;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 3px;
+  padding: 3px;
+  border: black 2px solid;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p>Esto es el primer párrafo</p>
-
-              <p>Esto es el segundo párrafo </p>
-
-              <p>Esto es el tercer párrafo </p>
-
-              <p>Esto es el cuarto párrafo </p>
-
-              <p>Esto es el quinto párrafo </p>
-
-              <p>Esto es el sexto párrafo </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p><strong>Nota</strong>: Estrechando (o ensanchando) la ventana del navegador puede observarse como los párrafos que no caben en la una fila bajan a la siguiente (o suben a la anterior si caben).</p>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_flotante/float_otros_1.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>El tamaño de los párrafos se puede hacer proporcional al tipo de letra para asegurar que el contenido cabe en el espacio asignado.</p>
 
-      <table class="ejemplo otros2">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
- border: black 2px solid;
- float: left;
- height: 5em;
- margin: 3px;
- padding: 3px;
- width: 5em;
-}</code>
+  float: left;
+  width: 5em;
+  height: 5em;
+  margin: 3px;
+  padding: 3px;
+  border: black 2px solid;
+}
+</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <p>Esto es el primer párrafo</p>
-
-              <p>Esto es el segundo párrafo </p>
-
-              <p>Esto es el tercer párrafo </p>
-
-              <p>Esto es el cuarto párrafo </p>
-
-              <p>Esto es el quinto párrafo </p>
-
-              <p>Esto es el sexto párrafo </p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_flotante/float_otros_2.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <section id="tamano-con-flotantes">
@@ -446,11 +377,9 @@ img {
 
       <p>Los elementos flotantes no se tienen en cuenta al calcular el tamaño de los elementos que los contienen. Por ejemplo, si un imagen flotante forma parte de una división con borde, la imagen puede "salirse" del borde, como se ve en siguiente ejemplo:</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">div {
   border: black 3px solid;
 }
@@ -459,27 +388,17 @@ img {
   float: left;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <div style="border: black 3px solid">
-                <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float:left" /> Este párrafo tiene insertada una imagen flotante.</p>
-
-                <p>Este párrafo y el anterior forman parte de una división.</p>
-              </div>
-
-              <p>Este párrafo ya está fuera de la división.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_flotante/overflow_auto_1.html" style="width:100%; height: 13em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
 
       <p>Para que los elementos flotantes se tengan en cuenta al calcular el tamaño de los elementos que los contienen, se puede utilizar la propiedad <span class="css-prop">overflow</span> con el valor <span class="css-valor">auto</span> en el elemento contenedor.</p>
 
-      <table class="ejemplo">
-        <tbody>
-          <tr>
-            <td class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">div {
   border: black 3px solid;
   overflow: auto;
@@ -489,19 +408,11 @@ img {
   float: left;
 }</code>
 </pre>
-            </td>
-            <td class="resultado">
-              <div style="border: black 3px solid; overflow: auto">
-                <p><img alt="Logotipo de GNU (GNU is Not Unix)" src="../img/gnu-head-sm.jpg" title="Logotipo de GNU (GNU is Not Unix)" style="float:left" /> Este párrafo tiene insertada una imagen flotante.</p>
-
-                <p>Este párrafo y el anterior forman parte de una división. La división tiene la propiedad overflow: auto.</p>
-              </div>
-
-              <p>Este párrafo ya está fuera de la división.</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        </div>
+        <div class="resultado">
+          <object type="text/html" data="ejemplos/pos_flotante/overflow_auto_2.html" style="width:100%; height: 13em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+      </div>
     </section>
 
     <footer>

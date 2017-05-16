@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Generar contadores: counter, counter-increment y counter-reset (5). Pseudo-clases y pseudo-elementos. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css">
+      h1 {
+        counter-reset: cuenta-parrafos;
+        counter-reset: cuenta-apartados;
+      }
+
+      h2 {
+        counter-reset: cuenta-parrafos;
+      }
+
+      h2:before {
+        content: counter(cuenta-apartados, upper-alpha)". ";
+        counter-increment: cuenta-apartados;
+      }
+
+      p:before {
+        content: counter(cuenta-apartados, upper-alpha)"-"counter(cuenta-parrafos)". ";
+        counter-increment: cuenta-parrafos;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ejemplo de contadores</h1>
+
+    <h2>Apartado 1</h2>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
+
+    <h2>Apartado 2</h2>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
+
+    <p>Este párrafo es un párrafo &lt;p&gt; normal y corriente.</p>
+  </body>
+</html>
