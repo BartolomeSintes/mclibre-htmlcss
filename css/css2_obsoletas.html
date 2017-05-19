@@ -45,71 +45,9 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
       </aside>
 
-      <p><strong>Nota</strong>: Esta propiedad no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a  href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (octubre de 2015) en elaboración.</p>
+      <p>La propiedad <span class="css-prop">font-size-adjust</span> se introdujo en la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#propdef-font-size-adjust">CSS 2</a>, pero no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, por lo que se puede considerar obsoleta en CSS 2.</p>
 
-      <p>Cada tipo de letra tiene una proporción distinta entre el tamaño del tipo y el tamaño de la letra x de ese mismo tipo (para entendernos, una proporción distinta entre los tamaños de las letras mayúsculas y minúsculas). Es decir, que para un tamaño determinado, unos tipos de letras tienen las letras minusuculas más grandes que otros (y por tanto, son más legibles a tamaños pequeños).</p>
-
-      <p>Esto puede provocar problemas cuando el navegador no pueden mostrar el tipo de letra indicado por el autor y debe sustituirlo por otro. Si el tipo de letra que elige el navegador tiene unas minúsculas más pequeñas que las del tipo de letra elegido por el autor de la página, puede que el texto sea ilegible, ya que la propiedad <span class="css-prop">font-size</span> únicamente indica el tamaño del tipo.</p>
-
-      <p>La propiedad <span class="css-prop">font-size-adjust</span> permite establecer la proporción entre el tamaño del tipo y el de la letra x, indicándolo como número decimal, mediante</p>
-
-      <p>Firefox interpreta parcialmente esta propiedad. Google Chrome e Internet Explorer no interpretan esta propiedad, como se comenta en la <a href="../otros/otros_diferencias_listado.html#css-fuente-font-size-adjust">página de diferencias entre Firefox e Internet Explorer</a>.</p>
-
-      <div class="filaflex">
-        <div class="icono">
-          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" /><br />
-          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  font-size: 20px;
-}</code>
-</pre>
-        </div>
-        <div class="resultado">
-          <p style="font-size: 20px; ">Esta letra x tiene 20 px de altura.</p>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /><br />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  font-size: 20px;
-  font-size-adjust: 1.5;
-}</code>
-</pre>
-        </div>
-        <div class="resultado">
-          <p style="font-size: 20px; font-size-adjust: 1.5;">Esta letra x debería tener 20 x 1.5 = 30 px de altura.</p>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  font-size: 20px;
-  font-size-adjust: 0.5;
-}</code>
-</pre>
-        </div>
-        <div class="resultado">
-          <p style="font-size: 20px; font-size-adjust: 0.5;">Esta letra x debería tener 20 x 0.5 = 10 px de altura.</p>
-        </div>
-      </div>
+      <p>Sin embargo, la propiedad <span class="css-prop">font-size-adjust</span> está incluida en la futura recomendación <a  href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (mayo de 2017) en elaboración, por lo que esta propiedad se describe en la lección <a href="css3_fuente.html#font-size-adjust">CSS 3: Tipo de letra (fuente)</a>.</p>
     </section>
 
     <section id="font-stretch">
@@ -120,45 +58,9 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
       </aside>
 
-      <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido. Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
+      <p>La propiedad <span class="css-prop">font-stretch</span> se introdujo en la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/fonts.html#propdef-font-stretch">CSS 2</a>, pero no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, por lo que se puede considerar obsoleta en CSS 2.</p>
 
-      <p>Los navegadores no son capaces de interpretar esta propiedad, que no está incluida en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, aunque sí que está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (mayo de 2017) en elaboración.</p>
-
-      <div class="filaflex">
-        <div class="icono">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  font-stretch: ultra-condensed;
-}</code>
-</pre>
-        </div>
-        <div class="resultado">
-          <p style="font-stretch: ultra-condensed;">Este párrafo está en el tipo ultra-condensado</p>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  font-stretch: ultra-expanded;
-}</code>
-</pre>
-        </div>
-        <div class="resultado">
-          <p style="font-stretch: ultra-expanded;">Este párrafo está en el tipo ultra-extendido</p>
-        </div>
-      </div>
+      <p>Sin embargo, la propiedad <span class="css-prop">font-stretch</span> está incluida en la futura recomendación <a  href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a>, actualmente (mayo de 2017) en elaboración, por lo que esta propiedad se describe en la lección <a href="css3_fuente.html#font-strecth">CSS 3: Tipo de letra (fuente)</a>.</p>
     </section>
 
     <section id="marker-offset">
@@ -169,7 +71,9 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/marker-offset"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
       </aside>
 
-      <p><strong>Nota</strong>: La propiedad <span class="css-prop">marker-offset</span> y el valor <span class="css-valor">marker</span> de la propiedad <span class="css-prop">display</span> no están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> ni tampoco en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (octubre de 2015) en elaboración. La futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a> introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
+      <p>La propiedad <span class="css-prop">marker-offset</span> y el valor <span class="css-valor">marker</span> de la propiedad <span class="css-prop">display</span>  se introdujeron en la recomendación CSS 2 <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/generate.html#markers">(<span class="css-prop">marker-offset</span>)</a> y <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/visuren.html#display-prop">(<span class="css-valor">marker</span>)</a>, pero no están incluidos en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, por lo que se pueden considerar obsoletos en CSS 2.</p>
+
+      <p>La propiedad <span class="css-prop">marker-offset</span> tampoco está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (mayo de 2017) en elaboración, aunque esta recomendación introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
 
       <p>La propiedad <span class="css-prop">marker-offset</span> debería establecer la distancia del marcador al elemento de la lista. Esta propiedad afectaría a los marcadores creados con los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span>.</p>
 
@@ -207,7 +111,7 @@ li:before {
     <section id="colores-sistema">
       <h2>Colores del sistema</h2>
 
-      <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/REC-CSS2/ui.html#system-colors">CSS 2</a>, pero en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3:Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (mayo de 2016) en elaboración.</p>
+      <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/REC-CSS2/ui.html#system-colors">CSS 2</a>, pero en la recomendación <a href="https://www.w3.org/TR/css3-color/">CSS 3:Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (mayo de 2017) en elaboración.</p>
 
       <table>
         <thead>
@@ -392,7 +296,7 @@ li:before {
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 14 de mayo de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 19 de mayo de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
