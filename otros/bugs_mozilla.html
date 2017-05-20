@@ -250,21 +250,24 @@
 
         <p>Si se desactiva la hoja de estilo con "Ver &gt; Estilo de página &gt; Sin estilo", se recarga la página (con F5, por ejemplo) y se vuelve a activar la hoja de estilo con Ver &gt; Estilo de página &gt; Estilo de página básico, el estilo de la primera letra (puesto con <span class="css-sele">p:</span><span class="css-pseudo">first-letter</span>) se pierde. Si se recarga la página o si no se había recargado entre medias, el estilo sí que se aplica.</p>
 
-        <table class="ejemplo" id="bug320451">
-          <tbody>
-            <tr>
-              <td class="codigo">
-                <pre>
+        <p>Para comprobar este bug, es necesario hacer clic en el enlace siguiente para abrir el ejemplo en una pestaña.</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p:first-letter {
   font-size: 300%;
   color:red;
 }</code>
 </pre>
-              </td>
-              <td class="resultado"><p>Prueba</p></td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="ejemplos/bugs_firefox/bugs_firefox_320451.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono">
+            <a href="ejemplos/bugs_firefox/bugs_firefox_320451.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
 
         <p>Este bug lo encontró en clase el alumno Luis Mariano Toledo Sánchez el 15/02/04 al hacer el ejercicio de OídoBarra.</p>
 
@@ -276,39 +279,37 @@
       <section id="bug-359497">
         <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=359497">Bug 359.497</a>: No funciona el valor <span class="css-valor">invert</span> en las propiedades <span class="css-prop">outline</span> y <span class="css-prop">outline-color</span></h3>
 
-        <p>Firefox no muestra el valor <span class="css-valor">invert</span> (desde la versión FF3.0) y no lo hará en el futuro. El motivo, según los desarrolladores de Firefox, es que las recomendaciones <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> y CSS 3 no obligan a mostrar el valor <span class="css-valor">invert</span>, sino que lo tendría que hacer el sistema operativo (y por lo visto ninguno lo hace). Dicen que implementarlo en Firefox daría después problemas para optimizar el renderizado de la página, así que no piensan hacerlo. Sin embargo, Internet Explorer y Chrome admiten el valor <span class="css-valor">invert</span>, así que es posible que en algún momento cambien de idea.</p>
+        <p>Firefox no muestra el valor <span class="css-valor">invert</span> (desde la versión FF3.0) y no lo hará en el futuro. El motivo, según los desarrolladores de Firefox, es que las recomendaciones <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> y CSS 3 no obligan a mostrar el valor <span class="css-valor">invert</span>, sino que lo tendría que hacer el sistema operativo (y por lo visto ninguno lo hace). Dicen que implementarlo en Firefox daría después problemas para optimizar el renderizado de la página, así que no piensan hacerlo. Chrome admitía el valor <span class="css-valor">invert</span>, pero actualmente (mayo de 2017), ya no lo admite. Internet Explorer sí que lo admite.</p>
 
-        <table class="ejemplo">
-          <tbody>
-            <tr>
-              <td>
-                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
-                <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
-                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /></td>
-              <td class="codigo">
-                <pre>
+        <div class="filaflex">
+          <div class="icono">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /><br />
+            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">body {
   background-color: black;
-  color:white;
+  color: white;
 }
 
 p {
   outline: invert 3px solid;
 }</code>
 </pre>
-              </td>
-              <td class="resultado" style="background-color: black; color: white;"><p style="outline: invert 3px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          </div>
+          <div class="resultado">
+            <object type="text/html" data="../css/ejemplos/interface/interface_outline_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
 
         <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=359497">bug 359.497</a> se abrió el 04/11/06 y el 22/02/09 se marcó como WONTFIX (a no resolver).</p>
       </section>
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 10 de noviembre de 2013</p>
+      <p class="ultmod">Última modificación de esta página: 19 de mayo de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
