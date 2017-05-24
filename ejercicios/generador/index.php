@@ -18,9 +18,12 @@ include "generador_biblioteca.php";
       <p>
         <a href="../../index.html"><img src="../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" height="48" width="42" /></a>
         <a href="#"><img src="../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" height="36" width="36" /></a>
+        <a href="../index.html"><img src="../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
       </p>
 
-      <h2>Generador ejercicios</h2>
+      <div class="toc">
+        <h2>Generador ejercicios</h2>
+      </div>
     </nav>
 
     <p><img src="../../varios/iconos/icono_en_construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Este generador de ejercicios está en elaboración. El objetivo es poder elegir las etiquetas HTML y propiedades CSS que aparecen en los ejercicios.</p>
@@ -96,8 +99,8 @@ include "generador_biblioteca.php";
 
       <p>
         <input type="submit" value="Formateado" formaction="generador_comprueba.php" /> <!-- -
-        <input type="submit" value="Descargar sin formatear" formaction="generador_zip.php" /> -
-        <input type="submit" value="Comentarios" formaction="generador_comentarios.php" />-->
+<input type="submit" value="Descargar sin formatear" formaction="generador_zip.php" /> -
+<input type="submit" value="Comentarios" formaction="generador_comentarios.php" />-->
       </p>
 
     </form>
