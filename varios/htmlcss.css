@@ -6,7 +6,7 @@
 /*                                          */
 /* CSS curso: HTML/XHTML y CSS              */
 /*                                          */
-/* 9 de mayo de 2017                        */
+/* 25 de mayo de 2017                       */
 /*                                          */
 
 /* CSS común */
@@ -38,7 +38,6 @@ footer, div.footer {
 }
 
 h1 {
-  margin-left: 75px;
   font-size: 200%;
   text-align: center;
 }
@@ -243,6 +242,31 @@ div.filaflex div.icono {
   padding: 5px;
 }
 
+div.filaflex div.icono-navegadores {
+  flex-grow: 0;
+  width: 50px;
+}
+
+div.filaflex div.icono-navegadores-vacio {
+  flex-grow: 0;
+  width: 50px;
+}
+
+div.filaflex div.icono-ok {
+  flex-grow: 0;
+  width: 40px;
+}
+
+div.filaflex div.icono-xhtml-ok {
+  flex-grow: 0;
+  width: 120px;
+}
+
+div.filaflex div.icono-enlace {
+  flex-grow: 0;
+  width: 40px;
+}
+
 div.filaflex pre {
   margin: 5px 0;
   white-space: pre-wrap;
@@ -400,13 +424,7 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   clear: left;
 }
 
-
 /* Página inicial */
-
-table.indice td {
-  text-align: left;
-  vertical-align: top;
-}
 
 img#vpp {
   position: absolute;
@@ -418,26 +436,24 @@ img#vpp {
 /* Pantallas pequeñas */
 @media screen and (max-width: 768px) {
   html {
-    margin-left: 2em;
-    margin-right: 2em;
-  }
-
-  h1#indice {
-    margin-left: 140px;
+    margin-left: 40px;
+    margin-right: 5px;
   }
 
   nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 6em;
+    width: 50px;
     padding-left: 0.2em;
     font-size: 80%;
     text-align: left;
   }
 
-  nav h2, div.nav h2 {
-    display: none;
+  nav.portada {
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   nav p, div.nav p {
@@ -462,7 +478,7 @@ img#vpp {
     display: none;
   }
 
-  table.ejemplo td, table.indice td {
+  table.ejemplo td {
     display: block;
     width: 100%;
     margin-bottom: 5px;
@@ -475,6 +491,7 @@ img#vpp {
 
   div.filaflex {
     display: block;
+    margin-bottom: 15px;
   }
 
   div.filaflex.cabecera {
@@ -484,6 +501,11 @@ img#vpp {
   div.filaflex div:not([class="icono"]) {
     width: auto;
   }
+
+  div.filaflex div.icono-navegadores-vacio {
+    display: none;
+  }
+
 }
 
 /* Pantallas grandes */
