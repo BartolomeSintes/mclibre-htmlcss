@@ -41,13 +41,15 @@
 
       <p>El primer navegador en mostrar favicons fue el Internet Explorer 4. Hasta IE 8, Internet Explorer requería que el favicon fuera una imagen en formato ICO, y que el enlace <span class="html-eti">&lt;link&gt;</span> incluido en el <span class="html-eti">&lt;head&gt;</span> tuviera la siguiente sintaxis:</p>
 
-      <pre class="fuente">
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;head&gt;
   ...
   &lt;link rel="shortcut icon" href="http://wwww.ejemplo.org/favicon.ico" /&gt;
   ...
 &lt;/head&gt;</code>
 </pre>
+      </div>
 
       <p>En la barra de dirección, el tamaño del favicon es bastante reducido, 16x16 píxeles, pero en otros lugares como los marcadores podía tener un tamaño mayor (24x24, 32x32, 48x48 o 64x64). Internet Explorer utilizaba el <a href="https://en.wikipedia.org/wiki/ICO_%28file_format%29" title="Formato ICO en Wikipedia (en inglés)">formato ICO</a> de Windows, que permite guardar varias imágenes independientes en un único archivo .ico.</p>
 
@@ -65,29 +67,34 @@
 
       <p>En 2005, el W3C publicó <a href="https://www.w3.org/2005/10/howto-favicon">unos consejos sobre favicons</a>, en las que se aconsejaba utilizar el valor <span class="html-atri-valor">icon</span> para el atributo <span class="html-atri">rel</span> (en vez de <span class="html-atri-valor">shortcut icon</span>) e indicar los distintos tipos de imagen mediante el atributo <span class="html-atri">type</span>, como en los ejemplos siguientes:</p>
 
-      <pre class="fuente">
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;link rel="icon" type="image/png" href="imagen.png" /&gt;
 
 &lt;link rel="icon" type="image/gif" href="imagen.gif" /&gt;
 
 &lt;link rel="icon" type="image/vnd.microsoft.icon" href="imagen.ico" /&gt;</code>
 </pre>
+      </div>
 
       <hr class="corta" />
 
       <p>La recomendación HTML 5 fue la primera en definir los favicons, añadiendo a los consejos del 2005 el atributo <span class="html-atri">sizes</span>, para indicar los tamaños de las imágenes (para imágenes escalables, como SVG, se puede utilizar el valor <span class="html-atri-valor">any</span>), como en los ejemplos siguientes:</p>
 
-      <pre class="fuente">
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;link rel="icon" type="image/png" href="imagen.png" sizes="64x64" /&gt;
 
 &lt;link rel="icon" type="image/svg+xml" href="imagen.svg" sizes="any" /&gt;
 
 &lt;link rel="icon" type="image/vnd.microsoft.icon" href="imagen.ico" sizes="16x16 24x24 36x36 48x48" /&gt;</code>
 </pre>
+      </div>
 
       <p>En vez de utilizar un fichero .ico con varias imágenes, se puede hacer referencia a varias imagenes para que el navegador elija la más conveniente en cada situación:</p>
 
-      <pre class="fuente">
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;link rel="icon" type="image/png" href="imagen_16.png" sizes="16x16" /&gt;
 
 &lt;link rel="icon" type="image/png" href="imagen_32.png" sizes="32x32" /&gt;
@@ -96,6 +103,7 @@
 
 ...</code>
 </pre>
+      </div>
 
       <hr class="corta" />
 

@@ -6,14 +6,14 @@
 /*                                          */
 /* CSS curso: HTML/XHTML y CSS              */
 /*                                          */
-/* 25 de mayo de 2017                       */
+/* 28 de mayo de 2017                       */
 /*                                          */
 
 /* CSS común */
 
 @font-face {
   font-family: "Inconsolata";
-  src: url("fonts/inconsolata.woff2");
+  src: url("fonts/inconsolata.woff");
 }
 
 html {
@@ -53,6 +53,12 @@ h3 {
 h4 {
   font-size: 105%;
   font-weight: bold;
+}
+
+pre, pre code {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Inconsolata", monospace;  /* Chrome user agent style sheet */
 }
 
 hr {
@@ -101,28 +107,18 @@ a img {
 
 img.derecha {
   float: right;
-  border: none;
   margin-left: 10px;
   margin-bottom: 5px;
 }
 
 img.izquierda {
   float: left;
-  border: none;
   margin-right: 10px;
   margin-bottom: 5px;
 }
 
 .limpia {
   clear: both;
-}
-
-.fuente {
-  border: black 2px solid;
-  margin: 0 10px;
-  padding: 3px 5px;
-  background-color: white;
-  color: black;
 }
 
 .soft-atajo-teclado {
@@ -144,9 +140,10 @@ img.izquierda {
   text-align: center;
 }
 
-.captura img {
+.captura img, .captura svg {
   border: black 2px dotted;
   padding: 5px;
+  vertical-align: middle;
 }
 
 .codigo-resaltado {
@@ -155,25 +152,8 @@ img.izquierda {
   outline: red 2px solid;
 }
 
-object.ejercicio {
-  width: 90%;
-  height: 400px;
-  border: 2px solid black ;
-}
-
-p.enlace-ejercicio {
-  margin-right: 5%;
-  font-size: 80%;
-  text-align: right;
-}
-
 iframe {
   border: none;
-}
-
-td pre {
-  margin: 2px;
-  white-space: pre-wrap;
 }
 
 math {
@@ -182,6 +162,8 @@ math {
 }
 
 kbd {
+  font-family: monospace;
+  font-size: 120%;
   font-weight: bold;
 }
 
@@ -237,11 +219,6 @@ div.filaflex div.columnaflex div {
   width: auto;
 }
 
-div.filaflex div.icono {
-  flex-grow: 0;
-  padding: 5px;
-}
-
 div.filaflex div.icono-navegadores {
   flex-grow: 0;
   width: 50px;
@@ -284,7 +261,6 @@ div.codigo, div.resultado {
 }
 
 div.codigo {
-  font-family: "Inconsolata", monospace;
   padding: 0 5px;
 }
 
@@ -307,38 +283,6 @@ object.conborde {
 
 table.conborde, table.conborde td, table.conborde th {
   border: black 1px solid;
-}
-
-table.ejemplo {
-  width: 100%;
-  border-spacing: 5px;
-  text-align: left;
-}
-
-table.ejemplo td {
-  vertical-align: top;
-}
-
-td.ffie {
-  width: 20px;
-}
-
-td.codigo {
-  width:  50%;
-  border: black 2px solid;
-  padding: 0 5px;
-  background-color: white;
-}
-
-td.resultado {
-  width:  50%;
-  border: black 2px solid;
-  background-color: white;
-  vertical-align: top;
-}
-
-td.arriba {
-  vertical-align: top;
 }
 
 table.listado {
@@ -381,11 +325,6 @@ th {
   text-align: center;
 }
 
-col.centrado {
-  padding: 0 10px;
-  text-align: center;
-}
-
 ol, ul {
   margin-top: 3px;
   margin-bottom: 6px;
@@ -401,6 +340,7 @@ li {
 }
 
 /* Enlaces a normas */
+
 h2.con-aside, h3.con-aside, h4-con-aside {
   float: left;
 }
@@ -424,16 +364,8 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   clear: left;
 }
 
-/* Página inicial */
-
-img#vpp {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  border:none;
-}
-
 /* Pantallas pequeñas */
+
 @media screen and (max-width: 768px) {
   html {
     margin-left: 40px;
@@ -466,22 +398,8 @@ img#vpp {
     text-decoration: none;
   }
 
-  nav i, div.nav i {
-    display: none;
-  }
-
-  nav i.icon-html5, div.nav i.icon-html5 {
-    display: block;
-  }
-
   nav div.toc, div.nav div.toc {
     display: none;
-  }
-
-  table.ejemplo td {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
   }
 
   pre {
@@ -532,6 +450,13 @@ img#vpp {
     text-align: left;
   }
 
+  nav h3, div.nav h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 105%;
+    text-align: left;
+  }
+
   nav p, div.nav p {
     margin: 5px 0 0;
     font-size: 350%;
@@ -542,17 +467,18 @@ img#vpp {
     text-decoration: none;
   }
 
-  nav i.actual, div.nav i.actual {
-    color: green;
-  }
-
   nav ul, div.nav ul {
     margin-top: 0;
     padding-left: 1em;
   }
 
-  nav ul li, div.nav ul li {
-    margin: 0 0 0.1em;
+  nav ol, div.nav ol {
+    margin-top: 0;
+    padding-left: 2em;
+  }
+
+  nav ul li, nav ol li, div.nav ul li, div.nav ol li {
+    margin: 0 0 0.1em 0.1em;
   }
 
   nav ul ul, div.nav ul ul {
@@ -560,7 +486,12 @@ img#vpp {
     padding-left: 0.5em;
   }
 
-  nav ul ul li, div.nav ul ul li {
+  nav ul ol, div.nav ul ol {
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  nav ul ul li, nav ol ol li, div.nav ul ul li, div.nav ol ol li   {
     margin: 0;
   }
 }
@@ -583,10 +514,6 @@ img#vpp {
 
   pre {
     white-space: pre-wrap !important;
-  }
-
-  p.volver-principio {
-    display: none;
   }
 
   tr {
