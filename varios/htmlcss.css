@@ -6,10 +6,10 @@
 /*                                          */
 /* CSS curso: HTML/XHTML y CSS              */
 /*                                          */
-/* 30 de mayo de 2017                       */
+/* 31 de mayo de 2017                       */
 /*                                          */
 
-/* CSS común */
+/* CSS comun */
 
 @font-face {
   font-family: "Inconsolata";
@@ -22,18 +22,18 @@ html {
   text-align: justify;
 }
 
-section, div.section {
+section {
   clear: both;
   border-top: solid 2px black;
   margin-top: 1em;
   padding-top: 0;
 }
 
-section section, div.section div.section {
+section section {
   border-top: solid 1px black;
 }
 
-footer, div.footer {
+footer {
   margin-top: 2em;
 }
 
@@ -75,7 +75,7 @@ hr.corta {
 }
 
 p {
-  margin:5px 0;
+  margin: 5px 0;
 }
 
 p.aviso {
@@ -101,7 +101,7 @@ p.separador {
   height: 10px;
 }
 
-.centrado {
+.mcl-centrado {
   text-align: center;
 }
 
@@ -119,6 +119,10 @@ img.izquierda {
   float: left;
   margin-right: 10px;
   margin-bottom: 5px;
+}
+
+img.vmedio {
+  vertical-align: middle;
 }
 
 .soft-atajo-teclado {
@@ -152,10 +156,6 @@ img.izquierda {
   outline: red 2px solid;
 }
 
-iframe {
-  border: none;
-}
-
 math {
   font-family: sans-serif;
   font-size: 105%;
@@ -165,10 +165,6 @@ kbd {
   font-family: monospace;
   font-size: 120%;
   font-weight: bold;
-}
-
-table kbd  {
-  font-weight: normal;
 }
 
 div.filaflex {
@@ -184,6 +180,7 @@ div.filaflex {
 div.filaflex.cabecera {
   margin-bottom: -5px;
   padding-bottom: 0;
+  text-align: center;
 }
 
 div.filaflex.nogrow div:not([class="icono"]) {
@@ -222,26 +219,31 @@ div.filaflex div.columnaflex div {
 div.filaflex div.icono-navegadores {
   flex-grow: 0;
   width: 50px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-navegadores-vacio {
   flex-grow: 0;
   width: 50px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-ok {
   flex-grow: 0;
   width: 40px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-xhtml-ok {
   flex-grow: 0;
   width: 120px;
+  margin-top: 8px;
 }
 
 div.filaflex div.icono-enlace {
   flex-grow: 0;
   width: 40px;
+  /* no tiene margin-top porque uso la clase en div.cabecera */
 }
 
 div.filaflex pre {
@@ -256,6 +258,7 @@ div.codigo, div.resultado {
   padding: 0;
   background-color: white;
   color: black;
+  font-family: "Inconsolata", monospace;
   font-size: 100%;
   line-height: 110%;
 }
@@ -264,61 +267,52 @@ div.codigo {
   padding: 0 5px;
 }
 
-div.obsoleto {
-  border-left: red 5px solid;
-  padding-left: 20px;
+div.resultado object {
+  width: 100%;
 }
 
-div.salto {
-  page-break-before: always;
-}
-
-div.salto div {
-  page-break-before: avoid;
-}
-
-object.conborde {
-  border: black 2px solid;
-}
-
-table.conborde, table.conborde td, table.conborde th {
-  border: black 1px solid;
-}
-
-table.listado {
+table.mcl-listado {
   border-collapse: collapse;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-table.listado tr {
+table.mcl-listado tr {
   border-bottom: black 1px solid;
 }
 
-table.listado tr.titulo {
+table.mcl-listado tr.titulo {
   border: none;
 }
 
-table.listado tr.titulo td {
+table.mcl-listado tr.titulo td {
   padding-top: 20px;
   font-weight: bolder;
 }
 
-table.listado tr.cabecera td {
+table.mcl-listado tr.cabecera td {
   border: none;
   font-weight: bolder;
 }
 
-table.franjas thead tr, table.franjas tbody tr:nth-child(even) {
+table.mcl-franjas thead tr, table.mcl-franjas tbody tr:nth-child(even) {
   background-color: #eee;
   color: black;
 }
 
-table.centrado {
+table.mcl-centrado {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+}
+
+td.mcl-centrado, th.mcl-centrado, tbody.mcl-centrado {
+  text-align: center;
+}
+
+table.conborde, table.conborde td, table.conborde th {
+  border: black 1px solid;
 }
 
 th {
@@ -337,6 +331,31 @@ ul ul {
 
 li {
   clear: both;
+}
+
+/* Para ejemplos de ejecucion de codigo */
+
+div.mcl-diapo {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  height: 20em;
+  border: black 2px dotted;
+  margin-bottom: 10px;
+  line-height: 110%;
+}
+
+div.mcl-diapo > div {
+  position: relative;
+  width: 99%;
+  height: 98%;
+  padding: 5px;
+}
+
+div.mcl-diapo p.control {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 /* Enlaces a normas */
@@ -364,7 +383,7 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   clear: left;
 }
 
-/* Pantallas pequeñas */
+/* Pantallas estrechas */
 
 @media screen and (max-width: 768px) {
   html {
@@ -388,17 +407,17 @@ h2.con-aside, h3.con-aside, h4-con-aside {
     margin-right: auto;
   }
 
-  nav p, div.nav p {
+  nav p {
     margin: 5px 0 0;
     font-size: 350%;
   }
 
-  nav a, div.nav a {
+  nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav div.toc, div.nav div.toc {
+  nav div.toc {
     display: none;
   }
 
@@ -423,16 +442,29 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   div.filaflex div.icono-navegadores-vacio {
     display: none;
   }
+
+  div.mcl-diapo {
+    height: auto !important;
+  }
+
+  div.mcl-diapo p.control {
+    display: none;
+  }
+
+  p.oculta-small {
+    display: none;
+  }
 }
 
-/* Pantallas grandes */
+/* Pantallas anchas */
+
 @media screen and (min-width: 768px) {
   html {
     margin-left: 12em;
-    margin-right: 2em;
+    margin-right: 1em;
   }
 
-  nav, div.nav {
+  nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -442,60 +474,61 @@ h2.con-aside, h3.con-aside, h4-con-aside {
     text-align: left;
   }
 
-  nav h2, div.nav h2 {
+  nav h2 {
     margin: 0;
     padding: 0;
     font-size: 110%;
     text-align: left;
   }
 
-  nav h3, div.nav h3 {
+  nav h3 {
     margin: 10px 0 0;
     padding: 0;
     font-size: 105%;
     text-align: left;
   }
 
-  nav p, div.nav p {
+  nav p {
     margin: 5px 0 0;
     font-size: 350%;
   }
 
-  nav a , div.nav a {
+  nav a {
     color: black;
     text-decoration: none;
   }
 
-  nav ul, div.nav ul {
+  nav ul {
     margin-top: 0;
     padding-left: 1em;
   }
 
-  nav ol, div.nav ol {
+  nav ol {
     margin-top: 0;
     padding-left: 2em;
   }
 
-  nav ul li, nav ol li, div.nav ul li, div.nav ol li {
+  nav ul li, nav ol li {
     margin: 0 0 0.1em 0.1em;
   }
 
-  nav ul ul, div.nav ul ul {
+  nav ul ul {
     margin: 0;
     padding-left: 0.5em;
   }
 
-  nav ul ol, div.nav ul ol {
+  nav ul ol {
     margin: 0;
     padding-left: 1em;
   }
 
-  nav ul ul li, nav ol ol li, div.nav ul ul li, div.nav ol ol li   {
+  nav ul ul li, nav ol ol li {
     margin: 0;
   }
 }
 
 /* Impresora */
+
 @media print {
   html {
     margin-left: 5px;
@@ -504,7 +537,11 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   }
 
   nav {
-    display: none
+    display: none;
+  }
+
+  div.icono-enlace {
+    display: none;
   }
 
   code {
@@ -518,25 +555,53 @@ h2.con-aside, h3.con-aside, h4-con-aside {
   tr {
     page-break-inside: avoid;
   }
+
+  .noprint {
+    display: none
+  }
 }
 
-/* CSS específico apuntes HTML/CSS */
-
-/* Clases para fragmentos de código en texto */
+/* Clases para fragmentos de codigo en texto */
 
 /* Estilo para HTML imitando a Brackets */
+
 .html-eti        { color: #446FBD; }
 .html-atri       { color: #6D8600; }
 .html-atri-valor { color: #E88501; }
 
 /* Estilo para CSS imitando a Brackets */
-.css-sele         { color: #446FBD; }
-.css-prop         { color: #8757AD; }
-.css-feature      { color: #8757AD; }
-.css-valor        { color: #E88501; }
-.css-numero       { color: #8E8600; }
-.css-unidad       { color: #8E8600; }
-.css-pseudo       { color: #535353; }
-.css-arroba       { color: #8757AD; }
-.css-funcion      { color: #4700FF; }
 
+.css-sele    { color: #446FBD; }
+.css-prop    { color: #8757AD; }
+.css-feature { color: #8757AD; }
+.css-valor   { color: #E88501; }
+.css-numero  { color: #8E8600; }
+.css-unidad  { color: #8E8600; }
+.css-pseudo  { color: #535353; }
+.css-arroba  { color: #8757AD; }
+.css-funcion { color: #4700FF; }
+
+/* Estilo para Python imitando a IDLE */
+
+.idle-prompt { color: #770000; }
+.idle-resp   { color: #0000FF; }
+.idle-rese   { color: #FF7700; }
+.idle-cade   { color: #00AA00; }
+.idle-erro   { color: #FF0000; }
+.idle-errbg  { background-color: #FC7674; }
+.idle-func   { color: #800080; }
+.idle-fundef { color: #0000FF; }
+.idle-come   { color: #FF0000; }
+.idle-menu   { background-color: #D4D0C8; font-family: serif;}
+.idle-otro   { color: black; }
+
+/* Estilo para XML imitando a XML Copy Editor*/
+
+.xml-tag     { color: #0000FF; } /* any tag from "<" till ">"  */
+.xml-attr    { color: #FC0204; } /* tag's attribute            */
+.xml-pi      { color: #0000FF; }
+.xml-comment { color: #808080; } /* comment                    */
+.xsl-i       { color: #0000FF; }
+.xsl-atri    { color: #FC0204; }
+
+/* CSS especifico apuntes HTML/CSS */
