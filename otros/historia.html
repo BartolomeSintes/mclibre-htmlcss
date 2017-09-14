@@ -125,11 +125,15 @@
           <li>CR (Candidate Recommendation): Candidata a Recomendación</li>
           <li>PR (Proposed Recommendation): Recomendación propuesta</li>
           <li>REC (Recommendation): Recomendación</li>
+          <li>OR (Obsolete Recommendation): Recomendación obsoleta</li>
+          <li>RR (Rescinded Recommendation): Recomendación rescindida</li>
         </ul>
 
         <p class="mcl-centrado"><img src="../img/historia/w3c_elaboracion_recomendaciones.svg" alt="Fases de elaboración de recomendaciones del W3C" title="Fases de elaboración de recomendaciones del W3C" width="750" height="90" /></p>
 
         <p>Los documentos van avanzando a lo largo de estas cuatro fases, aunque también pueden retroceder a fases anteriores. En las fases de borrador o candidata se suelen publicar sucesivas versiones del documento. Los documentos que merecen ser difundidos pero que, por algún motivo, no consiguen alcanzar la fase de recomendación se suelen publicar como Notas del grupo de trabajo (Working Group Note).</p>
+
+        <p>En 2017 el W3C ha añadido dos posibles estados más, pensados para las recomendaciones que el W3C no quiere que se sigan utilizando. Una recomendación será obsoleta si simplemente se considera que es mejor seguir otras recomendaciones, aunque se puede seguir utilizando, mientras que al considerar una recomendación rescindida, dejarán de tener vigencia los aspectos legales de la recomendación (por ejemplo, la protección frente a patentes, etc.). Actualmente (septiembre de 2017) no hay ninguna recomendación obsoleta ni rescindida, pero se espera declarar obsoletas las recomendaciones del HTML anteriores a la última aprobada.</p>
       </section>
     </section>
 
@@ -354,7 +358,7 @@
 
         <p>Por desgracia, el paso del HTML al XHTML, que el W3C pensaba que sería inmediato, resultó ser un fracaso. Probablemente, el principal motivo del fracaso fue el problema de los tipos MIME en Intenet Explorer (en las versiones anteriores a IE9).</p>
 
-        <p>Los tipos MIME definen tipos de documentos y son la manera en que el servidor le dice al navegador qué tipo de documento le va a enviar. El tipo MIME de los documentos html es text/html mientras que el tipo MIME de los documentos xhtml es application/xhtml+xml . El problema es que los Internet Explorer anteriores a IE9 no admitían el tipo application/xhtml+xml (definido en la norma <a href="https://tools.ietf.org/html/rfc3236">RFC 3236</a>, de enero de 2002) y simplemente no mostraban los documentos enviados con este tipo MIME. La alternativa es enviar los documentos xhtml como text/html, pero eso genera <a href="http://www.hixie.ch/advocacy/xhtml">multitud de problemas</a>. El más importante es que los navegadores no tratan el documento como xhtml sino como html y por tanto el navegador piensa que el documento está lleno de errores, aunque los navegadores los ignoran y consiguen mostrar la página. Dado que Internet Explorer es el navegador más utilizado, prácticamente nadie envía los documentos xhtml con el tipo MIME application/xhtml+xml y como al enviarlos con el tipo MIME text/html se pierden todas las ventajas del xhtml, la conclusión es automática: no vale la pena usar xhtml. Actualmente (septiembre de 2015) gran parte o la mayoría de las páginas disponibles en la web ni son XHTML ni se sirven como tal.</p>
+        <p>Los tipos MIME definen tipos de documentos y son la manera en que el servidor le dice al navegador qué tipo de documento le va a enviar. El tipo MIME de los documentos html es text/html mientras que el tipo MIME de los documentos xhtml es application/xhtml+xml . El problema es que los Internet Explorer anteriores a IE9 no admitían el tipo application/xhtml+xml (definido en la norma <a href="https://tools.ietf.org/html/rfc3236">RFC 3236</a>, de enero de 2002) y simplemente no mostraban los documentos enviados con este tipo MIME. La alternativa es enviar los documentos xhtml como text/html, pero eso genera <a href="http://www.hixie.ch/advocacy/xhtml">multitud de problemas</a>. El más importante es que los navegadores no tratan el documento como xhtml sino como html y por tanto el navegador piensa que el documento está lleno de errores, aunque los navegadores los ignoran y consiguen mostrar la página. Dado que Internet Explorer es el navegador más utilizado, prácticamente nadie envía los documentos xhtml con el tipo MIME application/xhtml+xml y como al enviarlos con el tipo MIME text/html se pierden todas las ventajas del xhtml, la conclusión es automática: no vale la pena usar xhtml. Actualmente (septiembre de 2017) gran parte o la mayoría de las páginas disponibles en la web que pretenden ser XHTML, ni son válidas ni se sirven como tal.</p>
 
         <p>Ante este bloqueo que impedía el desarrollo del HTML (el W3C había abandonado el desarrollo del HTML en favor del XHTML pero el mercado -por culpa de Microsoft, especialmente- rechazaba el XHTML), en 2004 se creó el <a href="https://whatwg.org/">WHATWG</a> (Web Hypertext Application Technology Working Group), un grupo de trabajo informal formado por individuos y empresas (Mozilla, Opera, Apple, Google entre ellas) y dedicado al desarrollo del HTML, sobre todo para facilitar el desarrollo de las aplicaciones Web. Este grupo empezó a elaborar las especificaciones <a href="https://html.spec.whatwg.org/">HTML 5</a> (también llamada Web Applications 1.0), <a href="https://whatwg.org/specs/web-forms/current-work/">Web Forms 2.0</a> y <a href="https://whatwg.org/specs/web-controls/current-work/">Web Controls 1.0</a>, editadas por Ian Hickson, con la intención de que en el futuro se publicaran como recomendaciones del W3C con el nombre de HTML 5.</p>
 
@@ -366,13 +370,13 @@
 
         <p>En enero de 2011, el W3C anunció su compromiso definitivo con el HTML 5 y la intención de publicar la recomendación en 2014. Simultáneamente, el WHATWG anunció que cambiaba su modelo de desarrollo a un modelo de desarrollo continuo, es decir, dejar de hablar de versiones de HTML, llamarlo siempre HTML y que la norma se vaya modificando continuamente (durante un tiempo se publicó un <a href="https://blog.whatwg.org/category/weekly-review">blog dedicado a la evolución de los borradores de HTML</a>, pero lleva años abandonado).</p>
 
-        <p>El reparto de papeles (el WHATWG desarrollando continuamente el HTML, los navegadores implementando el HTML del WHATWG y el W3C fijando versiones cada ciertos años), comenzó con buen pie pero que dos grupos distintos pudieran desarrollar su trabajo sin fricciones resultaba sorprendente. Hasta mediados de 2012 el funcionamiento correcto de este modelo de desarrollo se debió en gran parte a que el editor de ambos documentos era la misma persona, el físico suizo-británico <a href="https://plus.google.com/+IanHickson/posts">Ian Hickson</a> que actualmente (noviembre de 2016) trabaja en Google. Pero en julio de 2012 Hickson dejó de ser el editor del W3C para centrar su trabajo en el WHATWG, lo que genera dudas sobre cómo se resolverán las diferencias que vayan apareciendo en el futuro o si el W3C decide dejar de basarse en el borrador del WHATWG.</p>
+        <p>El reparto de papeles (el WHATWG desarrollando continuamente el HTML, los navegadores implementando el HTML del WHATWG y el W3C fijando versiones cada ciertos años), comenzó con buen pie pero que dos grupos distintos pudieran desarrollar su trabajo sin fricciones resultaba sorprendente. Hasta mediados de 2012 el funcionamiento correcto de este modelo de desarrollo se debió en gran parte a que el editor de ambos documentos era la misma persona, el físico suizo-británico <a href="https://plus.google.com/+IanHickson/posts">Ian Hickson</a>, empleado de Google. Pero en julio de 2012 Hickson dejó de ser el editor del W3C para centrar su trabajo en el WHATWG, lo que genera dudas sobre cómo se resolverán las diferencias que vayan apareciendo en el futuro o si el W3C decide dejar de basarse en el borrador del WHATWG.</p>
 
         <p>Finalmente, el 28 de octubre de 2014 se publicó la recomendación <a href="https://www.w3.org/TR/2014/REC-html5-20141028/">HTML5: Vocabulario y APIs asociadas para HTML y XHTML</a>. En diciembre de 2014 se publicó la nota <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/">diferencias entre HTML4 y HTML5</a>.</p>
 
         <p>El 1 de noviembre de 2016 se publicó la recomendación <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">HTML 5.1</a>. Esta versión no supone un gran cambio respecto a HTML 5, pero introduce algunos elementos nuevos.</p>
 
-        <p>Actualmente (noviembre de 2016) el WHATWG prosigue su desarrollo continuo del HTML y el W3C, <a href="https://dev.w3.org/html5/decision-policy/html5-2014-plan.html">de acuerdo con su plan de trabajo</a>, está desarrollando la próxima versión del HTML, HTML 5.2, que se espera publicar a finales de 2017. En agosto de 2016 se publicó el primer <a href="https://www.w3.org/TR/html52/">borrador de HTML 5.2</a>.</p>
+        <p>Actualmente (septiembre de 2017) el WHATWG prosigue su desarrollo continuo del HTML y el W3C, <a href="https://dev.w3.org/html5/decision-policy/html5-2014-plan.html">de acuerdo con su plan de trabajo</a>, está desarrollando la próxima versión del HTML, HTML 5.2, que se espera publicar a finales de 2017. En agosto de 2016 se publicó el primer <a href="https://www.w3.org/TR/html52/">borrador de HTML 5.2</a>.</p>
 
         <p><a href="https://github.com/w3c/WebPlatformWG/blob/gh-pages/timelines/HTML.md">Timeline HTML 5.1 / 5.2</a> - <a href="https://www.w3.org/2016/11/webplatform-charter.html">Web Platform Working Group 2016 Charter</a></p>
       </section>
@@ -447,7 +451,7 @@
 
         <p>En enero de 2017 se ha publicado <a href="https://www.w3.org/TR/2017/NOTE-css-2017-20170131/">CSS Snapshot 2017</a>, una nota del grupo de trabajo que resume el estado de las distintas recomendaciones CSS.</p>
 
-        <p>Actualmente (enero de 2017) continuamente se publican nuevos borradores de trabajo de algunas de las futuras recomendaciones CSS 3, pero las versiones definitivas tardarán años en publicarse al ritmo actual. También existen un par de borradores de recomendaciones de CSS nivel 4. Para consultar las novedades sobre la elaboración de las recomendaciones, se puede consultar el <a href="https://www.w3.org/Style/CSS/Planet/">agregador de noticias del grupo de trabajo CSS del W3C</a>. La lección <a href="../css/css3.html">Hojas de estilo CSS3</a> contiene enlaces a las recomendaciones CSS3 aprobadas, a los últimos borradores publicados y a los borradores de los editores.</p>
+        <p>Actualmente (septiembre de 2017) continuamente se publican nuevos borradores de trabajo de algunas de las futuras recomendaciones CSS 3, pero las versiones definitivas tardarán años en publicarse al ritmo actual. También existen un par de borradores de recomendaciones de CSS nivel 4. Para consultar las novedades sobre la elaboración de las recomendaciones, se puede consultar el <a href="https://www.w3.org/Style/CSS/Planet/">agregador de noticias del grupo de trabajo CSS del W3C</a>. La lección <a href="../css/css3.html">Hojas de estilo CSS3</a> contiene enlaces a las recomendaciones CSS3 aprobadas, a los últimos borradores publicados y a los borradores de los editores.</p>
       </section>
 
       <section id="javascript">
@@ -582,7 +586,7 @@
             <li>noviembre de 2015: <a href="https://www.w3.org/TR/2015/REC-dom-20151119/">DOM 4</a>, editada por Anne van Kesteren y otros.</li>
           </ul>
 
-          <p>Actualmente (junio de 2017) el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/dom41/">DOM 4.1</a>, <a href="https://w3c.github.io/uievents/">UI Events</a>, <a href="https://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a> y <a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>. por su parte, el WHATWG mantiene la norma <a href="https://dom.spec.whatwg.org/">DOM</a> (living standard).</p>
+          <p>Actualmente (septiembre de 2017) el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/dom41/">DOM 4.1</a>, <a href="https://w3c.github.io/uievents/">UI Events</a>, <a href="https://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a> y <a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>. por su parte, el WHATWG mantiene la norma <a href="https://dom.spec.whatwg.org/">DOM</a> (living standard).</p>
         </section>
 
         <section id="apis">
@@ -615,6 +619,8 @@
             <li>junio de 2016: <a href="https://www.w3.org/TR/2016/REC-SRI-20160623/">Subresource Integrity</a></li>
             <li>octubre de 2016: <a href="https://www.w3.org/TR/2016/REC-vibration-20161018/">Vibration API (2º ed.)</a></li>
             <li>octubre de 2016: <a href="https://www.w3.org/TR/2016/REC-pointerlock-20161027/">Pointer Lock</a></li>
+            <li>noviembre de 2016: <a href="https://www.w3.org/TR/2016/REC-geolocation-API-20161108/">Geolocation API (2º ed.)</a></li>
+            <li>enero de 2017: <a href="https://www.w3.org/TR/2017/REC-WebCryptoAPI-20170126/">Web Cryptography API</a></li>
           </ul>
 
           <p class="incompleto">Completar con las recomendaciones en fase de borrador.</p>
@@ -704,7 +710,7 @@
             <li>abril de 2014: <a href="https://www.w3.org/TR/2014/REC-MathML3-20140410/">MathML 3.0 (2ª edición)</a>, editada por David Carlisle y otros.</li>
           </ul>
 
-          <p>Actualmente (marzo de 2017), el grupo de trabajo MathML está cerrado, aunque podrá ponerse de nuevo en marcha si se necesita alguna recomendación relacionada con matemáticas en la web.</p>
+          <p>Desde abril de 2016 el grupo de trabajo MathML está cerrado, aunque podrá ponerse de nuevo en marcha si se necesita alguna recomendación relacionada con matemáticas en la web.</p>
 
           <p>Se puede consultar el funcionamiento de MathML en Firefox, Internet Explorer y Chrome en la <a href="../html/html_mathml.html">lección sobre MathML</a>.</p>
         </section>
@@ -763,7 +769,7 @@
             <li>agosto de 2011: <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/">SVG 1.1 (2ª edición)</a>, editada por Erik Dahlström y otros.</li>
           </ul>
 
-          <p>Actualmente (marzo de 2017), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> (prevista para agosto de 2018) y toda una serie de recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS (<a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>). Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
+          <p>Actualmente (septiembre de 2017), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> (prevista para agosto de 2018) y toda una serie de recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS (<a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>). Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
 
           <p>Los proyectos de recomendaciones <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, y SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>), parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
 
@@ -922,7 +928,7 @@
             <li>septiembre de 2015: <a href="https://www.w3.org/TR/2015/REC-scxml-20150901/">State Chart XML (SCXML)</a>, editada por Jim Barnett y otros.</li>
           </ul>
 
-          <p>Actualmente (marzo de 2017) se pueden consultar los borradores de las recomendaciones <a href="https://www.w3.org/TR/voicexml30/">VoiceXML 3.0</a> y <a href="https://www.w3.org/TR/vxml30reqs/">VoiceXML 3.0 Requirements</a>, pero su desarrollo parece abandonado.</p>
+          <p>Actualmente (septiembre de 2017) se pueden consultar los borradores de las recomendaciones <a href="https://www.w3.org/TR/voicexml30/">VoiceXML 3.0</a> y <a href="https://www.w3.org/TR/vxml30reqs/">VoiceXML 3.0 Requirements</a>, pero su desarrollo parece abandonado.</p>
         </section>
 
         <section id="ttml">
@@ -968,7 +974,7 @@
             <li>enero de 2017: <a href="https://www.w3.org/TR/2017/NOTE-ttml-profile-registry-20170117/">TTML Media Type Definition and Profile Registry</a>, editada por Mike Dolan.</li>
           </ul>
 
-          <p>Actualmente (marzo de 2017), el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/ttml2/">TTML2</a> y <a href="https://www.w3.org/TR/webvtt1/">WebVTT</a>.</p>
+          <p>Actualmente (septiembre de 2017), el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/ttml2/">TTML2</a> y <a href="https://www.w3.org/TR/webvtt1/">WebVTT</a>.</p>
         </section>
 
         <section id="ml-otros">
@@ -981,7 +987,11 @@
             <li>mayo 2014: <a href="https://www.w3.org/TR/2014/REC-emotionml-20140522/">Emotion Markup language (EmotionML) 1.0</a>, editada por Felix Burkhardt y Marc Schröder.</li>
           </ul>
 
-          <p>Actualmente (septiembre de 2016), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/emma20/">EMMA 2</a>.</p>
+          <p>Además, el grupo ha publicado la nota</p>
+
+          <ul>
+            <li><a href="https://www.w3.org/TR/2017/NOTE-emma20-20170202/">EMMA: Extensible MultiModal Annotation markup language 2.0</a>, editada por Michael Johnston.</li>
+          </ul>
 
           <p>El grupo de trabajo <a href="https://www.w3.org/2008/WebVideo/Fragments/">Fragmentos de medios</a> ha publicado la siguiente recomendación:</p>
 
@@ -989,7 +999,7 @@
             <li>septiembre de 2012: <a href="https://www.w3.org/TR/2012/REC-media-frags-20120925/">Media Fragments URI 1.0 (basic)</a>, editada por Raphaël Troncy y otros.</li>
           </ul>
 
-          <p>Actualmente (septiembre de 2016), el W3C está preparando la recomendación <a href="https://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-reqs/">Use cases and requirements for Media Fragments</a>, pero su desarrollo parece abandonado.</p>
+          <p>Actualmente (septiembre de 2017), el W3C está preparando la recomendación <a href="https://www.w3.org/2008/WebVideo/Fragments/WD-media-fragments-reqs/">Use cases and requirements for Media Fragments</a>, pero su desarrollo parece abandonado.</p>
         </section>
       </section>
     </section>
@@ -1052,7 +1062,7 @@
 
         <p>En abril de 2010, Mozilla, Microsoft y Opera presentaron este formato al W3C, que aprobó la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> en diciembre de 2012.</p>
 
-        <p>Actualmente (septiembre de 2016) el W3C está preparando la recomendación <a href="https://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a> (<a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 13/11/2013</a>)</p>
+        <p>Actualmente (septiembre de 2017) el W3C está preparando la recomendación <a href="https://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a> (<a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 13/11/2013</a>)</p>
 
         <p>Se puede consultar el funcionamiento de las fuentes web en Firefox, Internet Explorer y Chrome en la <a href="../css/css_fuentes_web.html">lección sobre Web Fonts</a> .</p>
       </section>
@@ -1135,7 +1145,7 @@
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 26 de agosto de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 15 de septiembre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
