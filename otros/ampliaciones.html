@@ -1,119 +1,123 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Ampliaciones. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Ampliaciones. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
 
-  <body>
-    <h1>Ampliaciones</h1>
+<body>
+  <h1>Ampliaciones</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Ampliaciones</h2>
-
-        <ul>
-          <li><a href="#variedades-html-xhtml">Variedades HTML / XHTML</a></li>
-          <li><a href="#plantillas-variedades-html-xhtml">Páginas básicas</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>Esta lección contiene explicaciones ampliadas de algunos temas que se tratan en otras lecciones. Las he incluido aquí para aligerar las otras lecciones.</p>
-
-    <section id="variedades-html-xhtml">
-      <h2>Variedades HTML / XHTML</h2>
-
-      <p>Como se explica en la lección de <a href="historia.html#html">historia de la web</a>, el HTML no es un lenguaje de marcas único. Desde su creación en 1991, ha ido evolucionando en tres aspectos:</p>
-      <ul>
-        <li>en las etiquetas (y atributos y valores de los atributos) que forman el HTML</li>
-        <li>en la sintaxis del HTML (las reglas de escritura)</li>
-        <li>en el tipo MIME declarado por los servidores al servir las páginas a los navegadores</li>
-      </ul>
-
-      <p>En las primeras versiones del HTML, el número de etiquetas (y atributos y valores de atributos) fue creciendo paulatinamente, pero manteniendo siempre la misma sintaxis y tipo MIME (text/html).</p>
-
-      <p>En 1997, la recomendación HTML 4 definió tres tipos de documentos (Strict, Transitional y Frameset) que mantenían la misma sintaxis y el mismo tipo MIME pero se distinguían en el número de etiquetas y atributos:</p>
-      <ul>
-        <li>El W3C recomendaba utilizar la versión Strict, que eliminaba casi todos las marcas y atributos relacionados con la presentación.</li>
-        <li>La versión Transitional mantenía todas las marcas y atributos, pero se recomendaba utilizar esta versión sólo en los casos en que se quisiera asegurar la compatibilidad con dispositivos incapaces de utilizar las hojas de estilo.</li>
-        <li>La versión Frameset era como la versión Transitional, pero incluyendo las marcas relacionadas con los marcos (<span class="html-eti">&lt;frameset&gt;</span>, <span class="html-eti">&lt;frame&gt;</span>, etc.). Los marcos se utilizaron mucho a medidados de los 90 para el diseño de sitios web, pero hace tiempo que cayeron en desuso por sus problemas de accesibilidad.</li>
-      </ul>
-
-      <p>En el año 2000 el W3C desarrolló un nuevo tipo de HTML, el XHTML. En el XHTML se permitían las mismas marcas y atributos que en el HTML (se mantenían incluso los tres tipos de documentos Strict, Transitional y Frameset), pero con una sintaxis distinta (la sintaxis XHTML) y un nuevo tipo MIME, application/xhtml+xml.</p>
-
-      <p>Como los servidores suelen asociar el tipo MIME a la extensión de los ficheros, la costumbre es que los ficheros .html se sirvan con el tipo MIME text/html y los ficheros .xhtml se sirvan con el tipo MIME application/xhtml+xml.</p>
-
-      <p>La sintaxis XHTML seguía la norma XML y por tanto era más rigurosa, mientras que la sintaxis HTML era más laxa.</p>
-
-      <p><strong>Nota</strong>: En la lección <a href="../html/html_xhtml_diferencias.html">Diferencias entre HTML y XHTML</a> se comentan las diferencias más importantes entre ambas sintaxis.</p>
-
-      <p>En el año 2000 el W3C se marcó como objetivo que el XHTML sustituyera completamente al HTML, pero en 2006, el W3C tuvo que reconocer el fracaso de ese proyecto. En mi opinión, el fracaso se debió a la combinación de dos problemas:</p>
-      <ul>
-        <li>Internet Explorer, el explorador hegemónico en aquellos años, no admitía el tipo MIME del XHTML application/xhtml+xml. Para que las páginas se pudieran ver en Internet Explorer, los servidores servían las páginas XHTML con el tipo MIME text/html. Pero como el tipo MIME tiene preferencia a la hora de identificar el documento, todos los navegadores tenían que interpretar los documentos XHTML como HTML (aunque hubieran admitido el tipo MIME application/xhtml+xml). El problema es que si se interpreta un documento XHTML como si fuera HTML, el documento parece tener errores.
-
-          <p>Es algo parecido a lo que pasaría si una persona que sólo sabe español, al entrar en una librería y pedir un libro en español, el librero cogiera ese mismo libro pero en inglés, lo envolviera y en el papel de envolver escribiera el título del libro en español y se lo vendiera al cliente. Cuando el cliente intentara leerlo, lógicamente no entendería nada.</p></li>
-        <li>Una de las restricciones que impone el XML al XHTML es que los documentos no pueden tener errores sintácticos y que los navegadores deben negarse a mostrar documentos con errores. Esta imposición se entiende porque el XML está pensado para el intercambio de información entre máquinas, es decir, documentos creados automáticamente por programas y recibidos por otros programas, sin intervención de humanos. Pero muchas páginas web están escritas por humanos que cometen errores o por programas para los que no tener errores no es la prioridad. Si de la noche a la mañana los navegadores se negaran a mostrar páginas con errores, la web sería inutilizable.</li>
-      </ul>
-
-      <p>Estos dos problemas se refuerzan mutuamente. Por un lado, muchos documentos XHTML contienen errores, pero los autores de esos documentos no son conscientes de ello porque los navegadores los muestran correctamente. En realidad los navegadores los aceptan y los muestran porque se los han servido con el tipo text/html y los navegadores están hechos para conseguir mostrar páginas con HTML con errores (que es lo que les parecen esos documentos XHTML enviados con el tipo MIME text/html). Por otro lado, como muchos documentos XHTML contiene errores, los administradores de servidores no pueden entregarlos con el tipo MIME application/xhtml+xml porque los navegadores los rechazarían por incorrectos (a partir de Internet Explorer 9, incluso Internet Explorer admite el tipo MIME application/xhtml+xml).</p>
-
-      <p>Una vez reconocido el fracaso, desde el año 2006 el W3C volvió a trabajar de nuevo en el HTML. En 2014 se publicó una nueva versión de HTML, el HTML 5, que aborda de una nueva manera el problema de los tipos de documentos, las variantes de sintaxis y los tipos MIME.</p>
-
-      <p>Con respecto a los tipos de documentos, en HTML 5 han desaparecido los tipos de documentos Strict, Frameset y Transitional y sólo existe un tipo de documento, que es una especie de mezcla de los antiguos tipos Strict y Transitional:</p>
+    <div class="toc">
+      <h2>Ampliaciones</h2>
 
       <ul>
-        <li>Las marcas de la versión Frameset se han eliminado completamente.</li>
-        <li>Como en el tipo Strict, en HTML 5 todo lo relacionado con la presentación del documento se tiene que hacer con propiedades de estilo.</li>
-        <li>Algunas marcas cuyo nombre está directamente relacionado con una presentación determinada se han eliminado, pero otras se han mantenido redefiniendo su significado.</li>
+        <li><a href="#variedades-html-xhtml">Variedades HTML / XHTML</a></li>
+        <li><a href="#plantillas-variedades-html-xhtml">Páginas básicas</a></li>
+        <li><a href="#microsoft">Microsoft y W3C</a></li>
       </ul>
+    </div>
+  </nav>
 
-      <p>Con respecto a las sintaxis, en HTML 5 se mantienen las dos sintaxis, HTML y XHTML.</p>
+  <p>Esta lección contiene explicaciones ampliadas de algunos temas que se tratan en otras lecciones. Las he incluido aquí para aligerar las otras lecciones.</p>
 
-      <p>Con respecto a los tipos MIME, los documentos con sintaxis HTML deben utilizar el tipo MIME text/html y los documentos con sintaxis XHTML deben utilizar el tipo MIME application/xhtml+xml.</p>
+  <section id="variedades-html-xhtml">
+    <h2>Variedades HTML / XHTML</h2>
 
-      <p>Se empezó a elaborar una solución intermedia, el llamado marcado políglota, que permitiría utilizar la sintaxis XHTML en documentos servidos con el tipo MIME text/html, pero esta solución ha sido abandonada. El último borrador de recomendación, <a href="https://www.w3.org/TR/2015/NOTE-html-polyglot-20150929/">Polyglot markup</a>, se ha publicado en septiembre de 2015 como nota del grupo de trabajo, como suele hacer el W3C con el trabajo abandonado.</p>
+    <p>Como se explica en la lección de <a href="historia.html#html">historia de la web</a>, el HTML no es un lenguaje de marcas único. Desde su creación en 1991, ha ido evolucionando en tres aspectos:</p>
+    <ul>
+      <li>en las etiquetas (y atributos y valores de los atributos) que forman el HTML</li>
+      <li>en la sintaxis del HTML (las reglas de escritura)</li>
+      <li>en el tipo MIME declarado por los servidores al servir las páginas a los navegadores</li>
+    </ul>
 
-      <hr class="corta" />
+    <p>En las primeras versiones del HTML, el número de etiquetas (y atributos y valores de atributos) fue creciendo paulatinamente, pero manteniendo siempre la misma sintaxis y tipo MIME (text/html).</p>
 
-      <p>Hasta 2014/15 en estos apuntes se recomendaba y trabajaba la versión XHTML 1.0 Strict (salvo aquellos en los que es necesario utilizar la versión XHTML 1.1). Desde un punto de vista pedagógico, considero que la rigidez de la sintaxis del XHTML es una ventaja. Creo que para una persona que está aprendiendo HTML, es más fácil entender un documento XHTML sin errores sintácticos que un documento HTML con errores (aunque se muestre correctamente en un navegador). El problema era que como en este curso no utilizaba servidores de páginas web, al abrir en el navegador los ficheros directamente del disco duro (sin alojarlos en un servidor), los ficheros se cargaban como text/html. Este problema lo resolvía gracias a que editor que utilizaba en clase (Amaya) validaba continuamente el documento y los alumnos sabían si estaban creando documentos XHTML correctos.</p>
+    <p>En 1997, la recomendación HTML 4 definió tres tipos de documentos (Strict, Transitional y Frameset) que mantenían la misma sintaxis y el mismo tipo MIME pero se distinguían en el número de etiquetas y atributos:</p>
+    <ul>
+      <li>El W3C recomendaba utilizar la versión Strict, que eliminaba casi todos las marcas y atributos relacionados con la presentación.</li>
+      <li>La versión Transitional mantenía todas las marcas y atributos, pero se recomendaba utilizar esta versión sólo en los casos en que se quisiera asegurar la compatibilidad con dispositivos incapaces de utilizar las hojas de estilo.</li>
+      <li>La versión Frameset era como la versión Transitional, pero incluyendo las marcas relacionadas con los marcos (<span class="html-eti">&lt;frameset&gt;</span>, <span class="html-eti">&lt;frame&gt;</span>, etc.). Los marcos se utilizaron mucho a medidados de los 90 para el diseño de sitios web, pero hace tiempo que cayeron en desuso por sus problemas de accesibilidad.</li>
+    </ul>
 
-      <p>En el curso 2014/15 empecé a trabajar el HTML 5, por lo que tuve que dejar de utilizar Amaya, que no admite HTML 5. Decidí utilizar entonces la versión XHTML 5, pero acabé descubriendo que no había sido una buena elección. El editor que empecé a utilizar entonces (Brackets) no valida los documentos por sí mismo, sino que utiliza el validador del W3C, y ese validador no permite validar XHTML 5 en archivos que no están alojados en un servidor. Los alumnos no podían validar los documentos, algo imprescindible para saber si están cometiendo errores.</p>
+    <p>En el año 2000 el W3C desarrolló un nuevo tipo de HTML, el XHTML. En el XHTML se permitían las mismas marcas y atributos que en el HTML (se mantenían incluso los tres tipos de documentos Strict, Transitional y Frameset), pero con una sintaxis distinta (la sintaxis XHTML) y un nuevo tipo MIME, application/xhtml+xml.</p>
 
-      <p>Por eso, en el curso 2015/16 decidí tomar una solución intermedia: trabajar HTML 5, pero incluyendo todos los elementos sintácticos del XHTML que sea posible. De esta manera, al crear documento HTML5 los alumnos podrán utilizar el validador del W3C mientras editan las páginas en Brackets, pero al utilizar la sintaxis XHTML los documentos serán más fáciles de analizar y comprender.</p>
+    <p>Como los servidores suelen asociar el tipo MIME a la extensión de los ficheros, la costumbre es que los ficheros .html se sirvan con el tipo MIME text/html y los ficheros .xhtml se sirvan con el tipo MIME application/xhtml+xml.</p>
 
-      <p><strong>Nota</strong>: La <a href="../html/html_validacion.html">lección sobre validación</a> completa esta información.</p>
-    </section>
+    <p>La sintaxis XHTML seguía la norma XML y por tanto era más rigurosa, mientras que la sintaxis HTML era más laxa.</p>
 
-    <section id="plantillas-variedades-html-xhtml">
+    <p><strong>Nota</strong>: En la lección <a href="../html/html_xhtml_diferencias.html">Diferencias entre HTML y XHTML</a> se comentan las diferencias más importantes entre ambas sintaxis.</p>
 
-      <h2>Páginas básicas de diferentes versiones y variedades de HTML</h2>
+    <p>En el año 2000 el W3C se marcó como objetivo que el XHTML sustituyera completamente al HTML, pero en 2006, el W3C tuvo que reconocer el fracaso de ese proyecto. En mi opinión, el fracaso se debió a la combinación de dos problemas:</p>
+    <ul>
+      <li>Internet Explorer, el explorador hegemónico en aquellos años, no admitía el tipo MIME del XHTML application/xhtml+xml. Para que las páginas se pudieran ver en Internet Explorer, los servidores servían las páginas XHTML con el tipo MIME text/html. Pero como el tipo MIME tiene preferencia a la hora de identificar el documento, todos los navegadores tenían que interpretar los documentos XHTML como HTML (aunque hubieran admitido el tipo MIME application/xhtml+xml). El problema es que si se interpreta un documento XHTML como si fuera HTML, el documento parece tener errores.
 
-      <p>Los ejemplos siguientes muestran páginas web básicas de algunas variedades del HTML, comentando sus diferencias más importantes.</p>
+        <p>Es algo parecido a lo que pasaría si una persona que sólo sabe español, al entrar en una librería y pedir un libro en español, el librero cogiera ese mismo libro pero en inglés, lo envolviera y en el papel de envolver escribiera el título del libro en español y se lo vendiera al cliente. Cuando el cliente intentara leerlo, lógicamente no entendería nada.</p>
+      </li>
+      <li>Una de las restricciones que impone el XML al XHTML es que los documentos no pueden tener errores sintácticos y que los navegadores deben negarse a mostrar documentos con errores. Esta imposición se entiende porque el XML está pensado para el intercambio de información entre máquinas, es decir, documentos creados automáticamente por programas y recibidos por otros programas, sin intervención de humanos. Pero muchas páginas web están escritas por humanos que cometen errores o por programas para los que no tener errores no es la prioridad. Si de la noche a la mañana los navegadores se negaran a mostrar páginas con errores, la web sería inutilizable.</li>
+    </ul>
 
-      <section id="html5-xhtml-html">
-        <h3>Páginas web HTML 5 con sintaxis XHTML o con sintaxis HTML</h3>
+    <p>Estos dos problemas se refuerzan mutuamente. Por un lado, muchos documentos XHTML contienen errores, pero los autores de esos documentos no son conscientes de ello porque los navegadores los muestran correctamente. En realidad los navegadores los aceptan y los muestran porque se los han servido con el tipo text/html y los navegadores están hechos para conseguir mostrar páginas con HTML con errores (que es lo que les parecen esos documentos XHTML enviados con el tipo MIME text/html). Por otro lado, como muchos documentos XHTML contiene errores, los administradores de servidores no pueden entregarlos con el tipo MIME application/xhtml+xml porque los navegadores los rechazarían por incorrectos (a partir de Internet Explorer 9, incluso Internet Explorer admite el tipo MIME application/xhtml+xml).</p>
 
-        <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página HTML 5 con sintaxis HTML.</p>
+    <p>Una vez reconocido el fracaso, desde el año 2006 el W3C volvió a trabajar de nuevo en el HTML. En 2014 se publicó una nueva versión de HTML, el HTML 5, que aborda de una nueva manera el problema de los tipos de documentos, las variantes de sintaxis y los tipos MIME.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div>
-              <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
-            </div>
-            <div class="codigo">
-              <pre>
+    <p>Con respecto a los tipos de documentos, en HTML 5 han desaparecido los tipos de documentos Strict, Frameset y Transitional y sólo existe un tipo de documento, que es una especie de mezcla de los antiguos tipos Strict y Transitional:</p>
+
+    <ul>
+      <li>Las marcas de la versión Frameset se han eliminado completamente.</li>
+      <li>Como en el tipo Strict, en HTML 5 todo lo relacionado con la presentación del documento se tiene que hacer con propiedades de estilo.</li>
+      <li>Algunas marcas cuyo nombre está directamente relacionado con una presentación determinada se han eliminado, pero otras se han mantenido redefiniendo su significado.</li>
+    </ul>
+
+    <p>Con respecto a las sintaxis, en HTML 5 se mantienen las dos sintaxis, HTML y XHTML.</p>
+
+    <p>Con respecto a los tipos MIME, los documentos con sintaxis HTML deben utilizar el tipo MIME text/html y los documentos con sintaxis XHTML deben utilizar el tipo MIME application/xhtml+xml.</p>
+
+    <p>Se empezó a elaborar una solución intermedia, el llamado marcado políglota, que permitiría utilizar la sintaxis XHTML en documentos servidos con el tipo MIME text/html, pero esta solución ha sido abandonada. El último borrador de recomendación, <a href="https://www.w3.org/TR/2015/NOTE-html-polyglot-20150929/">Polyglot markup</a>, se ha publicado en septiembre de 2015 como nota del grupo de trabajo, como suele hacer el W3C con el trabajo abandonado.</p>
+
+    <hr class="corta" />
+
+    <p>Hasta 2014/15 en estos apuntes se recomendaba y trabajaba la versión XHTML 1.0 Strict (salvo aquellos en los que es necesario utilizar la versión XHTML 1.1). Desde un punto de vista pedagógico, considero que la rigidez de la sintaxis del XHTML es una ventaja. Creo que para una persona que está aprendiendo HTML, es más fácil entender un documento XHTML sin errores sintácticos que un documento HTML con errores (aunque se muestre correctamente en un navegador). El problema era que como en este curso no utilizaba servidores de páginas web, al abrir en el navegador los ficheros directamente del disco duro (sin alojarlos en un servidor), los ficheros se cargaban como text/html. Este problema lo resolvía gracias a que editor que utilizaba en clase (Amaya) validaba continuamente el documento y los alumnos sabían si estaban creando documentos XHTML correctos.</p>
+
+    <p>En el curso 2014/15 empecé a trabajar el HTML 5, por lo que tuve que dejar de utilizar Amaya, que no admite HTML 5. Decidí utilizar entonces la versión XHTML 5, pero acabé descubriendo que no había sido una buena elección. El editor que empecé a utilizar entonces (Brackets) no valida los documentos por sí mismo, sino que utiliza el validador del W3C, y ese validador no permite validar XHTML 5 en archivos que no están alojados en un servidor. Los alumnos no podían validar los documentos, algo imprescindible para saber si están cometiendo errores.</p>
+
+    <p>Por eso, en el curso 2015/16 decidí tomar una solución intermedia: trabajar HTML 5, pero incluyendo todos los elementos sintácticos del XHTML que sea posible. De esta manera, al crear documento HTML5 los alumnos podrán utilizar el validador del W3C mientras editan las páginas en Brackets, pero al utilizar la sintaxis XHTML los documentos serán más fáciles de analizar y comprender.</p>
+
+    <p><strong>Nota</strong>: La <a href="../html/html_validacion.html">lección sobre validación</a> completa esta información.</p>
+  </section>
+
+  <section id="plantillas-variedades-html-xhtml">
+
+    <h2>Páginas básicas de diferentes versiones y variedades de HTML</h2>
+
+    <p>Los ejemplos siguientes muestran páginas web básicas de algunas variedades del HTML, comentando sus diferencias más importantes.</p>
+
+    <section id="html5-xhtml-html">
+      <h3>Páginas web HTML 5 con sintaxis XHTML o con sintaxis HTML</h3>
+
+      <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página HTML 5 con sintaxis HTML.</p>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div>
+            <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -126,14 +130,14 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
           </div>
-          <div class="columnaflex">
-            <div>
-              <p>HTML 5, sintaxis HTML, tipo MIME text/html</p>
-            </div>
-            <div class="codigo">
-              <pre>
+        </div>
+        <div class="columnaflex">
+          <div>
+            <p>HTML 5, sintaxis HTML, tipo MIME text/html</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
@@ -146,25 +150,25 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
           </div>
         </div>
+      </div>
 
-        <p>Las etiquetas que aparecen en ambos documentos son las mismas, las diferencias son simplemente sintácticas. Las diferencias entre la sintaxis HTML y la sintaxis XHTML se explican en la lección <a href="../html/html_xhtml_diferencias.html">Diferencias entre HTML y XHTML</a>.</p>
-      </section>
+      <p>Las etiquetas que aparecen en ambos documentos son las mismas, las diferencias son simplemente sintácticas. Las diferencias entre la sintaxis HTML y la sintaxis XHTML se explican en la lección <a href="../html/html_xhtml_diferencias.html">Diferencias entre HTML y XHTML</a>.</p>
+    </section>
 
-      <section id="html5-xhtml-xhtml5">
-        <h3>Páginas web HTML 5 con sintaxis XHTML o XHTML 5</h3>
+    <section id="html5-xhtml-xhtml5">
+      <h3>Páginas web HTML 5 con sintaxis XHTML o XHTML 5</h3>
 
-        <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página XHTML 5.</p>
+      <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 5 con sintaxis XHTML y una página XHTML 5.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div>
-              <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
-            </div>
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div>
+            <p>HTML 5, sintaxis XHTML, tipo MIME text/html</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
@@ -178,14 +182,14 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
           </div>
-          <div class="columnaflex">
-            <div>
-              <p>XHTML 5, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
-            </div>
-            <div class="codigo">
-              <pre>
+        </div>
+        <div class="columnaflex">
+          <div>
+            <p>XHTML 5, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="es" xmlns="https://www.w3.org/1999/xhtml"&gt;
@@ -199,29 +203,29 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
           </div>
         </div>
+      </div>
 
-        <p>Las etiquetas que aparecen en ambos documentos son las mismas, excepto la primera línea de la página XHTML 5 y los atributos de la etiqueta <span class="html-eti">html</span>:</p>
-        <ul>
-          <li>La primera línea <span class="html-eti">&lt;?xml ... ?&gt;</span> de la página XHTML 5 se llama declaración XML. La declaración XML es obligatoria en los documentos XML e indica la versión de XML y el juego de caracteres del documento. Esta declaración es también obligatoria cuando la página se sirve con el tipo application/xhtml+xml.</li>
-          <li>En la etiqueta <span class="html-eti">&lt;html&gt; ...&lt;/html&gt;</span> el atributo <span class="html-atri">lang</span> indica el idioma del documento, el atributo <span class="html-atri">xmlns</span> indica el espacio de nombres del documento, y el atributo <span class="html-atri">xml:lang</span> indica el idioma del documento para xml. Estos atributos son necesarios para la validación como XHTML 5.</li>
-        </ul>
-      </section>
+      <p>Las etiquetas que aparecen en ambos documentos son las mismas, excepto la primera línea de la página XHTML 5 y los atributos de la etiqueta <span class="html-eti">html</span>:</p>
+      <ul>
+        <li>La primera línea <span class="html-eti">&lt;?xml ... ?&gt;</span> de la página XHTML 5 se llama declaración XML. La declaración XML es obligatoria en los documentos XML e indica la versión de XML y el juego de caracteres del documento. Esta declaración es también obligatoria cuando la página se sirve con el tipo application/xhtml+xml.</li>
+        <li>En la etiqueta <span class="html-eti">&lt;html&gt; ...&lt;/html&gt;</span> el atributo <span class="html-atri">lang</span> indica el idioma del documento, el atributo <span class="html-atri">xmlns</span> indica el espacio de nombres del documento, y el atributo <span class="html-atri">xml:lang</span> indica el idioma del documento para xml. Estos atributos son necesarios para la validación como XHTML 5.</li>
+      </ul>
+    </section>
 
-      <section id="html4-xhtml1">
-        <h3>Páginas web HTML 4.01 / XHTML 1.0</h3>
+    <section id="html4-xhtml1">
+      <h3>Páginas web HTML 4.01 / XHTML 1.0</h3>
 
-        <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 4.01 y una página XHTML 1.0.</p>
+      <p>Los ejemplos siguientes muestran dos páginas web básicas: una página HTML 4.01 y una página XHTML 1.0.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div>
-              <p>HTML 4.01, sintaxis HTML, tipo MIME text/html</p>
-            </div>
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div>
+            <p>HTML 4.01, sintaxis HTML, tipo MIME text/html</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd"&gt;
@@ -236,14 +240,14 @@
 &lt;/BODY&gt;
 &lt;/HTML&gt;</code>
 </pre>
-            </div>
           </div>
-          <div class="columnaflex">
-            <div>
-              <p>XHTML 1.0, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
-            </div>
-            <div class="codigo">
-              <pre>
+        </div>
+        <div class="columnaflex">
+          <div>
+            <p>XHTML 1.0, sintaxis XHTML, tipo MIME application/xhtml+xml</p>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
@@ -258,22 +262,57 @@
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </pre>
-            </div>
           </div>
         </div>
+      </div>
 
-        <p>Las diferencias entre ambas versiones son similares a las diferencias entre HTML 5 y XHTML 5</p>
+      <p>Las diferencias entre ambas versiones son similares a las diferencias entre HTML 5 y XHTML 5</p>
 
-        <p>La etiqueta <span class="html-eti">&lt;meta&gt;</span> que indica el juego de caracteres no es realmente una etiqueta HTML, sino una directiva pragma que equivale a la información de cabecera que enviaría el servidor al indicar el juego de caracteres.</p>
-      </section>
+      <p>La etiqueta <span class="html-eti">&lt;meta&gt;</span> que indica el juego de caracteres no es realmente una etiqueta HTML, sino una directiva pragma que equivale a la información de cabecera que enviaría el servidor al indicar el juego de caracteres.</p>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 20 de septiembre de 2016</p>
+  <section id="microsoft">
+    <h2>Microsoft y el cumplimiento de las recomendaciones del W3C</h2>
+
+    <p>Durante el período 1999-2006 el comportamiento de Microsoft respecto a las recomendaciones del W3C fue nefasto para el desarrollo de la web y ojalá no volvieran a repetirse situaciones similares en el futuro.</p>
+
+    <p>Microsoft ha formado parte del W3C desde sus inicios y ha participado en todos los grupos de trabajo, por lo que se puede suponer que todas las recomendaciones se han aprobado con su visto bueno (salvo seguramente las relacionadas con las patentes, pero ese es un tema delicado para las empresas de software propietario como Microsoft). En los primeros años del W3C, cuando el navegador más utilizado era Netscape, Microsoft sí que procuró que Internet Explorer siguiera las recomendaciones del W3C. Pero a partir de 1999, una vez que Internet Explorer se convirtió en el navegador más utilizado, Microsoft perdió el interés en seguir mejorando el navegador (y las tácticas que utilizó Microsoft para conseguir ese dominio no fueron ciertamente limpias).</p>
+
+    <p>Desde 1999, Microsoft jugó con la ventaja de que todos los diseñadores de páginas web tenían que asegurarse de que las páginas funcionaran correctamente en Internet Explorer.</p>
+
+    <p>Eso tenía dos tipos de consecuencias:</p>
+
+    <ul>
+      <li>Por un lado, las características que Internet Explorer no implementaba, simplemente nadie las utilizaba.</li>
+      <li>Por otro lado, con respecto a las características que Internet Explorer sí implementaba, pero de manera distinta a lo que indicaba la recomendación, la mayoría de diseñadores de páginas web utilizaban esas propiedades de manera que quedaran bien en Internet Explorer, aunque quedaran mal en los navegadores que sí que seguían las recomendaciones del W3C.
+        <p>Un ejemplo, sin demasiada importancia y resuelto en IE8, pero representativo del problema, es la etiqueta <span class="html-eti">&lt;q&gt;</span>. En la recomendación HTML 4.0 (aprobada en abril de 1998) establece claramente en su <a href="https://www.w3.org/TR/html401/struct/text.html#h-9.2.2.1">apartado 9.2.2 Citas</a>, que "los agentes visuales de usuario deben asegurar que el contenido del elemento Q se muestra con comillas".</p>
+        <p>Firefox ha seguido siempre la recomendación, pero Internet Explorer no lo hacía. ¿Qué ocurría entonces? Que como la mayoría de personas que escribían páginas web desconocían las recomendaciones (lo que no decía mucho en su favor) y no probaban el resultado de sus diseños más que en Internet Explorer (lo que todavía decía menos en su favor), al utilizar la etiqueta <span class="html-eti">&lt;q&gt;</span> normalmente añadían también las comillas. El resultado es que los navegadores que sí seguían las recomendaciones mostraban las comillas duplicadas (las que había escrito el autor y las que deben ponerse alrededor de una etiqueta <span class="html-eti">q</span>).</p>
+        <p>El problema es que el boicoteo no se limitaba a casos anecdóticos como la etiqueta <span class="html-eti">&lt;q&gt;</span>, sino a aspectos mucho más importantes como el posicionamiento.</p>
+      </li>
+    </ul>
+
+    <p>El primer tipo de problemas era importante, pero el segundo era muy grave, porque significaba que muchísimas páginas web estaban mal hechas, sin querer o a conciencia, y nunca podrían verse correctamente en navegadores que respetaran las recomendaciones del W3C.</p>
+
+    <p>Afortunadamente, a partir de 2005 Firefox empezó a tener una cuota de mercado significativa y a amenazar la hegemonía de Internet Explorer. Eso hizo que Microsoft tuviera que "ponerse las pilas" y publicar nuevas versiones de Internet Explorer, mejorando no solamente el interface del navegador (pestañas, zoom, antiphising, bloqueo de popups, etc) sino también el cumplimiento de las recomendaciones. En 2006 IE7 supuso un avance y en 2009 IE8 supuso un avance todavía más importante.</p>
+
+    <p>La aparición de Google Chrome en 2009 obligó a Microsoft a tomarse todavía más en serio las recomendaciones del W3C y en 2011 IE9 puso a IE prácticamente a la par con los Firefox y Chrome de entonces.</p>
+
+    <p>Desde principios de 2011 más de la mitad de los usuarios ya utilizaban navegadores que cumplían las recomendaciones del W3C (Firefox, Chrome, Safari, Opera e Internet Explorer 9 y posteriores) y a principios de 2016 el número de usuarios ya superaba el 90% (véase la lección sobre <a href="historia_navegadores.html#mercado-navegadores">uso de navegadores</a>).</p>
+
+    <p>Aunque sin duda el problema que supuso Internet Explorer ha desaparecido, no existe la seguridad que la situación no se repita en el futuro. HTML 5, CSS 3 y la gran cantidad de APIs en desarrollo podrían dar lugar a nuevas incompatibilidades entre navegadores.</p>
+
+    <p>El peligro es que desde 2016 ha vuelto a haber un navegador hegemónico, Google Chrome, y empiezan a aparecer preocupantes señales de que Google está perdiendo el interés por el trabajo del W3C (como expuso Daniel Glazman en su conferencia <a href="https://www.youtube.com/watch?v=ceMLuRBn--M">The third browser war is over and it's a bloodshed</a> en julio de 2016).</p>
+
+    <p>Esperemos que Firefox mantenga en el futuro una parte significativa del mercado y eso impida que el navegador dominante boicotee las recomendaciones. Aunque no se suele decir, quizás el principal motivo para recomendar el uso de Firefox sea contribuir así a que Google y Microsoft se vean obligados a colaborar con el W3C.</p>
+  </section>
+
+  <footer>
+      <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2016</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
         que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>

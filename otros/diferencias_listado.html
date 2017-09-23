@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Diferencias entre Chrome, Firefox e Internet Explorer. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <title>Diferencias entre Chrome, Firefox y Microsoft Edge. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
     <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <h1>Diferencias entre Chrome, Firefox e Internet Explorer 11</h1>
+    <h1>Diferencias entre Chrome, Firefox y Microsoft Edge</h1>
 
     <nav>
       <p>
@@ -22,7 +22,7 @@
       </p>
 
       <div class="toc">
-        <h2>Diferencias GC/FF/IE</h2>
+        <h2>Diferencias GC/FF/ME</h2>
 
         <ul>
           <li><a href="#uso">Utilización del navegador</a></li>
@@ -33,11 +33,11 @@
       </div>
     </nav>
 
-    <p>En esta página se comentan algunas de las diferencias entre Chrome, Firefox e Internet Explorer 11. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />, <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /> o <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />, <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /> o <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />.</p>
+    <p>En esta página se comentan algunas de las diferencias entre Chrome, Firefox y Microsoft Edge. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />, <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /> o <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />, <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /> o <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />.</p>
 
     <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes, agrupándolas por temas:</p>
 
-    <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" /> Esta página está pendiente de actualizar, haciendo referencia a Chrome en todos los ejemplos. Además, algunas diferencias están pendientes de confirmar en IE11.</p>
+    <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" /> Esta página está pendiente de actualizar, haciendo referencia a Chrome y Edge en todos los ejemplos.</p>
 
     <section id="por-incluir">
       <h2>Diferencias por incluir</h2>
@@ -215,75 +215,6 @@
 
     <section id="html">
       <h2>HTML</h2>
-
-      <section id="html-main">
-        <h3>Elemento <span class="html-eti">&lt;main&gt;</span></h3>
-
-        <p>Internet Explorer 11 no reconoce la etiqueta <span class="html-eti">&lt;main&gt;</span>.</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-html">&lt;main&gt;
-  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
-&lt;/main&gt;</code>
-</pre>
-            </div>
-            <div class="codigo">
-              <pre>
-<code class="language-css">main {
-  background-color: red;
-}</code>
-</pre>
-            </div>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="../html/ejemplos/bloques/bloques_main_1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="../html/ejemplos/bloques/bloques_main_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
-        </div>
-
-        <p>Esta limitación se puede corregir añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-          </div>
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-html">&lt;main&gt;
-  &lt;p&gt;Esto es un párrafo&lt;/p&gt;
-&lt;/main&gt;</code>
-</pre>
-            </div>
-            <div class="codigo">
-              <pre>
-<code class="language-css">main {
-  display: block;
-  background-color: red;
-}</code>
-</pre>
-            </div>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="../html/ejemplos/bloques/bloques_main_2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="../html/ejemplos/bloques/bloques_main_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
-        </div>
-      </section>
 
       <section id="text-decoration-overline">
         <h3>Propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">overline</span></h3>
@@ -483,7 +414,7 @@
         <section id="css-fuente-font-size-adjust">
           <h4>Propiedad <span class="css-prop">font-size-adjust</span></h4>
 
-          <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona paricalmente en Firefox, pero no en Google Chrome ni Internet Explorer.</p>
+          <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Internet Explorer.</p>
 
           <div class="filaflex">
             <div class="icono-navegadores">
@@ -1032,7 +963,7 @@ p {
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 5 de junio de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
