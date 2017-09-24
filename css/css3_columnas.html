@@ -1,229 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Columnas. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Columnas. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
 
-  <body>
-    <h1>CSS 3: Columnas</h1>
+<body>
+  <h1>CSS 3: Columnas</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS 3: Columnas</h2>
+    <div class="toc">
+      <h2>CSS 3: Columnas</h2>
 
-        <ul>
-          <li><a href="#columnas">Columnas</a>
-            <ul>
-              <li><a href="#column-count"><span class="css-prop">column-count</span></a></li>
-              <li><a href="#column-width"><span class="css-prop">column-width</span></a></li>
-              <li><a href="#columns"><span class="css-prop">columns</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#column-gap">Espacio: <span class="css-prop">column-gap</span></a></li>
-          <li><a href="#columnas-bordes">Borde entre columnas</a>
-            <ul>
-              <li><a href="#column-rule"><span class="css-prop">column-rule</span></a></li>
-              <li><a href="#column-rule-color-width-style"><span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span>, <span class="css-prop">column-rule-style</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#column-span">Extender: <span class="css-prop">column-span</span></a></li>
-          <li><a href="#otros">Otras propiedades</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#columnas">Columnas</a>
+          <ul>
+            <li><a href="#column-count"><span class="css-prop">column-count</span></a></li>
+            <li><a href="#column-width"><span class="css-prop">column-width</span></a></li>
+            <li><a href="#columns"><span class="css-prop">columns</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#column-gap">Espacio: <span class="css-prop">column-gap</span></a></li>
+        <li><a href="#columnas-bordes">Borde entre columnas</a>
+          <ul>
+            <li><a href="#column-rule"><span class="css-prop">column-rule</span></a></li>
+            <li><a href="#column-rule-color-width-style"><span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span>, <span class="css-prop">column-rule-style</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#column-span">Extender: <span class="css-prop">column-span</span></a></li>
+        <li><a href="#otros">Otras propiedades</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>La futura recomendación <a href="https://www.w3.org/TR/css3-multicol/">CSS 3: Columnas</a>, actualmente (marzo de 2017) en elaboración, permite definir columnas de texto en cualquier elemento de bloque. En CSS 2.1 no había ninguna propiedad similar.</p>
+  <p>La futura recomendación <a href="https://www.w3.org/TR/css3-multicol/">CSS 3: Columnas</a>, actualmente (marzo de 2017) en elaboración, permite definir columnas de texto en cualquier elemento de bloque. En CSS 2.1 no había ninguna propiedad similar.</p>
 
-    <section id="columnas">
-      <h2>Columnas: <span class="css-prop">column-count</span>, <span class="css-prop">column-width</span>, <span class="css-prop">columns</span></h2>
+  <section id="columnas">
+    <h2>Columnas: <span class="css-prop">column-count</span>, <span class="css-prop">column-width</span>, <span class="css-prop">columns</span></h2>
 
-      <section id="column-count">
-        <h3>La propiedad <span class="css-prop">column-count</span></h3>
+    <section id="column-count">
+      <h3>La propiedad <span class="css-prop">column-count</span></h3>
 
-        <p>La propiedad <span class="css-prop">column-count</span> establece el número de columnas a mostrar. El navegador distribuye el espacio disponible para acomodar el número de columnas solicitadas.</p>
+      <p>La propiedad <span class="css-prop">column-count</span> establece el número de columnas a mostrar. El navegador distribuye el espacio disponible para acomodar el número de columnas solicitadas.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   column-count: 2;
   text-align: justify;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p style="column-count: 2; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <p style="column-count: 2; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+        </div>
+      </div>
+    </section>
 
-      <section id="column-width">
-        <h3>La propiedad <span class="css-prop">column-width</span></h3>
+    <section id="column-width">
+      <h3>La propiedad <span class="css-prop">column-width</span></h3>
 
-        <p>La propiedad <span class="css-prop">column-width</span> establece el ancho de las columnas. El navegador muestra el número de columnas que quepan en el espacio disponible.</p>
+      <p>La propiedad <span class="css-prop">column-width</span> establece el ancho de las columnas. El navegador muestra el número de columnas que quepan en el espacio disponible.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   column-width: 10em;
   text-align: justify;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p style="column-width: 10em; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <p style="column-width: 10em; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+        </div>
+      </div>
+    </section>
 
-      <section id="columns">
-        <h3>La propiedad compuesta <span class="css-prop">columns</span></h3>
+    <section id="columns">
+      <h3>La propiedad compuesta <span class="css-prop">columns</span></h3>
 
-        <p>La propiedad compuesta <span class="css-prop">columns</span> establece el ancho de las columnas o el número de columnas.</p>
+      <p>La propiedad compuesta <span class="css-prop">columns</span> establece el ancho de las columnas o el número de columnas.</p>
 
-        <p>Esta propiedad admite uno o dos valores:</p>
-        <ul>
-          <li>Si el valor es un número sin unidad, se interpreta como el número de columnas.
+      <p>Esta propiedad admite uno o dos valores:</p>
+      <ul>
+        <li>Si el valor es un número sin unidad, se interpreta como el número de columnas.
 
-            <div class="filaflex">
-              <div class="codigo">
-                <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-css">p {
   columns: 4;
   text-align: justify;
 }</code>
 </pre>
-              </div>
-              <div class="resultado-html">
-                <p style="columns: 4; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-              </div>
             </div>
-          </li>
-          <li>Si el valor es una distancia (un número con unidad), se interpreta como la anchura de las columnas:
+            <div class="resultado-html">
+              <p style="columns: 4; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+            </div>
+          </div>
+        </li>
+        <li>Si el valor es una distancia (un número con unidad), se interpreta como la anchura de las columnas:
 
-            <div class="filaflex">
-              <div class="codigo">
-                <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-css">p {
   columns: 8em;
   text-align: justify;
 }</code>
 </pre>
-              </div>
-              <div class="resultado-html">
-                <p style="columns: 8em; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-              </div>
             </div>
-          </li>
-          <li>Si se escriben dos valores, si el elemento tiene un tamaño predefinido, se hace caso únicamente al número de columnas, pero si el elemento no tiene un tamaño predefinido (tablas, elementos flotantes, etc.), se hace caso de los dos valores:
+            <div class="resultado-html">
+              <p style="columns: 8em; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+            </div>
+          </div>
+        </li>
+        <li>Si se escriben dos valores, si el elemento tiene un tamaño predefinido, se hace caso únicamente al número de columnas, pero si el elemento no tiene un tamaño predefinido (tablas, elementos flotantes, etc.), se hace caso de los dos valores:
 
-            <div class="filaflex">
-              <div class="icono-navegadores">
-                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-                <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-              </div>
-              <div class="codigo">
-                <pre>
+          <div class="filaflex">
+            <div class="icono-navegadores">
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+              <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">p {
   columns: 2 8em;
   float: left;
   text-align: justify;
 }</code>
 </pre>
-              </div>
-              <div class="resultado-html">
-                <p style="columns: 2 10em; float: left; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-              </div>
             </div>
-          </li>
-        </ul>
+            <div class="resultado-html">
+              <p style="columns: 2 10em; float: left; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+            </div>
+          </div>
 
-        <p><strong>Nota</strong>: Google Chrome no interpreta la propiedad <span class="css-prop">-webkit-columns</span> con dos valores como Firefox o Internet Explorer.</p>
-      </section>
+          <p><strong>Nota</strong>: Google Chrome no interpreta la propiedad <span class="css-prop">columns</span> con dos valores, pero Firefox y Edge sí lo hacen.</p>
+        </li>
+      </ul>
+
     </section>
+  </section>
 
-    <section id="column-gap">
-      <h2>Espacio entre columnas: <span class="css-prop">column-gap</span></h2>
+  <section id="column-gap">
+    <h2>Espacio entre columnas: <span class="css-prop">column-gap</span></h2>
 
-      <p>La propiedad <span class="css-prop">column-gap</span> establece el tamaño del espacio entre columnas. El navegador distribuye el espacio disponible para acomodar el número de columnas solicitadas.</p>
+    <p>La propiedad <span class="css-prop">column-gap</span> establece el tamaño del espacio entre columnas. El navegador distribuye el espacio disponible para acomodar el número de columnas solicitadas.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   column-gap: 3em;
   columns: 3;
   text-align: justify;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="column-gap: 3em; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <p style="column-gap: 3em; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="columnas-bordes">
-      <h2>Borde entre columnas: <span class="css-prop">column-rule</span>, <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></h2>
+  <section id="columnas-bordes">
+    <h2>Borde entre columnas: <span class="css-prop">column-rule</span>, <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></h2>
 
-      <p>Las propiedades <span class="css-prop">column-rule</span>, <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span> establecen un borde de separación entre columnas.</p>
+    <p>Las propiedades <span class="css-prop">column-rule</span>, <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span> establecen un borde de separación entre columnas.</p>
 
-      <section id="column-rule">
-        <h3>La propiedad <span class="css-prop">column-rule</span></h3>
+    <section id="column-rule">
+      <h3>La propiedad <span class="css-prop">column-rule</span></h3>
 
-        <p>La propiedad compuesta <span class="css-prop">column-rule</span> requiere tres valores, el color, el grosor y el estilo del borde, como en el caso de los bordes de los elementos.</p>
+      <p>La propiedad compuesta <span class="css-prop">column-rule</span> requiere tres valores, el color, el grosor y el estilo del borde, como en el caso de los bordes de los elementos.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   column-rule: black solid 2px;
   columns: 3;
   text-align: justify;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p style="column-rule: black solid 2px; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <p style="column-rule: black solid 2px; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+        </div>
+      </div>
+    </section>
 
-      <section id="column-rule-color-width-style">
-        <h3>Las propiedades <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></h3>
+    <section id="column-rule-color-width-style">
+      <h3>Las propiedades <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></h3>
 
-        <p>Las propiedades individuales <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span> establecen conjuntamente un borde de separación entre columnas:</p>
+      <p>Las propiedades individuales <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span> establecen conjuntamente un borde de separación entre columnas:</p>
 
-        <ul>
-          <li>La propiedad <span class="css-prop">column-rule-color</span> establece el color del borde.</li>
-          <li>La propiedad <span class="css-prop">column-rule-width</span> establece el grosor del borde.</li>
-          <li>La propiedad <span class="css-prop">column-rule-style</span> establece el estilo del borde (entre los <a href="css_bordes.html#estilos">estilos de borde definidos en la recomendación CSS 2.1</a>).</li>
-        </ul>
+      <ul>
+        <li>La propiedad <span class="css-prop">column-rule-color</span> establece el color del borde.</li>
+        <li>La propiedad <span class="css-prop">column-rule-width</span> establece el grosor del borde.</li>
+        <li>La propiedad <span class="css-prop">column-rule-style</span> establece el estilo del borde (entre los <a href="css_bordes.html#estilos">estilos de borde definidos en la recomendación CSS 2.1</a>).</li>
+      </ul>
 
-        <ul>
-          <li>Internet Explorer admite las propiedades <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></li>
-          <li>Firefox requiere las propiedades no estándar <span class="css-prop">-moz-column-rule-color</span>, <span class="css-prop">-moz-column-rule-width</span> y <span class="css-prop">-moz-column-rule-style</span></li>
-          <li>Google Chrome requiere las propiedades no estándar <span class="css-prop">-webkit-column-rule-color</span>, <span class="css-prop">-webkit-column-rule-width</span> y <span class="css-prop">-webkit-column-rule-style</span></li>
-        </ul>
+      <ul>
+        <li>Internet Explorer admite las propiedades <span class="css-prop">column-rule-color</span>, <span class="css-prop">column-rule-width</span> y <span class="css-prop">column-rule-style</span></li>
+        <li>Firefox requiere las propiedades no estándar <span class="css-prop">-moz-column-rule-color</span>, <span class="css-prop">-moz-column-rule-width</span> y <span class="css-prop">-moz-column-rule-style</span></li>
+        <li>Google Chrome requiere las propiedades no estándar <span class="css-prop">-webkit-column-rule-color</span>, <span class="css-prop">-webkit-column-rule-width</span> y <span class="css-prop">-webkit-column-rule-style</span></li>
+      </ul>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   column-rule-color: red;
   column-rule-width: 2px;
@@ -232,55 +235,48 @@
   text-align: justify;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p style="column-rule-color: red; column-rule-width: 2px; column-rule-style: dashed; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <p style="column-rule-color: red; column-rule-width: 2px; column-rule-style: dashed; columns: 3; text-align: justify;">Aunque la recomendación CSS 3: Columnas no ha sido aprobada, los navegadores admiten la mayoría de propiedades de esta recomendación (con el nombre oficial o prefijadas). Las columnas suponen un gran avance para el diseño de páginas web ya que facilitan la lectura de textos largos en una misma página, sobre todo en las pantallas actuales, de cada vez más resolución horizontal.</p>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <section id="column-span">
-      <h2>Extender sobre columnas: <span class="css-prop">column-span</span></h2>
+  <section id="column-span">
+    <h2>Extender sobre columnas: <span class="css-prop">column-span</span></h2>
 
-      <p>La propiedad <span class="css-prop">column-span</span> permite que un elemento se extienda a lo largo de varias columnas. Esta propiedad puede tomar los valores <span class="css-valor">none</span> y <span class="css-valor">all</span>.</p>
+    <p>La propiedad <span class="css-prop">column-span</span> permite que un elemento se extienda a lo largo de varias columnas. Esta propiedad puede tomar los valores <span class="css-valor">none</span> y <span class="css-valor">all</span>.</p>
 
-      <ul>
-        <li>Internet Explorer admite la propiedad <span class="css-prop">column-span</span></li>
-        <li>Firefox no admite esta propiedad (véase <a href="../otros/bugs_mozilla.html#bugs-css3">Bugs de Firefox</a>)</li>
-        <li>Google Chrome admite la propiedad <span class="css-prop">column-span</span></li>
-      </ul>
+    <p>Chrome y Edge admite la propiedad <span class="css-prop">column-span</span>, Firefox no la admite (véase <a href="../otros/bugs_mozilla.html#bugs-css3">Bugs de Firefox</a>)</p>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   columns: 3;
   text-align: justify;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/columnas/columnas_column_span_1.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/columnas/columnas_column_span_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/columnas/columnas_column_span_1.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/columnas/columnas_column_span_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+        <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+        <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   columns: 3;
   text-align: justify;
@@ -290,28 +286,28 @@ h4 {
   column-span: all;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/columnas/columnas_column_span_2.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/columnas/columnas_column_span_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/columnas/columnas_column_span_2.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/columnas/columnas_column_span_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="otros">
-      <h2>Otras propiedades: <span class="css-prop">column-fill</span>, <span class="css-prop">break-before</span>, <span class="css-prop">break-after</span>, <span class="css-prop">break-inside</span></h2>
+  <section id="otros">
+    <h2>Otras propiedades: <span class="css-prop">column-fill</span>, <span class="css-prop">break-before</span>, <span class="css-prop">break-after</span>, <span class="css-prop">break-inside</span></h2>
 
-      <p class="incompleto">Por escribir</p>
-    </section>
+    <p class="incompleto">Por escribir</p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 7 de marzo de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>

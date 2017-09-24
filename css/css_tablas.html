@@ -1,235 +1,237 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Tablas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Tablas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
 
-  <body>
-    <h1>CSS 2: Tablas</h1>
+<body>
+  <h1>CSS 2: Tablas</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS 2: Tablas</h2>
+    <div class="toc">
+      <h2>CSS 2: Tablas</h2>
 
-        <ul>
-          <li><a href="#caption-side"><span class="css-prop">caption-side</span></a></li>
-          <li><a href="#tabla-centrar">Centrar una tabla</a></li>
-          <li><a href="#table-layout"><span class="css-prop">table-layout</span></a></li>
-          <li><a href="#border-collapse"><span class="css-prop">border-collapse</span></a></li>
-          <li><a href="#empty-cells"><span class="css-prop">empty-cells</span></a></li>
-          <li><a href="#border-spacing"><span class="css-prop">border-spacing</span></a></li>
-        </ul>
+      <ul>
+        <li><a href="#caption-side"><span class="css-prop">caption-side</span></a></li>
+        <li><a href="#tabla-centrar">Centrar una tabla</a></li>
+        <li><a href="#table-layout"><span class="css-prop">table-layout</span></a></li>
+        <li><a href="#border-collapse"><span class="css-prop">border-collapse</span></a></li>
+        <li><a href="#empty-cells"><span class="css-prop">empty-cells</span></a></li>
+        <li><a href="#border-spacing"><span class="css-prop">border-spacing</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="caption-side">
+    <h2 class="con-aside">Posición de la leyenda: <span class="css-prop">caption-side</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">caption-side</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#caption-position"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">caption-side</span> permite elegir la posición de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) con respecto a la tabla. Los dos valores permitidos son <span class="css-valor">top</span> (arriba) y <span class="css-valor">bottom</span> (abajo). Si no se establece la posición de la leyenda, los navegadores aplican el valor <span class="css-valor">top</span>.</p>
+
+    <div class="filaflex">
+      <div class="icono-navegadores-vacio">
+        <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
       </div>
-    </nav>
-
-    <section id="caption-side">
-      <h2 class="con-aside">Posición de la leyenda: <span class="css-prop">caption-side</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="css-prop">caption-side</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#caption-position"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/caption-side"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>La propiedad <span class="css-prop">caption-side</span> permite elegir la posición de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) con respecto a la tabla. Los cuatro valores permitidos son <span class="css-valor">top</span> (arriba), <span class="css-valor">right</span> (derecha), <span class="css-valor">bottom</span> (abajo) y <span class="css-valor">left</span> (izquierda). Si no se establece la posición de la leyenda, los navegadores aplican el valor <span class="css-valor">top</span>.</p>
-
-      <p><strong>Nota</strong>: En la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se han eliminado los valores <span class="css-valor">right</span> y <span class="css-valor">left</span>, así como en la futura recomendación <a href="https://www.w3.org/TR/css-tables-3/">CSS 3: Tablas</a>, actualmente (octubre de 2016) en fase de borrador.</p>
-
-      <p><strong>Nota</strong>: Firefox aplica los valores left y right de la propiedad <span class="css-prop">caption-side</span> que Internet Explorer y Chrome no aplican, como se comenta en la <a href="../otros/diferencias_listado.html#css-tablas-caption-side">página de diferencias entre navegadores</a>.</p>
-
-      <div class="filaflex">
-        <div class="icono-navegadores-vacio">
-          <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
-        </div>
-        <div class="codigo">
-          <pre>
+      <div class="codigo">
+        <pre>
 <code class="language-css">caption {
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores-vacio">
-          <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores-vacio">
+        <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">caption {
   caption-side: top;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption style="caption-side: top;">Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption style="caption-side: top;">Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores-vacio">
-          <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores-vacio">
+        <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">caption {
   caption-side: bottom;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption style="caption-side: bottom;">Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption style="caption-side: bottom;">Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <p>En la recomendación CCS 2 la propiedad <span class="css-prop">caption-side</span> podía tomar también los valores  <span class="css-valor">right</span> (derecha) y <span class="css-valor">left</span> (izquierda), pero en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se eliminaron esos valores, que tampoco aparecen en la futura recomendación <a href="https://www.w3.org/TR/css-tables-3/">CSS 3: Tablas</a>, actualmente (septiembre de 2017) en fase de borrador.</p>
+
+    <p>Firefox aplica los valores <span class="css-valor">left</span> y <span class="css-valor">right</span> de la propiedad <span class="css-prop">caption-side</span> que Chrome y Edge no aplican. Pero como la recomendación vigente no permite esos valores, se tiene que considerar que Firefox lo está haciendo incorrectamente.</p>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+          <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">caption {
   caption-side: left;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption style="caption-side: left;">Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption style="caption-side: left;">Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+        <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+        <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">caption {
   caption-side: right;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption style="caption-side: right;">Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption style="caption-side: right;">Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <section id="tabla-centrar">
-      <h2>Centrar una tabla</h2>
+  <section id="tabla-centrar">
+    <h2>Centrar una tabla</h2>
 
-      <p>Para centrar una tabla horizontalmente en la página, se deben establecer las dos propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> con el valor <span class="css-valor">auto</span>.</p>
+    <p>Para centrar una tabla horizontalmente en la página, se deben establecer las dos propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> con el valor <span class="css-valor">auto</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   margin-left: auto;
   margin-right: auto;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="margin-left: auto; margin-right: auto;">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1, con más texto</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4, con más texto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="margin-left: auto; margin-right: auto;">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1, con más texto</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4, con más texto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <p>La alineación del contenido de la leyenda se interpreta dentro del espacio que ocupa la leyenda (que coincide con el ancho de la tabla).</p>
+    <p>La alineación del contenido de la leyenda se interpreta dentro del espacio que ocupa la leyenda (que coincide con el ancho de la tabla).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   margin-left: auto;
   margin-right: auto;
@@ -240,412 +242,412 @@ caption {
   text-align: right;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="margin-left: auto; margin-right: auto;">
-            <caption style="text-align: right; background-color: lightblue;">Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1, con más texto</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4, con más texto</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="margin-left: auto; margin-right: auto;">
+          <caption style="text-align: right; background-color: lightblue;">Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1, con más texto</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4, con más texto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <section id="table-layout">
-      <h2 class="con-aside">Disposición de la tabla: <span class="css-prop">table-layout</span></h2>
+  <section id="table-layout">
+    <h2 class="con-aside">Disposición de la tabla: <span class="css-prop">table-layout</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">table-layout</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#width-layout"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">table-layout</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#width-layout"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">table-layout</span> permite elegir el modo en el que el navegador calcula el tamaño total de la tabla y el de cada fila o columna. Los dos valores permitidos son <span class="css-valor">fixed</span> (fijo) y <span class="css-valor">auto</span> (automático).</p>
+    <p>La propiedad <span class="css-prop">table-layout</span> permite elegir el modo en el que el navegador calcula el tamaño total de la tabla y el de cada fila o columna. Los dos valores permitidos son <span class="css-valor">fixed</span> (fijo) y <span class="css-valor">auto</span> (automático).</p>
 
-      <p>En el modo fijo (<span class="css-valor">fixed</span>), el tamaño de las tablas y de las celdas depende de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</p>
+    <p>En el modo fijo (<span class="css-valor">fixed</span>), el tamaño de las tablas y de las celdas depende de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</p>
 
-      <p>En el modo fijo (<span class="css-valor">auto</span>), el tamaño de las tablas y de las celdas depende de su contenido (y si es posible, de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>).</p>
+    <p>En el modo fijo (<span class="css-valor">auto</span>), el tamaño de las tablas y de las celdas depende de su contenido (y si es posible, de las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>).</p>
 
-      <p class="incompleto">Por completar con ejemplos</p>
-    </section>
+    <p class="incompleto">Por completar con ejemplos</p>
+  </section>
 
-    <section id="border-collapse">
-      <h2 class="con-aside">Modos de bordes: <span class="css-prop">border-collapse</span></h2>
+  <section id="border-collapse">
+    <h2 class="con-aside">Modos de bordes: <span class="css-prop">border-collapse</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-collapse</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#borders"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-collapse</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#borders"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">border-collapse</span> permite elegir el modo de presentación de los bordes de las celdas y de la tabla. Los dos valores permitidos son <span class="css-valor">separate</span> (separado) y <span class="css-valor">collapse</span> (colapsado). En el modo separado existe un hueco entre los bordes de cada celda, mientras que en el modo colapsado los bordes se superponen. Si no se establece el modo de presentación, los navegadores aplican el valor <span class="css-valor">separate</span>.</p>
+    <p>La propiedad <span class="css-prop">border-collapse</span> permite elegir el modo de presentación de los bordes de las celdas y de la tabla. Los dos valores permitidos son <span class="css-valor">separate</span> (separado) y <span class="css-valor">collapse</span> (colapsado). En el modo separado existe un hueco entre los bordes de cada celda, mientras que en el modo colapsado los bordes se superponen. Si no se establece el modo de presentación, los navegadores aplican el valor <span class="css-valor">separate</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-collapse: separate;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: separate">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: separate">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-collapse: collapse;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: collapse;">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: collapse;">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <p>En la página de <a href="css_tablas_modos_bordes.html">bordes, márgenes y fondos en las tablas</a> se explican con detalle estos modos de funcionamiento.</p>
-    </section>
+    <p>En la página de <a href="css_tablas_modos_bordes.html">bordes, márgenes y fondos en las tablas</a> se explican con detalle estos modos de funcionamiento.</p>
+  </section>
 
-    <section id="empty-cells">
-      <h2 class="con-aside">Bordes de celdas vacías: <span class="css-prop">empty-cells</span></h2>
+  <section id="empty-cells">
+    <h2 class="con-aside">Bordes de celdas vacías: <span class="css-prop">empty-cells</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">empty-cells</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#empty-cells"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">empty-cells</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#empty-cells"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">empty-cells</span> permite establecer si se muestran o no los bordes de las celdas vacías, en el modo de bordes separado. Los dos valores permitidos son <span class="css-valor">show</span> (mostrar) y <span class="css-valor">hide</span> (ocultar). Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">show</span>.</p>
+    <p>La propiedad <span class="css-prop">empty-cells</span> permite establecer si se muestran o no los bordes de las celdas vacías, en el modo de bordes separado. Los dos valores permitidos son <span class="css-valor">show</span> (mostrar) y <span class="css-valor">hide</span> (ocultar). Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">show</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   empty-cells: show;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="empty-cells: show">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="empty-cells: show">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   empty-cells: hide;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="empty-cells: hide">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="empty-cells: hide">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">empty-cells</span>.</p>
+    <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">empty-cells</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-collapse: collapse;
   empty-cells: hide;
 /* En el modo colapsado empty-cells no hace nada */
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: collapse; empty-cells: hide">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda A1</td>
-                <td>Celda A2</td>
-                <td>Celda A3</td>
-                <td>Celda A4</td>
-              </tr>
-              <tr>
-                <td>Celda B1</td>
-                <td></td>
-                <td></td>
-                <td>Celda B4</td>
-              </tr>
-              <tr>
-                <td>Celda C1</td>
-                <td></td>
-                <td></td>
-                <td>Celda C4</td>
-              </tr>
-              <tr>
-                <td>Celda D1</td>
-                <td>Celda D2</td>
-                <td>Celda D3</td>
-                <td>Celda D4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: collapse; empty-cells: hide">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda A1</td>
+              <td>Celda A2</td>
+              <td>Celda A3</td>
+              <td>Celda A4</td>
+            </tr>
+            <tr>
+              <td>Celda B1</td>
+              <td></td>
+              <td></td>
+              <td>Celda B4</td>
+            </tr>
+            <tr>
+              <td>Celda C1</td>
+              <td></td>
+              <td></td>
+              <td>Celda C4</td>
+            </tr>
+            <tr>
+              <td>Celda D1</td>
+              <td>Celda D2</td>
+              <td>Celda D3</td>
+              <td>Celda D4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <section id="border-spacing">
-      <h2>Separación entre celdas: <span class="css-prop">border-spacing</span></h2>
+  <section id="border-spacing">
+    <h2>Separación entre celdas: <span class="css-prop">border-spacing</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-spacing</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-spacing</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#separated-borders"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-spacing"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">border-spacing</span> permite establecer una separación entre las celdas cuando se utiliza el modo de bordes separado. Se puede escribir un único valor, que se aplicaría a los cuatro lados, o dos valores, que se aplicarían en horizontal (a derecha e izquierda) y en vertical (arriba y abajo), respectivamente. Los valores no se pueden expresar en porcentajes, pero sí en cualquier otra unidad (<span class="css-unidad">px</span>, <span class="css-unidad">em</span>, etc).</p>
+    <p>La propiedad <span class="css-prop">border-spacing</span> permite establecer una separación entre las celdas cuando se utiliza el modo de bordes separado. Se puede escribir un único valor, que se aplicaría a los cuatro lados, o dos valores, que se aplicarían en horizontal (a derecha e izquierda) y en vertical (arriba y abajo), respectivamente. Los valores no se pueden expresar en porcentajes, pero sí en cualquier otra unidad (<span class="css-unidad">px</span>, <span class="css-unidad">em</span>, etc).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-spacing: 20px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 20px">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 20px">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-spacing: 30px 10px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 30px 10px ">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 30px 10px ">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <p>Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">2px</span>.</p>
+    <p>Si no se establece la propiedad, los navegadores aplican el valor <span class="css-valor">2px</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-spacing: 2px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 2px;">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: separate; border-spacing: 2px;">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-      <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">border-spacing</span>.</p>
+    <p>En el modo de bordes colapsado no se aplica la propiedad <span class="css-prop">border-spacing</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
   border-collapse: collapse;
   border-spacing: 20px;
 /* En el modo colapsado border-spacing no hace nada */
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: collapse; border-spacing: 20px">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: collapse; border-spacing: 20px">
+          <caption>Esto es la leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 31 de octubre de 2016</p>
+  <footer>
+      <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
         que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>

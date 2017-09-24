@@ -1,501 +1,517 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Interface de usuario. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-    <style type="text/css">
-      p.outline-1:hover{ outline: black 10px solid; }
-      p.border-1:hover { border:  black 10px solid; }
-      span.outline-2 { outline: black 3px solid; }
-      span.border-2  { border:  black 3px solid; }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Interface de usuario. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+  <style type="text/css">
+    p.outline-1:hover {
+      outline: black 10px solid;
+    }
 
-  <body>
-    <h1>CSS 2: Interface de usuario</h1>
+    p.border-1:hover {
+      border: black 10px solid;
+    }
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+    span.outline-2 {
+      outline: black 3px solid;
+    }
 
-      <div class="toc">
-        <h2>CSS 2: Interface de usuario</h2>
+    span.border-2 {
+      border: black 3px solid;
+    }
 
-        <ul>
-          <li><a href="#cursor">La propiedad <span class="css-prop">cursor</span></a></li>
-          <li><a href="#contornos">Contornos</a>
-            <ul>
-              <li><a href="#outline"><span class="css-prop">outline</span></a></li>
-              <li><a href="#outline-color-width-style"><span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span>, <span class="css-prop">outline-style</span></a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  </style>
+</head>
 
-    <section id="cursor">
-      <h2 class="con-aside">La propiedad <span class="css-prop">cursor</span></h2>
+<body>
+  <h1>CSS 2: Interface de usuario</h1>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">cursor</span><br />
-          <a href="https://www.w3.org/TR/CSS2/ui.html#cursor-props"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <p>La propiedad <span class="css-prop">cursor</span> permite <span>especificar el icono que se muestra al situar el cursor sobre un elemento. Los posibles valores son </span><span class="css-valor">auto</span>, <span class="css-valor">crosshair</span>, <span class="css-valor">default</span>, <span class="css-valor">help</span>, <span class="css-valor">move</span>, <span class="css-valor">pointer</span>, <span class="css-valor">progress</span>, <span class="css-valor">n-resize</span>, <span class="css-valor">ne-resize</span>, <span class="css-valor">e-resize</span>, <span class="css-valor">se-resize</span>, <span class="css-valor">s-resize</span>, <span class="css-valor">sw-resize</span>, <span class="css-valor">w-resize</span>, <span class="css-valor">nw-resize</span>, <span class="css-valor">text</span> y <span class="css-valor">wait</span>.</p>
+    <div class="toc">
+      <h2>CSS 2: Interface de usuario</h2>
 
-      <p>Los valores predefinidos son los siguientes:</p>
+      <ul>
+        <li><a href="#cursor">La propiedad <span class="css-prop">cursor</span></a></li>
+        <li><a href="#contornos">Contornos</a>
+          <ul>
+            <li><a href="#outline"><span class="css-prop">outline</span></a></li>
+            <li><a href="#outline-color-width-style"><span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span>, <span class="css-prop">outline-style</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+  <section id="cursor">
+    <h2 class="con-aside">La propiedad <span class="css-prop">cursor</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">cursor</span><br />
+        <a href="https://www.w3.org/TR/CSS2/ui.html#cursor-props"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/cursor"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">cursor</span> permite <span>especificar el icono que se muestra al situar el cursor sobre un elemento. Los posibles valores son </span><span class="css-valor">auto</span>, <span class="css-valor">crosshair</span>, <span class="css-valor">default</span>, <span class="css-valor">help</span>, <span class="css-valor">move</span>, <span class="css-valor">pointer</span>, <span class="css-valor">progress</span>, <span class="css-valor">n-resize</span>, <span class="css-valor">ne-resize</span>, <span class="css-valor">e-resize</span>, <span class="css-valor">se-resize</span>, <span class="css-valor">s-resize</span>, <span class="css-valor">sw-resize</span>, <span class="css-valor">w-resize</span>, <span class="css-valor">nw-resize</span>, <span class="css-valor">text</span> y <span class="css-valor">wait</span>.</p>
+
+    <p>Los valores predefinidos son los siguientes:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: auto;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:auto;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_text.png" alt="Icono cursor: text" title="Icono cursor: text" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:auto;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_text.png" alt="Icono cursor: text" title="Icono cursor: text" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: crosshair;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:crosshair">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_crosshair.png" alt="Icono cursor: crosshair" title="Icono cursor: crosshair" width="32" height="28" style="vertical-align: middle" />.
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:crosshair">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_crosshair.png" alt="Icono cursor: crosshair" title="Icono cursor: crosshair" width="32" height="28" style="vertical-align: middle" />.
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: default;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:default">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_default.png" alt="Icono cursor: default" title="Icono cursor: default" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:default">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_default.png" alt="Icono cursor: default" title="Icono cursor: default" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: help;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:help">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_help.png" alt="Icono cursor: help" title="Icono cursor: help" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:help">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_help.png" alt="Icono cursor: help" title="Icono cursor: help" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: move;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:move">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_move.png" alt="Icono cursor: move" title="Icono cursor: move" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:move">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_move.png" alt="Icono cursor: move" title="Icono cursor: move" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: pointer;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:pointer">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_pointer.png" alt="Icono cursor: pointer" title="Icono cursor: pointer" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:pointer">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_pointer.png" alt="Icono cursor: pointer" title="Icono cursor: pointer" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: progress;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:progress">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_progress.png" alt="Icono cursor: progress" title="Icono cursor: progress" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:progress">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_progress.png" alt="Icono cursor: progress" title="Icono cursor: progress" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: n-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:n-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_n_resize.png" alt="Icono cursor: n-resize" title="Icono cursor: n-resize" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:n-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_n_resize.png" alt="Icono cursor: n-resize" title="Icono cursor: n-resize" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: ne-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:ne-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_ne_resize.png" alt="Icono cursor: ne-resize" title="Icono cursor: ne-resize" width="32" height="28" style="vertical-align: middle" />.
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:ne-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_ne_resize.png" alt="Icono cursor: ne-resize" title="Icono cursor: ne-resize" width="32" height="28" style="vertical-align: middle" />.
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: e-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:e-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_e_resize.png" alt="Icono cursor: e-resize" title="Icono cursor: e-resize" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:e-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_e_resize.png" alt="Icono cursor: e-resize" title="Icono cursor: e-resize" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: se-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:se-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_se_resize.png" alt="Icono cursor: se-resize" title="Icono cursor: se-resize" width="32" height="28" style="vertical-align: middle" />.
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:se-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_se_resize.png" alt="Icono cursor: se-resize" title="Icono cursor: se-resize" width="32" height="28" style="vertical-align: middle" />.
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: s-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:s-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_n_resize.png" alt="Icono cursor: n-resize" title="Icono cursor: n-resize" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:s-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_n_resize.png" alt="Icono cursor: n-resize" title="Icono cursor: n-resize" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: sw-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:sw-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_ne_resize.png" alt="Icono cursor: ne-resize" title="Icono cursor: ne-resize" width="32" height="28" style="vertical-align: middle" />.
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:sw-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_ne_resize.png" alt="Icono cursor: ne-resize" title="Icono cursor: ne-resize" width="32" height="28" style="vertical-align: middle" />.
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: w-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:w-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_e_resize.png" alt="Icono cursor: e-resize" title="Icono cursor: e-resize" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:w-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_e_resize.png" alt="Icono cursor: e-resize" title="Icono cursor: e-resize" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: nw-resize;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:nw-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_se_resize.png" alt="Icono cursor: se-resize" title="Icono cursor: se-resize" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:nw-resize">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_se_resize.png" alt="Icono cursor: se-resize" title="Icono cursor: se-resize" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   cursor: text;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor:text">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_text.png" alt="Icono cursor: text" title="Icono cursor: text" width="32" height="28" style="vertical-align: middle" />.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="cursor:text">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_text.png" alt="Icono cursor: text" title="Icono cursor: text" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  cursor: wait;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-html">
+        <p style="cursor:wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_wait.png" alt="Icono cursor: wait" title="Icono cursor: wait" width="32" height="28" style="vertical-align: middle" />.</p>
+      </div>
+    </div>
+
+    <hr class="corta" />
+
+    <p>También pueden utilizarse cursores personalizados, indicando la dirección de la imagen que se quiera emplear. Se puede escribir una lista de cursores separados por comas para que el navegador utilice el primero disponible</p>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+        <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+        <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.png"), wait;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-html">
+        <p style="cursor: url(&#34;../img/exclamacion.png&#34;), wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena en Windows 7 o a un círculo girando en Windows 10 si no se puede mostrar la exclamación).</p>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-navegadores-vacio">
+        <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.cur"), wait;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-html">
+        <p style="cursor: url(&#34;../img/exclamacion.cur&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena en Windows 7 o a un círculo girando en Windows 10 si no se puede mostrar la exclamación).</p>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-navegadores-vacio">
+        <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  cursor: url("../img/exclamacion.ico"), wait;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-html">
+        <p style="cursor: url(&#34;../img/exclamacion.ico&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena en Windows 7 o a un círculo girando en Windows 10 si no se puede mostrar la exclamación).</p>
+      </div>
+    </div>
+
+    <p><strong>Nota</strong>: Edge solamente admite cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a> (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO), como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-cursor">página de diferencias entre navegadores</a>.</p>
+  </section>
+
+  <section id="contornos">
+    <h2>Contornos</h2>
+
+    <p>Un contorno es como un segundo borde, pero que no se tiene en cuenta al calcular el tamaño del elemento y que no tiene por qué ser rectangular.</p>
+
+    <section id="outline">
+      <h3 class="con-aside">La propiedad compuesta <span class="css-prop">outline</span></h3>
+
+      <aside class="enlace-norma">
+        <p><span class="css-prop">outline</span><br />
+          <a href="https://www.w3.org/TR/CSS2/ui.html#dynamic-outlines"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
+
+      <p>La propiedad compuesta <span class="css-prop">outline</span> permite establecer un contorno a un elemento, indicando como en caso del borde, el color, el grosor y el estilo del contorno.</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
 <code class="language-css">p {
-  cursor: wait;
+  outline: red 3px solid;
 }</code>
 </pre>
         </div>
         <div class="resultado-html">
-          <p style="cursor:wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a uno parecido a éste: <img src="../img/cursor/cursor_wait.png" alt="Icono cursor: wait" title="Icono cursor: wait" width="32" height="28" style="vertical-align: middle" />.</p>
+          <p style="outline: red 3px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
+        </div>
+      </div>
+
+      <p>Un elemento puede tener simultáneamente borde y contorno, como muestra el ejemplo siguiente:</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  outline: red 3px solid;
+  border: black 3px solid;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p style="outline: red 3px solid; border: black 3px solid;">Esto es un párrafo con borde y contorno de estilo <span class="css-valor">solid</span>.</p>
         </div>
       </div>
 
       <hr class="corta" />
 
-      <p>También pueden utilizarse cursores personalizados, indicando la dirección de la imagen que se quiera emplear. Se puede escribir una lista de cursores separados por comas para que el navegador utilice el primero disponible</p>
+      <p>El contorno se diferencia del borde en que el contorno no se tiene en cuenta al calcular el tamaño del elemento, mientras que el borde sí, como muestran los ejemplos siguientes:</p>
 
       <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-        </div>
         <div class="codigo">
           <pre>
-<code class="language-css">p {
-  cursor: url("../img/exclamacion.png"), wait;
-}</code>
-</pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor: url(&#34;../img/exclamacion.png&#34;), wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono-navegadores-vacio">
-          <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  cursor: url("../img/exclamacion.cur"), wait;
-}</code>
-</pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor: url(&#34;../img/exclamacion.cur&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono-navegadores-vacio">
-          <img src="../varios/iconos/icono_transparente.svg" alt="Hueco" width="44" height="4" />
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-css">p {
-  cursor: url("../img/exclamacion.ico"), wait;
-}</code>
-</pre>
-        </div>
-        <div class="resultado-html">
-          <p style="cursor: url(&#34;../img/exclamacion.ico&#34;), wait;">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
-        </div>
-      </div>
-
-      <p><strong>Nota</strong>: Internet Explorer solamente admite cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a> (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO), como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-cursor">página de diferencias entre navegadores</a>.</p>
-    </section>
-
-    <section id="contornos">
-      <h2>Contornos</h2>
-
-      <p>Un contorno es como un segundo borde, pero que no se tiene en cuenta al calcular el tamaño del elemento y que no tiene por qué ser rectangular.</p>
-
-      <section id="outline">
-        <h3 class="con-aside">La propiedad compuesta <span class="css-prop">outline</span></h3>
-
-        <aside class="enlace-norma">
-          <p><span class="css-prop">outline</span><br />
-            <a href="https://www.w3.org/TR/CSS2/ui.html#dynamic-outlines"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-        </aside>
-
-        <p>La propiedad compuesta <span class="css-prop">outline</span> permite establecer un contorno a un elemento, indicando como en caso del borde, el color, el grosor y el estilo del contorno.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-css">p {
-  outline: red 3px solid;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p style="outline: red 3px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
-          </div>
-        </div>
-
-        <p>Un elemento puede tener simultáneamente borde y contorno, como muestra el ejemplo siguiente:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-css">p {
-  outline: red 3px solid;
-  border: black 3px solid;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p style="outline: red 3px solid; border: black 3px solid;">Esto es un párrafo con borde y contorno de estilo <span class="css-valor">solid</span>.</p>
-          </div>
-        </div>
-
-        <hr class="corta" />
-
-        <p>El contorno se diferencia del borde en que el contorno no se tiene en cuenta al calcular el tamaño del elemento, mientras que el borde sí, como muestran los ejemplos siguientes:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
 <code class="language-css">p.con-border {
   border: black 10px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente.</p>
-
-            <p style="border: black 10px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
-
-            <p>Esto es un párrafo normal y corriente.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <p style="border: black 10px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
+
+          <p>Esto es un párrafo normal y corriente.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.con-outline {
   outline: black 10px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente.</p>
-
-            <p style="outline: black 10px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
-
-            <p>Esto es un párrafo normal y corriente.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente.</p>
 
-        <p>Esta diferencia es más evidente si el contorno se genera cuando el ratón pasa por encima del elemento. En el caso del borde, al añadirse el borde, los elementos siguientes se desplazan, pero en el caso del contorno, al generarse el contorno, los elementos siguientes no se desplazan.</p>
+          <p style="outline: black 10px solid;">Esto es un párrafo con contorno de estilo <span class="css-valor">solid</span>.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <p>Esto es un párrafo normal y corriente.</p>
+        </div>
+      </div>
+
+      <p>Esta diferencia es más evidente si el contorno se genera cuando el ratón pasa por encima del elemento. En el caso del borde, al añadirse el borde, los elementos siguientes se desplazan, pero en el caso del contorno, al generarse el contorno, los elementos siguientes no se desplazan.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.con-border:hover {
   border: black 10px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente.</p>
-
-            <p class="border-1">Cuando el ratón pasa por encima, se muestra un borde de estilo <span class="css-valor">solid</span>.</p>
-
-            <p>Esto es un párrafo normal y corriente.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+          <p class="border-1">Cuando el ratón pasa por encima, se muestra un borde de estilo <span class="css-valor">solid</span>.</p>
+
+          <p>Esto es un párrafo normal y corriente.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.con-outline:hover {
   outline: black 10px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente.</p>
-
-            <p class="outline-1">Cuando el ratón pasa por encima, se muestra un contorno de estilo <span class="css-valor">solid</span>.</p>
-
-            <p>Esto es un párrafo normal y corriente.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente.</p>
 
-        <hr class="corta" />
+          <p class="outline-1">Cuando el ratón pasa por encima, se muestra un contorno de estilo <span class="css-valor">solid</span>.</p>
 
-        <p>El contorno se diferencia también del borde en que el borde es siempre rectangular, mientras que el contorno no tiene por qué serlo.</p>
+          <p>Esto es un párrafo normal y corriente.</p>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <hr class="corta" />
+
+      <p>El contorno se diferencia también del borde en que el borde es siempre rectangular, mientras que el contorno no tiene por qué serlo.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">span.con-border {
   border: black 3px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente. <span class="border-2">Esta frase tiene un borde de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente. <span class="border-2">Esta frase tiene un borde de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">span.con-outline {
   outline: black 3px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p>Esto es un párrafo normal y corriente. <span class="outline-2">Esta frase tiene un contorno de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p>Esto es un párrafo normal y corriente. <span class="outline-2">Esta frase tiene un contorno de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
+        </div>
+      </div>
 
-        <p><strong>Nota</strong>: Firefox no muestra el contorno de un elemento en-línea de la misma manera que Internet Explorer o Google Chrome, como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-outline-en-linea">página de diferencias entre navegadores</a>.</p>
+      <p><strong>Nota</strong>: Firefox no muestra el contorno de un elemento en-línea de la misma manera que Chrome o Edge, como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-outline-en-linea">página de diferencias entre navegadores</a>.</p>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>La propiedad <span class="css-prop">outline</span> admite como color el valor <span class="css-valor">invert</span>. Con este valor, el contorno toma el color opuesto al color de fondo del elemento.</p>
+      <p>La propiedad <span class="css-prop">outline</span> admite como color el valor <span class="css-valor">invert</span>. Con este valor, el contorno toma el color opuesto al color de fondo del elemento.</p>
 
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <p>Chrome y Firefox no muestran el valor <span class="css-valor">invert</span>, pero Edge sí que lo hace. Firefox dejó de hacerlo en la versión la versión FF3.0. En la <a href="../otros/bugs_mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+          <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">body {
   background-color: white;
 }
@@ -504,23 +520,23 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/interface/interface_outline_1.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/interface/interface_outline_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/interface_outline_1.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/interface_outline_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+          <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">body {
   background-color: black;
   color: white;
@@ -530,23 +546,23 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/interface/interface_outline_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/interface/interface_outline_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/interface_outline_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/interface_outline_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+          <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">body {
   background-color: red;
   color: white;
@@ -556,60 +572,58 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/interface/interface_outline_3.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/interface/interface_outline_3.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/interface_outline_3.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/interface_outline_3.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+    </section>
 
-        <p><strong>Nota</strong>: Firefox no muestra el valor <span class="css-valor">invert</span> desde la versión FF3.0, como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-outline-invert">página de diferencias entre navegadores</a>. En la <a href="../otros/bugs_mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo. Chrome lo hacía antes como Internet Explorer pero ahora lo hace como Firefox.</p>
-      </section>
+    <section id="outline-color-width-style">
+      <h3 class="con-aside">Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span></h3>
 
-      <section id="outline-color-width-style">
-        <h3 class="con-aside">Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span></h3>
+      <aside class="enlace-norma">
+        <p><span class="css-prop">outline-color</span><br />
+          <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-color"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">outline-width</span><br />
+          <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-width"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+        <p><span class="css-prop">outline-style</span><br />
+          <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-style"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      </aside>
 
-        <aside class="enlace-norma">
-          <p><span class="css-prop">outline-color</span><br />
-            <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-color"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-          <p><span class="css-prop">outline-width</span><br />
-            <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-width"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-width"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-          <p><span class="css-prop">outline-style</span><br />
-            <a href="https://www.w3.org/TR/CSS2/ui.html#propdef-outline-style"><img src="../varios/iconos/icono_css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-        </aside>
+      <p>Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo de los cuatro contornos de un elemento y se utilizan de la misma manera que las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span>.</p>
 
-        <p>Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo de los cuatro contornos de un elemento y se utilizan de la misma manera que las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span>.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   outline-color: black;
   outline-style: solid;
   outline-width: 3px;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/interface/interface_outline_cge_1.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/interface/interface_outline_cge_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/interface_outline_cge_1.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/interface_outline_cge_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <hr class="corta" />
+      <hr class="corta" />
 
-        <p>La propiedad <span class="css-prop">outline-color</span> admite el valor <span class="css-valor">invert</span>. Con este valor, el contorno toma el color opuesto al color de fondo del elemento.</p>
+      <p>La propiedad <span class="css-prop">outline-color</span> admite el valor <span class="css-valor">invert</span>. Con este valor, el contorno toma el color opuesto al color de fondo del elemento.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">body {
   background-color: black;
   color: white;
@@ -621,25 +635,25 @@ p {
   outline-width: 3px;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/interface/interface_outline_cge_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/interface/interface_outline_cge_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/interface_outline_cge_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/interface_outline_cge_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>Curiosamente, en este caso Firefox y Chrome sí que muestran el contorno, lo que no hacen con la propiedad compuesta <span class="css-prop">outline</span>.</p>
-      </section>
+      <p>Curiosamente, en este caso Firefox y Chrome sí que muestran el contorno, lo que no hacen con la propiedad compuesta <span class="css-prop">outline</span>.</p>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 12 de mayo de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
