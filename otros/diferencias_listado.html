@@ -1,559 +1,596 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Diferencias entre Chrome, Firefox y Microsoft Edge. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Diferencias entre Chrome, Firefox y Microsoft Edge. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
 
-  <body>
-    <h1>Diferencias entre Chrome, Firefox y Microsoft Edge</h1>
+<body>
+  <h1>Diferencias entre Chrome, Firefox y Microsoft Edge</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Diferencias GC/FF/ME</h2>
-
-        <ul>
-          <li><a href="#uso">Utilización del navegador</a></li>
-          <li><a href="#html">HTML</a></li>
-          <li><a href="#css">CSS</a></li>
-          <li><a href="#otros">Otros</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>En esta página se comentan algunas de las diferencias entre Chrome, Firefox y Microsoft Edge. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />, <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" /> o <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />, <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" /> o <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />.</p>
-
-    <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes, agrupándolas por temas:</p>
-
-    <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" /> Esta página está pendiente de actualizar, haciendo referencia a Chrome y Edge en todos los ejemplos.</p>
-
-    <section id="por-incluir">
-      <h2>Diferencias por incluir</h2>
+    <div class="toc">
+      <h2>Diferencias GC/FF/ME</h2>
 
       <ul>
-        <li>A partir de Firefox 50, Firefox utiliza <a href="https://www.emojione.com/">EmojiOne</a> para mostrar los caracteres Unicode incluidos en esa fuente (aunque no todos, parece que sólo en los <i>emoji</i>). Véase el <a href="../como/como_texto_imagenes.html#distinguir-imagenes-caracteres">ejemplo de cómo distinguir imágenes de caracteres</a>.</li>
+        <li><a href="#uso">Utilización del navegador</a></li>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#otros">Otros</a></li>
       </ul>
+    </div>
+  </nav>
+
+  <p>En esta página se comentan algunas de las diferencias entre Chrome, Firefox y Microsoft Edge. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />, <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" /> o <img src="../varios/iconos/icono_edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />, <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" /> o <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />.</p>
+
+  <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes, agrupándolas por temas:</p>
+
+  <p class="incompleto"><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" /> Esta página está pendiente de actualizar, haciendo referencia a Chrome y Edge en todos los ejemplos.</p>
+
+  <section id="por-incluir">
+    <h2>Diferencias por incluir</h2>
+
+    <ul>
+      <li>A partir de Firefox 50, Firefox utiliza <a href="https://www.emojione.com/">EmojiOne</a> para mostrar los caracteres Unicode incluidos en esa fuente (aunque no todos, parece que sólo en los <i>emoji</i>). Véase el <a href="../como/como_texto_imagenes.html#distinguir-imagenes-caracteres">ejemplo de cómo distinguir imágenes de caracteres</a>.</li>
+    </ul>
+  </section>
+
+  <section id="uso">
+    <h2>Utilización del navegador</h2>
+
+    <section id="css-utf">
+      <h3>Archivos CSS en UTF-8</h3>
+
+      <p>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8.</p>
     </section>
 
-    <section id="uso">
-      <h2>Utilización del navegador</h2>
+    <section id="uso-zoom">
+      <h3>Zoom</h3>
 
-      <section id="css-utf">
-        <h3>Archivos CSS en UTF-8</h3>
+      <p>Internet Explorer 11 dispone de dos tipos de zoom:</p>
 
-        <p>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8.</p>
-      </section>
+      <ul>
+        <li>el clásico, que sólo cambia el tamaño del texto y sólo permite elegir entre cinco tamaños de texto (Muy grande, Grande, Mediano, Pequeño, Muy pequeño), mediante el menú <span class="soft-menu">Ver &gt; Tamaño de texto</span>.</li>
+        <li>el introducido en Internet Explorer 7, que aumenta todos los elementos de la página (texto e imágenes), mediante el menú <span class="soft-menu">Herramientas &gt; Zoom</span>, las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>,</li>
+      </ul>
 
-      <section id="uso-zoom">
-        <h3>Zoom</h3>
+      <p>Firefox dispone de dos tipos de zoom:</p>
 
-        <p>Internet Explorer 11 dispone de dos tipos de zoom:</p>
+      <ul>
+        <li>uno que sólo cambia el tamaño de texto,</li>
+        <li>otro que aumenta todos los elementos de la página (texto e imágenes)</li>
+      </ul>
 
-        <ul>
-          <li>el clásico, que sólo cambia el tamaño del texto y sólo permite elegir entre cinco tamaños de texto (Muy grande, Grande, Mediano, Pequeño, Muy pequeño), mediante el menú <span class="soft-menu">Ver &gt; Tamaño de texto</span>.</li>
-          <li>el introducido en Internet Explorer 7, que aumenta todos los elementos de la página (texto e imágenes), mediante el menú <span class="soft-menu">Herramientas &gt; Zoom</span>, las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>,</li>
-        </ul>
+      <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
+    </section>
 
-        <p>Firefox dispone de dos tipos de zoom:</p>
+    <section id="uso-teclas-formularios">
+      <h3>Teclas de acceso en formularios</h3>
 
-        <ul>
-          <li>uno que sólo cambia el tamaño de texto,</li>
-          <li>otro que aumenta todos los elementos de la página (texto e imágenes)</li>
-        </ul>
+      <p>Para acceder a elementos de un formulario utilizando teclas de acceso definidas mediante el atributo <span class="html-atri">accesskey</span>, hay que utilizar la combinación de teclas siguiente:</p>
 
-        <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
-      </section>
+      <ul>
+        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+        <li>Google Chrome utilizan normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
+        <li>Edge combina ambos comportamientos: utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, pero también permite la combinación <kbd>Alt+tecla</kbd> cuando no está asociada a ninguna acción</li>
+      </ul>
 
-      <section id="uso-teclas-formularios">
-        <h3>Teclas de acceso en formularios</h3>
+      <p>Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
 
-        <p>Para acceder a elementos de un formulario utilizando teclas de acceso definidas mediante el atributo <span class="html-atri">accesskey</span>, hay que utilizar la combinación de teclas siguiente:</p>
-
-        <ul>
-          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Internet Explorer utiliza la combinación <kbd>Alt+tecla</kbd> o <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Google Chrome utiliza normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        </ul>
-
-        <p>Internet Explorer y Chrome utilizan la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
-
-        <p>En el ejemplo siguiente, Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> y Google Chrome e Internet Explorer utilizan la combinación <kbd>Alt+tecla</kbd> para acceder a las cajas de texto:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;input type="text" name="texto1" value="Acceso con a" accesskey="a" /&gt;
 &lt;input type="text" name="texto2" value="Acceso con i" accesskey="i" /&gt;
 &lt;input type="text" name="texto3" value="Acceso con o" accesskey="o" /&gt;
 &lt;input type="text" name="texto4" value="Acceso con u" accesskey="u" /&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <input type="text" value="Acceso con a" size="12" accesskey="a" />
-            <input type="text" value="Acceso con i" size="12" accesskey="i" />
-            <input type="text" value="Acceso con o" size="12" accesskey="o" />
-            <input type="text" value="Acceso con u" size="12" accesskey="u" />
-          </div>
         </div>
+        <div class="resultado-html">
+          <input type="text" value="Acceso con a" size="12" accesskey="a" />
+          <input type="text" value="Acceso con i" size="12" accesskey="i" />
+          <input type="text" value="Acceso con o" size="12" accesskey="o" />
+          <input type="text" value="Acceso con u" size="12" accesskey="u" />
+        </div>
+      </div>
 
-        <p>En el ejemplo siguiente, Internet Explorer no puede acceder a la caja de texto con la tecla de acceso d, ya que con la combinación <kbd>Alt+d</kbd> el foco se traslada a la barra de dirección. Google Chrome tampoco puede acceder con la combinación <kbd>Alt+d</kbd>, pero puede hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
+      <p>En el ejemplo siguiente, Chrome y Edge no pueden acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que con la combinación <kbd>Alt+d</kbd> el foco se traslada a la barra de dirección, pero pueden hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre><code class="language-html">&lt;input type="text" name="texto1" value="Acceso con d" accesskey="d" /&gt;</code></pre>
+        </div>
+        <div class="resultado-html"><input type="text" value="Acceso con d" size="12" accesskey="d" /></div>
+      </div>
+
+      <p>En el ejemplo siguiente Google Chrome no puede acceder a la caja de texto con la tecla de acceso e, ya que la combinación <kbd>Alt+e</kbd> abre el menú de herramientas, pero puede hacerlo con la combinación <kbd>Alt+Shift+e</kbd>:</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;input type="text" name="texto2" value="Acceso con e" accesskey="e" /&gt;</code></pre>
+        </div>
+        <div class="resultado-html"><input type="text" value="Acceso con e" size="12" accesskey="e" /></div>
+      </div>
+
+      <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
+      <ul>
+        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+        <li>Internet Explorer utiliza la combinación <kbd>Alt+tecla</kbd></li>
+        <li>Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd></li>
+      </ul>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con 1" accesskey="1" /&gt;
+&lt;input type="text" name="texto2" value="Acceso con 2" accesskey="2" /&gt;
+&lt;input type="text" name="texto3" value="Acceso con 3" accesskey="3" /&gt;
+&lt;input type="text" name="texto4" value="Acceso con 4" accesskey="4" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <input type="text" value="Acceso con 1" size="12" accesskey="1" />
+          <input type="text" value="Acceso con 2" size="12" accesskey="2" />
+          <input type="text" value="Acceso con 3" size="12" accesskey="3" />
+          <input type="text" value="Acceso con 4" size="12" accesskey="4" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con ," accesskey="," /&gt;
+&lt;input type="text" name="texto2" value="Acceso con -" accesskey="." /&gt;
+&lt;input type="text" name="texto3" value="Acceso con +" accesskey="+" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <input type="text" value="Acceso con ," size="12" accesskey="," />
+          <input type="text" value="Acceso con ." size="12" accesskey="." />
+          <input type="text" value="Acceso con +" size="12" accesskey="+" />
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
+
+      <ul>
+        <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
+        <li>Internet Explorer avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
+        <li>Google Chrome no avanza de uno a otro</li>
+      </ul>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con z" accesskey="z" /&gt;
+&lt;input type="text" name="texto2" value="Acceso con z" accesskey="z" /&gt;
+&lt;input type="text" name="texto3" value="Acceso con z" accesskey="z" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <input type="text" value="Acceso con z" size="12" accesskey="z" />
+          <input type="text" value="Acceso con z" size="12" accesskey="z" />
+          <input type="text" value="Acceso con z" size="12" accesskey="z" />
+        </div>
+      </div>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con w" accesskey="w" /&gt;
+&lt;input type="text" name="texto2" value="Acceso con W" accesskey="W" /&gt;
+&lt;input type="text" name="texto3" value="Acceso con W" accesskey="W" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <input type="text" value="Acceso con w" size="12" accesskey="w" />
+          <input type="text" value="Acceso con W" size="12" accesskey="W" />
+          <input type="text" value="Acceso con W" size="12" accesskey="W" />
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="html">
+    <h2>HTML</h2>
+
+    <section id="text-decoration-overline">
+      <h3>Propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">overline</span></h3>
+
+      <p>Si un párrafo tiene suprarayado y el tamaño de las palabras no es siempre el mismo:</p>
+
+      <ul>
+        <li>Firefox mantiene la línea de suprayado a la misma altura a lo largo de todo el párrafo, pero no tengo claro cómo elige la altura</li>
+        <li>Internet Explorer también mantiene la línea de suprarayado a la misma altura a lo largo de todo el párrafo, basándose en el carácter más alto</li>
+        <li>Chrome dibuja la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
+      </ul>
+
+      <p>Probablemente, la recomendación no especifica qué hacer en este caso particular y cada navegador ha adoptado una solución diferente (<span class="incompleto">por confirmar</span>)</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32" />
+          <img src="../varios/iconos/icono_ff_unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32" />
+          <img src="../varios/iconos/icono_ie_unknown.svg" alt="Por determinar en Internet Explorer" title="Por determinar en Internet Explorer" width="53" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p style="text-decoration: overline"&gt;Este es
+  &lt;span style="font-size: 200%"&gt;un párrafo&lt;/span&gt;
+  &lt;span style="font-size: 200%"&gt;suprarayado&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p style="text-decoration: overline;"> Este es <span style="font-size: 200%">un párrafo</span> <span style="font-size: 300%">suprayado</span>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="listas">
+      <h3>Listas</h3>
+
+      <section id="listas-anidadas">
+        <h4>Lista dentro de lista</h4>
+
+        <p>La lista siguiente se ve de forma distinta en Firefox y en Internet Explorer 11:</p>
+        <ul>
+          <li>
+            <ul>
+              <li>Elemento de lista</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p>Se trata de una lista no ordenada dentro de otra lista no ordenada. La lista superior no contiene ningún texto, salvo la lista inferior. Firefox muestra dos marcadores a la misma altura. Internet Explorer 11 los muestra a diferentes alturas.</p>
+      </section>
+    </section>
+
+    <section id="tablas">
+      <h3>Tablas</h3>
+
+      <section id="tablas-rules">
+        <h4>El atributo <span class="html-atri">rules</span></h4>
+
+        <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
+
+        <p>En Firefox, cuando el modo de bordes no está establecido las tablas se ven en modo de bordes separado, pero si está el atributo <span class="html-atri">rules</span> las tablas se ven en modo colapsado. Pero en Internet Explorer, aunque esté el atributo <span class="html-atri">rules</span> las tablas se ven en modo separado.</p>
+
+        <p><strong>Nota</strong>: En este caso no sé cuál de los dos no hace las cosas correctamente, porque aunque Firefox suele seguir mejor las normas, Firefox tiene bugs relacionados con los modos de bordes de las tablas.</p>
+      </section>
+    </section>
+
+    <section id="posicionamiento">
+      <h3>Posicionamiento</h3>
+
+      <section id="posicionamiento-fijo">
+        <h4>Posicionamiento fijo</h4>
+
+        <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
+
+        <p>Internet Explorer no aplica correctamente el posicionamiento fijo (<span class="css-prop">position</span>: <span class="css-valor">fixed</span>) a una tabla. Coloca la leyenda (<span class="html-eti">caption</span>) en el lugar correcto, pero no las celdas de la tabla. Firefox lo hace bien. Si la tabla está metida en una división y el posicionamiento lo tiene la división, Internet Explorer ya lo hace bien.</p>
+      </section>
+    </section>
+
+    <section id="formularios">
+      <h3>Formularios</h3>
+
+      <section id="atributos-minlength-maxlength">
+        <h3>Los atributos <span class="html-atri">maxlength</span> y <span class="html-atri">minlength</span></h3>
+
+        <p><strong>Nota</strong>: Edge aplica la propiedad <span class="html-atri">maxlength</span> pero no la propiedad <span class="html-atri">minlength</span>, como se comenta en la <a href="../otros/diferencias_listado.html#diferencias-cursor">página de diferencias entre navegadores</a>.</p>
+
+        <p>Los atributos <span class="html-atri">maxlength</span> y <span class="html-atri">minlength</span> permiten establecer la longitud máxima y mínima, respectivamente, que puede escribir el usuario en un control de texto (<span class="html-atri-valor">text</span>, <span class="html-atri-valor">password</span>, <span class="html-atri-valor">search</span>, etc.).</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
             <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+            <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
           </div>
-          <div class="codigo"><pre><code class="language-html">&lt;input type="text" name="texto1" value="Acceso con d" accesskey="d" /&gt;</code></pre></div>
-          <div class="resultado-html"><input type="text" value="Acceso con d" size="12" accesskey="d" /></div>
-        </div>
+          <div class="codigo"><pre>
+    <code class="language-html">&lt;p>Usuario: &lt;input type="text" name="usuario" maxlength="6" />&lt;/p>
 
-        <p>En el ejemplo siguiente Google Chrome no puede acceder a la caja de texto con la tecla de acceso e, ya que la combinación <kbd>Alt+e</kbd> abre el menú de herramientas, pero puede hacerlo con la combinación <kbd>Alt+Shift+e</kbd>:</p>
-
-        <div class="filaflex">
-          <div class="codigo"><pre><code class="language-html">&lt;input type="text" name="texto2" value="Acceso con e" accesskey="e" /&gt;</code></pre></div>
-          <div class="resultado-html"><input type="text" value="Acceso con e" size="12" accesskey="e" /></div>
-        </div>
-
-        <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
-        <ul>
-          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Internet Explorer utiliza la combinación <kbd>Alt+tecla</kbd></li>
-          <li>Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd></li>
-        </ul>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con 1" accesskey="1" /&gt;
-&lt;input type="text" name="texto2" value="Acceso con 2" accesskey="2" /&gt;
-&lt;input type="text" name="texto3" value="Acceso con 3" accesskey="3" /&gt;
-&lt;input type="text" name="texto4" value="Acceso con 4" accesskey="4" /&gt;</code>
-</pre></div>
-          <div class="resultado-html">
-            <input type="text" value="Acceso con 1" size="12" accesskey="1" />
-            <input type="text" value="Acceso con 2" size="12" accesskey="2" />
-            <input type="text" value="Acceso con 3" size="12" accesskey="3" />
-            <input type="text" value="Acceso con 4" size="12" accesskey="4" />
+    &lt;p>Contraseña: &lt;input type="password" name="password" minlength="6" />&lt;/p></code>
+    </pre></div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/formularios/formularios_minlength_1.html">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/formularios/formularios_minlength_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
           </div>
         </div>
+      </section>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con ," accesskey="," /&gt;
-&lt;input type="text" name="texto2" value="Acceso con -" accesskey="." /&gt;
-&lt;input type="text" name="texto3" value="Acceso con +" accesskey="+" /&gt;</code>
-</pre></div>
-          <div class="resultado-html">
-            <input type="text" value="Acceso con ," size="12" accesskey="," />
-            <input type="text" value="Acceso con ." size="12" accesskey="." />
-            <input type="text" value="Acceso con +" size="12" accesskey="+" />
-          </div>
-        </div>
+      <section id="formularios-boton">
+        <h4>Botón <span class="html-eti">button</span> sin atributo <span class="html-atri">type</span></h4>
 
-        <hr class="corta" />
+        <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
 
-        <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
-
-        <ul>
-          <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Internet Explorer avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Google Chrome no avanza de uno a otro</li>
-        </ul>
+        <p>Si un botón no lleva el atributo <span class="html-atri">type</span>, Firefox se comporta como si fuera un botón de tipo <span class="html-atri-valor">reset</span>, pero Internet Explorer se comporta como si fuera un botón de tipo <span class="html-atri-valor">button</span>.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
             <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
             <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
           </div>
           <div class="codigo">
             <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con z" accesskey="z" /&gt;
-&lt;input type="text" name="texto2" value="Acceso con z" accesskey="z" /&gt;
-&lt;input type="text" name="texto3" value="Acceso con z" accesskey="z" /&gt;</code>
-</pre></div>
-          <div class="resultado-html">
-            <input type="text" value="Acceso con z" size="12" accesskey="z" />
-            <input type="text" value="Acceso con z" size="12" accesskey="z" />
-            <input type="text" value="Acceso con z" size="12" accesskey="z" />
-          </div>
-        </div>
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con w" accesskey="w" /&gt;
-&lt;input type="text" name="texto2" value="Acceso con W" accesskey="W" /&gt;
-&lt;input type="text" name="texto3" value="Acceso con W" accesskey="W" /&gt;</code>
-</pre></div>
-          <div class="resultado-html">
-            <input type="text" value="Acceso con w" size="12" accesskey="w" />
-            <input type="text" value="Acceso con W" size="12" accesskey="W" />
-            <input type="text" value="Acceso con W" size="12" accesskey="W" />
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <section id="html">
-      <h2>HTML</h2>
-
-      <section id="text-decoration-overline">
-        <h3>Propiedad <span class="css-prop">text-decoration</span>: <span class="css-valor">overline</span></h3>
-
-        <p>Si un párrafo tiene suprarayado y el tamaño de las palabras no es siempre el mismo:</p>
-
-        <ul>
-          <li>Firefox mantiene la línea de suprayado a la misma altura a lo largo de todo el párrafo, pero no tengo claro cómo elige la altura</li>
-          <li>Internet Explorer también mantiene la línea de suprarayado a la misma altura a lo largo de todo el párrafo, basándose en el carácter más alto</li>
-          <li>Chrome dibuja la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
-        </ul>
-
-        <p>Probablemente, la recomendación no especifica qué hacer en este caso particular y cada navegador ha adoptado una solución diferente (<span class="incompleto">por confirmar</span>)</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32" />
-            <img src="../varios/iconos/icono_ff_unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32" />
-            <img src="../varios/iconos/icono_ie_unknown.svg" alt="Por determinar en Internet Explorer" title="Por determinar en Internet Explorer" width="53" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p style="text-decoration: overline"&gt;Este es
-  &lt;span style="font-size: 200%"&gt;un párrafo&lt;/span&gt;
-  &lt;span style="font-size: 200%"&gt;suprarayado&lt;/span&gt;.&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p style="text-decoration: overline;"> Este es <span style="font-size: 200%">un párrafo</span> <span style="font-size: 300%">suprayado</span>.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="listas">
-        <h3>Listas</h3>
-
-        <section id="listas-anidadas">
-          <h4>Lista dentro de lista</h4>
-
-          <p>La lista siguiente se ve de forma distinta en Firefox y en Internet Explorer 11:</p>
-          <ul>
-            <li><ul>
-              <li>Elemento de lista</li>
-              </ul>
-            </li>
-          </ul>
-
-          <p>Se trata de una lista no ordenada dentro de otra lista no ordenada. La lista superior no contiene ningún texto, salvo la lista inferior. Firefox muestra dos marcadores a la misma altura. Internet Explorer 11 los muestra a diferentes alturas.</p>
-        </section>
-      </section>
-
-      <section id="tablas">
-        <h3>Tablas</h3>
-
-        <section id="tablas-rules">
-          <h4>El atributo <span class="html-atri">rules</span></h4>
-
-          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
-
-          <p>En Firefox, cuando el modo de bordes no está establecido las tablas se ven en modo de bordes separado, pero si está el atributo <span class="html-atri">rules</span> las tablas se ven en modo colapsado. Pero en Internet Explorer, aunque esté el atributo <span class="html-atri">rules</span> las tablas se ven en modo separado.</p>
-
-          <p><strong>Nota</strong>: En este caso no sé cuál de los dos no hace las cosas correctamente, porque aunque Firefox suele seguir mejor las normas, Firefox tiene bugs relacionados con los modos de bordes de las tablas.</p>
-        </section>
-      </section>
-
-      <section id="posicionamiento">
-        <h3>Posicionamiento</h3>
-
-        <section id="posicionamiento-fijo">
-          <h4>Posicionamiento fijo</h4>
-
-          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
-
-          <p>Internet Explorer no aplica correctamente el posicionamiento fijo (<span class="css-prop">position</span>: <span class="css-valor">fixed</span>) a una tabla. Coloca la leyenda (<span class="html-eti">caption</span>) en el lugar correcto, pero no las celdas de la tabla. Firefox lo hace bien. Si la tabla está metida en una división y el posicionamiento lo tiene la división, Internet Explorer ya lo hace bien.</p>
-        </section>
-      </section>
-
-      <section id="formularios">
-        <h3>Formularios</h3>
-
-        <section id="formularios-boton">
-          <h4>Botón <span class="html-eti">button</span> sin atributo <span class="html-atri">type</span></h4>
-
-          <p class="incompleto">Nota: No comprobado en Internet Explorer 11.</p>
-
-          <p>Si un botón no lleva el atributo <span class="html-atri">type</span>, Firefox se comporta como si fuera un botón de tipo <span class="html-atri-valor">reset</span>, pero Internet Explorer se comporta como si fuera un botón de tipo <span class="html-atri-valor">button</span>.</p>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
 <code class="language-css">&lt;button&gt;Botón&lt;/button&gt;</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <button>Botón</button>
-            </div>
           </div>
-        </section>
-
-        <section id="input-number">
-          <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span> /&gt;</span></h4>
-          <p>Internet Explorer sólo muestra mensajes de error en algunos casos muy concretos, si se mezclan letras y números envía el dato y si se escriben sólo letras no muestra mensajes de error aunque no envía nada en el control.</p>
-
-          <p>En el caso de los números decimales:</p>
-          <ul>
-            <li>Chrome admite la coma (,) y el punto (.) como separadores de la parte decimal.</li>
-            <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
-            <li>Internet Explorer 11 no reconoce el atributo <span class="html-atri">step</span> y no muestra mensajes de error; además envía cualquier cosa que no tenga letras, aunque no sea un número válido.</li>
-          </ul>
-        </section>
+          <div class="resultado-html">
+            <button>Botón</button>
+          </div>
+        </div>
       </section>
 
-      <section id="favicons">
-        <h3>Favicons</h3>
+      <section id="input-number">
+        <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span> /&gt;</span>
+        </h4>
+        <p>Internet Explorer sólo muestra mensajes de error en algunos casos muy concretos, si se mezclan letras y números envía el dato y si se escriben sólo letras no muestra mensajes de error aunque no envía nada en el control.</p>
 
-        <section id="favicons-locales">
-          <h3>Favicons en archivos locales</h3>
-
-          <p>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</p>
-        </section>
-
-        <section id="favicons-animados">
-          <h3>Favicons animados</h3>
-
-          <p>Firefox admite favicons animados, pero Internet Explorer y Google Chrome no.</p>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="resultado-html">
-              <p><a href="../html/ejemplos/favicon/favicon_animado.html">Página de ejemplo</a> que usa el gif animado siguiente: <img src="../html/ejemplos/favicon/gif_animado.ico" alt="GIF animado" width="16" height="16" /></p>
-            </div>
-          </div>
-        </section>
+        <p>En el caso de los números decimales:</p>
+        <ul>
+          <li>Chrome admite la coma (,) y el punto (.) como separadores de la parte decimal.</li>
+          <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
+          <li>Internet Explorer 11 no reconoce el atributo <span class="html-atri">step</span> y no muestra mensajes de error; además envía cualquier cosa que no tenga letras, aunque no sea un número válido.</li>
+        </ul>
       </section>
     </section>
 
-    <section id="css">
-      <h2>CSS</h2>
+    <section id="favicons">
+      <h3>Favicons</h3>
 
-      <section id="css-pseudo">
-        <h3>Pseudo-clases y pseudo-elementos</h3>
+      <section id="favicons-locales">
+        <h3>Favicons en archivos locales</h3>
 
-        <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Internet Explorer 11 los recuerda mientras no se recargue la página, mientras que Firefox los recuerda hasta que se borra el historial en el navegador.</p>
+        <p>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</p>
+      </section>
 
-        <section id="diferencias-seleccion-generado">
-          <h4>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h4>
+      <section id="favicons-animados">
+        <h3>Favicons animados</h3>
 
-          <p>En Firefox y Google Chrome, el contenido generado no puede seleccionarse con el ratón, pero en Internet Explorer 11 sí.</p>
+        <p>Firefox admite favicons animados, pero Internet Explorer y Google Chrome no.</p>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="resultado-html">
+            <p><a href="../html/ejemplos/favicon/favicon_animado.html">Página de ejemplo</a> que usa el gif animado siguiente: <img src="../html/ejemplos/favicon/gif_animado.ico" alt="GIF animado" width="16" height="16" /></p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+
+  <section id="css">
+    <h2>CSS</h2>
+
+    <section id="css-pseudo">
+      <h3>Pseudo-clases y pseudo-elementos</h3>
+
+      <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Internet Explorer 11 los recuerda mientras no se recargue la página, mientras que Firefox los recuerda hasta que se borra el historial en el navegador.</p>
+
+      <section id="diferencias-seleccion-generado">
+        <h4>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h4>
+
+        <p>En Firefox y Google Chrome, el contenido generado no puede seleccionarse con el ratón, pero en Internet Explorer 11 sí.</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.cuidado:before {
   content: "Aviso: ";
   font-weight: bold;
   text-decoration: underline;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases_before_after_1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="../css/ejemplos/pseudoclases/pseudoclases_before_after_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases_before_after_1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases_before_after_1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">p.autor-barto:after {
   content: " (escrito por Barto).";
 }</code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases_before_after_2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="../css/ejemplos/pseudoclases/pseudoclases_before_after_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
-        </section>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases_before_after_2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases_before_after_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
       </section>
+    </section>
 
-      <section id="css-fuente">
-        <h3>Fuente</h3>
+    <section id="css-fuente">
+      <h3>Fuente</h3>
 
-        <section id="css-fuente-font-size-adjust">
-          <h4>Propiedad <span class="css-prop">font-size-adjust</span></h4>
+      <section id="css-fuente-font-size-adjust">
+        <h4>Propiedad <span class="css-prop">font-size-adjust</span></h4>
 
-          <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Internet Explorer.</p>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
-<code class="language-css">p {
-  font-size: 20px;
-}</code>
-</pre>
-            </div>
-            <div class="resultado-html">
-              <p style="font-size: 20px; ">Esta letra x tiene 20 px de altura.</p>
-            </div>
-          </div>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
-<code class="language-css">p {
-  font-size: 20px;
-  font-size-adjust: 1.5;
-}</code>
-</pre>
-            </div>
-            <div class="resultado-html">
-              <p style="font-size: 20px; font-size-adjust: 1.5;">Esta letra x debería tener 20 x 1.5 = 30 px de altura.</p>
-            </div>
-          </div>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
-<code class="language-css">p {
-  font-size: 20px;
-  font-size-adjust: 0.5;
-}</code>
-</pre>
-            </div>
-            <div class="resultado-html">
-              <p style="font-size: 20px; font-size-adjust: 0.5;">Esta letra x debería tener 20 x 0.5 = 10 px de altura.</p>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section id="css-lineas">
-        <h3>Líneas horizontales</h3>
-
-        <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Internet Explorer y Chrome no lo hace.</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-css">hr {
-  color: red;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="color: red; " />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-css">hr {
-  height: 1px;
-  color: red;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="color: red; height: 1px;" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-css">hr {
-  height: 10px;
-  color: red;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="color: red; height: 10px;" />
-          </div>
-        </div>
-
-        <hr class="corta" />
-
-        <p>Internet Explorer no interpreta correctamente las propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> cuando se utilizan junto con <span class="css-prop">width</span>.</p>
-
-        <ul>
-          <li>En Firefox y Chrome, la línea se dibuja a la izquierda del espacio definido por los márgenes.</li>
-          <li>En Internet Explorer, la línea se dibuja en el centro del espacio definido por los márgenes.</li>
-        </ul>
-
-        <p>En el ejemplo siguiente, la línea se sitúa a la izquierda del todo en Firefox y Chrome, pero en el centro en Internet Explorer:</p>
+        <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Internet Explorer.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
             <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  font-size: 20px;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-html">
+            <p style="font-size: 20px; ">Esta letra x tiene 20 px de altura.</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
             <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
           </div>
           <div class="codigo">
             <pre>
+<code class="language-css">p {
+  font-size: 20px;
+  font-size-adjust: 1.5;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-html">
+            <p style="font-size: 20px; font-size-adjust: 1.5;">Esta letra x debería tener 20 x 1.5 = 30 px de altura.</p>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  font-size: 20px;
+  font-size-adjust: 0.5;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-html">
+            <p style="font-size: 20px; font-size-adjust: 0.5;">Esta letra x debería tener 20 x 0.5 = 10 px de altura.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="css-lineas">
+      <h3>Líneas horizontales</h3>
+
+      <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Internet Explorer y Chrome no lo hace.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">hr {
+  color: red;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <hr style="color: red; " />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">hr {
+  height: 1px;
+  color: red;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <hr style="color: red; height: 1px;" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">hr {
+  height: 10px;
+  color: red;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <hr style="color: red; height: 10px;" />
+        </div>
+      </div>
+
+      <hr class="corta" />
+
+      <p>Internet Explorer no interpreta correctamente las propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> cuando se utilizan junto con <span class="css-prop">width</span>.</p>
+
+      <ul>
+        <li>En Firefox y Chrome, la línea se dibuja a la izquierda del espacio definido por los márgenes.</li>
+        <li>En Internet Explorer, la línea se dibuja en el centro del espacio definido por los márgenes.</li>
+      </ul>
+
+      <p>En el ejemplo siguiente, la línea se sitúa a la izquierda del todo en Firefox y Chrome, pero en el centro en Internet Explorer:</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">hr {
   background-color: red;
   height: 10px;
@@ -561,22 +598,22 @@
   width: 50%;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="background-color: red; height: 10px; margin-left: 0%; width: 50%;  " />
-          </div>
         </div>
+        <div class="resultado-html">
+          <hr style="background-color: red; height: 10px; margin-left: 0%; width: 50%;  " />
+        </div>
+      </div>
 
-        <p>En el ejemplo siguiente, la línea se sitúa a la derecha del todo en Firefox y Chrome, pero en el centro en Internet Explorer:</p>
+      <p>En el ejemplo siguiente, la línea se sitúa a la derecha del todo en Firefox y Chrome, pero en el centro en Internet Explorer:</p>
 
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">hr {
   background-color: red;
   height: 10px;
@@ -584,13 +621,45 @@
   width: 50%;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="background-color: red; height: 10px; margin-right: 0%; width: 50%;  " />
-          </div>
         </div>
+        <div class="resultado-html">
+          <hr style="background-color: red; height: 10px; margin-right: 0%; width: 50%;  " />
+        </div>
+      </div>
 
-        <p>En el ejemplo siguiente, la línea se sitúa a partir del centro en Firefox y Chrome, pero en el centro de la mitad derecha en Internet Explorer:</p>
+      <p>En el ejemplo siguiente, la línea se sitúa a partir del centro en Firefox y Chrome, pero en el centro de la mitad derecha en Internet Explorer:</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">hr {
+  background-color: red;
+  height: 10px;
+  margin-left: 50%;
+  width: 25%;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <hr style="background-color: red; height: 10px; margin-left: 50%; width: 25%;  " />
+        </div>
+      </div>
+    </section>
+
+    <section id="css-listas">
+      <h3>Listas</h3>
+
+      <section id="css-listas-list-style-type">
+        <h4>Tipo predefinidos de marcador: <span class="css-prop">list-style-type</span></h4>
+
+        <p>Firefox y Google Chrome aplican algunos valores de la propiedad <span class="css-prop">list-style-type</span> que Internet Explorer 11 no aplica.</p>
+
+        <p>Firefox es capaz de representar todos los estilos, pero en algunos casos es necesario tener instaladas las fuentes correspondientes. Si no están instaladas las fuentes, Firefox muestra un cuadro con el código Unicode del carácter no mostrado (en Firefox 2 y anteriores se mostraba un signo de interrogación (?)). Internet Explorer muestra el punto de las listas no ordenadas cuando no es capaz de representar el estilo.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -600,290 +669,258 @@
           </div>
           <div class="codigo">
             <pre>
-<code class="language-css">hr {
-  background-color: red;
-  height: 10px;
-  margin-left: 50%;
-  width: 25%;
-}</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <hr style="background-color: red; height: 10px; margin-left: 50%; width: 25%;  " />
-          </div>
-        </div>
-      </section>
-
-      <section id="css-listas">
-        <h3>Listas</h3>
-
-        <section id="css-listas-list-style-type">
-          <h4>Tipo predefinidos de marcador: <span class="css-prop">list-style-type</span></h4>
-
-          <p>Firefox y Google Chrome aplican algunos valores de la propiedad <span class="css-prop">list-style-type</span> que Internet Explorer 11 no aplica.</p>
-
-          <p>Firefox es capaz de representar todos los estilos, pero en algunos casos es necesario tener instaladas las fuentes correspondientes. Si no están instaladas las fuentes, Firefox muestra un cuadro con el código Unicode del carácter no mostrado (en Firefox 2 y anteriores se mostraba un signo de interrogación (?)). Internet Explorer muestra el punto de las listas no ordenadas cuando no es capaz de representar el estilo.</p>
-
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
 <code class="language-css">ul {
   list-style-type: hebrew;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: hebrew;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
+          <div class="resultado-html">
+            <ul style="list-style-type: hebrew;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   list-style-type: cjk-ideographic;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: cjk-ideographic;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
+          <div class="resultado-html">
+            <ul style="list-style-type: cjk-ideographic;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   list-style-type: hiragana;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: hiragana;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
+          <div class="resultado-html">
+            <ul style="list-style-type: hiragana;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   list-style-type: katakana;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: katakana;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
+          <div class="resultado-html">
+            <ul style="list-style-type: katakana;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   list-style-type: hiragana-iroha;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: hiragana-iroha;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
+          <div class="resultado-html">
+            <ul style="list-style-type: hiragana-iroha;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">ul {
   list-style-type: katakana-iroha;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <ul style="list-style-type: katakana-iroha;">
-                <li>Esto es un punto de una lista</li>
-                <li>Esto es otro punto de la misma lista</li>
-              </ul>
-            </div>
           </div>
-        </section>
+          <div class="resultado-html">
+            <ul style="list-style-type: katakana-iroha;">
+              <li>Esto es un punto de una lista</li>
+              <li>Esto es otro punto de la misma lista</li>
+            </ul>
+          </div>
+        </div>
       </section>
+    </section>
 
-      <section id="css-tablas">
-        <h3>Tablas</h3>
+    <section id="css-tablas">
+      <h3>Tablas</h3>
 
-        <section id="css-tablas-caption-side">
-          <h4>La propiedad <span class="css-prop">caption-side</span></h4>
+      <section id="css-tablas-caption-side">
+        <h4>La propiedad <span class="css-prop">caption-side</span></h4>
 
-          <p>Firefox aplica los valores left y right de la propiedad <span class="css-prop">caption-side</span> que Google Chrome e Internet Explorer 11 no aplican.</p>
+        <p>Firefox aplica los valores left y right de la propiedad <span class="css-prop">caption-side</span> que Google Chrome e Internet Explorer 11 no aplican.</p>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">caption {
   caption-side: left;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <table class="tabla-con-borde">
-                <caption style="caption-side: left;">Esto es la leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </div>
+          <div class="resultado-html">
+            <table class="tabla-con-borde">
+              <caption style="caption-side: left;">Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">caption {
   caption-side: right;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <table class="tabla-con-borde">
-                <caption style="caption-side: right;">Esto es la leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
           </div>
-        </section>
+          <div class="resultado-html">
+            <table class="tabla-con-borde">
+              <caption style="caption-side: right;">Esto es la leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
+    </section>
 
-      <section id="css-interface-usuario">
-        <h3>Interface de usuario</h3>
+    <section id="css-interface-usuario">
+      <h3>Interface de usuario</h3>
 
-        <section id="diferencias-cursor">
-          <h4>La propiedad <span class="css-prop">cursor</span></h4>
+      <section id="diferencias-cursor">
+        <h4>La propiedad <span class="css-prop">cursor</span></h4>
 
-          <p>Internet Explorer 11 solamente admite en la propiedad <span class="css-prop">cursor</span> cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a>, (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO), mientras que Firefox y Google Chorme admiten otros formatos de imagen.</p>
+        <p>Internet Explorer 11 solamente admite en la propiedad <span class="css-prop">cursor</span> cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a>, (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO), mientras que Firefox y Google Chorme admiten otros formatos de imagen.</p>
 
-          <div class="filaflex">
-            <div class="icono-navegadores">
-              <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-              <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-              <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-            </div>
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">p {
   cursor: url("../img/exclamacion.png"), wait;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-html">
-              <p style="cursor: url(&#34;../img/exclamacion.png&#34;), wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
-            </div>
           </div>
-        </section>
+          <div class="resultado-html">
+            <p style="cursor: url(&#34;../img/exclamacion.png&#34;), wait">Al situar el cursor del ratón sobre este párrafo, la forma del cursor debe cambiar a un signo de exclamación en color rojo (o a un reloj de arena si no se puede mostrar la exclamación).</p>
+          </div>
+        </div>
+      </section>
 
-        <section id="css-outline">
-          <h4>La propiedad <span class="css-prop">outline</span></h4>
+      <section id="css-outline">
+        <h4>La propiedad <span class="css-prop">outline</span></h4>
 
-          <section id="diferencias-outline-en-linea">
-            <h5>Contorno de un elemento en-línea</h5>
+        <section id="diferencias-outline-en-linea">
+          <h5>Contorno de un elemento en-línea</h5>
 
-            <p>El contorno de un elemento en-línea no se muestra de la misma manera en Internet Explorer y Google Chrome que en Firefox.</p>
+          <p>El contorno de un elemento en-línea no se muestra de la misma manera en Internet Explorer y Google Chrome que en Firefox.</p>
 
-            <div class="filaflex">
-              <div class="codigo">
-                <pre>
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
 <code class="language-css">span.con-outline {
   outline: black 3px solid;
 }</code>
 </pre>
-              </div>
-              <div class="resultado-html">
-                <p>Esto es un párrafo normal y corriente. <span class="outline-2" style="outline: black 3px solid;">Esta frase tiene un contorno de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
-              </div>
             </div>
-          </section>
+            <div class="resultado-html">
+              <p>Esto es un párrafo normal y corriente. <span class="outline-2" style="outline: black 3px solid;">Esta frase tiene un contorno de estilo <span class="css-valor">solid</span> y para ver la diferencia entre borde y contorno, debería ocupar varias líneas.</span> Esta frase ya no tiene ni borde ni contorno.</p>
+            </div>
+          </div>
+        </section>
 
-          <section id="diferencias-outline-invert">
-            <h5>Color <span class="css-valor">invert</span> en la propiedad <span class="css-prop">outline</span></h5>
+        <section id="diferencias-outline-invert">
+          <h5>Color <span class="css-valor">invert</span> en la propiedad <span class="css-prop">outline</span></h5>
 
-            <p>Firefox y Google Chrome no muestran el valor <span class="css-valor">invert</span>, mientras que Internet Explorer sí lo hace. En la <a href="bugs_mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
+          <p>Firefox y Google Chrome no muestran el valor <span class="css-valor">invert</span>, mientras que Internet Explorer sí lo hace. En la <a href="bugs_mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
 
-            <div class="filaflex">
-              <div class="icono-navegadores">
-                <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-                <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
-                <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
-              </div>
-              <div class="codigo">
-                <pre>
+          <div class="filaflex">
+            <div class="icono-navegadores">
+              <img src="../varios/iconos/icono_gc_X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+              <img src="../varios/iconos/icono_ff_X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32" />
+              <img src="../varios/iconos/icono_ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32" />
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-css">body {
   background-color: black;
   color: white;
@@ -893,81 +930,81 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
-              </div>
-              <div class="resultado-object">
-                <object type="text/html" data="../css/ejemplos/interface/interface_outline_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-              </div>
-              <div class="icono-enlace">
-                <a href="../css/ejemplos/interface/interface_outline_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-              </div>
             </div>
-          </section>
+            <div class="resultado-object">
+              <object type="text/html" data="../css/ejemplos/interface/interface_outline_2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="../css/ejemplos/interface/interface_outline_2.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+            </div>
+          </div>
         </section>
       </section>
     </section>
+  </section>
 
-    <section id="otros">
-      <h2>Otros</h2>
+  <section id="otros">
+    <h2>Otros</h2>
 
-      <section id="otros-svg">
-        <h3>SVG</h3>
+    <section id="otros-svg">
+      <h3>SVG</h3>
 
-        <p>Internet Explorer muestra los elementos svg situados fuera de la zona definida por <span class="html-atri">viewBox</span>, mientras que Firefox y Google Chrome sólo muestran los elementos o la parte de los elementos situados dentro de la zona definida por <span class="html-atri">viewBox</span>.</p>
-      </section>
-
-      <section id="otros-mathml">
-        <h3>MathML</h3>
-
-        <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Internet Explorer 11 requiere un plug-in para mostrar elementos MathML.</p>
-
-        <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Internet Explorer no. El motivo es es que Internet Explorer carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
-      </section>
-
-      <section id="otros-apng">
-        <h3>Formato de imágenes de mapa de bits APNG</h3>
-
-        <p>Firefox y Google Chrome muestran las imágenes en formato APNG, pero Internet Explorer 11 no lo hace.</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="apng_balon.png" alt="Ejempo de imagen en formato APNG" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/otros/apng_balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
-            <img src="../varios/iconos/icono_ie_X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="apng_balon.png" alt="Ejempo de imagen en formato APNG" style="background-color: lightblue" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/otros/apng_balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" style="background-color: lightblue" />
-          </div>
-        </div>
-      </section>
+      <p>Internet Explorer muestra los elementos svg situados fuera de la zona definida por <span class="html-atri">viewBox</span>, mientras que Firefox y Google Chrome sólo muestran los elementos o la parte de los elementos situados dentro de la zona definida por <span class="html-atri">viewBox</span>.</p>
     </section>
 
-    <footer>
+    <section id="otros-mathml">
+      <h3>MathML</h3>
+
+      <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Internet Explorer 11 requiere un plug-in para mostrar elementos MathML.</p>
+
+      <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Internet Explorer no. El motivo es es que Internet Explorer carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
+    </section>
+
+    <section id="otros-apng">
+      <h3>Formato de imágenes de mapa de bits APNG</h3>
+
+      <p>Firefox y Google Chrome muestran las imágenes en formato APNG, pero Microsoft Edge no lo hace.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="apng_balon.png" alt="Ejempo de imagen en formato APNG" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/otros/apng_balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono_gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono_ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="33" height="32" />
+          <img src="../varios/iconos/icono_edge_X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="apng_balon.png" alt="Ejempo de imagen en formato APNG" style="background-color: lightblue" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/otros/apng_balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" style="background-color: lightblue" />
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer>
       <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
         que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>
