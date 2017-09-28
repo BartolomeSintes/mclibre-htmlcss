@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -35,6 +35,6 @@ if ($datoX == "") {
 }
 ?>
 
-    <p><a href="formularios_image_4.html">Volver al formulario.</a></p>
+    <p><a href="formularios-image-4.html">Volver al formulario.</a></p>
   </body>
 </html>

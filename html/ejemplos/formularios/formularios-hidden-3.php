@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -32,6 +32,6 @@ if ($dato == "") {
 }
 
 ?>
-    <p><a href="formularios_hidden_2.html">Volver al formulario inicial.</a></p>
+    <p><a href="formularios-hidden-2.html">Volver al formulario inicial.</a></p>
   </body>
 </html>

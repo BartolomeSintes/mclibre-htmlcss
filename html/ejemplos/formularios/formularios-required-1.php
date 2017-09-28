@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -34,6 +34,6 @@ if ($hm == "h") {
 }
 ?>
 
-    <p><a href="formularios_required_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-required-1.html">Volver al formulario.</a></p>
   </body>
 </html>

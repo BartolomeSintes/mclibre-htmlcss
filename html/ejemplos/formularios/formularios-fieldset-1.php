@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -54,6 +54,6 @@ if ($p2 == "1") {
 }
 ?>
 
-    <p><a href="formularios_fieldset_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-fieldset-1.html">Volver al formulario.</a></p>
   </body>
 </html>

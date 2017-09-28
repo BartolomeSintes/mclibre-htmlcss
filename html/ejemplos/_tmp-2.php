@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -33,7 +33,7 @@ print_r($_REQUEST);
 print "</pre>\n";
 ?>
 
-    <p><a href="formularios_date_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-date-1.html">Volver al formulario.</a></p>
   </body>
 </html>
 REQUEST[$var]))
@@ -60,7 +60,7 @@ print_r($_REQUEST);
 print "</pre>\n";
 ?>
 
-    <p><a href="formularios_date_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-date-1.html">Volver al formulario.</a></p>
   </body>
 </html>
 REQUEST[$var], ENT_QUOTES, "UTF-8"))
@@ -73,6 +73,6 @@ print_r($_REQUEST);
 print "</pre>\n";
 ?>
 
-    <p><a href="formularios_date_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-date-1.html">Volver al formulario.</a></p>
   </body>
 </html>

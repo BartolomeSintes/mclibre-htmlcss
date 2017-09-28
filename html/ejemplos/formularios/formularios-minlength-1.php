@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -33,6 +33,6 @@ if ($password == "") {
 }
 ?>
 
-    <p><a href="formularios_minlength_1.html">Volver al formulario.</a></p>
+    <p><a href="formularios-minlength-1.html">Volver al formulario.</a></p>
   </body>
 </html>

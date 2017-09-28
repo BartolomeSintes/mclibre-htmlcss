@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -31,7 +31,7 @@ if ($dato == "") {
 }
 
 print "\n";
-print "    <p><a href=\"formularios_select_$origen.html\">Volver al formulario.</a></p>\n";
+print "    <p><a href=\"formularios-select-$origen.html\">Volver al formulario.</a></p>\n";
 ?>
   </body>
 </html>
