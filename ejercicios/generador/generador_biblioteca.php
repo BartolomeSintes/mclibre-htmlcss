@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_name("generador_ejercicios");
 session_start();
 
@@ -35,8 +35,8 @@ $gruposCss = array(
 );
 
 $ejercicios = array(
-  array("curriculum_vitae", "Currículum Vitae (corto)"),
-  array("citas_virgilio_web_fonts", "Citas de Virgilio (Fuentes web locales)"),
+  array("curriculum-vitae", "Currículum Vitae (corto)"),
+  array("citas-virgilio-web-fonts", "Citas de Virgilio (Fuentes web locales)"),
   array("citas_dijkstra", "Citas de Edsger Dijkstra"),
   array("gatos", "Felis silvestris catus")
 //  array("no_existe", "No existe")
@@ -57,8 +57,8 @@ function javascript_index() {
   for (var grupoCss in gruposCss)
       document.getElementById('tr-'+gruposCss[grupoCss]).style.display = 'none';
         var ejercicios= [];
-        ejercicios['citas_virgilio_web_fonts'] = ['colores', 'fuente', 'fuentes-web', 'texto', 'margenes'];
-        ejercicios['curriculum_vitae'] = ['colores', 'fuente', 'texto'];
+        ejercicios['citas-virgilio-web-fonts'] = ['colores', 'fuente', 'fuentes-web', 'texto', 'margenes'];
+        ejercicios['curriculum-vitae'] = ['colores', 'fuente', 'texto'];
         ejercicios['citas_dijkstra'] = ['colores', 'fuente', 'texto', 'bordes', 'margenes'];
         ejercicios['gatos'] = ['colores', 'fuente', 'texto', 'bordes', 'margenes'];
         for (var grupoCss in ejercicios[ejercicio])
