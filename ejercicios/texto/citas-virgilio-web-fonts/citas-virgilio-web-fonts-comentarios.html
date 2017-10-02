@@ -1,174 +1,174 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Comentarios al ejercicio Citas de Virgilio (Web Fonts). Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../../../varios/favicon.ico" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Comentarios al ejercicio Citas de Virgilio (Web Fonts). Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../../../varios/favicon.ico" />
+</head>
 
-  <body>
-    <h1>Comentarios al ejercicio Citas de Virgilio (Web Fonts)</h1>
+<body>
+  <h1>Comentarios al ejercicio Citas de Virgilio (Web Fonts)</h1>
 
-    <nav>
-      <p>
-        <a href="../../../index.html"><img src="../../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-        <a href="../../index.html"><img src="../../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../../../index.html"><img src="../../../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../../../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+      <a href="../../index.html"><img src="../../../varios/iconos/icono_ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Virgilio (Web Fonts)</h2>
+    <div class="toc">
+      <h2>Virgilio (Web Fonts)</h2>
 
+      <ul>
+        <li><a href="#comentarios-cabecera">Cabecera</a></li>
+        <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
+        <li><a href="#comentarios-clases">Clases</a></li>
+        <li><a href="#comentarios-fuentes">Fuentes</a></li>
+        <li><a href="#comentarios-estilos">Estilos</a></li>
+        <li><a href="#comentarios-solucion">Solución</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="comentarios-cabecera">
+    <h2>Cabecera</h2>
+
+    <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
+    <ul>
+      <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
+      <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... /&gt;</span> necesaria en dispositivos móviles</li>
+      <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... /&gt;</span> de enlace a la hoja de estilo</li>
+    </ul>
+  </section>
+
+  <section id="comentarios-etiquetas">
+    <h2>Etiquetas</h2>
+
+    <p>Al desactivar la hoja de estilo se puede identificar las siguientes etiquetas:</p>
+
+    <ul>
+      <li>una etiqueta de sección <span class="html-eti">&lt;h1&gt;</span> para el título.</li>
+      <li>varias etiquetas de párrafo <span class="html-eti">&lt;p&gt;</span>, una para cada cita.</li>
+      <li>el nombre del escritor en el primer párrafo lleva la etiqueta <span class="html-eti">&lt;strong&gt;</span>.</li>
+      <li>los nombres de las obras se ven en cursiva. Podrían utilizarse etiquetas <span class="html-eti">&lt;em&gt;</span>, pero para este tipo de información es más adecuado el uso de la etiqueta <span class="html-eti">&lt;cite&gt;</span>, que también se ve en cursiva cuando no se aplica ninguna hoja de estilo.</li>
+    </ul>
+
+    <p>Al volver a aplicar la hoja de estilo no se identifican más etiquetas, pero puesto que los párrafos no son todos iguales, es que hay varias clases de párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
+  </section>
+
+  <section id="comentarios-clases">
+    <h2>Clases</h2>
+
+    <p>En total, se necesitan tres clases de párrafo <span class="html-eti">&lt;p&gt;</span>:</p>
+
+    <ul>
+      <li>clase <span class="css-valor">intro</span>: el párrafo de introducción, que tienen un margen izquierdo y derecho mayor que el resto.</li>
+      <li>clase <span class="css-valor">latin</span>: los párrafos en latín, que aparecen a la izquierda.</li>
+      <li>clase <span class="css-valor">espanol</span>: los párrafos en español, que aparecen a la derecha.</li>
+    </ul>
+
+    <p>Los tipos de letra son también diferentes en cada una de estas clases.</p>
+  </section>
+
+  <section id="comentarios-fuentes">
+    <h2>Fuentes</h2>
+
+    <p>En este ejercicio se utilizará la regla-arroba <span class="css-sele">@font-face</span>, para enlazar las siguientes fuentes en nuestro propio ordenador:</p>
+
+    <ul>
+      <li>Título: Ribeye Marrow</li>
+      <li>Citas en latín: Lobster</li>
+      <li>Citas en español: Just Another Hand</li>
+    </ul>
+
+    <p>Para facilitar la realización del ejercicio, en el archivo de plantilla comprimido se han incluido las fuentes en formato woff y en formato woff2, pero como esas fuentes están disponibles en <a href="https://fonts.google.com/">Google Fonts</a>, se recomienda al alumno que las descargue por su cuenta para comprobar que sabe hacerlo.</p>
+
+    <p>Se han incluido los formatos woff y woff2 para que compruebe la diferencia de tamaño. También puede comprobar que el formato woff2 no funciona en Internet Explorer 11.</p>
+  </section>
+
+  <section id="comentarios-estilos">
+    <h2>Estilos</h2>
+
+    <p>Al restablecer el estilo se pueden identificar las propiedades utilizadas:</p>
+
+    <ul>
+      <li>Fuentes web (<span class="css-arroba">@font-face</span>)
         <ul>
-          <li><a href="#comentarios-cabecera">Cabecera</a></li>
-          <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
-          <li><a href="#comentarios-clases">Clases</a></li>
-          <li><a href="#comentarios-fuentes">Fuentes</a></li>
-          <li><a href="#comentarios-estilos">Estilos</a></li>
-          <li><a href="#comentarios-solucion">Solución</a></li>
+          <li>nombre: <span class="css-prop">font-family</span></li>
+          <li>ubicación: <span class="css-prop">src</span></li>
         </ul>
-      </div>
-    </nav>
+      </li>
 
-    <section id="comentarios-cabecera">
-      <h2>Cabecera</h2>
+      <li>Página (<span class="html-eti">body</span>):
+        <ul>
+          <li>color de fondo: <span class="css-prop">background-color</span></li>
+        </ul>
+      </li>
+      <li>Título (<span class="html-eti">h1</span>):
+        <ul>
+          <li>tipo de letra: <span class="css-prop">font-family</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          <li>separación entre caracteres: <span class="css-prop">letter-spacing</span></li>
+          <li>alineación: <span class="css-prop">text-align</span></li>
+          <li>mayúsculas: <span class="css-prop">text-transform</span></li>
+        </ul>
+      </li>
+      <li>Párrafo de introducción (<span class="html-eti">p.intro</span>):
+        <ul>
+          <li>márgenes izquierda y derecha: <span class="css-prop">margin-left</span>, <span class="css-prop">margin-right</span></li>
+          <li>tipo de letra: <span class="css-prop">font-family</span></li>
+          <li>interlineado: <span class="css-prop">line-height</span></li>
+          <li>alineación: <span class="css-prop">text-align</span></li>
+        </ul>
+      </li>
+      <li>Nombre del autor (<span class="html-eti">strong</span>):
+        <ul>
+          <li>ninguna propiedad</li>
+        </ul>
+      </li>
+      <li>Obras (<span class="html-eti">cite</span>):
+        <ul>
+          <li>subrayado: <span class="css-prop">text-decoration</span></li>
+        </ul>
+      </li>
+      <li>Citas en latín (<span class="html-eti">p.latin</span>):
+        <ul>
+          <li>margen: <span class="css-prop">margin</span></li>
+          <li>tipo de letra: <span class="css-prop">font-family</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+        </ul>
+      </li>
+      <li>Citas en español (<span class="html-eti">p.espanol</span>):
+        <ul>
+          <li>margen: <span class="css-prop">margin</span></li>
+          <li>color: <span class="css-prop">color</span></li>
+          <li>tipo de letra: <span class="css-prop">font-family</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          <li>separación entre caracteres: <span class="css-prop">letter-spacing</span></li>
+          <li>alineación: <span class="css-prop">text-align</span></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
 
-      <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
-      <ul>
-        <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
-        <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... /&gt;</span> necesaria en dispositivos móviles</li>
-        <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... /&gt;</span> de enlace a la hoja de estilo</li>
-      </ul>
-    </section>
+  <section id="comentarios-solucion">
+    <h2>Solución del ejercicio</h2>
 
-    <section id="comentarios-etiquetas">
-      <h2>Etiquetas</h2>
+    <p>El código HTML del ejercicio puede consultarse abriendo la <a href="citas-virgilio-web-fonts-formateado.html">página web del ejercicio Citas de Virgilio (Web Fonts)</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
 
-      <p>Al desactivar la hoja de estilo se puede identificar las siguientes etiquetas:</p>
+    <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="citas-virgilio-web-fonts.css">hoja de estilo del ejercicio Citas de Virgilio (Web Fonts)</a>.</p>
 
-      <ul>
-        <li>una etiqueta de sección <span class="html-eti">&lt;h1&gt;</span> para el título.</li>
-        <li>varias etiquetas de párrafo <span class="html-eti">&lt;p&gt;</span>, una para cada cita.</li>
-        <li>el nombre del escritor en el primer párrafo lleva la etiqueta <span class="html-eti">&lt;strong&gt;</span>.</li>
-        <li>los nombres de las obras se ven en cursiva. Podrían utilizarse etiquetas <span class="html-eti">&lt;em&gt;</span>, pero para este tipo de información es más adecuado el uso de la etiqueta <span class="html-eti">&lt;cite&gt;</span>, que también se ve en cursiva cuando no se aplica ninguna hoja de estilo.</li>
-      </ul>
+    <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir lo mismo, por lo que la solución no es nunca única.</p>
+  </section>
 
-      <p>Al volver a aplicar la hoja de estilo no se identifican más etiquetas, pero puesto que los párrafos no son todos iguales, es que hay varias clases de párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
-    </section>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 2 de noviembre de 2016</p>
 
-    <section id="comentarios-clases">
-      <h2>Clases</h2>
-
-      <p>En total, se necesitan tres clases de párrafo <span class="html-eti">&lt;p&gt;</span>:</p>
-
-      <ul>
-        <li>clase <span class="css-valor">intro</span>: el párrafo de introducción, que tienen un margen izquierdo y derecho mayor que el resto.</li>
-        <li>clase <span class="css-valor">latin</span>: los párrafos en latín, que aparecen a la izquierda.</li>
-        <li>clase <span class="css-valor">espanol</span>: los párrafos en español, que aparecen a la derecha.</li>
-      </ul>
-
-      <p>Los tipos de letra son también diferentes en cada una de estas clases.</p>
-    </section>
-
-    <section id="comentarios-fuentes">
-      <h2>Fuentes</h2>
-
-      <p>En este ejercicio se utilizará la regla-arroba <span class="css-sele">@font-face</span>, para enlazar las siguientes fuentes en nuestro propio ordenador:</p>
-
-      <ul>
-        <li>Título: Ribeye Marrow</li>
-        <li>Citas en latín: Lobster</li>
-        <li>Citas en español: Just Another Hand</li>
-      </ul>
-
-      <p>Para facilitar la realización del ejercicio, en el archivo de plantilla comprimido se han incluido las fuentes en formato woff y en formato woff2, pero como esas fuentes están disponibles en <a href="https://fonts.google.com/">Google Fonts</a>, se recomienda al alumno que las descargue por su cuenta para comprobar que sabe hacerlo.</p>
-
-      <p>Se han incluido los formatos woff y woff2 para que compruebe la diferencia de tamaño. También puede comprobar que el formato woff2 no funciona en Internet Explorer 11.</p>
-    </section>
-
-    <section id="comentarios-estilos">
-      <h2>Estilos</h2>
-
-      <p>Al restablecer el estilo se pueden identificar las propiedades utilizadas:</p>
-
-      <ul>
-        <li>Fuentes web (<span class="css-arroba">@font-face</span>)
-          <ul>
-            <li>nombre: <span class="css-prop">font-family</span></li>
-            <li>ubicación: <span class="css-prop">src</span></li>
-          </ul>
-        </li>
-
-        <li>Página (<span class="html-eti">body</span>):
-          <ul>
-            <li>color de fondo: <span class="css-prop">background-color</span></li>
-          </ul>
-        </li>
-        <li>Título (<span class="html-eti">h1</span>):
-          <ul>
-            <li>tipo de letra: <span class="css-prop">font-family</span></li>
-            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
-            <li>separación entre caracteres: <span class="css-prop">letter-spacing</span></li>
-            <li>alineación: <span class="css-prop">text-align</span></li>
-            <li>mayúsculas: <span class="css-prop">text-transform</span></li>
-          </ul>
-        </li>
-        <li>Párrafo de introducción (<span class="html-eti">p.intro</span>):
-          <ul>
-            <li>márgenes izquierda y derecha: <span class="css-prop">margin-left</span>, <span class="css-prop">margin-right</span></li>
-            <li>tipo de letra: <span class="css-prop">font-family</span></li>
-            <li>interlineado: <span class="css-prop">line-height</span></li>
-            <li>alineación: <span class="css-prop">text-align</span></li>
-          </ul>
-        </li>
-        <li>Nombre del autor (<span class="html-eti">strong</span>):
-          <ul>
-            <li>ninguna propiedad</li>
-          </ul>
-        </li>
-        <li>Obras (<span class="html-eti">cite</span>):
-          <ul>
-            <li>subrayado: <span class="css-prop">text-decoration</span></li>
-          </ul>
-        </li>
-        <li>Citas en latín (<span class="html-eti">p.latin</span>):
-          <ul>
-            <li>margen: <span class="css-prop">margin</span></li>
-            <li>tipo de letra: <span class="css-prop">font-family</span></li>
-            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
-          </ul>
-        </li>
-        <li>Citas en español (<span class="html-eti">p.espanol</span>):
-          <ul>
-            <li>margen: <span class="css-prop">margin</span></li>
-            <li>color: <span class="css-prop">color</span></li>
-            <li>tipo de letra: <span class="css-prop">font-family</span></li>
-            <li>tamaño de letra: <span class="css-prop">font-size</span></li>
-            <li>separación entre caracteres: <span class="css-prop">letter-spacing</span></li>
-            <li>alineación: <span class="css-prop">text-align</span></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <section id="comentarios-solucion">
-      <h2>Solución del ejercicio</h2>
-
-      <p>El código HTML del ejercicio puede consultarse abriendo la <a href="citas-virgilio-web-fonts-formateado.html">página web del ejercicio Citas de Virgilio (Web Fonts)</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
-
-      <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="citas-virgilio-web-fonts.css">hoja de estilo del ejercicio Citas de Virgilio (Web Fonts)</a>.</p>
-
-      <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir lo mismo, por lo que la solución no es nunca única.</p>
-    </section>
-
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 2 de noviembre de 2016</p>
-
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>
