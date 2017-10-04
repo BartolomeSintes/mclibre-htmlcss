@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Raíz y metadatos. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+<body>
+  <h1>Elemento raíz y metadatos</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Raíz y metadatos</h2>
+
+      <ul>
+        <li><a href="#etiqueta-head">Cabecera <span class="html-eti">&lt;head></span></a></li>
+        <li><a href="#etiqueta-title">Título <span class="html-eti">&lt;title></span></a></li>
+        <li><a href="#etiqueta-base">Base <span class="html-eti">&lt;base /></span></a></li>
+        <li><a href="#etiqueta-link">Enlaces <span class="html-eti">&lt;link /></span></a></li>
+        <li><a href="#etiqueta-meta">Meta <span class="html-eti">&lt;meta /></span></a></li>
+        <li><a href="#etiqueta-style">Estilo <span class="html-eti">&lt;style></span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se comenta el elemento raíz <span class="html-eti">&lt;html></span> los elementos del bloque de metadatos <span class="html-eti">&lt;head></span>. El bloque de contenido <span class="html-eti">&lt;body></span> se comenta en la lección <a href="html_secciones.html#etiqueta-body">Secciones</a>.</p>
+
+  <section id="etiqueta-html">
+    <h2 class="con-aside">Elemento raíz <span class="html-eti">&lt;html></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;html></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/semantics.html#semantics"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>El elemento raíz de una página web es el elemento <span class="html-eti">&lt;html></span>, que abarca todo el documento excepto la declaración de tipo de documento inicial.</p>
+
+    <p> El elemento <span class="html-eti">&lt;head></span> contiene dos subelementos: el bloque de metadatos <span class="html-eti">&lt;head></span> y el bloque de contenido <span class="html-eti">&lt;body></span>.</p>
+
+    <p>Este es un ejemplo de documento HTML 5 con dichos elementos:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;HTML 5&lt;/title&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="estilo.css" /&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;p&gt;Esta página es HTML 5 válido.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+    </div>
+
+  </section>
+
+  <section id="etiqueta-head">
+    <h2 class="con-aside">Cabecera <span class="html-eti">&lt;head></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;head></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-head-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>El elemento <span class="html-eti">&lt;head></span> contiene información de carácter general (metadatos) que no se muestra en la ventana del navegador. Esta información se recoge en los elementos <span class="html-eti">&lt;title></span>, <span class="html-eti">&lt;base />, <span class="html-eti">&lt;link />, <span class="html-eti">&lt;meta /> y <span class="html-eti">&lt;style></span>.</p>
+  </section>
+
+  <section id="etiqueta-title">
+    <h2 class="con-aside">Título de la página: <span class="html-eti">&lt;title></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;title></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-title-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>El elemento <span class="html-eti">&lt;title></span> contiene el título del documento. Es un elemento obligatorio que debe contener únicamente texto. Normalmente, los navegadores muestran ese texto en la pestaña del navegador. Como las pestañas son pequeñas, se suele mostrar solamente el principio del texto. Situando el ratón sobre la pestaña se suele mostrar un cuadro de texto flotante con el título completo.</p>
+
+    <p>Este es el elemento <span class="html-eti">&lt;title></span> de esta página:</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">  &lt;title>Metadatos. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco&lt;/title></code></pre>
+    </div>
+
+  </section>
+
+  <section id="etiqueta-base">
+    <h2 class="con-aside">Base de los enlaces: <span class="html-eti">&lt;base /></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;base /></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-base-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>El elemento <span class="html-eti">&lt;base /></span> contiene una URL (mediante un atributo <span class="html-atri">href</span>) que sirve de referencia para el resto de URLs enlazadas en el resto del documento. Este elemento no se suele utilizar apenas.</p>
+  </section>
+
+  <section id="etiqueta-link">
+    <h2 class="con-aside">Enlaces: <span class="html-eti">&lt;link /></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;link /></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-link-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>Los elementos <span class="html-eti">&lt;link /></span> enlazan a otros documentos para diferentes fines. El uso más habitual es para enlazar a hojas de estilo, aunque puede terner <a href="https://www.w3.org/TR/2017/REC-html51-20171003/links.html#allowed-keywords-and-their-meanings">muchos usos</a>.</p>
+
+    <p>Este es el elemento <span class="html-eti">&lt;link /></span> de esta página:</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">  &lt;link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" /></code></pre>
+    </div>
+  </section>
+
+  <section id="etiqueta-meta">
+    <h2 class="con-aside">Meta: <span class="html-eti">&lt;meta /></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;meta /></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-meta-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>Los elementos <span class="html-eti">&lt;meta /></span> no tienen un propósito definido. Pueden contener cualquier tipo de información, pero el agente que recibe la página web debe ser capaz de interpretar esa información.</p>
+
+    <p>Algunos elementos <span class="html-eti">&lt;meta /></span> son interpretados correctamente por todos los agentes, por ejemplo el que indica el juego de caracteres de la página web:</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">  &lt;meta charset="utf-8" /></code></pre>
+    </div>
+
+    <p>Otra etiqueta <span class="html-eti">&lt;meta /></span> cuyo uso se ha extendido en los últimos años (pero que sólo entienden los navegadores actuales) es la que indica a los sistemas de pantallas de alta densidad que deben usar como ancho del documento el ancho de pantalla del dispositivo.</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /></code></pre>
+    </div>
+  </section>
+
+  <section id="etiqueta-style">
+    <h2 class="con-aside">Propiedades de estilo: <span class="html-eti">&lt;style></span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;style></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/document-metadata.html#the-style-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>El elemento <span class="html-eti">&lt;style></span> permite incluir en una página web declaraciones de estilo que se aplican al propio documento. No se aconseja el uso de esta etiqueta y en este curso se recomienda utilizar siempre hojas de estilo independientes.</p>
+  </section>
+
+  <footer>
+      <p class="ultmod">Última modificación de esta página: 4 de octubre de 2017</p>
+
+      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+    </footer>
+</body>
+</html>

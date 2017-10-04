@@ -1,308 +1,275 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Secciones. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Secciones. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
 
-  <body>
-    <h1>Secciones</h1>
+<body>
+  <h1>Secciones</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Secciones</h2>
+    <div class="toc">
+      <h2>Secciones</h2>
 
-        <ul>
-          <li><a href="#secciones-esquema">Secciones y esquema</a></li>
-          <li><a href="#etiqueta-body">Cuerpo<span class="html-eti">&lt;body&gt;</span></a></li>
-          <li><a href="#etiqueta-header">Encabezamiento <span class="html-eti">&lt;header&gt;</span></a></li>
-          <li><a href="#etiqueta-nav">Navegación <span class="html-eti">&lt;nav&gt;</span></a></li>
-          <li><a href="#etiqueta-section">Sección <span class="html-eti">&lt;section&gt;</span></a></li>
-          <li><a href="#etiqueta-article">Artículo <span class="html-eti">&lt;article&gt;</span></a></li>
-          <li><a href="#etiqueta-hn">Títulos <span class="html-eti">&lt;h1&gt; ...&lt;h6&gt;</span></a></li>
-          <li><a href="#etiqueta-aside">Lateral <span class="html-eti">&lt;aside&gt;</span></a></li>
-          <li><a href="#etiqueta-footer">Pie <span class="html-eti">&lt;footer&gt;</span></a></li>
-          <li><a href="#etiqueta-address">Dirección <span class="html-eti">&lt;address&gt;</span></a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#secciones-esquema">Secciones y esquema</a></li>
+        <li><a href="#etiqueta-body">Cuerpo<span class="html-eti">&lt;body></span></a></li>
+        <li><a href="#etiqueta-header">Encabezamiento <span class="html-eti">&lt;header></span></a></li>
+        <li><a href="#etiqueta-nav">Navegación <span class="html-eti">&lt;nav></span></a></li>
+        <li><a href="#etiqueta-section">Sección <span class="html-eti">&lt;section></span></a></li>
+        <li><a href="#etiqueta-article">Artículo <span class="html-eti">&lt;article></span></a></li>
+        <li><a href="#etiqueta-hn">Títulos <span class="html-eti">&lt;h1> ...&lt;h6></span></a></li>
+        <li><a href="#etiqueta-aside">Lateral <span class="html-eti">&lt;aside></span></a></li>
+        <li><a href="#etiqueta-footer">Pie <span class="html-eti">&lt;footer></span></a></li>
+        <li><a href="#etiqueta-address">Dirección <span class="html-eti">&lt;address></span></a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>Las secciones son las partes temáticas en las que se puede dividir el contenido de una página web.</p>
+  <p>Las secciones son las partes temáticas en las que se puede dividir el contenido de una página web.</p>
 
-    <p>En HTML 4 / XHTML 1 la única etiqueta para definir agrupaciones de contenido era prácticamente la etiqueta <span class="html-eti">&lt;div&gt;</span>. Por ello, cualquier página de tamaño medio acababa teniendo muchos elementos <span class="html-eti">&lt;div&gt;</span>, en algunos casos para organizar el contenido de la página, pero también para aplicar estilos de carácter decorativo. El código fuente resultaba así difícil de entender y mantener.</p>
+  <p>En HTML 4 / XHTML 1 la única etiqueta para definir agrupaciones de contenido era prácticamente la etiqueta <span class="html-eti">&lt;div></span>. Por ello, cualquier página de tamaño medio acababa teniendo muchos elementos <span class="html-eti">&lt;div></span>, en algunos casos para organizar el contenido de la página, pero también para aplicar estilos de carácter decorativo. El código fuente resultaba así difícil de entender y mantener.</p>
 
-    <p>La imagen siguiente muestra una página típica HTML 4 / XHTML 1, en la que para organizar las diferentes partes de la página se tenían que crear varias divisiones <span class="html-eti">&lt;div&gt;</span> y distinguirlas mediante clases para darles estilos diferenciados.</p>
+  <p>La imagen siguiente muestra una página típica HTML 4 / XHTML 1, en la que para organizar las diferentes partes de la página se tenían que crear varias divisiones <span class="html-eti">&lt;div></span> y distinguirlas mediante clases para darles estilos diferenciados.</p>
 
-    <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-      <rect x="20" y="20" width="1880" height="1040"
-            fill="white" stroke="black" stroke-width="3" />
+  <p>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+      <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
       <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
 
-      <rect x="60" y="100" width="1800" height="150"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="100" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="160" font-family="sans-serif" font-size="50">div class="cabecera"</text>
 
-      <rect x="60" y="270" width="200" height="590"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="270" width="200" height="590" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="330" font-family="sans-serif" font-size="50">div</text>
       <text x="80" y="380" font-family="sans-serif" font-size="50">class</text>
       <text x="80" y="430" font-family="sans-serif" font-size="50">=</text>
       <text x="80" y="480" font-family="sans-serif" font-size="50">"menu"</text>
 
-      <rect x="280" y="270" width="1580" height="590"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="280" y="270" width="1580" height="590" fill="white" stroke="black" stroke-width="3" />
       <text x="300" y="330" font-family="sans-serif" font-size="50">div class="contenido"</text>
 
-      <rect x="320" y="350" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="350" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="410" font-family="sans-serif" font-size="50">div class="apartado"</text>
 
-      <rect x="320" y="510" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="510" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="570" font-family="sans-serif" font-size="50">div class="apartado"</text>
 
       <circle cx="1000" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
       <circle cx="1050" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
       <circle cx="1100" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
 
-      <rect x="320" y="700" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="700" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="760" font-family="sans-serif" font-size="50">div class="apartado"</text>
 
-      <rect x="60" y="880" width="1800" height="150"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="880" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="940" font-family="sans-serif" font-size="50">div class="pie"</text>
-      </svg></p>
+    </svg>
+  </p>
 
-    <p>En HTML 5 se ha querido mejorar esa situación introduciendo varias etiquetas para definir diferentes tipos de secciones: <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span>, <span class="html-eti">&lt;aside&gt;</span>, <span class="html-eti">&lt;header&gt;</span> y <span class="html-eti">&lt;footer&gt;</span> (y también la etiqueta <span class="html-eti">&lt;main&gt;</span>, aunque esta no se considere una etiqueta de sección sino de bloque).</p>
+  <p>En HTML 5 se ha querido mejorar esa situación introduciendo varias etiquetas para definir diferentes tipos de secciones: <span class="html-eti">&lt;article></span>, <span class="html-eti">&lt;section></span>, <span class="html-eti">&lt;nav></span>, <span class="html-eti">&lt;aside></span>, <span class="html-eti">&lt;header></span> y <span class="html-eti">&lt;footer></span> (y también la etiqueta <span class="html-eti">&lt;main></span>, aunque esta no se considere una etiqueta de sección sino de bloque).</p>
 
-    <p>La página del ejemplo anterior se convertiría así en:</p>
+  <p>La página del ejemplo anterior se convertiría así en:</p>
 
-    <p><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-            width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-      <rect x="20" y="20" width="1880" height="1040"
-            fill="white" stroke="black" stroke-width="3" />
+  <p>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+      <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
       <text x="40" y="80" font-family="sans-serif" font-size="50">body</text>
 
-      <rect x="60" y="100" width="1800" height="150"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="100" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="160" font-family="sans-serif" font-size="50">header</text>
 
-      <rect x="60" y="270" width="200" height="590"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="270" width="200" height="590" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="330" font-family="sans-serif" font-size="50">nav</text>
 
-      <rect x="280" y="270" width="1580" height="590"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="280" y="270" width="1580" height="590" fill="white" stroke="black" stroke-width="3" />
       <text x="300" y="330" font-family="sans-serif" font-size="50">main</text>
 
-      <rect x="320" y="350" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="350" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="410" font-family="sans-serif" font-size="50">section</text>
 
-      <rect x="320" y="510" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="510" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="570" font-family="sans-serif" font-size="50">section</text>
 
       <circle cx="1000" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
       <circle cx="1050" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
       <circle cx="1100" cy="675" r="8" stroke-width="3" stroke="black" fill="white" />
 
-      <rect x="320" y="700" width="1510" height="140"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="320" y="700" width="1510" height="140" fill="white" stroke="black" stroke-width="3" />
       <text x="340" y="760" font-family="sans-serif" font-size="50">section</text>
 
-      <rect x="60" y="880" width="1800" height="150"
-            fill="white" stroke="black" stroke-width="3" />
+      <rect x="60" y="880" width="1800" height="150" fill="white" stroke="black" stroke-width="3" />
       <text x="80" y="940" font-family="sans-serif" font-size="50">footer</text>
-      </svg></p>
+    </svg>
+  </p>
 
-    <p>Al utilizar etiquetas específicas para tipos de contenido específico, se mejora la legibilidad y facilidad de reutilización tanto del código HTML como de las hojas de estilo.</p>
+  <p>Al utilizar etiquetas específicas para tipos de contenido específico, se mejora la legibilidad y facilidad de reutilización tanto del código HTML como de las hojas de estilo.</p>
 
-    <p>La etiqueta <span class="html-eti">&lt;div&gt;</span> se mantiene en la recomendación HTML 5, pero reservada ya al resto de agrupaciones no consideradas por las etiquetas anteriores, es decir, con fines principalmente decorativos.</p>
+  <p>La etiqueta <span class="html-eti">&lt;div></span> se mantiene en la recomendación HTML 5, pero reservada ya al resto de agrupaciones no consideradas por las etiquetas anteriores, es decir, con fines principalmente decorativos.</p>
 
-    <p><strong>Nota</strong>: Para simplificar las ilustraciones, en los ejemplos del resto de esta página no se ha dibujado la etiqueta <span class="html-eti">&lt;body&gt;</span>.</p>
+  <p><strong>Nota</strong>: Para simplificar las ilustraciones, en los ejemplos del resto de esta página no se ha dibujado la etiqueta <span class="html-eti">&lt;body></span>.</p>
 
-    <section id="secciones-esquema">
-      <h2>Secciones y esquema (outline) del documento</h2>
+  <section id="secciones-esquema">
+    <h2>Secciones y esquema (outline) del documento</h2>
 
-      <p>Entre las etiquetas que se comentan en esta página, cuatro de ellas (<span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span>) tienen un significado especial ya que representan secciones en el esquema (outline) de la página web, como se explica más detalladamente en la <a href="html_esquema.html">lección sobre esquemas</a>.</p>
+    <p>Entre las etiquetas que se comentan en esta página, cuatro de ellas (<span class="html-eti">&lt;article></span>, <span class="html-eti">&lt;section></span>, <span class="html-eti">&lt;nav></span> y <span class="html-eti">&lt;aside></span>) tienen un significado especial ya que representan secciones en el esquema (outline) de la página web, como se explica más detalladamente en la <a href="html_esquema.html">lección sobre esquemas</a>.</p>
 
-      <p>En estas cuatro etiquetas se pueden incluir elementos <span class="html-eti">&lt;header&gt;</span>, <span class="html-eti">&lt;footer&gt;</span> o títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>, que se entenderán que son encabezados, pies o página o títulos del elemento en el que se incluyen, en vez de a la página en su conjunto.</p>
-    </section>
+    <p>En estas cuatro etiquetas se pueden incluir elementos <span class="html-eti">&lt;header></span>, <span class="html-eti">&lt;footer></span> o títulos <span class="html-eti">&lt;h1></span>, ..., <span class="html-eti">&lt;h6></span>, que se entenderán que son encabezados, pies o página o títulos del elemento en el que se incluyen, en vez de a la página en su conjunto.</p>
+  </section>
 
-    <section id="etiqueta-body">
-      <h2 class="con-aside">Cuerpo del documento: <span class="html-eti">&lt;body&gt;</span></h2>
+  <section id="etiqueta-body">
+    <h2 class="con-aside">Cuerpo del documento: <span class="html-eti">&lt;body></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;body&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-body-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;body></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-body-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;body&gt;</span> abarca toda la página web. Por ello, en una página web sólo puede haber un elemento <span class="html-eti">&lt;body&gt;</span>.</p>
-    </section>
+    <p>La etiqueta <span class="html-eti">&lt;body></span> abarca todo el contenido de la página web que se visualiza en el navegador. Por ello, una página web sólo puede tener un elemento <span class="html-eti">&lt;body></span>.</p>
+  </section>
 
-    <section id="etiqueta-header">
-      <h2 class="con-aside">Encabezamiento: <span class="html-eti">&lt;header&gt;</span></h2>
+  <section id="etiqueta-header">
+    <h2 class="con-aside">Encabezamiento: <span class="html-eti">&lt;header></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;header&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-header-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;header></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-header-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;header&gt;</span> está pensada para agrupar el contenido inicial de una página web. Puede contener únicamente los elementos que aparecen en las páginas de un sitio (el logotipo y un menú general, por ejemplo) o incluir también elementos particulares de la página (el título principal <span class="html-eti">&lt;h1&gt;</span> de la página, enlaces de navegación dentro de la página, texto de introducción, por ejemplo).</p>
+    <p>La etiqueta <span class="html-eti">&lt;header></span> está pensada para agrupar el contenido inicial de una página web. Puede contener únicamente los elementos que aparecen en las páginas de un sitio (el logotipo y un menú general, por ejemplo) o incluir también elementos particulares de la página (el título principal <span class="html-eti">&lt;h1></span> de la página, enlaces de navegación dentro de la página, texto de introducción, por ejemplo).</p>
 
-      <p>El elemento <span class="html-eti">&lt;header&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que es el encabezado de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> y entonces se entiende que es el encabezado del elemento que lo contiene.</p>
+    <p>El elemento <span class="html-eti">&lt;header></span> puede estar incluido en <span class="html-eti">&lt;body></span> y entonces se entiende que es el encabezado de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article></span>, <span class="html-eti">&lt;section></span>, <span class="html-eti">&lt;nav></span> y <span class="html-eti">&lt;aside></span> y entonces se entiende que es el encabezado del elemento que lo contiene.</p>
 
-      <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;header&gt;</span>:</p>
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;header></span>:</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="150"
-              fill="gold" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="gold" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="20" y="190" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="60" y="270" width="190" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="270" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="330" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="290" y="190" width="1340" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="330" y="270" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="370" y="350" width="1220" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="370" y="350" width="1220" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="390" y="410" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="330" y="590" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="370" y="670" width="1220" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="370" y="670" width="1220" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="390" y="730" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="1650" y="190" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="1650" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="1690" y="270" width="190" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1690" y="270" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="1710" y="330" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="20" y="920" width="1880" height="150"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
-        </svg></p>
-    </section>
+      </svg>
+    </p>
+  </section>
 
-    <section id="etiqueta-nav">
-      <h2 class="con-aside">Navegación: <span class="html-eti">&lt;nav&gt;</span></h2>
+  <section id="etiqueta-nav">
+    <h2 class="con-aside">Navegación: <span class="html-eti">&lt;nav></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;nav&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-nav-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;nav></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-nav-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;nav&gt;</span> está pensada para agrupar los enlaces a otras páginas o los enlaces a los apartados de la propia página.</p>
+    <p>La etiqueta <span class="html-eti">&lt;nav></span> está pensada para agrupar los enlaces a otras páginas o los enlaces a los apartados de la propia página.</p>
 
-      <p>Una página puede contener varios elementos <span class="html-eti">&lt;nav&gt;</span>, aunque no es necesario que todos los grupos de enlaces estén en elementos <span class="html-eti">&lt;nav&gt;</span> (por ejemplo, los enlaces de contacto que se suelen incluir en el elemento <span class="html-eti">&lt;footer&gt;</span> no requieren el uso de <span class="html-eti">&lt;nav&gt;</span>).</p>
+    <p>Una página puede contener varios elementos <span class="html-eti">&lt;nav></span>, aunque no es necesario que todos los grupos de enlaces estén en elementos <span class="html-eti">&lt;nav></span> (por ejemplo, los enlaces de contacto que se suelen incluir en el elemento <span class="html-eti">&lt;footer></span> no requieren el uso de <span class="html-eti">&lt;nav></span>).</p>
 
-      <p>La imagen siguiente muestra una página con tres elementos <span class="html-eti">&lt;nav&gt;</span>:</p>
+    <p>La imagen siguiente muestra una página con tres elementos <span class="html-eti">&lt;nav></span>:</p>
 
-      <ul>
-        <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;header&gt;</span> puede contener enlaces globales a otras páginas de sitio web.</li>
-        <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;body&gt;</span> puede contener enlaces a las secciones de la página.</li>
-        <li>El <span class="html-eti">&lt;nav&gt;</span> de <span class="html-eti">&lt;aside&gt;</span> puede contener enlaces a otros sitios webs relacionados con el contenido de la página.</li>
-      </ul>
+    <ul>
+      <li>El <span class="html-eti">&lt;nav></span> de <span class="html-eti">&lt;header></span> puede contener enlaces globales a otras páginas de sitio web.</li>
+      <li>El <span class="html-eti">&lt;nav></span> de <span class="html-eti">&lt;body></span> puede contener enlaces a las secciones de la página.</li>
+      <li>El <span class="html-eti">&lt;nav></span> de <span class="html-eti">&lt;aside></span> puede contener enlaces a otros sitios webs relacionados con el contenido de la página.</li>
+    </ul>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="200"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="200" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="60" y="100" width="1820" height="100"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="100" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="20" y="240" width="250" height="660"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="20" y="240" width="250" height="660" fill="gold" stroke="black" stroke-width="3" />
         <text x="40" y="300" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="290" y="240" width="1340" height="660"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="290" y="240" width="1340" height="660" fill="white" stroke="black" stroke-width="3" />
         <text x="310" y="300" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="1650" y="240" width="250" height="660"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="1650" y="240" width="250" height="660" fill="white" stroke="black" stroke-width="3" />
         <text x="1670" y="300" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="1690" y="320" width="190" height="300"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1690" y="320" width="190" height="300" fill="gold" stroke="black" stroke-width="3" />
         <text x="1730" y="380" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="20" y="920" width="1880" height="150"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
-        </svg></p>
-    </section>
+      </svg>
+    </p>
+  </section>
 
-    <section id="etiqueta-section">
-      <h2 class="con-aside">Sección: <span class="html-eti">&lt;section&gt;</span></h2>
+  <section id="etiqueta-section">
+    <h2 class="con-aside">Sección: <span class="html-eti">&lt;section></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;section&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-section-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;section></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-section-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;section&gt;</span> está pensada para agrupar los apartados del contenido principal del documento. Normalmente, las secciones <span class="html-eti">&lt;section&gt;</span> empiezan con un título (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) que hace referencia al tema tratado en la sección.</p>
+    <p>La etiqueta <span class="html-eti">&lt;section></span> está pensada para agrupar los apartados del contenido principal del documento. Normalmente, las secciones <span class="html-eti">&lt;section></span> empiezan con un título (<span class="html-eti">&lt;h1></span>, <span class="html-eti">&lt;h2></span>, etc.) que hace referencia al tema tratado en la sección.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">h1</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">h2</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -313,20 +280,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">h1</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">h2</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -336,30 +300,27 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Un elemento <span class="html-eti">&lt;section&gt;</span> puede contener elementos <span class="html-eti">&lt;section&gt;</span>. Las secciones interiores se entienden como subsecciones de la sección exterior.</p>
+    <p>Un elemento <span class="html-eti">&lt;section></span> puede contener elementos <span class="html-eti">&lt;section></span>. Las secciones interiores se entienden como subsecciones de la sección exterior.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -370,20 +331,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -393,30 +351,27 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Un elemento <span class="html-eti">&lt;section&gt;</span> puede contener elementos <span class="html-eti">&lt;article&gt;</span> y viceversa.</p>
+    <p>Un elemento <span class="html-eti">&lt;section></span> puede contener elementos <span class="html-eti">&lt;article></span> y viceversa.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -427,20 +382,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="white" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
@@ -450,42 +402,39 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Las etiquetas <span class="html-eti">&lt;section&gt;</span> y <span class="html-eti">&lt;article&gt;</span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article&gt;</span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section&gt;</span> es para partes de una unidad mayor.</p>
-    </section>
+    <p>Las etiquetas <span class="html-eti">&lt;section></span> y <span class="html-eti">&lt;article></span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article></span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section></span> es para partes de una unidad mayor.</p>
+  </section>
 
-    <section id="etiqueta-article">
-      <h2 class="con-aside">Artículo: <span class="html-eti">&lt;article&gt;</span></h2>
+  <section id="etiqueta-article">
+    <h2 class="con-aside">Artículo: <span class="html-eti">&lt;article></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;article&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-article-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;article></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-article-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;article&gt;</span> está pensada para agrupar el contenido de la página que forma una unidad en sí misma desde el punto de vista temático. Es decir, que un artículo debería poder publicarse y leerse como documento independiente, aunque una página puede estar formada por varios artículos de temática relacionada o no.</p>
+    <p>La etiqueta <span class="html-eti">&lt;article></span> está pensada para agrupar el contenido de la página que forma una unidad en sí misma desde el punto de vista temático. Es decir, que un artículo debería poder publicarse y leerse como documento independiente, aunque una página puede estar formada por varios artículos de temática relacionada o no.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">h1</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">h2</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -496,20 +445,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">h1</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">h2</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -519,30 +465,27 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Un elemento <span class="html-eti">&lt;article&gt;</span> puede contener otros elementos <span class="html-eti">&lt;article&gt;</span> que están relacionados con el contenido del <span class="html-eti">&lt;article&gt;</span> que los contiene.</p>
+    <p>Un elemento <span class="html-eti">&lt;article></span> puede contener otros elementos <span class="html-eti">&lt;article></span> que están relacionados con el contenido del <span class="html-eti">&lt;article></span> que los contiene.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -553,20 +496,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -576,30 +516,27 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Un elemento <span class="html-eti">&lt;article&gt;</span> puede contener elementos <span class="html-eti">&lt;section&gt;</span> y viceversa.</p>
+    <p>Un elemento <span class="html-eti">&lt;article></span> puede contener elementos <span class="html-eti">&lt;section></span> y viceversa.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="60" y="100" width="1820" height="380"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="100" width="1820" height="380" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="160" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="100" y="180" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="180" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="240" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="gold" />
 
-        <rect x="100" y="320" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="320" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="380" font-family="sans-serif" font-size="50">section</text>
 
         <circle cx="900" cy="440" r="8" stroke-width="4" stroke="black" fill="gold" />
@@ -610,20 +547,17 @@
         <circle cx="940" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="530" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="580" width="1820" height="380"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="60" y="580" width="1820" height="380" fill="white" stroke="black" stroke-width="3" />
         <text x="80" y="640" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="660" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="660" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="720" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="100" y="800" width="1760" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="100" y="800" width="1760" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="120" y="860" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="920" r="8" stroke-width="4" stroke="black" fill="white" />
@@ -633,400 +567,352 @@
         <circle cx="900" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="1010" r="8" stroke-width="4" stroke="black" fill="white" />
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Las etiquetas <span class="html-eti">&lt;article&gt;</span> y <span class="html-eti">&lt;section&gt;</span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article&gt;</span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section&gt;</span> es para partes de una unidad mayor.</p>
+    <p>Las etiquetas <span class="html-eti">&lt;article></span> y <span class="html-eti">&lt;section></span> son similares. La diferencia entre ellas es que <span class="html-eti">&lt;article></span> es para partes que forman una unidad en sí mismas y <span class="html-eti">&lt;section></span> es para partes de una unidad mayor.</p>
 
-      <p>Si la página trata de un único tema y se va a utilizar un único elemento <span class="html-eti">&lt;article&gt;</span>, es preferible utilizar la etiqueta <span class="html-eti">&lt;main&gt;</span>.</p>
-    </section>
+    <p>Si la página trata de un único tema y se va a utilizar un único elemento <span class="html-eti">&lt;article></span>, es preferible utilizar la etiqueta <span class="html-eti">&lt;main></span>.</p>
+  </section>
 
-    <section id="etiqueta-hn">
-      <h2 class="con-aside">Títulos: <span class="html-eti">&lt;h1&gt;</span> <span class="html-eti">&lt;h2&gt;</span> <span class="html-eti">&lt;h3&gt;</span> <span class="html-eti">&lt;h4&gt;</span> <span class="html-eti">&lt;h5&gt;</span> <span class="html-eti">&lt;h6&gt;</span></h2>
+  <section id="etiqueta-hn">
+    <h2 class="con-aside">Títulos: <span class="html-eti">&lt;h1></span> <span class="html-eti">&lt;h2></span> <span class="html-eti">&lt;h3></span> <span class="html-eti">&lt;h4></span> <span class="html-eti">&lt;h5></span> <span class="html-eti">&lt;h6></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;h1&gt;</span> <span class="html-eti">&lt;h2&gt;</span> <span class="html-eti">&lt;h3&gt;</span> <span class="html-eti">&lt;h4&gt;</span> <span class="html-eti">&lt;h5&gt;</span> <span class="html-eti">&lt;h6&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;h1></span> <span class="html-eti">&lt;h2></span> <span class="html-eti">&lt;h3></span> <span class="html-eti">&lt;h4></span> <span class="html-eti">&lt;h5></span> <span class="html-eti">&lt;h6></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-h1-h2-h3-h4-h5-and-h6-elements"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>Las etiquetas <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, <span class="html-eti">&lt;h3&gt;</span>, <span class="html-eti">&lt;h4&gt;</span>, <span class="html-eti">&lt;h5&gt;</span> y <span class="html-eti">&lt;h6&gt;</span> están pensadas para marcar los títulos y subtítulos de los apartados de un documento.</p>
+    <p>Las etiquetas <span class="html-eti">&lt;h1></span>, <span class="html-eti">&lt;h2></span>, <span class="html-eti">&lt;h3></span>, <span class="html-eti">&lt;h4></span>, <span class="html-eti">&lt;h5></span> y <span class="html-eti">&lt;h6></span> están pensadas para marcar los títulos y subtítulos de los apartados de un documento.</p>
 
-      <p>La hoja de estilo por omisión de los navegadores suele mostrar los títulos en tamaño cada vez más pequeño (incluso más pequeño que el tamaño de los párrafos <span class="html-eti">&lt;p&gt;</span>), en negrita y con márgenes mayores que los los párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
+    <p>La hoja de estilo por omisión de los navegadores suele mostrar los títulos en tamaño cada vez más pequeño (incluso más pequeño que el tamaño de los párrafos <span class="html-eti">&lt;p></span>), en negrita y con márgenes mayores que los los párrafos <span class="html-eti">&lt;p></span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;h1&gt;Título 1&lt;/h1&gt;
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;h1>Título 1&lt;/h1>
 
-&lt;h2&gt;Título 2&lt;/h2&gt;
+&lt;h2>Título 2&lt;/h2>
 
-&lt;h3&gt;Título 3&lt;/h3&gt;
+&lt;h3>Título 3&lt;/h3>
 
-&lt;h4&gt;Título 4&lt;/h4&gt;
+&lt;h4>Título 4&lt;/h4>
 
-&lt;h5&gt;Título 5&lt;/h5&gt;
+&lt;h5>Título 5&lt;/h5>
 
-&lt;h6&gt;Título 6&lt;/h6&gt;</code>
+&lt;h6>Título 6&lt;/h6></code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/secciones/secciones-1.html" style="width:100%; height: 19em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/secciones/secciones-1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/secciones/secciones-1.html" style="width:100%; height: 19em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/secciones/secciones-1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>En principio, los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se deben utilizar de forma jerárquica, es decir, no saltándose niveles y utilizando títulos del mismo nivel para contenido de la misma categoría (apartados principales, subapartados, etc.).</p>
+    <p>En principio, los títulos <span class="html-eti">&lt;h1></span>, ..., <span class="html-eti">&lt;h6></span> se deben utilizar de forma jerárquica, es decir, no saltándose niveles y utilizando títulos del mismo nivel para contenido de la misma categoría (apartados principales, subapartados, etc.).</p>
 
-      <ul>
-        <li><span class="html-eti">&lt;h1&gt;</span> se suele reservar para el título principal del documento (no confundir con la etiqueta <span class="html-eti">&lt;title&gt;</span>, que corresponde al texto de la pestaña del navegador en la que se muestra la página),</li>
-        <li><span class="html-eti">&lt;h2&gt;</span> para los títulos de los apartados del documento,</li>
-        <li><span class="html-eti">&lt;h3&gt;</span> para los subapartados de cada apartado,</li> <li>y así sucesivamente.</li>
-      </ul>
+    <ul>
+      <li><span class="html-eti">&lt;h1></span> se suele reservar para el título principal del documento (no confundir con la etiqueta <span class="html-eti">&lt;title></span>, que corresponde al texto de la pestaña del navegador en la que se muestra la página),</li>
+      <li><span class="html-eti">&lt;h2></span> para los títulos de los apartados del documento,</li>
+      <li><span class="html-eti">&lt;h3></span> para los subapartados de cada apartado,</li>
+      <li>y así sucesivamente.</li>
+    </ul>
 
-      <p>Como se explica con más detalle en la <a href="html_esquema.html">lección sobre el esquema (outline) de una página web</a>, los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> definen de forma implícita secciones anidadas en el esquema (outline) de la página web, como muestra el ejemplo siguiente, en el que las secciones implícitas están marcadas con un trazo discontínuo.</p>
+    <p>Como se explica con más detalle en la <a href="html_esquema.html">lección sobre el esquema (outline) de una página web</a>, los títulos <span class="html-eti">&lt;h1></span>, ..., <span class="html-eti">&lt;h6></span> definen de forma implícita secciones anidadas en el esquema (outline) de la página web, como muestra el ejemplo siguiente, en el que las secciones implícitas están marcadas con un trazo discontínuo.</p>
 
-      <p><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-              width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1040"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1040" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="40" y="40" width="1840" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="40" y="40" width="1840" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="60" y="100" font-family="sans-serif" font-size="50">h1</text>
 
-        <rect x="60" y="140" width="1800" height="420"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="60" y="140" width="1800" height="420" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="80" y="160" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="80" y="160" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="100" y="220" font-family="sans-serif" font-size="50">h2</text>
 
-        <rect x="100" y="260" width="1720" height="130"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="100" y="260" width="1720" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="120" y="280" width="1680" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="120" y="280" width="1680" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="340" font-family="sans-serif" font-size="50">h3</text>
 
 
-        <rect x="60" y="600" width="1800" height="420"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="60" y="600" width="1800" height="420" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="80" y="620" width="1760" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="80" y="620" width="1760" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="100" y="680" font-family="sans-serif" font-size="50">h2</text>
 
-        <rect x="100" y="720" width="1720" height="130"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="100" y="720" width="1720" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="120" y="740" width="1680" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="120" y="740" width="1680" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="800" font-family="sans-serif" font-size="50">h3</text>
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>Pero como las etiquetas de secciones <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> también crean secciones en el esquema de la página web, las etiquetas de título se deben interpretar teniendo en cuenta la sección en que están incluidas. Así, el documento siguiente sería equivalente al anterior.</p>
+    <p>Pero como las etiquetas de secciones <span class="html-eti">&lt;article></span>, <span class="html-eti">&lt;section></span>, <span class="html-eti">&lt;nav></span> y <span class="html-eti">&lt;aside></span> también crean secciones en el esquema de la página web, las etiquetas de título se deben interpretar teniendo en cuenta la sección en que están incluidas. Así, el documento siguiente sería equivalente al anterior.</p>
 
-      <p><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-              width="570" viewBox="0 0 1920 1240" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1200"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" viewBox="0 0 1920 1240" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="1200" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="40" y="40" width="1840" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="40" y="40" width="1840" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="60" y="100" font-family="sans-serif" font-size="50">h1</text>
 
-        <rect x="60" y="140" width="1800" height="500"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="60" y="140" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
         <text x="80" y="200" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="220" width="1740" height="390"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-        <rect x="120" y="240" width="1700" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="220" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="120" y="240" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="300" font-family="sans-serif" font-size="50">h1</text>
 
-        <rect x="120" y="340" width="1700" height="240"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="120" y="340" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="400" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="140" y="420" width="1660" height="130"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="140" y="420" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="160" y="440" width="1620" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="160" y="440" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="180" y="500" font-family="sans-serif" font-size="50">h4</text>
 
-        <rect x="60" y="680" width="1800" height="500"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="60" y="680" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
         <text x="80" y="740" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="100" y="760" width="1740" height="390"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-        <rect x="120" y="780" width="1700" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="100" y="760" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="120" y="780" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="840" font-family="sans-serif" font-size="50">h6</text>
 
-        <rect x="120" y="880" width="1700" height="240"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="120" y="880" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
         <text x="140" y="940" font-family="sans-serif" font-size="50">section</text>
 
-        <rect x="140" y="960" width="1660" height="130"
-              fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
+        <rect x="140" y="960" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
 
-        <rect x="160" y="980" width="1620" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="160" y="980" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="180" y="1040" font-family="sans-serif" font-size="50">h1</text>
-        </svg></p>
+      </svg>
+    </p>
 
-      <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Actualmente (noviembre de 2016) ningún navegador ha incluido algoritmos para analizar el esquema (outline) de una página web, aunque el validador del W3C sí que lo hace. Por ello, la recomendación HTML 5.1 (publicada en noviembre de 2016) aconseja a los autores de páginas web seguir indicando la estructura de la página mediante las etiquetas de título <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> (véase el <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#creating-an-outline">aviso en la propia recomendación</a>).</p>
-    </section>
+    <p><img src="../varios/iconos/icono_warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48" />Actualmente (septiembre de 2017) ningún navegador ha incluido algoritmos para analizar el esquema (outline) de una página web, aunque el validador del W3C sí que lo hace. Por ello, la recomendación HTML 5.1 (publicada en noviembre de 2016) aconseja a los autores de páginas web seguir indicando la estructura de la página mediante las etiquetas de título <span class="html-eti">&lt;h1></span>, ..., <span class="html-eti">&lt;h6></span> (véase el <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#creating-an-outline">aviso en la propia recomendación</a>).</p>
+  </section>
 
-    <section id="etiqueta-aside">
-      <h2 class="con-aside">Lateral: <span class="html-eti">&lt;aside&gt;</span></h2>
+  <section id="etiqueta-aside">
+    <h2 class="con-aside">Lateral: <span class="html-eti">&lt;aside></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;aside&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-aside-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;aside></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-aside-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;aside&gt;</span> está pensada para agrupar contenido secundario y tangencial al contenido al que acompaña (por ejemplo, un bloque de anuncios, un grupo de enlaces externos relacionados, una cita del texto). Normalmente se suele mostrar en los lados del documento.</p>
+    <p>La etiqueta <span class="html-eti">&lt;aside></span> está pensada para agrupar contenido secundario y tangencial al contenido al que acompaña (por ejemplo, un bloque de anuncios, un grupo de enlaces externos relacionados, una cita del texto). Normalmente se suele mostrar en los lados del documento.</p>
 
-      <p>El elemento <span class="html-eti">&lt;aside&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que se trata de contenido secundario con respecto a la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span> o <span class="html-eti">&lt;section&gt;</span> y entonces se entiende que se rata de contenido secundario  con respecto al elemento que lo contiene.</p>
+    <p>El elemento <span class="html-eti">&lt;aside></span> puede estar incluido en <span class="html-eti">&lt;body></span> y entonces se entiende que se trata de contenido secundario con respecto a la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article></span> o <span class="html-eti">&lt;section></span> y entonces se entiende que se rata de contenido secundario con respecto al elemento que lo contiene.</p>
 
-      <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;aside&gt;</span>:</p>
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;aside></span>:</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="150"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="20" y="190" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="290" y="190" width="1340" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="330" y="270" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="1340" y="290" width="250" height="260"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1340" y="290" width="250" height="260" fill="gold" stroke="black" stroke-width="3" />
         <text x="1360" y="350" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="330" y="590" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="1340" y="610" width="250" height="260"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1340" y="610" width="250" height="260" fill="gold" stroke="black" stroke-width="3" />
         <text x="1360" y="670" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="1650" y="190" width="250" height="710"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1650" y="190" width="250" height="710" fill="gold" stroke="black" stroke-width="3" />
         <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="20" y="920" width="1880" height="150"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="920" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
-        </svg></p>
-    </section>
+      </svg>
+    </p>
+  </section>
 
-    <section id="etiqueta-footer">
-      <h2 class="con-aside">Pie: <span class="html-eti">&lt;footer&gt;</span></h2>
+  <section id="etiqueta-footer">
+    <h2 class="con-aside">Pie: <span class="html-eti">&lt;footer></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;footer&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-footer-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;footer></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-footer-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;footer&gt;</span> está pensada para contener información general sobre el documento, información que se suele poner al final del documento: autor, direcciones de contacto, licencia o condiciones de uso, enlaces a otros documentos relacionados, etc.</p>
+    <p>La etiqueta <span class="html-eti">&lt;footer></span> está pensada para contener información general sobre el documento, información que se suele poner al final del documento: autor, direcciones de contacto, licencia o condiciones de uso, enlaces a otros documentos relacionados, etc.</p>
 
-      <p>El elemento <span class="html-eti">&lt;footer&gt;</span> puede estar incluido en <span class="html-eti">&lt;body&gt;</span> y entonces se entiende que es el pie de página de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> y entonces se entiende que es el pie de página del elemento que lo contiene.</p>
+    <p>El elemento <span class="html-eti">&lt;footer></span> puede estar incluido en <span class="html-eti">&lt;body></span> y entonces se entiende que es el pie de página de la página en su conjunto, pero también se puede incluir en <span class="html-eti">&lt;article></span>, <span class="html-eti">&lt;section></span>, <span class="html-eti">&lt;nav></span> y <span class="html-eti">&lt;aside></span> y entonces se entiende que es el pie de página del elemento que lo contiene.</p>
 
-      <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;footer&gt;</span>:</p>
+    <p>La imagen siguiente muestra una página con varios elementos <span class="html-eti">&lt;footer></span>:</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="150"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="150" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="20" y="190" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="250" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="60" y="270" width="190" height="120"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="60" y="270" width="190" height="120" fill="white" stroke="black" stroke-width="3" />
         <text x="80" y="330" font-family="sans-serif" font-size="50">header</text>
 
         <circle cx="100" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="140" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="180" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="60" y="760" width="190" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="760" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="820" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="290" y="190" width="1340" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="290" y="190" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="310" y="250" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="330" y="270" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="270" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="320" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="370" y="350" width="1220" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="370" y="350" width="1220" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="390" y="410" font-family="sans-serif" font-size="50">header</text>
 
         <circle cx="900" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="460" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="370" y="480" width="1220" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="370" y="480" width="1220" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="390" y="540" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="330" y="590" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="590" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="650" font-family="sans-serif" font-size="50">article</text>
 
-        <rect x="370" y="670" width="1220" height="80"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="370" y="670" width="1220" height="80" fill="white" stroke="black" stroke-width="3" />
         <text x="390" y="730" font-family="sans-serif" font-size="50">header</text>
 
         <circle cx="900" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="780" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="370" y="800" width="1220" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="370" y="800" width="1220" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="390" y="860" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="1650" y="190" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="1650" y="190" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="1670" y="250" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="1690" y="270" width="190" height="120"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="1690" y="270" width="190" height="120" fill="white" stroke="black" stroke-width="3" />
         <text x="1710" y="330" font-family="sans-serif" font-size="50">header</text>
 
         <circle cx="1730" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="1770" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="1810" cy="600" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="1690" y="760" width="190" height="120"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="1690" y="760" width="190" height="120" fill="gold" stroke="black" stroke-width="3" />
         <text x="1710" y="820" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="20" y="920" width="1880" height="150"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="20" y="920" width="1880" height="150" fill="gold" stroke="black" stroke-width="3" />
         <text x="40" y="980" font-family="sans-serif" font-size="50">footer</text>
-        </svg></p>
-    </section>
+      </svg>
+    </p>
+  </section>
 
-    <section id="etiqueta-address">
-      <h2 class="con-aside">Dirección <span class="html-eti">&lt;address&gt;</span></h2>
+  <section id="etiqueta-address">
+    <h2 class="con-aside">Dirección <span class="html-eti">&lt;address></span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;address&gt;</span><br />
-          <a href="https://www.w3.org/TR/2016/REC-html51-20161101/sections.html#the-address-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;address></span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/sections.html#the-address-element"><img src="../varios/iconos/icono_html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La etiqueta <span class="html-eti">&lt;address&gt;</span> está pensada para contener información de contacto del autor de la información. Normalmente se incluye en el pie de página <span class="html-eti">&lt;footer&gt;</span> general de <span class="html-eti">&lt;body&gt;</span> o en el pie de página <span class="html-eti">&lt;footer&gt;</span> de un <span class="html-eti">&lt;article&gt;</span>.</p>
+    <p>La etiqueta <span class="html-eti">&lt;address></span> está pensada para contener información de contacto del autor de la información (dirección de correo, teléfono, etc.), pero no otro tipo de información. Normalmente se incluye en el pie de página <span class="html-eti">&lt;footer></span> general de <span class="html-eti">&lt;body></span> o en el pie de página <span class="html-eti">&lt;footer></span> de un <span class="html-eti">&lt;article></span>.</p>
 
-      <p> <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="130"
-              fill="white" stroke="black" stroke-width="3" />
+    <p>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
+        <rect x="20" y="20" width="1880" height="130" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="80" font-family="sans-serif" font-size="50">header</text>
 
-        <rect x="20" y="170" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="170" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="230" font-family="sans-serif" font-size="50">nav</text>
 
-        <rect x="290" y="170" width="1340" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="290" y="170" width="1340" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="310" y="230" font-family="sans-serif" font-size="50">main</text>
 
-        <rect x="330" y="250" width="1280" height="290"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="250" width="1280" height="290" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="300" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="300" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="300" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="300" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="370" y="340" width="1220" height="180"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="370" y="340" width="1220" height="180" fill="white" stroke="black" stroke-width="3" />
         <text x="390" y="400" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="410" y="420" width="1160" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="410" y="420" width="1160" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="430" y="480" font-family="sans-serif" font-size="50">address</text>
 
-        <rect x="330" y="560" width="1280" height="300"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="330" y="560" width="1280" height="300" fill="white" stroke="black" stroke-width="3" />
         <text x="350" y="620" font-family="sans-serif" font-size="50">article</text>
 
         <circle cx="900" cy="620" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="940" cy="620" r="8" stroke-width="4" stroke="black" fill="white" />
         <circle cx="980" cy="620" r="8" stroke-width="4" stroke="black" fill="white" />
 
-        <rect x="370" y="660" width="1220" height="180"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="370" y="660" width="1220" height="180" fill="white" stroke="black" stroke-width="3" />
         <text x="390" y="720" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="410" y="740" width="1160" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="410" y="740" width="1160" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="430" y="800" font-family="sans-serif" font-size="50">address</text>
 
-        <rect x="1650" y="170" width="250" height="710"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="1650" y="170" width="250" height="710" fill="white" stroke="black" stroke-width="3" />
         <text x="1670" y="230" font-family="sans-serif" font-size="50">aside</text>
 
-        <rect x="20" y="900" width="1880" height="170"
-              fill="white" stroke="black" stroke-width="3" />
+        <rect x="20" y="900" width="1880" height="170" fill="white" stroke="black" stroke-width="3" />
         <text x="40" y="960" font-family="sans-serif" font-size="50">footer</text>
 
-        <rect x="60" y="980" width="1820" height="80"
-              fill="gold" stroke="black" stroke-width="3" />
+        <rect x="60" y="980" width="1820" height="80" fill="gold" stroke="black" stroke-width="3" />
         <text x="80" y="1040" font-family="sans-serif" font-size="50">address</text>
-        </svg></p>
+      </svg>
+    </p>
 
-      <p>La hoja de estilo por omisión de los navegadores suele mostrar el bloque de dirección <span class="html-eti">&lt;address&gt;</span> en cursiva.</p>
+    <p>La hoja de estilo por omisión de los navegadores suele mostrar el bloque de dirección <span class="html-eti">&lt;address></span> en cursiva.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;address&gt;Autor: Bartolomé Sintes Marco&lt;br /&gt;
-Última modificación: 21 de noviembre de 2015&lt;/address&gt;</code>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;footer>
+  &lt;address>Autor: Bartolomé Sintes Marco&lt;br />
+    correo: bartolome.sintes@example.com
+  &lt;/address>
+
+  &lt;p>Última modificación: 3 de octubre de 2017&lt;/p>
+&lt;/footer></code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/secciones/address-1.html" style="width:100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/secciones/address-1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/secciones/address-1.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/secciones/address-1.html"><img src="../varios/iconos/icono_enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 16 de noviembre de 2016</p>
+  <footer>
+      <p class="ultmod">Última modificación de esta página: 3 de octubre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
         que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
-  </body>
+</body>
 </html>
