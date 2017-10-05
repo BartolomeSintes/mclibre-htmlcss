@@ -359,9 +359,11 @@
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot"><img src="../varios/iconos/icono_mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
       </aside>
 
-      <p>El cuerpo de tabla (<span class="html-eti">&lt;tbody&gt;</span>) es obligatorio y puede haber tantos como se quiera.</p>
+      <p>Los elementos <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> y <span class="html-eti">&lt;tfoot&gt;</span> abarcan una o varias filas seguidas para formar un grupo de filas. Un grupo de filas puede ser una cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>), un pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) o formar parte del contenido de la tabla (<span class="html-eti">&lt;tbody&gt;</span>)</p>
 
-      <p>Tanto a cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>) como el pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) son opcionales y sólo puede haber uno de cada por tabla. En el código fuente, la etiqueta <span class="html-eti">&lt;tfoot&gt;</span> se encuentra situada antes del primer <span class="html-eti">&lt;tbody&gt;</span>, aunque los navegadores la muestran al final de la tabla.</p>
+      <p>En una tabla puede haber uno o varios <span class="html-eti">&lt;tbody&gt;</span>, pero tanto la cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>) como el pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) son opcionales y sólo puede haber uno de cada en una tabla.</p>
+
+      <p>Si una tabla contiene <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>, también debe contener <span class="html-eti">&lt;tbody&gt;</span>.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -375,13 +377,6 @@
       &lt;td&gt;celda 2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;th&gt;tfoot&lt;/th&gt;
-      &lt;td&gt;celda 1&lt;/td&gt;
-      &lt;td&gt;celda 2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;th&gt;tbody&lt;/th&gt;
@@ -389,6 +384,13 @@
       &lt;td&gt;celda 2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;tfoot&lt;/th&gt;
+      &lt;td&gt;celda 1&lt;/td&gt;
+      &lt;td&gt;celda 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
 &lt;/table&gt;</code>
 </pre>
         </div>
@@ -402,13 +404,6 @@
                 <td>celda 2</td>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <th>tfoot</th>
-                <td>celda 1</td>
-                <td>celda 2</td>
-              </tr>
-            </tfoot>
             <tbody>
               <tr>
                 <th>tbody</th>
@@ -416,6 +411,13 @@
                 <td>celda 2</td>
               </tr>
             </tbody>
+            <tfoot>
+              <tr>
+                <th>tfoot</th>
+                <td>celda 1</td>
+                <td>celda 2</td>
+              </tr>
+            </tfoot>
           </table>
         </div>
       </div>
@@ -543,7 +545,7 @@
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 25 de septiembre de 2017</p>
+      <p class="ultmod">Última modificación de esta página: 5 de octubre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
