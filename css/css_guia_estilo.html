@@ -1,97 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Guía de estilo de las hojas de estilo. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Guía de estilo de las hojas de estilo. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>Guía de estilo de las hojas de estilo</h1>
+<body>
+  <h1>Guía de estilo de las hojas de estilo</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono_html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono_arrow_circle_up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Guía de estilo para CSS</h2>
+    <div class="toc">
+      <h2>Guía de estilo para CSS</h2>
 
-        <ul>
-          <li><a href="#que-es">Qué es una guía de estilo</a></li>
-          <li><a href="#juego-caracteres">Juego de caracteres</a></li>
-          <li><a href="#tabuladores">Tabuladores</a></li>
-          <li><a href="#espacios">Saltos de línea y espacios</a></li>
-          <li><a href="#orden-sentencias">Orden sentencias</a></li>
-          <li><a href="#orden-propiedades">Orden propiedades</a></li>
-          <li><a href="#nombres-clases">Nombres de las clases</a></li>
-          <li><a href="#orden-clases">Orden clases</a></li>
-          <li><a href="#clases-id">Clases o id</a></li>
-          <li><a href="#numero-clases">Número de clases</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#que-es">Qué es una guía de estilo</a></li>
+        <li><a href="#juego-caracteres">Juego de caracteres</a></li>
+        <li><a href="#tabuladores">Tabuladores</a></li>
+        <li><a href="#espacios">Saltos de línea y espacios</a></li>
+        <li><a href="#orden-sentencias">Orden sentencias</a></li>
+        <li><a href="#orden-propiedades">Orden propiedades</a></li>
+        <li><a href="#nombres-clases">Nombres de las clases</a></li>
+        <li><a href="#orden-clases">Orden clases</a></li>
+        <li><a href="#clases-id">Clases o id</a></li>
+        <li><a href="#numero-clases">Número de clases</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="que-es">
-      <h2>Qué es una guía de estilo</h2>
+  <section id="que-es">
+    <h2>Qué es una guía de estilo</h2>
 
-      <p>Una hoja de estilo se puede escribir de muchas maneras distintas y dar el mismo resultado.</p>
+    <p>Una hoja de estilo se puede escribir de muchas maneras distintas y dar el mismo resultado.</p>
 
-      <p>Hay muchos aspectos que se pueden hacer de varias maneras (los espacios en blanco utilizados, los saltos de línea, el orden en que se escriben las propiedades, el orden en que se escriben las sentencias, etc.) y no se puede decir de forma objetiva que una manera esté bien y otra esté mal. Por ejemplo, los dos siguientes ejemplos son completamente equivalentes para los navegadores:</p>
+    <p>Hay muchos aspectos que se pueden hacer de varias maneras (los espacios en blanco utilizados, los saltos de línea, el orden en que se escriben las propiedades, el orden en que se escriben las sentencias, etc.) y no se puede decir de forma objetiva que una manera esté bien y otra esté mal. Por ejemplo, los dos siguientes ejemplos son completamente equivalentes para los navegadores:</p>
 
-      <div class="codigo">
-        <pre><code class="language-css">h1{color:white;background-color:black<strong>;</strong>}</code></pre>
-      </div>
+    <div class="codigo">
+      <pre><code class="language-css">h1{color:white;background-color:black<strong>;</strong>}</code></pre>
+    </div>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-css">h1 <br />   {<br />     color : white ;
      background-color : black <strong>;</strong>
    }</code>
 </pre>
-      </div>
+    </div>
 
-      <p>Lo importante al escribir una hoja de estilo es seguir siempre los mismos criterios, para que sea más fácil detectar errores o reutilizar las hojas de estilo en nuevos proyectos. Pero la diversidad de casos posibles hace que cada regla tenga excepciones.</p>
+    <p>Lo importante al escribir una hoja de estilo es seguir siempre los mismos criterios, para que sea más fácil detectar errores o reutilizar las hojas de estilo en nuevos proyectos. Pero la diversidad de casos posibles hace que cada regla tenga excepciones.</p>
 
-      <p>En estos apuntes, tanto en los ejemplos como en los ejercicios, se sigue una serie de criterios que se detallan a continuación. En la mayoría de casos se trata de criterios bastante extendidos, por lo que se recomienda al alumno seguirlos al realizar los ejercicios.</p>
-    </section>
+    <p>En estos apuntes, tanto en los ejemplos como en los ejercicios, se sigue una serie de criterios que se detallan a continuación. En la mayoría de casos se trata de criterios bastante extendidos, por lo que se recomienda al alumno seguirlos al realizar los ejercicios.</p>
+  </section>
 
-    <section id="juego-caracteres">
-      <h2>Juego de caracteres</h2>
+  <section id="juego-caracteres">
+    <h2>Juego de caracteres</h2>
 
-      <p>Se recomienda utilizar únicamente caracteres "ingleses" en las hojas de estilo. Por ejemplo, se recomienda no utilizar acentos, ñ, ç, etc. en los nombres de las clases o ids.</p>
-    </section>
+    <p>Se recomienda que las hojas de estilo se guarden en el juego de caracteres UTF-8. Es conveniente también que las hojas de estilo comiencen con la regla-arroba que lo indique:</p>
 
-    <section id="tabuladores">
-      <h2>Tabuladores</h2>
+    <div class="codigo">
+      <pre><code class="language-css">@charset "utf-8";</code></pre>
+    </div>
 
-      <p>Se recomienda no usar tabuladores. Cuando se quiera tabular una línea, se recomienda usar un par de espacios en blanco.</p>
-    </section>
+    <p>De todas formas, se recomienda utilizar únicamente caracteres "ingleses" en las hojas de estilo. Es decir, se recomienda no utilizar acentos, ñ, ç, etc. en los nombres de las clases o ids. La única excepción admisible sería el uso de caracteres "no ingleses" en los comentarios</p>
 
-    <section id="espacios">
-      <h2>Saltos de línea y espacios en blanco</h2>
+    <p><strong>Nota</strong>: Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8, como se comenta en la <a href="../otros/diferencias_listado.html#css-utf">lección de diferencias entre navegadores</a>.</p>
+  </section>
 
-      <p>Se recomienda escribir las sentencias de la siguiente manera:</p>
+  <section id="tabuladores">
+    <h2>Tabuladores</h2>
 
-      <ul>
-        <li>Escribir el selector y la llave de apertura en las misma línea, sin sangrar.</li>
-        <li>Dejar un espacio en blanco entre el selector y la llave.</li>
-        <li>Escribir cada propiedad en una línea, sangrando cada línea con dos espacios en blanco y completando la línea con un punto y coma.</li>
-        <li>No escribir espacios antes de los dos puntos que separan la propiedad y su valor. Escribir un espacio tras los dos puntos.</li>
-        <li>No escribir espacios en blanco antes del punto y coma final de cada línea de propiedad</li>
-        <li>Escrir la llave de cierre en un línea, sin sangrar. En esa línea sólo estará la llave de cierre.</li>
-        <li>Dejar una línea en blanco entre sentencia y sentencia.</li>
-      </ul>
+    <p>Se recomienda no usar tabuladores. Cuando se quiera tabular una línea, se recomienda usar un par de espacios en blanco.</p>
+  </section>
 
-      <div class="codigo">
-        <pre>
+  <section id="espacios">
+    <h2>Saltos de línea y espacios en blanco</h2>
+
+    <p>Se recomienda escribir las sentencias de la siguiente manera:</p>
+
+    <ul>
+      <li>Escribir el selector y la llave de apertura en las misma línea, sin sangrar.</li>
+      <li>Dejar un espacio en blanco entre el selector y la llave.</li>
+      <li>Escribir cada propiedad en una línea, sangrando cada línea con dos espacios en blanco y completando la línea con un punto y coma.</li>
+      <li>No escribir espacios antes de los dos puntos que separan la propiedad y su valor. Escribir un espacio tras los dos puntos.</li>
+      <li>No escribir espacios en blanco antes del punto y coma final de cada línea de propiedad</li>
+      <li>Escrir la llave de cierre en un línea, sin sangrar. En esa línea sólo estará la llave de cierre.</li>
+      <li>Dejar una línea en blanco entre sentencia y sentencia.</li>
+    </ul>
+
+    <div class="codigo">
+      <pre>
 <code class="language-css">h1 {
   background-color: black<strong>;</strong>
   color: white;
@@ -101,18 +109,18 @@ p {
   text-indent: 3em;
 }</code>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="orden-sentencias">
-      <h2>Orden de las sentencias en la hoja de estilo</h2>
+  <section id="orden-sentencias">
+    <h2>Orden de las sentencias en la hoja de estilo</h2>
 
-      <p>Se pueden utilizar dos criterios:</p>
-      <ol>
-        <li>Escribir las sentencias en el orden en que aparecen los elementos en la página web. Este criterio se suele utilizar cuando una hoja de estilo se va a aplicar a una sola página, lo que será habitual en este curso, en que cada ejercicio tiene su propia página web.
+    <p>Se pueden utilizar dos criterios:</p>
+    <ol>
+      <li>Escribir las sentencias en el orden en que aparecen los elementos en la página web. Este criterio se suele utilizar cuando una hoja de estilo se va a aplicar a una sola página, lo que será habitual en este curso, en que cada ejercicio tiene su propia página web.
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-css">html {
   /* ... */
 }
@@ -125,12 +133,12 @@ h1 {
   /* ... */
 }</code>
 </pre>
-          </div>
-        </li>
-        <li>Agrupar las sentencias por categorías. Por ejemplo, escribir primero las relativas a los bloques y después las relativas a elementos en línea. Dentro de cada categoría se pueden escribir las sentencias por orden alfabético o por el orden en que suelen aparecer en la página. Este criterio se suele utilizar cuando una hoja de estilo se va a aplicar a muchas páginas distintas, lo que suele ser habitual en sitios web reales.
+        </div>
+      </li>
+      <li>Agrupar las sentencias por categorías. Por ejemplo, escribir primero las relativas a los bloques y después las relativas a elementos en línea. Dentro de cada categoría se pueden escribir las sentencias por orden alfabético o por el orden en que suelen aparecer en la página. Este criterio se suele utilizar cuando una hoja de estilo se va a aplicar a muchas páginas distintas, lo que suele ser habitual en sitios web reales.
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-css">h1 {
   /* ... */
 }
@@ -151,48 +159,48 @@ strong {
   /* ... */
 }</code>
 </pre>
-          </div>
-        </li>
-      </ol>
-    </section>
+        </div>
+      </li>
+    </ol>
+  </section>
 
-    <section id="orden-propiedades">
-      <h2>Orden de las propiedades en cada sentencia</h2>
+  <section id="orden-propiedades">
+    <h2>Orden de las propiedades en cada sentencia</h2>
 
-      <p>Las propiedades se escribirán en el siguiente orden:</p>
-      <ul>
-        <li>propiedades relacionadas con el posicionamiento (<span class="css-prop">position</span>, <span class="css-prop">float</span>, <span class="css-prop">clear</span>, <span class="css-prop">width, height, top</span>, <span class="css-prop">right</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span>, <span class="css-prop">overflow</span>, etc.)</li>
-        <li>propiedades relacionadas con el modelo de caja (<span class="css-prop">border</span>, <span class="css-prop">margin</span>, <span class="css-prop">padding</span>, etc.)</li>
-        <li>propiedades relacionadas con el color (<span class="css-prop">background-color</span>, <span class="css-prop">color</span>)</li>
-        <li>resto de propiedades (en orden alfabético)</li>
-      </ul>
+    <p>Las propiedades se escribirán en el siguiente orden:</p>
+    <ul>
+      <li>propiedades relacionadas con el posicionamiento (<span class="css-prop">position</span>, <span class="css-prop">float</span>, <span class="css-prop">clear</span>, <span class="css-prop">width, height, top</span>, <span class="css-prop">right</span>, <span class="css-prop">bottom</span>, <span class="css-prop">left</span>, <span class="css-prop">overflow</span>, etc.)</li>
+      <li>propiedades relacionadas con el modelo de caja (<span class="css-prop">border</span>, <span class="css-prop">margin</span>, <span class="css-prop">padding</span>, etc.)</li>
+      <li>propiedades relacionadas con el color (<span class="css-prop">background-color</span>, <span class="css-prop">color</span>)</li>
+      <li>resto de propiedades (en orden alfabético)</li>
+    </ul>
 
-      <p>Cuando hay varias propiedades que hacen referencia a los lados (por ejemplo, <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span>, <span class="css-prop">margin-left</span>) yo tengo la costumbre de escribirlas en el orden <span class="css-prop">-left</span>, <span class="css-prop">-right</span>, <span class="css-prop">-top</span>, <span class="css-prop">-bottom</span>.</p>
+    <p>Cuando hay varias propiedades que hacen referencia a los lados (por ejemplo, <span class="css-prop">margin-top</span>, <span class="css-prop">margin-right</span>, <span class="css-prop">margin-bottom</span>, <span class="css-prop">margin-left</span>) yo tengo la costumbre de escribirlas en el orden <span class="css-prop">-left</span>, <span class="css-prop">-right</span>, <span class="css-prop">-top</span>, <span class="css-prop">-bottom</span>.</p>
 
-      <p>Yo tengo la costumbre de escribir los valores de la propiedad <span class="css-prop">border</span> en el orden color, grosor, estilo.</p>
-    </section>
+    <p>Yo tengo la costumbre de escribir los valores de la propiedad <span class="css-prop">border</span> en el orden color, grosor, estilo.</p>
+  </section>
 
-    <section id="nombres-clases">
-      <h2>Nombres de las clases</h2>
+  <section id="nombres-clases">
+    <h2>Nombres de las clases</h2>
 
-      <p>Se intentará que los nombres de los clases hagan referencia a categorías más que a aspectos visuales. Por ejemplo, conviene evitar llamar a las clases con nombres de colores (azul, blanco, etc.) porque en una página web real los colores es uno de los elementos que más se suele cambiar con el paso del tiempo.</p>
+    <p>Se intentará que los nombres de los clases hagan referencia a categorías más que a aspectos visuales. Por ejemplo, conviene evitar llamar a las clases con nombres de colores (azul, blanco, etc.) porque en una página web real los colores es uno de los elementos que más se suele cambiar con el paso del tiempo.</p>
 
-      <p>Lógicamente, esta recomendación es más importante en las webs reales que en un curso como este, ya que en las webs reales se modifica a menudo el aspecto visual, mientras que en un curso como este cada ejercicio es independiente y sólo se realiza una vez.</p>
+    <p>Lógicamente, esta recomendación es más importante en las webs reales que en un curso como este, ya que en las webs reales se modifica a menudo el aspecto visual, mientras que en un curso como este cada ejercicio es independiente y sólo se realiza una vez.</p>
 
-      <p>Por otro lado, esta recomendación es una de las más ambiguas y por tanto difíciles de seguir. Por ejemplo, aunque se desaconseje utilizar nombres de colores, sería más admisible definir clases "izquierda" y "derecha" para imágenes flotantes, que también hacen referencia a un aspecto visual. El motivo es que es menos probable que decidamos cambiar a la derecha todas las imágenes flotantes que salían a la izquierda y viceversa, que decidamos cambiar el color de un elemento o cambiar la gama de colores de un sitio web.</p>
+    <p>Por otro lado, esta recomendación es una de las más ambiguas y por tanto difíciles de seguir. Por ejemplo, aunque se desaconseje utilizar nombres de colores, sería más admisible definir clases "izquierda" y "derecha" para imágenes flotantes, que también hacen referencia a un aspecto visual. El motivo es que es menos probable que decidamos cambiar a la derecha todas las imágenes flotantes que salían a la izquierda y viceversa, que decidamos cambiar el color de un elemento o cambiar la gama de colores de un sitio web.</p>
 
-      <p>En los casos en los que no sea fácil nombrar las categorías, se recomienda utilizar nombres genéricos, por ejemplo "color-1", "color-2", "color-3", sería preferible a "azul", "rojo", etc.</p>
+    <p>En los casos en los que no sea fácil nombrar las categorías, se recomienda utilizar nombres genéricos, por ejemplo "color-1", "color-2", "color-3", sería preferible a "azul", "rojo", etc.</p>
 
-      <p>Cuando el nombre de la clase contiene varias palabras o números, separar las palabras con guiones (-): por ejemplo "estilo-1", "fecha-edicion", "autor-libro", etc.</p>
-    </section>
+    <p>Cuando el nombre de la clase contiene varias palabras o números, separar las palabras con guiones (-): por ejemplo "estilo-1", "fecha-edicion", "autor-libro", etc.</p>
+  </section>
 
-    <section id="orden-clases">
-      <h2>Orden de las clases en la hoja de estilo</h2>
+  <section id="orden-clases">
+    <h2>Orden de las clases en la hoja de estilo</h2>
 
-      <p>Si se definen clases, se agruparán todas las sentencias en la primera aparición de la etiqueta (aunque en la página web esas clases aparezcan más tarde).</p>
+    <p>Si se definen clases, se agruparán todas las sentencias en la primera aparición de la etiqueta (aunque en la página web esas clases aparezcan más tarde).</p>
 
-      <div class="codigo">
-        <pre>
+    <div class="codigo">
+      <pre>
 <code class="language-css">h1 {
   /* ... */
 }
@@ -209,38 +217,38 @@ p.errata {
   /* ... */
 }</code>
 </pre>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="clases-id">
-      <h2>Clases o id</h2>
+  <section id="clases-id">
+    <h2>Clases o id</h2>
 
-      <p>Se utilizarán prefentemente clases en vez de id, aunque las clases se vayan a asignar a un único elemento.</p>
+    <p>Se utilizarán prefentemente clases en vez de id, aunque las clases se vayan a asignar a un único elemento.</p>
 
-      <p>Únicamente se aconseja el uso de id cuando asignar la misma clase a varios elementos provoque problemas en la página (por ejemplo, en el caso de posicionamiento absoluto de elementos).</p>
-    </section>
+    <p>Únicamente se aconseja el uso de id cuando asignar la misma clase a varios elementos provoque problemas en la página (por ejemplo, en el caso de posicionamiento absoluto de elementos).</p>
+  </section>
 
-    <section id="numero-clases">
-      <h2>Número de clases</h2>
+  <section id="numero-clases">
+    <h2>Número de clases</h2>
 
-      <p>Cuando un elemento se muestra en una página de N formas distintas, se puede hacer como mínimo de dos maneras:</p>
+    <p>Cuando un elemento se muestra en una página de N formas distintas, se puede hacer como mínimo de dos maneras:</p>
 
-      <ul>
-        <li>definir N clases distintas (una para cada de las formas distintas en que aparece el elemento)</li>
-        <li>definir N-1 clases distintas (una para cada una -menos una- de las formas distintas en que aparece el elemento) y definir la etiqueta sin clase como la forma distinta restante.</li>
-      </ul>
+    <ul>
+      <li>definir N clases distintas (una para cada de las formas distintas en que aparece el elemento)</li>
+      <li>definir N-1 clases distintas (una para cada una -menos una- de las formas distintas en que aparece el elemento) y definir la etiqueta sin clase como la forma distinta restante.</li>
+    </ul>
 
-      <p>Se aconseja utilizar el primer método, es decir, definir tantas clases como tipos de elementos, y reservar la sentencia sin clase para los aspectos comunes a todas las clases.</p>
+    <p>Se aconseja utilizar el primer método, es decir, definir tantas clases como tipos de elementos, y reservar la sentencia sin clase para los aspectos comunes a todas las clases.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Por ejemplo, supongamos que en una página hay tres tipos distintos de párrafos <span class="html-eti">&lt;p&gt;</span> (con tipos de letra o colores distintos, etc.). Podemos hacerlo de dos maneras (se aconseja utilizar la primera):</p>
+    <p>Por ejemplo, supongamos que en una página hay tres tipos distintos de párrafos <span class="html-eti">&lt;p&gt;</span> (con tipos de letra o colores distintos, etc.). Podemos hacerlo de dos maneras (se aconseja utilizar la primera):</p>
 
-      <ul>
-        <li>definir 3 clases distintas de párrafo <span class="html-eti">&lt;p&gt;</span> (una para cada de los tres tipos que hay en la página):
+    <ul>
+      <li>definir 3 clases distintas de párrafo <span class="html-eti">&lt;p&gt;</span> (una para cada de los tres tipos que hay en la página):
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.clase-1 {
   font-family: sans-serif;
 }
@@ -253,12 +261,12 @@ p.clase-3 {
   font-family: monospace;
 }</code>
 </pre>
-          </div>
-        </li>
-        <li>definir sólo 2 clases distintas de párrafo <span class="html-eti">&lt;p&gt;</span> (para dos de los tipos que hay en la página) y definir la etiqueta sin clase para el tercer tipo:
+        </div>
+      </li>
+      <li>definir sólo 2 clases distintas de párrafo <span class="html-eti">&lt;p&gt;</span> (para dos de los tipos que hay en la página) y definir la etiqueta sin clase para el tercer tipo:
 
-          <div class="codigo">
-            <pre>
+        <div class="codigo">
+          <pre>
 <code class="language-css">p {
   font-family: sans-serif;
 }
@@ -271,17 +279,17 @@ p.clase-2 {
   font-family: monospace;
 }</code>
 </pre>
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 18 de noviembre de 2014</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 10 de octubre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono_cc_by_sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
