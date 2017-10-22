@@ -63,7 +63,7 @@ print "<pre>$texto</pre>\n";
 print "<h2>Reglas vacías</h2>\n";
 
 $texto = "@charset \"utf-8\";
-@import url(\"mclibre_pie.css\");
+@import url(\"mclibre-pie.css\");
 /* Paginas web HTML / XHTML y hojas de estilo CSS
    Bartolome Sintes Marco
    http://www.mclibre.org
