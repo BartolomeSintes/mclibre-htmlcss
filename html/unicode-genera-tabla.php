@@ -46,7 +46,7 @@
   <body>
     <?php
     // 12 de marzo de 2017
-    include("unicode_array.php");
+    include("unicode-array.php");
 
     function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
       global $caracteres_unicode;

@@ -11,7 +11,7 @@
 
   <body>
 <?php
-    include("entidades_caracter_array.php");
+    include("entidades-caracter-array.php");
 
     print "      <table class=\"mcl-listado franjas\">\n";
     print "        <thead>\n";
