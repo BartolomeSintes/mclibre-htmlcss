@@ -29,6 +29,7 @@
             <li><a href="#identificar-parrafos"><span class="html-eti">&lt;p&gt;</span> consecutivos</a></li>
             <li><a href="#identificar-br">salto de línea <span class="html-eti">&lt;br /&gt;</span></a></li>
             <li><a href="#identificar-texto-en-linea">texto en línea</a></li>
+            <li><a href="#tamano-bloque-en-linea">tamaño bloque/en línea</a></li>
             <li><a href="#distinguir-imagenes-caracteres">imágenes / caracteres</a></li>
             <li><a href="#distinguir-imagenes-fondos">imágenes / fondos</a></li>
             <li><a href="#identificar-imagenes-flotantes">imágenes flotantes</a></li>
@@ -175,6 +176,49 @@ Madrid, 27 de agosto de 1635&lt;/p&gt;</code></pre>
           </tr>
         </tbody>
       </table>
+    </section>
+
+    <section id="tamano-bloque-en-linea">
+      <h3>Tamaño de elementos de bloque y de elementos en línea</h3>
+
+      <p>El tamaño de los elementos de bloque se determina de forma diferente en cada dimensión:</p>
+      <ul>
+        <li>en horizontal, depende del espacio disponible, es decir, el elemento de bloque ocupa todo el espacio disponible.</li>
+        <li>en vertical, depende del contenido del elemento, es decir, el elemento de bloque ocupa el espacio que se necesita para alojar el contenido.</li>
+      </ul>
+
+      <p>El tamaño de los elementos en línea se determina de la misma manera en ambas dimensiones: el elemento ocupa el espacio necesario para alojar el contenido, primero en horizontal y luego en vertical.</p>
+
+      <p>Podemos ver la diferencia en el siguiente ejemplo:</p>
+
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="fondo"&gt;Governments of the Industrial World, you weary giants of flesh and steel, I come from Cyberspace, the new home of Mind. On behalf of the future, I ask you of the past to leave us alone. You are not welcome among us. You have no sovereignty where we gather.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class="fondo"&gt;Davos, Switzerland. February 8, 1996&lt;/span&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">.fondo {
+    background-color: hsl(180, 50%, 80%);
+}</code>
+</pre>
+          </div>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/tamano-bloque-en-linea.html" style="width: 100%; height: 10em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/tamano-bloque-en-linea.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+
+      <p>En el primer párrafo el color de fondo está asignado al elemento de bloque <span class="html-eti">&lt;p&gt;</span>, por eso el color de fondo se extiende de un extremo a otro de la pantalla.</p>
+
+      <p>En el segundo párrafo el color de fondo está asignado al elemento en línea <span class="html-eti">&lt;span&gt;</span>, por eso el color de fondo abarca únicamente los caracteres.
     </section>
 
     <section id="distinguir-imagenes-caracteres">
@@ -882,7 +926,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 2 de noviembre de 2017</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
