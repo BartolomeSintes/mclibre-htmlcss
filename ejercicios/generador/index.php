@@ -5,7 +5,7 @@ include "generador_biblioteca.php";
 <html lang="es">
   <head>
     <meta charset="utf-8" />
-    <title>Generador de ejercicios. Páginas web HTML / XHTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+    <title>Generador de ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
     <link rel="icon" href="../../varios/favicon.ico" />
@@ -112,7 +112,7 @@ include "generador_biblioteca.php";
       <p class="ultmod">Última modificación de esta página: 17 de junio de 2016</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML / XHTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
         que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
     </footer>
   </body>

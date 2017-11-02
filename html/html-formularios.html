@@ -186,15 +186,15 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p>Sexo:
-  &lt;input type="radio" name="hm" value="h" required="required"> Hombre
-  &lt;input type="radio" name="hm" value="m"> Mujer
-&lt;/p>
+<code class="language-html">&lt;p&gt;Sexo:
+  &lt;input type="radio" name="hm" value="h" required="required"&gt; Hombre
+  &lt;input type="radio" name="hm" value="m"&gt; Mujer
+&lt;/p&gt;
 
-&lt;p>Edad:
-  &lt;input type="radio" name="edad" value="menor"> Menor
-  &lt;input type="radio" name="edad" value="adulto" required="required"> Adulto
-&lt;/p>;</code>
+&lt;p&gt;Edad:
+  &lt;input type="radio" name="edad" value="menor"&gt; Menor
+  &lt;input type="radio" name="edad" value="adulto" required="required"&gt; Adulto
+&lt;/p&gt;</code>
   </pre>
         </div>
         <div class="resultado-object">
@@ -255,9 +255,9 @@
           <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
         </div>
         <div class="codigo"><pre>
-<code class="language-html">&lt;p>Usuario: &lt;input type="text" name="usuario" maxlength="6" />&lt;/p>
+<code class="language-html">&lt;p&gt;Usuario: &lt;input type="text" name="usuario" maxlength="6" /&gt;&lt;/p&gt;
 
-&lt;p>Contraseña: &lt;input type="password" name="password" minlength="6" />&lt;/p></code>
+&lt;p&gt;Contraseña: &lt;input type="password" name="password" minlength="6" /&gt;&lt;/p&gt;</code>
 </pre></div>
         <div class="resultado-object">
           <object type="text/html" data="ejemplos/formularios/formularios-minlength-1.html">ERROR (no puede mostrarse el objeto)</object>
@@ -548,12 +548,14 @@
       <section id="control-input-submit-reset">
         <h4>Botones Submit y Reset mediante <span class="html-eti">&lt;input /&gt;</span></h4>
 
-        <p>El botón Submit es el que permite al usuario remitir los datos al servidor. Se crea mediante una etiqueta <span class="html-eti">&lt;input /&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">submit</span>. El texto que se muestra en el botón se define mediante el atributo <span class="html-atri">value</span>.</p>
+        <p>El botón Submit es el que permite al usuario remitir los datos al servidor. Se crea mediante una etiqueta <span class="html-eti">&lt;input /&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">submit</span>.</p>
 
         <div class="filaflex">
           <div class="codigo"><pre><code class="language-html">&lt;input type="submit" value="Submit" /&gt;</code></pre></div>
           <div class="resultado-html"><input type="submit" value="Submit" /></div>
         </div>
+
+        <p>El texto que se muestra en el botón se define mediante el atributo <span class="html-atri">value</span>.</p>
 
         <div class="filaflex">
           <div class="codigo"><pre><code class="language-html">&lt;input type="submit" value="Enviar" /&gt;</code></pre></div>
@@ -562,19 +564,34 @@
 
         <hr class="corta" />
 
-        <p>El botón Reset restablece los valores iniciales del formulario. Se crea mediante una etiqueta <span class="html-eti">&lt;input /&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">reset</span>. El texto que se muestra en el botón se define mediante el atributo <span class="html-atri">value</span>.</p>
+        <p>El botón Reset restablece los valores iniciales del formulario. Se crea mediante una etiqueta <span class="html-eti">&lt;input /&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">reset</span>.</p>
 
         <div class="filaflex">
           <div class="codigo"><pre><code class="language-html">&lt;input type="reset" value="Reset" /&gt;</code></pre></div>
           <div class="resultado-html"><input type="reset" value="Reset" name="Reset" /></div>
         </div>
 
+        <p> El texto que se muestra en el botón se define mediante el atributo <span class="html-atri">value</span>, que sólo puede contener texto, no imágenes.</p>
+
         <div class="filaflex">
           <div class="codigo"><pre><code class="language-html">&lt;input type="reset" value="Borrar todo" /&gt;</code></pre></div>
           <div class="resultado-html"><input type="reset" value="Borrar todo" name="Reset" /></div>
         </div>
 
-        <p>El atributo <span class="html-atri">value</span> sólo puede contener texto, no imágenes.</p>
+        <p>El botón Reset restablece los valores iniciales del formulario.</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="reset" value="Borrar" /&gt;</code>
+</pre></div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/formularios/formularios-reset-1.html" style="width: 100%; height: 11em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/formularios/formularios-reset-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
       </section>
 
       <section id="control-button-submit-reset">
@@ -1650,7 +1667,7 @@
 
     <p>La etiqueta <span class="html-eti">&lt;label&gt;</span> permite asociar un control con un texto, de manera que mejore la accesibilidad de los formularios.</p>
 
-    <p>La asociación entre el control y la etiqueta <span class="html-eti">&lt;label&gt;</span> puede ser implícita o explícita.
+    <p>La asociación entre el control y la etiqueta <span class="html-eti">&lt;label&gt;</span> puede ser implícita o explícita.</p>
 
       <h3>Relación implícita</h3>
 
@@ -1761,11 +1778,11 @@
   </section>
 
   <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
 </body>
 </html>
