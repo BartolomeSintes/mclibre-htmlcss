@@ -1,229 +1,341 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Imágenes. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Imágenes. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>Imágenes</h1>
+<body>
+  <h1>Imágenes</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Imágenes</h2>
-
-        <ul>
-          <li><a href="#img-introduccion">Introducción</a></li>
-          <li><a href="#img-formatos">Formatos de imágenes</a></li>
-          <li><a href="#img-img">Etiqueta <span class="html-eti">&lt;img /&gt;</span></a>
-            <ul>
-              <li><a href="#img-atributos-src"><span class="html-atri">src</span></a></li>
-              <li><a href="#img-atributos-alt"><span class="html-atri">alt</span></a></li>
-              <li><a href="#img-atributos-title"><span class="html-atri">title</span></a></li>
-              <li><a href="#img-atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#img-svg">Etiqueta <span class="html-eti">&lt;svg /&gt;</span></a></li>
-          <li><a href="#img-flotantes">Imágenes flotantes</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <section id="img-introduccion">
-      <h2>Introducción: imágenes de mapa de bits e imágenes vectoriales</h2>
-
-      <p>En informática se distinguen dos tipos de imágenes:</p>
+    <div class="toc">
+      <h2>Imágenes</h2>
 
       <ul>
-        <li>Imágenes de mapa de bits</li>
-        <li>Imágenes vectoriales</li>
+        <li><a href="#img-introduccion">Introducción</a></li>
+        <li><a href="#img-formatos">Formatos de imágenes</a></li>
+        <li><a href="#img-img">Etiqueta <span class="html-eti">&lt;img /&gt;</span></a>
+          <ul>
+            <li><a href="#img-atributos-src"><span class="html-atri">src</span></a></li>
+            <li><a href="#img-atributos-alt"><span class="html-atri">alt</span></a></li>
+            <li><a href="#img-atributos-title"><span class="html-atri">title</span></a></li>
+            <li><a href="#img-atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#img-svg">Etiqueta <span class="html-eti">&lt;svg /&gt;</span></a></li>
+        <li><a href="#img-flotantes">Imágenes flotantes</a></li>
       </ul>
+    </div>
+  </nav>
 
-      <p>Las imágenes de mapa de bits están formadas por puntos de colores, mientras que las imágenes vectoriales están formadas por formas geométricas. Cada formato tiene sus ventajas e inconvenientes:</p>
-      <ul>
-        <li>Las imágenes vectoriales tienen la ventaja de que ocupan poco espacio y se pueden ampliar a cualquier escala sin pérdida de calidad. Su inconveniente es que no permiten representar imágenes sin formas definidas, como ocurre en las fotografías.</li>
-        <li>Las imágenes de mapa de bits permiten representar imágenes sin formas definidas, pero a cambio pierden calidad al ampliarlas y ocupan mucho espacio en disco. Para reducir el tamaño de las imágenes de mapa de bits se utilizan diferentes algoritmos de compresión y por ello existen numerosos formatos de mapa de bits. Cada formato está optimizado para un determinado tipo de imagen (número de colores y degradados).</li>
-      </ul>
+  <section id="img-introduccion">
+    <h2>Introducción: imágenes de mapa de bits e imágenes vectoriales</h2>
+
+    <p>En informática se distinguen dos tipos de imágenes:</p>
+
+    <ul>
+      <li>Imágenes de mapa de bits</li>
+      <li>Imágenes vectoriales</li>
+    </ul>
+
+    <p>Las imágenes de mapa de bits están formadas por puntos de colores, mientras que las imágenes vectoriales están formadas por formas geométricas. Cada formato tiene sus ventajas e inconvenientes:</p>
+    <ul>
+      <li>Las imágenes vectoriales tienen la ventaja de que ocupan poco espacio y se pueden ampliar a cualquier escala sin pérdida de calidad. Su inconveniente es que no permiten representar imágenes sin formas definidas, como ocurre en las fotografías.</li>
+      <li>Las imágenes de mapa de bits permiten representar imágenes sin formas definidas, pero a cambio pierden calidad al ampliarlas y ocupan mucho espacio en disco. Para reducir el tamaño de las imágenes de mapa de bits se utilizan diferentes algoritmos de compresión y por ello existen numerosos formatos de mapa de bits. Cada formato está optimizado para un determinado tipo de imagen (número de colores y degradados).</li>
+    </ul>
+  </section>
+
+  <section id="img-formatos">
+    <h2>Formatos de imágenes</h2>
+
+    <p>El formato de imágenes vectoriales más utilizado es <a href="#img-formatos-svg">SVG</a>.</p>
+
+    <p>Existen numeros formatos de mapa de bits, enfocados a diferentes tipos de imagen:</p>
+
+    <ul>
+      <li>para imágenes fotográficas (muchos colores), el formato más extendido es <a href="#img-formatos-jpg">JPEG</a></li>
+      <li>para dibujos (pocos colores, formas bien definidas) los formatos más extendidos son <a href="#img-formatos-gif">GIF</a> y <a href="#img-formatos-png">PNG</a></li>
+      <li>para dibujos con animación, el formato más extendido ha sido siempre el <a href="#img-formatos-gif">GIF animado</a>, aunque posiblemente a medio plazo vaya creciendo el uso de <a href="#img-formatos-apng">APNG</a></li>
+      <li>para dibujos sin compresión, el formato más extendido es <a href="#img-formatos-bmp">BMP</a> de Windows, pero apenas se utiliza, ni se recomienda hacerlo, ya que los archivos son muy grandes</li>
+    </ul>
+
+    <p>En los últimos años se han desarrollado otros formatos de mapa de bits que mejoran los formatos anteriores, pero que todavía no cuentan con el consenso necesario para sustituirlos. Por ejemplo, <a href="https://en.wikipedia.org/wiki/JPEG_XR">JPEG XR</a> de Microsoft, <a href="https://en.wikipedia.org/wiki/WebP">WebP</a> de Google <a href="http://caniuse.com/#feat=webp"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>, <a href="https://en.wikipedia.org/wiki/Better_Portable_Graphics">BPG</a> de Fabrice Bellard (<a href="https://lwn.net/Articles/625535/">artículo en lwn.net de diciembre de 2014</a>), etc.</p>
+
+    <p>En su momento se desarrollaron otros formatos de mapa de bits que no han tenido ningún éxito, por ejemplo, <a href="#img-formatos-mng">MNG</a>. El formato <a href="#img-formatos-apng">APNG</a> para imágenes animadas también parecía haber fracasado, pero su inclusión en Safari y Chrome en 2017 puede cambiar su suerte.</p>
+
+    <section id="img-formatos-svg">
+      <h3>SVG</h3>
+
+      <p>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables) es un lenguaje de marcas creado por el W3C y dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
+
+      <p>En la <a href="../otros/historia.html#svg">lección sobre Historia de la Web</a>) se comentan las recomendaciones de SVG publicadas o en preparación por el W3C.</p>
+
+      <p>En un gráfico vectorial, los elementos de la imagen están definidos como formas elementales (líneas, rectángulos, círculos, curvas, polígonos, etc.), definidas mediante etiquetas simlares a las del HTML. Por ello SVG no es un formato adecuada para fotografías, pero es idóneo para cualquier tipo de dibujo, técnico o artístico.</p>
+
+      <p>Un gráfico SVG puede incluirse en una página web de dos maneras, como objeto interno o como objeto externo.</p>
+
+      <p>Desgraciadamente, el uso de SVG no está todo lo extendido que debería, entre otros motivos porque las implementaciones de las recomendaciones todavía son incompletas, pero sobre todo porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9. Pero SVG se va imponiendo poco a poco como formato estándar de gráficos vectoriales frente a otros formatos propietarios y numerosos programas de edición de gráficos son capaces de importar y exportar en formato SVG.</p>
+
+      <p>En las lecciones <a href="html-svg.html">SVG</a>, <a href="svg-formas-1.html">Formas básicas SVG</a> y <a href="svg-formas-2.html">Formas avanzadas SVG</a> se comenta con más detalle el uso de SVG.</p>
     </section>
 
-    <section id="img-formatos">
-      <h2>Formatos de imágenes</h2>
+    <section id="img-formatos-jpg">
+      <h3>JPG o JEPG</h3>
 
-      <p>El formato de imágenes vectoriales más utilizado es <a href="#img-formatos-svg">SVG</a>.</p>
+      <p>El nombre oficial de este formato es JPEG, pero se le suele llamar JPG (seguramente por que la extensión de estos archivos es .jpg).</p>
 
-      <p>Existen numeros formatos de mapa de bits, enfocados a diferentes tipos de imagen:</p>
+      <p>El comité <a href="https://jpeg.org/">JPEG</a> (Joint Photographic Experts Group = Grupo de Unión de Expertos en Fotografía) fue creado en 1982 por las tres organizaciones de normalización <a href="https://www.iso.org/home.html">ISO</a> (International Organization for Standardization = Organización Internacional de Normalización), CCITT (International Telegraph and Telephone Consultative Committee = Comité Consultivo Internacional de Telegrafía y Telefonía, este comité de la <a href="http://www.itu.int/es/pages/default.aspx">UIT</a> -Unión Internacional de las Telecomunicaciones- desapareció en 1992) e <a href="http://www.iec.ch/">IEC</a> (International Electrotechnical Commission = Comisión Electrotécnica Internacional) con el objetivo de definir un algoritmo de compresión que permitiera la transmisión de imágenes reales a través de líneas RDSI. En 1994 se aprobó finalmente la norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=18902">ISO/IEC 10918-1</a>, que definía una familia de algoritmos de compresión (en 1995, 1997 y 1999 se aprobaron respectivamente las partes 2, 3 y 4 de esta norma).</p>
 
+      <p>Por problemas entre los organismos de normalización participantes no llegó a definirse un formato de archivo, así que en la práctica se utilizan unos formatos creados bajo la coordinación de C-Cube Microsystems.</p>
       <ul>
-        <li>para imágenes fotográficas (muchos colores), el formato más extendido es <a href="#img-formatos-jpg">JPEG</a></li>
-        <li>para dibujos (pocos colores, formas bien definidas) los formatos más extendidos son <a href="#img-formatos-gif">GIF</a> y <a href="#img-formatos-png">PNG</a></li>
-        <li>para dibujos con animación, el formato más extendido ha sido siempre el <a href="#img-formatos-gif">GIF animado</a>, aunque posiblemente a medio plazo vaya creciendo el uso de <a href="#img-formatos-apng">APNG</a></li>
-        <li>para dibujos sin compresión, el formato más extendido es <a href="#img-formatos-bmp">BMP</a> de Windows, pero apenas se utiliza, ni se recomienda hacerlo, ya que los archivos son muy grandes</li>
+        <li>El formato JFIF (JPEG File Interchange Format = Formato de Intercambio de Archivos JPEG) es el más elemental y sólo contiene la imagen. Este formato es el que suelen tener las imágenes con extensión JPG. <br /> Este formato fue creado por el <a href="http://www.ijg.org/">Independent JPEG Group</a> y la última versión es la versión <a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf">JPEG FIF 1.02</a>, publicada en septiembre de 1992.</li>
+        <li>El formato TIFF (Tagged Image File Format) es un formato creado para el manejo de imágenes escaneadas independientemente del escáner utilizado. Para ello, permite incluir en un único archivo varias imágenes en diferentes formatos y, mediante etiquetas,información adicional sobre las imágenes.<br /> Este formato fue creado por Aldus y Microsoft, aunque ahora es propiedad de Adobe. La última versión del formato es la versión <a href="https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf">TIFF 6.0</a>, publicada en junio de 1992, con suplementos publicados en 1995 y 2002. <a href="https://en.wikipedia.org/wiki/TIFF">Información sobre TIFF en Wikipedia</a> (en inglés).</li>
       </ul>
 
-      <p>En los últimos años se han desarrollado otros formatos de mapa de bits que mejoran los formatos anteriores, pero que todavía no cuentan con el consenso necesario para sustituirlos. Por ejemplo, <a href="https://en.wikipedia.org/wiki/JPEG_XR">JPEG XR</a> de Microsoft, <a href="https://en.wikipedia.org/wiki/WebP">WebP</a> de Google <a href="http://caniuse.com/#feat=webp"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>, <a href="https://en.wikipedia.org/wiki/Better_Portable_Graphics">BPG</a> de Fabrice Bellard (<a href="https://lwn.net/Articles/625535/">artículo en lwn.net de diciembre de 2014</a>), etc.</p>
+      <p>La práctica totalidad de las fotografías (imágenes con muchos colores) que hay en Internet están en formato JPEG, por la extraordinaria compresión que consigue (como se puede ajustar el nivel de compresión, al crear el archivo se puede ajustar la relación tamaño/calidad de la imagen). Además admite también entrelazado (una imagen entrelazada se ve en el navegador desde que empieza a descargarse, primero con poca calidad, pero cada vez con más detalle a medida que va llegando). El único inconveniente es que se trata de un formato de compresión con pérdida, por lo que nunca se puede recuperar la información original, y si una imagen se edita varias veces, la calidad se va degradando cada vez más.</p>
 
-      <p>En su momento se desarrollaron otros formatos de mapa de bits que no han tenido ningún éxito, por ejemplo, <a href="#img-formatos-mng">MNG</a>. El formato <a href="#img-formatos-apng">APNG</a> para imágenes animadas también parecía haber fracasado, pero su inclusión en Safari y Chrome en 2017 puede cambiar su suerte.</p>
+      <p>Para conocer más detalles sobre el formato JPEG, se pueden consultar estas dos FAQ: <a href="http://www.faqs.org/faqs/jpeg-faq/part1/">JPEG FAQ 1</a> y <a href="http://www.faqs.org/faqs/jpeg-faq/part2/">JPEG FAQ 2</a>.</p>
 
-      <section id="img-formatos-svg">
-        <h3>SVG</h3>
+      <p>En el año 2000 se aprobó la norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=37674">ISO/IEC 15444-1</a>, una versión más potente del JPEG original, conocida como <a href="https://jpeg.org/jpeg2000/index.html">JPEG 2000</a>. Esta norma se actualizó en el año 2004 y se publicaron 10 partes más entre 2003 y 2007, que cubren distintas aplicaciones del formato. Este formato no se utiliza todavía en la web, posiblemente debido a que algunas partes del formato JPEG 2000 están sometidas a patentes (declaradas o sin declarar, lo que empeora la situación).
+      </p>
 
-        <p>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables) es un lenguaje de marcas creado por el W3C y dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
+      <p>En Firefox, el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=36351">bug 36.351</a> (abierto en abril de 2000) está dedicado al soporte de JPEG 2000, pero actualmente -noviembre de 2017- el bug no ha avanzado nada.</p>
+    </section>
 
-        <p>En la <a href="../otros/historia.html#svg">lección sobre Historia de la Web</a>) se comentan las recomendaciones de SVG publicadas o en preparación por el W3C.</p>
+    <section id="img-formatos-gif">
+      <h3>GIF</h3>
 
-        <p>En un gráfico vectorial, los elementos de la imagen están definidos como formas elementales (líneas, rectángulos, círculos, curvas, polígonos, etc.), definidas mediante etiquetas simlares a las del HTML. Por ello SVG no es un formato adecuada para fotografías, pero es idóneo para cualquier tipo de dibujo, técnico o artístico.</p>
+      <p>La <a href="https://www.w3.org/Graphics/GIF/spec-gif87.txt">especificación del formato GIF87a</a> (Graphics Interchange Format = Formato de Intercambio de Gráficos) fue publicada por <a href="http://webcenters.netscape.compuserve.com/menu/about.jsp">CompuServe</a> en junio de 1987. Una imagen GIF sólo puede tener 256 colores distintos, lo que no la hace recomendable para las fotografías, pero sí para dibujos. Además, el tamaño de los archivos es pequeño, ya que utiliza el algoritmo de compresión sin pérdida LZW. El éxito del formato GIF fue inmediato y su uso se extendió por Internet.</p>
 
-        <p>Un gráfico SVG puede incluirse en una página web de dos maneras, como objeto interno o como objeto externo.</p>
+      <p>CompuServe publicó en julio de 1990 una extensión del formato GIF87a llamada <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">GIF89a</a>, que añadía al formato GIF la posibilidad de definir transparencia y de crear animaciones (los llamados GIF animados). Los primeros navegadores (como Mosaic en 1993) soportaban GIF, lo que facilitó su uso masivo en la web.</p>
 
-        <p>Desgraciadamente, el uso de SVG no está todo lo extendido que debería, entre otros motivos porque las implementaciones de las recomendaciones todavía son incompletas, pero sobre todo porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9. Pero SVG se va imponiendo poco a poco como formato estándar de gráficos vectoriales frente a otros formatos propietarios y numerosos programas de edición de gráficos son capaces de importar y exportar en formato SVG.</p>
+      <p>Pero el algoritmo LZW (LZW son las iniciales de sus inventores, Abraham Lempel, Jakob Ziv y Terry Welch) estaba patentado desde 1983 por la Sperry Corporation (que en 1986 se había unido a Burroughs para formar Unisys). Parece ser que CompuServe no comprobó al crear GIF si el algoritmo que iba a utilizar estaba patentado y que Unisys no se enteró hasta 1993 de que se estaba usando LZW sin su permiso. A partir de ese momento, Unisys reclamó que cualquier programa que creara imágenes en formato GIF le pagara una licencia. Muchas empresas, entre ellas CompuServe, llegaron a acuerdos con Unisys, pero inmediatamente el W3C desarrolló el <a href="#img-formatos-png">formato PNG</a>, un formato libre para sustituir a GIF.</p>
 
-        <p>En las lecciones <a href="html-svg.html">SVG</a>, <a href="svg-formas-1.html">Formas básicas SVG</a> y <a href="svg-formas-2.html">Formas avanzadas SVG</a> se comenta con más detalle el uso de SVG.</p>
-      </section>
+      <p>Las patentes de Unisys que cubren el formato GIF vencieron en junio de 2003 en Estados Unidos y en 2004 en otros países (Canada, Francia, Italia, Alemania, Reino Unido y Japón) y unas patentes de IBM vencieron en julio de 2006, por lo que GIF es ahora un formato libre de patentes. En cualquier caso, se recomienda utilizar PNG en lugar de GIF.</p>
+    </section>
 
-      <section id="img-formatos-jpg">
-        <h3>JPG o JEPG</h3>
+    <section id="img-formatos-png">
+      <h3>PNG</h3>
 
-        <p>El nombre oficial de este formato es JPEG, pero se le suele llamar JPG (seguramente por que la extensión de estos archivos es .jpg).</p>
+      <p>El formato <a href="http://www.libpng.org/pub/png/">PNG</a> (Portable Network Graphics = Gráficos de Red Portátiles) surgió como alternativa a la reclamación de Unisys, poseedora de una patente del algoritmo LZW, usado en el formato GIF. La primera versión preliminar fue propuesta por <a href="https://boutell.com/boutell/">Thomas Boutell</a> en enero de 1995 y en octubre de 1996 el W3C publicó la recomendación <a href="https://www.w3.org/TR/REC-png-961001">Portable Network Graphics</a>, editada por Thomas Boutell. En noviembre de 2003 se publicó la recomendación <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">Portable Network Graphics (PNG): Functional specification (2ª edición)</a>, editada por David Duce, que se publicó también en 2004 como norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=29581">ISO 15948</a>.</p>
 
-        <p>El comité <a href="https://jpeg.org/">JPEG</a> (Joint Photographic Experts Group = Grupo de Unión de Expertos en Fotografía) fue creado en 1982 por las tres organizaciones de normalización <a href="https://www.iso.org/home.html">ISO</a> (International Organization for Standardization = Organización Internacional de Normalización), CCITT (International Telegraph and Telephone Consultative Committee = Comité Consultivo Internacional de Telegrafía y Telefonía, este comité de la <a href="http://www.itu.int/es/pages/default.aspx">UIT</a> -Unión Internacional de las Telecomunicaciones- desapareció en 1992) e <a href="http://www.iec.ch/">IEC</a> (International Electrotechnical Commission = Comisión Electrotécnica Internacional) con el objetivo de definir un algoritmo de compresión que permitiera la transmisión de imágenes reales a través de líneas RDSI. En 1994 se aprobó finalmente la norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=18902">ISO/IEC 10918-1</a>, que definía una familia de algoritmos de compresión (en 1995, 1997 y 1999 se aprobaron respectivamente las partes 2, 3 y 4 de esta norma).</p>
+      <p>Las ventajas del formato PNG sobre el formato GIF son muchas: se trata de un formato libre, sin pérdida, que consigue mayor compresión que GIF (alrededor de un 20%), con transparencia alfa (cada pixel puede tener su propio nivel de transparencia), canal gamma (para ajustar el brillo) y entrelazado.</p>
 
-        <p>Por problemas entre los organismos de normalización participantes no llegó a definirse un formato de archivo, así que en la práctica se utilizan unos formatos creados bajo la coordinación de C-Cube Microsystems.</p>
-        <ul>
-          <li>El formato JFIF (JPEG File Interchange Format = Formato de Intercambio de Archivos JPEG) es el más elemental y sólo contiene la imagen. Este formato es el que suelen tener las imágenes con extensión JPG. <br />
-            Este formato fue creado por el <a href="http://www.ijg.org/">Independent JPEG Group</a> y la última versión es la versión <a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf">JPEG FIF 1.02</a>, publicada en septiembre de 1992.</li>
-          <li>El formato TIFF (Tagged Image File Format) es un formato creado para el manejo de imágenes escaneadas independientemente del escáner utilizado. Para ello, permite incluir en un único archivo varias imágenes en diferentes formatos y, mediante etiquetas,información adicional sobre las imágenes.<br />
-            Este formato fue creado por Aldus y Microsoft, aunque ahora es propiedad de Adobe. La última versión del formato es la versión <a href="https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf">TIFF 6.0</a>, publicada en junio de 1992, con suplementos publicados en 1995 y 2002. <a href="https://en.wikipedia.org/wiki/TIFF">Información sobre TIFF en Wikipedia</a> (en inglés).</li>
-        </ul>
+      <p>Sin embargo el formato PNG no ha conseguido desplazar al formato GIF, principalmente porque hasta finales de 2006 Internet Explorer (el navegador más utilizado) no mostraba correctamente las imágenes PNG (concretamente, las imágenes con transparencia alfa). "Casualmente", una vez vencidas las patentes del formato GIF, Microsoft publicó en octubre de 2006 Internet Explorer 7, que ya mostraba correctamente los archivos PNG.</p>
+    </section>
 
-        <p>La práctica totalidad de las fotografías (imágenes con muchos colores) que hay en Internet están en formato JPEG, por la extraordinaria compresión que consigue (como se puede ajustar el nivel de compresión, al crear el archivo se puede ajustar la relación tamaño/calidad de la imagen). Además admite también entrelazado (una imagen entrelazada se ve en el navegador desde que empieza a descargarse, primero con poca calidad, pero cada vez con más detalle a medida que va llegando). El único inconveniente es que se trata de un formato de compresión con pérdida, por lo que nunca se puede recuperar la información original, y si una imagen se edita varias veces, la calidad se va degradando cada vez más.</p>
+    <section id="img-formatos-bmp">
+      <h3>BMP</h3>
 
-        <p>Para conocer más detalles sobre el formato JPEG, se pueden consultar estas dos FAQ: <a href="http://www.faqs.org/faqs/jpeg-faq/part1/">JPEG FAQ 1</a> y <a href="http://www.faqs.org/faqs/jpeg-faq/part2/">JPEG FAQ 2</a>.</p>
+      <p>El formato <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a> (BitMaP = Mapa de Bits) es el formato de imágenes de mapa de bits que utiliza internamente el subsistema gráfico de Windows (GDI) y que también se suele utilizar para guardar imágenes en Windows. Permite varias profundidades de color (de 1 a 24 bits por pixels) y transparencia. El formato no comprime las imágenes, por lo que las imágenes tiene un tamaño muy grande.</p>
 
-        <p>En el año 2000 se aprobó la norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=37674">ISO/IEC 15444-1</a>, una versión más potente del JPEG original, conocida como <a href="https://jpeg.org/jpeg2000/index.html">JPEG 2000</a>. Esta norma se actualizó en el año 2004 y se publicaron 10 partes más entre 2003 y 2007, que cubren distintas aplicaciones del formato. Este formato no se utiliza todavía en la web, posiblemente debido a que algunas partes del formato JPEG 2000 están sometidas a patentes (declaradas o sin declarar, lo que empeora la situación).
+      <p>Como se trata de un formato bien documentado y libre de patentes, se puede utilizar en cualquier sistema operativo y los navegadores suelen ser capaces de mostrar imágenes en formato BMP. De todas maneras, conviene no utilizar en páginas web porque las imágenes no están comprimidas y ocupan mucho espacio.</p>
+    </section>
+
+    <section id="img-formatos-mng">
+      <h3>MNG</h3>
+
+      <p>El formato <a href="http://www.libpng.org/pub/mng/">MNG</a> (Multiple-image Network Graphics = Gráficos de Red con Múltiples imágenes) fue creado por algunos de los autores de PNG a partir de 1996. La <a href="http://www.libpng.org/pub/mng/spec/">especificación MNG 1.0</a>, escrita por Glenn Randers-Pehrson, se aprobó en enero de 2001, aunque no ha sido apoyada por el W3C. MNG permite crear animaciones a partir de imágenes PNG.</p>
+
+      <p>Por motivos que desconozco, el formato MNG tuvo muy poco éxito. Aunque existen algunos programas capaces de crear y reproducir MNG, su uso no ha dejado nunca de ser marginal. Por ejemplo, en junio de 2003, Mozilla Firefox eliminó el soporte de MNG que tenía hasta ese momento (se intentó <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=18574">restaurar el soporte</a>, sin ningún éxito).</p>
+    </section>
+
+    <section id="img-formatos-apng">
+      <h3 class="con-aside">APNG</h3>
+
+      <aside class="enlace-norma">
+        <p>APNG<br />
+          <a href="http://caniuse.com/#feat=apng"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
         </p>
+      </aside>
 
-        <p>En Firefox, el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=36351">bug 36.351</a> (abierto en abril de 2000) está dedicado al soporte de JPEG 2000, pero actualmente -noviembre de 2016- el bug no ha avanzado nada.</p>
-      </section>
+      <p>Como alternativa a MNG, algunos desarrolladores de Mozilla crearon en 2004 el formato <a href="https://wiki.mozilla.org/APNG_Specification">APNG</a> (Animated PNG), que se puede utilizar en Firefox (desde FF3, publicado en 2008) y se pudo utilizar en Opera (desde Opera 9.5, publicado en 2008, hasta Opera 14, publicado en 2013). En abril de 2007 el grupo de desarrollo del formato PNG rechazó la propuesta de formato APNG elaborada por Mozilla, lo que parecía condenar este formato al olvido. De hecho, el navegador Opera dejó de admitir el formato al pasar a usar Blink en 2013. Sin embargo, en los últimos años la situación ha mejorado, puesto que el navegador Safari admite APNG desde Safari 8 (2014), Chrome lo admite desde Chrome 59 (junio de 2017) y Opera de nuevo desde Opera 46 (junio de 2017). La página del <a href="https://animatedpngs.com/">proyecto APNG</a>, creada en 2008 (y temporalmente abandonada en 2014), ofrece información sobre el formato.</p>
 
-      <section id="img-formatos-gif">
-        <h3>GIF</h3>
+      <p>Este es un ejemplo de imagen APNG. Como muestra el segundo ejemplo, entre las ventajas del formato APNG se encuentra la posiblidad de utilizar el canal de transparencia alfa, lo que permite utilizar fondos con las imágenes.</p>
 
-        <p>La <a href="https://www.w3.org/Graphics/GIF/spec-gif87.txt">especificación del formato GIF87a</a> (Graphics Interchange Format = Formato de Intercambio de Gráficos) fue publicada por <a href="http://webcenters.netscape.compuserve.com/menu/about.jsp">CompuServe</a> en junio de 1987. Una imagen GIF sólo puede tener 256 colores distintos, lo que no la hace recomendable para las fotografías, pero sí para dibujos. Además, el tamaño de los archivos es pequeño, ya que utiliza el algoritmo de compresión sin pérdida LZW. El éxito del formato GIF fue inmediato y su uso se extendió por Internet.</p>
-
-        <p>CompuServe publicó en julio de 1990 una extensión del formato GIF87a llamada <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">GIF89a</a>, que añadía al formato GIF la posibilidad de definir transparencia y de crear animaciones (los llamados GIF animados). Los primeros navegadores (como Mosaic en 1993) soportaban GIF, lo que facilitó su uso masivo en la web.</p>
-
-        <p>Pero el algoritmo LZW (LZW son las iniciales de sus inventores, Abraham Lempel, Jakob Ziv y Terry Welch) estaba patentado desde 1983 por la Sperry Corporation (que en 1986 se había unido a Burroughs para formar Unisys). Parece ser que CompuServe no comprobó al crear GIF si el algoritmo que iba a utilizar estaba patentado y que Unisys no se enteró hasta 1993 de que se estaba usando LZW sin su permiso. A partir de ese momento, Unisys reclamó que cualquier programa que creara imágenes en formato GIF le pagara una licencia. Muchas empresas, entre ellas CompuServe, llegaron a acuerdos con Unisys, pero inmediatamente el W3C desarrolló el <a href="#img-formatos-png">formato PNG</a>, un formato libre para sustituir a GIF.</p>
-
-        <p>Las patentes de Unisys que cubren el formato GIF vencieron en junio de 2003 en Estados Unidos y en 2004 en otros países (Canada, Francia, Italia, Alemania, Reino Unido y Japón) y unas patentes de IBM vencieron en julio de 2006, por lo que GIF es ahora un formato libre de patentes. En cualquier caso, se recomienda utilizar PNG en lugar de GIF.</p>
-      </section>
-
-      <section id="img-formatos-png">
-        <h3>PNG</h3>
-
-        <p>El formato <a href="http://www.libpng.org/pub/png/">PNG</a> (Portable Network Graphics = Gráficos de Red Portátiles) surgió como alternativa a la reclamación de Unisys, poseedora de una patente del algoritmo LZW, usado en el formato GIF. La primera versión preliminar fue propuesta por <a href="https://boutell.com/boutell/">Thomas Boutell</a> en enero de 1995 y en octubre de 1996 el W3C publicó la recomendación <a href="https://www.w3.org/TR/REC-png-961001">Portable Network Graphics</a>, editada por Thomas Boutell. En noviembre de 2003 se publicó la recomendación <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">Portable Network Graphics (PNG): Functional specification (2ª edición)</a>, editada por David Duce, que se publicó también en 2004 como norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=29581">ISO 15948</a>.</p>
-
-        <p>Las ventajas del formato PNG sobre el formato GIF son muchas: se trata de un formato libre, sin pérdida, que consigue mayor compresión que GIF (alrededor de un 20%), con transparencia alfa (cada pixel puede tener su propio nivel de transparencia), canal gamma (para ajustar el brillo) y entrelazado.</p>
-
-        <p>Sin embargo el formato PNG no ha conseguido desplazar al formato GIF, principalmente porque hasta finales de 2006 Internet Explorer (el navegador más utilizado) no mostraba correctamente las imágenes PNG (concretamente, las imágenes con transparencia alfa). "Casualmente", una vez vencidas las patentes del formato GIF, Microsoft publicó en octubre de 2006 Internet Explorer 7, que ya mostraba correctamente los archivos PNG.</p>
-      </section>
-
-      <section id="img-formatos-bmp">
-        <h3>BMP</h3>
-
-        <p>El formato <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a> (BitMaP = Mapa de Bits) es el formato de imágenes de mapa de bits que utiliza internamente el subsistema gráfico de Windows (GDI) y que también se suele utilizar para guardar imágenes en Windows. Permite varias profundidades de color (de 1 a 24 bits por pixels) y transparencia. El formato no comprime las imágenes, por lo que las imágenes tiene un tamaño muy grande.</p>
-
-        <p>Como se trata de un formato bien documentado y libre de patentes, se puede utilizar en cualquier sistema operativo y los navegadores suelen ser capaces de mostrar imágenes en formato BMP. De todas maneras, conviene no utilizar en páginas web porque las imágenes no están comprimidas y ocupan mucho espacio.</p>
-      </section>
-
-      <section id="img-formatos-mng">
-        <h3>MNG</h3>
-
-        <p>El formato <a href="http://www.libpng.org/pub/mng/">MNG</a> (Multiple-image Network Graphics = Gráficos de Red con Múltiples imágenes) fue creado por algunos de los autores de PNG a partir de 1996. La <a href="http://www.libpng.org/pub/mng/spec/">especificación MNG 1.0</a>, escrita por Glenn Randers-Pehrson, se aprobó en enero de 2001, aunque no ha sido apoyada por el W3C. MNG permite crear animaciones a partir de imágenes PNG.</p>
-
-        <p>Por motivos que desconozco, el formato MNG tuvo muy poco éxito. Aunque existen algunos programas capaces de crear y reproducir MNG, su uso no ha dejado nunca de ser marginal. Por ejemplo, en junio de 2003, Mozilla Firefox eliminó el soporte de MNG que tenía hasta ese momento (se intentó <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=18574">restaurar el soporte</a>, sin ningún éxito).</p>
-      </section>
-
-      <section id="img-formatos-apng">
-        <h3 class="con-aside">APNG</h3>
-
-        <aside class="enlace-norma">
-          <p>APNG<br />
-            <a href="http://caniuse.com/#feat=apng"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
-          </p>
-        </aside>
-
-        <p>Como alternativa a MNG, algunos desarrolladores de Mozilla crearon en 2004 el formato <a href="https://wiki.mozilla.org/APNG_Specification">APNG</a> (Animated PNG), que se puede utilizar en Firefox (desde FF3, publicado en 2008) y se pudo utilizar en Opera (desde Opera 9.5, publicado en 2008, hasta Opera 14, publicado en 2013). En abril de 2007 el grupo de desarrollo del formato PNG rechazó la propuesta de formato APNG elaborada por Mozilla, lo que parecía condenar este formato al olvido. De hecho, el navegador Opera dejó de admitir el formato al pasar a usar Blink en 2013. Sin embargo, en los últimos años la situación ha mejorado, puesto que el navegador Safari admite APNG desde Safari 8, publicado en 2014 y Chrome lo admite desde Chrome 59, publicado en junio de 2017. La página del <a href="https://animatedpngs.com/">proyecto APNG</a>, creada en 2008 (y temporalmente abandonada en 2014), ofrece información sobre el formato.</p>
-
-        <p>Este es un ejemplo de imagen APNG. Como muestra el segundo ejemplo, entre las ventajas del formato APNG se encuentra la posiblidad de utilizar el canal de transparencia alfa, lo que permite utilizar fondos con las imágenes.</p>
-
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
-            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
+          <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;img src="apng-balon.png" alt="Ejempo de imagen en formato APNG" /&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/otros/apng-balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" />
-          </div>
         </div>
+        <div class="resultado-html">
+          <img src="../img/otros/apng-balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" />
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="icono-navegadores">
-            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
-            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
-            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
-          </div>
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32" />
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
+          <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32" />
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;img src="apng-balon.png" alt="Ejempo de imagen en formato APNG"
      style="background-color: lightblue" /&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/otros/apng-balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" style="background-color: lightblue" />
-          </div>
         </div>
+        <div class="resultado-html">
+          <img src="../img/otros/apng-balon.png" alt="Ejempo de imagen en formato APNG" title="Ejempo de imagen en formato APNG" height="100" width="100" style="background-color: lightblue" />
+        </div>
+      </div>
 
-        <p><strong>Nota</strong>: Microsoft Edge no muestra las imágenes APNG en movimiento, como se comenta en la <a href="../otros/diferencias-listado.html#otros-apng">página de diferencias entre navegadores</a>.</p>
+      <p><strong>Nota</strong>: Microsoft Edge no muestra las imágenes APNG, como se comenta en la <a href="../otros/diferencias-listado.html#otros-apng">página de diferencias entre navegadores</a>.</p>
+    </section>
+  </section>
 
-        <p>Para probar: extensión Firefox <a href="https://addons.mozilla.org/en-US/firefox/addon/apng-edit/">APNG Edit</a>.</p>
-      </section>
+  <section id="img-img">
+    <h2 class="con-aside">La etiqueta <span class="html-eti">&lt;img /&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;img /&gt;</span><br />
+        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/semantics-embedded-content.html#the-img-element"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;img /&gt;</span> permite mostrar imágenes vectoriales o de mapa de bits en una página web. Las imágenes no forman parte del documento, sino que se mantienen como archivos aparte.</p>
+
+    <p>Los ejemplos siguientes muestran la imagen de una estrella, como imagen vectorial (SVG) o como imagen de mapa de bits (PNG).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella" &gt;
+&lt;img src="../img/svg/estrella.png" alt="estrella" &gt;</code>
+</pre>
+      </div>
+      <div class="resultado-html">
+        <img src="../img/svg/estrella-svg.svg" alt="estrella"><img src="../img/svg/estrella-png.png" alt="estrella">
+      </div>
+    </div>
+  </section>
+
+  <section id="img-atributos">
+    <h2>Atributos de <span class="html-eti">&lt;img /&gt;</span></h2>
+
+    <section id="img-atributos-src">
+      <h3>El atributo <span class="html-atri">src</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
+
+      <p>El atributo <span class="html-atri">src</span> contiene el camino absoluto o relativo a la imagen desde la página web. Para que el navegador pueda mostrar la imagen, el archivo referenciado debe estar disponible. Si los archivos de las páginas web o de las imágenes se cambian de carpeta o de nombre, hay que actualizar los atributos <span class="html-atri">src</span> para que apunten a la dirección correcta.</p>
+
+      <p>Los ejemplos siguientes muestran una dirección absoluta y una relativa en el atributo <span class="html-atri">src</span>.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="https://www.w3.org/Icons/w3c_main.png" alt="Logotipo del W3C en el sitio web del W3C" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="https://www.w3.org/Icons/w3c_main.png" alt="Logotipo del W3C en el sitio web del W3C" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/otros/w3c-main.png" alt="Logotipo del W3C en el sitio web de mclibre" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/otros/w3c-main.png" alt="Logotipo del W3C en el sitio web de mclibre" width="315" height="48" />
+        </div>
+      </div>
     </section>
 
-    <section id="img-img">
-      <h2 class="con-aside">La etiqueta <span class="html-eti">&lt;img /&gt;</span></h2>
+    <section id="img-atributos-alt">
+      <h3>El atributo <span class="html-atri">alt</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
 
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;img /&gt;</span><br />
-          <a href="https://www.w3.org/TR/2017/REC-html51-20171003/semantics-embedded-content.html#the-img-element"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+      <p>El atributo <span class="html-atri">alt</span> contiene el texto que deben mostrar los navegadores si la imagen no está disponible. El atributo <span class="html-atri">alt</span> no es obligatorio en HTML (sí lo es en XHTML), pero se recomienda incluirlo siempre, aunque sea con un valor vacío.</p>
 
-      <p>La etiqueta <span class="html-eti">&lt;img /&gt;</span> permite mostrar imágenes vectoriales o de mapa de bits en una página web. Las imágenes no forman parte del documento, sino que se mantienen como archivos aparte.</p>
+      <p>Los ejemplos siguientes muestran cómo los navegadores muestran la imagen cuando la imagen se encuentra disponible o el texto del atributo <span class="html-atri">alt</span> cuando la imagen no se encuentra disponible.</p>
 
-      <p>Los ejemplos siguientes muestran la imagen de una estrella, como imagen vectorial (SVG) o como imagen de mapa de bits (PNG).</p>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="tux.jpg" alt="Tux, el pingüino" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/tux.jpg" alt="Este es el atributo alt de una imagen que sólo tiene atributo alt" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="tux2.jpg" alt="Tux, el pingüino" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/tux2.jpg" alt="Tux, el pingüino" />
+        </div>
+      </div>
+    </section>
+
+    <section id="img-atributos-title">
+      <h3>El atributo <span class="html-atri">title</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
+
+      <p>El atributo <span class="html-atri">title</span> contiene el texto que se muestra en forma de "tip" (cuadrito amarillo que aparece cuando se sitúa el ratón encima de la imagen). El atributo <span class="html-atri">title</span> es optativo.</p>
+
+      <p>Los ejemplos siguientes muestran cómo el texto del atributo <span class="html-atri">title</span> se muestra siempre, independientemente de que la imagen se encuentre o no disponible.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="tux.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/tux.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="tux2.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/tux2.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" />
+        </div>
+      </div>
+    </section>
+
+    <section id="img-atributos-width-height">
+      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
+
+      <p>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen la anchura y altura de la imagen. Si estos atributos no están definidos, la imagen se muestra con su tamaño original, pero si los atributos están definidos, la imagen se adapta a esos valores. Los valores numéricos se interpretan como píxeles.</p>
+
+      <p>Es conveniente establecer los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> para que el navegador sepa el tamaño de las imágenes antes de recibirlas y reserve el espacio necesario en la página. Cuando se abre una página web, el navegador recibe primero el fichero html y después pide las hojas de estilo css y las imágenes. En cuanto llegan las hojas de estilo y antes de que terminen de llegar las imágenes, los navegadores ya muestran la página. Si el navegador no sabe qué tamaño ocupan las imágenes y no ha podido reservar el espacio necesario, a medida que van llegando las imágenes el navegador debe redibujar la página, desplazando el texto, lo que resulta molesto para su lectura. pero si el navegador sabe qué tamaño ocupan las imágenes, a medida que van llegando las imágenes simplemente se van completando los huecos.</p>
+
+      <p>Lógicamente, si se establecen los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> y posteriormente se cambia el archivo de la imagen por otra de diferente tamaño, es necesario corregir los valores en la página web si no quiere verse la imagen deformada.</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella" &gt;
+
 &lt;img src="../img/svg/estrella.png" alt="estrella" &gt;</code>
 </pre>
         </div>
@@ -231,253 +343,145 @@
           <img src="../img/svg/estrella-svg.svg" alt="estrella"><img src="../img/svg/estrella-png.png" alt="estrella">
         </div>
       </div>
-    </section>
-
-    <section id="img-atributos">
-      <h2>Atributos de <span class="html-eti">&lt;img /&gt;</span></h2>
-
-      <section id="img-atributos-src">
-        <h3>El atributo <span class="html-atri">src</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
-
-        <p>El atributo <span class="html-atri">src</span> contiene el camino absoluto o relativo a la imagen desde la página web. Para que el navegador pueda mostrar la imagen, el archivo referenciado debe estar disponible. Si los archivos de las páginas web o de las imágenes se cambian de carpeta o de nombre, hay que actualizar los atributos <span class="html-atri">src</span> para que apunten a la dirección correcta.</p>
-
-        <p>Los ejemplos siguientes muestran una dirección absoluta y una relativa en el atributo <span class="html-atri">src</span>.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="https://www.w3.org/Icons/w3c_main.png" alt="Logotipo del W3C en el sitio web del W3C" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="https://www.w3.org/Icons/w3c_main.png" alt="Logotipo del W3C en el sitio web del W3C" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/otros/w3c-main.png" alt="Logotipo del W3C en el sitio web de mclibre" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/otros/w3c-main.png" alt="Logotipo del W3C en el sitio web de mclibre" width="315" height="48" />
-          </div>
-        </div>
-      </section>
-
-      <section id="img-atributos-alt">
-        <h3>El atributo <span class="html-atri">alt</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
-
-        <p>El atributo <span class="html-atri">alt</span> contiene el texto que deben mostrar los navegadores si la imagen no está disponible. El atributo <span class="html-atri">alt</span> no es obligatorio en HTML (sí lo es en XHTML), pero se recomienda incluirlo siempre, aunque sea con un valor vacío.</p>
-
-        <p>Los ejemplos siguientes muestran qué ocurre cuando la imagen se encuentra disponible y qué ocurre cuando la imagen no se encuentra disponible.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="tux.jpg" alt="Tux, el pingüino" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/tux.jpg" alt="Este es el atributo alt de una imagen que sólo tiene atributo alt" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="tux2.jpg" alt="Tux, el pingüino" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/tux2.jpg" alt="Tux, el pingüino" />
-          </div>
-        </div>
-      </section>
-
-      <section id="img-atributos-title">
-        <h3>El atributo <span class="html-atri">title</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
-
-        <p>El atributo <span class="html-atri">title</span> contiene el texto que se muestra en forma de "tip" (cuadrito amarillo que aparece cuando se sitúa el ratón encima de la imagen). El atributo <span class="html-atri">title</span> es optativo.</p>
-
-        <p>Los ejemplos siguientes muestran qué ocurre cuando la imagen se encuentra disponible y qué ocurre cuando la imagen no se encuentra disponible.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="tux.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/tux.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="tux2.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/tux2.jpg" alt="Este es el atributo alt de una imagen que tiene los atributos alt y title" title="Este es el atributo title de una imagen que tiene los atributos alt y title" />
-          </div>
-        </div>
-      </section>
-
-      <section id="img-atributos-width-height">
-        <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;img /&gt;</span></h3>
-
-        <p>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen la anchura y altura de la imagen. Si estos atributos no están definidos, la imagen se muestra con su tamaño original, pero si los atributos están definidos, la imagen se adapta a esos valores. Los valores numéricos se interpretan como píxeles.</p>
-
-        <p>Es conveniente establecer los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> para que el navegador sepa el tamaño de las imágenes antes de recibirlas y reserve el espacio necesario en la página. Cuando se abre una página web, el navegador recibe primero el fichero html y después pide las hojas de estilo css y las imágenes. En cuanto llegan las hojas de estilo y antes de que terminen de llegar las imágenes, los navegadores ya muestran la página. Si el navegador no sabe qué tamaño ocupan las imágenes y no ha podido reservar el espacio necesario, a medida que van llegando las imágenes el navegador debe redibujar la página, desplazando el texto, lo que resulta molesto para su lectura. pero si el navegador sabe qué tamaño ocupan las imágenes, a medida que van llegando las imágenes simplemente se van completando los huecos.</p>
-
-        <p>Lógicamente, si se establecen los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> y posteriormente se cambia el archivo de la imagen por otra de  diferente tamaño, es necesario corregir los valores en la página web si no quiere verse la imagen deformada.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella" &gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella" &gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella"><img src="../img/svg/estrella-png.png" alt="estrella">
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="170" height="165" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="170" height="165" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="170" height="165" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="170" height="165" />
-          </div>
-        </div>
-
-        <p>Si los valores no son proporcionales a la imagen original, esta se deforma.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="85" height="165" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="85" height="165" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" height="165" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="85" height="165" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="170" height="82" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="170" height="82" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="170" height="82" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="170" height="82" />
-          </div>
-        </div>
-
-        <p>Si los valores son proporcionales a la imagen original, la imagen se amplia o reduce. Al ampliar la imagen, se puede observar cómo la imagen SVG conserva la calidad, mientras que la imagen de mapa de bits pierde calidad.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="85" height="82" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="85" height="82" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" height="82" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="85" height="82" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="340" height="330" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="340" height="330" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="340" height="330" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="340" height="330" />
-          </div>
-        </div>
-
-        <p>Si sólo se establece un atributo, la imagen se amplia o reducede forma proporcional.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  width="85" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  width="85" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" width="85" />
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
-  height="82" /&gt;
-&lt;img src="../img/svg/estrella.png" alt="estrella"
-  height="82" /&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <img src="../img/svg/estrella-svg.svg" alt="estrella" height="82" />
-            <img src="../img/svg/estrella-png.png" alt="estrella" height="82" />
-          </div>
-        </div>
-
-        <p>En HTML 4 / XHTML 1 los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> se podían expresar en porcentajes, como se comenta en la <a href="html-obsoletos.html#img-width">lección sobre elementos obsoletos</a>, pero en HTML 5 no está permitido.</p>
-      </section>
-    </section>
-
-    <section id="img-svg">
-      <h2 class="con-aside">La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="html-eti">&lt;svg&gt;</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/"><img src="../varios/iconos/icono-svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>La etiqueta <span class="html-eti">&lt;svg /&gt;</span> permite incluir imágenes vectoriales SVG en una página web HTML 5, formando parte del documento.</p>
-
-      <p>En las lecciones <a href="html-svg.html">SVG</a>, <a href="svg-formas-1.html">Formas básicas SVG</a> y <a href="svg-formas-2.html">Formas avanzadas SVG</a> se comentan las principales etiquetas de SVG.</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="170" height="165" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="170" height="165" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="170" height="165" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="170" height="165" />
+        </div>
+      </div>
+
+      <p>Si los valores no son proporcionales a la imagen original, la imagen de mapa de bits se deforma, pero la imagen vectorial se ajusta al menor tamaño sin deformarse.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="85" height="165" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="85" height="165" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" height="165" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="85" height="165" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="170" height="82" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="170" height="82" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="170" height="82" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="170" height="82" />
+        </div>
+      </div>
+
+      <p>Si los valores son proporcionales a la imagen original, la imagen se amplia o reduce. Al ampliar la imagen, se puede observar cómo la imagen SVG conserva la calidad, mientras que la imagen de mapa de bits pierde calidad.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="85" height="82" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="85" height="82" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" height="82" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="85" height="82" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="340" height="330" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="340" height="330" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="340" height="330" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="340" height="330" />
+        </div>
+      </div>
+
+      <p>Si sólo se establece un atributo, la imagen se amplia o reduce de forma proporcional.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  width="85" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  width="85" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" width="85" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" width="85" />
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;img src="../img/svg/estrella.svg" alt="estrella"
+  height="82" /&gt;
+
+&lt;img src="../img/svg/estrella.png" alt="estrella"
+  height="82" /&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <img src="../img/svg/estrella-svg.svg" alt="estrella" height="82" />
+          <img src="../img/svg/estrella-png.png" alt="estrella" height="82" />
+        </div>
+      </div>
+
+      <p>En HTML 4 / XHTML 1 los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> se podían expresar en porcentajes, como se comenta en la <a href="html-obsoletos.html#img-width">lección sobre elementos obsoletos</a>, pero en HTML 5 no está permitido.</p>
+    </section>
+  </section>
+
+  <section id="img-svg">
+    <h2 class="con-aside">La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="html-eti">&lt;svg&gt;</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/"><img src="../varios/iconos/icono-svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;svg /&gt;</span> permite incluir imágenes vectoriales SVG en una página web HTML 5, formando parte del documento.</p>
+
+    <p>En las lecciones <a href="html-svg.html">SVG</a>, <a href="svg-formas-1.html">Formas básicas SVG</a> y <a href="svg-formas-2.html">Formas avanzadas SVG</a> se comentan las principales etiquetas de SVG.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;p&gt;Estrella:&lt;/p&gt;
 
 &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -486,32 +490,30 @@
            points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p>Estrella:</p>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-               width="170" height="165" viewBox="0 0 170 165">
-            <polygon fill="yellow" stroke="red" stroke-width="7"
-                     points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
-          </svg>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p>Estrella:</p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
+          <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
+        </svg>
+      </div>
+    </div>
 
-      <p>El ejemplo puede verse incluido en una página aparte: <a href="ejemplos/svg/svg-estrella.html">Estrella</a></p>
-    </section>
+    <p>El ejemplo puede verse incluido en una página aparte: <a href="ejemplos/svg/svg-estrella.html">Estrella</a></p>
+  </section>
 
-    <section id="img-flotantes">
-      <h2>Imágenes flotantes</h2>
+  <section id="img-flotantes">
+    <h2>Imágenes flotantes</h2>
 
-      <p>Las imágenes se insertan como elementos en línea, es decir, como un carácter más en un texto. Salvo que efectivamente se quiera que la imagen aparezca en mitad de una frase, lo normal es querer que la imagen esté a un lado, con el texto fluyendo en un lado de la imagen. Para ello, se debe utilizar la propiedad <span class="css-prop">float</span> en la hoja de estilo, como se comenta en el apartado dedicado al <a href="../css/css-posicionamiento-flotante.html#posicionamiento-flotante-imagenes">posicionamiento flotante de imágenes</a>.</p>
-    </section>
+    <p>Las imágenes se insertan como elementos en línea, es decir, como un carácter más en un texto. Salvo que efectivamente se quiera que la imagen aparezca en mitad de una frase, lo normal es querer que la imagen esté a un lado, con el texto fluyendo en un lado de la imagen. Para ello, se debe utilizar la propiedad <span class="css-prop">float</span> en la hoja de estilo, como se comenta en el apartado dedicado al <a href="../css/css-posicionamiento-flotante.html#posicionamiento-flotante-imagenes">posicionamiento flotante de imágenes</a>.</p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 14 de noviembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
