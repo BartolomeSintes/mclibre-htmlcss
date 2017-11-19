@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>orientation (1). Media queries. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css">
+    @media (orientation: portrait) {
+      html {
+        background-color: lightblue;
+      }
+    }
+
+    @media (orientation: landscape) {
+      html {
+        background-color: lightcoral;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>El color de fondo de esta página cambia según la orientación de la pantalla:</p>
+  <ul>
+    <li>Si el ancho es menor que el alto el color es azul</li>
+    <li>Si el ancho es mayor o igual que el alto el color es rojo</li>
+  </ul>
+
+  <p>El ancho actual es <strong><span id="sizeH"></span>px</strong>.</p>
+
+  <p>El alto actual es <strong><span id="sizeV"></span>px</strong>.</p>
+
+  <script>
+    var ancho = window.innerWidth;
+    var texto = document.getElementById("sizeH");
+    texto.textContent = ancho;
+    var alto = window.innerHeight;
+    var texto2 = document.getElementById("sizeV");
+    texto2.textContent = alto;
+    window.onresize = function () {
+      var ancho = window.innerWidth;
+      var texto = document.getElementById("sizeH");
+      texto.textContent = ancho;
+      var alto = window.innerHeight;
+      var texto2 = document.getElementById("sizeV");
+      texto2.textContent = alto;
+    }
+  </script>
+</body>
+</html>

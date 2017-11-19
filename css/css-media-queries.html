@@ -1,213 +1,347 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Consultas de medios (media queries). CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script type="text/javascript" src="../varios/highlight.pack.js"></script>
-    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Consultas de medios (media queries). CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script type="text/javascript" src="../varios/highlight.pack.js"></script>
+  <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>Consultas de medios (media queries)</h1>
+<body>
+  <h1>Consultas de medios (media queries)</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Media queries</h2>
-
-        <ul>
-          <li><a href="#diseno-adaptativo">Diseño adaptativo</a></li>
-          <li><a href="#recomendaciones">Recomendaciones</a></li>
-          <li><a href="#meta-viewport"><span class="html-eti">meta</span> <span class="html-atri">viewport</span></a></li>
-          <li><a href="#css-especificas"><span class="html-eti">link</span> <span class="html-atri">media</span></a></li>
-          <li><a href="#media-queries-width"><span class="css-arroba">min-width</span> <span class="css-arroba">max-width</span></a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Esta lección se encuentra en elaboración.</p>
-
-    <p>Las consultas de medios permiten detectar características del dispositivo que está utilizando el usuario y optimizar la hoja de estilo.</p>
-
-    <section id="diseno-adaptativo">
-      <h2>Diseño adaptativo (responsive design)</h2>
-
-      <p>Al diseñar una página web, se debe tener en cuenta la diversidad de dispositivos en los que se va a ver esa página web:</p>
+    <div class="toc">
+      <h2>Media queries</h2>
 
       <ul>
-        <li>la mayoría de páginas web se ven en pantallas, pero también hay que pensar en las impresoras, en los lectores de pantallas, etc.</li>
-        <li>la diversidad en las resoluciones de las pantallas va en aumento: pantallas de escritorio cada vez más grandes, pantallas de móviles mucho más pequeñas que las de escritorio, pantallas de tabletas de tamaños intermedios entre unas y otras</li>
-        <li>las pantallas de escritorio están siempre en la misma posición, pero los móviles y tabletas pueden cambiar fácilmente de orientación</li>
-        <li>las pantallas de escritorio suelen tener una densidad de píxeles de 96 píxeles por pulgada (<a href="https://en.wikipedia.org/wiki/Pixel_density">DPI</a>), pero los dispositivos móviles pueden tener densidades mucho más altas (en 2016 ya había móviles con pantallas de más de 800 DPI)</li>
+        <li><a href="#diseno-adaptativo">Diseño adaptativo</a></li>
+        <li><a href="#recomendaciones">Recomendaciones</a></li>
+        <li><a href="#meta-viewport"><span class="html-eti">meta</span> <span class="html-atri">viewport</span></a></li>
+        <li><a href="#css-especificas"><span class="html-eti">link</span> <span class="html-atri">media</span></a></li>
+        <li><a href="#media-queries">media queries</a>
+          <ul>
+            <li><a href="#media-queries-width"><span class="css-feature">min-width</span> <span class="css-feature">max-width</span></a></li>
+            <li><a href="#media-queries-orientation"><span class="css-feature">orientation</span></a></li>
+          </ul>
+        </li>
       </ul>
+    </div>
+  </nav>
 
-      <p>En los últimos años se ha acuñado el término <i>responsive web design</i> para referirse a las técnicas de diseño que se preocupan por tratar esta diversidad. En español <i>responsive web design</i> se suele traducir por <strong>diseño web adaptativo</strong> (o al menos, es lo que recomienda la <a href="http://www.fundeu.es/">Fundéu</a>, <a href="http://www.fundeu.es/recomendacion/diseno-web-adaptativo-traduccion-de-responsive-web-design-1573/">consulta 1573, 31/01/13</a>).</p>
+  <p>Las consultas de medios permiten detectar características del dispositivo que está utilizando el usuario y optimizar la hoja de estilo.</p>
 
-      <p>Las consultas de medios (media queries) de las hojas de estilo que se comentan en esta lección son una herramienta básica para un diseño adaptativo.</p>
+  <section id="diseno-adaptativo">
+    <h2>Diseño adaptativo (responsive design)</h2>
 
-      <hr class="corta" />
+    <p>Al diseñar una página web, se debe tener en cuenta la diversidad de dispositivos en los que se va a ver esa página web:</p>
 
-      <p>Herramientas:</p>
-      <ul>
-        <li>Chrome > Más herramientas > Herramientas para desarrolladores > Device mode (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>, o icono móvil)</li>
-        <li>Firefox > Herramientas > Desarrollador web > Vista de diseño adaptable (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>)</li>
-        <li>Extensión Web Developer de Firefox > Resize > View Resposive Layouts</li>
-        <li><a href="https://search.google.com/search-console/mobile-friendly">Prueba de optimización para móviles de Google</a></li>
-        <li><a href="http://www.responsinator.com/">Responsinator</a></li>
-        <li><a href="http://responsivecss.net/responsive-design-checker-tools/">Responsive design testing tools</a></li>
-      </ul>
-    </section>
+    <ul>
+      <li>la mayoría de páginas web se ven en pantallas, pero también hay que pensar en las impresoras, en los lectores de pantallas, etc.</li>
+      <li>la diversidad en las resoluciones de las pantallas va en aumento (véase la lección <a href="../otros/historia-pantallas-os.html#pantallas">estadísticas de pantallas</a>): pantallas de escritorio cada vez más grandes, pantallas de móviles mucho más pequeñas que las de escritorio, pantallas de tabletas de tamaños intermedios entre unas y otras</li>
+      <li>las pantallas de escritorio están siempre en la misma posición, pero los móviles y tabletas pueden cambiar fácilmente de orientación</li>
+      <li>las pantallas de escritorio suelen tener una densidad de píxeles de 96 píxeles por pulgada (<a href="https://en.wikipedia.org/wiki/Pixel_density">DPI</a>), pero los dispositivos móviles pueden tener densidades mucho más altas (en 2016 ya había móviles con pantallas de más de 800 DPI)</li>
+    </ul>
 
-    <section id="recomendaciones">
-      <h2>Recomendaciones</h2>
+    <p>En los últimos años se ha acuñado el término <i>responsive web design</i> para referirse a las técnicas de diseño que se preocupan por tratar esta diversidad. En español <i>responsive web design</i> se suele traducir por <strong>diseño web adaptativo</strong> (o al menos, es lo que recomienda la <a href="http://www.fundeu.es/">Fundéu</a>, <a href="http://www.fundeu.es/recomendacion/diseno-web-adaptativo-traduccion-de-responsive-web-design-1573/">consulta 1573, 31/01/13</a>).</p>
 
-      <p>Las recomendaciones HTML 4.01 y CSS 2 ya incluían etiquetas y propiedades que permitían adaptar la página web a los tipos de medios, pero de manera muy básica.</p>
+    <p>Las consultas de medios (media queries) de las hojas de estilo que se comentan en esta lección son una herramienta básica para un diseño adaptativo.</p>
 
-      <p>La recomendación <a href="https://www.w3.org/TR/css3-mediaqueries/">CSS 3: Media queries</a>, editada por Florian Rivoal, se aprobó el 19 de junio de 2012. Esta recomendación ampliaba las posibilidades de adaptación al permitir obtener detalles sobre las caraterísticas de los dispositivos.</p>
+    <hr class="corta" />
 
-      <p>Actualmente (enero de 2017), el W3C está elaborando la recomendación <a href="https://drafts.csswg.org/css-device-adapt/">CSS Device Adaptation Modules Level 1</a>, dedicada específicamente a las características de las pantallas.</p>
-    </section>
+    <p>Herramientas:</p>
+    <ul>
+      <li>Chrome &gt; Más herramientas &gt; Herramientas para desarrolladores &gt; Device mode (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>, o icono móvil)</li>
+      <li>Firefox &gt; Herramientas &gt; Desarrollador web &gt; Vista de diseño adaptable (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>)</li>
+      <li>Extensión Web Developer de Firefox &gt; Resize &gt; View Resposive Layouts</li>
+      <li><a href="https://search.google.com/search-console/mobile-friendly">Prueba de optimización para móviles de Google</a></li>
+      <li><a href="http://www.responsinator.com/">Responsinator</a></li>
+      <li><a href="http://responsivecss.net/responsive-design-checker-tools/">Responsive design testing tools</a></li>
+    </ul>
+  </section>
 
-    <section id="meta-viewport">
-      <h2>Densidad de píxeles: etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span></h2>
+  <section id="recomendaciones">
+    <h2>Recomendaciones</h2>
 
-      <p>La densidad de píxeles de una pantalla es el número de píxeles por unidad de distancia (aunque no sea lo mismo, también se utiliza con el mismo significado la expresión de puntos por unidad de distancia. Las unidades más utilizadas son <a href="https://en.wikipedia.org/wiki/Pixel_density">PPI</a> (píxeles por pulgada) y <a href="https://en.wikipedia.org/wiki/Dots_per_inch">DPI</a> (puntos por pulgada).</p>
+    <p>Las recomendaciones HTML 4.01 y CSS 2 ya incluían etiquetas y propiedades que permitían adaptar la página web a los tipos de medios, pero de manera muy básica.</p>
 
-      <p>Los monitores de escritorio suelen tener más o menos 96 DPI, pero los dispositivos móviles incorporan pantallas de alta densidad, de 300 DPI o más.</p>
+    <p>La recomendación <a href="https://www.w3.org/TR/css3-mediaqueries/">CSS 3: Media queries</a>, editada por Florian Rivoal, se aprobó el 19 de junio de 2012. Esta recomendación ampliaba las posibilidades de adaptación al permitir obtener detalles sobre las características de los dispositivos.</p>
 
-      <p>Eso complica bastante el diseño, pues no sólo se tienen que tener en cuenta los anchos de las pantallas, sino también la densidad de píxeles.</p>
+    <p>Actualmente (noviembre de 2017), el W3C está elaborando dos recomendaciones relacionadas:</p>
+    <ul>
+      <li>la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a>, que desarrolla la recomendación CSS 3: media queries.</li>
+      <li>la recomendación <a href="https://drafts.csswg.org/css-device-adapt/">CSS Device Adaptation Modules Level 1</a>, dedicada específicamente a las características de las pantallas.</li>
+    </ul>
+  </section>
 
-      <p>Una forma de simplificar el diseño es incluir en la página web la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span>:</p>
+  <section id="meta-viewport">
+    <h2>Densidad de píxeles: etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span></h2>
 
-      <div class="codigo">
-        <pre><code class="language-html">&lt;head&gt;
+    <p>La densidad de píxeles de una pantalla es el número de píxeles por unidad de distancia (aunque no sea lo mismo, también se utiliza con el mismo significado la expresión de puntos por unidad de distancia. Las unidades más utilizadas son <a href="https://en.wikipedia.org/wiki/Pixel_density">PPI</a> (píxeles por pulgada) y <a href="https://en.wikipedia.org/wiki/Dots_per_inch">DPI</a> (puntos por pulgada).</p>
+
+    <p>Los monitores de escritorio suelen tener más o menos 96 DPI, pero los dispositivos móviles incorporan pantallas de alta densidad, de 300 DPI o más.</p>
+
+    <p>Eso complica bastante el diseño, pues no sólo se tienen que tener en cuenta los anchos de las pantallas, sino también la densidad de píxeles.</p>
+
+    <p>Una forma de simplificar el diseño es incluir en la página web la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span>:</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">&lt;head&gt;
   ...
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
   ...
 &lt;/head&gt;</code>
 </pre>
-      </div>
+    </div>
 
-      <p>Esta etiqueta hace que en dispositivos con pantallas de alta densidad el navegador aplique automáticamente un zoom que facilite la lectura.</p>
+    <p>Esta etiqueta hace que en dispositivos con pantallas de alta densidad el navegador aplique automáticamente un zoom que facilite la lectura.</p>
 
-      <p>Esta etiqueta fue creada por Apple en 2007 (veáse <a href="#origen-viewport">referencia</a>), aunque rápidamente fue adoptada por todos los navegadores de los móviles. Por ello, se recomienda incluir esta etiqueta en todas las páginas web. En estos apuntes se ha incluido en la <a href="../html/html-que-es.html#pagina-basica">plantilla de página web básica</a>.</p>
+    <p>Esta etiqueta fue creada por Apple en 2007 (veáse <a href="#origen-viewport">referencia</a>), aunque rápidamente fue adoptada por todos los navegadores de los móviles. Por ello, se recomienda incluir esta etiqueta en todas las páginas web. En estos apuntes se ha incluido en la <a href="../html/html-que-es.html#pagina-basica">plantilla de página web básica</a>.</p>
 
-      <h3 class="con-aside">La regla arroba <span class="css-arroba">@viewport</span></h3>
+    <p>La etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> no forma parte de ninguna recomendación ya aprobada, pero formará parte de la futura recomendación <a href="https://drafts.csswg.org/css-device-adapt/">CSS Device Adaptation Module Level 1</a> (actualmente, noviembre de 2017, en elaboración).</p>
 
-      <aside class="enlace-norma">
-        <p><span class="css-arroba">@viewport</span><br />
-          <a href="https://drafts.csswg.org/css-device-adapt/#atviewport-rule"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/es/docs/Web/CSS/@viewport"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#feat=css-deviceadaptation"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <h3 class="con-aside">La regla arroba <span class="css-arroba">@viewport</span></h3>
 
-      <p>La etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> no forma todavía parte de ninguna recomendación ya aprobada, aunque la futura recomendación <a href="https://drafts.csswg.org/css-device-adapt/">CSS Device Adaptation Module Level 1</a> (actualmente, enero de 2017, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que está inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero está pensada tanto para navegadores de móviles como de escritorio.</p>
+    <aside class="enlace-norma">
+      <p><span class="css-arroba">@viewport</span><br />
+        <a href="https://drafts.csswg.org/css-device-adapt/#atviewport-rule"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/es/docs/Web/CSS/@viewport"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#feat=css-deviceadaptation"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>El borrador nombra la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> y la declara equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. En el futuro, cuando esta recomendación sea implementada en los navegadores, se podrá sustituir la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> de todas las páginas por la regla arroba <span class="css-arroba">@viewport</span> en la hoja de estilo.</p>
+    <p>La futura recomendación <a href="https://drafts.csswg.org/css-device-adapt/">CSS Device Adaptation Module Level 1</a> (actualmente, noviembre de 2017, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que está inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero está pensada tanto para navegadores de móviles como de escritorio.</p>
 
-      <hr class="corta" />
+    <p>El borrador declara la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. En el futuro, cuando esta recomendación sea implementada en los navegadores, se podrá sustituir la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> de todas las páginas por la regla arroba <span class="css-arroba">@viewport</span> en la hoja de estilo.</p>
 
-      <p>Referencias:</p>
-      <ul>
-        <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes">meta viewport</a></li>
-        <li>A tale of two viewports: <a href="http://www.quirksmode.org/mobile/viewports.html">Part 1</a> - <a href="http://www.quirksmode.org/mobile/viewports2.html">Part 2</a></li>
-        <li>MDN: <a href="https://developer.mozilla.org/es/docs/M%C3%B3vil/Viewport_meta_tag">Usando la etiqueta meta viewport en móviles</a></li>
-        <li>Safari Developer Library: <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html">Configuring the viewport</a></li>
-        <li id="origen-viewport">La referencia más antigua a la etiqueta meta viewport que he encontrado (<a href="http://furbo.org/2007/07/24/one-line-of-code/">One line of code</a>) es de julio de 2007.</li>
-      </ul>
-    </section>
+    <hr class="corta" />
 
-    <section id="css-especificas">
-      <h2>Hojas de estilo específicas: etiqueta <span class="html-eti">link</span> <span class="html-atri">media</span></h2>
+    <p>Referencias:</p>
+    <ul>
+      <li>MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes">meta viewport</a></li>
+      <li>A tale of two viewports: <a href="http://www.quirksmode.org/mobile/viewports.html">Part 1</a> - <a href="http://www.quirksmode.org/mobile/viewports2.html">Part 2</a></li>
+      <li>MDN: <a href="https://developer.mozilla.org/es/docs/M%C3%B3vil/Viewport_meta_tag">Usando la etiqueta meta viewport en móviles</a></li>
+      <li>Safari Developer Library: <a href="https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html">Configuring the viewport</a></li>
+      <li id="origen-viewport">La referencia más antigua a la etiqueta meta viewport que he encontrado (<a href="http://furbo.org/2007/07/24/one-line-of-code/">One line of code</a>) es de julio de 2007.</li>
+    </ul>
+  </section>
 
-      <p>HTML 4 y CSS 2 ya permitían enlazar hojas de estilo específicas para los diferentes tipos de dispositivos.</p>
+  <section id="css-especificas">
+    <h2 class="con-aside">Hojas de estilo específicas: etiqueta <span class="html-eti">link</span> <span class="html-atri">media</span></h2>
 
-      <div class="codigo">
-        <pre><code class="language-html">&lt;head&gt;
+    <aside class="enlace-norma">
+      <p><span class="html-eti">link</span> <span class="html-atri">media</span><br />
+        <a href="https://www.w3.org/TR/CSS2/media.html#q7.0"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-media"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>HTML 4 y CSS 2 ya permitían enlazar hojas de estilo específicas para los diferentes tipos de dispositivos. Al añadir el atributo <span class="html-atri">media</span> al enlace a la hoja de estilo, el navegador aplica esa hoja de estilo únicamente cuando el documento se muestra en ese dispositivo.</p>
+
+    <div class="codigo">
+      <pre><code class="language-html">&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" type="text/css" media="screen" href="pantalla.css" /&gt;
+  &lt;link rel="stylesheet" type="text/css" media="print" href="impresora.css" /&gt;
+  ...
+&lt;/head&gt;</code></pre>
+    </div>
+
+    <p>Los tipos de dispositivos definidos en HTML 4.01 eran: <span class="css-valor">screen</span> (pantallas), <span class="css-valor">tty</span> (pantallas de muy baja resolución y en blanco y negro), <span class="css-valor">tv</span> (pantallas de baja resolución y sin barras de desplazamiento, aunque con color), <span class="css-valor">projection</span> (proyectores), <span class="css-valor">handheld</span> (pantallas pequeñas y en blanco y negro), <span class="css-valor">print</span> (papel), <span class="css-valor">braille</span> (pantallas braille táctiles), <span class="css-valor">aural</span> (sintetizadores de voz) y <span class="css-valor">all</span> (todos). En CSS 2.1 se declaraba <span class="css-valor">aural</span> obsoleto y se añadían <span class="css-valor">embossed</span> (impresoras braille) y <span class="css-valor">speech</span> (sintetizadores de voz), además de definir grupos de medios.</p>
+
+    <p>Abra el siguiente ejemplo en una pestaña aparte y en la vista previa de impresión compruebe que se cambia el tipo de letra y el estilo del título.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;head&gt;
   ...
   &lt;link rel="stylesheet" type="text/css" media="screen" href="pantalla.css" /&gt;
   &lt;link rel="stylesheet" type="text/css" media="print" href="impresora.css" /&gt;
   ...
 &lt;/head&gt;</code>
 </pre>
-      </div>
-
-      <p>Los tipos de dispositivos definidos en HTML 4.01 eran: <span class="css-valor">screen</span> (pantallas), <span class="css-valor">tty</span> (pantallas de muy baja resolución y en blanco y negro), <span class="css-valor">tv</span> (pantallas de baja resolución y sin barras de desplazamiento, aunque con color), <span class="css-valor">projection</span> (proyectores), <span class="css-valor">handheld</span> (pantallas pequeñas y en blanco y negro), <span class="css-valor">print</span> (papel), <span class="css-valor">braille</span> (pantallas braille táctiles), <span class="css-valor">aural</span> (sintetizadores de voz) y <span class="css-valor">all</span> (todos). En CSS 2.1 se declaraba <span class="css-valor">aural</span> obsoleto y se añadían <span class="css-valor">embossed</span> (impresoras braille) y <span class="css-valor">speech</span> (sintetizadores de voz), además de definir grupos de medios.</p>
-    </section>
-
-    <section id="media-queries">
-      <h2>Características del dispositivo: media queries</h2>
-
-      <p>La recomendación <a href="https://www.w3.org/TR/css3-mediaqueries/">CSS 3: Media queries</a> define toda una serie de <strong>características de medios</strong> (<i>media features</i>) que corresponden a características del dispositivo. Estas son algunas de ellas:</p>
-
-      <ul>
-        <li><span class="css-feature">width</span>: anchura de la pantalla</li>
-        <li><span class="css-feature">height</span>: altura de la pantalla</li>
-        <li><span class="css-feature">orientation</span>: orientación <span class="css-valor">portrait</span> o <span class="css-valor">landscape</span></li>
-        <li><span class="css-feature">aspect-ratio</span>: proporción</li>
-        <li><span class="css-feature">resolution</span>: resolución</li>
-      </ul>
-
-      <p>Estas características no permiten modificar las características físicas del dispositivo, lógicamente, pero toman como valor la característica del dispositivo.</p>
-
-      <p>Algunas características tienen variantes con prefijos <span class="css-feature">min-</span> y <span class="css-feature">max-</span> para expresar comparaciones sin tener que utilizar desigualdades &lt; y &gt; que en HTML son caracteres especiales.</p>
-
-      <p>Esas propiedades se combinan con la regla arroba <span class="css-arroba">@media</span> para condicionar la aplicación de propiedades a características del dispositivo.</p>
-
-      <p>Se pueden combinar varias características mediante el operador and y la coma (que representa el operador lógico or) para crear expresiones más complejas.</p>
-
-      <p><strong>Notas</strong>:</p>
-      <ul>
-        <li>Otras características de medios son <span class="css-feature">color</span>, <span class="css-feature">color-index</span>, <span class="css-feature">monochrome</span>, <span class="css-feature">scan</span>, <span class="css-feature">grid</span>.</li>
-        <li>Las características de medios<span class="css-feature">device-aspect-ratio</span>, <span class="css-feature">device-width</span> y <span class="css-feature">device-height</span> se consideran obsoletas.</li>
-      </ul>
-
-
-      <section id="media-queries-width">
-        <h3>Ancho de pantalla: <span class="css-arroba">min-width</span> y <span class="css-arroba">max-width</span></h3>
-
-        <p>La característica de medios <span class="css-arroba">min-width</span> se refiere al ancho mínimo de pantalla, es decir, que las reglas que contenga se aplicarán cuando la pantalla tenga una anchura mayor de la indicada.</p>
-
-        <p>La característica de medios <span class="css-arroba">max-width</span> se refiere al ancho máximo de pantalla, es decir, que las reglas que contenga se aplicarán cuando la pantalla tenga una anchura menor o igual a la indicada.</p>
-
-        <p>El ejemplo siguiente muestra una hoja de estilo que modifica el tamaño de <span class="html-eti">h1</span> dependiendo de si la pantalla tiene menos o más de 1024px de ancho.</p>
-
+        </div>
         <div class="codigo">
-          <pre><code class="language-css">@media screen and (max-width: 1024px){
-  h1 {
-    font-size: 200%;
+          <pre>
+<code class="language-css">/* pantalla.css */
+body { font-family: sans-serif; }
+
+h1 { text-align: center; text-transform: uppercase; }</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* impresora.css */
+body { font-family: serif; }
+
+h1 { text-decoration: underline; }</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/media-queries/link-media-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/media-queries/link-media-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
+    <p>La idea de definir tipos de dispositivos no ha dado buen resultado, ya que las características de los dispositivos del mismo a veces son muy diferentes y distintos tipos de dispositivos tienen características comunes. Por eso, en las recomendacioner posteriores se ha reducido el número de dispositivos y creado nuevas propiedades relacionadas con las caracterísiticas de los dispositivos (tamaños, resoluciones, número de colores, etc.).</p>
+
+    <p>La recomendación CSS 3: Media queries, publicada en 2012, no definía los tipos de dispositivos, ya que estaban definidos en la recomendación HTML 4.01. Las recomendaciones HTML 5 y posteriores ya no incluían una lista de tipos de dispositivos, que se encuentra ahora en la recomendación Media Queries Level 4 (actualmente, noviembre de 2017, en elaboración). En ella, ya sólo se consideran los tipos <span class="css-valor">all</span> (pantallas), <span class="css-valor">print</span>, <span class="css-valor">screen</span> (pantallas) y <span class="css-valor">speech</span>.</p>
+
+  </section>
+
+  <section id="media-queries">
+    <h2>Características del dispositivo: media queries</h2>
+
+    <p>La recomendación <a href="https://www.w3.org/TR/css3-mediaqueries/">CSS 3: Media queries</a> define toda una serie de <strong>características de medios</strong> (<i>media features</i>) que corresponden a características del dispositivo. Las más importantes son:</p>
+
+    <ul>
+      <li><span class="css-feature">width</span>: anchura de la pantalla</li>
+      <li><span class="css-feature">height</span>: altura de la pantalla</li>
+      <li><span class="css-feature">orientation</span>: orientación de la pantalla <span class="css-valor">portrait</span> (vertical) o <span class="css-valor">landscape</span> (horizontal)</li>
+      <li><span class="css-feature">aspect-ratio</span>: proporción entre la anchura y la altura de la pantalla</li>
+      <li><span class="css-feature">resolution</span>: resolución (densidad de píxeles)</li>
+    </ul>
+
+    <p>Estas características no permiten modificar las características físicas del dispositivo, lógicamente. Lo que hacen es tomar como valor las características del dispositivo, de una forma dinámica.</p>
+
+    <p>Algunas características tienen variantes con prefijos <span class="css-feature">min-</span> y <span class="css-feature">max-</span> para expresar comparaciones sin tener que utilizar los caracteres menor o mayor (&lt; y &gt;), que en HTML son caracteres especiales.</p>
+
+    <p>Esas propiedades se combinan con la regla arroba <span class="css-arroba">@media</span> para condicionar la aplicación de propiedades a características del dispositivo.</p>
+
+    <p>Se pueden combinar varias características mediante el operador and y la coma (que representa el operador lógico or) para crear expresiones más complejas.</p>
+
+    <p><strong>Notas</strong>:</p>
+    <ul>
+      <li>En CSS 3: Media queries se definían también las características de medios <span class="css-feature">color</span>, <span class="css-feature">color-index</span>, <span class="css-feature">monochrome</span>, <span class="css-feature">scan</span> y <span class="css-feature">grid</span>, que se mantienen en Media Queries Level 4.</li>
+      <li>En CSS 3: Media queries se definían también las características de medios <span class="css-feature">device-width</span>, <span class="css-feature">device-height</span> y <span class="css-feature">device-aspect-ratio</span>, que en Media Queries Level 4 se consideran obsoletas.</li>
+      <li>En Media Queries Level 4 se definen también las características de medios <span class="css-feature">update</span>, <span class="css-feature">overflow-block</span>, <span class="css-feature">overflow-inline</span>,<span class="css-feature">color-gamut</span>, <span class="css-feature">pointer</span>, <span class="css-feature">hover</span>, <span class="css-feature">any-pointer</span> y <span class="css-feature">any-hover</span>.</li>
+    </ul>
+
+    <section id="media-queries-width">
+      <h3>Ancho de pantalla: <span class="css-feature">min-width</span> y <span class="css-feature">max-width</span></h3>
+
+      <p>La característica de medios <span class="css-feature">min-width</span> se refiere al ancho mínimo de pantalla, es decir, que las reglas que contenga se aplicarán cuando la pantalla tenga una anchura mayor de la indicada.</p>
+
+      <p>La característica de medios <span class="css-feature">max-width</span> se refiere al ancho máximo de pantalla, es decir, que las reglas que contenga se aplicarán cuando la pantalla tenga una anchura menor o igual a la indicada.</p>
+
+      <p>El ejemplo siguiente muestra una hoja de estilo que modifica el color de fondo de la página dependiendo de si la pantalla tiene menos o más de 500px de ancho.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-css">@media screen and (max-width: 500px) {
+  body {
+    background-color: lightblue;
   }
 }
 
-@media screen and (min-width: 1024px){
-  h1 {
-    font-size: 400%;
+@media screen and (min-width: 500px) {
+  body {
+    background-color: lightcoral;
   }
-}
-
-h1 {
-  text-align: center;
 }</code>
 </pre>
         </div>
-      </section>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/media-queries/media-min-max-width-1.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/media-queries/media-min-max-width-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+
+      <p>El ejemplo siguiente muestra una hoja de estilo que modifica el color de fondo de la página dependiendo de si la pantalla tiene menos o más de 500px de ancho.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-css">@media screen and (max-width: 400px) {
+  html {
+    background-color: lightblue;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  html {
+    background-color: lightcoral;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    background-color: lightgreen;
+  }
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/media-queries/media-min-max-width-2.html" style="width:100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/media-queries/media-min-max-width-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+
+      <p>Los valores de ancho de pantalla se denominan en inglés <i>breakpoints</i>. Cuantos más incluyamos, mejor podremos adaptar nuestras páginas web a diferentes dispositivos.</p>
+
+      <p>Referencias:</p>
+      <ul>
+        <li><a href="https://material.io/guidelines/layout/responsive-ui.html#responsive-ui-breakpoints">Material Design recommended breakpoints</a></li>
+      </ul>
     </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 18 de enero de 2016</p>
+    <section id="media-queries-orientation">
+      <h3>Orientación de pantalla: <span class="css-feature">orientation</span></h3>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+      <p>La característica de medios <span class="css-feature">orientation</span> toma dos posibles valores:</p>
+
+      <ul>
+        <li><span class="css-valor">landscape</span>: orientación horizontal, es decir, que el ancho es mayor o igual que el alto</li>
+        <li><span class="css-valor">portrait</span>: orientación vertical, es decir, que el ancho es menor que el alto</li>
+      </ul>
+
+      <p>El ejemplo siguiente muestra una hoja de estilo que modifica el color de fondo de la página dependiendo de si el ancho es mayor que el alto.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-css">@media (orientation: portrait) {
+  html {
+    background-color: lightblue;
+  }
+}
+
+@media (orientation: landscape) {
+  html {
+    background-color: lightcoral;
+  }
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/media-queries/media-orientation-1.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/media-queries/media-orientation-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 19 de noviembre de 2017</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

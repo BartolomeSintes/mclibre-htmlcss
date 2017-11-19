@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>min-width y max-width (1). Media queries. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css">
+    @media screen and (max-width: 500px) {
+      html {
+        background-color: lightblue;
+      }
+    }
+
+    @media screen and (min-width: 500px) {
+      html {
+        background-color: lightcoral;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <p>El color de fondo de esta página cambia según el ancho de la pantalla:</p>
+  <ul>
+    <li>si es menor de 500px, el color es azul</li>
+    <li>si es mayor de 500px, el color es rojo</li>
+  </ul>
+
+  <p>El ancho actual es <strong><span id="size"></span>px</strong></p>
+
+  <script>
+    var ancho = window.innerWidth;
+    var texto = document.getElementById("size");
+    texto.textContent = ancho;
+    window.onresize = function () {
+      var ancho = window.innerWidth;
+      var texto = document.getElementById("size");
+      texto.textContent = ancho;
+    }
+  </script>
+</body>
+</html>
