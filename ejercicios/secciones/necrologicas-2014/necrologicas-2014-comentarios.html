@@ -57,8 +57,8 @@
         <li>en cada <span class="html-eti">&lt;article&gt;</span> hay:
           <ul>
             <li>un título <span class="html-eti">&lt;h2&gt;</span> con el nombre del fallecido</li>
-            <li>una sección <span class="html-eti">&lt;section&gt;</span> con las fechas de nacimiento y muerte</li>
-            <li>una sección <span class="html-eti">&lt;section&gt;</span> con una pequeña biografía del fallecido</li>
+            <li>una división <span class="html-eti">&lt;div&gt;</span> con las fechas de nacimiento y muerte</li>
+            <li>una división <span class="html-eti">&lt;div&gt;</span> con una pequeña biografía del fallecido</li>
           </ul>
         </li>
       </ul>
@@ -83,11 +83,11 @@
 
         <rect x="100" y="380" width="1720" height="80"
               fill="#DC5C00" stroke="black" stroke-width="3" />
-        <text x="120" y="440" font-family="sans-serif" font-size="50">section</text>
+        <text x="120" y="440" font-family="sans-serif" font-size="50">div</text>
 
         <rect x="100" y="480" width="1720" height="80"
               fill="#FBB167" stroke="black" stroke-width="3" />
-        <text x="120" y="540" font-family="sans-serif" font-size="50">section</text>
+        <text x="120" y="540" font-family="sans-serif" font-size="50">div</text>
 
         <rect x="60" y="600" width="1800" height="380"
               fill="#D106D7" stroke="black" stroke-width="3" />
@@ -99,22 +99,20 @@
 
         <rect x="100" y="780" width="1720" height="80"
               fill="#E782EB" stroke="black" stroke-width="3" />
-        <text x="120" y="840" font-family="sans-serif" font-size="50">section</text>
+        <text x="120" y="840" font-family="sans-serif" font-size="50">div</text>
 
         <rect x="100" y="880" width="1720" height="80"
               fill="#F8DBF9" stroke="black" stroke-width="3" />
-        <text x="120" y="940" font-family="sans-serif" font-size="50">section</text>
+        <text x="120" y="940" font-family="sans-serif" font-size="50">div</text>
         </svg></p>
 
       <p>Las necrológicas utilizan la etiqueta <span class="html-eti">&lt;article&gt;</span> porque cada necrológica tiene sentido en sí mismo y no necesita el resto de la página para su comprensión, pero también podría haberse utlizado <span class="html-eti">&lt;section&gt;</span>.</p>
-
-      <p>Los <span class="html-eti">&lt;article&gt;</span> contienen títulos <span class="html-eti">&lt;h2&gt;</span>, pero se podría haber utilizado <span class="html-eti">&lt;h1&gt;</span>.</p>
     </section>
 
     <section id="comentarios-etiquetas">
       <h2>Etiquetas</h2>
 
-      <p>Además de las etiquetas que se muestran en la imagen del apartado anterior (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>,  y <span class="html-eti">&lt;section&gt;</span>), la página sólo contiene párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
+      <p>Además de las etiquetas que se muestran en la imagen del apartado anterior (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>,  y <span class="html-eti">&lt;div&gt;</span>), la página sólo contiene párrafos <span class="html-eti">&lt;p&gt;</span>.</p>
     </section>
 
     <section id="comentarios-clases">
@@ -129,24 +127,24 @@
       <ul>
         <li>clase <span class="css-valor">futbol</span>: para los <span class="html-eti">&lt;article&gt;</span> de Luis Aragonés y Alfredo Di Stéfano</li>
         <li>clase <span class="css-valor">literatura</span>: para los <span class="html-eti">&lt;article&gt;</span> de Gabriel García Márquez y Ana María Matute</li>
-        <li>clase <span class="css-valor">datos</span>: para la <span class="html-eti">&lt;section&gt;</span> con el lugar y fecha de nacimiento y muerte</li>
-        <li>clase <span class="css-valor">vida</span>: para la <span class="html-eti">&lt;article&gt;</span> que comentan quién es cada persona</li>
+        <li>clase <span class="css-valor">datos</span>: para la <span class="html-eti">&lt;div&gt;</span> con el lugar y fecha de nacimiento y muerte</li>
+        <li>clase <span class="css-valor">vida</span>: para la <span class="html-eti">&lt;div&gt;</span> que comentan quién es cada persona</li>
       </ul>
 
       <p>Para definir en la hoja de estilo cada tipo de sección en cada tipo de artículo, se deben utilizar selectores de descendientes:</p>
 
       <ul>
-        <li><span class="css-sele">article.futbol section.datos</span> para la sección de datos en las necrológicas de futbolista</li>
-        <li><span class="css-sele">article.futbol section.vida</span> para la sección de biografía en las necrológicas de futbolista</li>
-        <li><span class="css-sele">article.literatura section.datos</span> para la sección de datos en las necrológicas de escritor</li>
-        <li><span class="css-sele">article.literatura section.vida</span> para la sección de biografía en las necrológicas de escritor</li>
+        <li><span class="css-sele">article.futbol div.datos</span> para la sección de datos en las necrológicas de futbolista</li>
+        <li><span class="css-sele">article.futbol div.vida</span> para la sección de biografía en las necrológicas de futbolista</li>
+        <li><span class="css-sele">article.literatura div.datos</span> para la sección de datos en las necrológicas de escritor</li>
+        <li><span class="css-sele">article.literatura div.vida</span> para la sección de biografía en las necrológicas de escritor</li>
       </ul>
     </section>
 
     <section id="comentarios-fuentes">
       <h2>Fuentes</h2>
 
-      <p>En este ejercicio se utiliza el tipo de letra genérico <span class="css-valor">sans-serif</span> y las fuentes de Google Fonts <span class="css-valor">Cabin Sketch</span> y <span class="css-valor">Gabriela</span>, pero también se pueden cargar localmente.</p>
+      <p>En este ejercicio se utiliza el tipo de letra genérico <span class="css-valor">sans-serif</span> y las fuentes de Google Fonts <a href="https://fonts.google.com/specimen/Cabin+Sketch">Cabin Sketch</a> y <a href="https://fonts.google.com/specimen/Gabriela">Gabriela</a>, pero también se pueden cargar localmente.</p>
     </section>
 
     <section id="comentarios-estilos">
@@ -182,7 +180,7 @@
             <li>tamaño de letra: <span class="css-prop">font-size</span></li>
           </ul>
         </li>
-        <li>Secciones (<span class="html-eti">section</span>):
+        <li>Divisiones (<span class="html-eti">div</span>):
           <ul>
             <li>margen interior: <span class="css-prop">padding</span></li>
           </ul>
@@ -192,7 +190,7 @@
             <li>margen: <span class="css-prop">margin</span></li>
           </ul>
         </li>
-        <li>Sección de vida (<span class="html-eti">section.vida</span>):
+        <li>División de vida (<span class="html-eti">div.vida</span>):
           <ul>
             <li>margen: <span class="css-prop">margin</span></li>
           </ul>
@@ -211,7 +209,7 @@
             <li>color de fondo: <span class="css-prop">background-color</span></li>
           </ul>
         </li>
-        <li>Sección de datos en el artículo de fútbol (<span class="html-eti">article.futbol section.datos</span>):
+        <li>División de datos en el artículo de fútbol (<span class="html-eti">article.futbol div.datos</span>):
           <ul>
             <li>color de fondo: <span class="css-prop">background-color</span></li>
           </ul>
@@ -230,7 +228,7 @@
             <li>color de fondo: <span class="css-prop">background-color</span></li>
           </ul>
         </li>
-        <li>Sección de datos en el artículo de literatura (<span class="html-eti">article.literatura section.datos</span>):
+        <li>División de datos en el artículo de literatura (<span class="html-eti">article.literatura div.datos</span>):
           <ul>
             <li>color de fondo: <span class="css-prop">background-color</span></li>
           </ul>
@@ -249,7 +247,7 @@
     </section>
 
     <footer>
-      <p class="ultmod">Última modificación de esta página: 25 de noviembre de 2015</p>
+      <p class="ultmod">Última modificación de esta página: 28 de noviembre de 2017</p>
 
       <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
         Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
