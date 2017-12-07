@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Etiquetas HTML y propiedades CSS. Q05 17-18. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <title>Etiquetas HTML y propiedades CSS. Q06 17-18. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
   <link rel="icon" href="../varios/favicon.ico" />
@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <h1>Q05: Etiquetas HTML y propiedades CSS</h1>
+  <h1>Q06: Etiquetas HTML y propiedades CSS</h1>
 
   <nav>
     <p>
@@ -66,11 +66,12 @@
         <li><a href="#css-margen-exterior">Margen exterior</a></li>
         <li><a href="#css-margen-interior">Margen interior</a></li>
         <li><a href="#css-fondos">Fondos</a></li>
+        <li><a href="#css-pseudo-clases">Pseudo-clases</a></li>
       </ul>
     </div>
   </nav>
 
-  <p>Las tablas siguientes resumen las etiquetas HTML y las propiedades CSS trabajadas en clase en el curso 2017/18 hasta la quincena Q05.</p>
+  <p>Las tablas siguientes resumen las etiquetas HTML y las propiedades CSS trabajadas en clase en el curso 2017/18 hasta la quincena Q06.</p>
 
   <section id="html-etiquetas">
     <h3>Etiquetas HTML</h3>
@@ -139,17 +140,47 @@
           <td>Atributos principales</td>
         </tr>
         <tr>
-          <td><a href="http://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-body">body</a></td>
+          <td><a href="html-secciones.html#etiqueta-body">body</a></td>
           <td>delimita el cuerpo del documento</td>
           <td></td>
         </tr>
         <tr>
-          <td><a href="http://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-hn">h1 a h6</a></td>
+          <td><a href="html-secciones.html#etiqueta-article">article</a></td>
+          <td>artículo</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-section">section</a></td>
+          <td>sección</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-nav">nav</a></td>
+          <td>navegación</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-aside">aside</a></td>
+          <td>lateral</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-hn">h1 a h6</a></td>
           <td>encabezado (de nivel 1 a 6)</td>
           <td></td>
         </tr>
         <tr>
-          <td><a href="http://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-address">address</a></td>
+          <td><a href="html-secciones.html#etiqueta-header">header</a></td>
+          <td>cabecera</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-footer">footer</a></td>
+          <td>pie</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="html-secciones.html#etiqueta-address">address</a></td>
           <td>dirección (información sobre el autor)</td>
           <td></td>
         </tr>
@@ -610,16 +641,71 @@
           <td>Valores</td>
         </tr>
         <tr>
-          <td><a href="http://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-color">background-color</a></td>
+          <td><a href="css-fondos.html#background">background</a></td>
+          <td>propiedad compuesta</td>
+          <td>background-attachment || background-color || background-image || background-position || background-repeat </td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#fondos-multiples">background</a><sup>(3)</sup></td>
+          <td>fondos múltiples</td>
+          <td>separados por comas</td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-attachment">background-attachment</a></td>
+          <td>ligadura de la imagen</td>
+          <td><span class="css-valor">fixed</span> | <span class="css-valor">scroll</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-color">background-color</a></td>
           <td>color de fondo</td>
           <td><span class="css-valor">transparent</span> | color</td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-image">background-image</a></td>
+          <td>imagen de fondo</td>
+          <td><span class="css-valor">none</span> | uri</td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-position">background-position</a></td>
+          <td>posición de la imagen de fondo</td>
+          <td>[ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> | distancia | porcentaje] [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> | distancia | porcentaje] ]? | [ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> ] || [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> ] ]</td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-repeat">background-repeat</a></td>
+          <td>repetición de la imagen de fondo</td>
+          <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span><sup>(3)</sup> | <span class="css-valor">round</span><sup>(3)</sup></td>
+        </tr>
+        <tr>
+          <td><a href="css-fondos.html#background-size">background-size</a><sup>(3)</sup></td>
+          <td>tamaño de la imagen de fondo</td>
+          <td><span class="css-valor">auto</span> | [ distancia | porcentaje ] {2} | <span class="css-valor">contain</span> | <span class="css-valor">cover</span></td>
+        </tr>
+      </tbody>
+      <tbody id="css-pseudo-clases">
+        <tr class="titulo">
+          <td colspan="3">Pseudo-clases</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Nombre</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="css-pseudoclases.html#pseudo-clase-enlace">:link</a></td>
+          <td>enlaces no visitados</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="css-pseudoclases.html#pseudo-clase-enlace">:visited</a></td>
+          <td>enlaces ya visitados</td>
+          <td></td>
         </tr>
       </tbody>
     </table>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de noviembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 4 de diciembre de 2017</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
