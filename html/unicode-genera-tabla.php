@@ -7,7 +7,7 @@
     <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
     <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="../varios/favicon.ico" />
-    <style type="text/css">
+    <style>
       @font-face {
         font-family: "Symbola";
         src: url("unicode/Symbola.ttf");
