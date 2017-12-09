@@ -1,861 +1,861 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bordes. CSS 2/3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      p.outline-1:hover{ outline: black 10px solid; }
-      p.border-1:hover { border:  black 10px solid; }
-      span.outline-2 { outline: black 3px solid; }
-      span.border-2  { border:  black 3px solid; }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Bordes. CSS 2/3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    p.outline-1:hover{ outline: black 10px solid; }
+    p.border-1:hover { border:  black 10px solid; }
+    span.outline-2 { outline: black 3px solid; }
+    span.border-2  { border:  black 3px solid; }
+  </style>
+</head>
 
-  <body>
-    <h1>CSS 2 / CSS 3: Bordes</h1>
+<body>
+  <h1>CSS 2 / CSS 3: Bordes</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS 2/3: Bordes</h2>
-
-        <ul>
-          <li><a href="#border"><span class="css-prop">border</span></a></li>
-          <li><a href="#estilos">Estilos de bordes</a></li>
-          <li><a href="#border-lados"><span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span></a></li>
-          <li><a href="#border-color-width-style"><span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></a></li>
-          <li><a href="#border-individuales">Propiedades individuales</a></li>
-          <li><a href="#border-radius">Bordes redondeados: <span class="css-prop">border-radius</span></a></li>
-          <li><a href="#bordes-html-body">Bordes <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span></a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <p>Cualquier elemento de una página web puede tener un borde (en inglés, <i>border</i>). En esta lección se comentan las propiedades CSS que permiten definir el borde de un elemento. Se comentan tanto las propiedades CSS 2.1 como algunas propiedades CSS 3. En la <a href=css3-bordes.html>CSS 3: Bordes</a> se comentan más propiedades CSS 3 relacionadas con bordes.</p>
-
-    <section id="border">
-      <h2 class="con-aside">La propiedad compuesta <span class="css-prop">border</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>La propiedad compuesta <span class="css-prop">border</span> permite establecer simultáneamente los cuatro bordes (arriba, derecha, abajo e izquierda) de un elemento, definiendo su:</p>
+    <div class="toc">
+      <h2>CSS 2/3: Bordes</h2>
 
       <ul>
-        <li>color (<a href="css-color.html">nombre de color o código RGB</a> o el valor <span class="css-valor">transparent</span>)</li>
-        <li>grosor (<a href="css-distancia.html#unidades">valor absoluto de distancia</a>, o los valores <span class="css-valor">thin</span> (fino), <span class="css-valor">medium</span> (medio) o <span class="css-valor">thick</span> (grueso))</li>
-        <li>estilo</li>
+        <li><a href="#border"><span class="css-prop">border</span></a></li>
+        <li><a href="#estilos">Estilos de bordes</a></li>
+        <li><a href="#border-lados"><span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span></a></li>
+        <li><a href="#border-color-width-style"><span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></a></li>
+        <li><a href="#border-individuales">Propiedades individuales</a></li>
+        <li><a href="#border-radius">Bordes redondeados: <span class="css-prop">border-radius</span></a></li>
+        <li><a href="#bordes-html-body">Bordes <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span></a></li>
       </ul>
+    </div>
+  </nav>
 
-      <p>Las tres características del borde se pueden escribir en cualquier orden.</p>
+  <p>Cualquier elemento de una página web puede tener un borde (en inglés, <i>border</i>). En esta lección se comentan las propiedades CSS que permiten definir el borde de un elemento. Se comentan tanto las propiedades CSS 2.1 como algunas propiedades CSS 3. En la <a href=css3-bordes.html>CSS 3: Bordes</a> se comentan más propiedades CSS 3 relacionadas con bordes.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+  <section id="border">
+    <h2 class="con-aside">La propiedad compuesta <span class="css-prop">border</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La propiedad compuesta <span class="css-prop">border</span> permite establecer simultáneamente los cuatro bordes (arriba, derecha, abajo e izquierda) de un elemento, definiendo su:</p>
+
+    <ul>
+      <li>color (<a href="css-color.html">nombre de color o código RGB</a> o el valor <span class="css-valor">transparent</span>)</li>
+      <li>grosor (<a href="css-distancia.html#unidades">valor absoluto de distancia</a>, o los valores <span class="css-valor">thin</span> (fino), <span class="css-valor">medium</span> (medio) o <span class="css-valor">thick</span> (grueso))</li>
+      <li>estilo</li>
+    </ul>
+
+    <p>Las tres características del borde se pueden escribir en cualquier orden.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px solid;
+border: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <p style="border: red 5px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="estilos">
-      <h2>Estilos de bordes</h2>
+  <section id="estilos">
+    <h2>Estilos de bordes</h2>
 
-      <p>Los estilos de bordes definidos en CSS 2 son <span class="css-valor">none</span>, <span class="css-valor">hidden</span>, <span class="css-valor">dotted</span>, <span class="css-valor">dashed</span>, <span class="css-valor">solid</span>, <span class="css-valor">double</span>, <span class="css-valor">groove</span>, <span class="css-valor">ridge</span>, <span class="css-valor">inset</span> y <span class="css-valor">outset</span>.</p>
+    <p>Los estilos de bordes definidos en CSS 2 son <span class="css-valor">none</span>, <span class="css-valor">hidden</span>, <span class="css-valor">dotted</span>, <span class="css-valor">dashed</span>, <span class="css-valor">solid</span>, <span class="css-valor">double</span>, <span class="css-valor">groove</span>, <span class="css-valor">ridge</span>, <span class="css-valor">inset</span> y <span class="css-valor">outset</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px none;
+border: red 5px none;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px none;">Esto es un párrafo con borde de estilo <span class="css-valor">none</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px none;">Esto es un párrafo con borde de estilo <span class="css-valor">none</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px hidden;
+border: red 5px hidden;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px hidden;">Esto es un párrafo con borde de estilo <span class="css-valor">hidden</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px hidden;">Esto es un párrafo con borde de estilo <span class="css-valor">hidden</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px dotted;
+border: red 5px dotted;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px dotted;">Esto es un párrafo con borde de estilo <span class="css-valor">dotted</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px dotted;">Esto es un párrafo con borde de estilo <span class="css-valor">dotted</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px dashed;
+border: red 5px dashed;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px dashed;">Esto es un párrafo con borde de estilo <span class="css-valor">dashed</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px dashed;">Esto es un párrafo con borde de estilo <span class="css-valor">dashed</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px solid;
+border: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px solid;">Esto es un párrafo con borde de estilo <span class="css-valor">solid</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px double;
+border: red 5px double;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px double;">Esto es un párrafo con borde de estilo <span class="css-valor">double</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px double;">Esto es un párrafo con borde de estilo <span class="css-valor">double</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px groove;
+border: red 5px groove;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px groove;">Esto es un párrafo con borde de estilo <span class="css-valor">groove</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px groove;">Esto es un párrafo con borde de estilo <span class="css-valor">groove</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px ridge;
+border: red 5px ridge;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px ridge;">Esto es un párrafo con borde de estilo <span class="css-valor">ridge</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px ridge;">Esto es un párrafo con borde de estilo <span class="css-valor">ridge</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px inset;
+border: red 5px inset;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px inset;">Esto es un párrafo con borde de estilo <span class="css-valor">inset</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px inset;">Esto es un párrafo con borde de estilo <span class="css-valor">inset</span>.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: red 5px outset;
+border: red 5px outset;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border: red 5px outset;">Esto es un párrafo con borde de estilo <span class="css-valor">outset</span>.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border: red 5px outset;">Esto es un párrafo con borde de estilo <span class="css-valor">outset</span>.</p>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Los estilos <span class="css-valor">groove</span>, <span class="css-valor">ridge</span> <span class="css-valor">inset</span> y <span class="css-valor">outset</span> producen un efecto tridimensional, pero el resultado depende del color del borde y de los colores de fondo del elemento y del elemento superior:</p>
+    <p>Los estilos <span class="css-valor">groove</span>, <span class="css-valor">ridge</span> <span class="css-valor">inset</span> y <span class="css-valor">outset</span> producen un efecto tridimensional, pero el resultado depende del color del borde y de los colores de fondo del elemento y del elemento superior:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: white 8px groove;
+border: white 8px groove;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-groove.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-groove.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-groove.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-groove.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: white 8px ridge;
+border: white 8px ridge;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-ridge.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-ridge.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-ridge.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-ridge.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: white 8px inset;
+border: white 8px inset;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-inset.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-inset.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-inset.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-inset.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border: white 8px outset;
+border: white 8px outset;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-outset.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-outset.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-outset.html" style="width: 100%; height: 5.5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-outset.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Los estilos <span class="css-valor">none</span> y <span class="css-valor">hidden</span> producen el mismo resultado (no se muestra el borde), salvo en el caso de las tablas en modo colapsado, en el que <span class="css-valor">hidden</span> oculta el borde independientemente del borde de la casilla contigua, pero <span class="css-valor">none</span> no (para que se oculte el borde común, las dos casillas contiguas deben tener su borde común en <span class="css-valor">none</span>).</p>
+    <p>Los estilos <span class="css-valor">none</span> y <span class="css-valor">hidden</span> producen el mismo resultado (no se muestra el borde), salvo en el caso de las tablas en modo colapsado, en el que <span class="css-valor">hidden</span> oculta el borde independientemente del borde de la casilla contigua, pero <span class="css-valor">none</span> no (para que se oculte el borde común, las dos casillas contiguas deben tener su borde común en <span class="css-valor">none</span>).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
-  border-collapse: collapse;
+border-collapse: collapse;
 }
 
 td.sinborde {
-  border: hidden
+border: hidden
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-hidden.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-hidden.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-hidden.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-hidden.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
-  border-collapse: collapse;
+border-collapse: collapse;
 }
 
 td.sinborde {
-  border: none
+border: none
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/bordes/bordes-estilos-none.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/bordes/bordes-estilos-none.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/bordes/bordes-estilos-none.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/bordes/bordes-estilos-none.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="border-lados">
-      <h2 class="con-aside">Las propiedades compuestas <span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span></h2>
+  <section id="border-lados">
+    <h2 class="con-aside">Las propiedades compuestas <span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-top</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-top</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-right</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-right"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      <p><span class="css-prop">border-right</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-right"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-right"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-bottom</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-bottom"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      <p><span class="css-prop">border-bottom</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-bottom"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-left</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-left"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+      <p><span class="css-prop">border-left</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-left"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-left"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>Las propiedades compuestas <span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span> permiten establecer de forma independiente los cuatro bordes (arriba, derecha, abajo e izquierda, respectivamente) de un elemento, definiendo su color, su grosor y su estilo. Se pueden escribir las tres características de cada borde en cualquier orden. Se puede definir uno, dos, tres o cuatro bordes.</p>
+    <p>Las propiedades compuestas <span class="css-prop">border-top</span>, <span class="css-prop">border-right</span>, <span class="css-prop">border-bottom</span> y <span class="css-prop">border-left</span> permiten establecer de forma independiente los cuatro bordes (arriba, derecha, abajo e izquierda, respectivamente) de un elemento, definiendo su color, su grosor y su estilo. Se pueden escribir las tres características de cada borde en cualquier orden. Se puede definir uno, dos, tres o cuatro bordes.</p>
 
-      <p class="captura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="700" viewBox="-160 -70 700 300" font-family="sans-serif" font-size="18">
-          <title>Propiedades border-top, border-right, border-bottom y border-left</title>
-          <polygon points="-5,-5 359,-5 349,5 5,5" fill="red" stroke="red" stroke-width="1" />
-          <polygon points="359,-5 359,163 349,153 349,5" fill="blue" stroke="blue" stroke-width="1" />
-          <polygon points="359,163 -5,163 5,153 349,153" fill="yellow" stroke="yellow" stroke-width="1" />
-          <polygon points="-5,163 -5,-5 5,5 5,153" fill="green" stroke="green" stroke-width="1" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
+    <p class="captura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="700" viewBox="-160 -70 700 300" font-family="sans-serif" font-size="18">
+        <title>Propiedades border-top, border-right, border-bottom y border-left</title>
+        <polygon points="-5,-5 359,-5 349,5 5,5" fill="red" stroke="red" stroke-width="1" />
+        <polygon points="359,-5 359,163 349,153 349,5" fill="blue" stroke="blue" stroke-width="1" />
+        <polygon points="359,163 -5,163 5,153 349,153" fill="yellow" stroke="yellow" stroke-width="1" />
+        <polygon points="-5,163 -5,-5 5,5 5,153" fill="green" stroke="green" stroke-width="1" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
 
-          <line x1="180" y1="0" x2="180" y2="-40" stroke-width="2" stroke="black" />
-          <circle cx="180" cy="0" r="4" fill="black" />
-          <text x="180" y="-45" text-anchor="middle" font-size="16pt">border-top</text>
+        <line x1="180" y1="0" x2="180" y2="-40" stroke-width="2" stroke="black" />
+        <circle cx="180" cy="0" r="4" fill="black" />
+        <text x="180" y="-45" text-anchor="middle" font-size="16pt">border-top</text>
 
-          <line x1="355" y1="80" x2="395" y2="80" stroke-width="2" stroke="black" />
-          <circle cx="355" cy="80" r="4" fill="black" />
-          <text x="405" y="85" text-anchor="start" font-size="16pt">border-right</text>
+        <line x1="355" y1="80" x2="395" y2="80" stroke-width="2" stroke="black" />
+        <circle cx="355" cy="80" r="4" fill="black" />
+        <text x="405" y="85" text-anchor="start" font-size="16pt">border-right</text>
 
-          <line x1="180" y1="158" x2="180" y2="198" stroke-width="2" stroke="black" />
-          <circle cx="180" cy="158" r="4" fill="black" />
-          <text x="180" y="218" text-anchor="middle" font-size="16pt">border-bottom</text>
+        <line x1="180" y1="158" x2="180" y2="198" stroke-width="2" stroke="black" />
+        <circle cx="180" cy="158" r="4" fill="black" />
+        <text x="180" y="218" text-anchor="middle" font-size="16pt">border-bottom</text>
 
-          <line x1="0" y1="80" x2="-40" y2="80" stroke-width="2" stroke="black" />
-          <circle cx="0" cy="80" r="4" fill="black" />
-          <text x="-50" y="85" text-anchor="end" font-size="16pt">border-left</text>
-        </svg>
-      </p>
+        <line x1="0" y1="80" x2="-40" y2="80" stroke-width="2" stroke="black" />
+        <circle cx="0" cy="80" r="4" fill="black" />
+        <text x="-50" y="85" text-anchor="end" font-size="16pt">border-left</text>
+      </svg>
+    </p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-left: red 5px solid;
+border-left: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-left: red 5px solid;">Esto es un párrafo con borde izquierdo.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-left: red 5px solid;">Esto es un párrafo con borde izquierdo.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-top: black 5px dashed;
-  border-left: red 5px solid;
+border-top: black 5px dashed;
+border-left: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-left: red 5px solid; border-top: black 5px dashed;">Esto es un párrafo con borde izquierdo y superior.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-left: red 5px solid; border-top: black 5px dashed;">Esto es un párrafo con borde izquierdo y superior.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-top: black 5px dashed;
-  border-bottom: blue 10px dotted;
-  border-left: red 5px solid;
+border-top: black 5px dashed;
+border-bottom: blue 10px dotted;
+border-left: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-left: red 5px solid; border-top: black 5px dashed;  border-bottom: blue 10px dotted;">Esto es un párrafo con borde izquierdo, superior e inferior.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-left: red 5px solid; border-top: black 5px dashed;  border-bottom: blue 10px dotted;">Esto es un párrafo con borde izquierdo, superior e inferior.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-top: black 5px dashed;
-  border-right: green 10px double;
-  border-bottom: blue 10px dotted;
-  border-left: red 5px solid;
+border-top: black 5px dashed;
+border-right: green 10px double;
+border-bottom: blue 10px dotted;
+border-left: red 5px solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-left: red 5px solid; border-top: black 5px dashed;  border-bottom: blue 10px dotted; border-right: green 10px double;">Esto es un párrafo con cuatro bordes distintos.</p>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <p style="border-left: red 5px solid; border-top: black 5px dashed;  border-bottom: blue 10px dotted; border-right: green 10px double;">Esto es un párrafo con cuatro bordes distintos.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="border-color-width-style">
-      <h2 class="con-aside">Las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></h2>
+  <section id="border-color-width-style">
+    <h2 class="con-aside">Las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-color</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-color</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-width</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-width"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      <p><span class="css-prop">border-width</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-width"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-style</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-style"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+      <p><span class="css-prop">border-style</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-style"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>Las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo de los cuatro bordes de un elemento. A cada una de las propiedades se le puedes dar uno, dos, tres o cuatro valores, que se interpretan de la siguiente manera:</p>
+    <p>Las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo de los cuatro bordes de un elemento. A cada una de las propiedades se le puedes dar uno, dos, tres o cuatro valores, que se interpretan de la siguiente manera:</p>
 
-      <ul>
-        <li>1 valor: este valor se aplica a los cuatro bordes</li>
-        <li>2 valores: el primer valor se aplica a los bordes inferior y superior y el segundo a los bordes derecho e izquierdo</li>
-        <li>3 valores: el primer valor se aplica al borde superior, el segundo a los bordes derecho e izquierdo y el tercer valor al borde inferior</li>
-        <li>4 valores: el primer valor se aplica al borde superior, el segundo al borde derecho, el tercer valor al borde inferior y el cuarto al borde izquierdo</li>
-      </ul>
+    <ul>
+      <li>1 valor: este valor se aplica a los cuatro bordes</li>
+      <li>2 valores: el primer valor se aplica a los bordes inferior y superior y el segundo a los bordes derecho e izquierdo</li>
+      <li>3 valores: el primer valor se aplica al borde superior, el segundo a los bordes derecho e izquierdo y el tercer valor al borde inferior</li>
+      <li>4 valores: el primer valor se aplica al borde superior, el segundo al borde derecho, el tercer valor al borde inferior y el cuarto al borde izquierdo</li>
+    </ul>
 
-      <p class="captura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
-          <title>Propiedad border-color con 1 valor</title>
+    <p class="captura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+        <title>Propiedad border-color con 1 valor</title>
 
-          <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
-          <polygon points="360,-5 370,-15 370,173 360,163" fill="red" stroke="none" />
-          <polygon points="360,163 370,173 -15,173 -5,163" fill="red" stroke="none" />
-          <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="red" stroke="none" />
-          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
+        <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
+        <polygon points="360,-5 370,-15 370,173 360,163" fill="red" stroke="none" />
+        <polygon points="360,163 370,173 -15,173 -5,163" fill="red" stroke="none" />
+        <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="red" stroke="none" />
+        <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
 
-          <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red</text>
-          <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
-          <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
+        <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red</text>
+        <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
+        <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
 
-          <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="385" y="80" text-anchor="middle" font-size="14">1</text>
-          <circle cx="385" cy="75" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="180" y="192" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="187" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="-30" y="80" text-anchor="middle" font-size="14">1</text>
-          <circle cx="-30" cy="75" r="10" fill="none" stroke="red" stroke-width="2" />
-        </svg>
+        <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="385" y="80" text-anchor="middle" font-size="14">1</text>
+        <circle cx="385" cy="75" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="180" y="192" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="187" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="-30" y="80" text-anchor="middle" font-size="14">1</text>
+        <circle cx="-30" cy="75" r="10" fill="none" stroke="red" stroke-width="2" />
+      </svg>
 
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
-          <title>Propiedad border-color con 2 valores</title>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+        <title>Propiedad border-color con 2 valores</title>
 
-          <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
-          <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
-          <polygon points="360,163 370,173 -15,173 -5,163" fill="red" stroke="none" />
-          <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="blue" stroke="none" />
-          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
+        <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
+        <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
+        <polygon points="360,163 370,173 -15,173 -5,163" fill="red" stroke="none" />
+        <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="blue" stroke="none" />
+        <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
 
-          <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue</text>
-          <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
-          <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
-          <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
-          <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
+        <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue</text>
+        <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
+        <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
+        <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
+        <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
 
-          <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
-          <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
-          <text x="180" y="192" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="187" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="-30" y="80" text-anchor="middle" font-size="14">2</text>
-          <circle cx="-30" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
-        </svg>
-      </p>
+        <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
+        <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
+        <text x="180" y="192" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="187" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="-30" y="80" text-anchor="middle" font-size="14">2</text>
+        <circle cx="-30" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
+      </svg>
+    </p>
 
-      <p class="captura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
-          <title>Propiedad border-color con 3 valores</title>
+    <p class="captura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+        <title>Propiedad border-color con 3 valores</title>
 
-          <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
-          <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
-          <polygon points="360,163 370,173 -15,173 -5,163" fill="yellow" stroke="none" />
-          <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="blue" stroke="none" />
-          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
+        <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
+        <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
+        <polygon points="360,163 370,173 -15,173 -5,163" fill="yellow" stroke="none" />
+        <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="blue" stroke="none" />
+        <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
 
-          <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue &nbsp; yellow</text>
-          <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
-          <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
-          <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
-          <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
-          <circle cx="240" cy="-95" r="12" fill="none" stroke="yellow" stroke-width="2" />
-          <text x="240" y="-90" text-anchor="middle" font-size="14">3</text>
+        <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue &nbsp; yellow</text>
+        <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
+        <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
+        <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
+        <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
+        <circle cx="240" cy="-95" r="12" fill="none" stroke="yellow" stroke-width="2" />
+        <text x="240" y="-90" text-anchor="middle" font-size="14">3</text>
 
-          <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
-          <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
-          <text x="180" y="192" text-anchor="middle" font-size="14">3</text>
-          <circle cx="180" cy="187" r="10" fill="none" stroke="yellow" stroke-width="2" />
-          <text x="-30" y="80" text-anchor="middle" font-size="14">2</text>
-          <circle cx="-30" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
-        </svg>
+        <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
+        <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
+        <text x="180" y="192" text-anchor="middle" font-size="14">3</text>
+        <circle cx="180" cy="187" r="10" fill="none" stroke="yellow" stroke-width="2" />
+        <text x="-30" y="80" text-anchor="middle" font-size="14">2</text>
+        <circle cx="-30" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
+      </svg>
 
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
-          <title>Propiedad border-color con 4 valores</title>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+            width="450" viewBox="-50 -115 450 320" font-family="sans-serif" font-size="18" style="border: black 1px solid">
+        <title>Propiedad border-color con 4 valores</title>
 
-          <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
-          <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
-          <polygon points="360,163 370,173 -15,173 -5,163" fill="yellow" stroke="none" />
-          <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="green" stroke="none" />
-          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
+        <polygon points="-15,-15 370,-15 360,-5 -5,-5" fill="red" stroke="none" />
+        <polygon points="360,-5 370,-15 370,173 360,163" fill="blue" stroke="none" />
+        <polygon points="360,163 370,173 -15,173 -5,163" fill="yellow" stroke="none" />
+        <polygon points="-5,163 -15,173 -15,-15 -5,-5" fill="green" stroke="none" />
+        <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
 
-          <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue &nbsp; yellow &nbsp; green</text>
-          <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
-          <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
-          <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
-          <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
-          <circle cx="240" cy="-95" r="12" fill="none" stroke="yellow" stroke-width="2" />
-          <text x="240" y="-90" text-anchor="middle" font-size="14">3</text>
-          <circle cx="310" cy="-95" r="12" fill="none" stroke="green" stroke-width="2" />
-          <text x="310" y="-90" text-anchor="middle" font-size="14">4</text>
+        <text x="-10" y="-60" text-anchor="start" font-size="20">border-color: red &nbsp; blue &nbsp; yellow &nbsp; green</text>
+        <circle cx="125" cy="-95" r="12" fill="none" stroke="red" stroke-width="2" />
+        <text x="125" y="-90" text-anchor="middle" font-size="14">1</text>
+        <circle cx="175" cy="-95" r="12" fill="none" stroke="blue" stroke-width="2" />
+        <text x="175" y="-90" text-anchor="middle" font-size="14">2</text>
+        <circle cx="240" cy="-95" r="12" fill="none" stroke="yellow" stroke-width="2" />
+        <text x="240" y="-90" text-anchor="middle" font-size="14">3</text>
+        <circle cx="310" cy="-95" r="12" fill="none" stroke="green" stroke-width="2" />
+        <text x="310" y="-90" text-anchor="middle" font-size="14">4</text>
 
-          <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
-          <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
-          <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
-          <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
-          <text x="180" y="192" text-anchor="middle" font-size="14">3</text>
-          <circle cx="180" cy="187" r="10" fill="none" stroke="yellow" stroke-width="2" />
-          <text x="-30" y="80" text-anchor="middle" font-size="14">4</text>
-          <circle cx="-30" cy="75" r="10" fill="none" stroke="green" stroke-width="2" />
-        </svg>
-      </p>
+        <text x="180" y="-25" text-anchor="middle" font-size="14">1</text>
+        <circle cx="180" cy="-30" r="10" fill="none" stroke="red" stroke-width="2" />
+        <text x="385" y="80" text-anchor="middle" font-size="14">2</text>
+        <circle cx="385" cy="75" r="10" fill="none" stroke="blue" stroke-width="2" />
+        <text x="180" y="192" text-anchor="middle" font-size="14">3</text>
+        <circle cx="180" cy="187" r="10" fill="none" stroke="yellow" stroke-width="2" />
+        <text x="-30" y="80" text-anchor="middle" font-size="14">4</text>
+        <circle cx="-30" cy="75" r="10" fill="none" stroke="green" stroke-width="2" />
+      </svg>
+    </p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-color: red;
-  border-width: 10px;
-  border-style: solid;
+border-color: red;
+border-width: 10px;
+border-style: solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-color: red; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-color: red black;
-  border-width: 10px;
-  border-style: solid;
+border-color: red black;
+border-width: 10px;
+border-style: solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red black; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-color: red black; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-color: red black green;
-  border-width: 10px;
-  border-style: solid;
+border-color: red black green;
+border-width: 10px;
+border-style: solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red black green; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-color: red black green; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-color: red black green orange;
-  border-width: 10px;
-  border-style: solid;
+border-color: red black green orange;
+border-width: 10px;
+border-style: solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red black green orange; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-color: red black green orange; border-width: 10px; border-style: solid">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
-  border-color: red black green;
-  border-width: 10px 40px;
-  border-style: dashed solid dotted;
+border-color: red black green;
+border-width: 10px 40px;
+border-style: dashed solid dotted;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red black green; border-width: 10px 40px; border-style: dashed solid dotted;">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-color: red black green; border-width: 10px 40px; border-style: dashed solid dotted;">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En general, para que el navegador muestre un borde, se tendrían que definir las tres propiedades (color, grosor y estilo), pero en realidad se puede comprobar que con sólo definir el estilo ya se muestra un borde negro. El motivo es que la hoja de estilo predeterminada de los navegadores define un color y un grosor por omisión y al definir el estilo se completa la definición del borde.</p>
+    <p>En general, para que el navegador muestre un borde, se tendrían que definir las tres propiedades (color, grosor y estilo), pero en realidad se puede comprobar que con sólo definir el estilo ya se muestra un borde negro. El motivo es que la hoja de estilo predeterminada de los navegadores define un color y un grosor por omisión y al definir el estilo se completa la definición del borde.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border-style: solid;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-style: solid;">Esto es un párrafo con borde.</p>
-        </div>
       </div>
+      <div class="resultado-html">
+        <p style="border-style: solid;">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
 
-      <p>Si no se define el estilo del borde, aunque se defina el color y el grosor los navegadores no muestran el borde.</p>
+    <p>Si no se define el estilo del borde, aunque se defina el color y el grosor los navegadores no muestran el borde.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border-color: red;
-  border-width: 5px;
+border-width: 5px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <p style="border-color: red; border-width: 5px;">Esto es un párrafo con borde.</p>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <p style="border-color: red; border-width: 5px;">Esto es un párrafo con borde.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="border-individuales">
-      <h2 class="con-aside">Las propiedades individuales</h2>
+  <section id="border-individuales">
+    <h2 class="con-aside">Las propiedades individuales</h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-top-color</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-top-color</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-top-width</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-width"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+      <p><span class="css-prop">border-top-width</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-width"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-width"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
 
-        <p><span class="css-prop">border-top-style</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-style"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+      <p><span class="css-prop">border-top-style</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/box.html#propdef-border-top-style"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>Se puede establecer de forma independiente cada propiedad de cada borde mediante las propiedades:</p>
-      <ul>
-        <li><span class="css-prop">border-top-color</span>, <span class="css-prop">border-right-color</span>, <span class="css-prop">border-bottom-color</span>, <span class="css-prop">border-left-color</span></li>
-        <li><span class="css-prop">border-top-width</span>, <span class="css-prop">border-right-width</span>, <span class="css-prop">border-bottom-width</span>, <span class="css-prop">border-left-width</span></li>
-        <li><span class="css-prop">border-top-style</span>, <span class="css-prop">border-right-style</span>, <span class="css-prop">border-bottom-style</span>, <span class="css-prop">border-left-style</span></li>
-      </ul>
+    <p>Se puede establecer de forma independiente cada propiedad de cada borde mediante las propiedades:</p>
+    <ul>
+      <li><span class="css-prop">border-top-color</span>, <span class="css-prop">border-right-color</span>, <span class="css-prop">border-bottom-color</span>, <span class="css-prop">border-left-color</span></li>
+      <li><span class="css-prop">border-top-width</span>, <span class="css-prop">border-right-width</span>, <span class="css-prop">border-bottom-width</span>, <span class="css-prop">border-left-width</span></li>
+      <li><span class="css-prop">border-top-style</span>, <span class="css-prop">border-right-style</span>, <span class="css-prop">border-bottom-style</span>, <span class="css-prop">border-left-style</span></li>
+    </ul>
 
-      <p>En general, para que el navegador muestre un borde, se tienen que definir las tres propiedades (color, grosor y estilo), aunque normalmente los navegadores asignan el color negro como color prederminado, por lo que si no se establece el color del borde suele mostrarse de color negro</p>
-    </section>
+    <p>En general, para que el navegador muestre un borde, se tienen que definir las tres propiedades (color, grosor y estilo), aunque normalmente los navegadores asignan el color negro como color prederminado, por lo que si no se establece el color del borde suele mostrarse de color negro</p>
+  </section>
 
-    <section id="border-radius">
-      <h2 class="con-aside">Bordes redondeados: <span class="css-prop">border-radius</span>, <span class="css-prop">border-top-right-radius</span>, <span class="css-prop">border-bottom-right-radius</span>, <span class="css-prop">border-bottom-left-radius</span> y <span class="css-prop">border-top-left-radius</span></h2>
+  <section id="border-radius">
+    <h2 class="con-aside">Bordes redondeados: <span class="css-prop">border-radius</span>, <span class="css-prop">border-top-right-radius</span>, <span class="css-prop">border-bottom-right-radius</span>, <span class="css-prop">border-bottom-left-radius</span> y <span class="css-prop">border-top-left-radius</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-radius</span><br />
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-border-radius"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#feat=border-radius"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-radius</span><br />
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-border-radius"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#feat=border-radius"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a> permite definir bordes con esquinas redondeadas:</p>
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a> permite definir bordes con esquinas redondeadas:</p>
 
-      <ul>
-        <li>La propiedad <span class="css-prop">border-radius</span> define el radio de círculo de las cuatro esquinas.</li>
-        <li>Las propiedades <span class="css-prop">border-top-right-radius</span>, <span class="css-prop">border-bottom-right-radius</span>, <span class="css-prop">border-bottom-left-radius</span> y <span class="css-prop">border-top-left-radius</span> permitiren definir los radios de cada una de las esquinas de forma independiente.</li>
-      </ul>
+    <ul>
+      <li>La propiedad <span class="css-prop">border-radius</span> define el radio de círculo de las cuatro esquinas.</li>
+      <li>Las propiedades <span class="css-prop">border-top-right-radius</span>, <span class="css-prop">border-bottom-right-radius</span>, <span class="css-prop">border-bottom-left-radius</span> y <span class="css-prop">border-top-left-radius</span> permitiren definir los radios de cada una de las esquinas de forma independiente.</li>
+    </ul>
 
-      <p><strong>Nota</strong>: Los valores también se pueden expresar como porcentajes.</p>
+    <p><strong>Nota</strong>: Los valores también se pueden expresar como porcentajes.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue 5px solid;
-  border-radius: 20px;
+padding: 3px 10px;
+border: PowderBlue 5px solid;
+border-radius: 20px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <blockquote style="padding: 3px 10px;  border: PowderBlue solid 5px; border-radius: 20px;">
-            <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
-
-            <p style="text-align: right; font-style: oblique">Murphy</p>
-          </blockquote>
-        </div>
       </div>
+      <div class="resultado-html">
+        <blockquote style="padding: 3px 10px;  border: PowderBlue solid 5px; border-radius: 20px;">
+          <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+          <p style="text-align: right; font-style: oblique">Murphy</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue 5px solid;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+padding: 3px 10px;
+border: PowderBlue 5px solid;
+border-top-left-radius: 20px;
+border-bottom-right-radius: 20px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <blockquote style="padding: 3px 10px;  border: PowderBlue solid 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
-            <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
-
-            <p style="text-align: right; font-style: oblique">Murphy</p>
-          </blockquote>
-        </div>
       </div>
+      <div class="resultado-html">
+        <blockquote style="padding: 3px 10px;  border: PowderBlue solid 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
+          <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+          <p style="text-align: right; font-style: oblique">Murphy</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue 5px double;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+padding: 3px 10px;
+border: PowderBlue 5px double;
+border-top-left-radius: 20px;
+border-bottom-right-radius: 20px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <blockquote style="padding: 3px 10px;  border: PowderBlue double 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
-            <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
-
-            <p style="text-align: right; font-style: oblique">Murphy</p>
-          </blockquote>
-        </div>
       </div>
+      <div class="resultado-html">
+        <blockquote style="padding: 3px 10px;  border: PowderBlue double 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
+          <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+          <p style="text-align: right; font-style: oblique">Murphy</p>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">blockquote {
-  padding: 3px 10px;
-  border: PowderBlue 5px dashed;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+padding: 3px 10px;
+border: PowderBlue 5px dashed;
+border-top-left-radius: 20px;
+border-bottom-right-radius: 20px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <blockquote style="padding: 3px 10px;  border: PowderBlue dashed 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
-            <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
-
-            <p style="text-align: right; font-style: oblique">Murphy</p>
-          </blockquote>
-        </div>
       </div>
-    </section>
+      <div class="resultado-html">
+        <blockquote style="padding: 3px 10px;  border: PowderBlue dashed 5px; border-top-left-radius: 20px; border-bottom-right-radius: 20px;">
+          <p style="text-align: center">Si algo puede ir mal, irá mal.</p>
 
-    <section id="bordes-html-body">
-      <h2>Bordes en <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span></h2>
+          <p style="text-align: right; font-style: oblique">Murphy</p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
 
-      <p>Las etiquetas <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span> también pueden tener bordes, como muestra la siguiente <a href="ejemplos/bordes/border-html-body.html">página de ejemplo</a>.</p>
+  <section id="bordes-html-body">
+    <h2>Bordes en <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span></h2>
 
-      <p>El borde de <span class="html-eti">&lt;body&gt;</span> se adapta al contenido, sin tener en cuenta los elementos flotantes, mientras que el borde de <span class="html-eti">&lt;html&gt;</span> abarca los elementos flotantes, como muestra la siguiente <a href="ejemplos/bordes/border-html-body-2.html">página de ejemplo</a>.</p>
-    </section>
+    <p>Las etiquetas <span class="html-eti">&lt;html&gt;</span> y <span class="html-eti">&lt;body&gt;</span> también pueden tener bordes, como muestra la siguiente <a href="ejemplos/bordes/border-html-body.html">página de ejemplo</a>.</p>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 28 de octubre de 2016</p>
+    <p>El borde de <span class="html-eti">&lt;body&gt;</span> se adapta al contenido, sin tener en cuenta los elementos flotantes, mientras que el borde de <span class="html-eti">&lt;html&gt;</span> abarca los elementos flotantes, como muestra la siguiente <a href="ejemplos/bordes/border-html-body-2.html">página de ejemplo</a>.</p>
+  </section>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2016</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

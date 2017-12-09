@@ -1,129 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Modelo de caja. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Modelo de caja. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>CSS 2: Modelo de caja</h1>
+<body>
+  <h1>CSS 2: Modelo de caja</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS 2: Modelo de caja</h2>
+    <div class="toc">
+      <h2>CSS 2: Modelo de caja</h2>
 
+      <ul>
+        <li><a href="#modelo-caja"><span class="css-prop">margin</span>, <span class="css-prop">border</span> y <span class="css-prop">padding</span></a></li>
+        <li><a href="#display"><span class="css-prop">display</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="modelo-caja">
+    <h2>El modelo de caja: la propiedad <span class="css-prop">margin</span>, <span class="css-prop">border</span> y <span class="css-prop">padding</span></h2>
+
+    <p>Cualquier elemento de una página web está contenido en una "caja" rectangular. Esta caja puede tener:</p>
+    <ul>
+      <li>un <a href="css-bordes.html">borde</a> visible (que se define mediante la propiedad <span class="css-prop">border</span>)</li>
+      <li>un <a href="css-margenes.html#margin">margen exterior</a> transparente por fuera del borde (que se define mediante la propiedad <span class="css-prop">margin</span>)</li>
+      <li>un <a href="css-margenes.html#padding">margen interior</a> transparente entre el borde y el elemento (que se define mediante la propiedad <span class="css-prop">padding</span>)</li>
+    </ul>
+
+    <p>La imagen siguiente muestra un párrafo de texto con borde y márgenes exterior e interior. En la imagen, los límites del borde y de los márgenes se han indicado mediante líneas discontínuas, pero en realidad esos límites no se ven en los navegadores.</p>
+
+    <p class="captura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="800" viewBox="-40 -80 800 280" font-family="sans-serif" font-size="18">
+        <title>Modelo de caja CSS</title>
+        <text x="177" y="-50" text-anchor="middle" font-size="16pt">Modelo de caja CSS</text>
+
+        <rect x="-30" y="-30" width="414" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <rect x="0" y="0" width="354" height="158" fill="hsl(180, 50%, 80%)" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+        <rect x="28" y="28" width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <text x="10" y="4" text-anchor="start">
+          <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
+          <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
+          <tspan x="30" y="84">metido dentro de una caja</tspan>
+          <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
+          <tspan x="30" y="124">margen interior y margen exterior.</tspan>
+        </text>
+
+        <line x1="315" y1="50" x2="450" y2="-40" stroke-width="2" stroke="black" />
+        <circle cx="315" cy="50" r="4" fill="black" />
+        <text x="460" y="-35" text-anchor="start" font-size="16pt">elemento</text>
+
+        <line x1="337" y1="80" x2="450" y2="7" stroke-width="2" stroke="black" />
+        <circle cx="337" cy="80" r="4" fill="black" />
+        <text x="460" y="12" text-anchor="start" font-size="16pt">padding (margen interior)</text>
+
+        <line x1="355" y1="115" x2="450" y2="57" stroke-width="2" stroke="black" />
+        <circle cx="355" cy="115" r="4" fill="black" />
+        <text x="460" y="62" text-anchor="start" font-size="16pt">border (borde)</text>
+
+        <line x1="370" y1="150" x2="450" y2="107" stroke-width="2" stroke="black" />
+        <circle cx="370" cy="150" r="4" fill="black" />
+        <text x="460" y="112" text-anchor="start" font-size="16pt">margin (margen exterior)</text>
+      </svg>
+    </p>
+
+    <p>Tanto el margen exterior (<span class="css-prop">margin</span>) como el margen interior (<span class="css-prop">padding</span>) son transparentes. Por eso el margen interior se ve del color de fondo del elemento (en el ejemplo, del color de fondo del párrafo), mientras que el margen exterior se ve del color de fondo del elemento padre (en el ejemplo, del color de fondo de la página).</p>
+  </section>
+
+  <section id="display">
+    <h2 class="con-aside">Tipo de caja: la propiedad <span class="css-prop">display</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">display</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#propdef-display"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">display</span> permite especificar el tipo de caja que se aplica en un elemento. Los diferentes tipos de cajas corresponden a diferentes tipos de contenido (texto, listas, tablas)</p>
+
+    <p>Los posibles valores de <span class="css-prop">display</span> son los siguientes:</p>
+
+    <ul>
+      <li><span class="css-valor">none</span>: hace que no se genere caja</li>
+      <li><span class="css-valor">block</span>: caja rectangular que forma un bloque</li>
+      <li><span class="css-valor">inline</span>: caja en-línea que puede ocupar varias líneas y está incluida en una caja de tipo <span class="css-valor">block</span></li>
+      <li><span class="css-valor">inline-block</span>: caja en-línea, pero que se formatea como una caja de tipo <span class="css-valor">block</span></li>
+      <li><span class="css-valor">run-in</span>: caja de tipo <span class="css-valor">inline</span>, pero que se añade al principio del elemento siguiente</li>
+      <li><span class="css-valor">list-item</span>: caja de tipo <span class="css-valor">block</span> pero que también incluye un marcador</li>
+      <li>Cajas que forman parte de una tabla:
         <ul>
-          <li><a href="#modelo-caja"><span class="css-prop">margin</span>, <span class="css-prop">border</span> y <span class="css-prop">padding</span></a></li>
-          <li><a href="#display"><span class="css-prop">display</span></a></li>
+          <li><span class="css-valor">table</span></li>
+          <li><span class="css-valor">table-caption</span></li>
+          <li><span class="css-valor">table-cell</span></li>
+          <li><span class="css-valor">table-column</span></li>
+          <li><span class="css-valor">table-column-group</span></li>
+          <li><span class="css-valor">table-footer-group</span></li>
+          <li><span class="css-valor">table-header-group</span></li>
+          <li><span class="css-valor">table-row</span></li>
+          <li><span class="css-valor">table-row-group</span></li>
+          <li><span class="css-valor">inline-table</span></li>
         </ul>
-      </div>
-    </nav>
+      </li>
+    </ul>
+  </section>
 
-    <section id="modelo-caja">
-      <h2>El modelo de caja: la propiedad <span class="css-prop">margin</span>, <span class="css-prop">border</span> y <span class="css-prop">padding</span></h2>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 15 de octubre de 2016</p>
 
-      <p>Cualquier elemento de una página web está contenido en una "caja" rectangular. Esta caja puede tener:</p>
-      <ul>
-        <li>un <a href="css-bordes.html">borde</a> visible (que se define mediante la propiedad <span class="css-prop">border</span>)</li>
-        <li>un <a href="css-margenes.html#margin">margen exterior</a> transparente por fuera del borde (que se define mediante la propiedad <span class="css-prop">margin</span>)</li>
-        <li>un <a href="css-margenes.html#padding">margen interior</a> transparente entre el borde y el elemento (que se define mediante la propiedad <span class="css-prop">padding</span>)</li>
-      </ul>
-
-      <p>La imagen siguiente muestra un párrafo de texto con borde y márgenes exterior e interior. En la imagen, los límites del borde y de los márgenes se han indicado mediante líneas discontínuas, pero en realidad esos límites no se ven en los navegadores.</p>
-
-      <p class="captura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-             width="800" viewBox="-40 -80 800 280" font-family="sans-serif" font-size="18">
-          <title>Modelo de caja CSS</title>
-          <text x="177" y="-50" text-anchor="middle" font-size="16pt">Modelo de caja CSS</text>
-
-          <rect x="-30" y="-30"  width="414" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <rect x="0" y="0"  width="354" height="158" fill="hsl(180, 50%, 80%)" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
-          <rect x="28" y="28"  width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
-          <text x="10" y="4" text-anchor="start">
-            <tspan x="30" y="44">En el modelo de caja CSS, cualquier</tspan>
-            <tspan x="30" y="64">elemento (texto, imagen, etc.) está</tspan>
-            <tspan x="30" y="84">metido dentro de una caja</tspan>
-            <tspan x="30" y="104">rectangular que puede tener borde,</tspan>
-            <tspan x="30" y="124">margen interior y margen exterior.</tspan>
-          </text>
-
-          <line x1="315" y1="50" x2="450" y2="-40" stroke-width="2" stroke="black" />
-          <circle cx="315" cy="50" r="4" fill="black" />
-          <text x="460" y="-35" text-anchor="start" font-size="16pt">elemento</text>
-
-          <line x1="337" y1="80" x2="450" y2="7" stroke-width="2" stroke="black" />
-          <circle cx="337" cy="80" r="4" fill="black" />
-          <text x="460" y="12" text-anchor="start" font-size="16pt">padding (margen interior)</text>
-
-          <line x1="355" y1="115" x2="450" y2="57" stroke-width="2" stroke="black" />
-          <circle cx="355" cy="115" r="4" fill="black" />
-          <text x="460" y="62" text-anchor="start" font-size="16pt">border (borde)</text>
-
-          <line x1="370" y1="150" x2="450" y2="107" stroke-width="2" stroke="black" />
-          <circle cx="370" cy="150" r="4" fill="black" />
-          <text x="460" y="112" text-anchor="start" font-size="16pt">margin (margen exterior)</text>
-        </svg>
-      </p>
-
-      <p>Tanto el margen exterior (<span class="css-prop">margin</span>) como el margen interior (<span class="css-prop">padding</span>) son transparentes. Por eso el margen interior se ve del color de fondo del elemento (en el ejemplo, del color de fondo del párrafo), mientras que el margen exterior se ve del color de fondo del elemento padre (en el ejemplo, del color de fondo de la página).</p>
-    </section>
-
-    <section id="display">
-      <h2 class="con-aside">Tipo de caja: la propiedad <span class="css-prop">display</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="css-prop">display</span><br />
-          <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/visuren.html#propdef-display"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>La propiedad <span class="css-prop">display</span> permite especificar el tipo de caja que se aplica en un elemento. Los diferentes tipos de cajas corresponden a  diferentes tipos de contenido (texto, listas, tablas)</p>
-
-      <p>Los posibles valores de <span class="css-prop">display</span> son los siguientes:</p>
-
-      <ul>
-        <li><span class="css-valor">none</span>: hace que no se genere caja</li>
-        <li><span class="css-valor">block</span>: caja rectangular que forma un bloque</li>
-        <li><span class="css-valor">inline</span>: caja en-línea que puede ocupar varias líneas y está incluida en una caja de tipo <span class="css-valor">block</span></li>
-        <li><span class="css-valor">inline-block</span>: caja en-línea, pero que se formatea como una caja de tipo <span class="css-valor">block</span></li>
-        <li><span class="css-valor">run-in</span>: caja de tipo <span class="css-valor">inline</span>, pero que se añade al principio del elemento siguiente</li>
-        <li><span class="css-valor">list-item</span>: caja de tipo <span class="css-valor">block</span> pero que también incluye un marcador</li>
-        <li>Cajas que forman parte de una tabla:
-          <ul>
-            <li><span class="css-valor">table</span></li>
-            <li><span class="css-valor">table-caption</span></li>
-            <li><span class="css-valor">table-cell</span></li>
-            <li><span class="css-valor">table-column</span></li>
-            <li><span class="css-valor">table-column-group</span></li>
-            <li><span class="css-valor">table-footer-group</span></li>
-            <li><span class="css-valor">table-header-group</span></li>
-            <li><span class="css-valor">table-row</span></li>
-            <li><span class="css-valor">table-row-group</span></li>
-            <li><span class="css-valor">inline-table</span></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 15 de octubre de 2016</p>
-
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

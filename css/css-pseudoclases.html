@@ -1,56 +1,56 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Pseudo-clases y pseudo-elementos. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Pseudo-clases y pseudo-elementos. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>CSS 2: Pseudo-clases y pseudo-elementos</h1>
+<body>
+  <h1>CSS 2: Pseudo-clases y pseudo-elementos</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>Pseudo-clases, pseudo-elementos</h2>
+    <div class="toc">
+      <h2>Pseudo-clases, pseudo-elementos</h2>
 
-        <ul>
-          <li><a href="#que-es">Qué son</a></li>
-          <li><a href="#first-child"><span class="css-pseudo">:first-child</span></a></li>
-          <li><a href="#pseudo-clase-enlace"><span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></a></li>
-          <li><a href="#pseudo-clase-dinamicas"><span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></a></li>
-          <li><a href="#pseudo-clase-lang"><span class="css-pseudo">:lang()</span></a></li>
-          <li><a href="#pseudo-elementos-first"><span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></a></li>
-          <li><a href="#pseudo-elementos-before-after"><span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#que-es">Qué son</a></li>
+        <li><a href="#first-child"><span class="css-pseudo">:first-child</span></a></li>
+        <li><a href="#pseudo-clase-enlace"><span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></a></li>
+        <li><a href="#pseudo-clase-dinamicas"><span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></a></li>
+        <li><a href="#pseudo-clase-lang"><span class="css-pseudo">:lang()</span></a></li>
+        <li><a href="#pseudo-elementos-first"><span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></a></li>
+        <li><a href="#pseudo-elementos-before-after"><span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section id="que-es">
-      <h2>Qué son las pseudo-clases y los pseudo-elementos</h2>
+  <section id="que-es">
+    <h2>Qué son las pseudo-clases y los pseudo-elementos</h2>
 
-      <p>Las hojas de estilo asocian características de estilo a los elementos basándose en las etiquetas de los elementos y en su posición relativa (en el árbol del documento). Las pseudo-clases y los pseudo-elementos permiten hacer referencia a determinados elementos sin basarse en la información contenida en el árbol del documento.</p>
+    <p>Las hojas de estilo asocian características de estilo a los elementos basándose en las etiquetas de los elementos y en su posición relativa (en el árbol del documento). Las pseudo-clases y los pseudo-elementos permiten hacer referencia a determinados elementos sin basarse en la información contenida en el árbol del documento.</p>
 
-      <p>La sintaxis de las pseudo-clases y los pseudo-elementos es la misma: etiqueta:pseudo-elemento_o_pseudo-clase (el nombre de la etiqueta y del pseudo-elemento o de la pseudo-clase separado por dos puntos).</p>
-    </section>
+    <p>La sintaxis de las pseudo-clases y los pseudo-elementos es la misma: etiqueta:pseudo-elemento_o_pseudo-clase (el nombre de la etiqueta y del pseudo-elemento o de la pseudo-clase separado por dos puntos).</p>
+  </section>
 
-    <section id="first-child">
-      <h2>La pseudo-clase <span class="css-pseudo">:first-child</span></h2>
+  <section id="first-child">
+    <h2>La pseudo-clase <span class="css-pseudo">:first-child</span></h2>
 
-      <p>La pseudo-clase <span class="css-pseudo">:first-child</span> hace referencia al primer elemento de un tipo contenido dentro de otro. El ejemplo siguiente muestra cómo identificar al primer párrafo dentro de una división sin necesidad de asignar ninguna clase al párrafo.</p>
+    <p>La pseudo-clase <span class="css-pseudo">:first-child</span> hace referencia al primer elemento de un tipo contenido dentro de otro. El ejemplo siguiente muestra cómo identificar al primer párrafo dentro de una división sin necesidad de asignar ninguna clase al párrafo.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
@@ -62,20 +62,20 @@ div p:first-child {
 }
 </code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-child-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-child-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Es necesario que el tipo del primer elemento hijo en la página web sea el indicado en la hoja de estilo. En el ejemplo siguiente, el primer elemento dentro de la división no es un <span class="html-eti">&lt;p&gt;</span>, sino un <span class="html-eti">&lt;pre&gt;</span>, así que no se le aplica el estilo indicado en la hoja de estilo.</p>
+    <p>Es necesario que el tipo del primer elemento hijo en la página web sea el indicado en la hoja de estilo. En el ejemplo siguiente, el primer elemento dentro de la división no es un <span class="html-eti">&lt;p&gt;</span>, sino un <span class="html-eti">&lt;pre&gt;</span>, así que no se le aplica el estilo indicado en la hoja de estilo.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
@@ -86,20 +86,20 @@ div p:first-child {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-2.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-child-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-2.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-child-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>En el ejemplo siguiente, la pseudo-clase <span class="css-pseudo">:first-child</span> se aplica al primer elemento dentro de la división, sea cual sea el elemento, ya que en la hoja de estilo no se especifica el elemento.</p>
+    <p>En el ejemplo siguiente, la pseudo-clase <span class="css-pseudo">:first-child</span> se aplica al primer elemento dentro de la división, sea cual sea el elemento, ya que en la hoja de estilo no se especifica el elemento.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   border: black 5px solid;
   margin: 10px;
@@ -110,68 +110,68 @@ div :first-child {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-3.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-child-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-child-3.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-child-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="pseudo-clase-enlace">
-      <h2>Las pseudo-clases de enlace <span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></h2>
+  <section id="pseudo-clase-enlace">
+    <h2>Las pseudo-clases de enlace <span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></h2>
 
-      <p>La pseudo clase <span class="css-pseudo">:link</span> (o <span class="css-pseudo">a:link</span>) permite especificar el aspecto de los enlaces que todavía no han sido visitados.</p>
+    <p>La pseudo clase <span class="css-pseudo">:link</span> (o <span class="css-pseudo">a:link</span>) permite especificar el aspecto de los enlaces que todavía no han sido visitados.</p>
 
-      <p>La pseudo clase <span class="css-pseudo">:visited</span> (o <span class="css-pseudo">a:visited</span>) permite especificar el aspecto de los enlaces que sí han sido visitados.</p>
+    <p>La pseudo clase <span class="css-pseudo">:visited</span> (o <span class="css-pseudo">a:visited</span>) permite especificar el aspecto de los enlaces que sí han sido visitados.</p>
 
-      <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Edge los recuerda mientras no se recargue la página, mientras que Firefox y Chrome los recuerdan hasta que se borra el historial en el navegador.</p>
+    <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Edge los recuerda mientras no se recargue la página, mientras que Firefox y Chrome los recuerdan hasta que se borra el historial en el navegador.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">a:link {
   color: green;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-link-visited-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">a:visited {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-link-visited-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En la recomendación CSS 2 se podía utilizar la pseudo clase <span class="css-pseudo">:visited</span> para modificar cualquier propiedad, pero como una página web maliciosa podía utilizar esta propiedad para saber las páginas que el usuario había visitado, los navegadores han reducido el número de propiedades que se pueden aplicar con esta propiedad. La recomendación CSS 2.1 alerta de ese peligro y permite que los navegadores no permitan modificar ninguna propiedad o sólo admitan algunas propiedades.</p>
+    <p>En la recomendación CSS 2 se podía utilizar la pseudo clase <span class="css-pseudo">:visited</span> para modificar cualquier propiedad, pero como una página web maliciosa podía utilizar esta propiedad para saber las páginas que el usuario había visitado, los navegadores han reducido el número de propiedades que se pueden aplicar con esta propiedad. La recomendación CSS 2.1 alerta de ese peligro y permite que los navegadores no permitan modificar ninguna propiedad o sólo admitan algunas propiedades.</p>
 
-      <p>Enlaces relacionados: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector">Privacy and the :visited selector</a> - <a href="https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/">Plugging the CSS History Leak</a></p>
+    <p>Enlaces relacionados: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Privacy_and_the_:visited_selector">Privacy and the :visited selector</a> - <a href="https://blog.mozilla.org/security/2010/03/31/plugging-the-css-history-leak/">Plugging the CSS History Leak</a></p>
 
-      <p>Teóricamente, las propiedades que podrían modificarse sin riesgo son las relacionadas con colores. El siguiente ejemplo prueba esas cuatro propiedades. En el ejemplo se establecen antes las propiedades en la etiqueta <span class="html-eti">&lt;a&gt;</span> porque si no Firefox y Chrome no la modifican.</p>
+    <p>Teóricamente, las propiedades que podrían modificarse sin riesgo son las relacionadas con colores. El siguiente ejemplo prueba esas cuatro propiedades. En el ejemplo se establecen antes las propiedades en la etiqueta <span class="html-eti">&lt;a&gt;</span> porque si no Firefox y Chrome no la modifican.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">a {
   background-color: white;
   color: blue;
@@ -186,60 +186,60 @@ a:visited {
   outline-color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-link-visited-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si se asignan propiedades a la etiqueta <span class="html-eti">a</span> en la hoja de estilo, estas propiedades afectarán tanto a los enlaces como a los destinos que utilicen la etiqueta <span class="html-eti">a</span>. Pero si se asigna propiedades a la pseudo-clase <span class="css-pseudo">a:link</span>, estas propiedades sólo afectarán a los enlaces.</p>
+    <p>Si se asignan propiedades a la etiqueta <span class="html-eti">a</span> en la hoja de estilo, estas propiedades afectarán tanto a los enlaces como a los destinos que utilicen la etiqueta <span class="html-eti">a</span>. Pero si se asigna propiedades a la pseudo-clase <span class="css-pseudo">a:link</span>, estas propiedades sólo afectarán a los enlaces.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">a {
   background-color: lightblue;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-link-visited-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">a:link {
   background-color: lightblue;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="pseudo-clase-dinamicas">
-      <h2>Las pseudo-clases dinámicas <span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></h2>
+  <section id="pseudo-clase-dinamicas">
+    <h2>Las pseudo-clases dinámicas <span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></h2>
 
-      <p>La pseudo-clase <span class="css-pseudo">:hover</span> permite especificar el aspecto del elemento sobre el que se encuentra el ratón.</p>
+    <p>La pseudo-clase <span class="css-pseudo">:hover</span> permite especificar el aspecto del elemento sobre el que se encuentra el ratón.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -250,18 +250,18 @@ a:hover {
   color: white;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-1.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -272,24 +272,24 @@ p:hover {
   color: white;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-2.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p class="incompleto">Contar lo que pasa cuando se utiliza a la vez :link :visited y :hover (diferencias entre navegadores antiguos).</p>
+    <p class="incompleto">Contar lo que pasa cuando se utiliza a la vez :link :visited y :hover (diferencias entre navegadores antiguos).</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>La pseudo-clase <span class="css-pseudo">:active</span> permite especificar el aspecto de un elemento cuando se hace clic sobre él (y mientras se mantiene el botón del ratón apretado).</p>
+    <p>La pseudo-clase <span class="css-pseudo">:active</span> permite especificar el aspecto de un elemento cuando se hace clic sobre él (y mientras se mantiene el botón del ratón apretado).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -300,18 +300,18 @@ a:active {
   color: white;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-3.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   background-color: white;
   color: black;
@@ -322,47 +322,47 @@ p:active {
   color: white;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>La pseudo-clase <span class="css-pseudo">:focus</span> permite especificar el aspecto de un elemento cuando este tiene el foco. Los elementos que admiten el foco en una página web son aquellos que reaccionan a entrada por teclado (por ejemplo, los elementos de los formularios o los enlaces). En el ejemplo siguiente, al hacer clic en un campo de texto (o cambiar de campo con el tabulador), el campo seleccionado se resalta con un borde rojo.</p>
+    <p>La pseudo-clase <span class="css-pseudo">:focus</span> permite especificar el aspecto de un elemento cuando este tiene el foco. Los elementos que admiten el foco en una página web son aquellos que reaccionan a entrada por teclado (por ejemplo, los elementos de los formularios o los enlaces). En el ejemplo siguiente, al hacer clic en un campo de texto (o cambiar de campo con el tabulador), el campo seleccionado se resalta con un borde rojo.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">input:focus {
   border: red 2px dotted;
   padding: 2px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-dinamicas-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="pseudo-clase-lang">
-      <h2>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span></h2>
+  <section id="pseudo-clase-lang">
+    <h2>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span></h2>
 
-      <p>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span> permite especificar el aspecto de los elementos de un idioma determinado. En el ejemplo siguiente se cambia las comillas utilizadas en una cita <span class="html-eti">&lt;q&gt;</span> según el idioma indicado en el atributo <span class="html-atri">lang</span>.</p>
+    <p>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span> permite especificar el aspecto de los elementos de un idioma determinado. En el ejemplo siguiente se cambia las comillas utilizadas en una cita <span class="html-eti">&lt;q&gt;</span> según el idioma indicado en el atributo <span class="html-atri">lang</span>.</p>
 
 
-      <div class="filaflex">
-        <div class="columnaflex">
-          <div class="codigo">
-            <pre>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p&gt;Ambrose Bierce dijo (más o menos) que
 &lt;q lang="es"&gt;una cita es una manera de repetir
 erróneamente las palabras de otros&lt;/q&gt;.&lt;/p&gt;
@@ -371,9 +371,9 @@ erróneamente las palabras de otros&lt;/q&gt;.&lt;/p&gt;
 &lt;q lang="en"&gt;a quotation is the act of repeating
 erroneously the words of another&lt;/q&gt;.&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="codigo">
-            <pre>
+        </div>
+        <div class="codigo">
+          <pre>
 <code class="language-css">q:lang(es) {
   quotes: "«" "»";
 }
@@ -382,68 +382,68 @@ q:lang(en) {
   quotes: '"' '"';
 }</code>
 </pre>
-          </div>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-lang.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-lang.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-lang.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-lang.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="pseudo-elementos-first">
-      <h2>Los pseudo-elementos <span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></h2>
+  <section id="pseudo-elementos-first">
+    <h2>Los pseudo-elementos <span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></h2>
 
-      <p>El pseudo-elemento <span class="css-pseudo">:first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
+    <p>El pseudo-elemento <span class="css-pseudo">:first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
+        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-line {
   text-transform: uppercase;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-1.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-1.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>En el ejemplo anterior, al hacer zoom se observa como siempre y únicamente la primea línea cambia a mayúsculas.</p>
+    <p>En el ejemplo anterior, al hacer zoom se observa como siempre y únicamente la primea línea cambia a mayúsculas.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>El pseudo-elemento <span class="css-pseudo">:first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
+    <p>El pseudo-elemento <span class="css-pseudo">:first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   background-color: pink;
   color: red;
@@ -452,45 +452,45 @@ q:lang(en) {
   font-size: 400%;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si hay una imagen al principio del elemento, el aspecto de la primera letra de texto no se modifica.</p>
+    <p>Si hay una imagen al principio del elemento, el aspecto de la primera letra de texto no se modifica.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-4.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-4.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Si la imagen situada al principio del elemento es una imagen flotante, Firefox y Edge no modifican el aspecto de la primera letra de texto, aunque Chrome sí lo hace.</p>
+    <p>Si la imagen situada al principio del elemento es una imagen flotante, Firefox y Edge no modifican el aspecto de la primera letra de texto, aunque Chrome sí lo hace.</p>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
+        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }
@@ -499,23 +499,23 @@ img {
   float: right;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-5.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-5.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
-          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32" />
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32" />
+        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }
@@ -524,131 +524,131 @@ img {
   float: left;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-6.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-6.html" style="width:100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p><strong>Nota</strong>: En realidad no tengo claro si quien lo hace bien es Firefox o Chrome e Edge.</p>
+    <p><strong>Nota</strong>: En realidad no tengo claro si quien lo hace bien es Firefox o Chrome e Edge.</p>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si el primer carácter no es un carácter alfanumérico, el pseudo-elemento se aplica hasta el primer carácter alfanumérico:</p>
+    <p>Si el primer carácter no es un carácter alfanumérico, el pseudo-elemento se aplica hasta el primer carácter alfanumérico:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p:first-letter {
   color: red;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-7.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/pseudoclases/pseudoclases-first-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-first-7.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-first-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="pseudo-elementos-before-after">
-      <h2>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h2>
+  <section id="pseudo-elementos-before-after">
+    <h2>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h2>
 
-      <section id="content">
-        <h3>Contenido generado: <span class="css-prop">content</span></h3>
+    <section id="content">
+      <h3>Contenido generado: <span class="css-prop">content</span></h3>
 
-        <p>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span> permiten añadir contenido a un elemento desde la hoja de estilo, al principio o al final del elemento.</p>
+      <p>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span> permiten añadir contenido a un elemento desde la hoja de estilo, al principio o al final del elemento.</p>
 
-        <p>El contenido generado no puede seleccionarse con el ratón (para copiarlo y pegarlo en otro documento, por ejemplo).</p>
+      <p>El contenido generado no puede seleccionarse con el ratón (para copiarlo y pegarlo en otro documento, por ejemplo).</p>
 
-        <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir texto:</p>
+      <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir texto:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.cuidado:before {
   content: "Aviso: ";
   font-weight: bold;
   text-decoration: underline;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-before-after-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-1.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-before-after-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.autor-barto:after {
   content: " (escrito por Barto).";
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-before-after-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-2.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-before-after-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir una imagen indicando su URI:</p>
+      <p>El contenido generado mediante la propiedad <span class="css-prop">content</span> puede incluir una imagen indicando su URI:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.ff:before {
   content: url("../icono-ff.svg");
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-before-after-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-before-after-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>No es válido incluir etiquetas html en la propiedad <span class="css-prop">content</span>, es decir que no sólo los navegadores no hacen caso y lo incluyen como texto, no como código html, sino que al validar la hoja de estilo daría error:</p>
+      <p>No es válido incluir etiquetas html en la propiedad <span class="css-prop">content</span>, es decir que no sólo los navegadores no hacen caso y lo incluyen como texto, no como código html, sino que al validar la hoja de estilo daría error:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">p.cuidado:before {
   content: "&lt;em&gt;Aviso:&lt;/em&gt; ";
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-4.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-before-after-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
-      </section>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-before-after-4.html" style="width:100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-before-after-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
+    </section>
 
-      <section id="counter">
-        <h3>Generar contadores: <span class="css-funcion">counter</span>, <span class="css-prop">counter-increment</span> y <span class="css-prop">counter-reset</span></h3>
+    <section id="counter">
+      <h3>Generar contadores: <span class="css-funcion">counter</span>, <span class="css-prop">counter-increment</span> y <span class="css-prop">counter-reset</span></h3>
 
-        <p>Se pueden generar contadores en los pseudo-elementos <span class="css-pseudo">:after</span> y <span class="css-pseudo">:before</span> mediante la propiedad <span class="css-prop">content</span> y el valor <span class="css-valor">counter(nombre_de_contador)</span>. El contador debe ponerse a cero con la propiedad <span class="css-prop">counter-reset</span> y aumentarse con la propiedad <span class="css-prop">counter-increment</span>.</p>
+      <p>Se pueden generar contadores en los pseudo-elementos <span class="css-pseudo">:after</span> y <span class="css-pseudo">:before</span> mediante la propiedad <span class="css-prop">content</span> y el valor <span class="css-valor">counter(nombre_de_contador)</span>. El contador debe ponerse a cero con la propiedad <span class="css-prop">counter-reset</span> y aumentarse con la propiedad <span class="css-prop">counter-increment</span>.</p>
 
-        <p>En los ejemplos siguientes se ha definido un contador que se llama cuenta-parrafos. Este contador se genera al principio de cada párrafo, se pone a cero con el elemento <span class="html-eti">&lt;pre&gt;</span> y se incrementa en cada párrafo.</p>
+      <p>En los ejemplos siguientes se ha definido un contador que se llama cuenta-parrafos. Este contador se genera al principio de cada párrafo, se pone a cero con el elemento <span class="html-eti">&lt;pre&gt;</span> y se incrementa en cada párrafo.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -658,18 +658,18 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-1.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-1.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -679,20 +679,20 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-2.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-2.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>El contador puede incrementarse en cualquier cantidad entera, como muestra el ejemplo siguiente:</p>
+      <p>El contador puede incrementarse en cualquier cantidad entera, como muestra el ejemplo siguiente:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -702,20 +702,20 @@ p:before {
   counter-increment: cuenta-parrafos 10;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-3.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-3.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>Junto con el contador se puede generar texto, como muestra el ejemplo siguiente:</p>
+      <p>Junto con el contador se puede generar texto, como muestra el ejemplo siguiente:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -725,20 +725,20 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-4.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-4.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>El contador predeterminado muestra números enteros, pero se puede utilizar cualquiera de los <a href="css-listas.html#list-style-type">estilos de listas</a> como estilo de contador. El estilo se indica en la propiedad <span class="css-prop">content</span> mediante el valor <span class="css-valor">counter(nombre_de_contador, estilo_de_lista)</span>, como muestra el ejemplo siguiente:</p>
+      <p>El contador predeterminado muestra números enteros, pero se puede utilizar cualquiera de los <a href="css-listas.html#list-style-type">estilos de listas</a> como estilo de contador. El estilo se indica en la propiedad <span class="css-prop">content</span> mediante el valor <span class="css-valor">counter(nombre_de_contador, estilo_de_lista)</span>, como muestra el ejemplo siguiente:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">pre {
   counter-reset: cuenta-parrafos;
 }
@@ -748,20 +748,20 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-5.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-5.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
 
-        <p>Se pueden utilizar varios contadores simultáneamente, como muestra el ejemplo siguiente:</p>
+      <p>Se pueden utilizar varios contadores simultáneamente, como muestra el ejemplo siguiente:</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-css">h1 {
   counter-reset: cuenta-parrafos;
   counter-reset: cuenta-apartados;
@@ -781,23 +781,23 @@ p:before {
   counter-increment: cuenta-parrafos;
 }</code>
 </pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-6.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/pseudoclases/pseudoclases-contadores-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-          </div>
         </div>
-      </section>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-contadores-6.html" style="width:100%; height: 24em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/pseudoclases/pseudoclases-contadores-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

@@ -1,2826 +1,2826 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bordes, márgenes y fondos en las tablas. Tablas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      td.resul2 { background-color: white; font-type: serif; }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Bordes, márgenes y fondos en las tablas. Tablas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    td.resul2 { background-color: white; font-type: serif; }
+  </style>
+</head>
 
-  <body>
-    <h1>CSS 2: Bordes, márgenes y fondos en las tablas</h1>
+<body>
+  <h1>CSS 2: Bordes, márgenes y fondos en las tablas</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS 2 Tablas (2)</h2>
+    <div class="toc">
+      <h2>CSS 2 Tablas (2)</h2>
 
-        <ul>
-          <li><a href="#border-collapse">Modos: <span class="css-prop">border-collapse</span></a></li>
-          <li><a href="#bordes-table-etc">Bordes en tablas</a></li>
-          <li><a href="#margin-padding-table-etc">Márgenes en tablas</a></li>
-          <li><a href="#background-table-etc">Fondos en tablas</a></li>
-          <li><a href="#border-margin-padding-background-caption">Leyenda: <span class="html-eti">&lt;caption&gt;</span></a></li>
-          <li><a href="#border-col-colgroup"><span class="html-eti">&lt;col /&gt;</span> <span class="html-eti">&lt;colgroup&gt;</span></a></li>
-        </ul>
+      <ul>
+        <li><a href="#border-collapse">Modos: <span class="css-prop">border-collapse</span></a></li>
+        <li><a href="#bordes-table-etc">Bordes en tablas</a></li>
+        <li><a href="#margin-padding-table-etc">Márgenes en tablas</a></li>
+        <li><a href="#background-table-etc">Fondos en tablas</a></li>
+        <li><a href="#border-margin-padding-background-caption">Leyenda: <span class="html-eti">&lt;caption&gt;</span></a></li>
+        <li><a href="#border-col-colgroup"><span class="html-eti">&lt;col /&gt;</span> <span class="html-eti">&lt;colgroup&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta página se tratan las particularidades de los bordes, márgenes y fondos de las tablas.</p>
+
+  <section id="border-collapse">
+    <h2 class="con-aside">Modos de bordes: <span class="css-prop">border-collapse</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">border-collapse</span><br />
+        <a href="https://www.w3.org/TR/CSS2/tables.html#borders"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>Las tablas tienen dos modos de presentación de los bordes que se selecciona con la propiedad <span class="css-prop">border-collapse</span>: separado (<span class="css-valor">separate</span>) y colapsado (<span class="css-valor">collapse</span>). En el modo separado existe un hueco entre los bordes de cada celda, mientras que en el modo colapsado los bordes se superponen. Si no se establece el modo de presentación, los navegadores aplican el modo separado.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">table {
+}</code>
+</pre>
       </div>
-    </nav>
-
-    <p>En esta página se tratan las particularidades de los bordes, márgenes y fondos de las tablas.</p>
-
-    <section id="border-collapse">
-      <h2 class="con-aside">Modos de bordes: <span class="css-prop">border-collapse</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="css-prop">border-collapse</span><br />
-          <a href="https://www.w3.org/TR/CSS2/tables.html#borders"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>Las tablas tienen dos modos de presentación de los bordes que se selecciona con la propiedad <span class="css-prop">border-collapse</span>: separado (<span class="css-valor">separate</span>) y colapsado (<span class="css-valor">collapse</span>). En el modo separado existe un hueco entre los bordes de cada celda, mientras que en el modo colapsado los bordes se superponen. Si no se establece el modo de presentación, los navegadores aplican el modo separado.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-css">table {
-}</code>
-</pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde">
+          <caption>Leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
-  border-collapse: separate;
+border-collapse: separate;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: separate">
-            <caption>Leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-css">table {
-  border-collapse: collapse;
-}</code>
-</pre>
-        </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" style="border-collapse: collapse;">
-            <caption>Leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: separate">
+          <caption>Leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
 
-    <section id="bordes-table-etc">
-      <h2>Bordes de los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
-
-      <p>En el modo separado, los navegadores representan únicamente el borde de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el borde de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
-
-      <p>En el modo colapsado, los navegadores representan los bordes de todos los elementos: la tabla (<span class="html-eti">&lt;table&gt;</span>), los cuerpos de tabla (<span class="html-eti">&lt;tbody&gt;</span>), las filas (<span class="html-eti">&lt;tr&gt;</span>) y las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
-
-      <p><strong>Nota</strong>: Tanto en modo separado como colapsado, Chrome muestra el borde de las celdas del color definido para <span class="html-eti">&lt;table&gt;,</span> <span class="html-eti">&lt;tbody&gt;</span> y <span class="html-eti">&lt;tr&gt;</span>, pero sin aplicar el grosor.</p>
-
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">table {
-  border: red 5px solid;
+border-collapse: collapse;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+      </div>
+      <div class="resultado-html">
+        <table class="tabla-con-borde" style="border-collapse: collapse;">
+          <caption>Leyenda</caption>
+          <tbody>
+            <tr>
+              <td>Celda 1</td>
+              <td>Celda 2</td>
+            </tr>
+            <tr>
+              <td>Celda 3</td>
+              <td>Celda 4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="bordes-table-etc">
+    <h2>Bordes de los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
+
+    <p>En el modo separado, los navegadores representan únicamente el borde de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el borde de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
+
+    <p>En el modo colapsado, los navegadores representan los bordes de todos los elementos: la tabla (<span class="html-eti">&lt;table&gt;</span>), los cuerpos de tabla (<span class="html-eti">&lt;tbody&gt;</span>), las filas (<span class="html-eti">&lt;tr&gt;</span>) y las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
+
+    <p><strong>Nota</strong>: Tanto en modo separado como colapsado, Chrome muestra el borde de las celdas del color definido para <span class="html-eti">&lt;table&gt;,</span> <span class="html-eti">&lt;tbody&gt;</span> y <span class="html-eti">&lt;tr&gt;</span>, pero sin aplicar el grosor.</p>
+
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
+<code class="language-css">table {
+border: red 5px solid;
+}</code>
+</pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  border: blue 5px solid;
+border: blue 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  border: green 5px solid;
+border: green 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  border: orange 5px solid;
+border: orange 5px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td style="border: orange 5px solid;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 3</td>
-                    <td style="border: orange 5px solid;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td style="border: orange 5px solid;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 3</td>
-                    <td style="border: orange 5px solid;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td style="border: orange 5px solid;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 3</td>
+                  <td style="border: orange 5px solid;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td style="border: orange 5px solid;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 3</td>
+                  <td style="border: orange 5px solid;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En el modo colapsado, si en una misma tabla hay bordes de elementos distintos que se superponen, los navegadores dibujan el de mayor grosor (o el más interior, si son del mismo grosor).</p>
+    <p>En el modo colapsado, si en una misma tabla hay bordes de elementos distintos que se superponen, los navegadores dibujan el de mayor grosor (o el más interior, si son del mismo grosor).</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td></td>
-            <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
-          </tr>
-          <tr>
-            <td rowspan="6"><span class="css-prop">border-collapse</span>: <span class="css-valor">collapse</span></td>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td></td>
+          <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
+        </tr>
+        <tr>
+          <td rowspan="6"><span class="css-prop">border-collapse</span>: <span class="css-valor">collapse</span></td>
+          <td>
+            <pre>
 <code class="language-css">table {
-  border: red 5px solid;
+border: red 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  border: blue 5px solid;
+border: blue 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  border: green 5px solid;
+border: green 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  border: orange 5px solid;
+border: orange 5px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td style=" border: orange 5px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+          </td>
+        </tr>
+        <tr>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td style=" border: orange 5px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  border: red 3px solid;
+border: red 3px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  border: blue 5px solid;
+border: blue 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  border: green 7px solid;
+border: green 7px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  border: orange 9px solid;
+border: orange 9px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 7px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 7px solid;">
-                    <td style=" border: orange 9px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+          </td>
+        </tr>
+        <tr>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 7px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 3px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 7px solid;">
+                  <td style=" border: orange 9px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  border: red 9px solid;
+border: red 9px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  border: blue 7px solid;
+border: blue 7px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  border: green 5px solid;
+border: green 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  border: orange 3px solid;
+border: orange 3px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 7px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 7px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
-                <caption>Leyenda</caption>
-                <tbody style="border: blue 7px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td style=" border: orange 3px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          </td>
+        </tr>
+        <tr>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 7px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 7px solid;">
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 9px solid;">
+              <caption>Leyenda</caption>
+              <tbody style="border: blue 7px solid;">
+                <tr style="border: green 5px solid;">
+                  <td style=" border: orange 3px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <section id="margin-padding-table-etc">
-      <h2>Márgenes en los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
+  <section id="margin-padding-table-etc">
+    <h2>Márgenes en los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
 
-      <p>En el modo separado, los navegadores representan el <span class="css-prop">margin</span> y el <span class="css-prop">padding</span> de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el <span class="css-prop">padding</span> de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
+    <p>En el modo separado, los navegadores representan el <span class="css-prop">margin</span> y el <span class="css-prop">padding</span> de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el <span class="css-prop">padding</span> de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
 
-      <p>En el modo colapsado, los navegadores representan únicamente el <span class="css-prop">margin</span> de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el <span class="css-prop">padding</span> de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
+    <p>En el modo colapsado, los navegadores representan únicamente el <span class="css-prop">margin</span> de la tabla (<span class="html-eti">&lt;table&gt;</span>) y el <span class="css-prop">padding</span> de las celdas (<span class="html-eti">&lt;td&gt;</span>).</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 3</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 3</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 3</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 3</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p class="separador"></p>
+    <p class="separador"></p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 3</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="margin: 15px; padding: 15px;">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 1</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="margin: 15px; padding: 15px;">Celda 3</td>
-                    <td style="margin: 15px; padding: 15px;">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;  margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 3</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="margin: 15px; padding: 15px;">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; margin: 15px; padding: 15px;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 1</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="margin: 15px; padding: 15px;">Celda 3</td>
+                  <td style="margin: 15px; padding: 15px;">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <section id ="background-table-etc">
-      <h2>Fondos en los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
+  <section id ="background-table-etc">
+    <h2>Fondos en los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span></h2>
 
-      <p>En ambos modos (colapsado y separado), los navegadores representan los fondos de los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span>. Lógicamente, el fondo de la celda tiene prioridad sobre el fondo de la fila y así sucesivamente.</p>
+    <p>En ambos modos (colapsado y separado), los navegadores representan los fondos de los elementos <span class="html-eti">&lt;table&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;tr&gt;</span> y <span class="html-eti">&lt;td&gt;</span>. Lógicamente, el fondo de la celda tiene prioridad sobre el fondo de la fila y así sucesivamente.</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  background: red;
+background: red;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  background: blue;
+background: blue;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  background: green;
+background: green;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  background: orange;
+background: orange;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="background: blue;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="background: green">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td style="background: orange">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="background: orange">Celda 3</td>
-                    <td style="background: orange">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="background: blue;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody style="background: blue;">
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr style="background: green">
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td style="background: orange">Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td style="background: orange">Celda 3</td>
-                    <td style="background: orange">Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="background: blue;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="background: green">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td style="background: orange">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="background: orange">Celda 3</td>
+                  <td style="background: orange">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="background: blue;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody style="background: blue;">
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr style="background: green">
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td style="background: orange">Celda 2</td>
+                </tr>
+                <tr>
+                  <td style="background: orange">Celda 3</td>
+                  <td style="background: orange">Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p class="separador"></p>
+    <p class="separador"></p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores.</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  background: red;
+background: red;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  background: blue;
+background: blue;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  background: green;
+background: green;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  background: orange;
+background: orange;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr style="background: green">
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
-                <caption>Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
-                <caption>Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr style="background: green">
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr style="background: green">
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
+              <caption>Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
+              <caption>Leyenda</caption>
+              <tbody style="background: blue">
+                <tr style="background: green">
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <section id="border-margin-padding-background-caption">
-      <h2>Bordes, márgenes y fondos de la leyenda (<span class="html-eti">&lt;caption&gt;</span>)</h2>
+  <section id="border-margin-padding-background-caption">
+    <h2>Bordes, márgenes y fondos de la leyenda (<span class="html-eti">&lt;caption&gt;</span>)</h2>
 
-      <p>En el modo separado, los navegadores representan el borde de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) de la misma manera.</p>
+    <p>En el modo separado, los navegadores representan el borde de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) de la misma manera.</p>
 
-      <p>En el modo colapsado, los navegadores representan el borde de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) de la misma manera.</p>
+    <p>En el modo colapsado, los navegadores representan el borde de la leyenda (<span class="html-eti">&lt;caption&gt;</span>) de la misma manera.</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">border</span>: <span class="css-valor">black</span> 5px <span class="css-valor">solid</span>; }</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">border</span>: <span class="css-valor">black</span> 5px <span class="css-valor">solid</span>; }</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  border: red 5px solid;
+border: red 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  border: blue 5px solid;
+border: blue 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  border: green 5px solid;
+border: green 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  border: orange 5px solid;
+border: orange 5px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="border: black 5px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="border: orange 5px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="border: black 5px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="border: orange 5px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p class="separador"></p>
+    <p class="separador"></p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores, además de <span class="css-sele">caption</span> { <span class="css-prop">border</span>: <span class="css-valor">black</span> 10px <span class="css-valor">solid</span>; }</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica la propiedad indicada en la celda superior y las anteriores, además de <span class="css-sele">caption</span> { <span class="css-prop">border</span>: <span class="css-valor">black</span> 10px <span class="css-valor">solid</span>; }</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  border: red 5px solid;
+border: red 5px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tbody {
-  border: blue 6px solid;
+border: blue 6px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+tr {
-  border: green 7px solid;
+border: green 7px solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">+td {
-  border: orange 9px solid;
+border: orange 9px solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 6px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td style=" border: orange 9px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 6px solid;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
-                <caption style="border: black 10px solid;">Leyenda</caption>
-                <tbody style="border: blue 5px solid;">
-                  <tr style="border: green 5px solid;">
-                    <td style=" border: orange 9px solid;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 6px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td style=" border: orange 9px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 6px solid;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; border: red 5px solid;">
+              <caption style="border: black 10px solid;">Leyenda</caption>
+              <tbody style="border: blue 5px solid;">
+                <tr style="border: green 5px solid;">
+                  <td style=" border: orange 9px solid;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En ambos modos (separado y colapsado), los navegadores representan el <span class="html-atri">margin</span> y el <span class="html-atri">padding</span> de la leyenda (<span class="html-eti">&lt;caption&gt;</span>).</p>
+    <p>En ambos modos (separado y colapsado), los navegadores representan el <span class="html-atri">margin</span> y el <span class="html-atri">padding</span> de la leyenda (<span class="html-eti">&lt;caption&gt;</span>).</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">background-color</span>: <span class="css-valor">orange</span>; <span class="css-prop">margin</span>: 15px; <span class="css-prop">padding</span>: 15px; }</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">background-color</span>: <span class="css-valor">orange</span>; <span class="css-prop">margin</span>: 15px; <span class="css-prop">padding</span>: 15px; }</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  margin: 15px;
-  padding: 15px;
+margin: 15px;
+padding: 15px;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red; margin: 15px; padding: 15px;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody style="background: blue; margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr style="background: green; margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td
-                        style="background: orange; margin: 15px; padding: 15px;">Celda
-                      1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red; margin: 15px; padding: 15px;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody style="background: blue; margin: 15px; padding: 15px;">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr style="background: green; margin: 15px; padding: 15px;">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="background: orange; margin: 15px; padding: 15px;">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red; margin: 15px; padding: 15px;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody style="background: blue; margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr style="background: green; margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td
+                      style="background: orange; margin: 15px; padding: 15px;">Celda
+                    1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red; margin: 15px; padding: 15px;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody style="background: blue; margin: 15px; padding: 15px;">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr style="background: green; margin: 15px; padding: 15px;">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange; margin: 15px; padding: 15px">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="background: orange; margin: 15px; padding: 15px;">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>En ambos modos (separado y colapsado), los navegadores representan el fondo de la leyenda (<span class="html-eti">&lt;caption&gt;</span>).</p>
+    <p>En ambos modos (separado y colapsado), los navegadores representan el fondo de la leyenda (<span class="html-eti">&lt;caption&gt;</span>).</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td rowspan="2" colspan="2"></td>
-            <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">background-color</span>: <span class="css-valor">orange</span>; }</td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td rowspan="2" colspan="2"></td>
+          <td colspan="4">En cada columna se aplica únicamente la propiedad indicada en la celda superior, además de <span class="css-sele">caption</span> { <span class="css-prop">background-color</span>: <span class="css-valor">orange</span>; }</td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-css">table {
-  background: red;
+background: red;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tbody {
-  background: blue;
+background: blue;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">tr {
-  background: green;
+background: green;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">td {
-  background: orange;
+background: orange;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td rowspan="2"><span class="css-prop">border-<br />
-              collapse</span></td>
-            <td><span class="css-valor">separate</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate; background: red">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: separate;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td><span class="css-valor">collapse</span></td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody style="background: blue">
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr style="background: green">
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" style="border-collapse: collapse;">
-                <caption style="background: orange">Leyenda</caption>
-                <tbody>
-                  <tr>
-                    <td style="background: orange">Celda 1</td>
-                    <td>Celda 2</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 3</td>
-                    <td>Celda 4</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="2"><span class="css-prop">border-<br />
+            collapse</span></td>
+          <td><span class="css-valor">separate</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate; background: red">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody style="background: blue">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: separate;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="css-valor">collapse</span></td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse; background: red">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody style="background: blue">
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr style="background: green">
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" style="border-collapse: collapse;">
+              <caption style="background: orange">Leyenda</caption>
+              <tbody>
+                <tr>
+                  <td style="background: orange">Celda 1</td>
+                  <td>Celda 2</td>
+                </tr>
+                <tr>
+                  <td>Celda 3</td>
+                  <td>Celda 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
 
-    <section id="border-col-colgroup">
-      <h2>Bordes de los elementos <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span></h2>
+  <section id="border-col-colgroup">
+    <h2>Bordes de los elementos <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span></h2>
 
-      <p>los navegadores representan los bordes de las etiquetas <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span>.</p>
+    <p>los navegadores representan los bordes de las etiquetas <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span>.</p>
 
-      <table class="tabla-con-borde">
-        <tbody>
-          <tr>
-            <td></td>
-            <td>
-              <pre>
+    <table class="tabla-con-borde">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <pre>
 <code class="language-css">colgroup {
-  border: 5px black solid;
+border: 5px black solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">col {
-  border: 5px red solid;
+border: 5px red solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">colgroup {
-  border: 5px black solid;
+border: 5px black solid;
 }
 col {
-  border: 5px red solid;
+border: 5px red solid;
 }</code>
 </pre>
-            </td>
-            <td>
-              <pre>
+          </td>
+          <td>
+            <pre>
 <code class="language-css">colgroup {
-  border: 7px black solid;
+border: 7px black solid;
 }
 col {
-  border: 5px red solid;
+border: 5px red solid;
 }</code>
 </pre>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-html">&lt;colgroup span="3"&gt;
 &lt;/colgroup&gt;</code>
 </pre>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup span="3" style="border: 5px black solid"></colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup span="3"></colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup span="3" style="border: 5px black solid"></colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup span="3" style="border: 7px black solid"></colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup span="3" style="border: 5px black solid"></colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup span="3"></colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup span="3" style="border: 5px black solid"></colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup span="3" style="border: 7px black solid"></colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-html">&lt;colgroup&gt;
-  &lt;col /&gt;&lt;col /&gt;&lt;col /&gt;
+&lt;col /&gt;&lt;col /&gt;&lt;col /&gt;
 &lt;/colgroup&gt;</code>
 </pre>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 5px black solid">
-                  <col />
-                  <col />
-                  <col />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup>
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 5px black solid">
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 7px black solid">
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                  <col style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <pre>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 5px black solid">
+                <col />
+                <col />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup>
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 5px black solid">
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 7px black solid">
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+                <col style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <pre>
 <code class="language-html">&lt;colgroup&gt;
-  &lt;col span="3" /&gt;
+&lt;col span="3" /&gt;
 &lt;/colgroup&gt;</code>
 </pre>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 5px black solid">
-                  <col span="3" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup>
-                  <col span="3" style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 5px black solid">
-                  <col span="3" style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td class="resul2">
-              <table class="tabla-con-borde" rules="groups">
-                <caption>Esto es la leyenda</caption>
-                <colgroup style="border: 7px black solid">
-                  <col span="3" style="border: 5px red solid" />
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <td>Celda 1</td>
-                    <td>Celda 2</td>
-                    <td>Celda 3</td>
-                  </tr>
-                  <tr>
-                    <td>Celda 4</td>
-                    <td>Celda 5</td>
-                    <td>Celda 6</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 5px black solid">
+                <col span="3" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup>
+                <col span="3" style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 5px black solid">
+                <col span="3" style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+          <td class="resul2">
+            <table class="tabla-con-borde" rules="groups">
+              <caption>Esto es la leyenda</caption>
+              <colgroup style="border: 7px black solid">
+                <col span="3" style="border: 5px red solid" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Celda 1</td>
+                  <td>Celda 2</td>
+                  <td>Celda 3</td>
+                </tr>
+                <tr>
+                  <td>Celda 4</td>
+                  <td>Celda 5</td>
+                  <td>Celda 6</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <p class="incompleto">Faltan márgenes y fondos de <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span>, así como comparar el modo colapsado y el separado.</p>
-    </section>
+    <p class="incompleto">Faltan márgenes y fondos de <span class="html-eti">&lt;col /&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span>, así como comparar el modo colapsado y el separado.</p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

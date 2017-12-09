@@ -1,231 +1,231 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Fondos. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Fondos. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>CSS: Fondos</h1>
+<body>
+  <h1>CSS: Fondos</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-      <div class="toc">
-        <h2>CSS: Fondos</h2>
+    <div class="toc">
+      <h2>CSS: Fondos</h2>
 
-        <ul>
-          <li><a href="#background">Fondo: <span class="css-prop">background</span></a></li>
-          <li><a href="#fondos-multiples">Fondo múltiple</a></li>
-          <li><a href="#background-color">Color: <span class="css-prop">background-color</span></a></li>
-          <li><a href="#background-image">Imagen: <span class="css-prop">background-image</span></a></li>
-          <li><a href="#background-size">Tamaño: <span class="css-prop">background-size</span></a></li>
-          <li><a href="#background-repeat">Repetición: <span class="css-prop">background-repeat</span></a></li>
-          <li><a href="#background-position">Posición: <span class="css-prop">background-position</span></a></li>
-          <li><a href="#background-attachment">Ligadura: <span class="css-prop">background-attachment</span></a></li>
-          <li><a href="#background-clip">Extensión: <span class="css-prop">background-clip</span></a></li>
-          <li><a href="#background-origin">Origen: <span class="css-prop">background-origin </span></a></li>
-          <li><a href="#fondos-margenes">Fondo y márgenes</a></li>
-        </ul>
-      </div>
-    </nav>
+      <ul>
+        <li><a href="#background">Fondo: <span class="css-prop">background</span></a></li>
+        <li><a href="#fondos-multiples">Fondo múltiple</a></li>
+        <li><a href="#background-color">Color: <span class="css-prop">background-color</span></a></li>
+        <li><a href="#background-image">Imagen: <span class="css-prop">background-image</span></a></li>
+        <li><a href="#background-size">Tamaño: <span class="css-prop">background-size</span></a></li>
+        <li><a href="#background-repeat">Repetición: <span class="css-prop">background-repeat</span></a></li>
+        <li><a href="#background-position">Posición: <span class="css-prop">background-position</span></a></li>
+        <li><a href="#background-attachment">Ligadura: <span class="css-prop">background-attachment</span></a></li>
+        <li><a href="#background-clip">Extensión: <span class="css-prop">background-clip</span></a></li>
+        <li><a href="#background-origin">Origen: <span class="css-prop">background-origin </span></a></li>
+        <li><a href="#fondos-margenes">Fondo y márgenes</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <p>En esta página se explican las propiedades que se pueden aplicar a los fondos de cualquier elemento de una página web. Algunas de estas propiedades ya formaban parte de la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> y otras se han introducido en la futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>. Aunque actualmente (diciembre de 2016) esta recomendación se encuentra en elaboración, los navegadores aceptan ya estas propiedades, por lo que pueden utilizarse sin problemas.</p>
+  <p>En esta página se explican las propiedades que se pueden aplicar a los fondos de cualquier elemento de una página web. Algunas de estas propiedades ya formaban parte de la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> y otras se han introducido en la futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>. Aunque actualmente (diciembre de 2016) esta recomendación se encuentra en elaboración, los navegadores aceptan ya estas propiedades, por lo que pueden utilizarse sin problemas.</p>
 
-    <p>Cualquier imagen puede utilizarse de imagen de fondo. Para adaptarse a los diferentes tamaños de pantallas y mantener las imágenes lo más pequeñas posibles, si el elemento es mayor que la imagen, las imágenes se suelen repetir. Si la imagen está bien construida, la repetición puede dar un resultado contínuo.</p>
+  <p>Cualquier imagen puede utilizarse de imagen de fondo. Para adaptarse a los diferentes tamaños de pantallas y mantener las imágenes lo más pequeñas posibles, si el elemento es mayor que la imagen, las imágenes se suelen repetir. Si la imagen está bien construida, la repetición puede dar un resultado contínuo.</p>
 
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+  <div class="filaflex">
+    <div class="codigo">
+      <pre>
 Imagen de fondo: <img src="ejemplos/fondos/fuego-1f525.svg" alt="Imagen de ejemplo para fondo" width="64" height="64" />
 </pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fondos/background-1.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/fondos/background-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-      </div>
     </div>
+    <div class="resultado-object">
+      <object type="text/html" data="ejemplos/fondos/background-1.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+    </div>
+    <div class="icono-enlace">
+      <a href="ejemplos/fondos/background-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+    </div>
+  </div>
+
+  <div class="filaflex">
+    <div class="codigo">
+      <pre>
+Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo para fondo" width="64" height="64" />
+</pre>
+    </div>
+    <div class="resultado-object">
+      <object type="text/html" data="ejemplos/fondos/background-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+    </div>
+    <div class="icono-enlace">
+      <a href="ejemplos/fondos/background-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+    </div>
+  </div>
+
+  <p><strong>Nota</strong>: En la lección <a href="../otros/generadores-fondos.html">Generadores de fondos</a> se comentan varias aplicaciones y páginas web que facilitan la creación de imágenes de fondo.</p>
+
+  <section id="background">
+    <h2 class="con-aside">La propiedad compuesta <span class="css-prop">background</span></h2>
+
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
+
+    <p>La propiedad compuesta <span class="css-prop">background</span> permite definir simultáneamente todas las propiedades relacionadas con el fondo de cualquier elemento: <span class="css-prop">background-color</span>, <span class="css-prop">background-image</span>, <span class="css-prop">background-position</span>, <span class="css-prop">background-size</span>, <span class="css-prop">background-repeat</span>, <span class="css-prop">background-attachment</span>, <span class="css-prop">background-origin</span> y <span class="css-prop">background-clip</span> (explicadas más adelante en esta página).</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
-Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo para fondo" width="64" height="64" />
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fondos/background-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/fondos/background-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-      </div>
-    </div>
-
-    <p><strong>Nota</strong>: En la lección <a href="../otros/generadores-fondos.html">Generadores de fondos</a> se comentan varias aplicaciones y páginas web que facilitan la creación de imágenes de fondo.</p>
-
-    <section id="background">
-      <h2 class="con-aside">La propiedad compuesta <span class="css-prop">background</span></h2>
-
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
-
-      <p>La propiedad compuesta <span class="css-prop">background</span> permite definir simultáneamente todas las propiedades relacionadas con el fondo de cualquier elemento: <span class="css-prop">background-color</span>, <span class="css-prop">background-image</span>, <span class="css-prop">background-position</span>, <span class="css-prop">background-size</span>, <span class="css-prop">background-repeat</span>, <span class="css-prop">background-attachment</span>, <span class="css-prop">background-origin</span> y <span class="css-prop">background-clip</span> (explicadas más adelante en esta página).</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
 <code class="language-css">html {
   background: lightblue url("caballo.svg");
 }
 /* Imagen de fondo caballo.svg: <img src="ejemplos/fondos/caballo.svg" alt="Imagen de ejemplo para fondo" width="205" height="106" /> */</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Para evitar ambigüedades, si se especifica la propiedad <span class="css-prop">background-size</span>, inmediatamente antes se debe especificar la propiedad <span class="css-prop">background-position</span> y antes de <span class="css-prop">background-size</span> hay que escribir una barra (/).</p>
+    <p>Para evitar ambigüedades, si se especifica la propiedad <span class="css-prop">background-size</span>, inmediatamente antes se debe especificar la propiedad <span class="css-prop">background-position</span> y antes de <span class="css-prop">background-size</span> hay que escribir una barra (/).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
    background: lightblue url("caballo.svg") top left / 100px;
 }
 /* Imagen de fondo caballo.svg: <img src="ejemplos/fondos/caballo.svg" alt="Imagen de ejemplo para fondo" width="205" height="106" /> */</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-4.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-4.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Si sólo se escribe un valor de <span class="css-prop">background-origin</span> y <span class="css-prop">background-clip</span>, ese valor se aplica a las dos propiedades.</p>
-    </section>
+    <p>Si sólo se escribe un valor de <span class="css-prop">background-origin</span> y <span class="css-prop">background-clip</span>, ese valor se aplica a las dos propiedades.</p>
+  </section>
 
-    <section id="fondos-multiples">
-      <h2 class="con-aside">Imágenes de fondo múltiples</h2>
+  <section id="fondos-multiples">
+    <h2 class="con-aside">Imágenes de fondo múltiples</h2>
 
-      <aside class="enlace-norma">
-        <p>fondos múltiples<br />
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#layering"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#feat=multibackgrounds"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p>fondos múltiples<br />
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#layering"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders/Using_multiple_backgrounds"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#feat=multibackgrounds"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>, actualmente (diciembre de 2016) en elaboración, permite definir varias imágenes de fondo en un mismo elemento, simplemente separando entre comas las referencias a cada imagen.</p>
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>, actualmente (diciembre de 2016) en elaboración, permite definir varias imágenes de fondo en un mismo elemento, simplemente separando entre comas las referencias a cada imagen.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: url("fuego-1f525.svg") right repeat-y, url("tartan.png");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-multiple-1.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-multiple-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-multiple-1.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-multiple-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>La notación de valores separados por comas se puede utilizar tanto en la propiedad compuesta <span class="css-prop">background</span> como en las propiedades individuales. Si sólo se especifica un valor, ese valor se aplica a todas las imágenes.</p>
+    <p>La notación de valores separados por comas se puede utilizar tanto en la propiedad compuesta <span class="css-prop">background</span> como en las propiedades individuales. Si sólo se especifica un valor, ese valor se aplica a todas las imágenes.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("fuego-1f525.svg"), url("tartan.png");
   background-position: right;
   background-repeat: repeat-y, repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-multiple-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-multiple-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-multiple-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-multiple-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>El orden de las imágenes es de delante hacia atrás, es decir, la primera imagen de la lista está por encima de la segunda y así sucesivamente. El orden es importante pues si una imagen no tiene transparencia tapará las siguientes. En el ejemplo siguiente el fondo que asemeja una tela oculta la imagen del fuego:</p>
+    <p>El orden de las imágenes es de delante hacia atrás, es decir, la primera imagen de la lista está por encima de la segunda y así sucesivamente. El orden es importante pues si una imagen no tiene transparencia tapará las siguientes. En el ejemplo siguiente el fondo que asemeja una tela oculta la imagen del fuego:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: url("tartan.png"), url("fuego-1f525.svg") right repeat-y;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-multiple-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-multiple-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-multiple-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-multiple-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Sólo se puede definir un color de fondo en la última de las imágenes de fondo. No solamente porque dar color de fondo a cualquier otra imagen ocultaría las que se encuentran por detrás, sino porque la recomendación no lo permite.</p>
+    <p>Sólo se puede definir un color de fondo en la última de las imágenes de fondo. No solamente porque dar color de fondo a cualquier otra imagen ocultaría las que se encuentran por detrás, sino porque la recomendación no lo permite.</p>
 
-      <div class="filaflex">
-        <div class="icono-ok">
-          <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: url("rosa-1f339.svg") top left repeat-y,
     hsl(105, 80%, 85%) url("tulipan-1f337.svg") top right repeat-y;
   padding: 0 70px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-multiple-4.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-multiple-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-multiple-4.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-multiple-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="icono-ok">
-          <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: hsl(105, 80%, 85%) url("rosa-1f339.svg") top left repeat-y,
     url("tulipan-1f337.svg") top right repeat-y;
@@ -235,229 +235,229 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
   */
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-multiple-5.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-multiple-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-multiple-5.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-multiple-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p><strong>Para saber más</strong>: <a href="http://helephant.com/2009/11/23/css3-multiple-background-images/">http://helephant.com/2009/11/23/css3-multiple-background-images/</a>.</p>
-    </section>
+    <p><strong>Para saber más</strong>: <a href="http://helephant.com/2009/11/23/css3-multiple-background-images/">http://helephant.com/2009/11/23/css3-multiple-background-images/</a>.</p>
+  </section>
 
-    <section id="background-color">
-      <h2 class="con-aside">Color de fondo: <span class="css-prop">background-color</span></h2>
+  <section id="background-color">
+    <h2 class="con-aside">Color de fondo: <span class="css-prop">background-color</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-color</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-color</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-color"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-color</span> establece el color de fondo de cualquier elemento.</p>
+    <p>La propiedad <span class="css-prop">background-color</span> establece el color de fondo de cualquier elemento.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: palegreen;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-color-1.html" style="width: 100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-color-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-color-1.html" style="width: 100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-color-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>El color de fondo se muestra por detrás de la imagen, por lo que la imagen debe tener transparencia para que se pueda ver el color de fondo.</p>
+    <p>El color de fondo se muestra por detrás de la imagen, por lo que la imagen debe tener transparencia para que se pueda ver el color de fondo.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: #FFDF85 url("fuego-1f525.svg");  }
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-color-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-color-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-color-2.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-color-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: #FFDF85 url("tartan.png"); }
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-color-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-color-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-color-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-color-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="background-image">
-      <h2 class="con-aside">Imagen de fondo: <span class="css-prop">background-image</span></h2>
+  <section id="background-image">
+    <h2 class="con-aside">Imagen de fondo: <span class="css-prop">background-image</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-image</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-image"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-image</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-image"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-image</span> establece cualquier imagen como fondo de un elemento. La sintaxis es la siguiente background-image: url("nombre_de_la_imagen"), en la que el nombre de la imagen debe indicar el nombre (y la extensión) de la imagen, así como el camino absoluto o relativo desde la hoja de estilo. Las comillas que rodean el nombre de la imagen sólo son necesarias si hay espacios en blanco en el nombre de la imagen. Se pueden utilizar comillas simples (') o dobles ("). Si hay espacios en blanco entre url y el paréntesis, los navegadores no muestran la imagen de fondo.</p>
+    <p>La propiedad <span class="css-prop">background-image</span> establece cualquier imagen como fondo de un elemento. La sintaxis es la siguiente background-image: url("nombre_de_la_imagen"), en la que el nombre de la imagen debe indicar el nombre (y la extensión) de la imagen, así como el camino absoluto o relativo desde la hoja de estilo. Las comillas que rodean el nombre de la imagen sólo son necesarias si hay espacios en blanco en el nombre de la imagen. Se pueden utilizar comillas simples (') o dobles ("). Si hay espacios en blanco entre url y el paréntesis, los navegadores no muestran la imagen de fondo.</p>
 
-      <p>En el ejemplo siguiente, se utiliza la imagen siguiente: <img src="../img/fondos/verde.jpg" alt="Imagen para fondo" title="Imagen para fondo" width="64" height="64" />. Esta imagen se llama verde.jpg y se encuentra en la misma carpeta que la hoja de estilo.</p>
+    <p>En el ejemplo siguiente, se utiliza la imagen siguiente: <img src="../img/fondos/verde.jpg" alt="Imagen para fondo" title="Imagen para fondo" width="64" height="64" />. Esta imagen se llama verde.jpg y se encuentra en la misma carpeta que la hoja de estilo.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Si en un elemento tiene tanto color de fondo como imagen de fondo, la imagen se sitúa por encima del color. Si la imagen no contiene píxeles transparentes, el color de fondo no se ve.</p>
+    <p>Si en un elemento tiene tanto color de fondo como imagen de fondo, la imagen se sitúa por encima del color. Si la imagen no contiene píxeles transparentes, el color de fondo no se ve.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: palegreen;
   background-image: url("verde.jpg");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Pero si la imagen contiene píxeles transparentes se ve el color de fondo:</p>
+    <p>Pero si la imagen contiene píxeles transparentes se ve el color de fondo:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: limegreen;
   background-image: url("gota.png");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: orange;
   background-image: url("gota.png");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Se aconseja utilizar o bien solamente la propiedad compuesta <span class="css-prop">background</span> o bien las propiedades individuales. Si se utiliza la propiedad compuesta <span class="css-prop">background</span> y además las propiedades individuales, es necesario escribir primero la propiedad compuesta, ya que la propiedad <span class="css-prop">background</span> anula las propiedades de fondo anteriores. En el primer ejemplo siguiente, no se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background</span> anula la propiedad <span class="css-prop">background-color</span> anterior. En el segundo ejemplo, sí que se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background-color</span> está después de la propiedad <span class="css-prop">background</span>.</p>
+    <p>Se aconseja utilizar o bien solamente la propiedad compuesta <span class="css-prop">background</span> o bien las propiedades individuales. Si se utiliza la propiedad compuesta <span class="css-prop">background</span> y además las propiedades individuales, es necesario escribir primero la propiedad compuesta, ya que la propiedad <span class="css-prop">background</span> anula las propiedades de fondo anteriores. En el primer ejemplo siguiente, no se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background</span> anula la propiedad <span class="css-prop">background-color</span> anterior. En el segundo ejemplo, sí que se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background-color</span> está después de la propiedad <span class="css-prop">background</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: orange;
   background: url("gota.png");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: url("gota.png");
   background-color: orange;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Se pueden superponer las imágenes de fondo de varios elementos anidados (las imágenes de fondo de los elementos exteriores se verán si las imágenes de fondo de los elementos interiores contienen píxeles transparentes).</p>
+    <p>Se pueden superponer las imágenes de fondo de varios elementos anidados (las imágenes de fondo de los elementos exteriores se verán si las imágenes de fondo de los elementos interiores contienen píxeles transparentes).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background: url("franja_horizontal.png");
 }
@@ -466,351 +466,351 @@ p {
   background: url("franja_vertical.png");
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-image-8.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-image-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-image-8.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-image-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="background-size">
-      <h2 class="con-aside">Tamaño de la imagen de fondo: <span class="css-prop">background-size</span></h2>
+  <section id="background-size">
+    <h2 class="con-aside">Tamaño de la imagen de fondo: <span class="css-prop">background-size</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-size</span><br />
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-size"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#feat=background-img-opts"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-size</span><br />
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-size"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#feat=background-img-opts"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-size</span> permite establecer el tamaño de la imagen de fondo.</p>
+    <p>La propiedad <span class="css-prop">background-size</span> permite establecer el tamaño de la imagen de fondo.</p>
 
-      <p>Los posibles valores de la propiedad <span class="css-prop">background-size</span> son:</p>
+    <p>Los posibles valores de la propiedad <span class="css-prop">background-size</span> son:</p>
 
-      <ul>
-        <li><span class="css-valor">auto</span>: el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, se conserva el tamaño original de la imagen.</li>
-        <li>valores numéricos (porcentajes o distancias): el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, la imagen se deforma para ajustarse a esos valores.</li>
-        <li><span class="css-valor">contain</span>: la imagen se aumenta o disminuye de manera que pueda verse completa en una de las dimensiones (horizontal o vertical) y se repìta en la otra dimensión.</li>
-        <li><span class="css-valor">cover</span>: la imagen se aumenta o disminuye de manera que ocupe todo el espacio disponible en una dimension (horizontal o vertical) y se corta en la otra dimensión.</li>
-      </ul>
+    <ul>
+      <li><span class="css-valor">auto</span>: el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, se conserva el tamaño original de la imagen.</li>
+      <li>valores numéricos (porcentajes o distancias): el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, la imagen se deforma para ajustarse a esos valores.</li>
+      <li><span class="css-valor">contain</span>: la imagen se aumenta o disminuye de manera que pueda verse completa en una de las dimensiones (horizontal o vertical) y se repìta en la otra dimensión.</li>
+      <li><span class="css-valor">cover</span>: la imagen se aumenta o disminuye de manera que ocupe todo el espacio disponible en una dimension (horizontal o vertical) y se corta en la otra dimensión.</li>
+    </ul>
 
-      <p>Si la imagen de fondo es una imagen de mapa de bits (jpg, png, etc.) y se aumenta, la calidad de la imagen se resiente. Sin embargo, si se utilizan imágenes en formato vectorial (SVG), la imagen se verá con la misma calidad independientemente del tamaño:</p>
+    <p>Si la imagen de fondo es una imagen de mapa de bits (jpg, png, etc.) y se aumenta, la calidad de la imagen se resiente. Sin embargo, si se utilizan imágenes en formato vectorial (SVG), la imagen se verá con la misma calidad independientemente del tamaño:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: auto auto;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: 33% 50%;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: 33% 50%;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: 50px 50px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: contain;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: contain;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("circulo.svg");
   background-size: cover;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-size-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-size-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="background-repeat">
-      <h2 class="con-aside">Repetición de la imagen de fondo: <span class="css-prop">background-repeat</span></h2>
+  <section id="background-repeat">
+    <h2 class="con-aside">Repetición de la imagen de fondo: <span class="css-prop">background-repeat</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-repeat</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-repeat"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-repeat"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-repeat</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-repeat"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-repeat"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>Por omisión, los navegadores repiten la imagen de fondo tanto en vertical como en horizontal. La propiedad <span class="css-prop">background-repeat</span> permite controlar esa repetición.</p>
+    <p>Por omisión, los navegadores repiten la imagen de fondo tanto en vertical como en horizontal. La propiedad <span class="css-prop">background-repeat</span> permite controlar esa repetición.</p>
 
-      <p>En la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, los posibles valores de <span class="css-prop">background-repeat</span> son:</p>
-      <ul>
-        <li><span class="css-valor">no-repeat</span>: la imagen no se repite </li>
-        <li><span class="css-valor">repeat-x</span>: la imagen se repite únicamente en horizontal</li>
-        <li><span class="css-valor">repeat-y</span>: la imagen se repite únicamente en vertical</li>
-        <li><span class="css-valor">repeat</span>: la imagen se repite en horizontal y vertical</li>
-      </ul>
+    <p>En la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, los posibles valores de <span class="css-prop">background-repeat</span> son:</p>
+    <ul>
+      <li><span class="css-valor">no-repeat</span>: la imagen no se repite </li>
+      <li><span class="css-valor">repeat-x</span>: la imagen se repite únicamente en horizontal</li>
+      <li><span class="css-valor">repeat-y</span>: la imagen se repite únicamente en vertical</li>
+      <li><span class="css-valor">repeat</span>: la imagen se repite en horizontal y vertical</li>
+    </ul>
 
-      <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>, actualmente (diciembre de 2016) en elaboración, ha añadido los valores:</p>
-      <ul>
-        <li><span class="css-valor">space</span>: la imagen se repite en horizontal y vertical, pero se añaden espacios entre las imágenes para mostrar las imágenes completas y que no se corten en los bordes derecho o inferior.</li>
-        <li><span class="css-valor">round</span>: la imagen se repite en horizontal y vertical, pero las imágenes se deforman para mostrarlas completas y que no se corten en los bordes derecho e inferior.</li>
-      </ul>
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-backgrounds-3/">CSS 3: Fondos y bordes</a>, actualmente (diciembre de 2016) en elaboración, ha añadido los valores:</p>
+    <ul>
+      <li><span class="css-valor">space</span>: la imagen se repite en horizontal y vertical, pero se añaden espacios entre las imágenes para mostrar las imágenes completas y que no se corten en los bordes derecho o inferior.</li>
+      <li><span class="css-valor">round</span>: la imagen se repite en horizontal y vertical, pero las imágenes se deforman para mostrarlas completas y que no se corten en los bordes derecho e inferior.</li>
+    </ul>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-1.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
   background-repeat: repeat-x;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
   background-repeat: repeat-y;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image: url("verde.jpg");
   background-repeat: repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image:  url("circulo.svg");
   background-repeat: repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-5.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image:  url("circulo.svg");
   background-repeat: space;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-6.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image:  url("circulo.svg");
   background-repeat: round;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-7.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-image:  url("circulo.svg");
   background-repeat: round;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-repeat-8.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-repeat-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-repeat-8.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-repeat-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>El valor <span class="css-valor">space</span>  introducido en CSS 3 tiene sentido con imágenes que no pretenden crear un fondo continuo, ya que el espacio sobrante se distribuye entre las imágenes.</p>
-    </section>
+    <p>El valor <span class="css-valor">space</span> introducido en CSS 3 tiene sentido con imágenes que no pretenden crear un fondo continuo, ya que el espacio sobrante se distribuye entre las imágenes.</p>
+  </section>
 
-    <section id="background-position">
-      <h2 class="con-aside">Posición de la imagen de fondo: <span class="css-prop">background-position</span></h2>
+  <section id="background-position">
+    <h2 class="con-aside">Posición de la imagen de fondo: <span class="css-prop">background-position</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-position</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-position"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-position</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-position"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-position</span> permite establecer la posición de la imagen de fondo. A esta propiedad hay que darle dos valores: la posición horizontal y la posición vertical.</p>
+    <p>La propiedad <span class="css-prop">background-position</span> permite establecer la posición de la imagen de fondo. A esta propiedad hay que darle dos valores: la posición horizontal y la posición vertical.</p>
 
-      <p>Los posibles valores de <span class="css-prop">background-position</span> son:</p>
-      <ul>
-        <li>valores numéricos (porcentajes o distancias)</li>
-        <li><span class="css-valor">left</span>, <span class="css-valor">center</span> y <span class="css-valor">right</span>: establecen la posición horizontal (izquierda, centro y derecha, respectivamente)</li>
-        <li><span class="css-valor">top</span>, <span class="css-valor">center</span>, <span class="css-valor">bottom</span>: establece la posición vertical (arriba, en medio, abajo,   respectivamente)</li>
-      </ul>
+    <p>Los posibles valores de <span class="css-prop">background-position</span> son:</p>
+    <ul>
+      <li>valores numéricos (porcentajes o distancias)</li>
+      <li><span class="css-valor">left</span>, <span class="css-valor">center</span> y <span class="css-valor">right</span>: establecen la posición horizontal (izquierda, centro y derecha, respectivamente)</li>
+      <li><span class="css-valor">top</span>, <span class="css-valor">center</span>, <span class="css-valor">bottom</span>: establece la posición vertical (arriba, en medio, abajo, respectivamente)</li>
+    </ul>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>Hay que tener en cuenta que la imagen de fondo se posiciona respecto al elemento y que el tamaño de los elementos puede estar definido explícitamente o definido por su contenido.</p>
-      <ul>
-        <li>En el ejemplo siguiente se da imagen de fondo a una división <span class="html-eti">&lt;div&gt;</span> cuyo tamaño se establece en la hoja de estilo. La división es lo bastante grande como para ver claramente la imagen de fondo abajo a la derecha.
+    <p>Hay que tener en cuenta que la imagen de fondo se posiciona respecto al elemento y que el tamaño de los elementos puede estar definido explícitamente o definido por su contenido.</p>
+    <ul>
+      <li>En el ejemplo siguiente se da imagen de fondo a una división <span class="html-eti">&lt;div&gt;</span> cuyo tamaño se establece en la hoja de estilo. La división es lo bastante grande como para ver claramente la imagen de fondo abajo a la derecha.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -824,20 +824,20 @@ p {
 }
 </code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="ejemplos/fondos/background-position-1.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/fondos/background-position-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
-        </li>
-        <li>En el ejemplo siguiente se da imagen de fondo a una división <span class="html-eti">&lt;div&gt;</span> cuyo tamaño está definido por el texto (y otros elementos) que contiene. La división es más pequeña que la imagen de fondo, por lo que cuesta apreciar que la imagen de fondo está situada abajo a la derecha.
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/fondos/background-position-1.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/fondos/background-position-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+      <li>En el ejemplo siguiente se da imagen de fondo a una división <span class="html-eti">&lt;div&gt;</span> cuyo tamaño está definido por el texto (y otros elementos) que contiene. La división es más pequeña que la imagen de fondo, por lo que cuesta apreciar que la imagen de fondo está situada abajo a la derecha.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">div {
   border: black 1px solid;
   background-color: lightblue;
@@ -847,20 +847,20 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="ejemplos/fondos/background-position-2.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/fondos/background-position-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
-        </li>
-        <li>En el caso de imágenes de fondo (sin repetición) en los elementos <span class="html-eti">&lt;html&gt;</span> o <span class="html-eti">&lt;body&gt;</span>, los navegadores calculan el tamaño basándose en el texto (y otros elementos) que contienen. Sin embargo, el color de fondo se aplica a todo el espacio disponible, independientemente del contenido de la página.
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/fondos/background-position-2.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/fondos/background-position-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+      <li>En el caso de imágenes de fondo (sin repetición) en los elementos <span class="html-eti">&lt;html&gt;</span> o <span class="html-eti">&lt;body&gt;</span>, los navegadores calculan el tamaño basándose en el texto (y otros elementos) que contienen. Sin embargo, el color de fondo se aplica a todo el espacio disponible, independientemente del contenido de la página.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">html {
   background-color: lightblue;
   background-image: url("verde.jpg");
@@ -868,20 +868,20 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="ejemplos/fondos/background-position-3.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/fondos/background-position-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
-        </li>
-        <li>Si la página no tiene contenido, cuesta apreciar que la imagen de fondo está situada abajo a la derecha de un contenido inexistente.
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/fondos/background-position-3.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/fondos/background-position-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+      <li>Si la página no tiene contenido, cuesta apreciar que la imagen de fondo está situada abajo a la derecha de un contenido inexistente.
 
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">html {
   background-color: lightblue;
   background-image: url("verde.jpg");
@@ -889,23 +889,23 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-            </div>
-            <div class="resultado-object">
-              <object type="text/html" data="ejemplos/fondos/background-position-4.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/fondos/background-position-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-            </div>
           </div>
-        </li>
-      </ul>
-      <hr class="corta" />
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/fondos/background-position-4.html" style="width:100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/fondos/background-position-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <hr class="corta" />
 
-      <p>Con respecto a los valores de <span class="css-prop">background-position</span> (posición horizontal y vertical), si se emplean únicamente términos, el orden de los valores no es importante:</p>
+    <p>Con respecto a los valores de <span class="css-prop">background-position</span> (posición horizontal y vertical), si se emplean únicamente términos, el orden de los valores no es importante:</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -919,18 +919,18 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-11.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-11.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -944,20 +944,20 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-12.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-12.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Si sólo se indica una de las posiciones, la otra toma el valor <span class="css-valor">center</span>.</p>
+    <p>Si sólo se indica una de las posiciones, la otra toma el valor <span class="css-valor">center</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -971,18 +971,18 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-13.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-13.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -996,20 +996,20 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-14.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-14.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-14.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-14.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Si se emplean únicamente valores numéricos, el primer valor hace referencia a la posición horizontal y el segundo a la posición vertical.</p>
+    <p>Si se emplean únicamente valores numéricos, el primer valor hace referencia a la posición horizontal y el segundo a la posición vertical.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -1023,18 +1023,18 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-15.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-15.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-15.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-15.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -1048,20 +1048,20 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-16.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-16.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-16.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-16.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>Si se emplea un único valor numérico, se interpreta como posición horizontal y valor ausente es <span class="css-valor">50%</span>.</p>
+    <p>Si se emplea un único valor numérico, se interpreta como posición horizontal y valor ausente es <span class="css-valor">50%</span>.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -1075,24 +1075,24 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-17.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-17.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-17.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-17.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <hr class="corta" />
+    <hr class="corta" />
 
-      <p>La recomendación CSS 2 del W3C no permitía mezclar números y palabras, pero la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> sí que permite mezclar números y palabras, aunque obligan a que el primer término se refiera a la posición horizontal y el segundo a la vertical.</p>
+    <p>La recomendación CSS 2 del W3C no permitía mezclar números y palabras, pero la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> sí que permite mezclar números y palabras, aunque obligan a que el primer término se refiera a la posición horizontal y el segundo a la vertical.</p>
 
-      <p>En el ejemplo siguiente los navegadores muestran la imagen correctamente, abajo a la derecha.</p>
+    <p>En el ejemplo siguiente los navegadores muestran la imagen correctamente, abajo a la derecha.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -1106,23 +1106,23 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-18.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-18.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-18.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-18.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>En el ejemplo siguiente los navegadores muestran la imagen de fondo arriba a la izquierda porque no hacen caso de la propiedad <span class="css-prop">background-position</span>, puesto que la propiedad <span class="css-prop">background-position</span> del ejemplo no es válida.</p>
+    <p>En el ejemplo siguiente los navegadores muestran la imagen de fondo arriba a la izquierda porque no hacen caso de la propiedad <span class="css-prop">background-position</span>, puesto que la propiedad <span class="css-prop">background-position</span> del ejemplo no es válida.</p>
 
-      <div class="filaflex">
-        <div class="icono-ok">
-          <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
-        </div>
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40" />
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-css">div {
   width: 98%;
   height: 10em;
@@ -1136,39 +1136,39 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-position-19.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-position-19.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-position-19.html" style="width:100%; height: 18em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-position-19.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="background-attachment">
-      <h2 class="con-aside">Ligadura de la imagen de fondo: <span class="css-prop">background-attachment</span></h2>
+  <section id="background-attachment">
+    <h2 class="con-aside">Ligadura de la imagen de fondo: <span class="css-prop">background-attachment</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-attachment</span><br />
-          <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-attachment"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-attachment</span><br />
+        <a href="https://www.w3.org/TR/CSS2/colors.html#propdef-background-attachment"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-attachment</span> establece el comportamiento de la imagen de fondo cuando se desplaza el elemento (al utilizar las barras de desplazamiento del navegador).</p>
+    <p>La propiedad <span class="css-prop">background-attachment</span> establece el comportamiento de la imagen de fondo cuando se desplaza el elemento (al utilizar las barras de desplazamiento del navegador).</p>
 
-      <p>Los posibles valores de <span class="css-prop">background-attachment</span> son:</p>
+    <p>Los posibles valores de <span class="css-prop">background-attachment</span> son:</p>
 
-      <ul>
-        <li><span class="css-valor">scroll</span>: la imagen acompaña al elemento cuando este se desplaza</li>
-        <li><span class="css-valor">fixed</span>: la imagen permanece fija</li>
-      </ul>
+    <ul>
+      <li><span class="css-valor">scroll</span>: la imagen acompaña al elemento cuando este se desplaza</li>
+      <li><span class="css-valor">fixed</span>: la imagen permanece fija</li>
+    </ul>
 
-      <p>El valor <span class="css-valor">scroll</span> hace que la imagen acompañe al elemento y se puede aplicar en cualquier elemento.</p>
+    <p>El valor <span class="css-valor">scroll</span> hace que la imagen acompañe al elemento y se puede aplicar en cualquier elemento.</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-attachment: scroll;
   background-image: url("verde.jpg");
@@ -1176,47 +1176,47 @@ p {
   background-repeat: no-repeat;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-attachment.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-attachment.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-attachment.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-attachment.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>El valor <span class="css-valor">fixed</span> hace que la imagen permanezca fija en la ventana y no se desplace cuando se desplaza el elemento. Pero además la posición de la imagen de fondo se interpreta siempre con respecto a la ventana y únicamente es visible cuando el elemento está en esa posición.</p>
+    <p>El valor <span class="css-valor">fixed</span> hace que la imagen permanezca fija en la ventana y no se desplace cuando se desplaza el elemento. Pero además la posición de la imagen de fondo se interpreta siempre con respecto a la ventana y únicamente es visible cuando el elemento está en esa posición.</p>
 
-      <p>La página de <a href="ejemplos/fondos/position-fixed-2.html">ejemplo de imagen de fondo</a> con <span class="css-prop">background-attachment</span>: <span class="css-valor">fixed</span> permite entender lo que ocurre. En esta página la imagen de fondo es una rejilla de 200px x 200px. Esa imagen está como imagen de fondo en dos elementos: <span class="html-eti">&lt;body&gt;</span> y los dos primeros párrafos <span class="html-eti">&lt;p&gt;</span> (con clase "confondo").</p>
-      <ul>
-        <li>En el caso de <span class="html-eti">&lt;body&gt;</span>, la imagen está arriba a la izquierda. Como el elemento <span class="html-eti">&lt;body&gt;</span> ocupa toda la ventana, la imagen de fondo se ve todo el tiempo. Incluso si se desplaza el texto, la imagen permanece a la izquierda.</li>
-        <li>En el caso de los dos primeros párrafos, la imagen está arriba a la derecha. Pero no arriba a la derecha de los párrafos, sino arriba a la derecha de la ventana. Además la imagen sólo se ve cuando los primeros párrafos están encima de la posición de la imagen (arriba a la derecha de la ventana). Es decir, solamente se ve la imagen arriba a la derecha cuando el párrafo está también arriba a la derecha. Además, como <span class="html-eti">&lt;body&gt;</span> tiene un margen de 50px, siempre se pierde parte de la imagen. Al desplazar el texto hacia arriba, se llega a ver la parte superior de la imagen que al principio permanecía oculta, pero la parte derecha no. Los párrafos siguientes no tienen imagen de fondo, por lo que no muestran la imagen de fondo cuando llegan arriba a la derecha. También se puede observar en la página de ejemplo que aunque el segundo párrafo con imagen de fondo es muy largo en horizontal, la imagen de fondo sólo se ve en el trozo que está dentro del elemento (con color de fondo).</li>
-      </ul>
-    </section>
+    <p>La página de <a href="ejemplos/fondos/position-fixed-2.html">ejemplo de imagen de fondo</a> con <span class="css-prop">background-attachment</span>: <span class="css-valor">fixed</span> permite entender lo que ocurre. En esta página la imagen de fondo es una rejilla de 200px x 200px. Esa imagen está como imagen de fondo en dos elementos: <span class="html-eti">&lt;body&gt;</span> y los dos primeros párrafos <span class="html-eti">&lt;p&gt;</span> (con clase "confondo").</p>
+    <ul>
+      <li>En el caso de <span class="html-eti">&lt;body&gt;</span>, la imagen está arriba a la izquierda. Como el elemento <span class="html-eti">&lt;body&gt;</span> ocupa toda la ventana, la imagen de fondo se ve todo el tiempo. Incluso si se desplaza el texto, la imagen permanece a la izquierda.</li>
+      <li>En el caso de los dos primeros párrafos, la imagen está arriba a la derecha. Pero no arriba a la derecha de los párrafos, sino arriba a la derecha de la ventana. Además la imagen sólo se ve cuando los primeros párrafos están encima de la posición de la imagen (arriba a la derecha de la ventana). Es decir, solamente se ve la imagen arriba a la derecha cuando el párrafo está también arriba a la derecha. Además, como <span class="html-eti">&lt;body&gt;</span> tiene un margen de 50px, siempre se pierde parte de la imagen. Al desplazar el texto hacia arriba, se llega a ver la parte superior de la imagen que al principio permanecía oculta, pero la parte derecha no. Los párrafos siguientes no tienen imagen de fondo, por lo que no muestran la imagen de fondo cuando llegan arriba a la derecha. También se puede observar en la página de ejemplo que aunque el segundo párrafo con imagen de fondo es muy largo en horizontal, la imagen de fondo sólo se ve en el trozo que está dentro del elemento (con color de fondo).</li>
+    </ul>
+  </section>
 
-    <section id="background-clip">
-      <h2 class="con-aside">Extensión del fondo: <span class="css-prop">background-clip</span></h2>
+  <section id="background-clip">
+    <h2 class="con-aside">Extensión del fondo: <span class="css-prop">background-clip</span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-clip</span><br />
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-clip"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#search=background-clip"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-clip</span><br />
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-clip"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#search=background-clip"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-clip</span> permite definir la zona en la que aparece el fondo (color o imagen).</p>
+    <p>La propiedad <span class="css-prop">background-clip</span> permite definir la zona en la que aparece el fondo (color o imagen).</p>
 
-      <p>Los posibles valores de la propiedad <span class="css-prop">background-clip</span> son:</p>
+    <p>Los posibles valores de la propiedad <span class="css-prop">background-clip</span> son:</p>
 
-      <ul>
-        <li><span class="css-valor">border-box</span>: el fondo se extiende hasta el borde (borde incluido)</li>
-        <li><span class="css-valor">padding-box</span>: el fondo se extiende hasta el margen interior (el borde no se incluye)</li>
-        <li><span class="css-valor">content-box</span>: el fondo se limita al contenido (no se incluye ni el margen interior ni el borde)</li>
-      </ul>
+    <ul>
+      <li><span class="css-valor">border-box</span>: el fondo se extiende hasta el borde (borde incluido)</li>
+      <li><span class="css-valor">padding-box</span>: el fondo se extiende hasta el margen interior (el borde no se incluye)</li>
+      <li><span class="css-valor">content-box</span>: el fondo se limita al contenido (no se incluye ni el margen interior ni el borde)</li>
+    </ul>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1226,18 +1226,18 @@ p {
   <span class="codigo-resaltado">background-clip: border-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-clip-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-clip-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-clip-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-clip-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1247,18 +1247,18 @@ p {
   <span class="codigo-resaltado">background-clip: padding-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-clip-2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-clip-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-clip-2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-clip-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1268,41 +1268,41 @@ p {
   <span class="codigo-resaltado">background-clip: content-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-clip-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-clip-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-clip-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-clip-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="background-origin">
-      <h2 class="con-aside">Posición del origen del fondo: <span class="css-prop">background-origin </span></h2>
+  <section id="background-origin">
+    <h2 class="con-aside">Posición del origen del fondo: <span class="css-prop">background-origin </span></h2>
 
-      <aside class="enlace-norma">
-        <p><span class="css-prop">background-origin</span><br />
-          <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-origin"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
-          <a href="http://caniuse.com/#feat=background-img-opts"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
-      </aside>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">background-origin</span><br />
+        <a href="https://drafts.csswg.org/css-backgrounds-3/#the-background-origin"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        <a href="http://caniuse.com/#feat=background-img-opts"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
+    </aside>
 
-      <p>La propiedad <span class="css-prop">background-origin</span> permite definir la zona en la que se sitúa el origen de la posición del fondo. Hay que tener en cuenta que una vez definido el origen de la imagen, esta puede repetirse en todo el esapcio disponible (al que afecta la propiedad <span class="css-prop">background-clip).</span></p>
+    <p>La propiedad <span class="css-prop">background-origin</span> permite definir la zona en la que se sitúa el origen de la posición del fondo. Hay que tener en cuenta que una vez definido el origen de la imagen, esta puede repetirse en todo el esapcio disponible (al que afecta la propiedad <span class="css-prop">background-clip).</span></p>
 
-      <p>Los posibles valores de la propiedad <span class="css-prop">background-origin</span> son:</p>
+    <p>Los posibles valores de la propiedad <span class="css-prop">background-origin</span> son:</p>
 
-      <ul>
-        <li><span class="css-valor">border-box</span>: el origen está en el borde (borde incluido)</li>
-        <li><span class="css-valor">padding-box</span>: el origen está en el margen interior (el borde no se incluye)</li>
-        <li><span class="css-valor">content-box</span>: el origen está en el contenido (no se incluye ni el margen interior ni el borde)</li>
-      </ul>
+    <ul>
+      <li><span class="css-valor">border-box</span>: el origen está en el borde (borde incluido)</li>
+      <li><span class="css-valor">padding-box</span>: el origen está en el margen interior (el borde no se incluye)</li>
+      <li><span class="css-valor">content-box</span>: el origen está en el contenido (no se incluye ni el margen interior ni el borde)</li>
+    </ul>
 
-      <p>En los ejemplos siguientes, el origen de la imagen de fondo va cambiando, pero la imagen se repite en todo el párrafo (borde incluido).</p>
+    <p>En los ejemplos siguientes, el origen de la imagen de fondo va cambiando, pero la imagen se repite en todo el párrafo (borde incluido).</p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1313,18 +1313,18 @@ p {
   <span class="codigo-resaltado">background-origin: border-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-origin-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-origin-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-origin-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-origin-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1335,18 +1335,18 @@ p {
   <span class="codigo-resaltado">background-origin: padding-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-origin-2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-origin-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-origin-2.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-origin-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">p {
   border: black 10px dotted;
   margin: 20px;
@@ -1357,32 +1357,32 @@ p {
   <span class="codigo-resaltado">background-origin: content-box;</span>
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-origin-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-origin-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
-    </section>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-origin-3.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-origin-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+  </section>
 
-    <section id="fondos-margenes">
-      <h2>Imagen de fondo y márgenes exteriores e interiores</h2>
+  <section id="fondos-margenes">
+    <h2>Imagen de fondo y márgenes exteriores e interiores</h2>
 
-      <p>Salvo para el elemento <span class="html-eti">&lt;html&gt;</span>, las imágenes de fondo se colocan del borde para adentro del elemento, es decir, que:</p>
+    <p>Salvo para el elemento <span class="html-eti">&lt;html&gt;</span>, las imágenes de fondo se colocan del borde para adentro del elemento, es decir, que:</p>
 
-      <ul>
-        <li>si el elemento tiene margen interior, el margen interior muestra la imagen o el color de fondo, </li>
-        <li>si el elemento tiene margen exterior, el margen exterior no muestra la imagen o el color de fondo (se dice que el margen exterior es transparente).</li>
-      </ul>
+    <ul>
+      <li>si el elemento tiene margen interior, el margen interior muestra la imagen o el color de fondo, </li>
+      <li>si el elemento tiene margen exterior, el margen exterior no muestra la imagen o el color de fondo (se dice que el margen exterior es transparente).</li>
+    </ul>
 
-      <p>En el caso de repetición de la imagen de fondo, la posición inicial de la imagen es la esquina superior izquierda y se repite a partir de esa posición.
-      </p>
+    <p>En el caso de repetición de la imagen de fondo, la posición inicial de la imagen es la esquina superior izquierda y se repite a partir de esa posición.
+    </p>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
 <code class="language-css">html {
   background-color: lightblue;
 }
@@ -1400,29 +1400,29 @@ p.con-margen-interior {
   padding: 10px;
 }</code>
 </pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/fondos/background-margenes.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/fondos/background-margenes.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-        </div>
       </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-margenes.html" style="width:100%; height: 16em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-margenes.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
 
-      <p>En el caso del elemento <span class="html-eti">&lt;html&gt;</span> con margen exterior, las imágenes o colores de fondo también se muestran en el margen exterior. La posición inicial de la imagen sigue siendo la esquina superior izquierda, pero la imagen se repite "hacia atrás" para cubrir el margen exterior, como puede comprobarse en la siguiente <a href="ejemplos/margenes/html-body-margin-padding.html">página de ejemplo</a> o en las siguientes capturas de pantalla de esa página en Firefox. En esa página de ejemplo, la imagen de fondo es una cuadrícula de 50x50px (<img src="../img/fondos/cuadricula-transp.png" alt="Cuadrícula transparente" title="Cuadrícula transparente" width="50" height="50" />) y tanto <span class="html-eti">&lt;html&gt;</span> como <span class="html-eti">&lt;body&gt;</span> tienen un <span class="css-prop">margin</span> y <span class="css-prop">padding</span> de 10px, por lo que espacio alrededor del contenido es de 40px en total (10px+10px+10px+10px).</p>
+    <p>En el caso del elemento <span class="html-eti">&lt;html&gt;</span> con margen exterior, las imágenes o colores de fondo también se muestran en el margen exterior. La posición inicial de la imagen sigue siendo la esquina superior izquierda, pero la imagen se repite "hacia atrás" para cubrir el margen exterior, como puede comprobarse en la siguiente <a href="ejemplos/margenes/html-body-margin-padding.html">página de ejemplo</a> o en las siguientes capturas de pantalla de esa página en Firefox. En esa página de ejemplo, la imagen de fondo es una cuadrícula de 50x50px (<img src="../img/fondos/cuadricula-transp.png" alt="Cuadrícula transparente" title="Cuadrícula transparente" width="50" height="50" />) y tanto <span class="html-eti">&lt;html&gt;</span> como <span class="html-eti">&lt;body&gt;</span> tienen un <span class="css-prop">margin</span> y <span class="css-prop">padding</span> de 10px, por lo que espacio alrededor del contenido es de 40px en total (10px+10px+10px+10px).</p>
 
-      <p class="captura">
-        <img src="../img/ff-ie/html-body-margin-padding-ff.png" alt="FF - margin y padding en html y body" title="FF - margin y padding en html y body" height="190" width="250" style="vertical-align: top;" />
-        <img src="../img/otros/ejemplo-margin-padding-html-body.png" alt="margin y padding en html y body" title="margin y padding en html y body" width="250" height="225" style="vertical-align: top;" />
-      </p>
-    </section>
+    <p class="captura">
+      <img src="../img/ff-ie/html-body-margin-padding-ff.png" alt="FF - margin y padding en html y body" title="FF - margin y padding en html y body" height="190" width="250" style="vertical-align: top;" />
+      <img src="../img/otros/ejemplo-margin-padding-html-body.png" alt="margin y padding en html y body" title="margin y padding en html y body" width="250" height="225" style="vertical-align: top;" />
+    </p>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 21 de mayo de 2017</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 21 de mayo de 2017</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
