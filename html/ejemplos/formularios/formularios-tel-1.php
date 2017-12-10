@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>tel. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>tel. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 <?php
 function recoge($var)
 {
@@ -19,12 +19,12 @@ function recoge($var)
 $dato = recoge("dato");
 
 if ($dato == "") {
-    print "    <p>No ha indicado ningún número de teléfono.</p>\n";
+    print "  <p>No ha indicado ningún número de teléfono.</p>\n";
 } else {
-    print "    <p>El número de teléfono indicado es <strong>$dato</strong>.</p>\n";
+    print "  <p>El número de teléfono indicado es <strong>$dato</strong>.</p>\n";
 }
+print "\n";
 ?>
-
-    <p><a href="formularios-tel-1.html">Volver al formulario.</a></p>
-  </body>
+  <p><a href="formularios-tel-1.html">Volver al formulario.</a></p>
+</body>
 </html>

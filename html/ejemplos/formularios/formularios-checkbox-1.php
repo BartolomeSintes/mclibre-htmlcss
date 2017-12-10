@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>checkbox. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>checkbox. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 <?php
 function recoge($var)
 {
@@ -25,13 +25,13 @@ if (!ctype_digit($origen)) {
 $dato = recoge("dato");
 
 if ($dato == "") {
-    print "    <p>No se ha recibido nada.</p>\n";
+    print "  <p>No se ha recibido nada.</p>\n";
 } else {
-    print "    <p>El dato recibido es <strong>$dato</strong>.</p>\n";
+    print "  <p>El dato recibido es <strong>$dato</strong>.</p>\n";
 }
-
 print "\n";
-print "    <p><a href=\"formularios-checkbox-$origen.html\">Volver al formulario.</a></p>\n";
+
+print "  <p><a href=\"formularios-checkbox-$origen.html\">Volver al formulario.</a></p>\n";
 ?>
-  <body>
+<body>
 </html>

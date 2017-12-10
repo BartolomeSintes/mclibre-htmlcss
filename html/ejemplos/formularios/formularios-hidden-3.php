@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>hidden. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>hidden. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 <?php
 function recoge($var)
 {
@@ -20,18 +20,19 @@ $nombre = recoge("nombre");
 $dato = recoge("dato");
 
 if ($nombre == "") {
-    print "    <p>No ha escrito su nombre.</p>\n";
+    print "  <p>No ha escrito su nombre.</p>\n";
 } else {
-    print "    <p>Su nombre es <strong>$nombre</strong>.</p>\n";
+    print "  <p>Su nombre es <strong>$nombre</strong>.</p>\n";
 }
+print "\n";
 
 if ($dato == "") {
-    print "    <p>No ha indicado su edad.</p>\n";
+    print "  <p>No ha indicado su edad.</p>\n";
 } else {
-    print "    <p>Su edad es <strong>$dato</strong>.</p>\n";
+    print "  <p>Su edad es <strong>$dato</strong>.</p>\n";
 }
-
+print "\n";
 ?>
-    <p><a href="formularios-hidden-2.html">Volver al formulario inicial.</a></p>
-  </body>
+  <p><a href="formularios-hidden-2.html">Volver al formulario inicial.</a></p>
+</body>
 </html>

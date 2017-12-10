@@ -1,411 +1,413 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Atributos. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Atributos. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>Atributos</h1>
+<body>
+  <h1>Atributos</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>Atributos</h2>
+
+      <ul>
+        <li><a href="#que-es">Qué es un atributo</a></li>
+        <li><a href="#atributos-comunes">Atributos comunes</a></li>
+        <li><a href="#eventos-intrinsecos">Eventos intrínsecos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="que-es">
+    <h2>Qué es un atributo</h2>
+
+    <p>Cualquier etiqueta XHTML puede contener uno o más atributos, separados por espacios, que permiten especificar la etiqueta. El código fuente tiene el siguiente aspecto:</p>
+
+    <div class="codigo">
+      <p><span class="html-eti">&lt;etiqueta <span class="html-atri">atributo=<span class="html-atri-valor">"valor_de_atributo"</span></span>&gt;</span>
       </p>
 
-      <div class="toc">
-        <h2>Atributos</h2>
+      <p><span class="html-eti">&lt;etiqueta <span class="html-atri">atributo1=<span class="html-atri-valor">"valor_de_atributo1"</span></span> <span class="html-atri">atributo2=<span class="html-atri-valor">"valor_de_atributo2"</span></span> &gt;</span>
+      </p>
+    </div>
 
-        <ul>
-          <li><a href="#que-es">Qué es un atributo</a></li>
-          <li><a href="#atributos-comunes">Atributos comunes</a></li>
-          <li><a href="#eventos-intrinsecos">Eventos intrínsecos</a></li>
-        </ul>
-      </div>
-    </nav>
+    <p>En el XHTML los atributos tienen que estar siempre definidos (mediante el signo igual "=") y el valor del atributo tiene que estar entre comillas dobles o simples.</p>
 
-    <section id="que-es">
-      <h2>Qué es un atributo</h2>
+    <p>Existen una serie de atributos comunes a todas las etiquetas (salvo la etiqueta <span class="html-eti">&lt;html&gt;</span>) y algunas etiquetas tienen unos atributos específicos. En esta lección se comentan los atributos comunes; los atributos específicos se comentan en las lecciones dedicadas a las etiquetas correspondientes (imágenes, tablas, etc).</p>
+  </section>
 
-      <p>Cualquier etiqueta XHTML puede contener uno o más atributos, separados por espacios, que permiten especificar la etiqueta. El código fuente tiene el siguiente aspecto:</p>
+  <section id="atributos-comunes">
+    <h2>Atributos comunes</h2>
 
-      <div class="codigo">
-        <p><span class="html-eti">&lt;etiqueta <span class="html-atri">atributo=<span class="html-atri-valor">"valor_de_atributo"</span></span>&gt;</span></p>
+    <p class="incompleto">Comentar los atributos dir, lang, y xml:space</p>
 
-        <p><span class="html-eti">&lt;etiqueta <span class="html-atri">atributo1=<span class="html-atri-valor">"valor_de_atributo1"</span></span> <span class="html-atri">atributo2=<span class="html-atri-valor">"valor_de_atributo2"</span></span> &gt;</span></p>
-      </div>
+    <section id="atributo-class">
+      <h3>Atributo <span class="html-atri">class</span></h3>
 
-      <p>En el XHTML los atributos tienen que estar siempre definidos (mediante el signo igual "=") y el valor del atributo tiene que estar entre comillas dobles o simples.</p>
+      <p>El atributo <span class="html-atri">class</span> permite definir clases de elementos. Dada su importancia, se explica en la <a href="html-clases.html">lección sobre Clases</a>.</p>
 
-      <p>Existen una serie de atributos comunes a todas las etiquetas (salvo la etiqueta <span class="html-eti">&lt;html&gt;</span>) y algunas etiquetas tienen unos atributos específicos. En esta lección se comentan los atributos comunes; los atributos específicos se comentan en las lecciones dedicadas a las etiquetas correspondientes (imágenes, tablas, etc).</p>
+      <p>Las hojas de estilo pueden hacer referencia a los elementos con atributo <span class="html-atri">class</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
     </section>
 
-    <section id="atributos-comunes">
-      <h2>Atributos comunes</h2>
+    <section id="atributo-id">
+      <h3>Atributo <span class="html-atri">id</span></h3>
 
-      <p class="incompleto">Comentar los atributos dir, lang, y xml:space</p>
+      <p>El atributo <span class="html-atri">id</span> permite identificar de forma unívoca un elemento en un documento. Por ello, en una página web no puede haber dos elementos con el mismo valor en el atributo <span class="html-atri">id</span>. Además, un elemento sólo puede tener un atributo <span class="html-atri">id</span>, es decir, el atributo <span class="html-atri">id</span> no puede contener espacios en blanco.</p>
 
-      <section id="atributo-class">
-        <h3>Atributo <span class="html-atri">class</span></h3>
+      <p>En HTML 4 el valor de un atributo <span class="html-atri">id</span> tenía que empezar con una letra (mayúscula o minúscula, caracteres latinos) y puede contener dígitos, guiones medios (-), guiones bajos (_), comas y puntos. Si el nombre contenía puntos, a continuación del punto tenía que haber una letra. Además, algunos elementos no podían tener atributo <span class="html-atri">id</span> (<span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;head&gt;</span>, <span class="html-eti">&lt;html&gt;</span>, <span class="html-eti">&lt;meta&gt;</span>, <span class="html-eti">&lt;param&gt;</span>, <span class="html-eti">&lt;script&gt;</span>, <span class="html-eti">&lt;style&gt;</span> y <span class="html-eti">&lt;title&gt;</span>).</p>
 
-        <p>El atributo <span class="html-atri">class</span> permite definir clases de elementos. Dada su importancia, se explica en la <a href="html-clases.html">lección sobre Clases</a>.</p>
+      <p>En HTML 5 el atributo <span class="html-atri">id</span> puede empezar y contener cualquier carácter (salvo espacios en blanco). Además, todos los elementos pueden tener el atributo <span class="html-atri">id</span>.</p>
 
-        <p>Las hojas de estilo pueden hacer referencia a los elementos con atributo <span class="html-atri">class</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
-      </section>
+      <p>Los elementos con atributo <span class="html-atri">id</span> pueden ser destinos de enlaces, como se comenta en la <a href="html-enlaces.html#destinos">lección sobre Enlaces</a>.</p>
 
-      <section id="atributo-id">
-        <h3>Atributo <span class="html-atri">id</span></h3>
+      <p>Las hojas de estilo pueden hacer referencia a un elemento con atributo <span class="html-atri">id</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
+    </section>
 
-        <p>El atributo <span class="html-atri">id</span> permite identificar de forma unívoca un elemento en un documento. Por ello, en una página web no puede haber dos elementos con el mismo valor en el atributo <span class="html-atri">id</span>. Además, un elemento sólo puede tener un atributo <span class="html-atri">id</span>, es decir, el atributo <span class="html-atri">id</span> no puede contener espacios en blanco.</p>
+    <section id="atributo-style">
+      <h3>Atributo <span class="html-atri">style</span></h3>
 
-        <p>En HTML 4 el valor de un atributo <span class="html-atri">id</span> tenía que empezar con una letra (mayúscula o minúscula, caracteres latinos) y puede contener dígitos, guiones medios (-), guiones bajos (_), comas y puntos. Si el nombre contenía puntos, a continuación del punto tenía que haber una letra. Además, algunos elementos no podían tener atributo <span class="html-atri">id</span> (<span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;head&gt;</span>, <span class="html-eti">&lt;html&gt;</span>, <span class="html-eti">&lt;meta&gt;</span>, <span class="html-eti">&lt;param&gt;</span>, <span class="html-eti">&lt;script&gt;</span>, <span class="html-eti">&lt;style&gt;</span> y <span class="html-eti">&lt;title&gt;</span>).</p>
+      <p>El atributo <span class="html-atri">style</span> permite definir propiedades de estilo a un elemento determinado.</p>
 
-        <p>En HTML 5 el atributo <span class="html-atri">id</span> puede empezar y contener cualquier carácter (salvo espacios en blanco). Además, todos los elementos pueden tener el atributo <span class="html-atri">id</span>.</p>
-
-        <p>Los elementos con atributo <span class="html-atri">id</span> pueden ser destinos de enlaces, como se comenta en la <a href="html-enlaces.html#destinos">lección sobre Enlaces</a>.</p>
-
-        <p>Las hojas de estilo pueden hacer referencia a un elemento con atributo <span class="html-atri">id</span>, como se comenta en la <a href="../css/css-selectores.html#tipo">lección sobre Selectores</a>.</p>
-      </section>
-
-      <section id="atributo-style">
-        <h3>Atributo <span class="html-atri">style</span></h3>
-
-        <p>El atributo <span class="html-atri">style</span> permite definir propiedades de estilo a un elemento determinado.</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p style="color:red"&gt;Esto es un párrafo &amp;lt;p&amp;gt;.&lt;/p&gt;
 
 &lt;p&gt;Esto es otro párrafo &lt;span style="color: red;"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;.&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p style="color:red">Esto es un párrafo &lt;p&gt;.</p>
-
-            <p>Esto es otro párrafo <span style="color: red;">&lt;p&gt;</span>.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p style="color:red">Esto es un párrafo &lt;p&gt;.</p>
 
-        <p>En estos apuntes se desaconseja el uso de este atributo, puesto que uno de los principios del diseño de páginas web mediante hojas de estilo es precisamente concentrar todo lo relacionado con el formato en las hojas de estilo.</p>
-      </section>
+          <p>Esto es otro párrafo <span style="color: red;">&lt;p&gt;</span>.</p>
+        </div>
+      </div>
 
-      <section id="atributo-title">
-        <h3>Atributo <span class="html-atri">title</span></h3>
+      <p>En estos apuntes se desaconseja el uso de este atributo, puesto que uno de los principios del diseño de páginas web mediante hojas de estilo es precisamente concentrar todo lo relacionado con el formato en las hojas de estilo.</p>
+    </section>
 
-        <p>El atributo <span class="html-atri">title</span> contiene el texto que se muestra en forma de "tip" (cuadrito amarillo que aparece cuando se sitúa el ratón encima del elemento).</p>
+    <section id="atributo-title">
+      <h3>Atributo <span class="html-atri">title</span></h3>
 
-        <p>En el ejemplo siguiente se muestra un "tip" cuando se sitúa el ratón sobre el primer párrafo o sobre el término "&lt;p&gt;" del segundo párrafo.</p>
+      <p>El atributo <span class="html-atri">title</span> contiene el texto que se muestra en forma de "tip" (cuadrito amarillo que aparece cuando se sitúa el ratón encima del elemento).</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <p>En el ejemplo siguiente se muestra un "tip" cuando se sitúa el ratón sobre el primer párrafo o sobre el término "&lt;p&gt;" del segundo párrafo.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p title="Esto es un &amp;quot;tip&amp;quot;"&gt;Esto es un párrafo &amp;lt;p&amp;gt;.&lt;/p&gt;
 
 &lt;p&gt;Esto es otro párrafo &lt;span title="Esto es un &amp;quot;tip&amp;quot;"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;.&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p title="Esto es un &quot;tip&quot;.">Esto es un párrafo &lt;p&gt;.</p>
-
-            <p>Esto es otro párrafo <span title="Esto es un &quot;tip&quot;.">&lt;p&gt;</span>.</p>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <p title="Esto es un &quot;tip&quot;.">Esto es un párrafo &lt;p&gt;.</p>
+
+          <p>Esto es otro párrafo <span title="Esto es un &quot;tip&quot;.">&lt;p&gt;</span>.</p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="eventos-intrinsecos">
+    <h2>Eventos intrínsecos</h2>
+
+    <p>Los eventos intrínsecos son atributos también comunes a todos los elementos que permiten asociar scripts a eventos relacionados con elementos de la página web (por ejemplo, que se ejecute un script cuando se hace clic en un elemento).</p>
+
+    <p>Algunos elementos son comunes a todos los elementos, pero otros son específicos de determinados elementos.</p>
+
+    <section id="eventos-documento">
+      <h3>Eventos de documento</h3>
+
+      <table class="tabla-con-borde">
+        <caption></caption>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>onload</td>
+            <td>Se ejecuta cuando se carga el documento.</td>
+          </tr>
+          <tr>
+            <td>onunload</td>
+            <td>Se ejecuta cuando se abandona el documento.</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <section id="eventos-intrinsecos">
-      <h2>Eventos intrínsecos</h2>
+    <section id="eventos-formulario">
+      <h3>Eventos de formulario</h3>
 
-      <p>Los eventos intrínsecos son atributos también comunes a todos los elementos que permiten asociar scripts a eventos relacionados con elementos de la página web (por ejemplo, que se ejecute un script cuando se hace clic en un elemento).</p>
+      <table class="tabla-con-borde">
+        <caption></caption>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>onblur</td>
+            <td>Se ejecuta cuando un elemento pierde el foco.</td>
+          </tr>
+          <tr>
+            <td>onchange</td>
+            <td>Se ejecuta cuando un elemento cambia.</td>
+          </tr>
+          <tr>
+            <td>onfocus</td>
+            <td>Se ejecuta cuando un elemento gana el foco.</td>
+          </tr>
+          <tr>
+            <td>onreset</td>
+            <td>Se ejecuta cuando el formulario se reinicia.</td>
+          </tr>
+          <tr>
+            <td>onselect</td>
+            <td>Se ejecuta cuando un elemento se selecciona.</td>
+          </tr>
+          <tr>
+            <td>onsubmit</td>
+            <td>Se ejecuta cuando el formulario se envía.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-      <p>Algunos elementos son comunes a todos los elementos, pero otros son específicos de determinados elementos.</p>
+    <section id="eventos-imagen">
+      <h3>Eventos de imagen</h3>
 
-      <section id="eventos-documento">
-        <h3>Eventos de documento</h3>
+      <table class="tabla-con-borde">
+        <caption></caption>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>onabort</td>
+            <td>Se ejecuta cuando se interrumpe la carga de la imagen.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-        <table class="tabla-con-borde">
-          <caption></caption>
-          <col />
-          <col />
-          <tbody>
-            <tr>
-              <th>Atributo</th>
-              <th>Descripción</th>
-            </tr>
-            <tr>
-              <td>onload</td>
-              <td>Se ejecuta cuando se carga el documento.</td>
-            </tr>
-            <tr>
-              <td>onunload</td>
-              <td>Se ejecuta cuando se abandona el documento.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+    <section id="eventos-teclado">
+      <h3>Eventos de teclado</h3>
 
-      <section id="eventos-formulario">
-        <h3>Eventos de formulario</h3>
+      <table class="tabla-con-borde">
+        <caption></caption>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>onkeydown</td>
+            <td>Se ejecuta cuando se pulsa una tecla.</td>
+          </tr>
+          <tr>
+            <td>onkeypress</td>
+            <td>Se ejecuta cuando se pulsa y despulsa una tecla.</td>
+          </tr>
+          <tr>
+            <td>onkeyup</td>
+            <td>Se ejecuta cuando se despulsa una tecla.</td>
+          </tr>
+        </tbody>
+      </table>
 
-        <table class="tabla-con-borde">
-          <caption></caption>
-          <col />
-          <col />
-          <tbody>
-            <tr>
-              <th>Atributo</th>
-              <th>Descripción</th>
-            </tr>
-            <tr>
-              <td>onblur</td>
-              <td>Se ejecuta cuando un elemento pierde el foco.</td>
-            </tr>
-            <tr>
-              <td>onchange</td>
-              <td>Se ejecuta cuando un elemento cambia.</td>
-            </tr>
-            <tr>
-              <td>onfocus</td>
-              <td>Se ejecuta cuando un elemento gana el foco.</td>
-            </tr>
-            <tr>
-              <td>onreset</td>
-              <td>Se ejecuta cuando el formulario se reinicia.</td>
-            </tr>
-            <tr>
-              <td>onselect</td>
-              <td>Se ejecuta cuando un elemento se selecciona.</td>
-            </tr>
-            <tr>
-              <td>onsubmit</td>
-              <td>Se ejecuta cuando el formulario se envía.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <p>Ejemplos:</p>
 
-      <section id="eventos-imagen">
-        <h3>Eventos de imagen</h3>
-
-        <table class="tabla-con-borde">
-          <caption></caption>
-          <col />
-          <col />
-          <tbody>
-            <tr>
-              <th>Atributo</th>
-              <th>Descripción</th>
-            </tr>
-            <tr>
-              <td>onabort</td>
-              <td>Se ejecuta cuando se interrumpe la carga de la imagen.</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section id="eventos-teclado">
-        <h3>Eventos de teclado</h3>
-
-        <table class="tabla-con-borde">
-          <caption></caption>
-          <col />
-          <col />
-          <tbody>
-            <tr>
-              <th>Atributo</th>
-              <th>Descripción</th>
-            </tr>
-            <tr>
-              <td>onkeydown</td>
-              <td>Se ejecuta cuando se pulsa una tecla.</td>
-            </tr>
-            <tr>
-              <td>onkeypress</td>
-              <td>Se ejecuta cuando se pulsa y despulsa una tecla.</td>
-            </tr>
-            <tr>
-              <td>onkeyup</td>
-              <td>Se ejecuta cuando se despulsa una tecla.</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Ejemplos:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p onkeydown="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p onkeydown="this.style.color='red'">Este párrafo tiene establecido el atributo onkeydown.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p onkeydown="this.style.color='red'">Este párrafo tiene establecido el atributo onkeydown.</p>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p onkeyup="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p onkeyup="this.style.color='red'">Este párrafo tiene establecido el atributo onkeyup.</p>
-          </div>
         </div>
+        <div class="resultado-html">
+          <p onkeyup="this.style.color='red'">Este párrafo tiene establecido el atributo onkeyup.</p>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;p onkeypress="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <p onkeypress="this.style.color='red'">Este párrafo tiene establecido el atributo onkeypress.</p>
-          </div>
         </div>
-      </section>
-
-      <section id="eventos-raton">
-        <h3>Eventos de ratón</h3>
-
-        <table class="tabla-con-borde">
-          <caption></caption>
-          <col />
-          <col />
-          <tbody>
-            <tr>
-              <th>Atributo</th>
-              <th>Descripción</th>
-            </tr>
-            <tr>
-              <td>onclick</td>
-              <td>Se ejecuta cuando se hace clic.</td>
-            </tr>
-            <tr>
-              <td>ondblclick</td>
-              <td>Se ejecuta cuando se hace doble clic.</td>
-            </tr>
-            <tr>
-              <td>onmousedown</td>
-              <td>Se ejecuta cuando se pulsa un botón del ratón.</td>
-            </tr>
-            <tr>
-              <td>onmousemove</td>
-              <td>Se ejecuta cuando se mueve el ratón.</td>
-            </tr>
-            <tr>
-              <td>onmouseout</td>
-              <td>Se ejecuta cuando el cursor deja de situarse sobre un elemento.</td>
-            </tr>
-            <tr>
-              <td>onmouseover</td>
-              <td>Se ejecuta cuando el cursor se sitúa sobre un elemento.</td>
-            </tr>
-            <tr>
-              <td>onmouseup</td>
-              <td>Se ejecuta cuando se despulsa un botón del ratón.</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p>Ejemplos:</p>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onclick="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onclick="this.style.color='red'">Este párrafo tiene establecido el atributo onclick.</p>
-          </div>
+        <div class="resultado-html">
+          <p onkeypress="this.style.color='red'">Este párrafo tiene establecido el atributo onkeypress.</p>
         </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p ondblclick="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p ondblclick="this.style.color='red'">Este párrafo tiene establecido el atributo ondblclick.</p>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onmouseup="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onmouseup="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseup.</p>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onmousedown="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onmousedown="this.style.color='red'">Este párrafo tiene establecido el atributo onmousedown.</p>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onmousemove="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onmousemove="this.style.color='red'">Este párrafo tiene establecido el atributo onmousemove.</p>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onmouseover="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onmouseover="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseover.</p>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;p onmouseout="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
-</pre>
-          </div>
-          <div class="resultado-html">
-            <p onmouseout="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseout.</p>
-          </div>
-        </div>
-      </section>
+      </div>
     </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 14 de diciembre de 2014</p>
+    <section id="eventos-raton">
+      <h3>Eventos de ratón</h3>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+      <table class="tabla-con-borde">
+        <caption></caption>
+        <col />
+        <col />
+        <tbody>
+          <tr>
+            <th>Atributo</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td>onclick</td>
+            <td>Se ejecuta cuando se hace clic.</td>
+          </tr>
+          <tr>
+            <td>ondblclick</td>
+            <td>Se ejecuta cuando se hace doble clic.</td>
+          </tr>
+          <tr>
+            <td>onmousedown</td>
+            <td>Se ejecuta cuando se pulsa un botón del ratón.</td>
+          </tr>
+          <tr>
+            <td>onmousemove</td>
+            <td>Se ejecuta cuando se mueve el ratón.</td>
+          </tr>
+          <tr>
+            <td>onmouseout</td>
+            <td>Se ejecuta cuando el cursor deja de situarse sobre un elemento.</td>
+          </tr>
+          <tr>
+            <td>onmouseover</td>
+            <td>Se ejecuta cuando el cursor se sitúa sobre un elemento.</td>
+          </tr>
+          <tr>
+            <td>onmouseup</td>
+            <td>Se ejecuta cuando se despulsa un botón del ratón.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Ejemplos:</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onclick="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onclick="this.style.color='red'">Este párrafo tiene establecido el atributo onclick.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p ondblclick="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p ondblclick="this.style.color='red'">Este párrafo tiene establecido el atributo ondblclick.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onmouseup="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onmouseup="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseup.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onmousedown="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onmousedown="this.style.color='red'">Este párrafo tiene establecido el atributo onmousedown.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onmousemove="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onmousemove="this.style.color='red'">Este párrafo tiene establecido el atributo onmousemove.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onmouseover="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onmouseover="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseover.</p>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p onmouseout="this.style.color='red'"&gt;Este ...&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-html">
+          <p onmouseout="this.style.color='red'">Este párrafo tiene establecido el atributo onmouseout.</p>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 14 de diciembre de 2014</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

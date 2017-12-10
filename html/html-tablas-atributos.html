@@ -1,187 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>Atributos de tablas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      table.colgroup colgroup { background-color: lightgrey; }
-      table.colgroup col { background-color: lightblue; }
-      table.col col { background-color: lightblue; }
-      /*    td.resul table td { vertical-align: inherit; }*/
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Atributos de tablas. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <style>
+    table.colgroup colgroup {
+      background-color: lightgrey;
+    }
 
-  <body>
-    <h1>Atributos de tablas</h1>
+    table.colgroup col {
+      background-color: lightblue;
+    }
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
-      </p>
+    table.col col {
+      background-color: lightblue;
+    }
 
-      <div class="toc">
-        <h2>Atributos de tablas</h2>
+    /*    td.resul table td { vertical-align: inherit; }*/
 
-        <ul>
-          <li><a href="#atributos-table">Atributos de <span class="html-eti">&lt;table&gt;</span></a>
-            <ul>
-              <li><a href="#atributo-table-border"><span class="html-atri">border</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#atributos-td-th">Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></a>
-            <ul>
-              <li><a href="#atributo-colspan-rowspan"><span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#atributos-col">Atributos de <span class="html-eti">&lt;col /&gt;</span></a>
-            <ul>
-              <li><a href="#atributo-col-span"><span class="html-atri">span</span></a></li>
-            </ul>
-          </li>
-          <li><a href="#atributos-colgroup">Atributos de <span class="html-eti">&lt;colgroup&gt;</span></a>
-            <ul>
-              <li><a href="#atributo-colgroup-span"><span class="html-atri">span</span></a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  </style>
+</head>
 
-    <section id="atributos-table">
-      <h2>Atributos de <span class="html-eti">&lt;table&gt;</span></h2>
+<body>
+  <h1>Atributos de tablas</h1>
 
-      <section id="atributo-table-border">
-        <h3>El atributo <span class="html-atri">border</span></h3>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
 
-        <p>El atributo <span class="html-atri">border</span> indica si se dibujan bordes alrededor de las celdas y un borde alrededor de la tabla. El único valor admitido es el valor 1, sin unidades, aunque el borde se dibuja aunque no se escriba este valor.</p>
+    <div class="toc">
+      <h2>Atributos de tablas</h2>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <ul>
+        <li><a href="#atributos-table">Atributos de <span class="html-eti">&lt;table&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-table-border"><span class="html-atri">border</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#atributos-td-th">Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-colspan-rowspan"><span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#atributos-col">Atributos de <span class="html-eti">&lt;col /&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-col-span"><span class="html-atri">span</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#atributos-colgroup">Atributos de <span class="html-eti">&lt;colgroup&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-colgroup-span"><span class="html-atri">span</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="atributos-table">
+    <h2>Atributos de <span class="html-eti">&lt;table&gt;</span></h2>
+
+    <section id="atributo-table-border">
+      <h3>El atributo <span class="html-atri">border</span></h3>
+
+      <p>El atributo <span class="html-atri">border</span> indica si se dibujan bordes alrededor de las celdas y un borde alrededor de la tabla. El único valor admitido es el valor 1, sin unidades, aunque el borde se dibuja aunque no se escriba este valor.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table border="1"&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table border="1">
-              <caption>Esto es la leyenda</caption>
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                </tr>
-                <tr>
-                  <td>Celda 3</td>
-                  <td>Celda 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
+        <div class="resultado-html">
+          <table border="1">
+            <caption>Esto es la leyenda</caption>
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+              </tr>
+              <tr>
+                <td>Celda 3</td>
+                <td>Celda 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table border=""&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table border="">
-              <caption>Esto es la leyenda</caption>
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                </tr>
-                <tr>
-                  <td>Celda 3</td>
-                  <td>Celda 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
+        <div class="resultado-html">
+          <table border="">
+            <caption>Esto es la leyenda</caption>
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+              </tr>
+              <tr>
+                <td>Celda 3</td>
+                <td>Celda 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table>
-              <caption>Esto es la leyenda</caption>
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                </tr>
-                <tr>
-                  <td>Celda 3</td>
-                  <td>Celda 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
+        <div class="resultado-html">
+          <table>
+            <caption>Esto es la leyenda</caption>
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+              </tr>
+              <tr>
+                <td>Celda 3</td>
+                <td>Celda 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <p>Normalmente, las tablas sin bordes se utilizan como elemento de diseño (para distribuir elementos) y las tablas con borde se utilizan para mostrar información en la que los elementos de la misma fila o de la misma columna están relacionados.</p>
+      <p>Normalmente, las tablas sin bordes se utilizan como elemento de diseño (para distribuir elementos) y las tablas con borde se utilizan para mostrar información en la que los elementos de la misma fila o de la misma columna están relacionados.</p>
 
-        <p>Si en la hoja de estilo se establece un borde para un elemento de la tabla, este borde se muestra aunque el atributo <span class="html- atri">border</span> sea vacío.</p>
+      <p>Si en la hoja de estilo se establece un borde para un elemento de la tabla, este borde se muestra aunque el atributo <span class="html- atri">border</span> sea vacío.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;table&gt;
 ...</code>
 </pre>
-            </div>
-            <div class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">table {
   border: red 5px solid;
 }</code>
 </pre>
-            </div>
-          </div>
-          <div class="resultado-html">
-            <table style="border: red 5px solid">
-              <caption>Esto es la leyenda</caption>
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                </tr>
-                <tr>
-                  <td>Celda 3</td>
-                  <td>Celda 4</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <table style="border: red 5px solid">
+            <caption>Esto es la leyenda</caption>
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+              </tr>
+              <tr>
+                <td>Celda 3</td>
+                <td>Celda 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <section id="atributos-td-th">
-      <h2>Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></h2>
+  <section id="atributos-td-th">
+    <h2>Atributos de <span class="html-eti">&lt;td&gt;</span> y <span class="html-eti">&lt;th&gt;</span></h2>
 
-      <section id="atributo-colspan-rowspan">
-        <h3>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></h3>
+    <section id="atributo-colspan-rowspan">
+      <h3>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span></h3>
 
-        <p>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> permiten unir una celda con las celdas contiguas, tanto horizontal como verticalmente. El valor de <span class="html-atri">colspan</span> indica la cantidad de celdas unidas en horizontal y el valor de <span class="html-atri">rowspan</span> indica la cantidad de celdas unidas en vertical.</p>
+      <p>Los atributos <span class="html-atri">colspan</span> y <span class="html-atri">rowspan</span> permiten unir una celda con las celdas contiguas, tanto horizontal como verticalmente. El valor de <span class="html-atri">colspan</span> indica la cantidad de celdas unidas en horizontal y el valor de <span class="html-atri">rowspan</span> indica la cantidad de celdas unidas en vertical.</p>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
   &lt;tbody&gt;
@@ -195,26 +205,26 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table border="1">
-              <caption>Esto es una tabla</caption>
-              <tbody>
-                <tr>
-                  <td colspan="2">celdas a1 y b1 unidas</td>
-                </tr>
-                <tr>
-                  <td>celda a2</td>
-                  <td>celda b2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
+        <div class="resultado-html">
+          <table border="1">
+            <caption>Esto es una tabla</caption>
+            <tbody>
+              <tr>
+                <td colspan="2">celdas a1 y b1 unidas</td>
+              </tr>
+              <tr>
+                <td>celda a2</td>
+                <td>celda b2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
   &lt;tbody&gt;
@@ -228,26 +238,26 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table border="1">
-              <caption>Esto es una tabla</caption>
-              <tbody>
-                <tr>
-                  <td rowspan="2">celdas a1 y a2 unidas</td>
-                  <td>celda b1</td>
-                </tr>
-                <tr>
-                  <td>celda b2</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
+        <div class="resultado-html">
+          <table border="1">
+            <caption>Esto es una tabla</caption>
+            <tbody>
+              <tr>
+                <td rowspan="2">celdas a1 y a2 unidas</td>
+                <td>celda b1</td>
+              </tr>
+              <tr>
+                <td>celda b2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="codigo">
-            <pre>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es una tabla&lt;/caption&gt;
   &lt;tbody&gt;
@@ -266,42 +276,42 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
 </pre>
-          </div>
-          <div class="resultado-html">
-            <table border="1">
-              <caption>Esto es una tabla</caption>
-              <tbody>
-                <tr>
-                  <td rowspan="2" colspan="2">celdas a1, a2, b1 y b2 unidas</td>
-                  <td>celda c1</td>
-                </tr>
-                <tr>
-                  <td>celda c2</td>
-                </tr>
-                <tr>
-                  <td>celda a3</td>
-                  <td>celda b3</td>
-                  <td>celda c3</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <table border="1">
+            <caption>Esto es una tabla</caption>
+            <tbody>
+              <tr>
+                <td rowspan="2" colspan="2">celdas a1, a2, b1 y b2 unidas</td>
+                <td>celda c1</td>
+              </tr>
+              <tr>
+                <td>celda c2</td>
+              </tr>
+              <tr>
+                <td>celda a3</td>
+                <td>celda b3</td>
+                <td>celda c3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <section id="atributos-col">
-      <h2>Atributos de <span class="html-eti">&lt;col /&gt;</span></h2>
+  <section id="atributos-col">
+    <h2>Atributos de <span class="html-eti">&lt;col /&gt;</span></h2>
 
-      <section id="atributo-col-span">
-        <h3>El atributo <span class="html-atri">span</span></h3>
+    <section id="atributo-col-span">
+      <h3>El atributo <span class="html-atri">span</span></h3>
 
-        <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col /&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al hace referencia la etiqueta <span class="html-eti">&lt;col /&gt;</span>.</p>
+      <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col /&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al hace referencia la etiqueta <span class="html-eti">&lt;col /&gt;</span>.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;col span="2" /&gt;&lt;col /&gt;
@@ -319,102 +329,104 @@
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
 </pre>
-            </div>
-            <div class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">col {
   background-color: lightblue;
 }</code>
 </pre>
-            </div>
-          </div>
-          <div class="resultado-html">
-            <table border="1" class="col">
-              <caption>Esto es la leyenda</caption>
-              <col span="2" /><col />
-              <tbody>
-                <tr>
-                  <td>Celda 1 A</td>
-                  <td>Celda 2</td>
-                  <td>Celda 3</td>
-                </tr>
-                <tr>
-                  <td>Celda 4</td>
-                  <td>Celda 5</td>
-                  <td>Celda 6</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <table border="1" class="col">
+            <caption>Esto es la leyenda</caption>
+            <col span="2" />
+            <col />
+            <tbody>
+              <tr>
+                <td>Celda 1 A</td>
+                <td>Celda 2</td>
+                <td>Celda 3</td>
+              </tr>
+              <tr>
+                <td>Celda 4</td>
+                <td>Celda 5</td>
+                <td>Celda 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <section id="atributos-colgroup">
-      <h2>Atributos de <span class="html-eti">&lt;colgroup&gt;</span></h2>
+  <section id="atributos-colgroup">
+    <h2>Atributos de <span class="html-eti">&lt;colgroup&gt;</span></h2>
 
-      <section id="atributo-colgroup-span">
-        <h3>El atributo <span class="html-atri">span</span></h3>
+    <section id="atributo-colgroup-span">
+      <h3>El atributo <span class="html-atri">span</span></h3>
 
-        <p>Para indicar el número de columnas que forman parte de un grupo de columnas, se pueden utilizar etiquetas <span class="html-eti">&lt;col /&gt;</span> (con o sin atributo <span class="html-atri">span</span>) o el atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span>. Si se utiliza el atributo <span class="html-atri">span</span>, su valor indica el número de columnas que forman parte del grupo de columnas.</p>
+      <p>Para indicar el número de columnas que forman parte de un grupo de columnas, se pueden utilizar etiquetas <span class="html-eti">&lt;col /&gt;</span> (con o sin atributo <span class="html-atri">span</span>) o el atributo <span class="html-atri">span</span> de <span class="html-eti">&lt;colgroup&gt;</span>. Si se utiliza el atributo <span class="html-atri">span</span>, su valor indica el número de columnas que forman parte del grupo de columnas.</p>
 
-        <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup /&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col /&gt;</span> en el <span class="html-eti">&lt;colgroup /&gt;</span>.</p>
+      <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup /&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col /&gt;</span> en el <span class="html-eti">&lt;colgroup /&gt;</span>.</p>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup span="2"&gt;&lt;/colgroup&gt;&lt;col /&gt;
   &lt;tbody&gt;
   ...</code>
 </pre>
-            </div>
-            <div class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }<br />col {
   background-color: lightblue;
 }</code>
 </pre>
-            </div>
-          </div>
-          <div class="resultado-html">
-            <table border="1" class="colgroup">
-              <caption>Esto es la leyenda</caption>
-              <colgroup span="2"></colgroup><col />
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                  <td>Celda 3</td>
-                </tr>
-                <tr>
-                  <td>Celda 4</td>
-                  <td>Celda 5</td>
-                  <td>Celda 6</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
+        <div class="resultado-html">
+          <table border="1" class="colgroup">
+            <caption>Esto es la leyenda</caption>
+            <colgroup span="2"></colgroup>
+            <col />
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+                <td>Celda 3</td>
+              </tr>
+              <tr>
+                <td>Celda 4</td>
+                <td>Celda 5</td>
+                <td>Celda 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col /&gt;&lt;col /&gt;&lt;/colgroup&gt;&lt;col /&gt;
   &lt;tbody&gt;
   ...</code>
 </pre>
-            </div>
-            <div class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }
@@ -422,77 +434,84 @@ col {
   background-color: lightblue;
 }</code>
 </pre>
-            </div>
-          </div>
-          <div class="resultado-html">
-            <table border="1" class="colgroup">
-              <caption>Esto es la leyenda</caption>
-              <colgroup><col /><col /></colgroup><col />
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                  <td>Celda 3</td>
-                </tr>
-                <tr>
-                  <td>Celda 4</td>
-                  <td>Celda 5</td>
-                  <td>Celda 6</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
+        <div class="resultado-html">
+          <table border="1" class="colgroup">
+            <caption>Esto es la leyenda</caption>
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <col />
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+                <td>Celda 3</td>
+              </tr>
+              <tr>
+                <td>Celda 4</td>
+                <td>Celda 5</td>
+                <td>Celda 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <div class="filaflex">
-          <div class="columnaflex">
-            <div class="codigo">
-              <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col span="2" /&gt;&lt;/colgroup&gt;&lt;col /&gt;
   &lt;tbody&gt;
   ...</code>
 </pre>
-            </div>
-            <div class="codigo">
-              <pre>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">colgroup {
   background-color: lightgrey;
 }<br />col {
   background-color: lightblue;
 }</code>
 </pre>
-            </div>
-          </div>
-          <div class="resultado-html">
-            <table border="1" class="colgroup">
-              <caption>Esto es la leyenda</caption>
-              <colgroup><col span="2" /></colgroup><col />
-              <tbody>
-                <tr>
-                  <td>Celda 1</td>
-                  <td>Celda 2</td>
-                  <td>Celda 3</td>
-                </tr>
-                <tr>
-                  <td>Celda 4</td>
-                  <td>Celda 5</td>
-                  <td>Celda 6</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
-      </section>
+        <div class="resultado-html">
+          <table border="1" class="colgroup">
+            <caption>Esto es la leyenda</caption>
+            <colgroup>
+              <col span="2" />
+            </colgroup>
+            <col />
+            <tbody>
+              <tr>
+                <td>Celda 1</td>
+                <td>Celda 2</td>
+                <td>Celda 3</td>
+              </tr>
+              <tr>
+                <td>Celda 4</td>
+                <td>Celda 5</td>
+                <td>Celda 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
+  </section>
 
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 5 de octubre de 2016</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2016</p>
 
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>

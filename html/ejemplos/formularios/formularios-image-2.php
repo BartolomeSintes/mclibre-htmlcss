@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>image. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>image. Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-  <body>
+<body>
 <?php
 function recoge($var)
 {
@@ -23,12 +23,12 @@ $datoX = recoge("dato_x");
 $datoY = recoge("dato_y");
 
 if (($datoX - $cx) * ($datoX -$cx) + ($datoY - $cy) * ($datoY -$cy) > $radio * $radio) {
-    print "    <p>No ha hecho clic en el círculo negro.</p>\n";
+    print "  <p>No ha hecho clic en el círculo negro.</p>\n";
 } else {
-    print "    <p>Ha hecho clic en el círculo negro.</p>\n";
+    print "  <p>Ha hecho clic en el círculo negro.</p>\n";
 }
+print "\n";
 ?>
-
-    <p><a href="formularios-image-1.php">Volver al formulario.</a></p>
-  </body>
+  <p><a href="formularios-image-1.php">Volver al formulario.</a></p>
+</body>
 </html>

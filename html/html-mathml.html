@@ -1,119 +1,119 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <title>MathML. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-    <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../varios/favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
-    <script src="../varios/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>MathML. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
+  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="../varios/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-  <body>
-    <h1>MathML</h1>
+<body>
+  <h1>MathML</h1>
 
-    <nav>
-      <p>
-        <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
-        <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48" /></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36" /></a>
+    </p>
+
+    <div class="toc">
+      <h2>MathML</h2>
+    </div>
+  </nav>
+
+  <p>MathML (Mathematical Markup Language = Lenguaje de Marcas Matemático) es un lenguaje de marcas dirigido a la representación de fórmulas matemáticas.</p>
+
+  <p>Se han publicado varias versiones de MathML: <a href="https://www.w3.org/TR/1998/REC-MathML-19980407/">MathML 1.0</a> (1998), <a href="https://www.w3.org/1999/07/REC-MathML-19990707/">MathML 1.01</a> (1999), <a href="https://www.w3.org/TR/2001/REC-MathML2-20010221/">MathML 2.0</a> (2001), <a href="https://www.w3.org/TR/2003/REC-MathML2-20031021/">MathML 2.0 (2ª edición)</a> (2003) y <a href="https://www.w3.org/TR/MathML3/">MathML 3.0</a> (octubre de 2010). Véase <a href="../otros/historia.html#mathml">la lección sobre Historia de la Web</a> para más detalles.</p>
+
+  <section id="mathml-en-web">
+    <h2 class="con-aside">Páginas web con MathML</h2>
+
+    <aside class="enlace-norma">
+      <p>MathML<br />
+        <a href="http://caniuse.com/#feat=mathml"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
       </p>
+    </aside>
 
-      <div class="toc">
-        <h2>MathML</h2>
-      </div>
-    </nav>
+    <p>En HTML 5 se pueden incluir directamente elementos MathML. El problema es que actualmente (mayo de 2017) únicamente Firefox y Safari admiten MathML y ni Internet Explorer ni Chrome tienen planeado admitirlo.</p>
 
-    <p>MathML (Mathematical Markup Language = Lenguaje de Marcas Matemático) es un lenguaje de marcas dirigido a la representación de fórmulas matemáticas.</p>
+    <p>Se puede comprobar fácilmente la capacidad de un navegador de mostrar elementos MathML visitando la página <a href="http://eyeasme.com/Joe/MathML/MathML_browser_test.html">http://eyeasme.com/Joe/MathML/MathML_browser_test.html</a>, que muestra varias fórmulas matemáticas tal y como se ven en un sistema de tipografía TeX, en Firefox con las fuentes STIX y en el navegador del usuario.</p>
 
-    <p>Se han publicado varias versiones de MathML: <a href="https://www.w3.org/TR/1998/REC-MathML-19980407/">MathML 1.0</a> (1998), <a href="https://www.w3.org/1999/07/REC-MathML-19990707/">MathML 1.01</a> (1999), <a href="https://www.w3.org/TR/2001/REC-MathML2-20010221/">MathML 2.0</a> (2001), <a href="https://www.w3.org/TR/2003/REC-MathML2-20031021/">MathML 2.0 (2ª edición)</a> (2003) y <a href="https://www.w3.org/TR/MathML3/">MathML 3.0</a> (octubre de 2010). Véase <a href="../otros/historia.html#mathml">la lección sobre Historia de la Web</a> para más detalles.</p>
+    <p>En los navegadores que no son capaces de mostrar elementos MathML, la solución clásica ha sido siempre mostrar las fórmulas matemáticas como imágenes, lo que impide aprovechar las posibilidades de MathML (hojas de estilos, zoom, facilidad de edición, etc.). Actualmente, la solución más habitual es utilizar alguna biblioteca JavaScript como <a href="https://www.mathjax.org/">MathJax</a> para suplir las carencias del navegador, como por ejemplo hace la <a href="http://dlmf.nist.gov/">Biblioteca Digital de Fórmulas Matemáticas</a> del <a href="https://www.nist.gov/">NIST</a>.</p>
+  </section>
 
-    <section id="mathml-en-web">
-      <h2 class="con-aside">Páginas web con MathML</h2>
+  <section id="firefox">
+    <h2>MathML en Firefox</h2>
 
-      <aside class="enlace-norma">
-        <p>MathML<br />
-          <a href="http://caniuse.com/#feat=mathml"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
-        </p>
-      </aside>
+    <p>Firefox es capaz de mostrar páginas con elementos MathML, aunque es necesario instalar ciertas fuentes para poder mostrar correctamente todos los caracteres matemáticos.</p>
 
-      <p>En HTML 5 se pueden incluir directamente elementos MathML. El problema es que actualmente (mayo de 2017) únicamente Firefox y Safari admiten MathML y ni Internet Explorer ni Chrome tienen planeado admitirlo.</p>
+    <p>Actualmente (mayo de 2017) las fuentes recomendadas son las fuentes STIX, una fuentes de miles de caracteres creadas por el <a href="http://www.stixfonts.org/">consorcio STI Pub</a>, formado en 1995 por varias organizaciones científicas norteamericanas y la editorial Elsevier. En el año 2000 comenzó la creación de las fuentes, en mayo de 2010 se publicó la versión 1.0, en agosto de 2012 se publicó la versión 1.1 y en diciembre de 2016 se publicó la versión 2.0.</p>
 
-      <p>Se puede comprobar fácilmente la capacidad de un navegador de mostrar elementos MathML visitando la página <a href="http://eyeasme.com/Joe/MathML/MathML_browser_test.html">http://eyeasme.com/Joe/MathML/MathML_browser_test.html</a>, que muestra varias fórmulas matemáticas tal y como se ven en un sistema de tipografía TeX, en Firefox con las fuentes STIX y en el navegador del usuario.</p>
+    <p>Las fuentes STIX están disponibles en formato <a href="https://en.wikipedia.org/wiki/OpenType">OpenType</a>. Actualmente (mayo de 2017), la última versión estable disponible es <a href="https://sourceforge.net/projects/stixfonts/files/Current%20Release/STIXv2.0.0.zip/download">la versión 2.0 (de diciembre de 2016)</a>.</p>
 
-      <p>En los navegadores que no son capaces de mostrar elementos MathML, la solución clásica ha sido siempre mostrar las fórmulas matemáticas como imágenes, lo que impide aprovechar las posibilidades de MathML (hojas de estilos, zoom, facilidad de edición, etc.). Actualmente, la solución más habitual es utilizar alguna biblioteca JavaScript como <a href="https://www.mathjax.org/">MathJax</a> para suplir las carencias del navegador, como por ejemplo hace la <a href="http://dlmf.nist.gov/">Biblioteca Digital de Fórmulas Matemáticas</a> del <a href="https://www.nist.gov/">NIST</a>.</p>
-    </section>
+    <p>En <a href="http://www.cdlibre.org/">cdlibre.org</a> hay una sección dedicada a <a href="http://www.cdlibre.org/consultar/catalogo/Fuentes_OTF.html">fuentes OTF</a>, con información detallada sobre las últimas versiones publicadas.</p>
 
-    <section id="firefox">
-      <h2>MathML en Firefox</h2>
+    <p>Al abrir un archivo de extensión .xhtml como archivo local (sin utilizar un servidor de páginas web), Firefox reconoce estos documentos como application/xhtml+xml y los muestra correctamente.</p>
+  </section>
 
-      <p>Firefox es capaz de mostrar páginas con elementos MathML, aunque es necesario instalar ciertas fuentes para poder mostrar correctamente todos los caracteres matemáticos.</p>
+  <section id="ie">
+    <h2>MathML en Internet Explorer</h2>
 
-      <p>Actualmente (mayo de 2017) las fuentes recomendadas son las fuentes STIX, una fuentes de miles de caracteres creadas por el <a href="http://www.stixfonts.org/">consorcio STI Pub</a>, formado en 1995 por varias organizaciones científicas norteamericanas y la editorial Elsevier. En el año 2000 comenzó la creación de las fuentes, en mayo de 2010 se publicó la versión 1.0, en agosto de 2012 se publicó la versión 1.1 y en diciembre de 2016 se publicó la versión 2.0.</p>
+    <p>Internet Explorer no es capaz de mostrar elementos MathML, pero existen plug-in gratuitos para conseguirlo, por ejemplo <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> de DesignScience, cuya versión MathPlayer 4.0 se publicó en enero de 2016.</p>
+  </section>
 
-      <p>Las fuentes STIX están disponibles en formato <a href="https://en.wikipedia.org/wiki/OpenType">OpenType</a>. Actualmente (mayo de 2017), la última versión estable disponible es <a href="https://sourceforge.net/projects/stixfonts/files/Current%20Release/STIXv2.0.0.zip/download">la versión 2.0 (de diciembre de 2016)</a>.</p>
+  <section id="chrome">
+    <h2>MathML en Chrome</h2>
 
-      <p>En <a href="http://www.cdlibre.org/">cdlibre.org</a> hay una sección dedicada a <a href="http://www.cdlibre.org/consultar/catalogo/Fuentes_OTF.html">fuentes OTF</a>, con información detallada sobre las últimas versiones publicadas.</p>
+    <p>Actualmente (mayo de 2017) Chrome no es capaz de mostrar páginas con elementos MathML y Google ha manifestado que no entra en sus planes hacerlo.</p>
 
-      <p>Al abrir un archivo de extensión .xhtml como archivo local (sin utilizar un servidor de páginas web), Firefox reconoce estos documentos como application/xhtml+xml y los muestra correctamente.</p>
-    </section>
+    <p>Chrome admitió MathML en la versión 24 (enero de 2013), pero debido a problemas de incompatibilidades entre el código de MathML y el de WebKit, en la versión Chrome 25 (febrero de 2013) se volvió a deshabilitar el soporte de MathML.</p>
+  </section>
 
-    <section id="ie">
-      <h2>MathML en Internet Explorer</h2>
+  <section id="ejemplos">
+    <h2>Páginas de muestra</h2>
 
-      <p>Internet Explorer no es capaz de mostrar elementos MathML, pero existen plug-in gratuitos para conseguirlo, por ejemplo <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> de DesignScience, cuya versión MathPlayer 4.0 se publicó en enero de 2016.</p>
-    </section>
+    <p>La siguiente página muestra un ejemplo sencillo de las posibilidades del MathML:</p>
 
-    <section id="chrome">
-      <h2>MathML en Chrome</h2>
+    <ul>
+      <li><a href="mathml-ejemplo-segugra.html">La ecuación de segundo grado</a></li>
+    </ul>
 
-      <p>Actualmente (mayo de 2017) Chrome no es capaz de mostrar páginas con elementos MathML y Google ha manifestado que no entra en sus planes hacerlo.</p>
+    <p>La siguiente página muestra varios ejemplos de fórmulas más complicadas:</p>
 
-      <p>Chrome admitió MathML en la versión 24 (enero de 2013), pero debido a problemas de incompatibilidades entre el código de MathML y el de WebKit, en la versión Chrome 25 (febrero de 2013) se volvió a deshabilitar el soporte de MathML.</p>
-    </section>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/MathML_Torture_Test">MathML Torture Test (Mozilla docs)</a></li>
+    </ul>
+  </section>
 
-    <section id="ejemplos">
-      <h2>Páginas de muestra</h2>
+  <section id="edicion">
+    <h2>Edición de MathML</h2>
 
-      <p>La siguiente página muestra un ejemplo sencillo de las posibilidades del MathML:</p>
+    <ul>
+      <li>La <a href="http://www.firemath.info/">extensión FireMath</a> permite crear fórmulas MathML desde Firefox. Se puede instalar desde <a href="https://addons.mozilla.org/en-US/firefox/addon/firemath/">Firefox Add-ons</a>. Actualmente se encuentra en desarrollo.</li>
+      <li>Web Equation: <a href="http://webdemo.myscript.com/#/demo/equation">http://webdemo.myscript.com/#/demo/equation</a>. Permite dibujar una ecuación y obtener el código MathML correspondiente.
+      </li>
+      <li>Detexify: <a href="http://detexify.kirelabs.org/classify.html">http://detexify.kirelabs.org/classify.html</a>. Permite dibujar un símbolo matemático y obtener el código en LaTeX.</li>
+    </ul>
+  </section>
 
-      <ul>
-        <li><a href="mathml-ejemplo-segugra.html">La ecuación de segundo grado</a></li>
-      </ul>
+  <section id="mas-info">
+    <h2>Más información</h2>
+    <ul>
+      <li><a href="http://frederic-wang.fr/">Blog de Frédéric Wang</a> sobre MathML.</li>
+    </ul>
+  </section>
 
-      <p>La siguiente página muestra varios ejemplos de fórmulas más complicadas:</p>
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de mayo de 2017</p>
 
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/MathML_Project/MathML_Torture_Test">MathML Torture Test (Mozilla docs)</a></li>
-      </ul>
-    </section>
-
-    <section id="edicion">
-      <h2>Edición de MathML</h2>
-
-      <ul>
-        <li>La <a href="http://www.firemath.info/">extensión FireMath</a> permite crear fórmulas MathML desde Firefox. Se puede instalar desde <a href="https://addons.mozilla.org/en-US/firefox/addon/firemath/">Firefox Add-ons</a>. Actualmente se encuentra en desarrollo.</li>
-        <li>Web Equation: <a href="http://webdemo.myscript.com/#/demo/equation">http://webdemo.myscript.com/#/demo/equation</a>. Permite dibujar una ecuación y obtener el código MathML
-          correspondiente.</li>
-        <li>Detexify: <a href="http://detexify.kirelabs.org/classify.html">http://detexify.kirelabs.org/classify.html</a>. Permite dibujar un símbolo matemático y obtener el código en LaTeX.</li>
-      </ul>
-    </section>
-
-    <section id="mas-info">
-      <h2>Más información</h2>
-      <ul>
-        <li><a href="http://frederic-wang.fr/">Blog de Frédéric Wang</a> sobre MathML.</li>
-      </ul>
-    </section>
-
-    <footer>
-      <p class="ultmod">Última modificación de esta página: 24 de mayo de 2017</p>
-
-      <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
-        Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
-    </footer>
-  </body>
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
+      Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.</p>
+  </footer>
+</body>
 </html>
