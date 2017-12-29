@@ -44,6 +44,8 @@
 
   <p>La futura recomendación <a href="https://www.w3.org/TR/css-flexbox-1/">CSS3: Flexible box</a>, actualmente (diciembre de 2017) en elaboración, define un nuevo tipo de modelo de caja en el que varios elementos seguidos pueden colocarse unos tras otros en dirección horizontal o vertical y unificar su tamaño.</p>
 
+  <p>El orden y dirección de los elementos flexbox (de izquierda a derecha o de derecha a izquierda, de arriba abajo o de abajo arriba) son los mismos que la dirección de escritura. Para simplificar la redacción, en esta lección se supone que la dirección de escritura es la tradicinal en Occidente, es decir, de izquierda a derecha y de arriba abajo.</p>
+
   <section id="display">
     <h2>Tipos de cajas flexibles: <span class="css-valor">flex</span> y <span class="css-valor">flex-inline</span></h2>
 
@@ -57,9 +59,25 @@
   </section>
 
   <section id="flex-direction">
-    <h2>Dirección de los elementos flexibles: <span class="css-prop">flex-direction</span></h2>
+    <h2 class="con-aside">Dirección de los elementos flexibles: <span class="css-prop">flex-direction</span></h2>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir.</p>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">flex-direction</span><br />
+        <a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">flex-direction</span> define el eje principal, es decir, la dirección en la que se colocan los elementos.</p>
+
+    <p>Los posibles valores de la propiedad <span class="css-prop">flex-direction</span> son:</p>
+
+    <ul>
+      <li><span class="css-valor">row</span>: los elementos se colocan horizontalmente de izquierda a derecha.</li>
+      <li><span class="css-valor">row-reverse</span>: los elementos se colocan horizontalmente de derecha a izquierda.</li>
+      <li><span class="css-valor">column</span>: los elementos se colocan verticalmente de arriba abajo.</li>
+      <li><span class="css-valor">column-reverse</span>: los elementos se colocan verticalmente de abajo arriba.</li>
+    </ul>
 
     <div class="filaflex">
       <div class="codigo">
@@ -102,7 +120,7 @@ p { width: 100px; border: black 1px solid; margin: 2px; }</code>
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/flexbox/flex-direction-3.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/flexbox/flex-direction-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/flexbox/flex-direction-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
@@ -112,15 +130,13 @@ p { width: 100px; border: black 1px solid; margin: 2px; }</code>
     <div class="filaflex">
       <div class="codigo">
         <pre>
-        <pre>
 <code class="language-css">div { display: flex; flex-direction: column-reverse; }
 
 p { width: 100px; border: black 1px solid; margin: 2px; }</code>
 </pre>
-      </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/flexbox/flex-direction-4.html" style="width:100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/flexbox/flex-direction-4.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/flexbox/flex-direction-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
@@ -129,9 +145,72 @@ p { width: 100px; border: black 1px solid; margin: 2px; }</code>
   </section>
 
   <section id="flex-wrap">
-    <h2>Ajuste de línea de los elementos flexibles: <span class="css-prop">flex-wrap</span></h2>
+    <h2 class="con-aside">Ajuste de línea de los elementos flexibles: <span class="css-prop">flex-wrap</span></h2>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir.</p>
+    <aside class="enlace-norma">
+      <p><span class="css-prop">flex-wrap</span><br />
+        <a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">flex-wrap</span> establece si los elementos se colocan en una sola línea o en varias.</p>
+
+    <p>Los posibles valores de la propiedad <span class="css-prop">flex-wrap</span> son:</p>
+
+    <ul>
+      <li><span class="css-valor">no-wrap</span>: los elementos se colocan en una sola línea.</li>
+      <li><span class="css-valor">wrap</span>: los elementos se colocan en varias líneas si no caben en una sola línea.</li>
+      <li><span class="css-valor">wrap-reverse</span>: los elementos se colocan en varias líneas si no caben en una sola línea, pero las líneas se muestran de abajo arriba.</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">div { display: flex; flex-wrap: no-wrap; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/flexbox/flex-wrap-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/flexbox/flex-wrap-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">div { display: flex; flex-wrap: wrap; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/flexbox/flex-wrap-2.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/flexbox/flex-wrap-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">div { display: flex; flex-wrap: wrap-reverse; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/flexbox/flex-wrap-3.html" style="width:100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/flexbox/flex-wrap-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
   </section>
 
   <section id="order">
@@ -161,7 +240,22 @@ p { width: 100px; border: black 1px solid; margin: 2px; }</code>
   <section id="flex-basis">
     <h2>Tamaño inicial de los elementos flexibles: <span class="css-prop">flex-basis</span></h2>
 
-    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Por escribir.</p>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">div { display: flex; flex-wrap: no-wrap; }
+
+p { width: 100px; border: black 1px solid; margin: 2px; }</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/flexbox/flex-basis-1.html" style="width:100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/flexbox/flex-basis-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
   </section>
 
   <section id="justify-content">
