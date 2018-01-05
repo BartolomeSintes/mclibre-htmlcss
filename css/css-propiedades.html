@@ -39,6 +39,7 @@ html { zoom: 61%;}
         <li><a href="#css-tablas">Tablas</a></li>
         <li><a href="#css-tamano">Tamaño</a></li>
         <li><a href="#css-posicionamiento">Posicionamiento</a></li>
+        <li><a href="#css-flexbox">Cajas flexibles</a></li>
         <li><a href="#css-impresora">Impresora</a></li>
         <li><a href="#css-interface">Interface de usuario</a></li>
         <li><a href="#css-pseudo-elementos">Pseudo-elementos</a></li>
@@ -53,7 +54,7 @@ html { zoom: 61%;}
     <li>Se incluyen las propiedades CSS 2, excepto las propiedades relacionadas con las hojas de estilo auditivas (aural).</li>
     <li>Las propiedades que han sido eliminadas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se listan al final.</li>
     <li>Los valores de las propiedades añadidos o eliminados en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se indican con los símbolos <sup>(+)</sup> o <sup>(-)</sup>.</li>
-    <li>Algunas de las propiedades definidas en recomendaciones CSS 3 en elaboración que los navegadores actuales admiten correctamente. Se indican con el símbolo <sup>(3)</sup>.</li>
+    <li>Las propiedades o los valores de las propiedades definidas en recomendaciones CSS 3 en elaboración que los navegadores actuales admiten correctamente se indican con el símbolo <sup>(3)</sup>.</li>
   </ul>
 
   <section id="css-propiedades">
@@ -629,7 +630,7 @@ html { zoom: 61%;}
         <tr>
           <td><a href="css-modelo-caja.html#display">display</a></td>
           <td>tipo de caja</td>
-          <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">compact</span><sup>(-)</sup> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span><sup>(+)</sup> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">marker</span><sup>(-)</sup> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span></td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">compact</span><sup>(-)</sup> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span><sup>(+)</sup> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">marker</span><sup>(-)</sup> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span> | <span class="css-valor">flex</span><sup>(3)</sup> | <span class="css-valor">inline-flex</span><sup>(3)</sup></td>
         </tr>
         <tr>
           <td><a href="css-posicionamiento-flotante.html">float</a></td>
@@ -680,6 +681,81 @@ html { zoom: 61%;}
           <td><a href="css-posicionamiento-absoluto.html#z-index">z-index</a></td>
           <td>apilamiento</td>
           <td><span class="css-valor">auto</span> | número-entero</td>
+        </tr>
+      </tbody>
+      <tbody id="css-flexbox">
+        <tr class="titulo">
+          <td colspan="3">Cajas flexibles</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#display">display</a></td>
+          <td>tipo de caja</td>
+          <td><span class="css-valor">flex</span><sup>(3)</sup> || <span class="css-valor">inline-flex</span><sup>(3)</sup></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-flow">flex-flow</a><sup>(3)</sup></td>
+          <td>propiedad compuesta</td>
+          <td>flex-direction || flex-wrap</td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-direction">flex-direction</a><sup>(3)</sup></td>
+          <td>dirección</td>
+          <td><span class="css-valor">row</span> || <span class="css-valor">row-reverse</span> || <span class="css-valor">column</span> || <span class="css-valor">column-reverse</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-wrap">flex-wrap</a><sup>(3)</sup></td>
+          <td>ajuste de línea</td>
+          <td><span class="css-valor">wrap</span> || <span class="css-valor">no-wrap</span> || <span class="css-valor">wrap-reverse</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#order">order</a><sup>(3)</sup></td>
+          <td>número de orden</td>
+          <td>número</td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex">flex</a><sup>(3)</sup></td>
+          <td>propiedad compuesta</td>
+          <td>[ flex-grow || flex-shrink || flex-basis ] || <span class="css-valor">initial</span> || <span class="css-valor">auto</span> || <span class="css-valor">none</span> || número </td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-grow">flex-grow</a><sup>(3)</sup></td>
+          <td>factor de expansión</td>
+          <td>número</td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-shrink">flex-shrink</a><sup>(3)</sup></td>
+          <td>factor de compresión</td>
+          <td>número</td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#flex-basis">flex-basis</a><sup>(3)</sup></td>
+          <td>tamaño inicial</td>
+          <td>distancia || <span class="css-valor">auto</span> || <span class="css-valor">content</span> || <span class="css-valor">width</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#justify-content">justify-content</a><sup>(3)</sup></td>
+          <td>alineación en la dirección principal</td>
+          <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">space-between</span> || <span class="css-valor">space-around</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#align-items">align-items</a><sup>(3)</sup></td>
+          <td>alineación en la dirección secundaria (una línea)</td>
+          <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">baseline</span> || <span class="css-valor">stretch</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#align-self">align-self</a><sup>(3)</sup></td>
+          <td>alineación individual en la dirección secundaria</td>
+          <td><span class="css-valor">auto</span> || <span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">baseline</span> || <span class="css-valor">stretch</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-flexbox.html#align-content">align-content</a><sup>(3)</sup></td>
+          <td>alineación en la dirección secundaria (varias líneas)</td>
+          <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">space-between</span> || <span class="css-valor">space-around</span> || <span class="css-valor">stretch</span></td>
         </tr>
       </tbody>
       <tbody id="css-impresora">
@@ -881,7 +957,7 @@ html { zoom: 61%;}
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de noviembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 5 de enero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
