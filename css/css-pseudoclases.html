@@ -40,7 +40,11 @@
 
     <p>Las hojas de estilo asocian características de estilo a los elementos basándose en las etiquetas de los elementos y en su posición relativa (en el árbol del documento). Las pseudo-clases y los pseudo-elementos permiten hacer referencia a determinados elementos sin basarse en la información contenida en el árbol del documento.</p>
 
-    <p>La sintaxis de las pseudo-clases y los pseudo-elementos es la misma: etiqueta:pseudo-elemento_o_pseudo-clase (el nombre de la etiqueta y del pseudo-elemento o de la pseudo-clase separado por dos puntos).</p>
+    <p>La diferencia entre pseudo-clases y pseudo-elementos es sutil. En general, los pseudo-elementos suelen hacer referencia a determinadas partes de un elemento, mientras que las pseudo-clases suelen hacer referencia al estado del elemento.</p>
+
+    <p>Otra diferencia importante es que un pseudo-elemento sólo puede aparecer al final de un selector, mientras que una pseudo-clase puede aparecer en cualquier elemento del selector.</p>
+
+    <p>En CSS 2, la sintaxis de las pseudo-clases y los pseudo-elementos era la misma, etiqueta:pseudo-elemento-o-pseudo-clase (es decir, el nombre de la etiqueta seguido de dos puntos y del nombre del pseudo-elemento o de la pseudo-clase), pero en la recomendación <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/">CSS 3: Selectores</a> se cambió la notación de los pseudo-elementos a etiqueta::pseudo-elemento (es decir, el nombre de la etiqueta seguido dos veces de dos puntos y del nombre del pseudo-elemento) para distingui unos de otros.</p>
   </section>
 
   <section id="first-child">
@@ -48,7 +52,7 @@
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">:first-child</span><br />
+        <span class="css-pseudo">:first-child</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#first-child-pseudo"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
@@ -133,13 +137,13 @@ div :first-child {
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">:link</span><br />
+        <span class="css-pseudo">:link</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-link-pseudo-classes-link-and-visited"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
 
       <p>
-        <span class="css-prop">:visited</span><br />
+        <span class="css-pseudo">:visited</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-link-pseudo-classes-link-and-visited"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
@@ -350,7 +354,7 @@ a:visited {
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">:hover</span><br />
+        <span class="css-pseudo">:hover</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
@@ -408,7 +412,7 @@ p:hover {
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">:active</span><br />
+        <span class="css-pseudo">:active</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
@@ -466,7 +470,7 @@ p:active {
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">:focus</span><br />
+        <span class="css-pseudo">:focus</span><br />
         <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
@@ -501,7 +505,7 @@ p:active {
 
     <aside class="enlace-norma">
         <p>
-          <span class="css-prop">:lang</span><br />
+          <span class="css-pseudo">:lang</span><br />
           <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#lang-pseudo"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
         </p>
@@ -542,6 +546,16 @@ q:lang(en) {
   <section id="pseudo-elementos-first">
     <h2>Los pseudo-elementos <span class="css-pseudo">::first-line</span> y <span class="css-pseudo">::first-letter</span></h2>
 
+    <h3 class="con-aside">El pseudo-elemento <span class="css-pseudo">::first-line</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-pseudo">::first-line</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#first-line"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
+
     <p>El pseudo-elemento <span class="css-pseudo">::first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
 
     <div class="filaflex">
@@ -568,6 +582,16 @@ q:lang(en) {
     <p>En el ejemplo anterior, al hacer zoom se observa como siempre y únicamente la primea línea cambia a mayúsculas.</p>
 
     <hr class="corta" />
+
+    <h3 class="con-aside">El pseudo-elemento <span class="css-pseudo">::first-letter</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-pseudo">::first-letter</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#first-letter"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
 
     <p>El pseudo-elemento <span class="css-pseudo">::first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
 
@@ -706,7 +730,27 @@ img {
     <h2>Los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span></h2>
 
     <section id="content">
-      <h3>Contenido generado: <span class="css-prop">content</span></h3>
+      <h3 class="con-aside">Contenido generado: <span class="css-prop">content</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="css-pseudo">::before</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#before-after-content"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+
+        <p>
+          <span class="css-pseudo">::after</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#before-after-content"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+
+        <p>
+          <span class="css-prop">content</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#content"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/content"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+      </aside>
 
       <p>Los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span> permiten añadir contenido a un elemento desde la hoja de estilo, al principio o al final del elemento.</p>
 
@@ -766,7 +810,7 @@ img {
         </div>
       </div>
 
-      <p>No es válido incluir etiquetas html en la propiedad <span class="css-prop">content</span>, es decir que no sólo los navegadores no hacen caso y lo incluyen como texto, no como código html, sino que al validar la hoja de estilo daría error:</p>
+      <p>No está permitido incluir etiquetas html en la propiedad <span class="css-prop">content</span>. Los navegadores muestran las etiquetas como texto, no como código html.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -786,7 +830,27 @@ img {
     </section>
 
     <section id="counter">
-      <h3>Generar contadores: <span class="css-funcion">counter</span>, <span class="css-prop">counter-increment</span> y <span class="css-prop">counter-reset</span></h3>
+      <h3 class="con-aside">Generar contadores: <span class="css-funcion">counter</span>, <span class="css-prop">counter-increment</span> y <span class="css-prop">counter-reset</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="css-funcion">counter</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#propdef-content"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+
+        <p>
+          <span class="css-prop">counter-increment</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#counters"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-increment"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+
+        <p>
+          <span class="css-prop">counter-reset</span><br />
+          <a href="https://www.w3.org/TR/2009/CR-CSS2-20090908/generate.html#counters"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter-reset"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+      </aside>
 
       <p>Se pueden generar contadores en los pseudo-elementos <span class="css-pseudo">::after</span> y <span class="css-pseudo">::before</span> mediante la propiedad <span class="css-prop">content</span> y el valor <span class="css-valor">counter(nombre_de_contador)</span>. El contador debe ponerse a cero con la propiedad <span class="css-prop">counter-reset</span> y aumentarse con la propiedad <span class="css-prop">counter-increment</span>.</p>
 
