@@ -44,7 +44,15 @@
   </section>
 
   <section id="first-child">
-    <h2>La pseudo-clase <span class="css-pseudo">:first-child</span></h2>
+    <h2 class="con-aside">La pseudo-clase <span class="css-pseudo">:first-child</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">:first-child</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#first-child-pseudo"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
 
     <p>La pseudo-clase <span class="css-pseudo">:first-child</span> hace referencia al primer elemento de un tipo contenido dentro de otro. El ejemplo siguiente muestra cómo identificar al primer párrafo dentro de una división sin necesidad de asignar ninguna clase al párrafo.</p>
 
@@ -121,11 +129,69 @@ div :first-child {
   </section>
 
   <section id="pseudo-clase-enlace">
-    <h2>Las pseudo-clases de enlace <span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></h2>
+    <h2 class="con-aside">Las pseudo-clases de enlace <span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">:link</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-link-pseudo-classes-link-and-visited"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+
+      <p>
+        <span class="css-prop">:visited</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-link-pseudo-classes-link-and-visited"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
 
     <p>La pseudo clase <span class="css-pseudo">:link</span> (o <span class="css-pseudo">a:link</span>) permite especificar el aspecto de los enlaces que todavía no han sido visitados.</p>
 
     <p>La pseudo clase <span class="css-pseudo">:visited</span> (o <span class="css-pseudo">a:visited</span>) permite especificar el aspecto de los enlaces que sí han sido visitados.</p>
+
+    <hr class="corta" />
+
+    <p>La pseudo-clase <span class="css-pseudo">:link</span> establece el aspecto de los enlaces no vistados, pero si sólo se incluye en la hoja de estilo la pseudo-clase <span class="css-pseudo">:link</span>, el aspecto no cambiará al hacer clic en los enlaces:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">a:link {
+  background-color: lightblue;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
+    <p>Es necesario incluir las dos pseudo-clases <span class="css-pseudo">:link</span> y <span class="css-pseudo">:link</span> para que el aspecto del enlace cambie al hacer clic en él.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">a:link {
+  background-color: lightblue;
+}
+
+a:visited {
+  background-color: coral;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-6.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+      </div>
+    </div>
+
+    <hr class="corta" />
 
     <p>Los navegadores "recuerdan" los enlaces visitados, pero no de la misma manera. Edge los recuerda mientras no se recargue la página, mientras que Firefox y Chrome los recuerdan hasta que se borra el historial en el navegador.</p>
 
@@ -197,43 +263,98 @@ a:visited {
 
     <hr class="corta" />
 
-    <p>Si se asignan propiedades a la etiqueta <span class="html-eti">a</span> en la hoja de estilo, estas propiedades afectarán tanto a los enlaces como a los destinos que utilicen la etiqueta <span class="html-eti">a</span>. Pero si se asigna propiedades a la pseudo-clase <span class="css-pseudo">a:link</span>, estas propiedades sólo afectarán a los enlaces.</p>
+    <p>Si queremos cambiar el aspecto de un enlace, pero sin distinguir que el enlace se haya visitado o no, tenemos entonces tres opciones:</p>
 
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-css">a {
+    <ul>
+      <li>Definir simultáneamente las dos pseudo-clases:
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">a:link, a:visited {
   background-color: lightblue;
 }</code>
 </pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-      </div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-7.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/pseudoclases/pseudoclases-link-visited-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+      <li>Definir únicamente los enlaces no visitados:
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
 <code class="language-css">a:link {
   background-color: lightblue;
 }</code>
 </pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
-      </div>
-    </div>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+      <li>Definir los enlaces en general:
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">a {
+  background-color: lightblue;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-5.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/pseudoclases/pseudoclases-link-visited-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <p><strong>Nota</strong>:</p>
+    <ul>
+      <li>En HTML 4 se desaconsejaba la última opción porque la etiqueta <span class="html-eti">a</span> se podía utilizar también para definir destinos (como se comenta en la lección de <a href="../html/html-obsoletos.html#a-name">elementos obsoletos</a>) y el estilo dirigido a los enlaces podía afectar a elementos que no eran enlaces, como muestra el siguiente ejemplo:
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">a {
+  background-color: lightblue;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-4.html" style="width:100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/pseudoclases/pseudoclases-link-visited-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          </div>
+        </div>
+        <p>Como en HTML 5 se considera obsoleto definir destinos con la etiqueta <span class="html-eti">&lt;a&gt;</span>, este problema ya no debería ocurrir.</p>
+      </li>
+    </ul>
   </section>
 
   <section id="pseudo-clase-dinamicas">
     <h2>Las pseudo-clases dinámicas <span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></h2>
+
+    <h3 class="con-aside">La pseudo-clase dinámica <span class="css-pseudo">:hover</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">:hover</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
 
     <p>La pseudo-clase <span class="css-pseudo">:hover</span> permite especificar el aspecto del elemento sobre el que se encuentra el ratón.</p>
 
@@ -281,9 +402,17 @@ p:hover {
       </div>
     </div>
 
-    <p class="incompleto">Contar lo que pasa cuando se utiliza a la vez :link :visited y :hover (diferencias entre navegadores antiguos).</p>
-
     <hr class="corta" />
+
+    <h3 class="con-aside">La pseudo-clase dinámica <span class="css-pseudo">:active</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">:active</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
 
     <p>La pseudo-clase <span class="css-pseudo">:active</span> permite especificar el aspecto de un elemento cuando se hace clic sobre él (y mientras se mantiene el botón del ratón apretado).</p>
 
@@ -333,6 +462,16 @@ p:active {
 
     <hr class="corta" />
 
+    <h3 class="con-aside">La pseudo-clase dinámica <span class="css-pseudo">:focus</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">:focus</span><br />
+        <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#the-user-action-pseudo-classes-hover-act"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+      </p>
+    </aside>
+
     <p>La pseudo-clase <span class="css-pseudo">:focus</span> permite especificar el aspecto de un elemento cuando este tiene el foco. Los elementos que admiten el foco en una página web son aquellos que reaccionan a entrada por teclado (por ejemplo, los elementos de los formularios o los enlaces). En el ejemplo siguiente, al hacer clic en un campo de texto (o cambiar de campo con el tabulador), el campo seleccionado se resalta con un borde rojo.</p>
 
     <div class="filaflex">
@@ -351,10 +490,22 @@ p:active {
         <a href="ejemplos/pseudoclases/pseudoclases-dinamicas-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
       </div>
     </div>
+
+    <hr class="corta" />
+
+    <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Cuando se utiliza a la vez :link :visited y :hover los navegadores antiguos hacían cada uno una cosa distinta, pero es posible que los modernos no tengan ese problema.</p>
   </section>
 
   <section id="pseudo-clase-lang">
-    <h2>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span></h2>
+    <h2 class="con-aside">La pseudo-clase de idioma <span class="css-pseudo">:lang()</span></h2>
+
+    <aside class="enlace-norma">
+        <p>
+          <span class="css-prop">:lang</span><br />
+          <a href="https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#lang-pseudo"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32" /></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
+        </p>
+      </aside>
 
     <p>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span> permite especificar el aspecto de los elementos de un idioma determinado. En el ejemplo siguiente se cambia las comillas utilizadas en una cita <span class="html-eti">&lt;q&gt;</span> según el idioma indicado en el atributo <span class="html-atri">lang</span>.</p>
 
