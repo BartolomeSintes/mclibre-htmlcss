@@ -29,8 +29,8 @@
         <li><a href="#pseudo-clase-enlace"><span class="css-pseudo">:link</span> y <span class="css-pseudo">:visited</span></a></li>
         <li><a href="#pseudo-clase-dinamicas"><span class="css-pseudo">:hover</span>, <span class="css-pseudo">:active</span> y <span class="css-pseudo">:focus</span></a></li>
         <li><a href="#pseudo-clase-lang"><span class="css-pseudo">:lang()</span></a></li>
-        <li><a href="#pseudo-elementos-first"><span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></a></li>
-        <li><a href="#pseudo-elementos-before-after"><span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></a></li>
+        <li><a href="#pseudo-elementos-first"><span class="css-pseudo">::first-line</span> y <span class="css-pseudo">::first-letter</span></a></li>
+        <li><a href="#pseudo-elementos-before-after"><span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span></a></li>
       </ul>
     </div>
   </nav>
@@ -509,7 +509,6 @@ p:active {
 
     <p>La pseudo-clase de idioma <span class="css-pseudo">:lang()</span> permite especificar el aspecto de los elementos de un idioma determinado. En el ejemplo siguiente se cambia las comillas utilizadas en una cita <span class="html-eti">&lt;q&gt;</span> según el idioma indicado en el atributo <span class="html-atri">lang</span>.</p>
 
-
     <div class="filaflex">
       <div class="columnaflex">
         <div class="codigo">
@@ -541,9 +540,9 @@ q:lang(en) {
   </section>
 
   <section id="pseudo-elementos-first">
-    <h2>Los pseudo-elementos <span class="css-pseudo">:first-line</span> y <span class="css-pseudo">:first-letter</span></h2>
+    <h2>Los pseudo-elementos <span class="css-pseudo">::first-line</span> y <span class="css-pseudo">::first-letter</span></h2>
 
-    <p>El pseudo-elemento <span class="css-pseudo">:first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
+    <p>El pseudo-elemento <span class="css-pseudo">::first-line</span> permite especificar el aspecto de la primera línea de texto.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
@@ -553,7 +552,7 @@ q:lang(en) {
       </div>
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-line {
+<code class="language-css">p::first-line {
   text-transform: uppercase;
 }</code>
 </pre>
@@ -570,12 +569,12 @@ q:lang(en) {
 
     <hr class="corta" />
 
-    <p>El pseudo-elemento <span class="css-pseudo">:first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
+    <p>El pseudo-elemento <span class="css-pseudo">::first-letter</span> permite especificar el aspecto de la primera letra de texto.</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   color: red;
 }</code>
 </pre>
@@ -591,7 +590,7 @@ q:lang(en) {
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   background-color: pink;
   color: red;
   float: left;
@@ -615,7 +614,7 @@ q:lang(en) {
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   color: red;
 }</code>
 </pre>
@@ -638,7 +637,7 @@ q:lang(en) {
       </div>
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   color: red;
 }
 
@@ -663,7 +662,7 @@ img {
       </div>
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   color: red;
 }
 
@@ -689,7 +688,7 @@ img {
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-css">p:first-letter {
+<code class="language-css">p::first-letter {
   color: red;
 }</code>
 </pre>
@@ -704,12 +703,12 @@ img {
   </section>
 
   <section id="pseudo-elementos-before-after">
-    <h2>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span></h2>
+    <h2>Los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span></h2>
 
     <section id="content">
       <h3>Contenido generado: <span class="css-prop">content</span></h3>
 
-      <p>Los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span> permiten añadir contenido a un elemento desde la hoja de estilo, al principio o al final del elemento.</p>
+      <p>Los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span> permiten añadir contenido a un elemento desde la hoja de estilo, al principio o al final del elemento.</p>
 
       <p>El contenido generado no puede seleccionarse con el ratón (para copiarlo y pegarlo en otro documento, por ejemplo).</p>
 
@@ -718,7 +717,7 @@ img {
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-css">p.cuidado:before {
+<code class="language-css">p.cuidado::before {
   content: "Aviso: ";
   font-weight: bold;
   text-decoration: underline;
@@ -736,7 +735,7 @@ img {
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-css">p.autor-barto:after {
+<code class="language-css">p.autor-barto::after {
   content: " (escrito por Barto).";
 }</code>
 </pre>
@@ -754,7 +753,7 @@ img {
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-css">p.ff:before {
+<code class="language-css">p.ff::before {
   content: url("../icono-ff.svg");
 }</code>
 </pre>
@@ -772,7 +771,7 @@ img {
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-css">p.cuidado:before {
+<code class="language-css">p.cuidado::before {
   content: "&lt;em&gt;Aviso:&lt;/em&gt; ";
 }</code>
 </pre>
@@ -789,7 +788,7 @@ img {
     <section id="counter">
       <h3>Generar contadores: <span class="css-funcion">counter</span>, <span class="css-prop">counter-increment</span> y <span class="css-prop">counter-reset</span></h3>
 
-      <p>Se pueden generar contadores en los pseudo-elementos <span class="css-pseudo">:after</span> y <span class="css-pseudo">:before</span> mediante la propiedad <span class="css-prop">content</span> y el valor <span class="css-valor">counter(nombre_de_contador)</span>. El contador debe ponerse a cero con la propiedad <span class="css-prop">counter-reset</span> y aumentarse con la propiedad <span class="css-prop">counter-increment</span>.</p>
+      <p>Se pueden generar contadores en los pseudo-elementos <span class="css-pseudo">::after</span> y <span class="css-pseudo">::before</span> mediante la propiedad <span class="css-prop">content</span> y el valor <span class="css-valor">counter(nombre_de_contador)</span>. El contador debe ponerse a cero con la propiedad <span class="css-prop">counter-reset</span> y aumentarse con la propiedad <span class="css-prop">counter-increment</span>.</p>
 
       <p>En los ejemplos siguientes se ha definido un contador que se llama cuenta-parrafos. Este contador se genera al principio de cada párrafo, se pone a cero con el elemento <span class="html-eti">&lt;pre&gt;</span> y se incrementa en cada párrafo.</p>
 
@@ -800,7 +799,7 @@ img {
   counter-reset: cuenta-parrafos;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-parrafos);
   counter-increment: cuenta-parrafos;
 }</code>
@@ -821,7 +820,7 @@ p:before {
   counter-reset: cuenta-parrafos;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-parrafos);
   counter-increment: cuenta-parrafos;
 }</code>
@@ -844,7 +843,7 @@ p:before {
   counter-reset: cuenta-parrafos;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-parrafos);
   counter-increment: cuenta-parrafos 10;
 }</code>
@@ -867,7 +866,7 @@ p:before {
   counter-reset: cuenta-parrafos;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-parrafos)". ";
   counter-increment: cuenta-parrafos;
 }</code>
@@ -890,7 +889,7 @@ p:before {
   counter-reset: cuenta-parrafos;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-parrafos, upper-roman)". ";
   counter-increment: cuenta-parrafos;
 }</code>
@@ -918,12 +917,12 @@ h2 {
   counter-reset: cuenta-parrafos;
 }
 
-h2:before {
+h2::before {
   content: counter(cuenta-apartados, upper-alpha)". ";
   counter-increment: cuenta-apartados;
 }
 
-p:before {
+p::before {
   content: counter(cuenta-apartados, upper-alpha)"-"counter(cuenta-parrafos)". ";
   counter-increment: cuenta-parrafos;
 }</code>
@@ -940,7 +939,7 @@ p:before {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 10 de enero de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />

@@ -41,7 +41,7 @@ print "<pre>$texto</pre>\n";
 // eliminar las reglas que no tienen propiedades
 print "<h2>Reglas vacías</h2>\n";
 
-$texto = "body {\n  color: black;\n}\n\nh1 {\n  \n\n}\n\nh1 {}\n\np:first-letter {\n  \n\n}\n\np.clase {\n  \n\n}\n\np.clase-numero-2 {\n  \n\n}\n\np#id {\n  \n\n}\n\np#id_numero_2 {\n  \n\n}\n\nstrong {\n  color: black;\n}\n\n";
+$texto = "body {\n  color: black;\n}\n\nh1 {\n  \n\n}\n\nh1 {}\n\np::first-letter {\n  \n\n}\n\np.clase {\n  \n\n}\n\np.clase-numero-2 {\n  \n\n}\n\np#id {\n  \n\n}\n\np#id_numero_2 {\n  \n\n}\n\nstrong {\n  color: black;\n}\n\n";
 
 print "<h3>Antes</h3>\n";
 print "<pre>$texto</pre>\n";
@@ -75,7 +75,7 @@ $texto = "@charset \"utf-8\";
 @font-face {
   font-family: \"Poiret One\";
   src: url(\"poiret_one.woff\")
-}\nh1 { }\n\nbody {\n  color: black;\n}\n\nh1 { }\n\np {\n\n }\n\nsection section { }\n\nsection#a-1.c-2 section.b-2 { }\n\nh1 { }\n\np:first-letter { }\n\np.clase { }\n\np.clase-numero-2 { }\n\np#id { }\n\np#id_numero_2 { }\n\nstrong {\n  background-color: black;\n}\n\n";
+}\nh1 { }\n\nbody {\n  color: black;\n}\n\nh1 { }\n\np {\n\n }\n\nsection section { }\n\nsection#a-1.c-2 section.b-2 { }\n\nh1 { }\n\np::first-letter { }\n\np.clase { }\n\np.clase-numero-2 { }\n\np#id { }\n\np#id_numero_2 { }\n\nstrong {\n  background-color: black;\n}\n\n";
 
 print "<h3>Antes</h3>\n";
 print "<pre>$texto</pre>\n";

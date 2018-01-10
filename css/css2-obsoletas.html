@@ -76,7 +76,7 @@
 
     <p>La propiedad <span class="css-prop">marker-offset</span> tampoco está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (mayo de 2017) en elaboración, aunque esta recomendación introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
 
-    <p>La propiedad <span class="css-prop">marker-offset</span> debería establecer la distancia del marcador al elemento de la lista. Esta propiedad afectaría a los marcadores creados con los pseudo-elementos <span class="css-pseudo">:before</span> y <span class="css-pseudo">:after</span>.</p>
+    <p>La propiedad <span class="css-prop">marker-offset</span> debería establecer la distancia del marcador al elemento de la lista. Esta propiedad afectaría a los marcadores creados con los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span>.</p>
 
     <p>Los navegadores no son capaces de interpretar esta propiedad, ni probablemente lo hagan nunca.</p>
 
@@ -88,7 +88,7 @@
       </div>
       <div class="codigo">
         <pre>
-<code class="language-css">li:before {
+<code class="language-css">li::before {
   content: "***";
   display: marker;
   width: 6em;
@@ -117,7 +117,7 @@
   list-style-type: none;
 }
 
-li:before {
+li::before {
   content: "***";
   display: marker;
   marker-offset: 40px;
