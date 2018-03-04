@@ -73,7 +73,7 @@
         <a href="https://caniuse.com/#feat=woff"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
       </p>
       <p><strong>woff2</strong><br />
-        <a href="https://www.w3.org/TR/WOFF2/"><img src="../varios/iconos/icono-w3c.svg" alt="Recomendación W3C" title="Recomendación W3C" width="47" height="32" /></a>
+        <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/"><img src="../varios/iconos/icono-w3c.svg" alt="Recomendación W3C" title="Recomendación W3C" width="47" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
         <a href="https://caniuse.com/#feat=woff2"><img src="../varios/iconos/icono-caniuse-oksemi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a>
       </p>
@@ -83,7 +83,7 @@
 
     <p>En abril de 2010, Mozilla, Microsoft y Opera presentaron este formato al W3C, que aprobó la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> en diciembre de 2012.</p>
 
-    <p>Actualmente (noviembre de 2017) se está preparando la recomendación <a href="https://www.w3.org/TR/WOFF2/">WOFF File Format 2.0</a> (<a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 13/11/2013</a>). Gracias al nuevo algoritmo de compresión <a href="https://es.wikipedia.org/wiki/Brotli">Brotli</a>, esta recomendación consigue reducir el tamaño de las fuentes a la cuarta parte, aumentar la velocidad de descompresión y reducir los requisitos de memoria, como se explica en el <a href="https://www.w3.org/TR/WOFF20ER/">WOFF 2.0 Evaluation Report</a> publicado por el W3C en marzo de 2016.</p>
+    <p>En marzo de 2018 se aprobó la recomendación <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/">WOFF File Format 2.0</a>. Gracias al nuevo algoritmo de compresión <a href="https://es.wikipedia.org/wiki/Brotli">Brotli</a>, esta recomendación consigue reducir el tamaño de las fuentes a la cuarta parte, aumentar la velocidad de descompresión y reducir los requisitos de memoria, como se explica en el <a href="https://www.w3.org/TR/WOFF20ER/">WOFF 2.0 Evaluation Report</a> publicado por el W3C en marzo de 2016 o en este <a href="https://lwn.net/Articles/573348/">artículo en lwn.net sobre WOFF2 13/11/2013</a>.</p>
 
     <p>El formato WOFF 2 es mucho mejor que el formato WOFF 1 y servicios como Google Fonts ya sólo ofrecen WOFF 2, pero Internet Explorer 11 no admite WOFF 2, por lo que todavía puede ser necesario seguir usando WOFF 1.</p>
 
@@ -100,7 +100,7 @@
         <a href="https://caniuse.com/#feat=fontface"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32" /></a></p>
     </aside>
 
-    <p>La futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a> (actualmente -noviembre de 2017- en elaboración) permite la utilización de fuentes web mediante el uso de la regla-arroba <span class="css-arroba">@font-face</span>, como muestra el ejemplo siguiente:</p>
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-fonts-3/">CSS 3: Fuentes</a> (actualmente -marzo de 2018- en elaboración) permite la utilización de fuentes web mediante el uso de la regla-arroba <span class="css-arroba">@font-face</span>, como muestra el ejemplo siguiente:</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -133,7 +133,7 @@ p {
 
     <p>La recomendación no impone ningún formato específico para los tipos de letra, pero nombra algunos como posibilidad: woff (WOFF Web Open Font Format, .woff), truetype (TrueType, .ttf), opentype (OpenType, .ttf, .otf), embedded-opentype (Embedded OpenType, .eot), svg (SVG Font, .svg, .svgz).</p>
 
-    <p>Entre ellos, se recomienda utilizar el formato WOFF (Web Open Font Format, .woff), definido en la recomendación del W3C <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> de diciembre de 2012, que admiten Firefox, Internet Explorer y Google Chrome.</p>
+    <p>Entre ellos, se recomienda utilizar el formato WOFF 2 (Web Open Font Format, .woff2), definido en la recomendación <a href="https://www.w3.org/TR/2018/REC-WOFF2-20180301/">WOFF File Format 2.0</a> de marzo de 2018, que admiten Chrome, Firefox y Edge o, en su defecto, el formato WOFF (.woff) definido en la recomendación <a href="https://www.w3.org/TR/2012/REC-WOFF-20121213/">WOFF File Format 1.0</a> de diciembre de 2012, que admite Internet Explorer.</p>
   </section>
 
   <section id="google-fonts">
@@ -242,11 +242,7 @@ p {
     <section id="google-fonts-descargar-woff2">
       <h3>Descargar las fuentes de Google Fonts en formato WOFF2</h3>
 
-      <p>Cuando se descarga una fuente de Google Fonts, tan sólo se incluye la fuente en formato ttf. Para obtenerla en formato woff, se puede convertir la fuente ttf en woff utilizando alguna de las aplicaciones web comentadas en el apartado <a href="#woff">Fuentes WOFF (Web Open Font Format)</a> de esta lección.</p>
-
-      <hr />
-
-      <p>Existe un procedimiento para descargar de Google Fonts la fuente en formato woff2, siguiendo los pasos siguientes:</p>
+      <p>Cuando se descarga una fuente de Google Fonts, tan sólo se incluye la fuente en formato ttf. Para obtenerla en formato woff, puede convertir la fuente ttf en woff utilizando alguna de las aplicaciones web comentadas en el apartado <a href="#woff">Fuentes WOFF (Web Open Font Format)</a> de esta lección o seguir el procedimiento que se comenta a continuación.</p>
 
       <ol>
         <li>Seleccione la fuente haciendo clic en el símbolo <span style="color: white; background-color: red; font-size: 20px; padding: 0 6px 0 5px; font-weight: bold; border-radius: 15px;">+</span>:
@@ -289,7 +285,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de noviembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 4 de marzo de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
