@@ -5,7 +5,6 @@
   <title>Bugs de Firefox. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="mclibre" />
-  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="../varios/favicon.ico" />
   <link rel="stylesheet" type="text/css" href="../varios/highlight-htmlcss.css" />
   <script src="../varios/highlight.pack.js"></script>
@@ -66,6 +65,7 @@
       <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=14713">Bug 14.713</a>: Default for unsupported CSS2 list-style-type.<br /> 041117. Si no está instalada la fuente correspondiente en algunos estilos de lista pone ? en vez del punto. En este bug se proponía que saliera un punto o un número, pero parece que no van a hacer nada.</li>
       <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=915">Bug 915</a>: No admite alineación en las columnas.</li>
       <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1177108">Bug 1.177.108</a>: Add a keyboard shortcut to launch the eyedropper. El selector de color no tiene un atajo de teclado asociado.</li>
+      <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=159403">Bug 159.403</a>: text-indent and :first-letter don't work with a img before the first letter.</li>
     </ul>
   </section>
 
@@ -75,7 +75,7 @@
     <section id="bug-2212">
       <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=2212">Bug 2.212</a>: no admite align="char" en tablas</h3>
 
-      <p>El valor <span class="html-atri-valor">char</span> del atributo <span class="html-atri">align</span> de <span class="html-eti">&lt;tbody&gt;</span> debería permitir alinear los valores de una columna a un carácter. En el primer ejemplo, las comas deberían estar en la misma vertical. En el segundo ejemplo, las a deberían estar en la misma vertical. Ni Chrome ni Firefox ni Edge lo hacen.</p>
+      <p>El valor <span class="html-atri-valor">char</span> del atributo <span class="html-atri">align</span> de <span class="html-eti">&lt;tbody&gt;</span> debería permitir alinear los valores de una columna a un carácter. En el primer ejemplo, las comas deberían estar en la misma vertical. En el segundo ejemplo, las "a" deberían estar en la misma vertical. Ni Chrome ni Firefox ni Edge lo hacen.</p>
 
       <div class="filaflex">
         <div class="icono-navegadores">
@@ -87,24 +87,11 @@
           <pre><code class="language-html">&lt;tbody align="char" char="a"&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Esto es la leyenda</caption>
-            <tbody char="a" align="char">
-              <tr>
-                <td>100,3</td>
-                <td>abbbbbbbb</td>
-              </tr>
-              <tr>
-                <td>3,124</td>
-                <td>bbbbbab</td>
-              </tr>
-              <tr>
-                <td>2456,4567</td>
-                <td>bbbbbba</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-002212-1.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-002212-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
@@ -118,24 +105,11 @@
           <pre><code class="language-html">&lt;tbody align="char" char=","&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde">
-            <caption>Esto es la leyenda</caption>
-            <tbody char="," align="char">
-              <tr>
-                <td>100,3</td>
-                <td>abbbbbbbb</td>
-              </tr>
-              <tr>
-                <td>3,124</td>
-                <td>bbbbbab</td>
-              </tr>
-              <tr>
-                <td>2456,4567</td>
-                <td>bbbbbba</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-002212-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-002212-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
@@ -145,27 +119,18 @@
     <section id="bug-15499">
       <h3><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=15499">Bug 15.499</a>: cellpadding no admite valores en porcentajes</h3>
 
-      <p>En Chrome, Firefox y Edge si una tabla tiene cellpadding (o cellspacing) en porcentaje, lo muestra como píxeles</p>
+      <p>En Chrome, Firefox y Edge si una tabla tiene los atributos <span class="html-atri">cellpadding</span> (o <span class="html-atri">cellspacing</span>) en porcentaje, lo muestra como píxeles</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre><code class="language-html">&lt;table cellspacing="10"&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" cellspacing="10">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-015499-1.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-015499-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
@@ -174,20 +139,11 @@
           <pre><code class="language-html">&lt;table cellspacing="10%"&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" cellspacing="10">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-015499-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-015499-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
@@ -196,20 +152,11 @@
           <pre><code class="language-html">&lt;table cellpadding="10"&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" cellpadding="10">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-015499-3.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-015499-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
@@ -218,24 +165,15 @@
           <pre><code class="language-html">&lt;table cellpadding="10%"&gt;</code>
 </pre>
         </div>
-        <div class="resultado-html">
-          <table class="tabla-con-borde" cellpadding="10%">
-            <caption>Esto es la leyenda</caption>
-            <tbody>
-              <tr>
-                <td>Celda 1</td>
-                <td>Celda 2</td>
-              </tr>
-              <tr>
-                <td>Celda 3</td>
-                <td>Celda 4</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/bugs-firefox/bugs-firefox-015499-4.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/bugs-firefox/bugs-firefox-015499-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
-      <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=159403">bug 15.499</a> se abrió el 04/10/99 y no ha tenido prácticamente ninguna actividad.</p>
+      <p>El <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=15499">bug 15.499</a> se abrió el 04/10/99 y no ha tenido prácticamente ninguna actividad.</p>
     </section>
 
     <section id="bug-320451">
@@ -293,10 +231,10 @@ p {
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="../css/ejemplos/interface/interface-outline-2.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="../css/ejemplos/interface/outline-12.html" style="width:100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
-          <a href="../css/ejemplos/interface/interface-outline-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
+          <a href="../css/ejemplos/interface/outline-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36" /></a>
         </div>
       </div>
 
