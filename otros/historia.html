@@ -160,21 +160,22 @@
           <ellipse cx="600" cy="0" rx="50" ry="25" stroke="black" stroke-width="3" fill="none" />
           <line x1="650" y1="0" x2="688" y2="0" stroke-width="2" stroke="black" style="marker-end: url(#markerArrow-rec)" />
 
-          <text x="750" y="9" text-anchor="middle">O/R</text>
+          <text x="750" y="9" text-anchor="middle">O/R/S</text>
           <ellipse cx="750" cy="0" rx="50" ry="25" stroke="black" stroke-width="3" fill="none" />
         </svg>
       </p>
 
       <p>Los documentos van avanzando a lo largo de estas cuatro fases, aunque también pueden retroceder a fases anteriores. En las fases de borrador o candidata se suelen publicar varias versiones del documento. Los documentos que merecen ser difundidos pero que, por algún motivo, no consiguen alcanzar la fase de recomendación se suelen publicar como Notas del grupo de trabajo (Working Group Note).</p>
 
-      <p>En marzo de 2017 el W3C añadió dos posibles estados más, pensados para las recomendaciones que el W3C no quiere que se sigan utilizando, declarándolas obsoletas o rescindidas. La diferencia entre ambas categorías es que se declararán obsoletas las recomendaciones que simplementan ya no se recomiendan, mientras que se declararán rescindidas las recomendaciones que se desaconsejan (y a las que el W3C ya no ofrecerá asistencia legal como protección frente a patentes, etc).</p>
+      <p>En marzo de 2017 el W3C añadió tres posibles estados más, pensados para las recomendaciones que el W3C no quiere que se sigan utilizando, declarándolas obsoletas, anuladas o reempladas:</p>
 
       <ul>
-        <li>OR (Obsolete Recommendation): Recomendación obsoleta</li>
-        <li>RR (Rescinded Recommendation): Recomendación rescindida</li>
+        <li>OR (Obsolete Recommendation): Recomendación obsoleta, se utilizará cuando una recomendación no ha sido adoptada por la industria (una recomendación obsoleta podría dejar de serlo si se utilizara en el futuro).</li>
+        <li>RR (Rescinded Recommendation): Recomendación anulada, se utilizará cuando no haya problemas en ella que no pueden resovlerse (como existencia de patentes, etc.).</li>
+        <li>SR (Superseded recommendation): Recomendación reemplazada, se utilizará cuando haya otras recomendaciones más modernas que el W3C recomiende en su lugar.</li>
       </ul>
 
-      <p>Actualmente (septiembre de 2017) no se ha declarado todavía ninguna recomendación obsoleta ni rescindida, pero se espera en el futuro declarar obsoletas las recomendaciones del HTML anteriores a la última versión aprobada.</p>
+      <p>Se puede consultar el listado de <a href="https://www.w3.org/TR/?status=ret">recomendaciones retiradas</a>. En marzo de 2018 se declararon Reemplazadas (<i>Superseded</i>) las recomendaciones de versiones antiguas del HTML (hasta HTML 5)y XHTML.</p>
     </section>
   </section>
 
@@ -366,22 +367,22 @@
 
       <p>En noviembre de 1995 la IETF publicó la norma <a href="https://tools.ietf.org/html/rfc1866">RFC 1866</a>, escrita por Berners Lee y D. Connolly, que define la versión HTML 2.0 y el tipo MIME (Multipurpose Internet Mail Extension) text/html. Esta versión recapitulaba el estado del HTML de 1994 y recibió el nombre de HTML 2.0 para distinguirla de los HTML anteriores, que nunca recibieron nombre oficial. LA IETF dejó de trabajar en este campo en 1996, aunque en junio de 2000 publicó la norma <a href="https://tools.ietf.org/html/rfc2854">RFC 2854</a> que resumía y anulaba los RFC anteriores relativos al HTML.</p>
 
-      <p>El W3C publicó en enero de 1997 la recomendación <a href="https://www.w3.org/TR/REC-html32">HTML 3.2</a>, escrita por Dave Raggett. Esta versión incorporó muchas estructuras nuevas al HTML (tablas, imágenes flotantes, applets, hojas de estilo). En diciembre de 1997 se publicó la recomendación HTML 4.0, editada por Dave Raggett y otros, aunque la versión definitiva <a href="https://www.w3.org/TR/1998/REC-html40-19980424/">HTML 4.0</a>, editada por Dave Raggett y otros, se publicó en abril de 1998 corrigiendo erratas de la primera edición. Los cambios más importantes fueron la incorporación de los frames y la mayor relevancia de las hojas de estilo. En diciembre de 1999 se publicó la recomendación <a href="https://www.w3.org/TR/html401/">HTML 4.01</a>, editada por Dave Raggett y otros, que modificaba ligeramente la versión anterior.</p>
+      <p>El W3C publicó en enero de 1997 la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">HTML 3.2</a>, escrita por Dave Raggett. Esta versión incorporó muchas estructuras nuevas al HTML (tablas, imágenes flotantes, applets, hojas de estilo). En diciembre de 1997 se publicó la recomendación HTML 4.0, editada por Dave Raggett y otros, aunque la versión definitiva <a href="https://www.w3.org/TR/1998/REC-html40-19980424/">HTML 4.0</a>, editada por Dave Raggett y otros, se publicó en abril de 1998 corrigiendo erratas de la primera edición. Los cambios más importantes fueron la incorporación de los frames y la mayor relevancia de las hojas de estilo. En diciembre de 1999 se publicó la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html401-20180327/">HTML 4.01</a>, editada por Dave Raggett y otros, que modificaba ligeramente la versión anterior.</p>
 
       <p>En HTML 4.01 se definen tres tipos de documentos: Strict (estricto), Frameset (con marcos) y Transitional (de transición). El tipo Transitional intenta parecerse a las versiones anteriores de HTML, manteniendo el mayor número posible de etiquetas. El tipo Frameset es como el Transitional, salvo que incluye además la posibilidad de crear marcos (frames). El tipo Strict elimina las etiquetas directamente relacionadas con el aspecto visual (como <span class="html-eti">font</span>, <span class="html-eti">s</span> o <span class="html-eti">u</span>).</p>
 
       <p>Con estas recomendaciones, uno de los objetivos del W3C había sido profundizar la separación entre contenido y su presentación, es decir, eliminar del HTML las etiquetas que hicieran referencia directa al formato visual (y almacenar esta información en una hoja de estilo). Pero al mismo tiempo, el W3C tuvo que aumentar el número de etiquetas para dar respuesta a las demandas de los usuarios, cada vez más diferentes. Pero como estas demandas son inagotables, el W3C tomó un camino diferente: el XML. XML (eXtensible Markup Language = Lenguaje de Marcas Extensible) no es un nuevo lenguaje de marcas, sino las reglas para poder crear nuevos lenguajes de marcas compatibles entre sí. En febrero de 1998 se aprobó la recomendación XML 1.0, editada por Tim Bray y otros.</p>
 
-      <p>Lógicamente, el siguiente paso fue adaptar el HTML a las exigencias del XML. El resultado se publicó en enero de 2000: la recomendación <a href="https://www.w3.org/TR/2000/REC-xhtml1-20000126/">XHTML 1.0</a> (Extensible HyperText Markup Language = Lenguaje de Marcas de HiperTexto Extensible), editada por Steven Pemberton y otros, de la que en agosto de 2002 se publicó la <a href="https://www.w3.org/TR/2002/REC-xhtml1-20020801/">segunda edición</a>, editada por Steven Pemberton y otros. En realidad, XHTML 1.0 no es más que el HTML 4.01 adaptado a las reglas (más formalizadas) del XML 1.0.</p>
+      <p>Lógicamente, el siguiente paso fue adaptar el HTML a las exigencias del XML. El resultado se publicó en enero de 2000: la recomendación <a href="https://www.w3.org/TR/2018/SPSD-xhtml1-20180327/">XHTML 1.0</a> (Extensible HyperText Markup Language = Lenguaje de Marcas de HiperTexto Extensible), editada por Steven Pemberton y otros, de la que en agosto de 2002 se publicó la <a href="https://www.w3.org/TR/2018/SPSD-xhtml1-20180327/">segunda edición</a>, editada por Steven Pemberton y otros. En realidad, XHTML 1.0 no es más que el HTML 4.01 adaptado a las reglas (más formalizadas) del XML 1.0.</p>
 
-      <p>Paralelamente, para abordar el problema de la diversidad de aplicaciones, el W3C aprobó en abril de 2001 la recomendación <a href="https://www.w3.org/TR/2001/REC-xhtml-modularization-20010410/">Modularización del XHTML</a>, editada por Murray Altheim y otros. La idea es dividir el lenguaje en grupos de marcas relacionadas para poder limitar o ampliar el lenguaje, definiendo por ejemplo perfiles xhtml+mathml o xhtm+mathml+svg.</p>
+      <p>Paralelamente, para abordar el problema de la diversidad de aplicaciones, el W3C aprobó en abril de 2001 la recomendación <a href="https://www.w3.org/TR/2018/SPSD-xhtml-modularization-20180327/">Modularización del XHTML</a>, editada por Murray Altheim y otros. La idea es dividir el lenguaje en grupos de marcas relacionadas para poder limitar o ampliar el lenguaje, definiendo por ejemplo perfiles xhtml+mathml o xhtm+mathml+svg.</p>
 
-      <p>En el camino de la modularización se aprobó en mayo de 2001 la recomendación <a href="https://www.w3.org/TR/2001/REC-xhtml11-20010531/">XHTML 1.1</a>, editada por Murray Altheim y Shane McCarron, que apenas modifica el XHTML 1.0 Strict, pero que se estructura de forma modular. También se han aprobado varias recomendaciones que desarrollan módulos definidos en la recomendación de modularización:</p>
+      <p>En el camino de la modularización se aprobó en mayo de 2001 la recomendación <a href="https://www.w3.org/TR/2018/SPSD-xhtml11-20180327/">XHTML 1.1</a>, editada por Murray Altheim y Shane McCarron, que apenas modifica el XHTML 1.0 Strict, pero que se estructura de forma modular. También se han aprobado varias recomendaciones que desarrollan módulos definidos en la recomendación de modularización:</p>
       <ul>
-        <li>diciembre de 2000: <a href="https://www.w3.org/TR/2000/REC-xhtml-basic-20001219/">XHTML Basic</a>, editada por Mark Baker y otros, que definía un XHTML mínimo.</li>
+        <li>diciembre de 2000: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-basic-20180327/">XHTML Basic</a>, editada por Mark Baker y otros, que definía un XHTML mínimo.</li>
         <li>mayo de 2001: <a href="https://www.w3.org/TR/2001/REC-ruby-20010531/">Notación Ruby</a>, editada por Michel Suignard y otros, que permite utilizar un estilo de escritura utilizado en algunas lenguas asiáticas.</li>
-        <li>septiembre de 2006: <a href="https://www.w3.org/TR/2006/REC-xhtml-print-20060920/">XHTML Print</a>, editada por Melinda Grant y Jim Bigelow, destinada a impresoras de bajo coste y sin memoria.</li>
-        <li>julio de 2008: <a href="https://www.w3.org/TR/2008/REC-xhtml-basic-20080729/">XHTML Basic 1.1</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
+        <li>septiembre de 2006: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-print-20180327/">XHTML Print</a>, editada por Melinda Grant y Jim Bigelow, destinada a impresoras de bajo coste y sin memoria.</li>
+        <li>julio de 2008: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-basic-20180327/">XHTML Basic 1.1</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
         <li>octubre de 2008: <a href="https://www.w3.org/TR/2008/REC-xhtml-modularization-20081008/">Modularización del XHTML 1.1</a>, editada por Daniel Austin y otros.</li>
         <li>octubre de 2008: <a href="https://www.w3.org/TR/2008/REC-rdfa-syntax-20081014/">RDFa en XHTML: sintaxis y procesamiento</a>, editada por Ben Adida y otros.</li>
       </ul>
@@ -389,10 +390,10 @@
       <p>En 2010 se publicaron segundas ediciones de algunas recomendaciones:</p>
 
       <ul>
-        <li>julio de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-modularization-20100729/">Modularización del XHTML 1.1 (2ª edición)</a>, editada por Shane McCarron.</li>
-        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-basic-20101123/">XHTML Basic 1.1 (2ª edición)</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
-        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml-print-20101123/">XHTML Print (2ª edición)</a>, editada por Shane McCarron.</li>
-        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2010/REC-xhtml11-20101123/">XHTML 1.1 (2ª edición)</a>, editada por Murray Altheim y Shane McCarron.</li>
+        <li>julio de 2010: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-modularization-20180327/">Modularización del XHTML 1.1 (2ª edición)</a>, editada por Shane McCarron.</li>
+        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-basic-20180327/">XHTML Basic 1.1 (2ª edición)</a>, editada por Shane McCarron y Masayasu Ishikawa.</li>
+        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2018/SPSD-xhtml-print-20180327/">XHTML Print (2ª edición)</a>, editada por Shane McCarron.</li>
+        <li>noviembre de 2010: <a href="https://www.w3.org/TR/2018/SPSD-xhtml11-20180327/">XHTML 1.1 (2ª edición)</a>, editada por Murray Altheim y Shane McCarron.</li>
       </ul>
 
       <hr class="corta" />
@@ -419,9 +420,11 @@
 
       <p>El 1 de noviembre de 2016 se publicó la recomendación <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">HTML 5.1</a>. Esta versión no supuso un gran cambio respecto a HTML 5, pero introducía algunos elementos nuevos. El 3 de octubre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html51-20171003/">HTML 5.1 2º edición</a>, sin apenas cambios respecto a la primera edición.</p>
 
-      <p>En agosto de 2016 se publicó el primer borrador de HTML 5.2. El 14 de diciembre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html52-20171214/">HTML 5.2</a>, que introdujo algún elemento nuevo y eliminó algunos elementos introducidos en HTML 5.1.</p>
+      <p>El 14 de diciembre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html52-20171214/">HTML 5.2</a>, que introdujo algún elemento nuevo y eliminó algunos elementos introducidos en HTML 5.1.</p>
 
-      <p>Actualmente (diciembre de 2017):</p>
+      <p>En marzo de 2017declaró reemplazadas (<i>Superseeded</i>) todas las recomendaciones de HTMl y XHTML anteriores a HTML 5.1.</p>
+
+      <p>Actualmente (abril de 2018):</p>
       <ul>
         <li>el WHATWG prosigue su desarrollo continuo del HTML y está adoptando una <a href="https://blog.whatwg.org/working-mode-changes">estructura más formal</a>, lo que aleja la posibilidad de una unificación futura entre el WHATWG y el W3C.</li>
         <li>el W3C está desarrollando la próxima versión del HTML, <a href="https://www.w3.org/TR/html53/">HTML 5.3</a>, que se espera publicar en agosto de 2018 y cuyo primer borrador público se publicó en diciembre de 2017.</li>
@@ -845,11 +848,11 @@
 
         <p>Actualmente (septiembre de 2017), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> (prevista para agosto de 2018) y toda una serie de recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS (<a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>). Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
 
-        <p>Los proyectos de recomendaciones <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, y SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>), parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
+        <p>Los proyectos de recomendación <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, fueron retirados. Los proyectos de recomendación SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>) parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
 
         <p>Poco a poco SVG se está imponiendo como formato común para gráficos vectoriales. Muchos editores gráficos permiten exportar los dibujos en formato SVG o incluso trabajan con SVG como formato nativo, por ejemplo <a href="https://inkscape.org/es/">Inkscape</a>, un editor con licencia GPL, la suite ofimática LibreOffice trabaja con gráficos SVG y los entornos de escritorio de GNU/Linux GNOME y KDE utilizan el formato SVG como formato gráfico. También cabe destacar la colección de imágenes en formato SVG <a href="https://openclipart.org/">Open Clip Art Library</a>, con licencia Creative Commons (dominio público).</p>
 
-        <p>Se puede consultar el funcionamiento de SVG en Firefox, Internet Explorer y Chrome en la <a href="../html/html-svg.html">lección sobre SVG</a>.</p>
+        <p>Se puede consultar más información sobre SVG en la <a href="../html/html-svg.html">lección sobre SVG</a>.</p>
       </section>
 
       <section id="xforms">
@@ -1057,14 +1060,14 @@
         <p>El grupo de trabajo de <a href="https://www.w3.org/2002/mmi/Overview.html">Interacción Multimodal</a> ha publicado las siguientes recomendaciones:</p>
 
         <ul>
-          <li>septiembre 2009: <a href="https://www.w3.org/TR/2009/REC-emma-20090210/">EMMA:  Extensible MultiModal Annotation markup language</a>, editada por Paolo Baggia y otros</li>
-          <li>mayo 2014: <a href="https://www.w3.org/TR/2014/REC-emotionml-20140522/">Emotion Markup language (EmotionML) 1.0</a>, editada por Felix Burkhardt y Marc Schröder.</li>
+          <li>septiembre de 2009: <a href="https://www.w3.org/TR/2009/REC-emma-20090210/">EMMA:  Extensible MultiModal Annotation markup language</a>, editada por Paolo Baggia y otros</li>
+          <li>mayo de 2014: <a href="https://www.w3.org/TR/2014/REC-emotionml-20140522/">Emotion Markup language (EmotionML) 1.0</a>, editada por Felix Burkhardt y Marc Schröder.</li>
         </ul>
 
         <p>Además, el grupo ha publicado la nota</p>
 
         <ul>
-          <li><a href="https://www.w3.org/TR/2017/NOTE-emma20-20170202/">EMMA: Extensible MultiModal Annotation markup language 2.0</a>, editada por Michael Johnston.</li>
+          <li>febrero de 2017: <a href="https://www.w3.org/TR/2017/NOTE-emma20-20170202/">EMMA: Extensible MultiModal Annotation markup language 2.0</a>, editada por Michael Johnston.</li>
         </ul>
 
         <p>El grupo de trabajo <a href="https://www.w3.org/2008/WebVideo/Fragments/">Fragmentos de medios</a> ha publicado la siguiente recomendación:</p>
@@ -1255,7 +1258,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 10 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
