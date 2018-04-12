@@ -37,7 +37,7 @@
             <li><a href="#svg-atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
           </ul>
         </li>
-        <li><a href="#reutilizar-inkscape">Reutilizar Inkscape</a></li>
+        <li><a href="#reutilizar-inkscape">Simplificar imágenes</a></li>
       </ul>
     </div>
   </nav>
@@ -75,7 +75,7 @@
           <li><a href="https://inkscape.org/en/">Inkscape</a>, editor de gráficos vectoriales libre.</li>
           <li><a href="https://openclipart.org/">Open Clip Art</a>: Repositorio de imágenes SVG libres</li>
           <li><a href="https://github.com/SVG-Edit/svgedit">Editor svg-edit</a> que funciona en el navegador. Página de <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html">demostración de svg-edit</a></li>
-          <li>Por probar: SVGCleaner <a href="https://sourceforge.net/projects/svgcleaner/">https://sourceforge.net/projects/svgcleaner/</a></li>
+          <li><a href="https://github.com/RazrFalcon/svgcleaner-gui">SVGCleaner</a>, que simplifica el código fuente de imágenes SVG</li>
         </ul>
       </li>
       <li>Documentación
@@ -146,9 +146,15 @@
     <section id="svg-atributos-version-xmlns">
       <h3>Los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
 
-      <p>El atributo <span class="html-atri">version</span> indica la versión de SVG empleada en el dibujo. En estos apuntes se utiliza la versión <span class="html-atri-valor">1.1</span>.</p>
+      <p>El atributo <span class="html-atri">version</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica la versión de SVG empleada en el dibujo. En estos apuntes se utiliza la versión <span class="html-atri-valor">1.1</span>.</p>
 
-      <p>El atributo <span class="html-atri">xmlns</span> indica el espacio de nombres empleada en el dibujo, es siempre <span class="html-atri-valor">https://www.w3.org/2000/svg</span>.</p>
+      <p>El atributo <span class="html-atri">xmlns</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica el espacio de nombres empleado en el dibujo, es siempre <span class="html-atri-valor">https://www.w3.org/2000/svg</span>.</p>
+
+      <p>Así, las imágenes SVG suelen empezar como el ejemplo siguiente:</p>
+
+      <div class="codigo">
+        <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" ...</code></pre>
+      </div>
     </section>
 
     <section id="svg-atributos-viewBox">
@@ -333,35 +339,55 @@
           </div>
         </li>
       </ul>
+
+      <hr class="corta" />
+
+      <p>Si no hay atributo <span class="html-atri">viewBox</span>, la zona visible empieza en el origen (0, 0) y el tamaño definido por <span class="html-atri">width</span> y <span class="html-atri">height</span> es el tamaño de la zona visible.</p>
+
+      <div class="filaflex">
+        <div class="resultado-html nogrow">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
+            <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
+          </svg>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
     </section>
   </section>
 
   <section id="reutilizar-inkscape">
     <h2>Simplificar una imagen hecha con Inkscape</h2>
 
-    <p>Las imágenes SVG se pueden crear escribiendo las etiquetas directamente en un procesador de textos (como Brackets), pero también se pueden utilizar editores gráficos como Inkscape o descargar de repositorios como <a href="https://openclipart.org/">Open Clip Art</a>. El problema es que Inkscape genera más código del necesario, por lo que a veces puede resultar conveniente simplificar ese código.</p>
+    <p>Las imágenes SVG se pueden crear escribiendo las etiquetas directamente en un procesador de textos (como Visual Studio Code), pero también se pueden utilizar editores gráficos como Inkscape o descargar de repositorios como <a href="https://openclipart.org/">Open Clip Art</a>. El inconveniente de utilizar imágenes creadas con Inkscape es que Inkscape genera más código del necesario, por lo que a menudo conviene simplificar ese código.</p>
 
-    <p>Si se crea con Inkscape la imagen de la estrella de los ejemplos anteriores y se guarda la imagen como SVG plano, se obtendría un código fuente similar a este:</p>
+    <p>Como ejemplo, si creamos con Inkscape la imagen de la estrella de los ejemplos anteriores y la guardamos como SVG plano, obtendríamos un código fuente similar a este:</p>
 
     <div class="codigo">
       <pre>
-<code class="language-html">&lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
-&lt;!-- Created with Inkscape (https://inkscape.org/es/) --&gt;
-
+<code class="language-html">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 &lt;svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="https://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
    version="1.1"
-   width="100"
-   height="100"
-   id="svg2"&gt;
+   viewBox="0 0 47.098932 43.986142"
+   height="166.24683"
+   width="178.0117"&gt;
   &lt;defs
-     id="defs4" /&gt;
+     id="defs2" /&gt;
   &lt;metadata
-     id="metadata7"&gt;
+     id="metadata5"&gt;
     &lt;rdf:RDF&gt;
       &lt;cc:Work
          rdf:about=""&gt;
@@ -373,130 +399,161 @@
     &lt;/rdf:RDF&gt;
   &lt;/metadata&gt;
   &lt;g
-     transform="translate(-100.10292,-228.90234)"
+     transform="translate(-29.104793,-97.353467)"
      id="layer1"&gt;
-    &lt;polygon
-       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
-       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
-       id="polygon4069"
-       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+    &lt;path
+       transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
+       id="use3717"
+       d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
+       style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
   &lt;/g&gt;
 &lt;/svg&gt;</code>
 </pre>
     </div>
 
-    <p>Para insertarla en un documento html 5 es necesario eliminar parte de este código:</p>
+    <hr class="corta" />
 
-    <div class="codigo">
-      <pre>
-<code class="language-html"><del>&lt;?xml version="1.0" encoding="utf-8" standalone="no"?&gt;
-&lt;!-- Created with Inkscape (https://inkscape.org/es/) --&gt;</del>
+    <p>Para simplificar una imagen SVG podemos:</p>
 
+    <ul>
+      <li>utilizar la aplicación web <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> (el tamaño y calidad del resultado depende de las opciones elegidas).
+
+        <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGOMG produciría el siguiente resultado:</p>
+
+        <div class="filaflex">
+          <div class="resultado-html nogrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="178" height="166.2" viewBox="0 0 47.1 44">
+              <path fill="#ff0" stroke="red" stroke-width="2.9" d="M86.2 89.1l-19 14.3 7.6 22.5-19.4-13.6-19 14.2 6.9-22.7L23.9 90l23.7-.3 7.1-22.8 7.7 22.5z" transform="matrix(.18778 .59795 -.61066 .18387 74 -27.1)" />
+            </svg>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" width="178" height="166.2" viewBox="0 0 47.1 44"&gt;
+  &lt;path fill="#ff0" stroke="red" stroke-width="2.9"
+    d="M86.2 89.1l-19 14.3 7.6 22.5-19.4-13.6-19 14.2 6.9-22.7L23.9 90l23.7-.3 7.1-22.8 7.7 22.5z"
+    transform="matrix(.18778 .59795 -.61066 .18387 74 -27.1)"/&gt;
+&lt;/svg&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>utilizar la aplicación de escritorio <a href="https://github.com/RazrFalcon/svgcleaner-gui">SVGCleaner</a> (disponible para Windows, Linux y Mac):
+
+        <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGCleaner produciría el siguiente resultado:</p>
+
+        <div class="filaflex">
+          <div class="resultado-html nogrow">
+            <svg height="166.2" viewBox="0 0 47.1 44" width="178" xmlns="http://www.w3.org/2000/svg">
+              <path d="m86.2 89.1-19 14.3 7.6 22.5-19.4-13.6-19.1 14.2 7-22.7-19.4-13.8 23.7-.3 7.1-22.8 7.7 22.5z" fill="#ff0" stroke="#f00" stroke-width="2.9" transform="matrix(.2 .6 -.6 .2 74.1 -27.2)" />
+            </svg>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;svg height="166.2" viewBox="0 0 47.1 44" width="178" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="m86.2 89.1-19 14.3 7.6 22.5-19.4-13.6-19.1 14.2 7-22.7-19.4-13.8 23.7-.3 7.1-22.8 7.7 22.5z"
+    fill="#ff0" stroke="#f00" stroke-width="2.9" transform="matrix(.2 .6 -.6 .2 74.1 -27.2)"/&gt;
+&lt;/svg&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>hacerlo a mano con un editor de texto plano. Se pueden conseguir ficheros más pequeños que con SVGOMG o SVGCleaner, pero invirtiendo mucho más tiempo.
+
+        <p>Para insertarla en un documento html 5 es necesario eliminar parte de este código:</p>
+
+        <div class="codigo">
+          <pre>
+<code class="language-html"><del>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</del>
 &lt;svg
-   <del>xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="https://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   version="1.1"</del>
-   width="100"
-   height="100"
-   id="svg2"&gt;
+    <del>xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:svg="http://www.w3.org/2000/svg"</del>
+    xmlns="http://www.w3.org/2000/svg"
+    id="svg8"
+    version="1.1"
+    viewBox="0 0 47.098932 43.986142"
+    height="166.24683"
+    width="178.0117"&gt;
   <del>&lt;defs
-     id="defs4" /&gt;
+      id="defs2" /&gt;
   &lt;metadata
-     id="metadata7"&gt;
+      id="metadata5"&gt;
     &lt;rdf:RDF&gt;
       &lt;cc:Work
-         rdf:about=""&gt;
+          rdf:about=""&gt;
         &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
         &lt;dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
         &lt;dc:title&gt;&lt;/dc:title&gt;
       &lt;/cc:Work&gt;
     &lt;/rdf:RDF&gt;
   &lt;/metadata&gt;</del>
   &lt;g
-     transform="translate(-100.10292,-228.90234)"
-     id="layer1"&gt;
-    &lt;polygon
-       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
-       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
-       id="polygon4069"
-       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+      transform="translate(-29.104793,-97.353467)"
+      id="layer1"&gt;
+    &lt;path
+        transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
+        id="use3717"
+        d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
+        style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
   &lt;/g&gt;
 &lt;/svg&gt;</code>
 </pre>
-    </div>
+        </div>
 
-    <p>Por lo que la imagen quedaría:</p>
+        <p>Por lo que la imagen podría quedar así:</p>
 
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;svg
-   width="100"
-   height="100"
-   id="svg2"&gt;
+        <div class="filaflex">
+          <div class="resultado-html nogrow">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 47.098932 43.986142" height="166.24683" width="178.0117">
+              <g transform="translate(-29.104793,-97.353467)" id="layer1">
+                <path transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)" id="use3717" d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z" style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" />
+              </g>
+            </svg>
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+  viewBox="0 0 47.098932 43.986142" height="166.24683" width="178.0117"&gt;
   &lt;g
-     transform="translate(-100.10292,-228.90234)"
-     id="layer1"&gt;
-    &lt;polygon
-       points="124,145 80,114 36,145 52,93 10,61 63,61 80,10 97,60 151,61 108,93 "
-       transform="matrix(0.60688557,0,0,0.60646101,101.24863,231.90161)"
-       id="polygon4069"
-       style="fill:#ffff33;stroke:#ff0000;stroke-width:7.30069113" /&gt;
+    transform="translate(-29.104793,-97.353467)"
+    id="layer1"&gt;
+    &lt;path
+      transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
+      id="use3717"
+      d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
+      style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
   &lt;/g&gt;
 &lt;/svg&gt;</code>
 </pre>
-    </div>
+          </div>
+        </div>
 
-    <p>Ese código se puede simplificar todavía más, hasta obtener el código que se ha utilizado en esta lección:</p>
+        <p>Ese código se puede simplificar todavía más, hasta obtener el código que se ha utilizado en esta lección:</p>
 
-    <div class="filaflex">
-      <div class="resultado-html nogrow">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
-          <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" />
-        </svg>
-      </div>
-      <div class="codigo">
-        <pre>
+        <div class="filaflex">
+          <div class="resultado-html nogrow">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
+              <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" />
+            </svg>
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-     width="170" height="165" viewBox="0 0 170 165"&gt;
+      width="170" height="165" viewBox="0 0 170 165"&gt;
   &lt;polygon fill="yellow" stroke="red" stroke-width="7"
     points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p>Para simplificar imágenes SVG se puede utilizar la página <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> (el tamaño y calidad del resultado depende de las opciones elegidas).</p>
-
-    <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGOMG produciría el siguiente resultado:</p>
-
-
-    <div class="filaflex">
-      <div class="resultado-html nogrow">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
-          <path fill="#ff3" stroke="red" stroke-width="7.3" d="M124 145l-44-31-44 31 16-52-42-32h53l17-51 17 50 54 1-43 32z" transform="matrix(.6069 0 0 .60646 1.146 3)" />
-        </svg>
-      </div>
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg"
-     width="100" height="100"&gt;
-  &lt;path fill="#ff3" stroke="red" stroke-width="7.3"
-    d="M124 145l-44-31-44 31 16-52-42-32h53l17-51 17 50 54 1-43 32z"
-    transform="matrix(.6069 0 0 .60646 1.146 3)"/&gt;
-&lt;/svg&gt;</code>
-</pre>
-      </div>
-    </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de septiembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 12 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
