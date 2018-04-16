@@ -27,14 +27,15 @@
       <h2>SVG</h2>
 
       <ul>
-        <li><a href="#svg-introduccion">Introducción</a></li>
-        <li><a href="#svg-svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a></li>
-        <li><a href="#svg-plano">Plano SVG</a></li>
-        <li><a href="#svg-atributos">Atributos de <span class="html-eti">&lt;svg&gt;</span></a>
+        <li><a href="#introduccion">Introducción</a></li>
+        <li><a href="#imagenes">Imágenes SVG</a></li>
+        <li><a href="#svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a></li>
+        <li><a href="#plano">Plano SVG</a></li>
+        <li><a href="#atributos">Atributos de <span class="html-eti">&lt;svg&gt;</span></a>
           <ul>
-            <li><a href="#svg-atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
-            <li><a href="#svg-atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
-            <li><a href="#svg-atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
+            <li><a href="#atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
+            <li><a href="#atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
+            <li><a href="#atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
           </ul>
         </li>
         <li><a href="#reutilizar-inkscape">Simplificar imágenes</a></li>
@@ -44,7 +45,7 @@
 
   <p>En esta lección se trata la etiqueta principal de SVG, la etiqueta <span class="html-eti">&lt;svg&gt;</span>. Las formas básicas SVG (líneas, rectángulos, círculos, cuvas, etc.) se comentan en la lección <a href="svg-formas-1.html">Formas básicas SVG</a>. Algunas formas más avanzadas se comentan en la lección <a href="svg-formas-2.html">Formas avanzadas SVG</a>.</p>
 
-  <section id="svg-introduccion">
+  <section id="introduccion">
     <h2>Qué es SVG</h2>
 
     <p>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables) es un lenguaje de marcas creado por el W3C y dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
@@ -73,9 +74,14 @@
       <li>Software
         <ul>
           <li><a href="https://inkscape.org/en/">Inkscape</a>, editor de gráficos vectoriales libre.</li>
-          <li><a href="https://openclipart.org/">Open Clip Art</a>: Repositorio de imágenes SVG libres</li>
           <li><a href="https://github.com/SVG-Edit/svgedit">Editor svg-edit</a> que funciona en el navegador. Página de <a href="https://svg-edit.github.io/svgedit/releases/svg-edit-2.8.1/svg-editor.html">demostración de svg-edit</a></li>
           <li><a href="https://github.com/RazrFalcon/svgcleaner-gui">SVGCleaner</a>, que simplifica el código fuente de imágenes SVG</li>
+        </ul>
+      </li>
+      <li>: Repositorio de imágenes SVG libres
+        <ul>
+          <li><a href="https://openclipart.org/">Open Clip Art</a></li>
+          <li><a href="https://publicdomainvectors.org/es/">publicdomainvectors.org</a></li>
         </ul>
       </li>
       <li>Documentación
@@ -90,33 +96,71 @@
     </ul>
   </section>
 
-  <section id="svg-svg">
-    <h2>La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+  <section id="imagenes">
+    <h2>Imágenes SVG</h2>
 
-    <p>La etiqueta <span class="html-eti">&lt;svg&gt;</span> engloba la imagen SVG e incluye las formas que forman la imagen.</p>
+    <p>Una imagen SVG puede incluirse en una página web directamente o puede enlazarse mediante la etiqueta <span class="html-eti">&lt;img /&gt;</span>, como se comenta en la lección <a href="html-imagenes.html#img-img">Imágenes</a>.</p>
 
-    <p>Una imagen SVG puede incluirse en una página web directamente o mediante la etiqueta <span class="html-eti">&lt;img /&gt;</span>, como se comenta en la lección <a href="html-imagenes.html">Imágenes</a>.</p>
+    <p>El ejemplo siguiente muestra una imagen SVG incluida en una página web (concretamente, en un párrafo <span class="html-eti">&lt;p&gt;</span>):</p>
 
     <div class="filaflex">
       <div class="resultado-html nogrow">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
-          <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
-        </svg>
+        <p>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
+            <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98 " />
+          </svg>
+        </p>
       </div>
       <div class="codigo">
         <pre>
-<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-     width="170" height="165" viewBox="0 0 170 165"&gt;
+<code class="language-html">&lt;p&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="170" height="165" viewBox="0 0 170 165"&gt;
+    &lt;polygon fill="yellow" stroke="red" stroke-width="7"
+      points="129,150 85,119 41,150 57,104 15,66
+        68,66 85,15 102,65 156,66 113,98" /&gt;
+  &lt;/svg&gt;
+&lt;/p&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>El ejemplo siguiente muestra una imagen SVG enlazada desde una página web (mediante la etiqueta <span class="html-eti">&lt;img /&gt;</span> y el contenido del fichero enlazado (estrella.svg):</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <p><img src="../img/svg/estrella.svg" alt="Estrella SVG" /></p>
+      </div>
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;&lt;img src="../img/svg/estrella.svg" alt="Estrella SVG" /&gt;&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="170" height="165" viewBox="0 0 170 165"&gt;
   &lt;polygon fill="yellow" stroke="red" stroke-width="7"
     points="129,150 85,119 41,150 57,104 15,66
       68,66 85,15 102,65 156,66 113,98" /&gt;
 &lt;/svg&gt;</code>
-</pre>
+  </pre>
+        </div>
       </div>
     </div>
+
+    <p>La declaración xml (la primera línea del fichero estrella.svg del ejemplo anterior) es optativa si la versión de XML es 1.0 y obligatoria si la versión de XML es 1.1. En cualquier caso, se aconseja incluirla y aprovecharla para declarar el juego de caracteres del documento (como en el ejemplo, UTF-8).</p>
   </section>
 
-  <section id="svg-plano">
+  <section id="svg">
+    <h2>La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+
+    <p>La etiqueta <span class="html-eti">&lt;svg&gt;</span> engloba toda la imagen SVG e incluye las formas que forman la imagen.</p>
+  </section>
+
+  <section id="plano">
     <h2>El plano SVG</h2>
 
     <p>Los dibujos SVG se definen en un plano infinito en el que el eje Y está orientado hacia abajo, como muestra el dibujo siguiente en el que se muestran los ejes de coordenadas, cuatro puntos en rojo y sus coordenadas.</p>
@@ -140,24 +184,26 @@
     </svg>
   </section>
 
-  <section id="svg-atributos">
-    <h2>Atributos de <span class="html-eti">&lt;svg&gt;</span></h2>
+  <section id="atributos">
+    <h2>Los atributos de la etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
 
-    <section id="svg-atributos-version-xmlns">
-      <h3>Los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
+    <section id="atributos-version-xmlns">
+      <h3>Los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span></h3>
 
-      <p>El atributo <span class="html-atri">version</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica la versión de SVG empleada en el dibujo. En estos apuntes se utiliza la versión <span class="html-atri-valor">1.1</span>.</p>
+      <p>El atributo <span class="html-atri">version</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica la versión de SVG empleada en el dibujo. En estos apuntes se utiliza la versión <span class="html-atri-valor">1.1</span>. Este atributo no es obligatorio, pero está recomendado para ayudar a los navegadores (aunque en la práctica parece ser que los navegadores no tienen en cuenta este atributo).</p>
 
-      <p>El atributo <span class="html-atri">xmlns</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica el espacio de nombres empleado en el dibujo, es siempre <span class="html-atri-valor">https://www.w3.org/2000/svg</span>.</p>
+      <p>El atributo <span class="html-atri">xmlns</span> de la etiqueta <span class="html-eti">&lt;svg&gt;</span> indica el espacio de nombres empleado en el dibujo, es siempre <span class="html-atri-valor">https://www.w3.org/2000/svg</span>. Este atributo es obligatorio cuando la imagen SVG se encuentra en un fichero aparte (con la extensión .svg), pero este atributo es optativo cuando la imagen SVG está incluida en una página web.</p>
 
-      <p>Así, las imágenes SVG suelen empezar como el ejemplo siguiente:</p>
+      <p>Aunque no sea necesario, en estos apuntes se aconseja incluir siempre los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span> como en el ejemplo siguiente:</p>
 
       <div class="codigo">
         <pre><code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" ...</code></pre>
       </div>
+
+      <p>Referencias: <a href="https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed">Pregunta en stackoverflow sobre la obligatoriedad de los atributos version y xmlns</a></p>
     </section>
 
-    <section id="svg-atributos-viewBox">
+    <section id="atributos-viewBox">
       <h3>El atributo <span class="html-atri">viewBox</span></h3>
 
       <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que muestra la imagen. Este atributo se establece con cuatro valores:</p>
@@ -172,6 +218,11 @@
       <p>El ejemplo siguiente muestra con una línea roja a trazos la porción del plano SVG que se mostraría con unos valores determinados en el atributo <span class="html-atri">viewbox</span>.</p>
 
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
+        <defs>
+          <marker id="markerArrow" markerWidth="48" markerHeight="48" refX="0" refY="6" orient="auto">
+            <path d="M0,4 L0,8 L6,6" style="fill: red;" />
+          </marker>
+        </defs>
         <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
         <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
         <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
@@ -181,21 +232,22 @@
 
         <text x="-168" y="-170" font-family="sans-serif" font-size="20" fill="black">viewBox="-100 -50 200 150"</text>
 
-        <polygon points="-100,-50 100,-50 100,100, -100,100" fill="none" stroke-width="1" stroke="red" stroke-dasharray="5,5" />
+        <circle cx="-100" cy="-50" r="3" fill="red" />
+        <polygon points="-100,-50 100,-50 100,100, -100,100" fill="none" stroke-width="2" stroke="red" stroke-dasharray="5,5" />
         <text x="-105" y="-55" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, -50)</text>
         <text x="105" y="120" font-family="sans-serif" font-size="18" fill="black">(100, 100)</text>
 
         <path fill="none" stroke="red" stroke-width="2" d="M -80,-165 A 50 30, 0, 0, 0, 0,-165" />
-        <line x1="-50" y1="-155" x2="-95" y2="-60" stroke-width="1" stroke="red" />
-        <polyline points="-97,-67 -95,-60 -88,-64" fill="none" stroke-width="1" stroke="red" />
+        <line x1="-40" y1="-153" x2="-91" y2="-66" stroke-width="2" stroke="red" style="marker-end: url(#markerArrow)" />
 
         <path fill="none" stroke="red" stroke-width="2" d="M 5,-165 A 50 90, 0, 0, 0, 40,-165" />
-        <line x1="20" y1="-160" x2="0" y2="-55" stroke-width="1" stroke="red" />
-        <polyline points="-4,-65 0,-55 7,-63" fill="none" stroke-width="1" stroke="red" />
+        <line x1="23" y1="-160" x2="10" y2="-75" stroke-width="2" stroke="red" />
+        <path fill="none" stroke="red" stroke-width="2" d="M -100,-50 A 100 30, 0, 0, 1, 87,-58" style="marker-end: url(#markerArrow)" />
 
         <path fill="none" stroke="red" stroke-width="2" d="M 45,-165 A 50 90, 0, 0, 0, 80,-165" />
-        <line x1="62" y1="-160" x2="94" y2="20" stroke-width="1" stroke="red" />
-        <polyline points="88,12 95,20 98,10" fill="none" stroke-width="1" stroke="red" />
+        <path fill="none" stroke="red" stroke-width="2" d="M 97,-47 A 80 100, 0, 0, 0, 90,85" style="marker-end: url(#markerArrow)" />
+        <line x1="62" y1="-160" x2="78" y2="-10" stroke-width="2" stroke="red" />
+        <circle cx="100" cy="100" r="3" fill="red" />
       </svg>
 
       <p>La zona visible es independiente de los elementos dibujados, es decir, sólo se mostrarán los elementos (o la parte de los elementos) que se encuentren en la zona visible definida por el atributo <span class="html-atri">viewbox</span>.</p>
@@ -277,10 +329,10 @@
       </ul>
     </section>
 
-    <section id="svg-atributos-width-height">
+    <section id="atributos-width-height">
       <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
 
-      <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen , mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web.</p>
+      <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen, mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web.</p>
 
       <p>Así, una misma imagen en el plano SVG se puede ver en la página web más o menos grande, como muestran los ejemplos siguientes:</p>
       <ul>
@@ -553,7 +605,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de abril de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 16 de abril de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />
