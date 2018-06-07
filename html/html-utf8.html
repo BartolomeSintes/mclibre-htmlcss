@@ -132,7 +132,7 @@
 
     <p>Para realizar su trabajo más rápido, los ordenadores no trabajan con cifras individuales (<i>bits</i>), sino con varias cifras a la vez. La agrupación más utilizada es el <i>byte</i>, que es la agrupación de 8 bits. Un byte puede representar por tanto 256 valores distintos (2<sup>8</sup>, del 00000000 al 11111111, es decir, del 0 al 255).</p>
 
-    <p>A medida que ha avanzado la informática, los ordenadores han ido trabajando con grupos de bits cada vez más grandes. En 1981, el primer PC tenía un procesador que trabajaba con grupos de 8 bits (1 byte). En 1984 los PCs empezaron a utilizar procesadores de 16 bits (2 bytes). En 1985 los PCs empezaron a utilizar procesadores de 32 bits (4 bytes). En 2003 los PCs empezaron a utilizar procesadores de 64 bits (8 bytes). Actualmente (noviembre de 2017) no existen PCs con procesadores de 128 bits (16 bytes), pero algunos componentes de los PCs ya trabajan con grupos de 256 o incluso 512 bits.</p>
+    <p>A medida que ha avanzado la informática, los ordenadores han ido trabajando con grupos de bits cada vez más grandes. En 1981, el primer PC tenía un procesador que trabajaba con grupos de 8 bits (1 byte). En 1984 los PCs empezaron a utilizar procesadores de 16 bits (2 bytes). En 1985 los PCs empezaron a utilizar procesadores de 32 bits (4 bytes). En 2003 los PCs empezaron a utilizar procesadores de 64 bits (8 bytes). Actualmente (junio de 2018) no existen PCs con procesadores de 128 bits (16 bytes), pero algunos componentes de los PCs ya trabajan con grupos de 256 o incluso 512 bits.</p>
 
     <p>El byte se utiliza en Informática como unidad de medida en el almcenamiento de información (capacidad de los discos duros o memorias). Como las capacidades son tan grandes, se expresan en múltiplos: Kilobyte, Megabyte, Gigabyte, Terabyte, etc. Hay que tener en cuenta que, en este contexto, Kilo no significa mil (1000), sino 1024, ya que 1024 es una potencia de dos (2<sup>10</sup>= 1024), Mega no significa millón sino 1.048.576 (1024 x 1024), etc.</p>
   </section>
@@ -301,10 +301,12 @@
         <text x="894" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">9.0</text>
         <circle cx="925" cy="0" r="5" fill="#990000" />
         <text x="925" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">10.0</text>
+        <circle cx="953" cy="0" r="5" fill="#990000" />
+        <text x="953" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">11.0</text>
       </svg>
     </p>
 
-    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y actualmente (noviembre de 2017) la última versión publicada, <a href="http://blog.unicode.org/2017/06/announcing-unicode-standard-version-100.html">Unicode 10.0</a>, contiene más de 135.000 caracteres. Los dos bytes de la propuesta inicial se quedaron cortos y la norma actual utiliza cuatro byes para codificar los caracteres.</p>
+    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y actualmente (junio de 2018) la última versión publicada, <a href="http://blog.unicode.org/2018/06/announcing-unicode-standard-version-110.html">Unicode 11.0</a>, contiene más de 135.000 caracteres. Los dos bytes de la propuesta inicial se quedaron cortos y la norma actual utiliza cuatro byes para codificar los caracteres.</p>
 
     <p>El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede decir que existen tres opciones:</p>
 
@@ -411,13 +413,13 @@
       <li><span class="incompleto">falta hacer referencia a las fuentes usadas en otros sistemas operativos</span></li>
     </ul>
 
-    <p>Actualmente (noviembre de 2017) existe algunos proyectos de creación de tipos de letra libres que incluyan todos los caracteres Unicode:</p>
+    <p>Actualmente (junio de 2018) existe algunos proyectos de creación de tipos de letra libres que incluyan todos los caracteres Unicode:</p>
     <ul>
       <li><a href="http://users.teilar.gr/~g1951d/">Symbola</a>, una fuente de dominio público que contiene casi todos los pictogramas Unicode, con un diseño sencillo y realista</li>
       <li><a href="https://www.google.com/get/noto/">Noto</a>, un proyecto de Google.</li>
       <li><a href="https://github.com/twitter/twemoji">Twemoji</a>, un proyecto creado por Twitter en 2014.</li>
       <li><a href="https://www.emojione.com/">EmojiOne</a>, un proyecto creado en 2014 que se centra principalmente en los carateres emoji, aunque incluye muchos otros símbolos, con un diseño bastante trabajado y a todo color. Por desgracia en abril de 2017 el proyecto se convirtió en un proyecto comercial.</li>
-      <li><a href="https://github.com/EmojiTwo/emojitwo">EmojiTwo</a>, un <i>fork</i> de EmojiOne creado tra el cambio de licencia de EmojiOne, pero que no ha avanzado mucho por el momento.</li>
+      <li><a href="https://github.com/EmojiTwo/emojitwo">EmojiTwo</a>, un <i>fork</i> de EmojiOne creado tras el cambio de licencia de EmojiOne, pero que no ha avanzado mucho por el momento.</li>
     </ul>
 
     <p>Estas fuentes se pueden emplear en una página web utilizando el mecanismo de las fuentes web, que se comenta en la <a href="../css/css-fuentes-web.html">lección CSS: Fuentes web</a></p>
@@ -428,51 +430,53 @@
 
     <p>Unicode no solamente contiene caracteres para todas las lenguas del mundo, sino que también incluye una gran cantidad de pictogramas. Un gran parte de ellos son símbolos gráficos e iconos de amplia difusión que ya estaban incluidos en juegos de caracteres anteriores, pero a partir de 2010 se están incorporando también imágenes más sofisticadas, como los <a href="https://es.wikipedia.org/wiki/Emoticono">emoticonos</a> o los <a href="https://es.wikipedia.org/wiki/Emoji"><i>emojis</i></a>, creados en Japón a finales de los 90 para los dispositivos móviles.</p>
 
-    <p>La última versión de Unicode (Unicode 10.0, publicada en junio de 2017) contiene en total casi 1500 símbolos gráficos, clasificados en varios grupos:</p>
+    <p>La última versión de Unicode (actualmente, Unicode 11.0, publicada en junio de 2018) contiene en total más de 1500 símbolos gráficos, clasificados en varios grupos:</p>
 
     <p>Unicode sigue aceptando nuevos símbolos gráficos (véase <a href="http://www.unicode.org/alloc/Pipeline.html">Unicode roadmap</a>) que se irán incluyendo en las próximas versiones.</p>
 
-    <p>Como hay tantos símbolos gráficos, los he divido en dos páginas:</p>
-
-    <p>En la página <a href="html-unicode-simbolos.html">Símbolos gráficos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos</p>
+    <p>Como hay tantos símbolos gráficos, los he divido en tres páginas:</p>
 
     <ul>
-      <li><a href="unicode/U00000-c0-controls-and-basic-latin.pdf">PDF</a> - Controles y Latín básico</li>
-      <li><a href="unicode/U00080-c1-controls-and-latin-1-supplement.pdf">PDF</a> - Controles y Latín 1 (suplemento)</li>
-      <li><a href="unicode/U02000-general-punctuation.pdf">PDF</a> - Puntuación</li>
-      <li><a href="unicode/U020A0-currency-symbols.pdf">PDF</a> - Símbolos de monedas</li>
-      <li><a href="unicode/U02100-letterlike-symbols.pdf">PDF</a> - Símbolos con letras</li>
-      <li><a href="unicode/U02190-arrows.pdf">PDF</a> - Flechas</li>
-      <li><a href="unicode/U02300-miscellaneous-technical.pdf">PDF</a> - Símbolos técnicos misceláneos</li>
-      <li><a href="unicode/U02460-enclosed-alphanumerics.pdf">PDF</a> - Símbolos alfanuméricos con círculo alrededor</li>
-      <li><a href="unicode/U02500-box-drawing.pdf">PDF</a> - Cajas</li>
-      <li><a href="unicode/U025A0-geometric-shapes.pdf">PDF</a> - Formas geométricas</li>
-      <li><a href="unicode/U02600-miscellaneous-symbols.pdf">PDF</a> - Símbolos misceláneos</li>
-      <li><a href="unicode/U02700-dingbats.pdf">PDF</a> - Dingbats</li>
-      <li><a href="unicode/U02900-supplemental-arrows-b.pdf">PDF</a> - Flechas suplementarias B</li>
-      <li><a href="unicode/U02B00-miscellaneous-symbols-and-arrows.pdf">PDF</a> - Símbolos y flechas misceláneos</li>
-      <li><a href="unicode/U03000-cjk-symbols-and-punctuation.pdf">PDF</a> - Símbolos y puntuación CJK</li>
-      <li><a href="unicode/U03200-enclosed-cjk-letters-amd-months.pdf">PDF</a> - Símbolos CJK con círculo alrededor</li>
-      <li><a href="unicode/U1F000-mahjong-tiles.pdf">PDF</a> - Fichas de Mahjong</li>
-      <li><a href="unicode/U1F0A0-playing-cards.pdf">PDF</a> - Cartas</li>
-      <li><a href="unicode/U1F100-enclosed-alphanumeric-supplement.pdf">PDF</a> - Alfanuméricos con círculo alrededor (suplemento)</li>
-      <li><a href="unicode/U1F200-enclosed-ideographic-supplement.pdf">PDF</a> - Ideográficos con círculo alrededor (suplemento)</li>
+      <li>En la página <a href="html-unicode-simbolos.html">Símbolos gráficos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos:
+
+        <ul>
+          <li><a href="unicode/U00000-c0-controls-and-basic-latin.pdf">PDF</a> - Controles y Latín básico</li>
+          <li><a href="unicode/U00080-c1-controls-and-latin-1-supplement.pdf">PDF</a> - Controles y Latín 1 (suplemento)</li>
+          <li><a href="unicode/U02000-general-punctuation.pdf">PDF</a> - Puntuación</li>
+          <li><a href="unicode/U020A0-currency-symbols.pdf">PDF</a> - Símbolos de monedas</li>
+          <li><a href="unicode/U02100-letterlike-symbols.pdf">PDF</a> - Símbolos con letras</li>
+          <li><a href="unicode/U02190-arrows.pdf">PDF</a> - Flechas</li>
+          <li><a href="unicode/U02300-miscellaneous-technical.pdf">PDF</a> - Símbolos técnicos misceláneos</li>
+          <li><a href="unicode/U02460-enclosed-alphanumerics.pdf">PDF</a> - Símbolos alfanuméricos con círculo alrededor</li>
+          <li><a href="unicode/U02500-box-drawing.pdf">PDF</a> - Cajas</li>
+          <li><a href="unicode/U025A0-geometric-shapes.pdf">PDF</a> - Formas geométricas</li>
+          <li><a href="unicode/U02600-miscellaneous-symbols.pdf">PDF</a> - Símbolos misceláneos</li>
+          <li><a href="unicode/U02700-dingbats.pdf">PDF</a> - Dingbats</li>
+          <li><a href="unicode/U02900-supplemental-arrows-b.pdf">PDF</a> - Flechas suplementarias B</li>
+          <li><a href="unicode/U02B00-miscellaneous-symbols-and-arrows.pdf">PDF</a> - Símbolos y flechas misceláneos</li>
+          <li><a href="unicode/U03000-cjk-symbols-and-punctuation.pdf">PDF</a> - Símbolos y puntuación CJK</li>
+          <li><a href="unicode/U03200-enclosed-cjk-letters-amd-months.pdf">PDF</a> - Símbolos CJK con círculo alrededor</li>
+          <li><a href="unicode/U1F000-mahjong-tiles.pdf">PDF</a> - Fichas de Mahjong</li>
+          <li><a href="unicode/U1F0A0-playing-cards.pdf">PDF</a> - Cartas</li>
+          <li><a href="unicode/U1F100-enclosed-alphanumeric-supplement.pdf">PDF</a> - Alfanuméricos con círculo alrededor (suplemento)</li>
+          <li><a href="unicode/U1F200-enclosed-ideographic-supplement.pdf">PDF</a> - Ideográficos con círculo alrededor (suplemento)</li>
+        </ul>
+      </li>
+      <li>En la página <a href="html-unicode-dibujos.html">Dibujos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos:
+
+        <ul>
+          <li><a href="unicode/U1F300-miscellaneous-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos</li>
+          <li><a href="unicode/U1F600-emoticons.pdf">PDF</a> - Emoticonos</li>
+          <li><a href="unicode/U1F680-transport-and-map-symbols.pdf">PDF</a> - Símbolos de transporte y mapas</li>
+          <li><a href="unicode/U1F900-supplemental-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos suplementarios</li>
+        </ul>
+      </li>
+      <li>En la página <a href="html-unicode-secuencias.html">Secuencias ZWJ</a> se muestran secuencias de caracteres Unicode que también producen pictogramas.</li>
     </ul>
-
-    <p>En la página <a href="html-unicode-dibujos.html">Dibujos en Unicode</a> se muestran los caracteres de los siguientes grupos de símbolos gráficos:</p>
-
-    <ul>
-      <li><a href="unicode/U1F300-miscellaneous-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos</li>
-      <li><a href="unicode/U1F600-emoticons.pdf">PDF</a> - Emoticonos</li>
-      <li><a href="unicode/U1F680-transport-and-map-symbols.pdf">PDF</a> - Símbolos de transporte y mapas</li>
-      <li><a href="unicode/U1F900-supplemental-symbols-and-pictographs.pdf">PDF</a> - Símbolos y pictogramas misceláneos suplementarios</li>
-    </ul>
-
-    <p>En la página <a href="html-unicode-secuencias.html">Secuencias ZWJ</a> se muestran secuencias de caracteres Unicode que también producen pictogramas.</p>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 3 de noviembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 6 de junio de 2018</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
       Esta página forma parte del curso <strong>Páginas web HTML y hojas de estilo CSS</strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br />

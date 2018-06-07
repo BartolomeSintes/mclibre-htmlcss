@@ -67,7 +67,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
         } else {
             print "    <p>Se muestran aquí $contador caracteres ";
         }
-        print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Se puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 10.0</a> en formato PDF.</p>\n";
+        print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Se puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 11.0</a> en formato PDF.</p>\n";
         print "\n";
     }
 
@@ -89,6 +89,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
                     print "        <span class=\"eo\">&#x" . $c[0][0] . ";</span>\n";
                 }
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";</span> \n";
+                // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
                 print "      <p class=\"no\">$c[1]</p>\n";
@@ -317,9 +318,9 @@ $grupos_restos = array(
 );
 
 // genera_grupos($grupos_simbolos);
-// genera_grupos($grupos_dibujos);
+genera_grupos($grupos_dibujos);
 // genera_grupos($grupos_modificadores);
-genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
+// genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
 //      genera_grupos($grupos_restos);
 
 ?>
