@@ -5,7 +5,6 @@
   <title>Genera tabla Entidades de caracter. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
-  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="../varios/favicon.ico" />
 </head>
 
