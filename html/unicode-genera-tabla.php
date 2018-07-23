@@ -5,7 +5,6 @@
   <title>Genera fichas Pictogramas. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
-  <link href="../varios/ejemplos.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="../varios/favicon.ico" />
   <style>
     @font-face {
@@ -116,6 +115,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
               } else {
                   print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
               }
+              print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
               //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
               print "      </p>\n";
               print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
@@ -147,9 +147,46 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
             } else {
                 print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";</span>\n";
             }
+            print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";</span>\n";
             //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
             print "      </p>\n";
             print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";</strong></p>\n";
+            print "      <p class=\"no\">$c[1]</p>\n";
+            print "    </div>\n";
+            print "\n";
+          }
+        } elseif ($numcod == 4) {
+          if (count($c[0]) == 4 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
+              print "    <div class=\"u\">\n";
+              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] ."</p>\n";
+              print "      <p class=\"si\">\n";
+              print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
+              //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+              if ($c[2] == "emojione") {
+                  $tmp0 = strtolower($c[0][0]);
+                  if ($tmp0[0] == "0") {
+                      $tmp0 = substr($tmp0, 1);
+                  }
+                  $tmp1 = strtolower($c[0][1]);
+                  if ($tmp1[0] == "0") {
+                      $tmp1 = substr($tmp1, 1);
+                  }
+                  $tmp2 = strtolower($c[0][2]);
+                  if ($tmp2[0] == "0") {
+                      $tmp2 = substr($tmp2, 1);
+                  }
+                  $tmp3 = strtolower($c[0][3]);
+                  if ($tmp3[0] == "0") {
+                      $tmp3 = substr($tmp3, 1);
+                  }
+                  print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp0-$tmp1-$tmp2-$tmp3.svg\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</a></span>\n";
+            } else {
+                print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";</span>\n";
+            }
+            print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";</span>\n";
+            //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+            print "      </p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";#" . hexdec($c[0][3]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -191,6 +228,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
                   print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";&#x200D;&#x" . $c[0][4] . ";&#x200D;&#x" . $c[0][5] . ";</span>\n";
                 }
                 //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
                 print "      <p class=\"no\">$c[1]</p>\n";
@@ -306,9 +344,10 @@ $grupos_dibujos = array(
 );
 
 $grupos_modificadores = array(
-    // array("Banderas",                                          "banderas",           "",          2, "1F1E6", "1F1FF"),
-    // array("Banderas (subdivisiones)",                          "banderas-2",         "",          7, "1F3F4", "1F3FF"),
-    array("Colores de piel",                                   "colores-piel",    "",           2, "0261D", "1F9FF"),
+    array("Banderas",                                          "banderas",           "",          2, "1F1E6", "1F1FF"),
+    array("Banderas (subdivisiones)",                          "banderas-2",         "",          7, "1F3F4", "1F3FF"),
+    array("Banderas (subdivisiones)",                          "banderas-2",         "",          4, "1F3F4", "1F3FF"),
+    // array("Colores de piel",                                   "colores-piel",    "",           2, "0261D", "1F9FF"),
     // array("Otros",                                             "otros",           "",           3, "1F468", "1F469"),
     // array("Otros",                                             "otros",           "",           2, "0002A", "1F4FF"),
 );
@@ -318,10 +357,10 @@ $grupos_restos = array(
 );
 
 // genera_grupos($grupos_simbolos);
-genera_grupos($grupos_dibujos);
+// genera_grupos($grupos_dibujos);
 // genera_grupos($grupos_modificadores);
-// genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
-//      genera_grupos($grupos_restos);
+ genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
+// genera_grupos($grupos_restos);
 
 ?>
 </body>

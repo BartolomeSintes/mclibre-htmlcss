@@ -2455,6 +2455,7 @@ $caracteres_unicode = array(
   array(array("1F3F4", "E0067", "E0062", "E0065", "E006E", "E0067", "E007F"), "England", "", "10"),
   array(array("1F3F4", "E0067", "E0062", "E0073", "E0063", "E0074", "E007F"), "Scotland", "", "10"),
   array(array("1F3F4", "E0067", "E0062", "E0077", "E006C", "E0073", "E007F"), "Wales", "", "10"),
+  array(array("1F3F4", "0200D", "02620", "0FE0F"), "pirate flag", "", "11"),
 
 /*
 
@@ -4208,6 +4209,7 @@ $caracteres_colores_piel = array(
   array(array("1F93C", "1F3FB"), "wrestlers", "emojione", ""),
   array(array("1F93D", "1F3FB"), "water polo", "emojione", ""),
   array(array("1F93E", "1F3FB"), "handball", "emojione", ""),
+  array(array("1F9B5", "1F3FB"), "leg", "", "11"),
   array(array("1F9D1", "1F3FB"), "adult", "emojione", "10"),
   array(array("1F9D2", "1F3FB"), "child", "emojione", "10"),
   array(array("1F9D3", "1F3FB"), "older adult", "emojione", "10"),
