@@ -42,7 +42,6 @@ $ejercicios = array(
 //  array("no_existe", "No existe")
 );
 
-
 function javascript_index() {
   global $gruposCss;
 
