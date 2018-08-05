@@ -33,7 +33,8 @@ include "generador_biblioteca.php";
   <form action="generador_html.php" method="<?= $metodo?>">
 <?php
 if (isset($_SESSION["error"])) {
-  print "    <p><img src=\"../../varios/iconos/icono-warning.svg\" alt=\"¡Aviso!\" title=\"¡Aviso!\" width=\"55\" height=\"48\" />$_SESSION[error]</p>\n\n";
+  print "    <p><img src=\"../../varios/iconos/icono-warning.svg\" alt=\"¡Aviso!\" title=\"¡Aviso!\" width=\"55\" height=\"48\" />$_SESSION[error]</p>\n";
+  print "\n";
 }
 ?>
 

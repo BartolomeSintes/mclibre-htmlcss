@@ -126,7 +126,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
         } elseif ($numcod == 3) {
           if (count($c[0]) == 3 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
               print "    <div class=\"u\">\n";
-              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] ."</p>\n";
+              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . "</p>\n";
               print "      <p class=\"si\">\n";
               print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
               //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
@@ -158,7 +158,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
         } elseif ($numcod == 4) {
           if (count($c[0]) == 4 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
               print "    <div class=\"u\">\n";
-              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] ."</p>\n";
+              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . "</p>\n";
               print "      <p class=\"si\">\n";
               print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
               //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
@@ -194,7 +194,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
         } elseif ($numcod == 7) {
             if (count($c[0]) == 7 ) { // && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                 print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . " U+" . $c[0][6] ."</p>\n";
+                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . " U+" . $c[0][6] . "</p>\n";
                 print "      <p class=\"si\">\n";
                 print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";&#x200D;&#x" . $c[0][4] . ";&#x200D;&#x" . $c[0][5] . ";</span> \n";
                 //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";

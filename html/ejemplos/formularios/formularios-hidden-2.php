@@ -27,6 +27,7 @@ print "      <input type=\"hidden\" name=\"nombre\" value=\"$dato\" />\n";
 ?>
     </p>
   </form>
+
   <p><a href="formularios-hidden-2.html">Volver al formulario inicial.</a></p>
-  </body>
+</body>
 </html>
