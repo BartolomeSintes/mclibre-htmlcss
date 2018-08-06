@@ -5,7 +5,7 @@ include "generador_biblioteca.php";
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>Generador de ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco</title>
+  <title>Generador de ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="../../varios/htmlcss.css" rel="stylesheet" type="text/css" title="Color" />
   <link rel="icon" href="../../varios/favicon.ico" />
