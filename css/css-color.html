@@ -284,45 +284,45 @@
     </table>
 
     <script>
-        var rgbaRT = document.getElementById("rgbaRT");
-        var rgbaGT = document.getElementById("rgbaGT");
-        var rgbaBT = document.getElementById("rgbaBT");
-        var nRgbaRT = document.getElementById("nRgbaRT");
-        var nRgbaGT = document.getElementById("nRgbaGT");
-        var nRgbaBT = document.getElementById("nRgbaBT");
-        var rgbaMuestraT = document.getElementById("rgbaMuestraT");
+      var rgbaRT = document.getElementById("rgbaRT");
+      var rgbaGT = document.getElementById("rgbaGT");
+      var rgbaBT = document.getElementById("rgbaBT");
+      var nRgbaRT = document.getElementById("nRgbaRT");
+      var nRgbaGT = document.getElementById("nRgbaGT");
+      var nRgbaBT = document.getElementById("nRgbaBT");
+      var rgbaMuestraT = document.getElementById("rgbaMuestraT");
 
-        var rgbaR = document.getElementById("rgbaR");
-        var rgbaG = document.getElementById("rgbaG");
-        var rgbaB = document.getElementById("rgbaB");
-        var rgbaA = document.getElementById("rgbaA");
-        var nRgbaR = document.getElementById("nRgbaR");
-        var nRgbaG = document.getElementById("nRgbaG");
-        var nRgbaB = document.getElementById("nRgbaB");
-        var nRgbaA = document.getElementById("nRgbaA");
-        var rgbaTexto = document.getElementById("rgbaTexto");
-        var rgbaMuestra = document.getElementById("rgbaMuestra");
+      var rgbaR = document.getElementById("rgbaR");
+      var rgbaG = document.getElementById("rgbaG");
+      var rgbaB = document.getElementById("rgbaB");
+      var rgbaA = document.getElementById("rgbaA");
+      var nRgbaR = document.getElementById("nRgbaR");
+      var nRgbaG = document.getElementById("nRgbaG");
+      var nRgbaB = document.getElementById("nRgbaB");
+      var nRgbaA = document.getElementById("nRgbaA");
+      var rgbaTexto = document.getElementById("rgbaTexto");
+      var rgbaMuestra = document.getElementById("rgbaMuestra");
 
-        function rgbaLeeColor(e) {
-          nRgbaRT.textContent = rgbaRT.value;
-          nRgbaGT.textContent = rgbaGT.value;
-          nRgbaBT.textContent = rgbaBT.value;
-          rgbaMuestraT.style.fill = "rgb(" + rgbaRT.value + ", " + rgbaGT.value + ", " + rgbaBT.value + ")";
+      function rgbaLeeColor(e) {
+        nRgbaRT.textContent = rgbaRT.value;
+        nRgbaGT.textContent = rgbaGT.value;
+        nRgbaBT.textContent = rgbaBT.value;
+        rgbaMuestraT.style.fill = "rgb(" + rgbaRT.value + ", " + rgbaGT.value + ", " + rgbaBT.value + ")";
 
-          nRgbaR.textContent = rgbaR.value;
-          nRgbaG.textContent = rgbaG.value;
-          nRgbaB.textContent = rgbaB.value;
-          nRgbaA.textContent = rgbaA.value / 100;
-          rgbaTexto.textContent = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
-          rgbaMuestra.style.fill = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
-        }
-        rgbaRT.addEventListener("change", rgbaLeeColor, false);
-        rgbaGT.addEventListener("change", rgbaLeeColor, false);
-        rgbaBT.addEventListener("change", rgbaLeeColor, false);
-        rgbaR.addEventListener("change", rgbaLeeColor, false);
-        rgbaG.addEventListener("change", rgbaLeeColor, false);
-        rgbaB.addEventListener("change", rgbaLeeColor, false);
-        rgbaA.addEventListener("change", rgbaLeeColor, false);
+        nRgbaR.textContent = rgbaR.value;
+        nRgbaG.textContent = rgbaG.value;
+        nRgbaB.textContent = rgbaB.value;
+        nRgbaA.textContent = rgbaA.value / 100;
+        rgbaTexto.textContent = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
+        rgbaMuestra.style.fill = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
+      }
+      rgbaRT.addEventListener("change", rgbaLeeColor, false);
+      rgbaGT.addEventListener("change", rgbaLeeColor, false);
+      rgbaBT.addEventListener("change", rgbaLeeColor, false);
+      rgbaR.addEventListener("change", rgbaLeeColor, false);
+      rgbaG.addEventListener("change", rgbaLeeColor, false);
+      rgbaB.addEventListener("change", rgbaLeeColor, false);
+      rgbaA.addEventListener("change", rgbaLeeColor, false);
     </script>
   </section>
 
@@ -343,7 +343,7 @@
 
     <ul>
       <li>Hue (Matiz) es un entero entre 0 y 360 y recorre todos los colores
-        <p class="mcl-centrado">
+        <p class="mcl-svg-figura">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="760" height="100" viewBox="0 -30 760 100">
             <title>Colores correspondienes a valores de Hue (Matiz) entre 0 y 360</title>
             <text x="10" y="0" text-anchor="middle">0</text>
@@ -491,24 +491,24 @@
     </table>
 
     <script>
-        var matiz = document.getElementById("matiz");
-        var saturacion = document.getElementById("saturacion");
-        var luminosidad = document.getElementById("luminosidad");
-        var nMatiz = document.getElementById("nMatiz");
-        var nSaturacion = document.getElementById("nSaturacion");
-        var nLuminosidad = document.getElementById("nLuminosidad");
-        var colorHs = document.getElementById("colorHsl");
-        var rectanguloHs = document.getElementById("rectanguloHsl");
-        function leecolorHsl(e) {
-          nMatiz.textContent = matiz.value;
-          nSaturacion.textContent = saturacion.value + "%";
-          nLuminosidad.textContent = luminosidad.value + "%";
-          colorHs.textContent = "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)";
-          rectanguloHs.setAttribute("fill", "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)");
-        }
-        matiz.addEventListener("change", leecolorHsl, false);
-        saturacion.addEventListener("change", leecolorHsl, false);
-        luminosidad.addEventListener("change", leecolorHsl, false);
+      var matiz = document.getElementById("matiz");
+      var saturacion = document.getElementById("saturacion");
+      var luminosidad = document.getElementById("luminosidad");
+      var nMatiz = document.getElementById("nMatiz");
+      var nSaturacion = document.getElementById("nSaturacion");
+      var nLuminosidad = document.getElementById("nLuminosidad");
+      var colorHs = document.getElementById("colorHsl");
+      var rectanguloHs = document.getElementById("rectanguloHsl");
+      function leecolorHsl(e) {
+        nMatiz.textContent = matiz.value;
+        nSaturacion.textContent = saturacion.value + "%";
+        nLuminosidad.textContent = luminosidad.value + "%";
+        colorHs.textContent = "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)";
+        rectanguloHs.setAttribute("fill", "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)");
+      }
+      matiz.addEventListener("change", leecolorHsl, false);
+      saturacion.addEventListener("change", leecolorHsl, false);
+      luminosidad.addEventListener("change", leecolorHsl, false);
     </script>
   </section>
 
@@ -627,25 +627,27 @@
           </tr>
         </tbody>
       </table>
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" viewBox="-55 -55 110 140" style="background-color: white;" font-family="sans-serif">
-        <title>Rueda de colores HTML 3.2</title>
-        <path fill="aqua" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" />
-        <path fill="lime" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(60 0 0)" />
-        <path fill="yellow" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(120 0 0)" />
-        <path fill="red" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(180 0 0)" />
-        <path fill="fuchsia" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(240 0 0)" />
-        <path fill="blue" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(300 0 0)" />
-        <path fill="teal" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" />
-        <path fill="green" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(60 0 0)" />
-        <path fill="olive" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(120 0 0)" />
-        <path fill="maroon" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(180 0 0)" />
-        <path fill="purple" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(240 0 0)" />
-        <path fill="navy" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0,  -15 -25.981 z" transform="rotate(300 0 0)" />
-        <rect x="-50" y="55" width="25" height="25" fill="white" stroke="black" stroke-width="1" />
-        <rect x="-25" y="55" width="25" height="25" fill="silver" stroke="black" stroke-width="1" />
-        <rect x="0" y="55" width="25" height="25" fill="gray" stroke="black" stroke-width="1" />
-        <rect x="25" y="55" width="25" height="25" fill="black" stroke="black" stroke-width="1" />
-      </svg>
+      <p class="mcl-svg-figura">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" viewBox="-55 -55 110 140" style="background-color: white;" font-family="sans-serif">
+          <title>Rueda de colores HTML 3.2</title>
+          <path fill="aqua" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" />
+          <path fill="lime" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(60 0 0)" />
+          <path fill="yellow" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(120 0 0)" />
+          <path fill="red" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(180 0 0)" />
+          <path fill="fuchsia" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(240 0 0)" />
+          <path fill="blue" stroke="white" stroke-width="1" d="M0 0 l 50 0 a 50 50, 0, 0, 0, -25 -43.301 z" transform="rotate(300 0 0)" />
+          <path fill="teal" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" />
+          <path fill="green" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(60 0 0)" />
+          <path fill="olive" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(120 0 0)" />
+          <path fill="maroon" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(180 0 0)" />
+          <path fill="purple" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(240 0 0)" />
+          <path fill="navy" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0,  -15 -25.981 z" transform="rotate(300 0 0)" />
+          <rect x="-50" y="55" width="25" height="25" fill="white" stroke="black" stroke-width="1" />
+          <rect x="-25" y="55" width="25" height="25" fill="silver" stroke="black" stroke-width="1" />
+          <rect x="0" y="55" width="25" height="25" fill="gray" stroke="black" stroke-width="1" />
+          <rect x="25" y="55" width="25" height="25" fill="black" stroke="black" stroke-width="1" />
+        </svg>
+      </p>
     </div>
   </section>
 
@@ -1281,7 +1283,7 @@
 
     <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/REC-CSS2/ui.html#system-colors">CSS 2</a> y hacen referencia a los colores utilizados por el interfaz del sistema operativo.</p>
 
-    <p>Los navegadores interpretaban e interpretan correctamente estos nombres de colores, pero en estos apuntes estos colores ya no se comentan en esta lección, sino en la  <a href="css2-obsoletas.html#colores-sistema">lección de elementos obsoletos</a>, porque en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">CSS 3 Color (2º ed)</a> (junio de 2018) estos nombres pasaron a considerarse obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>.</p>
+    <p>Los navegadores interpretaban e interpretan correctamente estos nombres de colores, pero en estos apuntes estos colores ya no se comentan en esta lección, sino en la <a href="css2-obsoletas.html#colores-sistema">lección de elementos obsoletos</a>, porque en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">CSS 3 Color (2º ed)</a> (junio de 2018) estos nombres pasaron a considerarse obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>.</p>
 
     <p>El problema es que la propiedad <span class="css-prop">appearance</span> no está incluida en ninguna recomendación ya aprobada. Esta propiedad se encuentra definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (junio de 2018) en elaboración, pero parece que esta propiedad tiene serios problemas de incompatibilidad entre navegadores.</p>
 
