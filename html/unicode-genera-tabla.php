@@ -16,10 +16,6 @@
       src: url("unicode/NotoEmoji-Regular.ttf");
     }
     @font-face {
-      font-family: "EmojiOne";
-      src: url("unicode/emojione-svg.woff2");
-    }
-    @font-face {
       font-family: "Twemoji";
       src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
     }
@@ -27,16 +23,14 @@
     div.u p { margin: 0; padding: 5px 10px; }
     div.u p.uc { background-color: #ddd; font-weight: bold; }
     div.u p.si { font-size: 80px; line-height: 100px; text-align: center; }
-    div.u span.ss { font-family: sans-serif;}
+    div.u span.ss { font-family: sans-serif; border-right: 2px solid black; padding-right: 20px;}
     div.u span.sy { font-family: "Symbola";}
     div.u span.ne { font-family: "Noto Emoji";}
-    div.u span.eo { font-family: "EmojiOne"; }
     div.u span.te { font-family: "Twemoji"; }
     div.u p.en { background-color: #ddd; }
     div.u p.no { text-transform: uppercase; }
     div.u a { border: none; text-decoration: none; color: black; }
     table.u { border-spacing: 20px 0; }
-    table.u span.eo { font-family: "EmojiOne"; font-size: 80px; }
     table.u span.te { font-family: "Twemoji"; font-size: 80px; }
     table.u a { border: none; text-decoration: none; color: black; }
   </style>
@@ -46,9 +40,12 @@
 <?php
 // 12 de marzo de 2017
 include("unicode-array.php");
+include("unicode-array-combinaciones.php");
+// $rutaSVG = "https://github.com/emojione/emojione/blob/2.2.7/assets/svg";
+$rutaSVG = "https://github.com/twitter/twemoji/tree/gh-pages/2/svg";
 
-function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
-    global $caracteres_unicode;
+function genera_grupo($matriz, $grupo, $id, $pdf, $numcod, $inicial, $final, $fuentes) {
+    global $rutaSVG;
 
     print "  <section id=\"$id\">\n";
     print "    <h2>$grupo</h2>\n";
@@ -56,7 +53,7 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
 
     if ($numcod == 1) {
         $contador = 0;
-        foreach ($caracteres_unicode as $c) {
+        foreach ($matriz as $c) {
             if (count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                 $contador++;
             }
@@ -70,24 +67,32 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
         print "\n";
     }
 
-    foreach ($caracteres_unicode as $c) {
+    foreach ($matriz as $c) {
         if ($numcod == 1) {
             if (count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                 print "    <div class=\"u\">\n";
                 print "      <p class=\"uc\">U+" . $c[0][0] . "</p>\n";
                 print "      <p class=\"si\">\n";
-                print "        <span class=\"ss\">&#x" . $c[0][0] . ";</span> \n";
-                print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
-                if ($c[2] == "emojione") {
-                    $tmp = strtolower($c[0][0]);
-                    if ($tmp[0] == "0") {
-                        $tmp = substr($tmp, 1);
-                    }
-                    print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp.svg\">&#x" . $c[0][0] . ";</a></span>\n";
-                } else {
-                    print "        <span class=\"eo\">&#x" . $c[0][0] . ";</span>\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";</span> \n";
                 }
-                print "        <span class=\"ne\">&#x" . $c[0][0] . ";</span> \n";
+                if (in_array("sy", $fuentes)) {
+                    print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                        $tmp = strtolower($c[0][0]);
+                        while ($tmp[0] == "0") {
+                            $tmp = substr($tmp, 1);
+                        }
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp.svg\">&#x" . $c[0][0] . ";</a></span>\n";
+                    } else {
+                        print "        <span class=\"te\">&#x" . $c[0][0] . ";</span>\n";
+                    }
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";</span> \n";
+                }
                 // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
@@ -96,139 +101,219 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
                 print "\n";
             }
         } elseif ($numcod == 2) {
-          if (count($c[0]) == 2 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
-              print "    <div class=\"u\">\n";
-              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . "</p>\n";
-              print "      <p class=\"si\">\n";
-              print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span> \n";
-              //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-              if ($c[2] == "emojione") {
-                  $tmp0 = strtolower($c[0][0]);
-                  if ($tmp0[0] == "0") {
-                      $tmp0 = substr($tmp0, 1);
+            if (count($c[0]) == 2 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
+                print "    <div class=\"u\">\n";
+                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . "</p>\n";
+                print "      <p class=\"si\">\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("sy", $fuentes)) {
+                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                      $tmp0 = strtolower($c[0][0]);
+                      while ($tmp0[0] == "0") {
+                          $tmp0 = substr($tmp0, 1);
+                      }
+                      $tmp1 = strtolower($c[0][1]);
+                      while ($tmp1[0] == "0") {
+                          $tmp1 = substr($tmp1, 1);
+                      }
+                      print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</a></span>\n";
+                  } else {
+                      print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
                   }
-                  $tmp1 = strtolower($c[0][1]);
-                  if ($tmp1[0] == "0") {
-                      $tmp1 = substr($tmp1, 1);
-                  }
-                  print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp0-$tmp1.svg\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</a></span>\n";
-              } else {
-                  print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
-              }
-              print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
-              //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-              print "      </p>\n";
-              print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
-              print "      <p class=\"no\">$c[1]</p>\n";
-              print "    </div>\n";
-              print "\n";
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
+                }
+                print "      </p>\n";
+                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
+                print "      <p class=\"no\">$c[1]</p>\n";
+                print "    </div>\n";
+                print "\n";
             }
         } elseif ($numcod == 3) {
-          if (count($c[0]) == 3 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
-              print "    <div class=\"u\">\n";
-              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . "</p>\n";
-              print "      <p class=\"si\">\n";
-              print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
-              //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-              if ($c[2] == "emojione") {
-                  $tmp0 = strtolower($c[0][0]);
-                  if ($tmp0[0] == "0") {
-                      $tmp0 = substr($tmp0, 1);
-                  }
-                  $tmp1 = strtolower($c[0][1]);
-                  if ($tmp1[0] == "0") {
-                      $tmp1 = substr($tmp1, 1);
-                  }
-                  $tmp2 = strtolower($c[0][2]);
-                  if ($tmp2[0] == "0") {
-                      $tmp2 = substr($tmp2, 1);
-                  }
-                  print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp0-$tmp1-$tmp2.svg\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</a></span>\n";
-            } else {
-                print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";</span>\n";
+            if (count($c[0]) == 3 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
+                print "    <div class=\"u\">\n";
+                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . "</p>\n";
+                print "      <p class=\"si\">\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
+                }
+                if (in_array("sy", $fuentes)) {
+                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                        $tmp0 = strtolower($c[0][0]);
+                        while ($tmp0[0] == "0") {
+                            $tmp0 = substr($tmp0, 1);
+                        }
+                        $tmp1 = strtolower($c[0][1]);
+                        while ($tmp1[0] == "0") {
+                            $tmp1 = substr($tmp1, 1);
+                        }
+                        $tmp2 = strtolower($c[0][2]);
+                        while ($tmp2[0] == "0") {
+                            $tmp2 = substr($tmp2, 1);
+                        }
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</a></span>\n";
+                    } else {
+                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
+                    }
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
+                }
+                print "      </p>\n";
+                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";</strong></p>\n";
+                print "      <p class=\"no\">$c[1]</p>\n";
+                print "    </div>\n";
+                print "\n";
             }
-            print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";</span>\n";
-            //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-            print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";</strong></p>\n";
-            print "      <p class=\"no\">$c[1]</p>\n";
-            print "    </div>\n";
-            print "\n";
-          }
         } elseif ($numcod == 4) {
-          if (count($c[0]) == 4 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
-              print "    <div class=\"u\">\n";
-              print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . "</p>\n";
-              print "      <p class=\"si\">\n";
-              print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
-              //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-              if ($c[2] == "emojione") {
-                  $tmp0 = strtolower($c[0][0]);
-                  if ($tmp0[0] == "0") {
-                      $tmp0 = substr($tmp0, 1);
-                  }
-                  $tmp1 = strtolower($c[0][1]);
-                  if ($tmp1[0] == "0") {
-                      $tmp1 = substr($tmp1, 1);
-                  }
-                  $tmp2 = strtolower($c[0][2]);
-                  if ($tmp2[0] == "0") {
-                      $tmp2 = substr($tmp2, 1);
-                  }
-                  $tmp3 = strtolower($c[0][3]);
-                  if ($tmp3[0] == "0") {
-                      $tmp3 = substr($tmp3, 1);
-                  }
-                  print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp0-$tmp1-$tmp2-$tmp3.svg\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</a></span>\n";
-            } else {
-                print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";</span>\n";
+            if (count($c[0]) == 4 ) { // && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
+                print "    <div class=\"u\">\n";
+                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . "</p>\n";
+                print "      <p class=\"si\">\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
+                }
+                if (in_array("sy", $fuentes)) {
+                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                        $tmp0 = strtolower($c[0][0]);
+                        while ($tmp0[0] == "0") {
+                            $tmp0 = substr($tmp0, 1);
+                        }
+                        $tmp1 = strtolower($c[0][1]);
+                        while ($tmp1[0] == "0") {
+                            $tmp1 = substr($tmp1, 1);
+                        }
+                        $tmp2 = strtolower($c[0][2]);
+                        while ($tmp2[0] == "0") {
+                            $tmp2 = substr($tmp2, 1);
+                        }
+                        $tmp3 = strtolower($c[0][3]);
+                        while ($tmp3[0] == "0") {
+                            $tmp3 = substr($tmp3, 1);
+                        }
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</a></span>\n";
+                    } else {
+                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
+                    }
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
+                }
+                print "      </p>\n";
+                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";#" . hexdec($c[0][3]) . ";</strong></p>\n";
+                print "      <p class=\"no\">$c[1]</p>\n";
+                print "    </div>\n";
+                print "\n";
             }
-            print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";</span>\n";
-            //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-            print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";#" . hexdec($c[0][3]) . ";</strong></p>\n";
-            print "      <p class=\"no\">$c[1]</p>\n";
-            print "    </div>\n";
-            print "\n";
-          }
+        } elseif ($numcod == 5) {
+            if (count($c[0]) == 5 ) { // && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
+                print "    <div class=\"u\">\n";
+                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . "</p>\n";
+                print "      <p class=\"si\">\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span> \n";
+                }
+                if (in_array("sy", $fuentes)) {
+                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                        $tmp0 = strtolower($c[0][0]);
+                        while ($tmp0[0] == "0") {
+                            $tmp0 = substr($tmp0, 1);
+                        }
+                        $tmp1 = strtolower($c[0][1]);
+                        while ($tmp1[0] == "0") {
+                            $tmp1 = substr($tmp1, 1);
+                        }
+                        $tmp2 = strtolower($c[0][2]);
+                        while ($tmp2[0] == "0") {
+                            $tmp2 = substr($tmp2, 1);
+                        }
+                        $tmp3 = strtolower($c[0][3]);
+                        while ($tmp3[0] == "0") {
+                            $tmp3 = substr($tmp3, 1);
+                        }
+                        $tmp4 = strtolower($c[0][4]);
+                        while ($tmp4[0] == "0") {
+                            $tmp4 = substr($tmp4, 1);
+                        }
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</a></span>\n";
+                    } else {
+                      print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span>\n";
+                    }
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span>\n";
+                print "      </p>\n";
+                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";</strong></p>\n";
+                print "      <p class=\"no\">$c[1]</p>\n";
+                print "    </div>\n";
+                print "\n";
+            }
         } elseif ($numcod == 7) {
             if (count($c[0]) == 7 ) { // && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                 print "    <div class=\"u\">\n";
                 print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . " U+" . $c[0][6] . "</p>\n";
                 print "      <p class=\"si\">\n";
-                print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";&#x200D;&#x" . $c[0][4] . ";&#x200D;&#x" . $c[0][5] . ";</span> \n";
-                //            print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-                if ($c[2] == "emojione") {
-                    $tmp0 = strtolower($c[0][0]);
-                    if ($tmp0[0] == "0") {
-                        $tmp0 = substr($tmp0, 1);
-                    }
-                    $tmp1 = strtolower($c[0][1]);
-                    if ($tmp1[0] == "0") {
-                        $tmp1 = substr($tmp1, 1);
-                    }
-                    $tmp2 = strtolower($c[0][2]);
-                    if ($tmp2[0] == "0") {
-                        $tmp2 = substr($tmp2, 1);
-                    }
-                    $tmp3 = strtolower($c[0][3]);
-                    if ($tmp3[0] == "0") {
-                        $tmp3 = substr($tmp3, 1);
-                    }
-                    $tmp4 = strtolower($c[0][4]);
-                    if ($tmp4[0] == "0") {
-                        $tmp4 = substr($tmp4, 1);
-                    }
-                    $tmp5 = strtolower($c[0][5]);
-                    if ($tmp5[0] == "0") {
-                        $tmp5 = substr($tmp5, 1);
-                    }
-                    print "        <span class=\"eo\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4-$tmp5.svg\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</a></span>\n";
-                } else {
-                  print "        <span class=\"eo\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";&#x200D;&#x" . $c[0][2] . ";&#x200D;&#x" . $c[0][3] . ";&#x200D;&#x" . $c[0][4] . ";&#x200D;&#x" . $c[0][5] . ";</span>\n";
+                if (in_array("ss", $fuentes)) {
+                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span> \n";
                 }
-                //            print "          <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
-                print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x200D;&#x" . $c[0][1] . ";</span>\n";
+                if (in_array("sy", $fuentes)) {
+                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                }
+                if (in_array("te", $fuentes)) {
+                    if ($c[2] == "twemoji") {
+                        $tmp0 = strtolower($c[0][0]);
+                        while ($tmp0[0] == "0") {
+                            $tmp0 = substr($tmp0, 1);
+                        }
+                        $tmp1 = strtolower($c[0][1]);
+                        while ($tmp1[0] == "0") {
+                            $tmp1 = substr($tmp1, 1);
+                        }
+                        $tmp2 = strtolower($c[0][2]);
+                        while ($tmp2[0] == "0") {
+                            $tmp2 = substr($tmp2, 1);
+                        }
+                        $tmp3 = strtolower($c[0][3]);
+                        while ($tmp3[0] == "0") {
+                            $tmp3 = substr($tmp3, 1);
+                        }
+                        $tmp4 = strtolower($c[0][4]);
+                        while ($tmp4[0] == "0") {
+                            $tmp4 = substr($tmp4, 1);
+                        }
+                        $tmp5 = strtolower($c[0][5]);
+                        while ($tmp5[0] == "0") {
+                            $tmp5 = substr($tmp5, 1);
+                        }
+                        $tmp6 = strtolower($c[0][6]);
+                        while ($tmp6[0] == "0") {
+                            $tmp6 = substr($tmp6, 1);
+                        }
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4-$tmp5-$tmp6.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</a></span>\n";
+                    } else {
+                      print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span>\n";
+                    }
+                }
+                if (in_array("ne", $fuentes)) {
+                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span>\n";
+                }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
                 print "      <p class=\"no\">$c[1]</p>\n";
@@ -241,21 +326,21 @@ function genera_grupo($grupo, $id, $pdf, $numcod, $inicial, $final) {
     print "\n";
 }
 
-function genera_grupos($grupos) {
+function genera_grupos($grupos, $fuentes) {
     print "  <ul>\n";
     foreach ($grupos as $g) {
-        print "    <li><a href=\"#$g[1]\">$g[0]</a></li>\n";
+        print "    <li><a href=\"#$g[2]\">$g[1]</a></li>\n";
     }
     print "  </ul>\n";
     print "\n";
 
     foreach ($grupos as $g) {
-        genera_grupo($g[0], $g[1], $g[2], $g[3], $g[4], $g[5]);
+        genera_grupo($g[0], $g[1], $g[2], $g[3], $g[4], $g[5], $g[6], $fuentes);
     }
 }
 
 function genera_tabla_colores_piel($grupo, $id, $pdf, $numcod, $inicial, $final) {
-    global $caracteres_colores_piel;
+    global $caracteres_colores_piel, $rutaSVG;
 
     print "  <section id=\"$id\">\n";
     print "    <h2>$grupo</h2>\n";
@@ -273,7 +358,7 @@ function genera_tabla_colores_piel($grupo, $id, $pdf, $numcod, $inicial, $final)
         }
         print "Unicode que al secuenciarse con los cinco modificadores Fitzpatrick (U+1F3FB a U+1F3FF) dan lugar cada uno a cinco nuevos emojis con distintos colores de piel.</p>\n";
         print "\n";
-        print "    <p>Los caracteres se muestran únicamente con la fuente EmojiOne y el resultado depende del sistema operativo y del navegador empleado.</p>\n";
+        print "    <p>Los caracteres se muestran únicamente con la fuente Twemoji y el resultado depende del sistema operativo y del navegador empleado.</p>\n";
         print "\n";
     }
 
@@ -291,15 +376,15 @@ function genera_tabla_colores_piel($grupo, $id, $pdf, $numcod, $inicial, $final)
         print "      <tr>\n";
         print "        <th>U+" . $c[0][0] . " </th>\n";
         $tmp = strtolower($c[0][0]);
-        if ($tmp[0] == "0") {
+        while ($tmp[0] == "0") {
             $tmp = substr($tmp, 1);
         }
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp.svg\">&#x" . $c[0][0] . ";</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp-1f3fb.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FB;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp-1f3fc.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FC;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp-1f3fd.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FD;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp-1f3fe.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FE;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\" https://github.com/emojione/emojione/blob/2.2.7/assets/svg/$tmp-1f3ff.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FF;</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp.svg\">&#x" . $c[0][0] . ";</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fb.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FB;</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fc.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FC;</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fd.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FD;</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fe.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FE;</a></span></td>\n";
+        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3ff.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FF;</a></span></td>\n";
         print "        <td>" . strtoupper($c[1]) . " </td>\n";
         print "      </tr>\n";
     }
@@ -309,57 +394,60 @@ function genera_tabla_colores_piel($grupo, $id, $pdf, $numcod, $inicial, $final)
 }
 
 $grupos_simbolos = array(
-    array("Controles y Latin básico",                          "controles-latin",        "U00000-c0-controls-and-basic-latin.pdf", 1, "0000",  "007F"),
-    array("Suplemento controles y Latin-1",                    "controles-sup",          "U00080-c1-controls-and-latin-1-supplement.pdf", 1, "0080",  "00FF"),
-    array("Puntuación",                                        "puntuacion",             "U02000-general-punctuation.pdf", 1, "2000",  "206F"),
-    array("Símbolos de monedas",                               "monedas",                "U020A0-currency-symbols.pdf", 1, "20A0",  "20BF"),
-    array("Símbolos con letras",                               "simbolos-letras",        "U02100-letterlike-symbols.pdf", 1, "2100",  "214F"),
-    array("Flechas",                                           "flechas",                "U02190-arrows.pdf", 1, "2190",  "21FF"),
-    array("Símbolos técnicos misceláneos",                     "tecnicos-misc",          "U02300-miscellaneous-technical.pdf", 1, "2300",  "23FE"),
-    array("Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",        "U02460-enclosed-alphanumerics.pdf", 1, "2460",  "24FF"),
-    array("Cajas",                                             "cajas",                  "U02500-box-drawing.pdf", 1, "2500",  "257F"),
-    array("Formas geométricas",                                "formas-geometricas",     "U025A0-geometric-shapes.pdf", 1, "25A0",  "25FF"),
-    array("Símbolos misceláneos",                              "simbolos-misc",          "U02600-miscellaneous-symbols.pdf", 1, "2600",  "26FF"),
-    array("Dingbats",                                          "dingbats",               "U02700-dingbats.pdf", 1, "2700",  "27BF"),
-    array("Flechas suplementarias B",                          "flechas-suplementarias", "U02900-supplemental-arrows-b.pdf", 1, "2900",  "297F"),
-    array("Símbolos y flechas misceláneos",                    "simbolos-flechas",       "U02B00-miscellaneous-symbols-and-arrows.pdf", 1, "2B00",  "2BEF"),
-    array("Símbolos y puntuación CJK",                         "cjk",                    "U03000-cjk-symbols-and-punctuation.pdf", 1, "3000",  "303F"),
-    array("Símbolos CJK con círculo alrededor",                "cjk-circulo",            "U03200-enclosed-cjk-letters-amd-months.pdf", 1, "3200",  "32FF"),
-    //      array("Símbolos musicales",                                "musica",                 "U1D100.pdf", 1, "1D100", "1D1E8"),
-    array("Fichas de Mahjong",                                 "fichas-mahjong",         "U1F000-mahjong-tiles.pdf", 1, "1F000", "1F02B"),
-    //      array("Fichas de dominó",                                  "domino",                 "U1F030.pdf", 1, "1F030", "1F093"),
-    array("Cartas",                                            "cartas",                 "U1F0A0-playing-cards.pdf", 1, "1F0A0", "1F0F5"),
-    array("Suplemento alfanuméricos con círculo alrededor",    "alfanum-circulo-sup",    "U1F100-enclosed-alphanumeric-supplement.pdf", 1, "1F100", "1F1FF"),
-    array("Suplemento ideográfico con círculo alrededor",      "ideografico-circulo-sup","U1F200-enclosed-ideographic-supplement.pdf", 1, "1F200", "1F2FF"),
-    //      array("Dingbats decorativos",                              "dingbats-decorativos",   "U1F650.pdf", 1, "1F650", "1F67F"),
-    //      array("Símbolos alquímicos",                               "simbolos-alquimicos",    "U1F700.pdf", 1, "1F700", "1F773"),
-    //      array("Formas geométricas extendidas",                     "geometricas-extendidas", "U1F780.pdf", 1, "1F780", "1F7D4"),
+    array($caracteres_unicode, "Controles y Latin básico",                          "controles-latin",        "U00000-c0-controls-and-basic-latin.pdf", 1, "0000",  "007F"),
+    array($caracteres_unicode, "Suplemento controles y Latin-1",                    "controles-sup",          "U00080-c1-controls-and-latin-1-supplement.pdf", 1, "0080",  "00FF"),
+    array($caracteres_unicode, "Puntuación",                                        "puntuacion",             "U02000-general-punctuation.pdf", 1, "2000",  "206F"),
+    array($caracteres_unicode, "Símbolos de monedas",                               "monedas",                "U020A0-currency-symbols.pdf", 1, "20A0",  "20BF"),
+    array($caracteres_unicode, "Símbolos con letras",                               "simbolos-letras",        "U02100-letterlike-symbols.pdf", 1, "2100",  "214F"),
+    array($caracteres_unicode, "Flechas",                                           "flechas",                "U02190-arrows.pdf", 1, "2190",  "21FF"),
+    array($caracteres_unicode, "Símbolos técnicos misceláneos",                     "tecnicos-misc",          "U02300-miscellaneous-technical.pdf", 1, "2300",  "23FE"),
+    array($caracteres_unicode, "Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",        "U02460-enclosed-alphanumerics.pdf", 1, "2460",  "24FF"),
+    array($caracteres_unicode, "Cajas",                                             "cajas",                  "U02500-box-drawing.pdf", 1, "2500",  "257F"),
+    array($caracteres_unicode, "Formas geométricas",                                "formas-geometricas",     "U025A0-geometric-shapes.pdf", 1, "25A0",  "25FF"),
+    array($caracteres_unicode, "Símbolos misceláneos",                              "simbolos-misc",          "U02600-miscellaneous-symbols.pdf", 1, "2600",  "26FF"),
+    array($caracteres_unicode, "Dingbats",                                          "dingbats",               "U02700-dingbats.pdf", 1, "2700",  "27BF"),
+    array($caracteres_unicode, "Flechas suplementarias B",                          "flechas-suplementarias", "U02900-supplemental-arrows-b.pdf", 1, "2900",  "297F"),
+    array($caracteres_unicode, "Símbolos y flechas misceláneos",                    "simbolos-flechas",       "U02B00-miscellaneous-symbols-and-arrows.pdf", 1, "2B00",  "2BEF"),
+    array($caracteres_unicode, "Símbolos y puntuación CJK",                         "cjk",                    "U03000-cjk-symbols-and-punctuation.pdf", 1, "3000",  "303F"),
+    array($caracteres_unicode, "Símbolos CJK con círculo alrededor",                "cjk-circulo",            "U03200-enclosed-cjk-letters-amd-months.pdf", 1, "3200",  "32FF"),
+    //      array($caracteres_unicode, "Símbolos musicales",                                "musica",                 "U1D100.pdf", 1, "1D100", "1D1E8"),
+    array($caracteres_unicode, "Fichas de Mahjong",                                 "fichas-mahjong",         "U1F000-mahjong-tiles.pdf", 1, "1F000", "1F02B"),
+    //      array($caracteres_unicode, "Fichas de dominó",                                  "domino",                 "U1F030.pdf", 1, "1F030", "1F093"),
+    array($caracteres_unicode, "Cartas",                                            "cartas",                 "U1F0A0-playing-cards.pdf", 1, "1F0A0", "1F0F5"),
+    array($caracteres_unicode, "Suplemento alfanuméricos con círculo alrededor",    "alfanum-circulo-sup",    "U1F100-enclosed-alphanumeric-supplement.pdf", 1, "1F100", "1F1FF"),
+    array($caracteres_unicode, "Suplemento ideográfico con círculo alrededor",      "ideografico-circulo-sup","U1F200-enclosed-ideographic-supplement.pdf", 1, "1F200", "1F2FF"),
+    //      array($caracteres_unicode, "Dingbats decorativos",                              "dingbats-decorativos",   "U1F650.pdf", 1, "1F650", "1F67F"),
+    //      array($caracteres_unicode, "Símbolos alquímicos",                               "simbolos-alquimicos",    "U1F700.pdf", 1, "1F700", "1F773"),
+    //      array($caracteres_unicode, "Formas geométricas extendidas",                     "geometricas-extendidas", "U1F780.pdf", 1, "1F780", "1F7D4"),
 );
 
 $grupos_dibujos = array(
-    array("Símbolos y pictogramas misceláneos",                "simbolos-misc",      "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
-    array("Emoticonos",                                        "emoticonos",         "U1F600-emoticons.pdf", 1, "1F600", "1F64F"),
-    array("Símbolos de transporte y mapas",                    "transporte",         "U1F680-transport-and-map-symbols.pdf", 1, "1F680", "1F6FF"),
-    array("Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl", "U1F900-supplemental-symbols-and-pictographs.pdf", 1, "1F900", "1F9FF"),
+    array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-misc",      "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
+    array($caracteres_unicode, "Emoticonos",                                        "emoticonos",         "U1F600-emoticons.pdf", 1, "1F600", "1F64F"),
+    array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",         "U1F680-transport-and-map-symbols.pdf", 1, "1F680", "1F6FF"),
+    array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl", "U1F900-supplemental-symbols-and-pictographs.pdf", 1, "1F900", "1F9FF"),
 );
 
 $grupos_modificadores = array(
-    array("Banderas",                                          "banderas",           "",          2, "1F1E6", "1F1FF"),
-    array("Banderas (subdivisiones)",                          "banderas-2",         "",          7, "1F3F4", "1F3FF"),
-    array("Banderas (subdivisiones)",                          "banderas-2",         "",          4, "1F3F4", "1F3FF"),
-    // array("Colores de piel",                                   "colores-piel",    "",           2, "0261D", "1F9FF"),
-    // array("Otros",                                             "otros",           "",           3, "1F468", "1F469"),
-    // array("Otros",                                             "otros",           "",           2, "0002A", "1F4FF"),
+//    array($cu_banderas, "Banderas",                                          "banderas",           "",          2, "1F1E6", "1F1FF"),
+//    array($cu_banderas_sudivisiones, "Banderas (subdivisiones)",                          "banderas-2",         "",          7, "1F3F4", "1F3FF"),
+//    array($cu_banderas_sudivisiones, "Banderas (subdivisiones)",                          "banderas-2",         "",          4, "1F3F4", "1F3FF"),
+    array($cu_otros, "Otros",                                             "otros",           "",           2, "0002A", "1F4FF"),
+    array($cu_otros, "Otros",                                             "otros",           "",           3, "1F441", "1F469"),
+//    array("Colores de piel",                                   "colores-piel",    "",           2, "0261D", "1F9FF"),
+//    array("Otros",                                             "otros",           "",           4, "0002A", "1F4FF"),
 );
 
 $grupos_restos = array(
-    array("Restos",                                            "restos",             "",           1, "00000", "FFFFF"),
+//    array("Restos",                                            "restos",             "",           1, "00000", "FFFFF"),
+array("Restos",                                            "restos",             "",           4, "1F3C3", "FFFFF"),
+array("Restos",                                            "restos",             "",           5, "1F3C3", "FFFFF"),
 );
 
-// genera_grupos($grupos_simbolos);
-// genera_grupos($grupos_dibujos);
-// genera_grupos($grupos_modificadores);
- genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
+ // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
+ // genera_grupos($grupos_dibujos, ["ss", "sy", "te"]);
+ genera_grupos($grupos_modificadores, ["ss", "te"]);
+// genera_tabla_colores_piel("Colores de piel", "colores-piel", "", 1, "0261D", "1F9FF");
 // genera_grupos($grupos_restos);
 
 ?>
