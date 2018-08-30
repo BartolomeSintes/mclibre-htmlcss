@@ -301,7 +301,7 @@ $cu_banderas_sudivisiones = array(
 );
 
 $cu_otros = array(
-  // Combinaciones: Varios
+  // CombinacfamiliasVarios
   array(array("00023", "020E3"), "number sign + combining enclosing keycap", "twemoji", ""),
   array(array("0002A", "020E3"), "asterisk + combining enclosing keycap", "twemoji", ""),
   array(array("00030", "020E3"), "digit zero + combining enclosing keycap", "twemoji", ""),
@@ -319,7 +319,7 @@ $cu_otros = array(
   // 2018-08-29 En emojione speech bubble eran dos caracteres, pero con twemoji son tres
 );
 
-$cu_parejas = array(
+$cu_familias = array(
   // Combinaciones: Parejas con hijos
   // Probado el 15/03/17 y no funcionaba en Firefox
   // 2018-08-28: Me falta comprobar si funcionan en Twemoji
@@ -371,47 +371,46 @@ $cu_colores_pelos= array(
   array(array("1F468", "0200D", "1F9B2"), "man, bald", "twemoji", ""),
   array(array("1F468", "0200D", "1F9B3"), "man, white haired", "twemoji", ""),
 
-  array(array("1F468", "0200D", "1F9B0"), "man, red haired", "twemoji", ""),
-  array(array("1F468", "0200D", "1F9B1"), "man, curly haired", "twemoji", ""),
-  array(array("1F468", "0200D", "1F9B2"), "man, bald", "twemoji", ""),
-  array(array("1F468", "0200D", "1F9B3"), "man, white haired", "twemoji", ""),
+  array(array("1F469", "0200D", "1F9B0"), "woman, red haired", "twemoji", ""),
+  array(array("1F469", "0200D", "1F9B1"), "woman, curly haired", "twemoji", ""),
+  array(array("1F469", "0200D", "1F9B2"), "woman, bald", "twemoji", ""),
+  array(array("1F469", "0200D", "1F9B3"), "woman, white haired", "twemoji", ""),
 );
 
 $cu_objetos_generos_colores = array(
   // Código Fitzpatrick se inserta en segunda posición
   // Hombres/Mujeres: 1F468 (man), 1F469 (woman)
   array(array("1F468", "0200D", "02695", "0FE0F"), "man health worker", "twemoji", ""),
-  array(array("1F468", "0200D", "02696", "0FE0F"), "man judge", "twemoji", ""),
-  array(array("1F468", "0200D", "02708", "0FE0F"), "man pilot", "twemoji", ""),
-  array(array("1F468", "0200D", "1F33E"), "man farmer", "twemoji", ""),
-  array(array("1F468", "0200D", "1F3A4"), "man singer", "twemoji", ""),
-  array(array("1F468", "0200D", "1F3A8"), "man artist", "twemoji", ""),
-  array(array("1F468", "0200D", "1F373"), "man cook", "twemoji", ""),
-  array(array("1F468", "0200D", "1F393"), "man student", "twemoji", ""),
-  array(array("1F468", "0200D", "1F3EB"), "man teacher", "twemoji", ""),
-  array(array("1F468", "0200D", "1F3ED"), "man factory worker", "twemoji", ""),
-  array(array("1F468", "0200D", "1F4BB"), "man technologist", "twemoji", ""),
-  array(array("1F468", "0200D", "1F4BC"), "man office worker", "twemoji", ""),
-  array(array("1F468", "0200D", "1F527"), "man mechanic", "twemoji", ""),
-  array(array("1F468", "0200D", "1F52C"), "man scientist", "twemoji", ""),
-  array(array("1F468", "0200D", "1F680"), "man astronaut", "twemoji", ""),
-  array(array("1F468", "0200D", "1F692"), "man firefighter", "twemoji", ""),
-
   array(array("1F469", "0200D", "02695", "0FE0F"), "woman health worker", "twemoji", ""),
+  array(array("1F468", "0200D", "02696", "0FE0F"), "man judge", "twemoji", ""),
   array(array("1F469", "0200D", "02696", "0FE0F"), "woman judge", "twemoji", ""),
+  array(array("1F468", "0200D", "02708", "0FE0F"), "man pilot", "twemoji", ""),
   array(array("1F469", "0200D", "02708", "0FE0F"), "woman pilot", "twemoji", ""),
+  array(array("1F468", "0200D", "1F33E"), "man farmer", "twemoji", ""),
   array(array("1F469", "0200D", "1F33E"), "woman farmer", "twemoji", ""),
+  array(array("1F468", "0200D", "1F3A4"), "man singer", "twemoji", ""),
   array(array("1F469", "0200D", "1F3A4"), "woman singer", "twemoji", ""),
+  array(array("1F468", "0200D", "1F3A8"), "man artist", "twemoji", ""),
   array(array("1F469", "0200D", "1F3A8"), "woman artist", "twemoji", ""),
+  array(array("1F468", "0200D", "1F373"), "man cook", "twemoji", ""),
   array(array("1F469", "0200D", "1F373"), "woman cook", "twemoji", ""),
+  array(array("1F468", "0200D", "1F393"), "man student", "twemoji", ""),
   array(array("1F469", "0200D", "1F393"), "woman student", "twemoji", ""),
+  array(array("1F468", "0200D", "1F3EB"), "man teacher", "twemoji", ""),
   array(array("1F469", "0200D", "1F3EB"), "woman teacher", "twemoji", ""),
+  array(array("1F468", "0200D", "1F3ED"), "man factory worker", "twemoji", ""),
   array(array("1F469", "0200D", "1F3ED"), "woman factory worker", "twemoji", ""),
+  array(array("1F468", "0200D", "1F4BB"), "man technologist", "twemoji", ""),
   array(array("1F469", "0200D", "1F4BB"), "woman technologist", "twemoji", ""),
+  array(array("1F468", "0200D", "1F4BC"), "man office worker", "twemoji", ""),
   array(array("1F469", "0200D", "1F4BC"), "woman office worker", "twemoji", ""),
+  array(array("1F468", "0200D", "1F527"), "man mechanic", "twemoji", ""),
   array(array("1F469", "0200D", "1F527"), "woman mechanic", "twemoji", ""),
+  array(array("1F468", "0200D", "1F52C"), "man scientist", "twemoji", ""),
   array(array("1F469", "0200D", "1F52C"), "woman scientist", "twemoji", ""),
+  array(array("1F468", "0200D", "1F680"), "man astronaut", "twemoji", ""),
   array(array("1F469", "0200D", "1F680"), "woman astronaut", "twemoji", ""),
+  array(array("1F468", "0200D", "1F692"), "man firefighter", "twemoji", ""),
   array(array("1F469", "0200D", "1F692"), "woman firefighter", "twemoji", ""),
 );
 
@@ -431,8 +430,8 @@ $cu_fitzpatrick_excepciones = array(
   // Código Fitzpatrick se inserta en segunda posición
   // Hombres/Mujeres: 02642 (male sign), 02640 (female sign)
   // Son especiales porque el segundo carácter es 0FE0F
-  array(array("1F547", "0FE0F", "0200D", "02640", "0FE0F"), "woman in bussiness suit levitating", "twemoji", ""),
-  array(array("1F547", "0FE0F", "0200D", "02642", "0FE0F"), "man in bussiness suit levitating", "twemoji", ""),
+  array(array("1F574", "0FE0F", "0200D", "02640", "0FE0F"), "woman in bussiness suit levitating", "twemoji", ""),
+  array(array("1F574", "0FE0F", "0200D", "02642", "0FE0F"), "man in bussiness suit levitating", "twemoji", ""),
   array(array("1F575", "0FE0F", "0200D", "02640", "0FE0F"), "woman detective", "twemoji", ""),
   array(array("1F575", "0FE0F", "0200D", "02642", "0FE0F"), "man detective", "twemoji", ""),
 );
@@ -518,8 +517,8 @@ $cu_fitzpatrick_n = array(
   array(array("1F9DB", "0200D", "02642", "0FE0F"), "Man Vampire", "twemoji", ""),
   array(array("1F9DC", "0200D", "02640", "0FE0F"), "Woman Merperson", "twemoji", ""),
   array(array("1F9DC", "0200D", "02642", "0FE0F"), "Man Merperson", "twemoji", ""),
-  array(array("1F9DD", "0200F", "02640", "0FE0F"), "Woman Elf", "twemoji", ""),
-  array(array("1F9DD", "0200F", "02642", "0FE0F"), "Man Elf", "twemoji", ""),
+  array(array("1F9DD", "0200D", "02640", "0FE0F"), "Woman Elf", "twemoji", ""),
+  array(array("1F9DD", "0200D", "02642", "0FE0F"), "Man Elf", "twemoji", ""),
   array(array("026F9", "0FE0F", "0200D", "02640", "0FE0F"), "woman bouncing ball", "", ""),
   array(array("026F9", "0FE0F", "0200D", "02642", "0FE0F"), "man bouncing ball", "", ""),
 );
