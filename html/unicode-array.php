@@ -17,6 +17,18 @@
 // Estaba entre los emojis Softbank originales, pero no se incluyó en Unicode, aunque Twitter lo incluye
 // https://emojipedia.org/shibuya/
 
+// 2018-08-30
+// Revisar
+// http://www.unicode.org/Public/emoji/11.0/emoji-variation-sequences.txt
+// http://www.unicode.org/Public/emoji/11.0/emoji-sequences.txt
+// http://www.unicode.org/Public/emoji/11.0/emoji-data.txt
+// http://unicode.org/reports/tr51/#valid-emoji-tag-sequences
+// https://unicode.org/emoji/charts/full-emoji-list.html
+//
+// En emojipedia en algunos emoji dice que no están recomendados por interoperabilidad (RGI)
+// https://emojipedia.org/woman-in-business-suit-levitating-type-5/
+
+
 $caracteres_unicode = array(
 
   // C0 Controls and Basic Latin

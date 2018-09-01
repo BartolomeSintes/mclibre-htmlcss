@@ -1,5 +1,5 @@
 <?php
-// 28 de agosto de 2018
+// 1 de septiembre de 2018
 // Para cada carácter, la matriz contiene:
 // - el código hexadecimal
 // - el nombre del carácter
@@ -301,7 +301,7 @@ $cu_banderas_sudivisiones = array(
 );
 
 $cu_otros = array(
-  // CombinacfamiliasVarios
+  // Combinaciones: Varios
   array(array("00023", "020E3"), "number sign + combining enclosing keycap", "twemoji", ""),
   array(array("0002A", "020E3"), "asterisk + combining enclosing keycap", "twemoji", ""),
   array(array("00030", "020E3"), "digit zero + combining enclosing keycap", "twemoji", ""),
@@ -430,6 +430,12 @@ $cu_fitzpatrick_excepciones = array(
   // Código Fitzpatrick se inserta en segunda posición
   // Hombres/Mujeres: 02642 (male sign), 02640 (female sign)
   // Son especiales porque el segundo carácter es 0FE0F
+  array(array("026F9", "0FE0F", "0200D", "02640", "0FE0F"), "woman bouncing ball", "twemoji", ""),
+  array(array("026F9", "0FE0F", "0200D", "02642", "0FE0F"), "man bouncing ball", "twemoji", ""),
+  array(array("1F3CB", "0FE0F", "0200D", "02640", "0FE0F"), "Woman Lifting Weights", "twemoji", ""),
+  array(array("1F3CB", "0FE0F", "0200D", "02642", "0FE0F"), "Man Lifting Weights", "twemoji", ""),
+  array(array("1F3CC", "0FE0F", "0200D", "02640", "0FE0F"), "Woman Golfing", "twemoji", ""),
+  array(array("1F3CC", "0FE0F", "0200D", "02642", "0FE0F"), "Man Golfing", "twemoji", ""),
   array(array("1F574", "0FE0F", "0200D", "02640", "0FE0F"), "woman in bussiness suit levitating", "twemoji", ""),
   array(array("1F574", "0FE0F", "0200D", "02642", "0FE0F"), "man in bussiness suit levitating", "twemoji", ""),
   array(array("1F575", "0FE0F", "0200D", "02640", "0FE0F"), "woman detective", "twemoji", ""),
@@ -445,12 +451,8 @@ $cu_fitzpatrick_n = array(
   array(array("1F3C4", "0200D", "02642", "0FE0F"), "Man Surfing", "twemoji", ""),
   array(array("1F3CA", "0200D", "02640", "0FE0F"), "Woman Swimming", "twemoji", ""),
   array(array("1F3CA", "0200D", "02642", "0FE0F"), "Man Swimming", "twemoji", ""),
-  array(array("1F3CB", "0FE0F", "0200D", "02640", "0FE0F"), "Woman Lifting Weights", "", ""),
-  array(array("1F3CB", "0FE0F", "0200D", "02642", "0FE0F"), "Man Lifting Weights", "", ""),
-  array(array("1F3CC", "0FE0F", "0200D", "02640", "0FE0F"), "Woman Golfing", "", ""),
-  array(array("1F3CC", "0FE0F", "0200D", "02642", "0FE0F"), "Man Golfing", "", ""),
-  array(array("1F46E", "0FE0F", "0200D", "02640", "0FE0F"), "Woman Police Officer", "", ""),
-  array(array("1F46E", "0FE0F", "0200D", "02642", "0FE0F"), "Man Police Officer", "", ""),
+  array(array("1F46E", "0200D", "02640", "0FE0F"), "Woman Police Officer", "twemoji", ""),
+  array(array("1F46E", "0200D", "02642", "0FE0F"), "Man Police Officer", "twemoji", ""),
   array(array("1F471", "0200D", "02640", "0FE0F"), "woman with blond hair", "twemoji", ""),
   array(array("1F471", "0200D", "02642", "0FE0F"), "man with blond hair", "twemoji", ""),
   array(array("1F473", "0200D", "02640", "0FE0F"), "woman with turban", "twemoji", ""),
@@ -485,15 +487,15 @@ $cu_fitzpatrick_n = array(
   array(array("1F6B5", "0200D", "02642", "0FE0F"), "Man Mountain Biking", "twemoji", ""),
   array(array("1F6B6", "0200D", "02640", "0FE0F"), "Woman Walking", "twemoji", ""),
   array(array("1F6B6", "0200D", "02642", "0FE0F"), "Man Walking", "twemoji", ""),
-  array(array("1F926", "0200D", "02642", "0FE0F"), "woman facepalming", "twemoji", ""),
+  array(array("1F926", "0200D", "02640", "0FE0F"), "woman facepalming", "twemoji", ""),
   array(array("1F926", "0200D", "02642", "0FE0F"), "man facepalming", "twemoji", ""),
-  array(array("1F935", "0200D", "02642", "0FE0F"), "woman in tuxedo", "twemoji", ""),
+  array(array("1F935", "0200D", "02640", "0FE0F"), "woman in tuxedo", "twemoji", ""),
   array(array("1F935", "0200D", "02642", "0FE0F"), "man in tuxedo", "twemoji", ""),
-  array(array("1F937", "0200D", "02642", "0FE0F"), "woman shrugging", "twemoji", ""),
+  array(array("1F937", "0200D", "02640", "0FE0F"), "woman shrugging", "twemoji", ""),
   array(array("1F937", "0200D", "02642", "0FE0F"), "man shrugging", "twemoji", ""),
-  array(array("1F938", "0200D", "02642", "0FE0F"), "woman doing cartwheel", "twemoji", ""),
+  array(array("1F938", "0200D", "02640", "0FE0F"), "woman doing cartwheel", "twemoji", ""),
   array(array("1F938", "0200D", "02642", "0FE0F"), "man doing cartwheel", "twemoji", ""),
-  array(array("1F939", "0200D", "02642", "0FE0F"), "woman juggling", "twemoji", ""),
+  array(array("1F939", "0200D", "02640", "0FE0F"), "woman juggling", "twemoji", ""),
   array(array("1F939", "0200D", "02642", "0FE0F"), "man juggling", "twemoji", ""),
   array(array("1F93D", "0200D", "02640", "0FE0F"), "woman playing water polo", "twemoji", ""),
   array(array("1F93D", "0200D", "02642", "0FE0F"), "man playing water polo", "twemoji", ""),
@@ -519,8 +521,6 @@ $cu_fitzpatrick_n = array(
   array(array("1F9DC", "0200D", "02642", "0FE0F"), "Man Merperson", "twemoji", ""),
   array(array("1F9DD", "0200D", "02640", "0FE0F"), "Woman Elf", "twemoji", ""),
   array(array("1F9DD", "0200D", "02642", "0FE0F"), "Man Elf", "twemoji", ""),
-  array(array("026F9", "0FE0F", "0200D", "02640", "0FE0F"), "woman bouncing ball", "", ""),
-  array(array("026F9", "0FE0F", "0200D", "02642", "0FE0F"), "man bouncing ball", "", ""),
 );
 
 $cu_fitzpatrick_1 = array(

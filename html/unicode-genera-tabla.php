@@ -38,7 +38,7 @@
 
 <body>
 <?php
-// 12 de marzo de 2017
+// 1 de septiembre de 2018
 include("unicode-array.php");
 include("unicode-array-combinaciones.php");
 // $rutaSVG = "https://github.com/emojione/emojione/blob/2.2.7/assets/svg";
@@ -127,7 +127,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -164,7 +164,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -205,7 +205,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";#" . hexdec($c[0][2]) . ";#" . hexdec($c[0][3]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp#" . hexdec($c[0][2]) . ";&amp#" . hexdec($c[0][3]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -299,7 +299,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -352,7 +352,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -409,7 +409,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";&amp;#x" . $c[0][7] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";&amp;#" . hexdec($c[0][7]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -433,7 +433,7 @@ function genera_grupos($grupos, $fuentes) {
 }
 
 function genera_tabla_colores_piel($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fuentes) {
-    global $caracteres_colores_piel, $rutaSVG;
+    global $rutaSVG;
 
     print "  <section id=\"$id\">\n";
     print "    <h2>$grupo</h2>\n";
@@ -480,7 +480,11 @@ function genera_tabla_colores_piel($matriz, $grupo, $id, $pdf, $cuenta, $inicial
         $cad2 = substr($cad2, 0, strlen($cad2)-1); // quito el guión final que sobra
         print "        <th>$cad1</th>\n";
         print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-        // CUIDADO: Hay dos casos especiales en los que el Fitzpatrick sustitue al segundo caracter de la secuencia
+        // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustitue al segundo caracter de la secuencia
+        $cad2 = str_replace("26f9-fe0f-", "26f9-", $cad2);
+        $cad2 = str_replace("1f3cb-fe0f-", "1f3cb-", $cad2);
+        $cad2 = str_replace("1f3cc-fe0f-", "1f3cc-", $cad2);
+        $cad2 = str_replace("1f46e-fe0f-", "1f46e-", $cad2);
         $cad2 = str_replace("1f574-fe0f-", "1f574-", $cad2);
         $cad2 = str_replace("1f575-fe0f-", "1f575-", $cad2);
         $pos = strpos($cad2, "-", 2);
@@ -571,11 +575,10 @@ $grupos_dibujos = array(
 );
 
 $grupos_secuencias = array(
-//  array($cu_banderas,                "Banderas",                                  "banderas",                "",                                                0, "", ""),
-//  array($cu_banderas_sudivisiones,   "Banderas (subdivisiones)",                  "banderas-2",              "",                                                0, "", ""),
-//  array($cu_otros,                   "Otros",                                     "otros",                   "",                                                0, "", ""),
-//  array($cu_otros,                   "Otros",                                     "otros",                   "",                                                0, "", ""),
-//  array($cu_familias,                "Familias",                                  "familias",                "",                                                0, "", ""),
+  array($cu_banderas,                "Banderas",                                  "banderas",                "",                                                0, "", ""),
+  array($cu_banderas_sudivisiones,   "Banderas (subdivisiones)",                  "banderas-2",              "",                                                0, "", ""),
+  array($cu_otros,                   "Otros",                                     "otros",                   "",                                                0, "", ""),
+    array($cu_familias,                "Familias",                                  "familias",                "",                                                0, "", ""),
     array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
     array($cu_objetos_generos_colores, "Género: Profesiones",                       "hm-profesiones",          "",                                                0, "", ""),
     array($cu_fitzpatrick_n,           "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
@@ -592,6 +595,7 @@ $grupos_secuencias_2 = array(
     array($cu_fitzpatrick_excepciones, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
     array($cu_generos,                 "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
     array($cu_objetos_generos_colores, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
+    array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
 );
 
 $grupos_restos = array(
@@ -602,7 +606,7 @@ $grupos_restos = array(
 
 //  genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
 //  genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
-//  genera_grupos($grupos_secuencias,   ["ss", "te"]);
+  genera_grupos($grupos_secuencias,   ["ss", "te"]);
     genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
 //  genera_grupos($grupos_restos);
