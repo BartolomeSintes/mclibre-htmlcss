@@ -42,7 +42,7 @@
 include("unicode-array.php");
 include("unicode-array-combinaciones.php");
 // $rutaSVG = "https://github.com/emojione/emojione/blob/2.2.7/assets/svg";
-$rutaSVG = "https://github.com/twitter/twemoji/tree/gh-pages/2/svg";
+$rutaSVG = "https://github.com/twitter/twemoji/blob/gh-pages/2/svg";
 
 function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fuentes) {
     global $rutaSVG;
