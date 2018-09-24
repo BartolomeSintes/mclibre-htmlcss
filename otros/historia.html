@@ -377,7 +377,7 @@
 
       <p>En noviembre de 1995 la IETF publicó la norma <a href="https://tools.ietf.org/html/rfc1866">RFC 1866</a>, escrita por Berners Lee y D. Connolly, que define la versión HTML 2.0 y el tipo MIME (Multipurpose Internet Mail Extension) text/html. Esta versión recapitulaba el estado del HTML de 1994 y recibió el nombre de HTML 2.0 para distinguirla de los HTML anteriores, que nunca recibieron nombre oficial. LA IETF dejó de trabajar en este campo en 1996, aunque en junio de 2000 publicó la norma <a href="https://tools.ietf.org/html/rfc2854">RFC 2854</a> que resumía y anulaba los RFC anteriores relativos al HTML.</p>
 
-      <p>El W3C publicó en enero de 1997 la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">HTML 3.2</a>, editada por Dave Raggett. Esta versión incorporó muchas estructuras nuevas al HTML (tablas, imágenes flotantes, applets, hojas de estilo). En diciembre de 1997 se publicó la recomendación HTML 4.0, editada por Dave Raggett y otros, aunque la versión definitiva <a href="https://www.w3.org/TR/1998/REC-html40-19980424/">HTML 4.0</a>, editada por Dave Raggett y otros, se publicó en abril de 1998 corrigiendo erratas de la primera edición. Los cambios más importantes fueron la incorporación de los frames y la mayor relevancia de las hojas de estilo. En diciembre de 1999 se publicó la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html401-20180327/">HTML 4.01</a>, editada por Dave Raggett y otros, que modificaba ligeramente la versión anterior.</p>
+      <p>El W3C publicó en enero de 1997 la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html32-20180315/">HTML 3.2</a>, editada por Dave Raggett. Esta versión incorporó muchas estructuras nuevas al HTML (tablas, imágenes flotantes, applets, hojas de estilo). En diciembre de 1997 se publicó la recomendación HTML 4.0, editada por Dave Raggett y otros, aunque la versión definitiva <a href="https://www.w3.org/TR/2018/SPSD-html40-20180327/">HTML 4.0</a>, editada por Dave Raggett y otros, se publicó en abril de 1998 corrigiendo erratas de la primera edición. Los cambios más importantes fueron la incorporación de los frames y la mayor relevancia de las hojas de estilo. En diciembre de 1999 se publicó la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html401-20180327/">HTML 4.01</a>, editada por Dave Raggett y otros, que modificaba ligeramente la versión anterior.</p>
 
       <p>En HTML 4.01 se definen tres tipos de documentos: Strict (estricto), Frameset (con marcos) y Transitional (de transición). El tipo Transitional intenta parecerse a las versiones anteriores de HTML, manteniendo el mayor número posible de etiquetas. El tipo Frameset es como el Transitional, salvo que incluye además la posibilidad de crear marcos (frames). El tipo Strict elimina las etiquetas directamente relacionadas con el aspecto visual (como <span class="html-eti">font</span>, <span class="html-eti">s</span> o <span class="html-eti">u</span>).</p>
 
@@ -412,7 +412,7 @@
 
       <p>Por desgracia, el paso del HTML al XHTML, que el W3C pensaba que sería inmediato, resultó ser un fracaso. Probablemente, el principal motivo del fracaso fue el problema de los tipos MIME en Intenet Explorer (en las versiones anteriores a IE9), que por aquel entonces era el navegador hegemónico, aunque también es verdad que el requisito de ausencia de errores de sintaxis en el XHTML es un requisito muy exigente, sobre todo en las páginas creadas manualmente.</p>
 
-      <p>Los tipos MIME definen tipos de documentos y son la manera en que el servidor le dice al navegador qué tipo de documento le va a enviar. El tipo MIME de los documentos html es text/html mientras que el tipo MIME de los documentos xhtml es application/xhtml+xml . El problema es que los Internet Explorer anteriores a IE9 no admitían el tipo application/xhtml+xml (definido en la norma <a href="https://tools.ietf.org/html/rfc3236">RFC 3236</a>, de enero de 2002) y simplemente no mostraban los documentos enviados con este tipo MIME. La alternativa es enviar los documentos xhtml como text/html, pero eso genera <a href="http://www.hixie.ch/advocacy/xhtml">multitud de problemas</a>. El más importante es que los navegadores no tratan el documento como xhtml sino como html y por tanto el navegador piensa que el documento está lleno de errores, aunque los navegadores los ignoran y consiguen mostrar la página. Dado que Internet Explorer es el navegador más utilizado, prácticamente nadie envía los documentos xhtml con el tipo MIME application/xhtml+xml y como al enviarlos con el tipo MIME text/html se pierden todas las ventajas del xhtml, la conclusión es automática: no vale la pena usar xhtml. Actualmente (abril de 2018) gran parte o la mayoría de las páginas disponibles en la web que pretenden ser XHTML, ni son válidas ni se sirven como tal.</p>
+      <p>Los tipos MIME definen tipos de documentos y son la manera en que el servidor le dice al navegador qué tipo de documento le va a enviar. El tipo MIME de los documentos html es text/html mientras que el tipo MIME de los documentos xhtml es application/xhtml+xml . El problema es que los Internet Explorer anteriores a IE9 no admitían el tipo application/xhtml+xml (definido en la norma <a href="https://tools.ietf.org/html/rfc3236">RFC 3236</a>, de enero de 2002) y simplemente no mostraban los documentos enviados con este tipo MIME. La alternativa es enviar los documentos xhtml como text/html, pero eso ocasiona <a href="http://www.hixie.ch/advocacy/xhtml">multitud de problemas</a>. El más importante es que los navegadores no tratan el documento como xhtml sino como html y por tanto el navegador piensa que el documento está lleno de errores, aunque los navegadores los ignoran y consiguen mostrar la página. Dado que Internet Explorer era el navegador más utilizado, prácticamente nadie enviaba los documentos xhtml con el tipo MIME application/xhtml+xml y como al enviarlos con el tipo MIME text/html se pierden todas las ventajas del xhtml, la conclusión era inmediata: no valía la pena usar xhtml. De hecho, la mayoría de las páginas disponibles en la web que decían ser xhtml, ni eran válidas ni se servían como tal.</p>
 
       <p>Ante este bloqueo que impedía el desarrollo del HTML (el W3C había abandonado el desarrollo del HTML en favor del XHTML pero el mercado -por culpa de Microsoft, especialmente- rechazaba el XHTML), en 2004 se creó el <a href="https://whatwg.org/">WHATWG</a> (Web Hypertext Application Technology Working Group), un grupo de trabajo informal formado por individuos y empresas (Mozilla, Opera, Apple, Google entre ellas) y dedicado al desarrollo del HTML, sobre todo para facilitar el desarrollo de las aplicaciones Web. Este grupo empezó a elaborar las especificaciones <a href="https://html.spec.whatwg.org/">HTML 5</a> (también llamada Web Applications 1.0), <a href="https://whatwg.org/specs/web-forms/current-work/">Web Forms 2.0</a> y <a href="https://whatwg.org/specs/web-controls/current-work/">Web Controls 1.0</a>, editadas por Ian Hickson, con la intención de que en el futuro se publicaran como recomendaciones del W3C con el nombre de HTML 5.</p>
 
@@ -426,18 +426,18 @@
 
       <p>El reparto de papeles (el WHATWG desarrollando continuamente el HTML, los navegadores implementando el HTML del WHATWG y el W3C fijando versiones cada ciertos años), comenzó con buen pie pero que dos grupos distintos pudieran desarrollar su trabajo sin fricciones resultaba sorprendente. Hasta mediados de 2012 el funcionamiento correcto de este modelo de desarrollo se debió en gran parte a que el editor de ambos documentos era la misma persona, el físico suizo-británico <a href="https://plus.google.com/+IanHickson/posts">Ian Hickson</a>, empleado de Google. Pero en julio de 2012 Hickson dejó de ser el editor del W3C para centrar su trabajo en el WHATWG, lo que genera dudas sobre cómo se resolverán las diferencias que vayan apareciendo en el futuro o si el W3C decide dejar de basarse en el borrador del WHATWG.</p>
 
-      <p>Finalmente, el 28 de octubre de 2014 se publicó la recomendación <a href="https://www.w3.org/TR/2014/REC-html5-20141028/">HTML5: Vocabulario y APIs asociadas para HTML y XHTML</a>. En diciembre de 2014 se publicó la nota <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/">diferencias entre HTML4 y HTML5</a>.</p>
+      <p>Finalmente, el 28 de octubre de 2014 se publicó la recomendación <a href="https://www.w3.org/TR/2018/SPSD-html5-20180327/">HTML5: Vocabulario y APIs asociadas para HTML y XHTML</a>. En diciembre de 2014 se publicó la nota <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/">diferencias entre HTML4 y HTML5</a>.</p>
 
-      <p>El 1 de noviembre de 2016 se publicó la recomendación <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">HTML 5.1</a>. Esta versión no supuso un gran cambio respecto a HTML 5, pero introducía algunos elementos nuevos. El 3 de octubre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html51-20171003/">HTML 5.1 2º edición</a>, sin apenas cambios respecto a la primera edición.</p>
+      <p>En noviembre de 2016 se publicó la recomendación <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">HTML 5.1</a>. Esta versión no supuso un gran cambio respecto a HTML 5, pero introducía algunos elementos nuevos. En octubre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html51-20171003/">HTML 5.1 2º edición</a>, sin apenas cambios respecto a la primera edición.</p>
 
-      <p>El 14 de diciembre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html52-20171214/">HTML 5.2</a>, que introdujo algún elemento nuevo y eliminó algunos elementos introducidos en HTML 5.1.</p>
+      <p>En diciembre de 2017 se publicó la recomendación <a href="https://www.w3.org/TR/2017/REC-html52-20171214/">HTML 5.2</a>, que introdujo algún elemento nuevo y eliminó algunos elementos introducidos en HTML 5.1.</p>
 
-      <p>En marzo de 2018 declaró reemplazadas (<i>Superseeded</i>) todas las recomendaciones del HTML y XHTML anteriores a HTML 5.1.</p>
+      <p>En marzo de 2018 declararon obsoletas y reemplazadas (<i>Superseeded</i>) todas las recomendaciones del HTML y XHTML anteriores a HTML 5.1.</p>
 
-      <p>Actualmente (abril de 2018):</p>
+      <p>Actualmente (septiembre de 2018):</p>
       <ul>
         <li>el WHATWG prosigue su desarrollo continuo del HTML y está adoptando una <a href="https://blog.whatwg.org/working-mode-changes">estructura más formal</a>, lo que aleja la posibilidad de una unificación futura entre el WHATWG y el W3C.</li>
-        <li>el W3C está desarrollando la próxima versión del HTML, <a href="https://www.w3.org/TR/html53/">HTML 5.3</a>, que se espera publicar en agosto de 2018 y cuyo primer borrador público se publicó en diciembre de 2017.</li>
+        <li>el W3C está desarrollando la próxima versión del HTML, <a href="https://www.w3.org/TR/html53/">HTML 5.3</a>, que se espera publicar en 2018 y cuyo primer borrador público se publicó en diciembre de 2017.</li>
       </ul>
 
       <p>
@@ -486,7 +486,7 @@
 
       <p>Las hojas de estilo es el mecanismo elegido por el W3C para separar la presentación de una página web de su contenido. En las primeras versiones del html, el aspecto visual (tipos de letras, colores, etc) se incorporaba en la propia página web. Trabajando con hojas de estilo, la página web (el fichero .html) no contiene información sobre la forma de representar la página, sino que esa información se encuentra en la hoja de estilo (el fichero .css). Las ventajas son evidentes: se asegura la uniformidad del diseño (ya que varias páginas pueden utilizar la misma hoja de estilo) y se facilita su modificación (ya que sólo hay que cambiar el diseño en la hoja de estilo). Se denominan Hojas de Estilo en Cascada, porque la información de estilo se puede situar en varios lugares (hoja de estilo externa, hoja de estilo incluida en la página web o estilos incluidos en las etiquetas de la página web) y se aplican de forma jerárquica.</p>
 
-      <p>En diciembre de 1996 se aprobó la recomendación <a href="https://www.w3.org/TR/REC-CSS1-961217">CSS nivel 1</a>, editada por Håkon Wium Lie y Bert Bos. En enero de 1999, se aprobó una versión revisada, <a href="https://www.w3.org/TR/1999/REC-CSS1-19990111#appendix-f">CSS nivel 1 revisada</a>, editada por Håkon Wium Lie y Bert Bos, que básicamente corregía erratas y errores menores. En mayo de 1998 se aprobó la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/">CSS nivel 2</a>, editada por Bert Bos y otros, que manteniendo la compatibilidad con las hojas de estilo de nivel 1, incluía nuevas características (posicionamiento, estilos de tablas) y permitía la utilización de hojas de estilo adaptadas al medio de presentación (visual, oral, impreso, etc).</p>
+      <p>En diciembre de 1996 se aprobó la recomendación <a href="https://www.w3.org/TR/REC-CSS1-961217">CSS nivel 1</a>, editada por Håkon Wium Lie y Bert Bos. En enero de 1999, se aprobó una versión revisada, <a href="https://www.w3.org/TR/1999/REC-CSS1-19990111">CSS nivel 1 revisada</a>, editada por Håkon Wium Lie y Bert Bos, que básicamente corregía erratas y errores menores. En mayo de 1998 se aprobó la recomendación <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/">CSS nivel 2</a>, editada por Bert Bos y otros, que manteniendo la compatibilidad con las hojas de estilo de nivel 1, incluía nuevas características (posicionamiento, estilos de tablas) y permitía la utilización de hojas de estilo adaptadas al medio de presentación (visual, oral, impreso, etc).</p>
 
       <p>Como en el caso del XHTML, aunque por razones distintas, el grupo de trabajo sobre hojas de estilos prácticamente dejó de funcionar durante unos años. En el año 2001 Microsoft se hizo con más del 90% del mercado de los navegadores y dejó de sacar nuevas versiones de Internet Explorer. Internet Explorer 6 fue el navegador hegemónico hasta 2008 y su implementación de la recomendación CSS nivel 2 era pésima (no solamente no implementaba muchas características de la recomendación, sino que implementaba otras muchas al revés de lo que decía la recomendación). En esas condiciones, no tenía sentido continuar desarrollando nuevas recomendaciones cuando la antigua no se utilizaba.</p>
 
@@ -520,7 +520,9 @@
 
       <p>En enero de 2017 se publicó <a href="https://www.w3.org/TR/2017/NOTE-css-2017-20170131/">CSS Snapshot 2017</a>, una nota del grupo de trabajo que resume el estado de las distintas recomendaciones CSS.</p>
 
-      <p>Actualmente (abril de 2018) continuamente se publican nuevos borradores de trabajo de algunas de las futuras recomendaciones CSS 3, pero las versiones definitivas tardarán años en publicarse al ritmo actual. También existen un par de borradores de recomendaciones de CSS nivel 4. Para consultar las novedades sobre la elaboración de las recomendaciones, se puede consultar el <a href="https://www.w3.org/Style/CSS/Planet/">agregador de noticias del grupo de trabajo CSS del W3C</a>. La lección <a href="../css/css3.html">Hojas de estilo CSS3</a> contiene enlaces a las recomendaciones CSS3 aprobadas, a los últimos borradores publicados y a los borradores de los editores.</p>
+      <p>En septiembre de 2018 se declaró obsoleta y reemplazada (<i>Superseeded</i>) la recomendación <a href="https://www.w3.org/TR/2018/SPSD-CSS1-20180913/">CSS nivel 1</a>.</p>
+
+      <p>Actualmente (septiembre de 2018) continuamente se publican nuevos borradores de trabajo de las futuras recomendaciones CSS 3 (y algunas CSS nivel 4), pero las versiones definitivas tardarán años en publicarse al ritmo actual. Para consultar las novedades sobre la elaboración de las recomendaciones, se puede consultar el <a href="https://www.w3.org/Style/CSS/Planet/">agregador de noticias del grupo de trabajo CSS del W3C</a>. La lección <a href="../css/css3.html">Hojas de estilo CSS3</a> contiene enlaces a las recomendaciones CSS3 aprobadas, a los últimos borradores publicados y a los borradores de los editores.</p>
     </section>
 
     <section id="javascript">
@@ -654,8 +656,7 @@
 
         <p>El DOM es un interface que permite a los programas y scripts acceder y modificar dinámicamente el contenido, la estructura y el estilo de los documentos. El documento puede ser procesado posteriormente y el resultado del procesamiento se puede actualizar en el documento que se está mostrando. La recomendación DOM level 1 trataba sobre documentos HTML y XML. Las recomendaciones DOM level 2 añadieron al nivel 1 nuevos aspectos como el tratamiento de espacios de nombres XML o de eventos. Las recomendaciones DOM level 3 añadieron al nivel 2 nuevos aspectos como el tratamiento de XML Information Set o XML Base.</p>
 
-        <p>Las recomendaciones ya aprobadas son las siguientes:</p>
-
+        <p>Las recomendaciones publicadas por el grupo de trabajo son las siguientes:</p>
         <ul>
           <li>octubre de 1998: <a href="https://www.w3.org/TR/1998/REC-DOM-Level-1-19981001/">Document Object Model (DOM) level 1</a>, editada por Vidur Apparao y otros.</li>
           <li>noviembre de 2000: <a href="https://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/">DOM Level 2 Core Specification 1.0</a>, editada por Arnaud Le Hors y otros.</li>
@@ -672,10 +673,10 @@
 
         <p>Además se han publicado las siguiente notas del grupo de trabajo:</p>
         <ul>
-          <li>marzo de 2018: <a href="https://www.w3.org/TR/shadow-dom/">Shadow DOM</a>, editada por Hayato Ito.</li>
+          <li>marzo de 2018: <a href="https://www.w3.org/TR/2018/NOTE-shadow-dom-20180301/">Shadow DOM</a>, editada por Hayato Ito.</li>
         </ul>
 
-        <p>Actualmente (abril de 2018) el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/dom41/">DOM 4.1</a>, <a href="https://w3c.github.io/uievents/">UI Events</a> y <a href="https://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a>. Por su parte, el WHATWG mantiene la norma <a href="https://dom.spec.whatwg.org/">DOM</a> (living standard).</p>
+        <p>Actualmente (septiembre de 2018) el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/dom41/">DOM 4.1</a>, <a href="https://w3c.github.io/uievents/">UI Events</a> y <a href="https://www.w3.org/TR/DOM-Parsing/">DOM Parsing and Serialization</a>. Por su parte, el WHATWG mantiene la norma <a href="https://dom.spec.whatwg.org/">DOM</a> (living standard).</p>
       </section>
 
       <section id="apis">
@@ -683,8 +684,7 @@
 
         <p>Desde hace unos años, la iniciativa <a href="https://www.w3.org/2007/uwa/Activity.html">Aplicaciones de Web Ubicuas</a> del W3C ha empezado a normalizar también toda una serie de APIs (Application Programming Interface = Interfaz de programación de aplicaciones), para que JavaScript (y otros lenguajes) pueda acceder a todos los servicios proporcionados por los diferentes navegadores.</p>
 
-        <p>Las recomendaciones ya aprobadas son las siguientes:</p>
-
+        <p>Las recomendaciones publicadas por el grupo de trabajo son las siguientes:</p>
         <ul>
           <li>diciembre de 2012: <a href="https://www.w3.org/TR/2012/REC-hr-time-20121217/">High Resolution Time</a></li>
           <li>diciembre de 2012: <a href="https://www.w3.org/TR/2012/REC-navigation-timing-20121217/">Navigation Timing</a></li>
@@ -789,6 +789,8 @@
         </p>
 
         <p>MathML es un lenguaje de marcas dirigido a la representación de fórmulas matemáticas.</p>
+
+        <p>Las recomendaciones publicadas por el grupo de trabajo son las siguientes:</p>
         <ul>
           <li>abril de 1998: <a href="https://www.w3.org/TR/1998/REC-MathML-19980407/">MathML 1.0</a>, editada por Patrick Ion y Robert Miner.</li>
           <li>julio de 1999: <a href="https://www.w3.org/1999/07/REC-MathML-19990707/">MathML 1.01</a>, editada por Patrick Ion y Robert Miner, que básicamente corregía errores de la primera versión.</li>
@@ -855,6 +857,8 @@
 
         <p>SVG es un lenguaje de marcas dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
 
+        <p>Las recomendaciones publicadas por el grupo de trabajo son las siguientes:</p>
+
         <ul>
           <li>septiembre de 2001: <a href="https://www.w3.org/TR/2001/REC-SVG-20010904/">SVG 1.0</a>, editada por Jon Ferraiolo.</li>
           <li>enero de 2003: <a href="https://www.w3.org/TR/2003/REC-SVG11-20030114/">SVG 1.1</a>, editada por Dean Jackson.</li>
@@ -863,9 +867,11 @@
           <li>agosto de 2011: <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/">SVG 1.1 (2ª edición)</a>, editada por Erik Dahlström y otros.</li>
         </ul>
 
-        <p>Actualmente (abril de 2018), el W3C está preparando la recomendación <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> (prevista para finales de 2018) y toda una serie de recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS (<a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>). Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
+        <p>Actualmente (septiembre de 2018), el W3C está preparando las recomendaciones <a href="https://www.w3.org/TR/SVG2/">SVG 2</a> y <a href="https://www.w3.org/TR/svg-aam-1.0/">SVG Accessibility API Mappings</a>, previstas para finales de 2018. Se puede consultar la <a href="https://www.w3.org/Graphics/SVG/WG/wiki/Roadmap">planificación del grupo de trabajo SVG</a>.</p>
 
-        <p>Los proyectos de recomendación <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, fueron retirados. Los proyectos de recomendación SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>) parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
+        <p>También están disponibles varias recomendaciones auxiliares, muchas de ellas preparadas conjuntamente con el grupo de trabajo de CSS, pero su desarrollo parece abandonado: <a href="https://www.w3.org/TR/SVGParamPrimer/">SVG Parameters 1.0, Part 1: Primer</a>, <a href="https://www.w3.org/TR/SVGParam/">SVG Parameters 1.0, Part 2: Language</a>, <a href="https://www.w3.org/TR/svg-integration/">SVG Integration</a>, <a href="https://www.w3.org/TR/svg-markers/">SVG Markers</a>. Los proyectos de recomendación SVG Color 1.2 (partes <a href="https://www.w3.org/TR/SVGColorPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGColor12/">Lenguaje</a>) parecen abandonados, puesto que hace años que no actualizan los borradores.</p>
+
+        <p>Los proyectos de recomendación <a href="https://www.w3.org/TR/SVG12/">SVG 1.2 Full</a>, SVG Print 1.2 (partes <a href="https://www.w3.org/TR/SVGPrintReqs/">Requisitos</a>, <a href="https://www.w3.org/TR/SVGPrintPrimer12/">Introducción</a> y <a href="https://www.w3.org/TR/SVGPrint12/">Lenguaje</a>), dirigida a entornos de impresión, fueron retirados. </p>
 
         <p>Poco a poco SVG se está imponiendo como formato común para gráficos vectoriales. Muchos editores gráficos permiten exportar los dibujos en formato SVG o incluso trabajan con SVG como formato nativo, por ejemplo <a href="https://inkscape.org/es/">Inkscape</a>, un editor con licencia GPL, la suite ofimática LibreOffice trabaja con gráficos SVG y los entornos de escritorio de GNU/Linux GNOME y KDE utilizan el formato SVG como formato gráfico. También cabe destacar la colección de imágenes en formato SVG <a href="https://openclipart.org/">Open Clip Art Library</a>, con licencia Creative Commons (dominio público).</p>
 
@@ -904,12 +910,13 @@
           </svg>
         </p>
 
-        <p>TTML es un lenguaje de marcas dirigido a la creación de subtítulos. Las recomendaciones publicadas por el grupo son las siguientes:</p>
+        <p>TTML es un lenguaje de marcas dirigido a la creación de subtítulos.</p>
 
+        <p>Las recomendaciones publicadas por el grupo son las siguientes:</p>
         <ul>
           <li>noviembre de 2010: Timed Text Markup Language <a href="https://www.w3.org/TR/2010/REC-ttaf1-dfxp-20101118/">TTML 1.0</a>, editada por Glenn Adams.</li>
           <li>septiembre de 2013: Timed Text Markup Language <a href="https://www.w3.org/TR/2013/REC-ttml1-20130924/">TTML 1.0 (segunda edición)</a>, editada por Glenn Adams.</li>
-          <li>abril de 2016: <a href="https://www.w3.org/TR/2016/REC-ttml-imsc1-20160421/">TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1)</a>, editada por Pierre Lemieux.</li>
+          <li>abril de 2016: <a href="https://www.w3.org/TR/2018/SPSD-ttml-imsc1-20180626/">TTML Profiles for Internet Media Subtitles and Captions 1.0 (IMSC1)</a>, editada por Pierre Lemieux. Retirada en junio de 2018</li>
           <li>abril de 2018: <a href="https://www.w3.org/TR/2018/REC-ttml-imsc1.0.1-20180424/">TTML Profiles for Internet Media Subtitles and Captions 1.0.1 (IMSC1)</a>, editada por Pierre Lemieux</li>
         </ul>
 
@@ -918,7 +925,7 @@
           <li>enero de 2017: <a href="https://www.w3.org/TR/2017/NOTE-ttml-profile-registry-20170117/">TTML Media Type Definition and Profile Registry</a>, editada por Mike Dolan.</li>
         </ul>
 
-        <p>Actualmente (abril de 2018), el W3C está preparando las recomendaciones:</p>
+        <p>Actualmente (septiembre de 2018), el W3C está preparando las recomendaciones:</p>
         <ul>
           <li><a href="https://www.w3.org/TR/ttml1/">TTML 1.0 (3º edición)</a></li>
           <li><a href="https://www.w3.org/TR/ttml2/">TTML2</a></li>
@@ -960,6 +967,8 @@
       <h3>WebCGM</h3>
 
       <p>Computer Graphics Metafile (CGM) es un formato de gráficos vectoriales 2D publicado como norma ISO (<a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32378">ISO 8632</a>) en 1987 (norma actualizada en 1999). WebCGM añade a los archivos CGM la posibilidad de integrarse en páginas web y ha sido desarrollado por el W3C y el <a href="http://www.cgmopen.org/">CGM Open</a>, una sección de <a href="https://www.oasis-open.org/">OASIS</a>, un consorcio de empresas dedicado al desarrollo de normas abiertas para la sociedad de la información.</p>
+
+      <p>Las recomendaciones publicadas por el grupo de trabajo son las siguientes:</p>
       <ul>
         <li>enero de 1999: recomendación <a href="https://www.w3.org/TR/1999/WebCGM/">WebCGM Profile</a>, editada por David Cruikshank y otros.</li>
         <li>diciembre de 2001: recomendación <a href="https://www.w3.org/TR/2001/REC-WebCGM-20011217/">WebCGM 1.0 (2ª edición)</a>, editada por David Cruikshank y otros.</li>
@@ -979,7 +988,7 @@
 
       <p>Grupo de trabajo Web Fonts en el W3C:
         <a href="https://www.w3.org/Fonts/WG/">Homepage</a> - Plan de trabajo:
-        <a href="https://www.w3.org/2012/06/WebFonts/charter-2012.html">2012-2017</a> -
+        <a href="https://www.w3.org/2012/06/WebFonts/charter-2012.html">2012-2018</a> -
         <a href="https://www.w3.org/2009/08/WebFonts/charter.html">2009-2012</a>
       </p>
 
@@ -1043,21 +1052,21 @@
 
       <p>Borradores:</p>
       <ul>
-        <li>agosto de 2018: <a href="https://www.w3.org/TR/wpub/">Web Publications</a></li>
-        <li>enero de 2018: <a href="https://www.w3.org/TR/pwpub/">Packaged Web Publications</a></li>
-        <li>enero de 2018: <a href="https://www.w3.org/TR/wpub-ann/">Web Annotation Extensions for Web Publications</a></li>
+        <li><a href="https://www.w3.org/TR/wpub/">Web Publications</a></li>
+        <li><a href="https://www.w3.org/TR/pwpub/">Packaged Web Publications</a></li>
+        <li><a href="https://www.w3.org/TR/wpub-ann/">Web Annotation Extensions for Web Publications</a></li>
       </ul>
 
       <p>Notas del grupo de trabajo:</p>
       <ul>
         <li>diciembre de 2014: <a href="https://www.w3.org/TR/2014/NOTE-dpub-annotation-uc-20141204/">Digital Publishing Annotation Use Cases</a>, editada por Robert Sanderson</li>
-        <li>mayo de 2017: <a href="https://www.w3.org/TR/pwp/">Web Publications</a>, editada por Markus Gylling y otros</li>
-        <li>mayo de 2017: <a href="https://www.w3.org/TR/pwp-ucr/">Web Publications Use Cases and Requirements</a>, editada por Heather Flanagan y otros</li>
+        <li>mayo de 2017: <a href="https://www.w3.org/TR/2017/NOTE-pwp-20170502/">Web Publications for the Open Web Platform: Vision And Technical Challenges</a>, editada por Markus Gylling y otros</li>
+        <li>mayo de 2017: <a href="https://www.w3.org/TR/2017/NOTE-pwp-ucr-20170502/">Web Publications Use Cases and Requirements</a>, editada por Heather Flanagan y otros</li>
       </ul>
     </section>
 
     <section id="otros-recomendaciones">
-      <h3>Recomendaciones</h3>
+      <h3>Otras recomendaciones</h3>
       <ul>
         <li>enero de 1997: <a href="https://tools.ietf.org/html/rfc2070">RFC 2070: Internationalization of the Hypertext Markup Languag</a></li>
         <li>septiembre de 2012: <a href="https://www.w3.org/TR/media-frags/">Media Fragments URI 1.0 (basic)</a></li>
@@ -1082,7 +1091,7 @@
 
       <h3>Notas de grupos de trabajo</h3>
       <ul>
-        <li><a href="https://www.w3.org/TR/html-alt-techniques/">HTML5: Techniques for providing useful text alternatives</a></li>
+        <li>mayo de 2015: <a href="https://www.w3.org/TR/html-alt-techniques/">HTML5: Techniques for providing useful text alternatives</a></li>
       </ul>
     </section>
 
@@ -1113,7 +1122,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de agosto de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 21 de septiembre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br />
