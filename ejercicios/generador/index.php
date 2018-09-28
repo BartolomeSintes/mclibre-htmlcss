@@ -28,7 +28,7 @@ include "generador_biblioteca.php";
 
   <p><img src="../../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48" />Este generador de ejercicios está en elaboración. El objetivo es poder elegir las etiquetas HTML y propiedades CSS que aparecen en los ejercicios.</p>
 
-  <hr />
+  <hr>
 
   <form action="generador_html.php" method="<?= $metodo?>">
 <?php
