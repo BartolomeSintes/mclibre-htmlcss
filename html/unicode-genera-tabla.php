@@ -127,7 +127,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -164,7 +164,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -205,7 +205,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp#" . hexdec($c[0][2]) . ";&amp#" . hexdec($c[0][3]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp#" . hexdec($c[0][2]) . ";&amp#" . hexdec($c[0][3]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -250,7 +250,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";</strong><br />decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";</strong><br>decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -299,7 +299,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -352,7 +352,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
@@ -409,7 +409,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
                 print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
             }
             print "      </p>\n";
-            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";&amp;#x" . $c[0][7] . ";</strong><br />decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";&amp;#" . hexdec($c[0][7]) . ";</strong></p>\n";
+            print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";&amp;#x" . $c[0][7] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";&amp;#" . hexdec($c[0][7]) . ";</strong></p>\n";
             print "      <p class=\"no\">$c[1]</p>\n";
             print "    </div>\n";
             print "\n";
