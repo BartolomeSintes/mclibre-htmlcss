@@ -30,7 +30,7 @@
         <li><a href="#etiqueta-html">Raíz <span class="html-eti">&lt;html&gt;</span></a></li>
         <li><a href="#etiqueta-head">Cabecera <span class="html-eti">&lt;head&gt;</span></a></li>
         <li><a href="#etiqueta-title">Título <span class="html-eti">&lt;title&gt;</span></a></li>
-      <li><a href="#etiqueta-base">Base <span class="html-eti">&lt;base &gt;</span></a></li>
+        <li><a href="#etiqueta-base">Base <span class="html-eti">&lt;base &gt;</span></a></li>
         <li><a href="#etiqueta-link">Enlaces <span class="html-eti">&lt;link /&gt;</span></a></li>
         <li><a href="#etiqueta-meta">Meta <span class="html-eti">&lt;meta /&gt;</span></a></li>
         <li><a href="#etiqueta-style">Estilo <span class="html-eti">&lt;style&gt;</span></a></li>
@@ -50,11 +50,17 @@
       </p>
     </aside>
 
-    <p>El preámbulo !DOCTYPE es una etiqueta obligatoria</p>
+    <p>El preámbulo !DOCTYPE es una etiqueta obligatoria:</p>
 
-    <p>En las versiones de HTML anteriores a HTML5, su función era indicar la versión de HTML empleado en el documento. Cada versión y variante del HTML tenía definido su propio !DOCTYPE</p>
+    <div class="codigo">
+      <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;</code>
+</pre>
+    </div>
 
-    <p>Estos son algunos ejemplos de !DOCTYPE:</p>
+    <p>En las versiones de HTML anteriores a HTML 5, su función era indicar la versión de HTML empleado en el documento. Cada versión y variante del HTML tenía definido su propio !DOCTYPE</p>
+
+    <p>Estos son algunos ejemplos de !DOCTYPE obsoletos:</p>
 
     <div class="codigo">
       <pre>
@@ -68,13 +74,7 @@
 </pre>
     </div>
 
-    <p>A partir de HTML 5, ya no existen las versiones de HTML, por lo que el !DOCTYPE no sería realmente necesario en HTML 5 y posteriores. Pero como algunos navegadores aplican reglas especiales si el documento no incluye el !DOCTYPE, la recomendación HTML 5 sigue manterniendo el preámbulo !DOCTYPE como obligatorio, pero simplificado al máximo.</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;!DOCTYPE html&gt;</code>
-</pre>
-    </div>
+    <p>A partir de HTML 5 ya no existen las versiones de HTML, así que el !DOCTYPE no sería realmente necesario en HTML 5 y posteriores. Pero como algunos navegadores aplican reglas especiales si el documento no incluye el !DOCTYPE, la recomendación HTML 5 sigue manteniendo el preámbulo !DOCTYPE como obligatorio, pero simplificado al máximo.</p>
   </section>
 
   <section id="etiqueta-html">
@@ -99,10 +99,10 @@
 <code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
+  &lt;meta charset="utf-8"&gt;
   &lt;title&gt;HTML 5&lt;/title&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-  &lt;link rel="stylesheet" type="text/css" href="estilo.css" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" type="text/css" href="estilo.css"&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
@@ -163,55 +163,55 @@
   </section>
 
   <section id="etiqueta-link">
-    <h2 class="con-aside">Enlaces: <span class="html-eti">&lt;link /&gt;</span></h2>
+    <h2 class="con-aside">Enlaces: <span class="html-eti">&lt;link&gt;</span></h2>
 
     <aside class="enlace-norma">
       <p>
-        <span class="html-eti">&lt;link /&gt;</span><br>
+        <span class="html-eti">&lt;link&gt;</span><br>
         <a href="https://www.w3.org/TR/2017/REC-html52-20171214/document-metadata.html#the-link-element"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
     </aside>
 
-    <p>Los elementos <span class="html-eti">&lt;link /&gt;</span> enlazan a otros documentos para diferentes fines. El uso más habitual es para enlazar a hojas de estilo, aunque puede terner <a href="https://www.w3.org/TR/2017/REC-html52-20171214/links.html#allowed-keywords-and-their-meanings">muchos usos</a>.</p>
+    <p>Los elementos <span class="html-eti">&lt;link&gt;</span> enlazan a otros documentos para diferentes fines. El uso más habitual es para enlazar a hojas de estilo, aunque puede terner <a href="https://www.w3.org/TR/2017/REC-html52-20171214/links.html#allowed-keywords-and-their-meanings">muchos usos</a>.</p>
 
-    <p>Este es un ejemplo de enlace <span class="html-eti">&lt;link /&gt;</span> a una hoja de estilo:</p>
+    <p>Este es un ejemplo de enlace <span class="html-eti">&lt;link&gt;</span> a una hoja de estilo:</p>
 
     <div class="codigo">
-      <pre><code class="language-html">  &lt;link rel="stylesheet" type="text/css" href="estilo.css" /&gt;</code></pre>
+      <pre><code class="language-html">  &lt;link rel="stylesheet" type="text/css" href="estilo.css"&gt;</code></pre>
     </div>
 
-    <p>Este es un ejemplo de enlace <span class="html-eti">&lt;link /&gt;</span> a un <a href="html-favicon.html">favicon</a>:</p>
+    <p>Este es un ejemplo de enlace <span class="html-eti">&lt;link&gt;</span> a un <a href="html-favicon.html">favicon</a>:</p>
 
     <div class="codigo">
-      <pre><code class="language-html">  &lt;link rel="icon" href="favicon.ico" /&gt;</code></pre>
+      <pre><code class="language-html">  &lt;link rel="icon" href="favicon.ico"&gt;</code></pre>
     </div>
 
   </section>
 
   <section id="etiqueta-meta">
-    <h2 class="con-aside">Meta: <span class="html-eti">&lt;meta /&gt;</span></h2>
+    <h2 class="con-aside">Meta: <span class="html-eti">&lt;meta&gt;</span></h2>
 
     <aside class="enlace-norma">
       <p>
-        <span class="html-eti">&lt;meta /&gt;</span><br>
+        <span class="html-eti">&lt;meta&gt;</span><br>
         <a href="https://www.w3.org/TR/2017/REC-html52-20171214/document-metadata.html#the-meta-element"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32" /></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32" /></a>
       </p>
     </aside>
 
-    <p>Los elementos <span class="html-eti">&lt;meta /&gt;</span> no tienen un propósito definido. Pueden contener cualquier tipo de información, pero el agente que recibe la página web debe ser capaz de interpretar esa información.</p>
+    <p>Los elementos <span class="html-eti">&lt;meta&gt;</span> no tienen un propósito definido. Pueden contener cualquier tipo de información, pero el agente que recibe la página web debe ser capaz de interpretar esa información.</p>
 
-    <p>Algunos elementos <span class="html-eti">&lt;meta /&gt;</span> son interpretados correctamente por todos los agentes, por ejemplo el que indica el juego de caracteres de la página web:</p>
+    <p>Algunos elementos <span class="html-eti">&lt;meta&gt;</span> son interpretados correctamente por todos los agentes, por ejemplo el que indica el juego de caracteres de la página web:</p>
 
     <div class="codigo">
-      <pre><code class="language-html">  &lt;meta charset="utf-8" /&gt;</code></pre>
+      <pre><code class="language-html">  &lt;meta charset="utf-8"&gt;</code></pre>
     </div>
 
-    <p>Otra etiqueta <span class="html-eti">&lt;meta /&gt;</span> cuyo uso se ha extendido en los últimos años (pero que sólo entienden los navegadores actuales) es la que indica a los sistemas de pantallas de alta densidad que deben usar como ancho del documento el ancho de pantalla del dispositivo.</p>
+    <p>Otra etiqueta <span class="html-eti">&lt;meta&gt;</span> cuyo uso se ha extendido en los últimos años es la que indica a los sistemas de pantallas de alta densidad que deben usar como ancho del documento el ancho de pantalla del dispositivo.</p>
 
     <div class="codigo">
-      <pre><code class="language-html">  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</code></pre>
+      <pre><code class="language-html">  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
     </div>
   </section>
 
@@ -230,7 +230,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de octubre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 28 de septiembre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42" /></a><br>
