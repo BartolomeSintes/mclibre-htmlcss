@@ -12,7 +12,7 @@
 <?php
     include("entidades-caracter-array.php");
 
-    print "    <table class=\"mcl-listado franjas\">\n";
+    print "    <table class=\"mcl-listado mcl-franjas\">\n";
     print "      <thead>\n";
     print "        <tr>\n";
     print "          <th>Carácter&nbsp;&nbsp;</th>\n";
