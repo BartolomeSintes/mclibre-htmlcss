@@ -12,6 +12,32 @@
       src: url("unicode/Symbola.ttf");
     }
     @font-face {
+      font-family: "Twemoji";
+      src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
+    }
+    div.u-l { display: flex; flex-flow: row wrap; justify-content: space-between; }
+    div.u { display: flex; flex-direction: column; flex: 0 1 300px; margin: 5px; border: black 1px solid; text-align: center; }
+    div.u p:nth-child(odd) { background-color: #eee; }
+    div.u p { margin: 0; padding: 5px 10px; }
+    div.u p.uc { font-weight: bold; }
+    div.u p.si { font-size: 80px; line-height: 100px; text-align: center; }
+    div.u span.ss { font-family: sans-serif; border-right: 2px solid black; padding-right: 20px;}
+    div.u span.sy { font-family: "Symbola";}
+    div.u span.te { font-family: "Twemoji"; }
+    div.u p.en { }
+    div.u p.no { flex: 1 0 auto; text-transform: uppercase; }
+    div.u a { border: none; text-decoration: none; color: black; }
+    table.u { border-spacing: 20px 0; }
+    table.u span.te { font-family: "Twemoji"; font-size: 80px; }
+    table.u a { border: none; text-decoration: none; color: black; }
+  </style>
+<!-- SIN FLEXBOX
+<style>
+    @font-face {
+      font-family: "Symbola";
+      src: url("unicode/Symbola.ttf");
+    }
+    @font-face {
       font-family: "Noto Emoji";
       src: url("unicode/NotoEmoji-Regular.ttf");
     }
@@ -34,6 +60,7 @@
     table.u span.te { font-family: "Twemoji"; font-size: 80px; }
     table.u a { border: none; text-decoration: none; color: black; }
   </style>
+  -->
 </head>
 
 <body>
@@ -50,6 +77,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
     print "  <section id=\"$id\">\n";
     print "    <h2>$grupo</h2>\n";
     print "\n";
+    print "    <div class=\"u-l\">\n";
 
     if ($cuenta) {
         $contador = 0;
@@ -415,6 +443,7 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
             print "\n";
         }
     }
+    print "    </div>\n";
     print "  </section>\n";
     print "\n";
 }
