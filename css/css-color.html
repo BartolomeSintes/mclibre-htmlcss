@@ -10,19 +10,35 @@
   <script src="../varios/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <style>
-    table.colorhsl {
-      margin-bottom: 20px;
-      margin-right: 20px;
-      float: left;
+    div.c-l { /* colores-lista */
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
     }
 
-    table.colorhsl td,
-    table.colorhsl th {
-      width: 40px;
-      height: 40px;
-      text-align: center;
+    div.c { /* color */
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 190px;
+      margin: 0 10px 10px 0;
+      padding-left: 75px;
+      border: 2px black outset;
     }
 
+    div.c p {
+      background-color: white;
+      margin: 0;
+      padding: 0 0 0 5px;
+      border-left: black 1px solid;
+    }
+
+    div.c p.c-n { /* nombre color */
+      font-weight: bold;
+    }
+
+    div.e p.c-c { /* entidad-descripcion */
+      flex: 1 0 auto;
+    }
     /* http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
 
     input[type=range] {
@@ -41,7 +57,6 @@
     input[type=range]::-ms-track {
       width: 500px;
     }
-
   </style>
 </head>
 
@@ -662,7 +677,7 @@
       </p>
     </aside>
 
-    <p>Los códigos de colores SVG (o X11) se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">CSS 3 Color (2º ed)</a> (junio de 2018), aunque los navegadores los aceptaban desde hacía tiempo. La tabla siguiente muestra los 140 colores, sus nombres y códigos RGB.</p>
+    <p>Los códigos de colores SVG (o X11) se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">CSS 3 Color (2º ed)</a> (junio de 2018), aunque los navegadores los aceptaban desde hacía tiempo. Se muestran a continuación los 147 colores, sus nombres y códigos RGB y HSL.</p>
 
     <p><strong>Notas</strong>:</p>
     <ul>
@@ -670,612 +685,1036 @@
       <li>También están duplicados los nombres de los colores grises, que pueden incluir los términos "gray" o "grey" (DarkGrey/DarkGray, etc). En X11 sólo era válida una de las dos variantes, pero en la recomendación SVG 1.0 ya se admitían ambas variantes.</li>
     </ul>
 
-    <table class="x11colortable">
-      <thead>
-        <tr>
-          <td style="border-bottom: 2px black solid">Color</td>
-          <td style="border-bottom: 2px black solid">Nombre</td>
-          <td style="border-bottom: 2px black solid; padding-right: 100px;">Código RGB</td>
-          <td style="border-bottom: 2px black solid">Color</td>
-          <td style="border-bottom: 2px black solid">Nombre</td>
-          <td style="border-bottom: 2px black solid">Código RGB</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="background:aliceblue"> </td>
-          <td>AliceBlue</td>
-          <td>#F0F8FF</td>
-          <td style="background:lightpink"> </td>
-          <td>LightPink</td>
-          <td>#FFB6C1</td>
-        </tr>
-        <tr>
-          <td style="background:antiquewhite"> </td>
-          <td>AntiqueWhite</td>
-          <td>#FAEBD7</td>
-          <td style="background:lightsalmon"> </td>
-          <td>LightSalmon</td>
-          <td>#FFA07A</td>
-        </tr>
-        <tr>
-          <td style="background:aqua"> </td>
-          <td>Aqua</td>
-          <td>#00FFFF</td>
-          <td style="background:lightseagreen"> </td>
-          <td>LightSeaGreen</td>
-          <td>#20B2AA</td>
-        </tr>
-        <tr>
-          <td style="background:aquamarine"> </td>
-          <td>Aquamarine</td>
-          <td>#7FFFD4</td>
-          <td style="background:lightskyblue"> </td>
-          <td>LightSkyBlue</td>
-          <td>#87CEFA</td>
-        </tr>
-        <tr>
-          <td style="background:azure"> </td>
-          <td>Azure</td>
-          <td>#F0FFFF</td>
-          <td style="background:lightslategray"> </td>
-          <td>LightSlateGray</td>
-          <td>#778899</td>
-        </tr>
-        <tr>
-          <td style="background:beige"> </td>
-          <td>Beige</td>
-          <td>#F5F5DC</td>
-          <td style="background:lightslategrey"> </td>
-          <td>LightSlateGrey</td>
-          <td>#778899</td>
-        </tr>
-        <tr>
-          <td style="background:bisque"> </td>
-          <td>Bisque</td>
-          <td>#FFE4C4</td>
-          <td style="background:lightsteelblue"> </td>
-          <td>LightSteelBlue</td>
-          <td>#B0C4DE</td>
-        </tr>
-        <tr>
-          <td style="background:black"> </td>
-          <td>Black</td>
-          <td>#000000</td>
-          <td style="background:lightyellow"> </td>
-          <td>LightYellow</td>
-          <td>#FFFFE0</td>
-        </tr>
-        <tr>
-          <td style="background:blanchedalmond"> </td>
-          <td>BlanchedAlmond</td>
-          <td>#FFEBCD</td>
-          <td style="background:lime"> </td>
-          <td>Lime</td>
-          <td>#00FF00</td>
-        </tr>
-        <tr>
-          <td style="background:blue"> </td>
-          <td>Blue</td>
-          <td>#0000FF</td>
-          <td style="background:limegreen"> </td>
-          <td>LimeGreen</td>
-          <td>#32CD32</td>
-        </tr>
-        <tr>
-          <td style="background:blueviolet"> </td>
-          <td>BlueViolet</td>
-          <td>#8A2BE2</td>
-          <td style="background:linen"> </td>
-          <td>Linen</td>
-          <td>#FAF0E6</td>
-        </tr>
-        <tr>
-          <td style="background:brown"> </td>
-          <td>Brown</td>
-          <td>#A52A2A</td>
-          <td style="background:magenta"> </td>
-          <td>Magenta</td>
-          <td>#FF00FF</td>
-        </tr>
-        <tr>
-          <td style="background:burlywood"> </td>
-          <td>BurlyWood</td>
-          <td>#DEB887</td>
-          <td style="background:maroon"> </td>
-          <td>Maroon</td>
-          <td>#800000</td>
-        </tr>
-        <tr>
-          <td style="background:cadetblue"> </td>
-          <td>CadetBlue</td>
-          <td>#5F9EA0</td>
-          <td style="background:mediumaquamarine"> </td>
-          <td>MediumAquamarine</td>
-          <td>#66CDAA</td>
-        </tr>
-        <tr>
-          <td style="background:chartreuse"> </td>
-          <td>Chartreuse</td>
-          <td>#7FFF00</td>
-          <td style="background:mediumblue"> </td>
-          <td>MediumBlue</td>
-          <td>#0000CD</td>
-        </tr>
-        <tr>
-          <td style="background:chocolate"> </td>
-          <td>Chocolate</td>
-          <td>#D2691E</td>
-          <td style="background:mediumorchid"> </td>
-          <td>MediumOrchid</td>
-          <td>#BA55D3</td>
-        </tr>
-        <tr>
-          <td style="background:coral"> </td>
-          <td>Coral</td>
-          <td>#FF7F50</td>
-          <td style="background:mediumpurple"> </td>
-          <td>MediumPurple</td>
-          <td>#9370DB</td>
-        </tr>
-        <tr>
-          <td style="background:cornflowerblue"> </td>
-          <td>CornflowerBlue</td>
-          <td>#6495ED</td>
-          <td style="background:mediumseagreen"> </td>
-          <td>MediumSeaGreen</td>
-          <td>#3CB371</td>
-        </tr>
-        <tr>
-          <td style="background:cornsilk"> </td>
-          <td>Cornsilk</td>
-          <td>#FFF8DC</td>
-          <td style="background:mediumslateblue"> </td>
-          <td>MediumSlateBlue</td>
-          <td>#7B68EE</td>
-        </tr>
-        <tr>
-          <td style="background:crimson"> </td>
-          <td>Crimson</td>
-          <td>#DC143C</td>
-          <td style="background:mediumspringgreen"> </td>
-          <td>MediumSpringGreen</td>
-          <td>#00FA9A</td>
-        </tr>
-        <tr>
-          <td style="background:cyan"> </td>
-          <td>Cyan</td>
-          <td>#00FFFF</td>
-          <td style="background:mediumturquoise"> </td>
-          <td>MediumTurquoise</td>
-          <td>#48D1CC</td>
-        </tr>
-        <tr>
-          <td style="background:darkblue"> </td>
-          <td>DarkBlue</td>
-          <td>#00008B</td>
-          <td style="background:mediumvioletred"> </td>
-          <td>MediumVioletRed</td>
-          <td>#C71585</td>
-        </tr>
-        <tr>
-          <td style="background:darkcyan"> </td>
-          <td>DarkCyan</td>
-          <td>#008B8B</td>
-          <td style="background:midnightblue"> </td>
-          <td>MidnightBlue</td>
-          <td>#191970</td>
-        </tr>
-        <tr>
-          <td style="background:darkgoldenrod"> </td>
-          <td>DarkGoldenrod</td>
-          <td>#B8860B</td>
-          <td style="background:mintcream"> </td>
-          <td>MintCream</td>
-          <td>#F5FFFA</td>
-        </tr>
-        <tr>
-          <td style="background:darkgray"> </td>
-          <td>DarkGray</td>
-          <td>#A9A9A9</td>
-          <td style="background:mistyrose"> </td>
-          <td>MistyRose</td>
-          <td>#FFE4E1</td>
-        </tr>
-        <tr>
-          <td style="background:darkgrey"> </td>
-          <td>DarkGrey</td>
-          <td>#A9A9A9</td>
-          <td style="background:moccasin"></td>
-          <td>Moccasin</td>
-          <td>#FFE4B5</td>
-        </tr>
-        <tr>
-          <td style="background:darkgreen"> </td>
-          <td>DarkGreen</td>
-          <td>#006400</td>
-          <td style="background:navajowhite"> </td>
-          <td>NavajoWhite</td>
-          <td>#FFDEAD</td>
-        </tr>
-        <tr>
-          <td style="background:darkkhaki"> </td>
-          <td>DarkKhaki</td>
-          <td>#BDB76B</td>
-          <td style="background:navy"> </td>
-          <td>Navy</td>
-          <td>#000080</td>
-        </tr>
-        <tr>
-          <td style="background:darkmagenta"> </td>
-          <td>DarkMagenta</td>
-          <td>#8B008B</td>
-          <td style="background:oldlace"> </td>
-          <td>OldLace</td>
-          <td>#FDF5E6</td>
-        </tr>
-        <tr>
-          <td style="background:darkolivegreen"> </td>
-          <td>DarkOliveGreen</td>
-          <td>#556B2F</td>
-          <td style="background:olive"> </td>
-          <td>Olive</td>
-          <td>#808000</td>
-        </tr>
-        <tr>
-          <td style="background:darkorange"> </td>
-          <td>DarkOrange</td>
-          <td>#FF8C00</td>
-          <td style="background:olivedrab"> </td>
-          <td>OliveDrab</td>
-          <td>#6B8E23</td>
-        </tr>
-        <tr>
-          <td style="background:darkorchid"> </td>
-          <td>DarkOrchid</td>
-          <td>#9932CC</td>
-          <td style="background:orange"> </td>
-          <td>Orange</td>
-          <td>#FFA500</td>
-        </tr>
-        <tr>
-          <td style="background:darkred"> </td>
-          <td>DarkRed</td>
-          <td>#8B0000</td>
-          <td style="background:orangered"> </td>
-          <td>OrangeRed</td>
-          <td>#FF4500</td>
-        </tr>
-        <tr>
-          <td style="background:darksalmon"> </td>
-          <td>DarkSalmon</td>
-          <td>#E9967A</td>
-          <td style="background:orchid"> </td>
-          <td>Orchid</td>
-          <td>#DA70D6</td>
-        </tr>
-        <tr>
-          <td style="background:darkseagreen"> </td>
-          <td>DarkSeaGreen</td>
-          <td>#8FBC8F</td>
-          <td style="background:palegoldenrod"> </td>
-          <td>PaleGoldenrod</td>
-          <td>#EEE8AA</td>
-        </tr>
-        <tr>
-          <td style="background:darkslateblue"> </td>
-          <td>DarkSlateBlue</td>
-          <td>#483D8B</td>
-          <td style="background:palegreen"> </td>
-          <td>PaleGreen</td>
-          <td>#98FB98</td>
-        </tr>
-        <tr>
-          <td style="background:darkslategray"> </td>
-          <td>DarkSlateGray</td>
-          <td>#2F4F4F</td>
-          <td style="background:paleturquoise"> </td>
-          <td>PaleTurquoise</td>
-          <td>#AFEEEE</td>
-        </tr>
-        <tr>
-          <td style="background:darkslategrey"></td>
-          <td>DarkSlateGrey</td>
-          <td>#2F4F4F</td>
-          <td style="background:palevioletred"></td>
-          <td>PaleVioletRed</td>
-          <td>#DB7093</td>
-        </tr>
-        <tr>
-          <td style="background:darkturquoise"> </td>
-          <td>DarkTurquoise</td>
-          <td>#00CED1</td>
-          <td style="background:papayawhip"> </td>
-          <td>PapayaWhip</td>
-          <td>#FFEFD5</td>
-        </tr>
-        <tr>
-          <td style="background:darkviolet"> </td>
-          <td>DarkViolet</td>
-          <td>#9400D3</td>
-          <td style="background:peachpuff"> </td>
-          <td>PeachPuff</td>
-          <td>#FFDAB9</td>
-        </tr>
-        <tr>
-          <td style="background:deeppink"> </td>
-          <td>DeepPink</td>
-          <td>#FF1493</td>
-          <td style="background:peru"> </td>
-          <td>Peru</td>
-          <td>#CD853F</td>
-        </tr>
-        <tr>
-          <td style="background:deepskyblue"> </td>
-          <td>DeepSkyBlue</td>
-          <td>#00BFFF</td>
-          <td style="background:pink"> </td>
-          <td>Pink</td>
-          <td>#FFC0CB</td>
-        </tr>
-        <tr>
-          <td style="background:dimgray"> </td>
-          <td>DimGray</td>
-          <td>#696969</td>
-          <td style="background:plum"> </td>
-          <td>Plum</td>
-          <td>#DDA0DD</td>
-        </tr>
-        <tr>
-          <td style="background:dimgrey"></td>
-          <td>DimGrey</td>
-          <td>#696969</td>
-          <td style="background:powderblue"></td>
-          <td>PowderBlue</td>
-          <td>#B0E0E6</td>
-        </tr>
-        <tr>
-          <td style="background:dodgerblue"> </td>
-          <td>DodgerBlue</td>
-          <td>#1E90FF</td>
-          <td style="background:purple"> </td>
-          <td>Purple</td>
-          <td>#800080</td>
-        </tr>
-        <tr>
-          <td style="background:firebrick"> </td>
-          <td>FireBrick</td>
-          <td>#B22222</td>
-          <td style="background:red"> </td>
-          <td>Red</td>
-          <td>#FF0000</td>
-        </tr>
-        <tr>
-          <td style="background:floralwhite"> </td>
-          <td>FloralWhite</td>
-          <td>#FFFAF0</td>
-          <td style="background:rosybrown"> </td>
-          <td>RosyBrown</td>
-          <td>#BC8F8F</td>
-        </tr>
-        <tr>
-          <td style="background:forestgreen"> </td>
-          <td>ForestGreen</td>
-          <td>#228B22</td>
-          <td style="background:royalblue"> </td>
-          <td>RoyalBlue</td>
-          <td>#4169E1</td>
-        </tr>
-        <tr>
-          <td style="background:fuchsia"> </td>
-          <td>Fuchsia</td>
-          <td>#FF00FF</td>
-          <td style="background:saddlebrown"> </td>
-          <td>SaddleBrown</td>
-          <td>#8B4513</td>
-        </tr>
-        <tr>
-          <td style="background:gainsboro"> </td>
-          <td>Gainsboro</td>
-          <td>#DCDCDC</td>
-          <td style="background:salmon"> </td>
-          <td>Salmon</td>
-          <td>#FA8072</td>
-        </tr>
-        <tr>
-          <td style="background:ghostwhite"> </td>
-          <td>GhostWhite</td>
-          <td>#F8F8FF</td>
-          <td style="background:sandybrown"> </td>
-          <td>SandyBrown</td>
-          <td>#F4A460</td>
-        </tr>
-        <tr>
-          <td style="background:gold"> </td>
-          <td>Gold</td>
-          <td>#FFD700</td>
-          <td style="background:seagreen"> </td>
-          <td>SeaGreen</td>
-          <td>#2E8B57</td>
-        </tr>
-        <tr>
-          <td style="background:goldenrod"> </td>
-          <td>Goldenrod</td>
-          <td>#DAA520</td>
-          <td style="background:seashell"> </td>
-          <td>Seashell</td>
-          <td>#FFF5EE</td>
-        </tr>
-        <tr>
-          <td style="background:gray"> </td>
-          <td>Gray</td>
-          <td>#808080</td>
-          <td style="background:sienna"> </td>
-          <td>Sienna</td>
-          <td>#A0522D</td>
-        </tr>
-        <tr>
-          <td style="background:grey"> </td>
-          <td>Grey</td>
-          <td>#808080</td>
-          <td style="background:silver"></td>
-          <td>Silver</td>
-          <td>#C0C0C0</td>
-        </tr>
-        <tr>
-          <td style="background:green"> </td>
-          <td>Green</td>
-          <td>#008000</td>
-          <td style="background:skyblue"> </td>
-          <td>SkyBlue</td>
-          <td>#87CEEB</td>
-        </tr>
-        <tr>
-          <td style="background:greenyellow"> </td>
-          <td>GreenYellow</td>
-          <td>#ADFF2F</td>
-          <td style="background:slateblue"> </td>
-          <td>SlateBlue</td>
-          <td>#6A5ACD</td>
-        </tr>
-        <tr>
-          <td style="background:honeydew"> </td>
-          <td>Honeydew</td>
-          <td>#F0FFF0</td>
-          <td style="background:slategray"> </td>
-          <td>SlateGray</td>
-          <td>#708090</td>
-        </tr>
-        <tr>
-          <td style="background:hotpink"> </td>
-          <td>HotPink</td>
-          <td>#FF69B4</td>
-          <td style="background:slategrey"> </td>
-          <td>SlateGrey</td>
-          <td>#708090</td>
-        </tr>
-        <tr>
-          <td style="background:indianred"> </td>
-          <td>IndianRed</td>
-          <td>#CD5C5C</td>
-          <td style="background:snow"> </td>
-          <td>Snow</td>
-          <td>#FFFAFA</td>
-        </tr>
-        <tr>
-          <td style="background:indigo"> </td>
-          <td>Indigo</td>
-          <td>#4B0082</td>
-          <td style="background:springgreen"> </td>
-          <td>SpringGreen</td>
-          <td>#00FF7F</td>
-        </tr>
-        <tr>
-          <td style="background:ivory"> </td>
-          <td>Ivory</td>
-          <td>#FFFFF0</td>
-          <td style="background:steelblue"> </td>
-          <td>SteelBlue</td>
-          <td>#4682B4</td>
-        </tr>
-        <tr>
-          <td style="background:khaki"> </td>
-          <td>Khaki</td>
-          <td>#F0E68C</td>
-          <td style="background:tan"> </td>
-          <td>Tan</td>
-          <td>#D2B48C</td>
-        </tr>
-        <tr>
-          <td style="background:lavender"> </td>
-          <td>Lavender</td>
-          <td>#E6E6FA</td>
-          <td style="background:teal"> </td>
-          <td>Teal</td>
-          <td>#008080</td>
-        </tr>
-        <tr>
-          <td style="background:lavenderblush"> </td>
-          <td>LavenderBlush</td>
-          <td>#FFF0F5</td>
-          <td style="background:thistle"> </td>
-          <td>Thistle</td>
-          <td>#D8BFD8</td>
-        </tr>
-        <tr>
-          <td style="background:lawngreen"> </td>
-          <td>LawnGreen</td>
-          <td>#7CFC00</td>
-          <td style="background:tomato"> </td>
-          <td>Tomato</td>
-          <td>#FF6347</td>
-        </tr>
-        <tr>
-          <td style="background:lemonchiffon"> </td>
-          <td>LemonChiffon</td>
-          <td>#FFFACD</td>
-          <td style="background:turquoise"> </td>
-          <td>Turquoise</td>
-          <td>#40E0D0</td>
-        </tr>
-        <tr>
-          <td style="background:lightblue"> </td>
-          <td>LightBlue</td>
-          <td>#ADD8E6</td>
-          <td style="background:violet"> </td>
-          <td>Violet</td>
-          <td>#EE82EE</td>
-        </tr>
-        <tr>
-          <td style="background:lightcoral"> </td>
-          <td>LightCoral</td>
-          <td>#F08080</td>
-          <td style="background:wheat"> </td>
-          <td>Wheat</td>
-          <td>#F5DEB3</td>
-        </tr>
-        <tr>
-          <td style="background:lightcyan"> </td>
-          <td>LightCyan</td>
-          <td>#E0FFFF</td>
-          <td style="background:white"> </td>
-          <td>White</td>
-          <td>#FFFFFF</td>
-        </tr>
-        <tr>
-          <td style="background:lightgoldenrodyellow"> </td>
-          <td>LightGoldenrodYellow</td>
-          <td>#FAFAD2</td>
-          <td style="background:whitesmoke"> </td>
-          <td>WhiteSmoke</td>
-          <td>#F5F5F5</td>
-        </tr>
-        <tr>
-          <td style="background:lightgray"> </td>
-          <td>LightGray</td>
-          <td>#D3D3D3</td>
-          <td style="background:yellow"> </td>
-          <td>Yellow</td>
-          <td>#FFFF00</td>
-        </tr>
-        <tr>
-          <td style="background:lightgreen"> </td>
-          <td>LightGreen</td>
-          <td>#90EE90</td>
-          <td style="background:yellowgreen"> </td>
-          <td>YellowGreen</td>
-          <td>#9ACD32</td>
-        </tr>
-        <tr>
-          <td style="background:lightgrey"> </td>
-          <td>LightGrey</td>
-          <td>#D3D3D3</td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="c-l">
+      <div class="c" style="background-color: hsl(208, 100%, 97.1%)">
+        <p class="c-n">AliceBlue</p>
+        <p>#F0F8FF</p>
+        <p>rgb(240, 248, 255)</p>
+        <p>hsl(208, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(34, 77.8%, 91.2%)">
+        <p class="c-n">AntiqueWhite</p>
+        <p>#FAEBD7</p>
+        <p>rgb(250, 235, 215)</p>
+        <p>hsl(34, 77.8%, 91.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 50%)">
+        <p class="c-n">Aqua</p>
+        <p>#00FFFF</p>
+        <p>rgb(0, 255, 255)</p>
+        <p>hsl(180, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(160, 100%, 74.9%)">
+        <p class="c-n">Aquamarine</p>
+        <p>#7FFFD4</p>
+        <p>rgb(127, 255, 212)</p>
+        <p>hsl(160, 100%, 74.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 97.1%)">
+        <p class="c-n">Azure</p>
+        <p>#F0FFFF</p>
+        <p>rgb(240, 255, 255)</p>
+        <p>hsl(180, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 55.6%, 91.2%)">
+        <p class="c-n">Beige</p>
+        <p>#F5F5DC</p>
+        <p>rgb(245, 245, 220)</p>
+        <p>hsl(60, 55.6%, 91.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(33, 100%, 88.4%)">
+        <p class="c-n">Bisque</p>
+        <p>#FFE4C4</p>
+        <p>rgb(255, 228, 196)</p>
+        <p>hsl(33, 100%, 88.4%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 0%)">
+        <p class="c-n">Black</p>
+        <p>#000000</p>
+        <p>rgb(0, 0, 0)</p>
+        <p>hsl(0, 0%, 0%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(36, 100%, 90.2%)">
+        <p class="c-n">BlanchedAlmond</p>
+        <p>#FFEBCD</p>
+        <p>rgb(255, 235, 205)</p>
+        <p>hsl(36, 100%, 90.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 100%, 50%)">
+        <p class="c-n">Blue</p>
+        <p>#0000FF</p>
+        <p>rgb(0, 0, 255)</p>
+        <p>hsl(240, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(271, 75.9%, 52.7%)">
+        <p class="c-n">BlueViolet</p>
+        <p>#8A2BE2</p>
+        <p>rgb(138, 43, 226)</p>
+        <p>hsl(271, 75.9%, 52.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 59.4%, 40.6%)">
+        <p class="c-n">Brown</p>
+        <p>#A52A2A</p>
+        <p>rgb(165, 42, 42)</p>
+        <p>hsl(0, 59.4%, 40.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(34, 56.9%, 70%)">
+        <p class="c-n">BurlyWood</p>
+        <p>#DEB887</p>
+        <p>rgb(222, 184, 135)</p>
+        <p>hsl(34, 56.9%, 70%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(182, 25.5%, 50%)">
+        <p class="c-n">CadetBlue</p>
+        <p>#5F9EA0</p>
+        <p>rgb(95, 158, 160)</p>
+        <p>hsl(182, 25.5%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(90, 100%, 50%)">
+        <p class="c-n">Chartreuse</p>
+        <p>#7FFF00</p>
+        <p>rgb(127, 255, 0)</p>
+        <p>hsl(90, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(25, 75%, 47.1%)">
+        <p class="c-n">Chocolate</p>
+        <p>#D2691E</p>
+        <p>rgb(210, 105, 30)</p>
+        <p>hsl(25, 75%, 47.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(16, 100%, 65.7%)">
+        <p class="c-n">Coral</p>
+        <p>#FF7F50</p>
+        <p>rgb(255, 127, 80)</p>
+        <p>hsl(16, 100%, 65.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(219, 79.2%, 66.1%)">
+        <p class="c-n">CornflowerBlue</p>
+        <p>#6495ED</p>
+        <p>rgb(100, 149, 237)</p>
+        <p>hsl(219, 79.2%, 66.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(48, 100%, 93.1%)">
+        <p class="c-n">Cornsilk</p>
+        <p>#FFF8DC</p>
+        <p>rgb(255, 248, 220)</p>
+        <p>hsl(48, 100%, 93.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(348, 83.3%, 47.1%)">
+        <p class="c-n">Crimson</p>
+        <p>#DC143C</p>
+        <p>rgb(220, 20, 60)</p>
+        <p>hsl(348, 83.3%, 47.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 50%)">
+        <p class="c-n">Cyan</p>
+        <p>#00FFFF</p>
+        <p>rgb(0, 255, 255)</p>
+        <p>hsl(180, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 100%, 27.3%)">
+        <p class="c-n">DarkBlue</p>
+        <p>#00008B</p>
+        <p>rgb(0, 0, 139)</p>
+        <p>hsl(240, 100%, 27.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 27.3%)">
+        <p class="c-n">DarkCyan</p>
+        <p>#008B8B</p>
+        <p>rgb(0, 139, 139)</p>
+        <p>hsl(180, 100%, 27.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(43, 88.7%, 38.2%)">
+        <p class="c-n">DarkGoldenrod</p>
+        <p>#B8860B</p>
+        <p>rgb(184, 134, 11)</p>
+        <p>hsl(43, 88.7%, 38.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 66.3%)">
+        <p class="c-n">DarkGray</p>
+        <p>#A9A9A9</p>
+        <p>rgb(169, 169, 169)</p>
+        <p>hsl(0, 0%, 66.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 100%, 19.6%)">
+        <p class="c-n">DarkGreen</p>
+        <p>#006400</p>
+        <p>rgb(0, 100, 0)</p>
+        <p>hsl(120, 100%, 19.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 66.3%)">
+        <p class="c-n">DarkGrey</p>
+        <p>#A9A9A9</p>
+        <p>rgb(169, 169, 169)</p>
+        <p>hsl(0, 0%, 66.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(56, 38.3%, 58%)">
+        <p class="c-n">DarkKhaki</p>
+        <p>#BDB76B</p>
+        <p>rgb(189, 183, 107)</p>
+        <p>hsl(56, 38.3%, 58%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 100%, 27.3%)">
+        <p class="c-n">DarkMagenta</p>
+        <p>#8B008B</p>
+        <p>rgb(139, 0, 139)</p>
+        <p>hsl(300, 100%, 27.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(82, 39%, 30.2%)">
+        <p class="c-n">DarkOliveGreen</p>
+        <p>#556B2F</p>
+        <p>rgb(85, 107, 47)</p>
+        <p>hsl(82, 39%, 30.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(33, 100%, 50%)">
+        <p class="c-n">DarkOrange</p>
+        <p>#FF8C00</p>
+        <p>rgb(255, 140, 0)</p>
+        <p>hsl(33, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(280, 60.6%, 49.8%)">
+        <p class="c-n">DarkOrchid</p>
+        <p>#9932CC</p>
+        <p>rgb(153, 50, 204)</p>
+        <p>hsl(280, 60.6%, 49.8%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 100%, 27.3%)">
+        <p class="c-n">DarkRed</p>
+        <p>#8B0000</p>
+        <p>rgb(139, 0, 0)</p>
+        <p>hsl(0, 100%, 27.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(15, 71.6%, 69.6%)">
+        <p class="c-n">DarkSalmon</p>
+        <p>#E9967A</p>
+        <p>rgb(233, 150, 122)</p>
+        <p>hsl(15, 71.6%, 69.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 25.1%, 64.9%)">
+        <p class="c-n">DarkSeaGreen</p>
+        <p>#8FBC8F</p>
+        <p>rgb(143, 188, 143)</p>
+        <p>hsl(120, 25.1%, 64.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(248, 39%, 39.2%)">
+        <p class="c-n">DarkSlateBlue</p>
+        <p>#483D8B</p>
+        <p>rgb(72, 61, 139)</p>
+        <p>hsl(248, 39%, 39.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 25.4%, 24.7%)">
+        <p class="c-n">DarkSlateGray</p>
+        <p>#2F4F4F</p>
+        <p>rgb(47, 79, 79)</p>
+        <p>hsl(180, 25.4%, 24.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 25.4%, 24.7%)">
+        <p class="c-n">DarkSlateGrey</p>
+        <p>#2F4F4F</p>
+        <p>rgb(47, 79, 79)</p>
+        <p>hsl(180, 25.4%, 24.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(181, 100%, 41%)">
+        <p class="c-n">DarkTurquoise</p>
+        <p>#00CED1</p>
+        <p>rgb(0, 206, 209)</p>
+        <p>hsl(181, 100%, 41%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(282, 100%, 41.4%)">
+        <p class="c-n">DarkViolet</p>
+        <p>#9400D3</p>
+        <p>rgb(148, 0, 211)</p>
+        <p>hsl(282, 100%, 41.4%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(328, 100%, 53.9%)">
+        <p class="c-n">DeepPink</p>
+        <p>#FF1493</p>
+        <p>rgb(255, 20, 147)</p>
+        <p>hsl(328, 100%, 53.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(195, 100%, 50%)">
+        <p class="c-n">DeepSkyBlue</p>
+        <p>#00BFFF</p>
+        <p>rgb(0, 191, 255)</p>
+        <p>hsl(195, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 41.2%)">
+        <p class="c-n">DimGray</p>
+        <p>#696969</p>
+        <p>rgb(105, 105, 105)</p>
+        <p>hsl(0, 0%, 41.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 41.2%)">
+        <p class="c-n">DimGrey</p>
+        <p>#696969</p>
+        <p>rgb(105, 105, 105)</p>
+        <p>hsl(0, 0%, 41.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(210, 100%, 55.9%)">
+        <p class="c-n">DodgerBlue</p>
+        <p>#1E90FF</p>
+        <p>rgb(30, 144, 255)</p>
+        <p>hsl(210, 100%, 55.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 67.9%, 41.6%)">
+        <p class="c-n">FireBrick</p>
+        <p>#B22222</p>
+        <p>rgb(178, 34, 34)</p>
+        <p>hsl(0, 67.9%, 41.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(40, 100%, 97.1%)">
+        <p class="c-n">FloralWhite</p>
+        <p>#FFFAF0</p>
+        <p>rgb(255, 250, 240)</p>
+        <p>hsl(40, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 60.7%, 33.9%)">
+        <p class="c-n">ForestGreen</p>
+        <p>#228B22</p>
+        <p>rgb(34, 139, 34)</p>
+        <p>hsl(120, 60.7%, 33.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 100%, 50%)">
+        <p class="c-n">Fuchsia</p>
+        <p>#FF00FF</p>
+        <p>rgb(255, 0, 255)</p>
+        <p>hsl(300, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 86.3%)">
+        <p class="c-n">Gainsboro</p>
+        <p>#DCDCDC</p>
+        <p>rgb(220, 220, 220)</p>
+        <p>hsl(0, 0%, 86.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 100%, 98.6%)">
+        <p class="c-n">GhostWhite</p>
+        <p>#F8F8FF</p>
+        <p>rgb(248, 248, 255)</p>
+        <p>hsl(240, 100%, 98.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(51, 100%, 50%)">
+        <p class="c-n">Gold</p>
+        <p>#FFD700</p>
+        <p>rgb(255, 215, 0)</p>
+        <p>hsl(51, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(43, 74.4%, 49%)">
+        <p class="c-n">Goldenrod</p>
+        <p>#DAA520</p>
+        <p>rgb(218, 165, 32)</p>
+        <p>hsl(43, 74.4%, 49%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 50.2%)">
+        <p class="c-n">Gray</p>
+        <p>#808080</p>
+        <p>rgb(128, 128, 128)</p>
+        <p>hsl(0, 0%, 50.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 100%, 25.1%)">
+        <p class="c-n">Green</p>
+        <p>#008000</p>
+        <p>rgb(0, 128, 0)</p>
+        <p>hsl(120, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(84, 100%, 59.2%)">
+        <p class="c-n">GreenYellow</p>
+        <p>#ADFF2F</p>
+        <p>rgb(173, 255, 47)</p>
+        <p>hsl(84, 100%, 59.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 50.2%)">
+        <p class="c-n">Grey</p>
+        <p>#808080</p>
+        <p>rgb(128, 128, 128)</p>
+        <p>hsl(0, 0%, 50.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 100%, 97.1%)">
+        <p class="c-n">Honeydew</p>
+        <p>#F0FFF0</p>
+        <p>rgb(240, 255, 240)</p>
+        <p>hsl(120, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(330, 100%, 70.6%)">
+        <p class="c-n">HotPink</p>
+        <p>#FF69B4</p>
+        <p>rgb(255, 105, 180)</p>
+        <p>hsl(330, 100%, 70.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 53.1%, 58.2%)">
+        <p class="c-n">IndianRed</p>
+        <p>#CD5C5C</p>
+        <p>rgb(205, 92, 92)</p>
+        <p>hsl(0, 53.1%, 58.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(275, 100%, 25.5%)">
+        <p class="c-n">Indigo</p>
+        <p>#4B0082</p>
+        <p>rgb(75, 0, 130)</p>
+        <p>hsl(275, 100%, 25.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 100%, 97.1%)">
+        <p class="c-n">Ivory</p>
+        <p>#FFFFF0</p>
+        <p>rgb(255, 255, 240)</p>
+        <p>hsl(60, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(54, 76.9%, 74.5%)">
+        <p class="c-n">Khaki</p>
+        <p>#F0E68C</p>
+        <p>rgb(240, 230, 140)</p>
+        <p>hsl(54, 76.9%, 74.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 66.7%, 94.1%)">
+        <p class="c-n">Lavender</p>
+        <p>#E6E6FA</p>
+        <p>rgb(230, 230, 250)</p>
+        <p>hsl(240, 66.7%, 94.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(340, 100%, 97.1%)">
+        <p class="c-n">LavenderBlush</p>
+        <p>#FFF0F5</p>
+        <p>rgb(255, 240, 245)</p>
+        <p>hsl(340, 100%, 97.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(90, 100%, 49.4%)">
+        <p class="c-n">LawnGreen</p>
+        <p>#7CFC00</p>
+        <p>rgb(124, 252, 0)</p>
+        <p>hsl(90, 100%, 49.4%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(54, 100%, 90.2%)">
+        <p class="c-n">LemonChiffon</p>
+        <p>#FFFACD</p>
+        <p>rgb(255, 250, 205)</p>
+        <p>hsl(54, 100%, 90.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(195, 53.3%, 79%)">
+        <p class="c-n">LightBlue</p>
+        <p>#ADD8E6</p>
+        <p>rgb(173, 216, 230)</p>
+        <p>hsl(195, 53.3%, 79%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 78.9%, 72.2%)">
+        <p class="c-n">LightCoral</p>
+        <p>#F08080</p>
+        <p>rgb(240, 128, 128)</p>
+        <p>hsl(0, 78.9%, 72.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 93.9%)">
+        <p class="c-n">LightCyan</p>
+        <p>#E0FFFF</p>
+        <p>rgb(224, 255, 255)</p>
+        <p>hsl(180, 100%, 93.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 80%, 90.2%)">
+        <p class="c-n">LightGoldenrodYellow</p>
+        <p>#FAFAD2</p>
+        <p>rgb(250, 250, 210)</p>
+        <p>hsl(60, 80%, 90.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 82.7%)">
+        <p class="c-n">LightGray</p>
+        <p>#D3D3D3</p>
+        <p>rgb(211, 211, 211)</p>
+        <p>hsl(0, 0%, 82.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 73.4%, 74.9%)">
+        <p class="c-n">LightGreen</p>
+        <p>#90EE90</p>
+        <p>rgb(144, 238, 144)</p>
+        <p>hsl(120, 73.4%, 74.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 82.7%)">
+        <p class="c-n">LightGrey</p>
+        <p>#D3D3D3</p>
+        <p>rgb(211, 211, 211)</p>
+        <p>hsl(0, 0%, 82.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(351, 100%, 85.7%)">
+        <p class="c-n">LightPink</p>
+        <p>#FFB6C1</p>
+        <p>rgb(255, 182, 193)</p>
+        <p>hsl(351, 100%, 85.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(17, 100%, 73.9%)">
+        <p class="c-n">LightSalmon</p>
+        <p>#FFA07A</p>
+        <p>rgb(255, 160, 122)</p>
+        <p>hsl(17, 100%, 73.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(177, 69.5%, 41.2%)">
+        <p class="c-n">LightSeaGreen</p>
+        <p>#20B2AA</p>
+        <p>rgb(32, 178, 170)</p>
+        <p>hsl(177, 69.5%, 41.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(203, 92%, 75.5%)">
+        <p class="c-n">LightSkyBlue</p>
+        <p>#87CEFA</p>
+        <p>rgb(135, 206, 250)</p>
+        <p>hsl(203, 92%, 75.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(210, 14.3%, 53.3%)">
+        <p class="c-n">LightSlateGray</p>
+        <p>#778899</p>
+        <p>rgb(119, 136, 153)</p>
+        <p>hsl(210, 14.3%, 53.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(210, 14.3%, 53.3%)">
+        <p class="c-n">LightSlateGrey</p>
+        <p>#778899</p>
+        <p>rgb(119, 136, 153)</p>
+        <p>hsl(210, 14.3%, 53.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(214, 41.1%, 78%)">
+        <p class="c-n">LightSteelBlue</p>
+        <p>#B0C4DE</p>
+        <p>rgb(176, 196, 222)</p>
+        <p>hsl(214, 41.1%, 78%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 100%, 93.9%)">
+        <p class="c-n">LightYellow</p>
+        <p>#FFFFE0</p>
+        <p>rgb(255, 255, 224)</p>
+        <p>hsl(60, 100%, 93.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 100%, 50%)">
+        <p class="c-n">Lime</p>
+        <p>#00FF00</p>
+        <p>rgb(0, 255, 0)</p>
+        <p>hsl(120, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 60.8%, 50%)">
+        <p class="c-n">LimeGreen</p>
+        <p>#32CD32</p>
+        <p>rgb(50, 205, 50)</p>
+        <p>hsl(120, 60.8%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(30, 66.7%, 94.1%)">
+        <p class="c-n">Linen</p>
+        <p>#FAF0E6</p>
+        <p>rgb(250, 240, 230)</p>
+        <p>hsl(30, 66.7%, 94.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 100%, 50%)">
+        <p class="c-n">Magenta</p>
+        <p>#FF00FF</p>
+        <p>rgb(255, 0, 255)</p>
+        <p>hsl(300, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 100%, 25.1%)">
+        <p class="c-n">Maroon</p>
+        <p>#800000</p>
+        <p>rgb(128, 0, 0)</p>
+        <p>hsl(0, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(160, 50.7%, 60.2%)">
+        <p class="c-n">MediumAquamarine</p>
+        <p>#66CDAA</p>
+        <p>rgb(102, 205, 170)</p>
+        <p>hsl(160, 50.7%, 60.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 100%, 40.2%)">
+        <p class="c-n">MediumBlue</p>
+        <p>#0000CD</p>
+        <p>rgb(0, 0, 205)</p>
+        <p>hsl(240, 100%, 40.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(288, 58.9%, 58%)">
+        <p class="c-n">MediumOrchid</p>
+        <p>#BA55D3</p>
+        <p>rgb(186, 85, 211)</p>
+        <p>hsl(288, 58.9%, 58%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(260, 59.8%, 64.9%)">
+        <p class="c-n">MediumPurple</p>
+        <p>#9370DB</p>
+        <p>rgb(147, 112, 219)</p>
+        <p>hsl(260, 59.8%, 64.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(147, 49.8%, 46.9%)">
+        <p class="c-n">MediumSeaGreen</p>
+        <p>#3CB371</p>
+        <p>rgb(60, 179, 113)</p>
+        <p>hsl(147, 49.8%, 46.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(249, 79.8%, 67.1%)">
+        <p class="c-n">MediumSlateBlue</p>
+        <p>#7B68EE</p>
+        <p>rgb(123, 104, 238)</p>
+        <p>hsl(249, 79.8%, 67.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(157, 100%, 49%)">
+        <p class="c-n">MediumSpringGreen</p>
+        <p>#00FA9A</p>
+        <p>rgb(0, 250, 154)</p>
+        <p>hsl(157, 100%, 49%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(178, 59.8%, 55.1%)">
+        <p class="c-n">MediumTurquoise</p>
+        <p>#48D1CC</p>
+        <p>rgb(72, 209, 204)</p>
+        <p>hsl(178, 59.8%, 55.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(322, 80.9%, 43.1%)">
+        <p class="c-n">MediumVioletRed</p>
+        <p>#C71585</p>
+        <p>rgb(199, 21, 133)</p>
+        <p>hsl(322, 80.9%, 43.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 63.5%, 26.9%)">
+        <p class="c-n">MidnightBlue</p>
+        <p>#191970</p>
+        <p>rgb(25, 25, 112)</p>
+        <p>hsl(240, 63.5%, 26.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(150, 100%, 98%)">
+        <p class="c-n">MintCream</p>
+        <p>#F5FFFA</p>
+        <p>rgb(245, 255, 250)</p>
+        <p>hsl(150, 100%, 98%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(6, 100%, 94.1%)">
+        <p class="c-n">MistyRose</p>
+        <p>#FFE4E1</p>
+        <p>rgb(255, 228, 225)</p>
+        <p>hsl(6, 100%, 94.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(38, 100%, 85.5%)">
+        <p class="c-n">Moccasin</p>
+        <p>#FFE4B5</p>
+        <p>rgb(255, 228, 181)</p>
+        <p>hsl(38, 100%, 85.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(36, 100%, 83.9%)">
+        <p class="c-n">NavajoWhite</p>
+        <p>#FFDEAD</p>
+        <p>rgb(255, 222, 173)</p>
+        <p>hsl(36, 100%, 83.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(240, 100%, 25.1%)">
+        <p class="c-n">Navy</p>
+        <p>#000080</p>
+        <p>rgb(0, 0, 128)</p>
+        <p>hsl(240, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(39, 85.2%, 94.7%)">
+        <p class="c-n">OldLace</p>
+        <p>#FDF5E6</p>
+        <p>rgb(253, 245, 230)</p>
+        <p>hsl(39, 85.2%, 94.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 100%, 25.1%)">
+        <p class="c-n">Olive</p>
+        <p>#808000</p>
+        <p>rgb(128, 128, 0)</p>
+        <p>hsl(60, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(80, 60.5%, 34.7%)">
+        <p class="c-n">OliveDrab</p>
+        <p>#6B8E23</p>
+        <p>rgb(107, 142, 35)</p>
+        <p>hsl(80, 60.5%, 34.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(39, 100%, 50%)">
+        <p class="c-n">Orange</p>
+        <p>#FFA500</p>
+        <p>rgb(255, 165, 0)</p>
+        <p>hsl(39, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(16, 100%, 50%)">
+        <p class="c-n">OrangeRed</p>
+        <p>#FF4500</p>
+        <p>rgb(255, 69, 0)</p>
+        <p>hsl(16, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(302, 58.9%, 64.7%)">
+        <p class="c-n">Orchid</p>
+        <p>#DA70D6</p>
+        <p>rgb(218, 112, 214)</p>
+        <p>hsl(302, 58.9%, 64.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(55, 66.7%, 80%)">
+        <p class="c-n">PaleGoldenrod</p>
+        <p>#EEE8AA</p>
+        <p>rgb(238, 232, 170)</p>
+        <p>hsl(55, 66.7%, 80%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(120, 92.5%, 79%)">
+        <p class="c-n">PaleGreen</p>
+        <p>#98FB98</p>
+        <p>rgb(152, 251, 152)</p>
+        <p>hsl(120, 92.5%, 79%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 64.9%, 81%)">
+        <p class="c-n">PaleTurquoise</p>
+        <p>#AFEEEE</p>
+        <p>rgb(175, 238, 238)</p>
+        <p>hsl(180, 64.9%, 81%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(340, 59.8%, 64.9%)">
+        <p class="c-n">PaleVioletRed</p>
+        <p>#DB7093</p>
+        <p>rgb(219, 112, 147)</p>
+        <p>hsl(340, 59.8%, 64.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(37, 100%, 91.8%)">
+        <p class="c-n">PapayaWhip</p>
+        <p>#FFEFD5</p>
+        <p>rgb(255, 239, 213)</p>
+        <p>hsl(37, 100%, 91.8%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(28, 100%, 86.3%)">
+        <p class="c-n">PeachPuff</p>
+        <p>#FFDAB9</p>
+        <p>rgb(255, 218, 185)</p>
+        <p>hsl(28, 100%, 86.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(30, 58.7%, 52.5%)">
+        <p class="c-n">Peru</p>
+        <p>#CD853F</p>
+        <p>rgb(205, 133, 63)</p>
+        <p>hsl(30, 58.7%, 52.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(350, 100%, 87.6%)">
+        <p class="c-n">Pink</p>
+        <p>#FFC0CB</p>
+        <p>rgb(255, 192, 203)</p>
+        <p>hsl(350, 100%, 87.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 47.3%, 74.7%)">
+        <p class="c-n">Plum</p>
+        <p>#DDA0DD</p>
+        <p>rgb(221, 160, 221)</p>
+        <p>hsl(300, 47.3%, 74.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(187, 51.9%, 79.6%)">
+        <p class="c-n">PowderBlue</p>
+        <p>#B0E0E6</p>
+        <p>rgb(176, 224, 230)</p>
+        <p>hsl(187, 51.9%, 79.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 100%, 25.1%)">
+        <p class="c-n">Purple</p>
+        <p>#800080</p>
+        <p>rgb(128, 0, 128)</p>
+        <p>hsl(300, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 100%, 50%)">
+        <p class="c-n">Red</p>
+        <p>#FF0000</p>
+        <p>rgb(255, 0, 0)</p>
+        <p>hsl(0, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 25.1%, 64.9%)">
+        <p class="c-n">RosyBrown</p>
+        <p>#BC8F8F</p>
+        <p>rgb(188, 143, 143)</p>
+        <p>hsl(0, 25.1%, 64.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(225, 72.7%, 56.9%)">
+        <p class="c-n">RoyalBlue</p>
+        <p>#4169E1</p>
+        <p>rgb(65, 105, 225)</p>
+        <p>hsl(225, 72.7%, 56.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(25, 75.9%, 31%)">
+        <p class="c-n">SaddleBrown</p>
+        <p>#8B4513</p>
+        <p>rgb(139, 69, 19)</p>
+        <p>hsl(25, 75.9%, 31%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(6, 93.2%, 71.4%)">
+        <p class="c-n">Salmon</p>
+        <p>#FA8072</p>
+        <p>rgb(250, 128, 114)</p>
+        <p>hsl(6, 93.2%, 71.4%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(28, 87.1%, 66.7%)">
+        <p class="c-n">SandyBrown</p>
+        <p>#F4A460</p>
+        <p>rgb(244, 164, 96)</p>
+        <p>hsl(28, 87.1%, 66.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(146, 50.3%, 36.3%)">
+        <p class="c-n">SeaGreen</p>
+        <p>#2E8B57</p>
+        <p>rgb(46, 139, 87)</p>
+        <p>hsl(146, 50.3%, 36.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(25, 100%, 96.7%)">
+        <p class="c-n">Seashell</p>
+        <p>#FFF5EE</p>
+        <p>rgb(255, 245, 238)</p>
+        <p>hsl(25, 100%, 96.7%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(19, 56.1%, 40.2%)">
+        <p class="c-n">Sienna</p>
+        <p>#A0522D</p>
+        <p>rgb(160, 82, 45)</p>
+        <p>hsl(19, 56.1%, 40.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 75.3%)">
+        <p class="c-n">Silver</p>
+        <p>#C0C0C0</p>
+        <p>rgb(192, 192, 192)</p>
+        <p>hsl(0, 0%, 75.3%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(197, 71.4%, 72.5%)">
+        <p class="c-n">SkyBlue</p>
+        <p>#87CEEB</p>
+        <p>rgb(135, 206, 235)</p>
+        <p>hsl(197, 71.4%, 72.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(248, 53.5%, 57.8%)">
+        <p class="c-n">SlateBlue</p>
+        <p>#6A5ACD</p>
+        <p>rgb(106, 90, 205)</p>
+        <p>hsl(248, 53.5%, 57.8%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(210, 12.6%, 50.2%)">
+        <p class="c-n">SlateGray</p>
+        <p>#708090</p>
+        <p>rgb(112, 128, 144)</p>
+        <p>hsl(210, 12.6%, 50.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(210, 12.6%, 50.2%)">
+        <p class="c-n">SlateGrey</p>
+        <p>#708090</p>
+        <p>rgb(112, 128, 144)</p>
+        <p>hsl(210, 12.6%, 50.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 100%, 99%)">
+        <p class="c-n">Snow</p>
+        <p>#FFFAFA</p>
+        <p>rgb(255, 250, 250)</p>
+        <p>hsl(0, 100%, 99%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(150, 100%, 50%)">
+        <p class="c-n">SpringGreen</p>
+        <p>#00FF7F</p>
+        <p>rgb(0, 255, 127)</p>
+        <p>hsl(150, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(207, 44%, 49%)">
+        <p class="c-n">SteelBlue</p>
+        <p>#4682B4</p>
+        <p>rgb(70, 130, 180)</p>
+        <p>hsl(207, 44%, 49%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(34, 43.8%, 68.6%)">
+        <p class="c-n">Tan</p>
+        <p>#D2B48C</p>
+        <p>rgb(210, 180, 140)</p>
+        <p>hsl(34, 43.8%, 68.6%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(180, 100%, 25.1%)">
+        <p class="c-n">Teal</p>
+        <p>#008080</p>
+        <p>rgb(0, 128, 128)</p>
+        <p>hsl(180, 100%, 25.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 24.3%, 79.8%)">
+        <p class="c-n">Thistle</p>
+        <p>#D8BFD8</p>
+        <p>rgb(216, 191, 216)</p>
+        <p>hsl(300, 24.3%, 79.8%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(9, 100%, 63.9%)">
+        <p class="c-n">Tomato</p>
+        <p>#FF6347</p>
+        <p>rgb(255, 99, 71)</p>
+        <p>hsl(9, 100%, 63.9%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(174, 72.1%, 56.5%)">
+        <p class="c-n">Turquoise</p>
+        <p>#40E0D0</p>
+        <p>rgb(64, 224, 208)</p>
+        <p>hsl(174, 72.1%, 56.5%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(300, 76.1%, 72.2%)">
+        <p class="c-n">Violet</p>
+        <p>#EE82EE</p>
+        <p>rgb(238, 130, 238)</p>
+        <p>hsl(300, 76.1%, 72.2%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(39, 76.7%, 83.1%)">
+        <p class="c-n">Wheat</p>
+        <p>#F5DEB3</p>
+        <p>rgb(245, 222, 179)</p>
+        <p>hsl(39, 76.7%, 83.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 100%)">
+        <p class="c-n">White</p>
+        <p>#FFFFFF</p>
+        <p>rgb(255, 255, 255)</p>
+        <p>hsl(0, 0%, 100%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(0, 0%, 96.1%)">
+        <p class="c-n">WhiteSmoke</p>
+        <p>#F5F5F5</p>
+        <p>rgb(245, 245, 245)</p>
+        <p>hsl(0, 0%, 96.1%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(60, 100%, 50%)">
+        <p class="c-n">Yellow</p>
+        <p>#FFFF00</p>
+        <p>rgb(255, 255, 0)</p>
+        <p>hsl(60, 100%, 50%)</p>
+      </div>
+
+      <div class="c" style="background-color: hsl(80, 60.8%, 50%)">
+        <p class="c-n">YellowGreen</p>
+        <p>#9ACD32</p>
+        <p>rgb(154, 205, 50)</p>
+        <p>hsl(80, 60.8%, 50%)</p>
+      </div>
+    </div>
   </section>
 
   <section id="sistema">
@@ -1285,7 +1724,7 @@
 
     <p>Los navegadores interpretaban e interpretan correctamente estos nombres de colores, pero en estos apuntes estos colores ya no se comentan en esta lección, sino en la <a href="css2-obsoletas.html#colores-sistema">lección de elementos obsoletos</a>, porque en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/2018/REC-css-color-3-20180619/">CSS 3 Color (2º ed)</a> (junio de 2018) estos nombres pasaron a considerarse obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>.</p>
 
-    <p>El problema es que la propiedad <span class="css-prop">appearance</span> no está incluida en ninguna recomendación ya aprobada. Esta propiedad se encuentra definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (junio de 2018) en elaboración, pero parece que esta propiedad tiene serios problemas de incompatibilidad entre navegadores.</p>
+    <p>El problema es que la propiedad <span class="css-prop">appearance</span> no está incluida en ninguna recomendación ya aprobada. Esta propiedad se encuentra definida únicamente para elementos de formularios en la futura recomendación <a href="https://drafts.csswg.org/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (octubre de 2018) en elaboración, pero parece que esta propiedad tiene serios problemas de incompatibilidad entre navegadores.</p>
 
     <p>Mientras los navegadores los admitan, los nombres de colores de sistema se pueden utilizar, pero nada garantizada que los navegadores dejen de aceptarlos en un futuro.</p>
   </section>
@@ -1331,7 +1770,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 22 de junio de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
