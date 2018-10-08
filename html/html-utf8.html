@@ -26,6 +26,7 @@
       <ul>
         <li><a href="#bits">Bits</a></li>
         <li><a href="#bytes">Bytes</a></li>
+        <li><a href="#hexadecimal">Notación hexadecimal</a></li>
         <li><a href="#ascii">ASCII</a></li>
         <li><a href="#unicode">Unicode</a></li>
         <li><a href="#html">Juego caracteres en HTML</a></li>
@@ -47,7 +48,7 @@
   </ul>
 
   <section id="bits">
-    <h3>Bits</h3>
+    <h2>Bits</h2>
 
     <p>En informática, los números no se guardan en notación decimal (con las cifras del 0 al 9), sino en notación binaria, utilizando únicamente el 0 y el 1. Como en la notación decimal, para escribir números en la notación binaria se utilizan varias cifras seguidas, pero en este caso utilizando únicamente ceros y unos.</p>
 
@@ -121,13 +122,13 @@
 
     <p>En notación decimal, con <i>n</i> cifras podemos escribir 10<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 10 números (del 0 al 9), con 2 cifras podemos escribir 100 números (del 00 al 99), con 3 cifras podemos escribir 1000 números (del 000 al 999), etc.</p>
 
-    <p>En notación binaria, con <i>n</i> cifras podemos escribir 2<sup><i>n</i></sup>. Es decir, con 1 cifra podemos escribir 2 números (0 y 1), con 2 cifras podemos escribir 4 números (del 00 al 11, es decir, del 0 al 3), con 3 cifras podemos escribir 8 números (del 000 al 111, es decir, del 0 al 7), etc.</p>
+    <p>En notación binaria, con <i>n</i> cifras podemos escribir 2<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 2 números (0 y 1), con 2 cifras podemos escribir 4 números (del 00 al 11, es decir, del 0 al 3), con 3 cifras podemos escribir 8 números (del 000 al 111, es decir, del 0 al 7), etc.</p>
 
     <p>A las cifras binarias se les llama <i>bit</i>, es decir el número binario 1001 es un número de 4 bits, de la misma manera que el número decimal 329 es un número de 3 cifras decimales.</p>
   </section>
 
   <section id="bytes">
-    <h3>Bytes</h3>
+    <h2>Bytes</h2>
 
     <p>Para realizar su trabajo más rápido, los ordenadores no trabajan con cifras individuales (<i>bits</i>), sino con varias cifras a la vez. La agrupación más utilizada es el <i>byte</i>, que es la agrupación de 8 bits. Un byte puede representar por tanto 256 valores distintos (2<sup>8</sup>, del 00000000 al 11111111, es decir, del 0 al 255).</p>
 
@@ -136,8 +137,77 @@
     <p>El byte se utiliza en Informática como unidad de medida en el almcenamiento de información (capacidad de los discos duros o memorias). Como las capacidades son tan grandes, se expresan en múltiplos: Kilobyte, Megabyte, Gigabyte, Terabyte, etc. Hay que tener en cuenta que, en este contexto, Kilo no significa mil (1000), sino 1024, ya que 1024 es una potencia de dos (2<sup>10</sup>= 1024), Mega no significa millón sino 1.048.576 (1024 x 1024), etc.</p>
   </section>
 
+  <section id="hexadecimal">
+    <h2>Notación hexadecimal</h2>
+
+    <p>El inconveniente de la ntoación binaria es que para escribir un número grande se necesitan muchos bits. Una manera de acortar los números en binario es utilizar la notación hexadecimal, que utiliza 16 dígitos distintos (del 0 al 9, A, B, C, D, E y F).</p>
+
+    <p>En notación hexadecimal, con <i>n</i> cifras podemos escribir 16<sup><i>n</i></sup> números. Es decir, con 1 cifra podemos escribir 16 números (del 0 a F), con 2 cifras podemos escribir 256 números (del 00 al FF, es decir, del 0 al 255), con 3 cifras podemos escribir 4096 números (del 000 al FFF, es decir, del 0 al 4095), etc.</p>
+
+    <p>Pasar de la notación binaria a la hexadecimal (o viceversa) es muy sencillo, porque cada cuatro bits de la notación binaria corresponden a un único carácter hexadecimal.</p>
+
+    <p>La figura siguiente permite ver la notación binaria, hexadecimal y decimal de los enteros entre 0 y 255. Para subir o bajar cada bit, haga clic en los triángulos:</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="565" height="220" viewBox="-320 -20 1130 440">
+        <rect x="-15" y="-10" width="820" height="420" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="105" x2="805" y2="105" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="210" x2="805" y2="210" stroke-width="4" stroke="black" />
+        <line x1="-15" y1="315" x2="805" y2="315" stroke-width="4" stroke="black" />
+        <line x1="300" y1="-10" x2="300" y2="410" stroke-width="4" stroke="black" />
+        <polygon id="e2-sube" points="340,5 320,45 360,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(128)" />
+        <polygon id="e2-baja" points="340,95 320,55 360,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-128)" />
+        <polygon points="400,5 380,45 420,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(64)" />
+        <polygon points="400,95 380,55 420,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-64)" />
+        <polygon points="460,5 440,45 480,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(32)" />
+        <polygon points="460,95 440,55 480,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-32)" />
+        <polygon points="520,5 500,45 540,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(16)" />
+        <polygon points="520,95 500,55 540,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-16)" />
+        <polygon points="580,5 560,45 600,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(8)" />
+        <polygon points="580,95 560,55 600,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-8)" />
+        <polygon points="640,5 620,45 660,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(4)" />
+        <polygon points="640,95 620,55 660,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-4)" />
+        <polygon points="700,5 680,45 720,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(2)" />
+        <polygon points="700,95 680,55 720,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-2)" />
+        <polygon points="760,5 740,45 780,45" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(1)" />
+        <polygon points="760,95 740,55 780,55" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-1)" />
+        <text id="e2-binario" x="790" y="185" text-anchor="end" font-size="100" font-family="monospace">0</text>
+        <text x="0" y="175" text-anchor="start" font-size="50">Binario</text>
+        <text id="e2-hexadecimal" x="790" y="290" text-anchor="end" font-size="80">0</text>
+        <text x="0" y="280" text-anchor="start" font-size="50">Hexadecimal</text>
+        <text id="e2-decimal" x="790" y="395" text-anchor="end" font-size="80">0</text>
+        <text x="0" y="380" text-anchor="start" font-size="50">Decimal</text>
+      </svg>
+    </p>
+
+    <script>
+      function e2_cambia(cambio) {
+        var decimal = document.getElementById("e2-decimal");
+        var binario = document.getElementById("e2-binario");
+        var hexadecimal = document.getElementById("e2-hexadecimal");
+        // var sube = document.getElementById("e2-sube");
+        // var baja = document.getElementById("e2-baja");
+        decimal.innerHTML = Number(decimal.innerHTML) + cambio;
+        binario.innerHTML = Number(decimal.innerHTML).toString(2);
+        hexadecimal.innerHTML = Number(decimal.innerHTML).toString(16).toUpperCase();
+        if (Number(decimal.innerHTML) < 0) {
+          decimal.innerHTML = 0;
+          binario.innerHTML = 0;
+          hexadecimal.innerHTML = 0;
+        }
+        if (Number(decimal.innerHTML) > 255) {
+          decimal.innerHTML = 255;
+          binario.innerHTML = Number(decimal.innerHTML).toString(2);
+          hexadecimal.innerHTML = Number(decimal.innerHTML).toString(16).toUpperCase();
+        }
+        // baja.style.visibility = (Number(decimal.innerHTML) == 0) ? "hidden" : "visible";
+        // sube.style.visibility = (Number(decimal.innerHTML) == 255) ? "hidden" : "visible";
+      }
+    </script>
+  </section>
+
   <section id="ascii">
-    <h3>El juego de caracteres ASCII</h3>
+    <h2>El juego de caracteres ASCII</h2>
 
     <p>En Informática toda la información se guarda en forma numérica, por lo que para guardar caracteres (letras, números, signos de puntuación, etc.) se necesita establecer una correspondencia entre los códigos numéricos y los caracteres. Al conjunto de correspondencias se le llama juego de caracteres. Los primeros ordenadores usaban cada uno su propio juego de caracteres, pero en los años 50 empezaron a proponerse estándares que facilitasen la comunicación entre diferentes sistemas. En los años 60 se creó el <a href="https://es.wikipedia.org/wiki/ASCII">código ASCII</a>, que definía 128 caracteres (33 caracteres de control y 95 imprimibles -letras minúsculas, mayúsculas, cifras, puntuación, etc.-) y que se convirtió en el estándar en informática.</p>
 
@@ -147,21 +217,21 @@
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="-20 -20 700 240">
         <rect x="-15" y="-10" width="680" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
         <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
-        <polygon id="e2-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(1)" />
-        <polygon id="e2-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e2_cambia(-1)" />
-        <text id="e2-decimal" x="380" y="70" text-anchor="end" font-size="80">80</text>
+        <polygon id="e3-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(1)" />
+        <polygon id="e3-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(-1)" />
+        <text id="e3-decimal" x="380" y="70" text-anchor="end" font-size="80">80</text>
         <text x="420" y="60" text-anchor="start" font-size="50">Decimal</text>
-        <text id="e2-caracter" x="380" y="175" text-anchor="end" font-size="80">P</text>
+        <text id="e3-caracter" x="380" y="175" text-anchor="end" font-size="80">P</text>
         <text x="420" y="165" text-anchor="start" font-size="50">ASCII</text>
       </svg>
     </p>
 
     <script>
-      function e2_cambia(cambio) {
-        var decimal = document.getElementById("e2-decimal");
-        var caracter = document.getElementById("e2-caracter");
-        var sube = document.getElementById("e2-sube");
-        var baja = document.getElementById("e2-baja");
+      function e3_cambia(cambio) {
+        var decimal = document.getElementById("e3-decimal");
+        var caracter = document.getElementById("e3-caracter");
+        var sube = document.getElementById("e3-sube");
+        var baja = document.getElementById("e3-baja");
         var min = 0;
         var max = 127;
         decimal.innerHTML = Number(decimal.innerHTML) + cambio;
@@ -191,21 +261,21 @@
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="120" viewBox="-20 -20 700 240">
         <rect x="-15" y="-10" width="680" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
         <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
-        <polygon id="e3-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(1)" />
-        <polygon id="e3-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e3_cambia(-1)" />
-        <text id="e3-decimal" x="380" y="70" text-anchor="end" font-size="80">128</text>
+        <polygon id="e4-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(1)" />
+        <polygon id="e4-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(-1)" />
+        <text id="e4-decimal" x="380" y="70" text-anchor="end" font-size="80">128</text>
         <text x="420" y="60" text-anchor="start" font-size="50">Decimal</text>
-        <text id="e3-caracter" x="380" y="175" text-anchor="end" font-size="80">&#128;</text>
+        <text id="e4-caracter" x="380" y="175" text-anchor="end" font-size="80">&#128;</text>
         <text x="420" y="165" text-anchor="start" font-size="50">CP1252</text>
       </svg>
     </p>
 
     <script>
-      function e3_cambia(cambio) {
-        var decimal = document.getElementById("e3-decimal");
-        var caracter = document.getElementById("e3-caracter");
-        var sube = document.getElementById("e3-sube");
-        var baja = document.getElementById("e3-baja");
+      function e4_cambia(cambio) {
+        var decimal = document.getElementById("e4-decimal");
+        var caracter = document.getElementById("e4-caracter");
+        var sube = document.getElementById("e4-sube");
+        var baja = document.getElementById("e4-baja");
         // Windows code page 1252 Western European
         var cp1252 = '\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\x7f\u20ac\ufffd\u201a\u0192\u201e\u2026\u2020\u2021\u02c6\u2030\u0160\u2039\u0152\ufffd\u017d\ufffd\ufffd\u2018\u2019\u201c\u201d\u2022\u2013\u2014\u02dc\u2122\u0161\u203a\u0153\ufffd\u017e\u0178\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff';
         var min = 0;
@@ -236,7 +306,7 @@
   </section>
 
   <section id="unicode">
-    <h3>El juego de caracteres universal: Unicode</h3>
+    <h2>El juego de caracteres universal: Unicode</h2>
 
     <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, que utilizaba dos bytes para codificar cada carácter.</p>
 
@@ -362,7 +432,7 @@
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="-20 -20 800 240">
         <rect x="-15" y="-10" width="880" height="215" rx="20" ry="20" fill="none" stroke-width="4" stroke="black" />
         <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
-        <polygon id="e4-convierte" points="10,10 10,100 90,50" fill="black" stroke-width="1" stroke="black" onclick="e4_convierte()" />
+        <polygon id="e4-convierte" points="10,10 10,100 90,50" fill="black" stroke-width="1" stroke="black" onclick="e5_convierte()" />
         <text x="120" y="60" text-anchor="start" font-size="50">UTF-8</text>
         <text id="e4-utf8" x="350" y="60" text-anchor="start" font-size="80"></text>
         <text x="120" y="165" text-anchor="start" font-size="50">UTF-16</text>
@@ -370,8 +440,8 @@
     </p>
 
     <script>
-      function e4_convierte() {
-        var utf8 = document.getElementById("e4-utf8");
+      function e5_convierte() {
+        var utf8 = document.getElementById("e5-utf8");
         var letras = document.getElementById("e4-letras");
         // Windows code page 1252 Western European
         utf8.innerHTML = '';
@@ -388,7 +458,7 @@
   </section>
 
   <section id="html">
-    <h3>Juegos de caracteres en páginas web</h3>
+    <h2>Juegos de caracteres en páginas web</h2>
 
     <p>En las primeras versiones de HTML se especificaba que el juego de caracteres utilizado por las páginas web debía ser el juego de caracteres ISO-8859-1, más conocido como Latin-1.</p>
 
@@ -477,7 +547,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de ocutbre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 8 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
