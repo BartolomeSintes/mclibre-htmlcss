@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Modelo de caja. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Modelo de caja. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <h1>CSS 2: Modelo de caja</h1>
+  <h1>CSS: Modelo de caja</h1>
 
   <nav>
     <p>
@@ -21,11 +21,12 @@
     </p>
 
     <div class="toc">
-      <h2>CSS 2: Modelo de caja</h2>
+      <h2>CSS: Modelo de caja</h2>
 
       <ul>
         <li><a href="#modelo-caja"><span class="css-prop">margin</span>, <span class="css-prop">border</span> y <span class="css-prop">padding</span></a></li>
         <li><a href="#display"><span class="css-prop">display</span></a></li>
+        <li><a href="#box-sizing"><span class="css-prop">box-sizing</span></a></li>
       </ul>
     </div>
   </nav>
@@ -118,8 +119,167 @@
     </ul>
   </section>
 
+  <section id="box-sizing">
+    <h2 class="con-aside">Cambio del modelo de caja: <span class="css-prop">box-sizing</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">box-sizing</span><br>
+        <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/#box-sizing"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>En el modelo de caja CSS "clásico", el borde y los márgenes interior y exterior se añaden al tamaño del elemento definido con las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="830" viewBox="-40 -85 830 280" font-family="sans-serif" font-size="18">
+        <title>Modelo de caja CSS "clásico"</title>
+        <text x="-30" y="-70" text-anchor="start" font-size="16pt">Modelo de caja CSS "clásico" (<tspan class="css-prop">box-sizing</tspan>: <tspan class="css-valor">border-box</tspan>)</text>
+
+        <rect x="-30" y="-30" width="414" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <rect x="0" y="0" width="354" height="158" fill="hsl(180, 50%, 80%)" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+        <rect x="28" y="28" width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+
+        <text x="150" y="90" text-anchor="start">width (ancho)</text>
+        <line x1="28" y1="100" x2="327" y2="100" stroke-width="2" stroke="black" />
+        <polyline points="38,95 28,100 38,105" fill="black" stroke-width="2" stroke="black" />
+        <polyline points="317,95 327,100 317,105" fill="black" stroke-width="2" stroke="black" />
+
+        <text x="65" y="60" text-anchor="start">height (alto)</text>
+        <line x1="60" y1="28" x2="60" y2="131" stroke-width="2" stroke="black" />
+        <polyline points="55,38 60,28 65,38" fill="black" stroke-width="2" stroke="black" />
+        <polyline points="55,121 60,131 65,121" fill="black" stroke-width="2" stroke="black" />
+
+        <line x1="315" y1="50" x2="450" y2="-40" stroke-width="2" stroke="black" />
+        <circle cx="315" cy="50" r="4" fill="black" />
+        <text x="460" y="-35" text-anchor="start" font-size="16pt">elemento</text>
+
+        <line x1="337" y1="80" x2="450" y2="7" stroke-width="2" stroke="black" />
+        <circle cx="337" cy="80" r="4" fill="black" />
+        <text x="460" y="12" text-anchor="start" font-size="16pt">padding (margen interior)</text>
+
+        <line x1="355" y1="115" x2="450" y2="57" stroke-width="2" stroke="black" />
+        <circle cx="355" cy="115" r="4" fill="black" />
+        <text x="460" y="62" text-anchor="start" font-size="16pt">border (borde)</text>
+
+        <line x1="370" y1="150" x2="450" y2="107" stroke-width="2" stroke="black" />
+        <circle cx="370" cy="150" r="4" fill="black" />
+        <text x="460" y="112" text-anchor="start" font-size="16pt">margin (margen exterior)</text>
+      </svg>
+    </p>
+
+    <p>La propiedad <span class="css-prop">box-sizing</span>, introducida en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a> (aprobada en junio de 2018), permite modificar este comportamiento y hacer que el borde y los márgenes interior y exterior se puedan incluir en el interior del tamaño definido con las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>. En este caso, lógicamente, se reducirá el espacio disponbile para el contenido.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="830" viewBox="-40 -85 830 280" font-family="sans-serif" font-size="18">
+        <title>Modelo de caja CSS "clásico"</title>
+        <text x="-30" y="-70" text-anchor="start" font-size="16pt">Modelo de caja CSS "alternativo" (<tspan class="css-prop">box-sizing</tspan>: <tspan class="css-valor">content-box</tspan>)</text>
+
+        <rect x="-30" y="-30" width="414" height="218" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+        <rect x="0" y="0" width="354" height="158" fill="hsl(180, 50%, 80%)" stroke="hsl(0, 100%, 50%)" stroke-width="10" />
+        <rect x="28" y="28" width="299" height="103" fill="none" stroke="black" stroke-width="1" stroke-dasharray="5 5" />
+
+        <text x="150" y="90" text-anchor="start">width (ancho)</text>
+        <line x1="-30" y1="100" x2="384" y2="100" stroke-width="2" stroke="black" />
+        <polyline points="-20,95 -30,100 -20,105" fill="black" stroke-width="2" stroke="black" />
+        <polyline points="374,95 384,100 374,105" fill="black" stroke-width="2" stroke="black" />
+
+        <text x="65" y="60" text-anchor="start">height (alto)</text>
+        <line x1="60" y1="-30" x2="60" y2="188" stroke-width="2" stroke="black" />
+        <polyline points="55,-20 60,-30 65,-20" fill="black" stroke-width="2" stroke="black" />
+        <polyline points="55,178 60,188 65,178" fill="black" stroke-width="2" stroke="black" />
+
+        <line x1="315" y1="50" x2="450" y2="-40" stroke-width="2" stroke="black" />
+        <circle cx="315" cy="50" r="4" fill="black" />
+        <text x="460" y="-35" text-anchor="start" font-size="16pt">espacio restante para el contenido</text>
+
+        <line x1="337" y1="80" x2="450" y2="7" stroke-width="2" stroke="black" />
+        <circle cx="337" cy="80" r="4" fill="black" />
+        <text x="460" y="12" text-anchor="start" font-size="16pt">padding (margen interior)</text>
+
+        <line x1="355" y1="115" x2="450" y2="57" stroke-width="2" stroke="black" />
+        <circle cx="355" cy="115" r="4" fill="black" />
+        <text x="460" y="62" text-anchor="start" font-size="16pt">border (borde)</text>
+
+        <line x1="370" y1="150" x2="450" y2="107" stroke-width="2" stroke="black" />
+        <circle cx="370" cy="150" r="4" fill="black" />
+        <text x="460" y="112" text-anchor="start" font-size="16pt">margin (margen exterior)</text>
+
+        <line x1="385" y1="180" x2="450" y2="147" stroke-width="2" stroke="black" />
+        <circle cx="385" cy="180" r="4" fill="black" />
+        <text x="460" y="152" text-anchor="start" font-size="16pt">elemento</text>
+      </svg>
+    </p>
+
+    <hr class="corta ">
+
+    <p>Los ejemplos siguientes muestran como la propiedad <span class="css-prop">box-sizing</span> modifica la presentación de dos elementos del mismo tamaño:</p>
+
+    <ul>
+      <li>en el primer ejemplo el borde se dibuja por fuera del tamaño definido para el elemento</li>
+      <li>en el segundo, el borde se dibuja por dentro del tamaño definido para el elemento</li>
+      <li>en el tercero, se observa como el comportamiento predeterminado de los navegadores es el correspondiente a <span class="css-valor">border-box</span></li>
+    </ul>
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  width: 200px;
+  height: 100px;
+  <span class="codigo-resaltado">box-sizing: border-box;</span>
+  border: red 25px solid;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/interface/box-sizing-content-box.html" style="width: 100%; height: 185px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/interface/box-sizing-content-box.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  width: 200px;
+  height: 100px;
+  <span class="codigo-resaltado">box-sizing: content-box;</span>
+  border: red 25px solid;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/interface/box-sizing-border-box.html" style="width: 100%; height: 135px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/interface/box-sizing-border-box.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  width: 200px;
+  height: 100px;
+  border: red 25px solid;
+}</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/interface/box-sizing.html" style="width: 100%; height: 185px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/interface/box-sizing.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de octubre de 2016</p>
+    <p class="ultmod">Última modificación de esta página: 13 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
