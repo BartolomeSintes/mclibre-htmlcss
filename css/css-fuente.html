@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Tipo de letra (fuente). CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Tipo de letra (fuente). CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <h1>CSS 2: Tipo de letra (fuente)</h1>
+  <h1>CSS 3: Tipo de letra (fuente)</h1>
 
   <nav>
     <p>
@@ -21,7 +21,7 @@
     </p>
 
     <div class="toc">
-      <h2>CSS2: Fuente</h2>
+      <h2>CSS3: Fuente</h2>
 
       <ul>
         <li><a href="#font"><span class="css-prop">font</span></a></li>
@@ -42,11 +42,31 @@
           </ul>
         </li>
         <li><a href="#line-height">Interlineado: <span class="css-prop">line-height</span></a></li>
+        <li><a href="#font-size-adjust">Ajuste: <span class="css-prop">font-size-adjust</span></a></li>
+        <li><a href="#font-strecth">Anchura: <span class="css-prop">font-stretch</span></a></li>
       </ul>
     </div>
   </nav>
 
+  <p>La recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, editada por John Daggett y otros, se publicó en septiembre de 2018.</p>
+
   <p>Los tipos de letra pueden ser tan diferentes que no existe un método universal de clasificación y denominación de los tipos de letra. En las hojas de estilo esta situación se resuelve mediante propiedades que permiten describir el aspecto general del tipo de letra y es el navegador el que escoge, de entre los tipos de letra instalados en el ordenador, el que mejor se adapta a esa descripción.</p>
+
+  <p>En esta página se comentan las propiedades que permiten describir el tipo de letra (la fuente) en una página web:</p>
+
+  <ul>
+    <li>La propiedad compuesta <span class="css-prop">font</span></li>
+    <li>Tipo de letra: <span class="css-prop">font-family</span></li>
+    <li>Tamaño del tipo de letra: <span class="css-prop">font-size</span> </li>
+    <li>Subfamilias tipográficas
+      <ul>
+        <li>Inclinación (itálica): <span class="css-prop">font-style</span></li>
+        <li>Versalitas: <span class="css-prop">font-variant</span></li>
+        <li>Grosor del trazo (negrita): <span class="css-prop">font-weight</span></li>
+      </ul>
+    </li>
+    <li>Interlineado: <span class="css-prop">line-height</span></li>
+  </ul>
 
   <section id="font">
     <h2 class="con-aside">La propiedad compuesta <span class="css-prop">font</span></h2>
@@ -54,12 +74,12 @@
     <aside class="enlace-norma">
       <p>
         <span class="css-prop">font</span><br>
-        <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
-    <p>La propiedad compuesta <span class="css-prop">font</span> permite definir simultáneamente las propiedades relacionadas con el tipo de letra: <span class="css-prop">font-style</span>, <span class="css-prop">font-variant</span>, <span class="css-prop">font-weight</span>, <span class="css-prop">font-size</span>, <span class="css-prop">line-height</span> y <span class="css-prop">font-family</span> (explicadas más adelante en esta misma página).</p>
+    <p>La propiedad compuesta <span class="css-prop">font</span> permite definir simultáneamente las propiedades relacionadas con el tipo de letra: <span class="css-prop">font-style</span>, <span class="css-prop">font-variant</span> (solamente los valores definidos en CSS 2.1 <span class="css-valor">normal</span> y <span class="css-valor">small-caps</span>), <span class="css-prop">font-weight</span>, <span class="css-prop">font-stretch</span>, <span class="css-prop">font-size</span>, <span class="css-prop">line-height</span> y <span class="css-prop">font-family</span> (explicadas más adelante en esta misma página).</p>
 
     <p>Al escribir la propiedad compuesta, el orden en que deben aparecer los valores es el orden en que aparecen las propiedades simples en el párrafo anterior. Las únicas propiedades que deben aparecer obligatoriamente son <span class="css-prop">font-size</span> y <span class="css-prop">font-family</span>. Si se escribe la propiedad <span class="css-prop">line-height</span> debe aparecer separada de <span class="css-prop">font-size</span> por una barra (/).</p>
 
@@ -127,7 +147,7 @@
       </div>
     </div>
 
-    <p>Si no están las propiedades en el orden correcto, o falta alguna de las propiedades obligatorias, los navegadores no hacen caso.</p>
+    <p>Si las propiedades no están en el orden correcto, o falta alguna de las propiedades obligatorias, los navegadores no aplican ninguna propiedad.</p>
 
     <div class="filaflex">
       <div class="icono-ok">
@@ -169,8 +189,6 @@
       </div>
     </div>
 
-    <p>Si los primeros valores son correctos, pero al final hay valores que deberían estar en otro lugar, los navegadores aplican los valores correctos e ignoran los valores finales (<span class="css-prop">font-family</span> también se ignora).</p>
-
     <div class="filaflex">
       <div class="icono-ok">
         <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
@@ -190,15 +208,18 @@
       </div>
     </div>
 
+    <p>Si los navegadores no entienden una propiedad (como es actualmente -octubre de 2018-, la propiedad <span class="css-prop">font-stretch</span>), los navegadores aplican el resto de propiedades.</p>
+
     <div class="filaflex">
-      <div class="icono-ok">
-        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
       </div>
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font: 120% sans-serif small-caps;
-  /* small-caps debería estar al principio */
+  font: condensed 120% sans-serif;
 }</code>
 </pre>
       </div>
@@ -317,7 +338,7 @@
     <aside class="enlace-norma">
       <p>
         <span class="css-prop">font-family</span><br>
-        <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-family"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-family-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
@@ -511,7 +532,7 @@
     <aside class="enlace-norma">
       <p>
         <span class="css-prop">font-size</span><br>
-        <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-size"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+        <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-size-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-size"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
@@ -569,9 +590,9 @@
     <section id="valor-numerico">
       <h3>Valor numérico con unidades absolutas</h3>
 
-      <p>Se puede definir un tamaño concreto, por ejemplo, 14pt, 3cm, etc.</p>
+      <p>Se puede definir un tamaño concreto, por ejemplo, 14pt, 3cm, 20px, etc.</p>
 
-      <p><strong>Nota</strong>: Hace años (antes de 2010) se desaconsejaba utilizar estas unidades de forma indiscriminada porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación. Esta forma de definir el tamaño se reservaba para diseños de página pensados para una resolución determinada y cuando se quería conservar un determinado diseño (distribución de elementos en la página, etc.).</p>
+      <p><strong>Nota</strong>: Hace años (antes de 2010) se desaconsejaba utilizar estas unidades de forma indiscriminada porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -593,9 +614,7 @@
     <section id="valor-relativo">
       <h3>Valor numérico con unidades relativas</h3>
 
-      <p>Se puede definir el tamaño de cada elemento mediante porcentajes (o <span class="css-unidad">em</span>, teniendo en cuenta que 1em = 100%), que se interpretan con respecto al tamaño base.</p>
-
-      <p><strong>Nota</strong>: Hace años (antes de 2010) se aconsejaba utilizar preferentemente estas unidades porque los navegadores no permitían reducir ni ampliar los elementos definidos mediante unidades absolutas, pero actualmente no existe esa limitación.</p>
+      <p>Se puede definir el tamaño de cada elemento mediante porcentajes (o <span class="css-unidad">em</span> o <span class="css-unidad">rem</span>, teniendo en cuenta que 1em = 100% y que 1rem = 100%), que se interpretan con respecto al tamaño base.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -666,7 +685,7 @@
       <aside class="enlace-norma">
         <p>
           <span class="css-prop">font-style</span><br>
-          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-style"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+          <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-style-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
         </p>
       </aside>
@@ -680,9 +699,13 @@
 
       <p>Para distinguir si una fuente es oblicua o itálica, es necesario fijarse en letras como la "a". La imagen siguiente muestra un ejemplo: la primera línea corresponde a la fuente Aldine (normal e itálica) y la segunda línea corresponde a la fuente Arial (normal y oblicua).</p>
 
-      <p class="mcl-centrado"><img src="../img/otros/ejemplo-font-style.png" alt="Ejemplo de fuente oblique e italic" title="Ejemplo de fuente oblique e italic" width="105" height="125"></p>
+      <p class="mcl-centrado">
+        <img src="../img/otros/ejemplo-font-style.png" alt="Ejemplo de fuente oblique e italic" title="Ejemplo de fuente oblique e italic" width="105" height="125">
+      </p>
 
-      <p>La propiedad <span class="css-prop">font-style</span> permite elegir la inclinación: <span class="css-valor">normal</span>, <span class="css-valor">oblique</span> o <span class="css-valor">italic</span>. Desgraciadamente, los navegadores no distinguen entre itálica y oblicua y muestran en los dos casos la variante oblicua, como puede verse en el ejemplo siguiente. Por tanto, al utilizar esta propiedad es más apropiado dar el valor <span class="css-valor">oblique</span>, que es el que aplican realmente los navegadores.</p>
+      <p>La propiedad <span class="css-prop">font-style</span> permite elegir la inclinación: <span class="css-valor">normal</span>, <span class="css-valor">oblique</span> o <span class="css-valor">italic</span>. Para que los navegadores puedan mostrar las variantes oblicua e itálica es necesario que en el ordenador esté instaladas fuentes de ambas variantes, lo que no suele ser habitual.</p>
+
+      <p>En general, si no hay instaladas fuentes específicas, los navegadores simplemente inclinan el tipo de letra normal, tanto para <span class="css-valor">oblique</span> como <span class="css-valor">italic</span>. Como esto correspondería más bien a la variante oblicua, se aconseja dar el valor <span class="css-valor">oblique</span> en vez de <span class="css-valor">italic</span>.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -737,6 +760,43 @@
           <a href="ejemplos/fuentes/font-style-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+
+      <hr class="corta">
+
+      <p>Para probar si realmente los navegadores distinguen entre <span class="css-valor">italic</span> y <span class="css-valor">oblique</span>, se debe instalar una fuente que tenga ambas variantes. Por ejemplo, la fuente libre <a href="https://www.fontsquirrel.com/fonts/latin-modern-roman">Latin Modern Roman</a>. El ejemplo siguiente puede verse correctamente una vez instalada esa fuente (realmente son 11 fuentes distintas para cubrir las variantes más habituales).</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+          <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+  <code class="language-css">p.italic {
+  font-family: "Latin Modern Roman 10";
+  font-style: italic;
+}
+
+p.oblique {
+  font-family: "Latin Modern Roman 10";
+  font-style: oblique;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-style-4.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-style-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Actualmente (octubre de 2018), Firefox es el único navegador que aplica esta propiedad correctamente, como se comenta en la <a href="../otros/diferencias-listado.html#css-fuente-font-style">página de diferencias entre navegadores</a>. El ejemplo anterior da el siguiente resultado en Firefox:</p>
+
+      <p class="captura">
+        <img src="ejemplos/fuentes/font-style-italic-oblique-ff.png" alt="Ejemplo de fuente oblique e italic" title="Ejemplo de fuente oblique e italic" width="580" height="170">
+      </p>
     </section>
 
     <section id="font-variant">
@@ -745,7 +805,7 @@
       <aside class="enlace-norma">
         <p>
           <span class="css-prop">font-variant</span><br>
-          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-variant"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+          <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-variant-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
         </p>
       </aside>
@@ -791,7 +851,7 @@
       <aside class="enlace-norma">
         <p>
           <span class="css-prop">font-weight</span><br>
-          <a href="https://www.w3.org/TR/CSS2/fonts.html#propdef-font-weight"><img src="../varios/iconos/icono-css2.svg" alt="Recomendación CSS2" title="Recomendación CSS2" width="29" height="32"></a>
+          <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/#font-weight-prop"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
         </p>
       </aside>
@@ -974,8 +1034,136 @@ ul {
     </div>
   </section>
 
+
+  <section id="font-size-adjust">
+    <h2>Ajuste del tamaño del tipo de letra: <span class="css-prop">font-size-adjust</span></h2>
+
+    <p>Cada tipo de letra tiene una proporción distinta entre el tamaño del tipo y el tamaño de la letra x de ese mismo tipo (para entendernos, una proporción distinta entre los tamaños de las letras mayúsculas y minúsculas). Es decir, que para un tamaño determinado, unos tipos de letras tienen las letras minusuculas más grandes que otros (y por tanto, son más legibles a tamaños pequeños).</p>
+
+    <p>Esto puede provocar problemas cuando el navegador no pueden mostrar el tipo de letra indicado por el autor y debe sustituirlo por otro. Si el tipo de letra que elige el navegador tiene unas minúsculas más pequeñas que las del tipo de letra elegido por el autor de la página, puede que el texto sea ilegible, ya que la propiedad <span class="css-prop">font-size</span> únicamente indica el tamaño del tipo.</p>
+
+    <p>La propiedad <span class="css-prop">font-size-adjust</span> permite establecer la proporción entre el tamaño del tipo y el de la letra x, indicándolo como número decimal.</p>
+
+    <p>Firefox interpreta parcialmente esta propiedad. Google Chrome e Chrome no interpretan esta propiedad, como se comenta en la <a href="../otros/diferencias-listado.html#css-fuente-font-size-adjust">página de diferencias entre navegadores</a>.</p>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+  <code class="language-css">p {
+    font-size: 20px;
+  }</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-size-adjust-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-size-adjust-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+  <code class="language-css">p {
+    font-size: 20px;
+    font-size-adjust: 1.5;
+  }</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-size-adjust-2.html" style="width: 100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-size-adjust-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+  <code class="language-css">p {
+    font-size: 20px;
+    font-size-adjust: 0.5;
+  }</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-size-adjust-3.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-size-adjust-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="font-strecth">
+    <h2>Anchura: <span class="css-prop">font-stretch</span></h2>
+
+    <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido. Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
+
+    <p>Actualmente (octubre de 2018), los navegadores no son capaces de interpretar esta propiedad.</p>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+  <code class="language-css">p {
+    font-stretch: ultra-condensed;
+  }</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-stretch-1.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-stretch-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+  <code class="language-css">p {
+    font-stretch: ultra-expanded;
+  }</code>
+  </pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-stretch-2.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-stretch-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 15 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
