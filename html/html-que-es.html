@@ -25,7 +25,7 @@
 
       <ul>
         <li><a href="#que-es">Qué es una página web</a></li>
-        <li><a href="#version">Version de HTML</a></li>
+        <li><a href="#versiones">Versiones de HTML</a></li>
       </ul>
     </div>
   </nav>
@@ -42,9 +42,10 @@
     <ul>
       <li>En Firefox, <span class="soft-menu">Ver &gt; Código fuente de la página</span>.</li>
       <li>En Chrome, <span class="soft-menu">Herramientas &gt; Ver código fuente</span> </li>
-      <li>En Internet Explorer, <span class="soft-menu">Ver &gt; Origen</span>.
-      </li>
+      <li>En Edge, primero hay que abrir la página about:flags y marcar la casilla "Mostrar código fuente". A partir de ese momento, al hacer clic derecho sobre cualquier página, el menú contextual mostrará la opción <span class="soft-menu">Ver origen</span>. El código fuente se muestra en la ventana de desarrolladores.</li>
+      <li>En Internet Explorer, <span class="soft-menu">Ver &gt; Origen</span>.</li>
     </ul>
+
     <hr class="corta">
 
     <p>Las marcas se escriben entre desigualdades (<span class="html-eti">&lt;p&gt;</span>, <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;div&gt;</span>, etc.) y suelen ir por parejas, rodeando porciones de texto. La marca de apertura contiene como mínimo el nombre de la marca y la marca de cierre empieza por el carácter barra (/) y contiene únicamente el nombre de la marca (<span class="html-eti">&lt;/p&gt;</span>, <span class="html-eti">&lt;/h1&gt;</span>, <span class="html-eti">&lt;/div&gt;</span>, etc.).</p>
@@ -74,6 +75,8 @@
       </div>
     </div>
 
+    <hr class="corta">
+
     <p>Algunas marcas (imágenes, saltos de líneas, separadores, etc.) no necesitan marca de cierre y sólo es necesario escribir la marca de apertura. A estas marcas se las llama marcas <strong>vacías</strong> (<i>void</i>). Las marcas <strong>vacías</strong> de HTML son <span class="html-eti">&lt;area&gt;</span>, <span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;br&gt;</span>, <span class="html-eti">&lt;col&gt;</span>, <span class="html-eti">&lt;embed&gt;</span>, <span class="html-eti">&lt;hr&gt;</span>, <span class="html-eti">&lt;img&gt;</span>, <span class="html-eti">&lt;input&gt;</span>, <span class="html-eti">&lt;link&gt;</span>, <span class="html-eti">&lt;meta&gt;</span>, <span class="html-eti">&lt;param&gt;</span>, <span class="html-eti">&lt;source&gt;</span>, <span class="html-eti">&lt;track&gt;</span> y <span class="html-eti">&lt;wbr&gt;</span>.</p>
 
     <div class="filaflex">
@@ -99,37 +102,6 @@
         <p>&nbsp;</p>
         <div class="icono-enlace">
           <a href="ejemplos/que-es/que-es-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p>Las marcas pueden anidarse, aunque no de cualquier manera. Algunas marcas pueden estar contenidas por otras, pero no se puede insertar cualquier marca dentro de otra.</p>
-
-    <div class="filaflex">
-      <div class="columnaflex">
-        <p>Código fuente de la página web</p>
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;div&gt;
-  &lt;p&gt;Esto es un &lt;strong&gt;párrafo de texto&lt;/strong&gt;.&lt;/p&gt;
-
-  &lt;p&gt;Esto es &lt;em&gt;otro párrafo&lt;/em&gt;.&lt;/p&gt;
-&lt;/div&gt;</code>
-</pre>
-        </div>
-      </div>
-      <div class="columnaflex">
-        <p>Cómo se ve en el navegador</p>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/que-es/que-es-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-      </div>
-      <div class="columnaflex icono-enlace">
-        <p>&nbsp;</p>
-        <div class="icono-enlace">
-          <a href="ejemplos/que-es/que-es-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </div>
@@ -165,65 +137,126 @@
 
     <hr class="corta">
 
-    <p>Se puede modificar el aspecto visual de cualquier marca utilizando propiedades de estilo.</p>
+    <p>Los saltos de línea, espacios en blanco y tabuladores no son en general significativos. Es decir, el navegador no tiene en cuenta los saltos de línea ni la cantidad de espacios en blanco ni los tabuladores a la hora de mostrar la página web, simplemente los convierten en un espacio en blanco.</p>
 
     <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;Uno          Dos          Tres         Cuatro&lt;/p&gt;
 
+&lt;p&gt;Uno
+  Dos
+
+  Tres
+  Cuatro&lt;/p&gt;</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/que-es/que-es-8.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/que-es/que-es-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p><strong>Nota</strong>: La etiqueta <a href="html-bloques.html#etiqueta-pre"><span class="html-eti">&lt;pre&gt;</span></a> es la única etiqueta que de forma predeterminada sí que se respeta los saltos de línea, espacios en blanco y tabuladoreslos espacios. Este comportamiento se puede modificar para cualqueir etiqueta con la propiedad <a href="../css/css-texto.html#white-space"><span class="css-prop">white-space</span></a>.</p>
+
+    <hr class="corta">
+
+    <p>Las marcas pueden anidarse, aunque no de cualquier manera. Algunas marcas pueden estar contenidas por otras, pero no se puede insertar cualquier marca dentro de otra.</p>
+
+    <div class="filaflex">
       <div class="columnaflex">
         <p>Código fuente de la página web</p>
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p style="color: red"&gt;Este párrafo se verá de color rojo.&lt;/p&gt;</code>
+<code class="language-html">&lt;div&gt;
+  &lt;p&gt;Esto es un &lt;strong&gt;párrafo de texto&lt;/strong&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Esto es &lt;em&gt;otro párrafo&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;</code>
 </pre>
         </div>
       </div>
       <div class="columnaflex">
         <p>Cómo se ve en el navegador</p>
         <div class="resultado-object">
-          <object type="text/html" data="ejemplos/que-es/que-es-5.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="ejemplos/que-es/que-es-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
       </div>
       <div class="columnaflex icono-enlace">
         <p>&nbsp;</p>
         <div class="icono-enlace">
-          <a href="ejemplos/que-es/que-es-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/que-es/que-es-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </div>
 
-    <p><strong>Nota</strong>: Aunque es posible utilizar propiedades de estilo en una página web, como en el ejemplo anterior, se recomienda hacerlo en hojas de estilo, como se explica en lecciones posteriores.</p>
+    <section id="atributos">
+      <h2>Atributos</h2>
 
-    <hr class="corta">
+      <p>Las marcas de apertura pueden contener uno o varios atributos. Los atributos especifican alguna característica de la marca. Algunos atributos pueden incluirse en casi todas las marcas, pero otros son específicos de cada marca. Los atributos pueden a su vez tener valores (uno o varios valores, separados por espacios). <span class="html-eti">&lt;etiqueta <span class="html-atri">atributo="valor_de_atributo"</span> <span class="html-atri">atributo2="valor_de_atributo"</span>&gt;</span>
+      </p>
 
-    <p>Las marcas de apertura pueden contener uno o varios atributos. Los atributos especifican alguna característica de la marca. Algunos atributos pueden incluirse en casi todas las marcas, pero otros son específicos de cada marca. Los atributos pueden a su vez tener valores (uno o varios valores, separados por espacios). <span class="html-eti">&lt;etiqueta <span class="html-atri">atributo="valor_de_atributo"</span> <span class="html-atri">atributo2="valor_de_atributo"</span>&gt;</span>
-    </p>
-
-    <div class="filaflex">
-      <div class="columnaflex">
-        <p>Código fuente de la página web</p>
-        <div class="codigo">
-          <pre>
+      <div class="filaflex">
+        <div class="columnaflex">
+          <p>Código fuente de la página web</p>
+          <div class="codigo">
+            <pre>
 <code class="language-html">&lt;p title="¡Sorpresa!"&gt;Esto es un párrafo de texto (ponga el cursor encima).&lt;/p&gt;
 
 &lt;p style="color: red"&gt;Esto es otro párrafo.&lt;/p&gt;</code>
 </pre>
+          </div>
+        </div>
+        <div class="columnaflex">
+          <p>Cómo se ve en el navegador</p>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/que-es/que-es-6.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+        <div class="columnaflex icono-enlace">
+          <p>&nbsp;</p>
+          <div class="icono-enlace">
+            <a href="ejemplos/que-es/que-es-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
       </div>
-      <div class="columnaflex">
-        <p>Cómo se ve en el navegador</p>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/que-es/que-es-6.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+
+      <hr class="corta">
+
+      <p>Se puede modificar el aspecto visual de cualquier marca utilizando propiedades de estilo.</p>
+
+      <div class="filaflex">
+
+        <div class="columnaflex">
+          <p>Código fuente de la página web</p>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style="color: red"&gt;Este párrafo se verá de color rojo.&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+        <div class="columnaflex">
+          <p>Cómo se ve en el navegador</p>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/que-es/que-es-5.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+        </div>
+        <div class="columnaflex icono-enlace">
+          <p>&nbsp;</p>
+          <div class="icono-enlace">
+            <a href="ejemplos/que-es/que-es-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
       </div>
-      <div class="columnaflex icono-enlace">
-        <p>&nbsp;</p>
-        <div class="icono-enlace">
-          <a href="ejemplos/que-es/que-es-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </div>
+
+      <p><strong>Nota</strong>: Aunque es posible utilizar propiedades de estilo en una página web, como en el ejemplo anterior, se recomienda hacerlo en hojas de estilo, como se explica en lecciones posteriores.</p>
+    </section>
 
     <section id="html-comentarios">
+      <h3>Comentarios</h3>
+
       <p>Una página web puede contener comentarios, que el navegador no muestra (salvo cuando muestra el código fuente de la página). La etiqueta de comentario es <span class="html-eti">&lt;!-- .... --&gt;</span>.</p>
 
       <p>Los comentarios pueden estar insertados en cualquier lugar de la página web. En el ejemplo pueden verse dos comentarios, uno incluido en una etiqueta (párrafo <span class="html-eti">&lt;p&gt;</span>) y otro no incluido en ninguna etiqueta.</p>
@@ -248,20 +281,21 @@
         </div>
       </div>
     </section>
+
   </section>
 
-  <section id="version">
-    <h2>Versión de HTML</h2>
+  <section id="versiones">
+    <h2>Versiones de HTML</h2>
 
-    <p>A lo largo del tiempo ha habido varios tipos de HTML y dos tipos de sintaxis. Los tipos de HTML (HTML 3.2, HTML 4.01, HTML 5, etc) se distinguen por las etiquetas (y atributos y valores de los atributos) que se pueden utilizar. Las dos sintaxis, HTML y XHTML, se distinguen en que la primera no sigue la recomendación XML, mientras que la segunda lo hace parcialmente.</p>
+    <p>A lo largo del tiempo ha habido varias versiones de HTML y dos tipos de sintaxis. Las versiones de de HTML (HTML 3.2, HTML 4.01, HTML 5, etc) se distinguen por las etiquetas, atributos y valores de los atributos que se pueden utilizar en ellas. Las dos sintaxis, HTML y XHTML, se distinguen en que la primera no sigue la recomendación XML, mientras que la segunda sí la sigue (salvo en algunos detalles)</p>
 
-    <p>Antes del HTML 5, las distintas versiones de HTML fueron elaboradas por el W3C, pero el W3C abandonó a finales de los 90 el desarrollo del HTML en favor del XHTML. Ante los problemas prácticos que eso suponía, el <a href="https://whatwg.org/">WHATWG</a> (formado en 2004 por Apple, Mozilla y Opera) retomó el desarrollo del HTML, llamándole HTML 5. El W3C retomó en 2006 el desarrollo de HTML, asumiendo el trabajo del WHATHWG, pero con el objetivo de publicar versiones con número de versión.</p>
+    <p>Antes del HTML 5, las distintas versiones de HTML fueron elaboradas por el W3C, pero el W3C abandonó a finales de los 90 el desarrollo del HTML en favor del XHTML. Ante los problemas prácticos que eso suponía, el <a href="https://whatwg.org/">WHATWG</a> (formado en 2004 por Apple, Mozilla y Opera) retomó el desarrollo del HTML, de forma independiente del W3C, llamándole HTML 5. En 2006 el W3C rectificó y retomó el desarrollo de HTML, asumiendo todo el trabajo del WHATHWG.</p>
 
     <p>En 2011 el WHATWG decidió abandonar el concepto de versión y llamar al lenguaje simplemente HTML, sin número de versión. Desde entonces, para el WHATWG el HTML es una norma en contínua elaboración y el único HTML existente es el HTML actual. Por su parte, el W3C decidió mantener el concepto de versiones, por lo que desde 2011 el WHATWG y el W3C ya no trabajan conjuntamente.</p>
 
-    <p>En octubre de 2014 el W3C publicó la recomendación HTML 5, a la que siguió la recomendación HTML 5.1 en noviembre de 2016 y la recomendación HTML 5.2 en diciembre de 2017. Hasta ahora, el W3C ha ido incorporando las modificaciones aprobadas en el WHATWG en el HTML, por lo que las recomendaciones del W3C pueden considerarse más o menos como fotos fijas del HTML del WHATWG. Actualmente (septiembre de 2018), el W3C está preparando la versión HTML 5.3.</p>
+    <p>Hasta ahora, el W3C ha ido incorporando las modificaciones aprobadas en el WHATWG, por lo que las recomendaciones del W3C pueden considerarse más o menos como "fotos fijas" del HTML del WHATWG. En octubre de 2014 el W3C publicó la recomendación HTML 5, a la que siguió la recomendación HTML 5.1 en noviembre de 2016 y la recomendación HTML 5.2 en diciembre de 2017. Actualmente (octubre de 2018), el W3C está preparando la versión HTML 5.3.</p>
 
-    <p>En estos apuntes se utiliza como referencia el HTML del W3C, simplemente para poder tener una referencia fija. Actualmente (septiembre de 2017), la referencia es la última versión disponible, el HTML 5.2, publicada en diciembre de 2018.</p>
+    <p>En estos apuntes se utiliza como referencia el HTML del W3C, simplemente para poder tener una referencia fija. Actualmente (octubre de 2018), la referencia es la última versión disponible, el HTML 5.2, publicada en diciembre de 2017.</p>
 
     <p>Con respecto a la sintaxis, a partir del curso 2018/19 en estos apuntes se utilizará la sintaxis HTML, pero sin omitir las <a href="https://www.w3.org/TR/html52/syntax.html#optional-tags">etiquetas opcionales</a> permitidas por la recomendación.</p>
 
