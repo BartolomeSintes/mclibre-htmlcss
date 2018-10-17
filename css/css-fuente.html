@@ -25,6 +25,7 @@
 
       <ul>
         <li><a href="#line-height">Interlineado: <span class="css-prop">line-height</span></a></li>
+        <li><a href="#font">Propiedad compuesta <span class="css-prop">font</span></a></li>
         <li><a href="#font-family">Tipo de letra: <span class="css-prop">font-family</span></a></li>
         <li><a href="#font-size">Tamaño: <span class="css-prop">font-size</span></a>
           <ul>
@@ -38,8 +39,9 @@
           <ul>
             <li><a href="#font-weight">Negrita: <span class="css-prop">font-weight</span></a></li>
             <li><a href="#font-style">Itálica: <span class="css-prop">font-style</span></a></li>
-            <li><a href="#font-variant">Variantes: <span class="css-prop">font-variant</span></a>
+            <li><a href="#variantes">Variantes</a>
               <ul>
+                  <li><a href="#font-variant"><span class="css-prop">font-variant</span></a></li>
                 <li><a href="#font-variant-caps"><span class="css-prop">font-variant-caps</span></a></li>
                 <li><a href="#font-kerning"><span class="css-prop">font-kerning</span></a></li>
                 <li><a href="#font-variant-ligatures"><span class="css-prop">font-variant-ligatures</span></a></li>
@@ -53,28 +55,21 @@
         </li>
         <li><a href="#font-synthesis">Síntesis: <span class="css-prop">font-synthesis</span></a></li>
         <li><a href="#font-size-adjust">Ajuste: <span class="css-prop">font-size-adjust</span></a></li>
-        <li><a href="#font-strecth">Anchura: <span class="css-prop">font-stretch</span></a></li>
+        <li><a href="#font-stretch">Anchura: <span class="css-prop">font-stretch</span></a></li>
       </ul>
     </div>
   </nav>
 
-  <p>La recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, editada por John Daggett y otros, se publicó en septiembre de 2018.</p>
+  <p>En esta lección se comentan las propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, editada por John Daggett y otros, que se publicó en septiembre de 2018. Estas propiedades permiten al autor de una página web elegir con todo detalle el tipo de letra que se mostrará en el navegador del usuario.</p>
 
-  <p>Los tipos de letra pueden ser tan diferentes que no existe un método universal de clasificación y denominación de los tipos de letra. En las hojas de estilo esta situación se resuelve mediante propiedades que permiten describir el aspecto general del tipo de letra y es el navegador el que escoge, de entre los tipos de letra instalados en el ordenador, el que mejor se adapta a esa descripción.</p>
-
-  <p>Las propiedades que se describen en esta lección permiten indicarle al navegador las características tipográficas deseadas, para que el navegador utilice el tipo de letra adecuado. El problema es que en muchos casos los usuarios no tienen instalados tipos de letras que se ajusten a todas las características tipográficas. En algunos de esos casos los navegadores hacen una transformación por software que imita el resultado esperado y en otros no.</p>
+  <p>El autor de la página web puede entregar la fuente al navegador mediante el mecanismo de las fuentes web (que se comenta en la lección sobre <a href="css-fuentes-web.html">fuentes web</a>) o esperar que el usuario tenga instalada la fuente deseada en su ordenador. Si la fuente solicitada no está instalada, en algunos de esos casos los navegadores hacen una transformación por software que imita el resultado esperado y en otros no.</p>
 
   <hr class="corta">
-
-  <p>Aunque no sea propiamente una característica del tipo de letra, en esta lección se comenta la siguiente propiedad:</p>
-
-  <ul>
-    <li>Interlineado: <span class="css-prop">line-height</span></li>
-  </ul>
 
   <p>En esta página se comentan las propiedades que permiten describir el tipo de letra (la fuente) en una página web:</p>
 
   <ul>
+    <li>Interlineado: <span class="css-prop">line-height</span> (no es propiamente una característica del tipo de letra, pero se comenta en esta lección)</li>
     <li>La propiedad compuesta <span class="css-prop">font</span></li>
     <li>Tipo de letra: <span class="css-prop">font-family</span></li>
     <li>Tamaño del tipo de letra: <span class="css-prop">font-size</span> </li>
@@ -91,9 +86,6 @@
             <li>Posición: <span class="css-prop">font-variant-posititon</span></li>
             <li>Tamaño y sustitución de caracteres asiáticos: <span class="css-prop">font-variant-east-asian</span></li>
             <li>Características de fuentes OpenType: <span class="css-prop">font-feature-settings</span></li>
-          </ul>
-          <ul>
-            <li>Características: <span class="css-prop">font-feature-settings</span></li>
           </ul>
         </li>
       </ul>
@@ -337,12 +329,12 @@
       </div>
     </div>
 
-    <p>Si los navegadores no entienden una propiedad (como es actualmente -octubre de 2018-, la propiedad <span class="css-prop">font-stretch</span>), los navegadores aplican el resto de propiedades.</p>
+    <p>Si los navegadores no entienden una propiedad (como es actualmente -octubre de 2018-, la propiedad <span class="css-prop">font-stretch</span> utilizada en el ejemplo), los navegadores aplican el resto de propiedades.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
         <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
       </div>
       <div class="codigo">
@@ -1080,7 +1072,7 @@ p.oblique {
       </section>
 
       <section id="font-variant-caps">
-        <h3 class="con-aside">Variantes: <span class="css-prop">font-variant-caps</span></h3>
+        <h3 class="con-aside">Versalitas: <span class="css-prop">font-variant-caps</span></h3>
 
         <aside class="enlace-norma">
           <p>
@@ -1410,6 +1402,8 @@ p.oblique {
           </p>
         </aside>
 
+        <p>La propiedad <span class="css-prop">font-variant-east-asian</span> permite elegir el tipo de sustitución y la anchura de caracteres en los lenguajes asiáticos orientales. Admite los valores <span class="css-valor">normal</span>, <span class="css-valor">jis78</span>, <span class="css-valor">jis83</span>, <span class="css-valor">jis90</span>, <span class="css-valor">jis04</span>, <span class="css-valor">simplified</span>, <span class="css-valor">traditional</span>, <span class="css-valor">full-width</span>, <span class="css-valor">proportional-width</span> y <span class="css-valor">ruby</span></p>
+
         <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Falta explicar y ejemplos.</p>
       </section>
 
@@ -1439,6 +1433,8 @@ p.oblique {
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-synthesis"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
+
+    <p>Admite los valores <span class="css-valor">none</span>, <span class="css-valor">weight</span> y <span class="css-valor">style</span></p>
 
     <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Falta explicar y ejemplos.</p>
   </section>
@@ -1520,10 +1516,10 @@ p.oblique {
     </div>
   </section>
 
-  <section id="font-strecth">
+  <section id="font-stretch">
     <h2>Anchura: <span class="css-prop">font-stretch</span></h2>
 
-    <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido. Los valores permitidos son los siguientes: <span class="css-valor" style="font-stretch: ultra-condensed;">ultra-condensed</span>, <span class="css-valor" style="font-stretch: extra-condensed;">extra-condensed</span>, <span class="css-valor" style="font-stretch: condensed;">condensed</span>, <span class="css-valor" style="font-stretch: semi-condensed;">semi-condensed</span>, <span style="font-stretch: normal;" class="css-valor">normal</span>, <span class="css-valor" style="font-stretch: semi-expanded;">semi-expanded</span>, <span class="css-valor" style="font-stretch: expanded;">expanded</span>, <span class="css-valor" style="font-stretch: extra-expanded;">extra-expanded</span>, <span class="css-valor" style="font-stretch: ultra-expanded;">ultra-expanded</span>.</p>
+    <p>La propiedad <span class="css-prop">font-stretch</span> permite elegir que un tipo de letra más o menos condensado o expandido. Los valores permitidos son los siguientes: <span class="css-valor">ultra-condensed</span>, <span class="css-valor">extra-condensed</span>, <span class="css-valor">condensed</span>, <span class="css-valor">semi-condensed</span>, <span class="css-valor">normal</span>, <span class="css-valor">semi-expanded</span>, <span class="css-valor">expanded</span>, <span class="css-valor">extra-expanded</span> y <span class="css-valor">ultra-expanded</span>.</p>
 
     <p>Actualmente (octubre de 2018), los navegadores no son capaces de interpretar esta propiedad.</p>
 
@@ -1571,7 +1567,7 @@ p.oblique {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de octubre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 17 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
