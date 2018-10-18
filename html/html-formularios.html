@@ -44,7 +44,10 @@
             <li><a href="#control-input-url">URL</a></li>
             <li><a href="#control-input-email">Correo</a></li>
             <li><a href="#control-input-date">Fecha</a></li>
+            <li><a href="#control-input-month">Mes</a></li>
+            <li><a href="#control-input-week">Semana</a></li>
             <li><a href="#control-input-time">Hora</a></li>
+            <li><a href="#control-input-datetime-local">Fecha y hora</a></li>
             <li><a href="#control-input-checkbox">Casilla de verificación</a></li>
             <li><a href="#control-input-radio">Botón radio</a></li>
             <li><a href="#control-input-color">Color</a></li>
@@ -167,11 +170,11 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Nombre: &lt;input type="text" name="nombre" required="required"&gt;&lt;/p&gt;
+<code class="language-html">&lt;p&gt;Nombre: &lt;input type="text" name="nombre" required&gt;&lt;/p&gt;
 
 &lt;p&gt;Sexo:
-  &lt;input type="radio" name="hm" value="h" required="required"&gt; Hombre
-  &lt;input type="radio" name="hm" value="m" required="required"&gt; Mujer
+  &lt;input type="radio" name="hm" value="h" required&gt; Hombre
+  &lt;input type="radio" name="hm" value="m" required&gt; Mujer
 &lt;/p&gt;</code>
 </pre>
         </div>
@@ -189,13 +192,13 @@
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;p&gt;Sexo:
-  &lt;input type="radio" name="hm" value="h" required="required"&gt; Hombre
+  &lt;input type="radio" name="hm" value="h" required&gt; Hombre
   &lt;input type="radio" name="hm" value="m"&gt; Mujer
 &lt;/p&gt;
 
 &lt;p&gt;Edad:
   &lt;input type="radio" name="edad" value="menor"&gt; Menor
-  &lt;input type="radio" name="edad" value="adulto" required="required"&gt; Adulto
+  &lt;input type="radio" name="edad" value="adulto" required&gt; Adulto
 &lt;/p&gt;</code>
   </pre>
         </div>
@@ -291,7 +294,7 @@
 
       <div class="filaflex">
         <div class="codigo">
-          <pre><code class="language-html">&lt;input type="submit" value="Enviar" disabled="disabled"&gt;</code></pre>
+          <pre><code class="language-html">&lt;input type="submit" value="Enviar" disabled&gt;</code></pre>
         </div>
         <div class="resultado-object">
           <object type="text/html" data="ejemplos/formularios/disabled-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
@@ -303,7 +306,7 @@
 
       <div class="filaflex">
         <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto" disabled="disabled"&gt;</code></pre>
+          <pre><code class="language-html">&lt;input type="text" name="texto" disabled&gt;</code></pre>
         </div>
         <div class="resultado-object">
           <object type="text/html" data="ejemplos/formularios/disabled-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
@@ -321,7 +324,7 @@
 
       <div class="filaflex">
         <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto" value="¡A que no me cambias!" readonly="readonly"&gt;</code></pre>
+          <pre><code class="language-html">&lt;input type="text" name="texto" value="¡A que no me cambias!" readonly&gt;</code></pre>
         </div>
         <div class="resultado-object">
           <object type="text/html" data="ejemplos/formularios/readonly.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
@@ -522,22 +525,48 @@
 
     <p>La mayoría de cotnroles se obtienen mediante mediante la etiqueta vacía <span class="html-eti">&lt;input&gt;</span>.</p>
 
-    <p>En HTML 4.01, los controles disponibles eran: botón para enviar <a href="#control-input-submit-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"submit"</span>&gt;</span></a>, botón para reiniciar <a href="#control-input-submit-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"reset"</span>&gt;</span></a>, texto <a href="#control-input-text"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"text"</span>&gt;</span></a>, contraseña <a href="#control-input-password"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"password"</span>&gt;</span></a>, archivo <a href="#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a>, imagen <a href="#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a>, oculto <a href="#control-input-hidden"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"hidden"</span>&gt;</span></a>, área de texto <a href="#control-textarea"><span class="html-eti">&lt;textarea&gt;</span></a> y menú <a href="#control-select"><span class="html-eti">&lt;select&gt;</span></a>.</p>
+    <p>En HTML 4.01, los controles disponibles eran:
+      botón para enviar <a href="#control-input-submit-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"submit"</span>&gt;</span></a>,
+      botón para reiniciar <a href="#control-input-submit-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"reset"</span>&gt;</span></a>,
+      texto <a href="#control-input-text"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"text"</span>&gt;</span></a>,
+      contraseña <a href="#control-input-password"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"password"</span>&gt;</span></a>,
+      archivo <a href="#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a>,
+      imagen <a href="#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a>,
+      oculto <a href="#control-input-hidden"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"hidden"</span>&gt;</span></a>,
+      área de texto <a href="#control-textarea"><span class="html-eti">&lt;textarea&gt;</span></a> y
+      menú <a href="#control-select"><span class="html-eti">&lt;select&gt;</span></a>.
+    </p>
 
-    <p>En HTML 5 se añadieron los controles: botón <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span>, número <a href="#control-input-number"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></a>, búsqueda <a href="#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a>, teléfono <a href="#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a>, dirección web <a href="#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a>, dirección de correo <a href="#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a>, fecha <a href="#control-input-date"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></a>, hora <a href="#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a>, color <a href="#control-input-color"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"color"</span>&gt;</span></a>, rango <a href="#control-input-range"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"range"</span>&gt;</span></a>, opciones <span class="html-eti">&lt;option&gt;</span> (para <span class="html-eti">&lt;datalist&gt;</span>), lista de valores <span class="html-eti">&lt;datalist&gt;</span>, salida <span class="html-eti">&lt;output&gt;</span>, barra de progreso <span class="html-eti">&lt;progress&gt;</span> y medidor <span class="html-eti">&lt;meter&gt;</span>.</p>
+    <p>En HTML 5 se añadieron los controles:
+      botón <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span>,
+      número <a href="#control-input-number"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></a>,
+      búsqueda <a href="#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a>,
+      teléfono <a href="#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a>,
+      dirección web <a href="#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a>,
+      dirección de correo <a href="#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a>,
+      fecha <a href="#control-input-date"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></a>,
+      hora <a href="#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a>,
+      color <a href="#control-input-color"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"color"</span>&gt;</span></a>,
+      rango <a href="#control-input-range"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"range"</span>&gt;</span></a>,
+      opciones <span class="html-eti">&lt;option&gt;</span> (para <span class="html-eti">&lt;datalist&gt;</span>),
+      lista de valores <span class="html-eti">&lt;datalist&gt;</span>,
+      salida <span class="html-eti">&lt;output&gt;</span>,
+      barra de progreso <span class="html-eti">&lt;progress&gt;</span> y
+      medidor <span class="html-eti">&lt;meter&gt;</span>.
+    </p>
 
-    <p>En HTML 5.1 se añadieron los controles: mes <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span>, semana <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span> y fecha y hora local <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span>.</p>
+    <p>En HTML 5.1 se añadieron los controles:
+      mes <a href="#control-input-month"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></a>,
+      semana <a href="#control-input-week"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></a> y
+      fecha y hora local <a href="#control-input-datetime-local"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></a>.
+    </p>
 
     <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos controles HTML 5 como
       <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span>,
       <span class="html-eti">&lt;output&gt;</span>,
       <span class="html-eti">&lt;progress&gt;</span> y
-      <span class="html-eti">&lt;meter&gt;</span>.</p>
-
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos controles HTML 5.1 como
-      <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span>,
-      <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span> y
-      <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span>.</p>
+      <span class="html-eti">&lt;meter&gt;</span>.
+    </p>
 
     <section id="control-botones-submit-reset">
       <h3 class="con-aside">Botones: <span class="html-eti">&lt;input&gt;</span> y <span class="html-eti">&lt;button&gt;</span></h3>
@@ -995,7 +1024,7 @@
         </div>
         <div class="codigo">
           <pre>
-<code class="language-html">Búsqueda: &lt;input type="url" name="direccion" size="40"&gt;</code>
+<code class="language-html">URL: &lt;input type="url" name="direccion" size="40"&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
@@ -1006,7 +1035,7 @@
         </div>
       </div>
 
-      <p>Actualmente (noviembre de 2017), los navegadores sólo comprueban que el texto escrito empiece por http: o https:, pero no obligan a que las URL sean sintácticamente válidas.</p>
+      <p>Actualmente (octubre de 2018), los navegadores sólo comprueban que el texto escrito empiece por http: o https:, pero no obligan a que las URL sean sintácticamente válidas.</p>
     </section>
 
     <section id="control-input-email">
@@ -1036,7 +1065,7 @@
         </div>
       </div>
 
-      <p>Actualmente (noviembre de 2017), los navegadores sólo comprueban que el texto escrito contenga una arroba @ y no contengan caracteres no permitidos, pero no obliga a que las direcciones sean válidas.</p>
+      <p>Actualmente (octubre de 2018), los navegadores sólo comprueban que el texto escrito contenga una arroba @ y no contengan caracteres no permitidos, pero no obliga a que las direcciones sean válidas.</p>
     </section>
 
     <section id="control-input-date">
@@ -1048,11 +1077,10 @@
           <span class="html-eti">&lt;input <span class="html-atri-valor">date</span>&gt;</span><br>
           <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sec-forms.html#date-state-typedate"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-          <a href="https://caniuse.com/#feat=input-datetime"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
         </p>
       </aside>
 
-      <p>Las cajas de texto de una sola línea específicas para <strong>fechas (días, meses, años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">date</span>.</p>
+      <p>Las cajas de texto de una sola línea específicas para <strong>fechas (días, meses, años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">date</span>. El dato se envía con el formato AAAA-MM-DD donde AAAA es el número de año, MM el número de mes y DD el número de día.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -1067,8 +1095,76 @@
           <a href="ejemplos/formularios/formularios-date-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+    </section>
 
-      <p>Firefox admite este control desde Firefox 57 (noviembre de 2017).</p>
+    <section id="control-input-month">
+      <h3 class="con-aside">Mes: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span>
+      </h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;input <span class="html-atri-valor">month</span>&gt;</span><br>
+          <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sec-forms.html#month-state-typemonth"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+          <a href="https://caniuse.com/#feat=input-datetime"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
+        </p>
+      </aside>
+
+      <p>Las cajas de texto de una sola línea específicas para <strong>meses (y años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">month</span>. El dato se envía con el formato AAAA-MM donde AAAA es el número de año y MM el número de mes.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">Mes: &lt;input type="month" name="mes" size="20"&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/formularios/formularios-month-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-month-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="control-input-week">
+      <h3 class="con-aside">Semana: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span>
+      </h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;input <span class="html-atri-valor">week</span>&gt;</span><br>
+          <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sec-forms.html#week-state-typeweek"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+          <a href="https://caniuse.com/#feat=input-datetime"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
+        </p>
+      </aside>
+
+      <p>Las cajas de texto de una sola línea específicas para <strong>semanas (y años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">week</span>. El dato se envía con el formato AAAA-WSS donde AAAA es el número de año y SS el número de semana.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">Semana: &lt;input type="week" name="semana" size="20"&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/formularios/formularios-week-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-week-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
     </section>
 
     <section id="control-input-time">
@@ -1080,16 +1176,15 @@
           <span class="html-eti">&lt;input <span class="html-atri-valor">time</span>&gt;</span><br>
           <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sec-forms.html#time-state-typetime"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32"></a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-          <a href="https://caniuse.com/#feat=input-datetime"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
         </p>
       </aside>
 
-      <p>Las cajas de texto de una sola línea específicas para <strong>tiempos (horas, minutos, segundo)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">time</span>.</p>
+      <p>Las cajas de texto de una sola línea específicas para <strong>tiempos (horas, minutos, segundo)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">time</span>. El dato se envía con el formato HH-MM donde HH son las horas y MM los minutos.</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">Búsqueda: &lt;input type="time" name="hora" size="20"&gt;</code>
+<code class="language-html">Hora: &lt;input type="time" name="hora" size="20"&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
@@ -1099,8 +1194,40 @@
           <a href="ejemplos/formularios/formularios-time-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+    </section>
 
-      <p>Firefox admite este control desde Firefox 57 (noviembre de 2017).</p>
+    <section id="control-input-datetime-local">
+      <h3 class="con-aside">Fecha y hora: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span>
+      </h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;input <span class="html-atri-valor">datetime-local</span>&gt;</span><br>
+          <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sec-forms.html#local-date-and-time-state-typedatetimelocal"><img src="../varios/iconos/icono-html5.svg" alt="Recomendación HTML 5.1" title="Recomendación HTML 5.1" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        </p>
+      </aside>
+
+      <p>Las cajas de texto de una sola línea específicas para <strong>fechas (días, meses, años, horas y minutos)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">datetime-local</span>. El dato se envía con el formato AAAA-MM-DDTHH-MM donde AAAA es el número de año, MM el número de mes, DD el número de día, HH son las horas y MM los minutos.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">Fecha y hora: &lt;input type="datetime-local" name="fecha" size="20"&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/formularios/formularios-datetime-local-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-date-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
     </section>
 
     <section id="control-input-checkbox">
@@ -1133,7 +1260,7 @@
 
       <div class="filaflex">
         <div class="codigo">
-          <pre><code class="language-html">&lt;input type="checkbox" name="casilla" checked="checked"&gt;Casilla 1</code></pre>
+          <pre><code class="language-html">&lt;input type="checkbox" name="casilla" checked&gt;Casilla 1</code></pre>
         </div>
         <div class="resultado-object">
           <object type="text/html" data="ejemplos/formularios/checkbox-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
@@ -1236,7 +1363,7 @@
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;input type="radio" name="radio3" value="1"&gt;Opción 1&lt;br&gt;
-&lt;input type="radio" name="radio3" value="2" checked="checked"&gt;Opción 2</code>
+&lt;input type="radio" name="radio3" value="2" checked&gt;Opción 2</code>
 </pre>
         </div>
         <div class="resultado-object">
@@ -1502,7 +1629,7 @@
 
       <hr class="corta">
 
-      <p>Si se define el atributo <span class="html-atri">value</span>, el formulario debe enviar tanto las coordenadas como el nombre del control con el valor del atributo <span class="html-atri">value</span>. Actualmente (mayo de 2018), Google Chrome y Edge lo hacen, pero Firefox no.</p>
+      <p>Si se define el atributo <span class="html-atri">value</span>, el formulario debe enviar tanto las coordenadas como el nombre del control con el valor del atributo <span class="html-atri">value</span>.</p>
 
       <div class="filaflex">
         <div class="icono-navegadores">
@@ -1714,7 +1841,7 @@
 <code class="language-html">&lt;select name="menu"&gt;
   &lt;option value="1"&gt;Uno&lt;/option&gt;
   &lt;option value="2"&gt;Dos&lt;/option&gt;
-  &lt;option value="3" selected="selected"&gt;Tres&lt;/option&gt;
+  &lt;option value="3" selected&gt;Tres&lt;/option&gt;
 &lt;/select&gt;</code>
 </pre>
         </div>
@@ -1796,7 +1923,7 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;select name="menu" size="5" multiple="multiple"&gt;
+<code class="language-html">&lt;select name="menu" size="5" multiple&gt;
   &lt;option value="1"&gt;Uno&lt;/option&gt;
   &lt;option value="2"&gt;Dos&lt;/option&gt;
   &lt;option value="3"&gt;Tres&lt;/option&gt;
@@ -1821,7 +1948,7 @@
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;select name="menu"&gt;
-  &lt;option selected="selected"&gt;...&lt;/option&gt;
+  &lt;option selected&gt;...&lt;/option&gt;
   &lt;optgroup label="Grupo1"&gt;
     &lt;option value="1"&gt;Opción uno&lt;/option&gt;
     &lt;option value="2"&gt;Opción dos&lt;/option&gt;
@@ -2069,7 +2196,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 17 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
