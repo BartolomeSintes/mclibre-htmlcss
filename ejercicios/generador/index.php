@@ -100,7 +100,7 @@ print "      </table>\n"
 
     <p>
       <input type="submit" value="Formateado" formaction="generador_comprueba.php"> <!-- -
-  <input type="submit" value="Descargar sin formatear" formaction="generador_zip.php"> -
+  <input type="submit" value="Descargar plantilla" formaction="generador_zip.php"> -
   <input type="submit" value="Comentarios" formaction="generador_comentarios.php">-->
     </p>
   </form>
