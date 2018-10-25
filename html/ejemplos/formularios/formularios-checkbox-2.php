@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>checkbox (1). Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>checkbox (2). Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -25,7 +25,7 @@ if ($dato == "") {
 }
 print "\n";
 
-print "  <p><a href=\"formularios-checkbox-1.html\">Volver al formulario.</a></p>\n";
+print "  <p><a href=\"formularios-checkbox-2.html\">Volver al formulario.</a></p>\n";
 ?>
 <body>
 </html>
