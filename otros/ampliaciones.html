@@ -99,7 +99,68 @@
 
     <p>En el curso 2018/19 he decidido abandonar la sintaxis XHTML y adoptar la sintaxis HTML (pero sin omitir las etiquetas opcionales que permite el HTML).</p>
 
-    <p><strong>Nota</strong>: La <a href="../html/html-validacion.html">lección sobre validación</a> completa esta información.</p>
+    <hr class="corta">
+
+    <p>El problema de los tipos MIME afecta también a la validación de páginas web. La tabla siguiente detalla las posiblidades de validación de los documentos en octubre de 2014:</p>
+
+    <table class="tabla-con-borde">
+      <col>
+      <col>
+      <col>
+      <col>
+      <tbody>
+        <tr>
+          <th>Se puede ...</th>
+          <th>HTML 5<br>(.html)</th>
+          <th>XHTML 5 <br>(.html) </th>
+          <th>XHTML 5<br>(.xhtml)</th>
+        </tr>
+        <tr>
+          <td>... validar con W3C Validator &gt; Upload file</td>
+          <td></td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>... validar con W3C Validator &gt; URI</td>
+          <td></td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>... validar con validator.nu &gt; File upload</td>
+          <td></td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>... validar con validator.nu &gt; Address</td>
+          <td></td>
+          <td>No</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>... validar con Web Developer &gt; Local HTML<br>(Alt+May+L, archivo local abierto como file://)</td>
+          <td></td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>... validar con Web Developer &gt; Validate HTML<br>(archivo en servidor) </td>
+          <td></td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Con respecto a XHTML 5, en octubre de 2014:</p>
+    <ul>
+      <li>el validador del W3C y el validador validator.nu validaban XHTML 5 si la extensión era .xhtml, pero no lo hacían si era .html
+        <p>En el caso de páginas web de Internet (http://...), los validadores utilizaban el tipo MIME para validar como HTML (text/html) o como XHTML (application/xhtml+xml). En el caso de página web subidas manualmente al validador, los validadores utilizaban la extensión para validar como HTML (.html) o como XHTML (.xhtml)..</p>
+      </li>
+      <li>Web Developer no permitía validar páginas XHTML 5. En la lista de mejoras de Web Developer estaba incluido en octubre de 2014 resolver este problema (<a href="https://chrispederick.com/work/web-developer/to-do/#item-5353530558624">enlace</a>), pero no había fecha prevista para ello.</li>
+    </ul>
   </section>
 
   <section id="plantillas-variedades-html-xhtml">
@@ -310,7 +371,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de septiembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 24 de octubre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
