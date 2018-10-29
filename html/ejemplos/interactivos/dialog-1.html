@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>&lt;dialog&gt; (1). Elementos interactivos. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    summary {
+      list-style-type: circle;
+    }
+
+  </style>
+</head>
+
+<body>
+  <dialog id="dialog-1">
+    <h1>Ventana de diálogo</h1>
+
+    <p>Esto es un ejemplo de ventana de diálogo</p>
+
+    <input type="button" value="Cerrar" onclick="document.getElementById('dialog-1').removeAttribute('open')">
+  </dialog>
+
+  <p>
+    <input type="button" value="Muestra diálogo" onclick="document.getElementById('dialog-1').setAttribute('open', 'open')">
+  </p>
+
+  <p>Cuando se hace clic en el botón, se muestra un cuadro de diálogo modal que se superpone al contenido de la página.</p>
+</body>
+</html>
