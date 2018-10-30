@@ -263,9 +263,15 @@
         <line x1="110" y1="-10" x2="110" y2="207" stroke-width="4" stroke="black" />
         <polygon id="e4-sube" points="50,10 100,80 0,80" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(1)" />
         <polygon id="e4-baja" points="50,190 0,110 100,110" fill="black" stroke-width="1" stroke="black" onclick="e4_cambia(-1)" />
-        <text id="e4-decimal" x="380" y="70" text-anchor="end" font-size="80">128</text>
+        <text id="e4-decimal" x="380" y="70" text-anchor="end" font-size="80">126</text>
         <text x="420" y="60" text-anchor="start" font-size="50">Decimal</text>
-        <text id="e4-caracter" x="380" y="175" text-anchor="end" font-size="80">&#128;</text>
+        <text id="e4-caracter" x="380" y="175" text-anchor="end" font-size="80">&#126;</text>
+        <!-- 2018-10-30
+          Cuando hice este ejemplo puse como valor 128 (el euro) en vez de 126,
+          pero entonces el validador del W3C dice que la página no es válida
+          porque la entidad &#128; no es correcta (los valores 128 a 255 no están en utf-8)
+          https://marketing.adobe.com/resources/help/en_US/whitepapers/multibyte/multibyte_windows1252.html
+        -->
         <text x="420" y="165" text-anchor="start" font-size="50">CP1252</text>
       </svg>
     </p>
