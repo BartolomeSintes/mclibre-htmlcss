@@ -28,10 +28,11 @@
         <li><a href="#font-face">Regla arroba <span class="css-arroba">@font-face</span></a></li>
         <li><a href="#google-fonts">Google Fonts</a>
           <ul>
-            <li><a href="#google-fonts-enlazar">Enlazar</a></li>
+            <li><a href="#google-fonts-enlazar">Enlazar <span class="css-arroba">@import</span> o <span class="html-eti">link</span></a></li>
             <li><a href="#google-fonts-descargar-woff2">Descargar WOFF2</a></li>
           </ul>
         </li>
+        <li><a href="#posicion-import">Posición <span class="css-arroba">@import</span></a></li>
       </ul>
     </div>
   </nav>
@@ -158,7 +159,7 @@ p {
             </div>
           </div>
 
-          <p>Las reglas <span class="css-arroba">@import</span> deben escribirse al principio de la hoja de estilo.</p>
+          <p>Las reglas <span class="css-arroba">@import</span> deben escribirse obligatoriamente al principio de la hoja de estilo, como se comenta en el apartado <a href="#posicion-import">Posición de <span class="css-arroba">@import</span></a> de esta lección.</p>
         </li>
         <li>Incluir en el documento html un enlace como si fuera un enlace a una hoja de estilo y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
 
@@ -278,6 +279,56 @@ p {
 
       <p>Actualmente (noviembre de 2018), está disponible la web <a href="https://canonicalized.com/local-font/">https://canonicalized.com/local-font/</a>.</p>
     </section>
+  </section>
+
+  <section id="posicion-import">
+    <h2>Posición de <span class="css-arroba">@import</span> en la hoja de estilo</h2>
+
+    <p>La regla <span class="css-arroba">@import</span> debe escribirse al principio de la hoja de estilo, sin otras reglas delante, ni siquiera reglas <span class="css-arroba">@font-face</span>, como muestran los siguientes ejemplos:</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">@import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+
+@font-face {
+font-family: "Mystery Quest";
+src: url("mystery-quest.woff2");
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes-web/import-font-face-1.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes-web/import-font-face-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">@font-face {
+font-family: "Mystery Quest";
+src: url("mystery-quest.woff2");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower");</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes-web/import-font-face-2.html" style="width: 100%; height: 13em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes-web/import-font-face-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <footer>

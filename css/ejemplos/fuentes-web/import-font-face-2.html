@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Orden @import y @font-face. Fuentes web. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: "Mystery Quest";
+      src: url("mystery-quest.woff2");
+    }
+
+    @import url("https://fonts.googleapis.com/css?family=Indie+Flower");
+
+    p.import {
+      font-family: "Indie Flower", cursive;
+      font-size: 150%;
+    }
+
+    p.local {
+      font-family: "Mystery Quest", cursive;
+      font-size: 150%;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="import">Esto es un párrafo con fuente web Indie Flower al 150% alojada en Google Fonts.</p>
+
+  <p class="local">Esto es un párrafo con fuente web Mystery Quest al 150% alojada localmente.</p>
+</body>
+</html>
