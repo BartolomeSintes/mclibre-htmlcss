@@ -1556,9 +1556,8 @@ p.oblique {
         <a href="ejemplos/fuentes/font-stretch-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
-  </section>
 
-  <p>El problema es que las fuentes expandidas y condensadas se suelen distribuir como fuentes distintas. Una forma de poder utilizar esta propiedad consiste en asociar las variantes a la propiedad <span class="css-prop">font-stretch</span> mediante una regla-arroba <span class="css-arroba">@font-face</span>.</p>
+    <p>El problema es que las fuentes expandidas y condensadas se suelen distribuir como fuentes distintas. Una forma de poder utilizar esta propiedad consiste en asociar las variantes a la propiedad <span class="css-prop">font-stretch</span> mediante una regla-arroba <span class="css-arroba">@font-face</span>.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -1566,19 +1565,19 @@ p.oblique {
 <code class="language-css">@font-face {
   font-family: "Encode Sans";
   font-stretch: normal;
-  src: url("encode-sans-v2-latin-regular.woff2") format("woff2");
+  src: url("encode-sans-v2-latin-regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Encode Sans";
   font-stretch: condensed;
-  src: url("encode-sans-condensed-v2-latin-regular.woff2") format("woff2");
+  src: url("encode-sans-condensed-v2-latin-regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Encode Sans";
   font-stretch: expanded;
-  src: url("encode-sans-expanded-v2-latin-regular.woff2") format("woff2");
+  src: url("encode-sans-expanded-v2-latin-regular.woff") format("woff");
 }
 
 .condensed {
@@ -1595,14 +1594,18 @@ p {
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fuentes/font-stretch-1.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/fuentes/font-stretch-1-woff.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
-        <a href="ejemplos/fuentes/font-stretch-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        <a href="ejemplos/fuentes/font-stretch-1-woff.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
+
+    <p><strong>Nota</strong>: Este ejemplo utiliza fuentes en formato woff para que pueda verse correctamente en Internet Explorer 11 (IE 11 no admite fuentes woff2).</p>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de noviembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 1 de diciembre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

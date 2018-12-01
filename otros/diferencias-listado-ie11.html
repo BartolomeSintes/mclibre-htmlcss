@@ -30,25 +30,26 @@
         <li><a href="#uso">Utilización del navegador</a></li>
         <li><a href="#html">HTML</a></li>
         <li><a href="#css">CSS</a></li>
-        <li><a href="#otros">Otros</a></li>
       </ul>
     </div>
   </nav>
 
+  <p class="incompleto"><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Esta página está pendiente de actualizar y de incluir muchas de las diferencias entre IE11 y Edge.</p>
+
   <section id="introduccion">
     <h2>Introducción</h2>
 
-    <p>Internet Explorer 11 fue la última versión de Internet Explorer publicada por Microsoft en 2013. Con esta versión Microsoft culminó el esfuerzo de modernización y adaptación a las recomendaciones del W3C que había empezado en 2006 con Internet Explorer 7. Pero con esta versión, Microsoft decidió empezar de cero y abandonó el desarrollo de Internet Explorer. Su sucesor fue Microsoft Edge, que aunque continúa la numeración de Internet Explorer está basado en un motor nuevo.</p>
+    <p>Internet Explorer 11, publicado en octubre de 2013, fue la última versión de Internet Explorer publicada por Microsoft. Con esta versión Microsoft culminó el esfuerzo de modernización y adaptación a las recomendaciones del W3C que había empezado en 2006 con Internet Explorer 7. Pero con esta versión, Microsoft decidió empezar de cero y abandonó el desarrollo de Internet Explorer. Su sucesor fue Microsoft Edge, que está basado en un motor nuevo, aunque su numeración ha continuado la numeración de Internet Explorer (12, 13, etc.).</p>
 
-    <p>Aunque actualmente (octubre de 2018) el uso de Internet Explorer 11 siga siendo significativo, esto se debe a que en Windows 7 no se puede instalar Microsoft Edge.</p>
+    <p>La primera versión de Microsoft Edge se publicó en julio de 2015, cuando se publicó la primera versión de Windows 10. La política de Microsoft ha sido siempre publicar nuevas versiones de Internet Explorer (o de Edge) al publicar nuevas versiones de Windows, y en algunos casos permitir que las nuevas versiones del navegador se pudieran instalar en versiones antiguas de Windows. Pero en este caso, Microsoft decidió por un lado que Edge no se pudiera instalar en Windows 7 y por otro lado, incluir también en Windows 10 Internet Explorer 11.</p>
 
-    <p>A partir del curso 2017/2018 he dejado de hacer referencia en los apuntes a Internet Explorer 11, pero he mantenido esta lección en la que se recogen las diferencias entre Internet Explorer 11 y Edge.</p>
+    <p>El resultado de estas dos decisiones es que Internet Explorer 11, que debería haber desaparecido, todavía tiene actualmente (diciembre de 2018) un uso significativo.</p>
+
+    <p>En el curso 2017/2018 dejé de hacer referencia en estos apuntes a Internet Explorer 11 (salvo excepciones puntuales), pero he mantenido esta lección en la que están recogidas algunas diferencias entre Internet Explorer 11 y Edge, que van aumentando a medida que Edge se actualiza e Internet Explorer permanece anclado en el pasado.</p>
 
     <p>En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con los iconos <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32"> y <img src="../varios/iconos/icono-ie.svg" alt="Correcto en Internet Explorer" title="Correcto en Internet Explorer" width="33" height="32">. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con los iconos <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32"> y <img src="../varios/iconos/icono-ie-X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32">.</p>
 
     <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que he ido encontrando al redactar estos apuntes, agrupándolas por temas:</p>
-
-    <p class="incompleto"><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Esta página está pendiente de actualizar y de incluir las diferencias entre IE11 y Edge.</p>
   </section>
 
   <section id="por-incluir">
@@ -128,7 +129,7 @@
         </div>
       </div>
 
-      <p>Esta limitación se puede corregir añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
+      <p>Esta limitación de Internet Explorer 11 se puede corregir añadiendo la propiedad <span class="css-prop">display</span> con el valor <span class="css-valor">block</span>.</p>
 
       <div class="filaflex">
         <div class="icono-navegadores">
@@ -275,15 +276,47 @@ content: " (escrito por Barto).";
         </div>
       </section>
     </section>
+
+    <section id="fuentes-web">
+      <h2>Fuentes web</h2>
+
+      <p>Microsoft Edge puede mostrar fuentes en formato WOFF2, pero Internet Explorer no.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          <img src="../varios/iconos/icono-ie-X.svg" alt="Incorrecto en Internet Explorer" title="Incorrecto en Internet Explorer" width="44" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">@font-face {
+  font-family: "Mystery Quest";
+  src: url("mystery-quest.woff2");
+}
+
+p {
+  font-family: "Mystery Quest", cursive;
+  font-size: 150%;
+}</code>
+  </pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="../css/ejemplos/fuentes-web/fuentes-web-1.html" style="width: 100%; height: 8em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="../css/ejemplos/fuentes-web/fuentes-web-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 1 de diciembre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
-        Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
-        que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
     </p>
   </footer>
 </body>
