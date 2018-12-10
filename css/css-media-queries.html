@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <h1>Consultas de medios (media queries)</h1>
+  <h1>CSS 3: Consultas de medios (media queries)</h1>
 
   <nav>
     <p>
@@ -76,7 +76,7 @@
 
     <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, editada por Florian Rivoal, se aprobó el 19 de junio de 2012. Esta recomendación ampliaba las posibilidades de adaptación al permitir obtener detalles sobre las características de los dispositivos.</p>
 
-    <p>Actualmente (octubre de 2018), el W3C está elaborando dos recomendaciones relacionadas:</p>
+    <p>Actualmente (diciembre de 2018), el W3C está elaborando dos recomendaciones relacionadas:</p>
     <ul>
       <li>la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a>, que desarrolla la recomendación CSS 3: media queries.</li>
       <li>la recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Modules Level 1</a>, dedicada específicamente a las características de las pantallas.</li>
@@ -84,7 +84,17 @@
   </section>
 
   <section id="meta-viewport">
-    <h2>Densidad de píxeles: etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span></h2>
+    <h2 class="con-aside">Densidad de píxeles: etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">meta</span> <span class="html-atri">viewport</span><br>
+        <a href="https://www.w3.org/TR/css-device-adapt-1/#viewport-meta"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-name"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>El atributo <span class="html-atri">viewport</span> de la etiqueta <span class="html-eti">meta</span> no forma parte de ninguna recomendación ya aprobada, pero formará parte de la futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, diciembre de 2018, en elaboración) y es admitido por los navegadores.</p>
 
     <p>La densidad de píxeles de una pantalla es el número de píxeles por unidad de distancia (aunque no sea lo mismo, también se utiliza con el mismo significado la expresión de puntos por unidad de distancia. Las unidades más utilizadas son <a href="https://en.wikipedia.org/wiki/Pixel_density">PPI</a> (píxeles por pulgada) y <a href="https://en.wikipedia.org/wiki/Dots_per_inch">DPI</a> (puntos por pulgada).</p>
 
@@ -107,8 +117,6 @@
 
     <p>Esta etiqueta fue creada por Apple en 2007 (veáse <a href="#origen-viewport">referencia</a>), aunque rápidamente fue adoptada por todos los navegadores de los móviles. Por ello, se recomienda incluir esta etiqueta en todas las páginas web. En estos apuntes se ha incluido en la <a href="../html/html-plantilla.html">plantilla de página web básica</a>.</p>
 
-    <p>La etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> no forma parte de ninguna recomendación ya aprobada, pero formará parte de la futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2018, en elaboración).</p>
-
     <h3 class="con-aside">La regla arroba <span class="css-arroba">@viewport</span></h3>
 
     <aside class="enlace-norma">
@@ -120,9 +128,9 @@
       </p>
     </aside>
 
-    <p>La futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2018, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que está inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero está pensada tanto para navegadores de móviles como de escritorio.</p>
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, diciembre de 2018, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que está inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero está pensada tanto para navegadores de móviles como de escritorio.</p>
 
-    <p>El borrador declara la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. En el futuro, cuando esta recomendación sea implementada en los navegadores, se podrá sustituir la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> de todas las páginas por la regla arroba <span class="css-arroba">@viewport</span> en la hoja de estilo.</p>
+    <p>El borrador declara la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. Si la regla arroba <span class="css-arroba">@viewport</span> llega a implementarse en los navegadores, se podrá sustituir la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> de todas las páginas por la regla arroba <span class="css-arroba">@viewport</span> en la hoja de estilo, pero parece que los navegadores se niegan a implementarla por diversas razones..</p>
 
     <hr class="corta">
 
@@ -198,9 +206,9 @@ h1 { text-decoration: underline; }</code>
       </div>
     </div>
 
-    <p>La idea de definir tipos de dispositivos no ha dado buen resultado, ya que las características de los dispositivos del mismo a veces son muy diferentes y distintos tipos de dispositivos tienen características comunes. Por eso, en las recomendacioner posteriores se ha reducido el número de dispositivos y creado nuevas propiedades relacionadas con las caracterísiticas de los dispositivos (tamaños, resoluciones, número de colores, etc.).</p>
+    <p>La idea de definir tipos de dispositivos no ha dado buen resultado, ya que las características de los dispositivos del mismo tipo a veces son muy diferentes y distintos tipos de dispositivos tienen características comunes. Por eso, en las recomendacioner posteriores se ha reducido el número de dispositivos y creado nuevas propiedades relacionadas con las caracterísiticas de los dispositivos (tamaños, resoluciones, número de colores, etc.).</p>
 
-    <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, publicada en 2012, no definía los tipos de dispositivos, ya que estaban definidos en la recomendación HTML 4.01. Las recomendaciones HTML 5 y posteriores ya no incluían una lista de tipos de dispositivos, que se encuentra ahora en la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a> (actualmente, octubre de 2018, en elaboración). En ella, ya sólo se consideran los tipos <span class="css-valor">all</span> (pantallas), <span class="css-valor">print</span>, <span class="css-valor">screen</span> (pantallas) y <span class="css-valor">speech</span>.</p>
+    <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, publicada en 2012, no definía los tipos de dispositivos, ya que estaban definidos en la recomendación HTML 4.01. Las recomendaciones HTML 5 y posteriores ya no incluían una lista de tipos de dispositivos, que se encuentra ahora en la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a> (actualmente, diciembre de 2018, en elaboración). En ella, ya sólo se consideran los tipos <span class="css-valor">all</span> (pantallas), <span class="css-valor">print</span>, <span class="css-valor">screen</span> (pantallas) y <span class="css-valor">speech</span>.</p>
 
   </section>
 
@@ -227,8 +235,8 @@ h1 { text-decoration: underline; }</code>
 
     <p><strong>Notas</strong>:</p>
     <ul>
-      <li>En CSS 3: Media queries se definían también las características de medios <span class="css-feature">color</span>, <span class="css-feature">color-index</span>, <span class="css-feature">monochrome</span>, <span class="css-feature">scan</span> y <span class="css-feature">grid</span>, que se mantienen en Media Queries Level 4.</li>
-      <li>En CSS 3: Media queries se definían también las características de medios <span class="css-feature">device-width</span>, <span class="css-feature">device-height</span> y <span class="css-feature">device-aspect-ratio</span>, que en Media Queries Level 4 se consideran obsoletas.</li>
+      <li>En CSS 3: Media queries se definen también las características de medios <span class="css-feature">color</span>, <span class="css-feature">color-index</span>, <span class="css-feature">monochrome</span>, <span class="css-feature">scan</span> y <span class="css-feature">grid</span>, que se mantienen en Media Queries Level 4.</li>
+      <li>En CSS 3: Media queries se definen también las características de medios <span class="css-feature">device-width</span>, <span class="css-feature">device-height</span> y <span class="css-feature">device-aspect-ratio</span>, que en Media Queries Level 4 se consideran obsoletas.</li>
       <li>En Media Queries Level 4 se definen también las características de medios <span class="css-feature">update</span>, <span class="css-feature">overflow-block</span>, <span class="css-feature">overflow-inline</span>,<span class="css-feature">color-gamut</span>, <span class="css-feature">pointer</span>, <span class="css-feature">hover</span>, <span class="css-feature">any-pointer</span> y <span class="css-feature">any-hover</span>.</li>
     </ul>
 
@@ -299,7 +307,7 @@ h1 { text-decoration: underline; }</code>
 
       <p>Referencias:</p>
       <ul>
-        <li><a href="https://material.io/design/layout/responsive-layout-grid.html#responsive-ui-breakpoints">Material Design recommended breakpoints</a></li>
+        <li><a href="https://material.io/design/layout/responsive-layout-grid.html#breakpoints">Material Design recommended breakpoints</a></li>
       </ul>
     </section>
 
