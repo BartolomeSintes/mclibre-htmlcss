@@ -24,6 +24,7 @@
       <h2>CSS 2 obsoletas</h2>
 
       <ul>
+        <li><a href="#estilo-enlaces">Dar estilo a enlaces</a></li>
         <li><a href="#font-size-adjust"><span class="css-prop">font-size-adjust</span></a></li>
         <li><a href="#font-stretch"><span class="css-prop">font-stretch</span></a></li>
         <li><a href="#font-face"><span class="css-arroba">@font-face</span></a></li>
@@ -38,6 +39,32 @@
     <li>propiedades que estaban incluidas en la recomendación <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS 2</a> pero que no están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>.</li>
     <li>propiedades que están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, pero que se consideran obsoletas y cuyo uso no se recomienda.</li>
   </ul>
+
+  <section id="estilo-enlaces">
+    <h2>Dar estilo a enlaces</h2>
+
+    <p>En HTML 4 se desaconsejaba dar estilo a los enlaces mediante el selector <span class="html-eti">a</span> porque la etiqueta <span class="html-eti">&lt;a&gt;</span> se podía utilizar también para definir destinos (como se comenta en la lección de <a href="../html/html-obsoletos.html#a-name">elementos obsoletos</a>) y el estilo dirigido a los enlaces podía afectar a elementos que no eran enlaces, como muestra el siguiente ejemplo:</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-obsoleto.svg" alt="Obsoleto" title="Obsoleto" width="48" height="48">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">a {
+  background-color: lightblue;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/pseudoclases/pseudoclases-link-visited-4.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/pseudoclases/pseudoclases-link-visited-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+    <p>Como en HTML 5 se considera obsoleto definir destinos con la etiqueta <span class="html-eti">&lt;a&gt;</span>, este problema ya no debería ocurrir.</p>
+  </section>
 
   <section id="font-size-adjust">
     <h2 class="con-aside">Tipo de letra. Ajuste de tamaño: <span class="css-prop">font-size-adjust</span></h2>

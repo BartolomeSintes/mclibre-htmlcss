@@ -25,9 +25,9 @@
 
       <ul>
         <li><a href="#tipo">Tipo: E</a></li>
+        <li><a href="#universal">Universal: *</a></li>
         <li><a href="#clase">Clase: E.e</a></li>
         <li><a href="#id">ID: E#e</a></li>
-        <li><a href="#universales">Universales: *, . y #</a></li>
         <li><a href="#descendientes">Descendientes: E F</a></li>
         <li><a href="#hijos">Hijos: E &gt; F</a></li>
         <li><a href="#adyacentes">Adyacentes: E+F</a></li>
@@ -67,6 +67,28 @@
     </div>
   </section>
 
+  <section id="universal">
+    <h2>Selector universal: *</h2>
+
+    <p>Si se escribe un asterisco (*), las propiedades afectan a todos los elementos de la página. En el ejemplo siguiente, tanto el párrafo <span class="html-eti">&lt;p&gt;</span> como la dirección <span class="html-eti">&lt;address&gt;</span> se ven de color rojo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">* {
+  color: red;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/selectores/selectores-universales-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/selectores/selectores-universales-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
   <section id="clase">
     <h2 class="con-aside">Selectores de clase: E.e</h2>
 
@@ -93,6 +115,42 @@
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/selectores/selectores-tipo-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>Para definir una clase que se pueda aplicar a cualquier etiqueta, se puede escribir como selector un punto y el nombre de la clase (.nombre-clase) o el selector universal *.nombre-clase. En los dos ejemplos siguientes, cualquier elemento de clase "aviso" se ve de color rojo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">.aviso {
+  color: red;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/selectores/selectores-universales-2.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/selectores/selectores-universales-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">*.aviso {
+  color: red;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/selectores/selectores-universales-3.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/selectores/selectores-universales-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
   </section>
@@ -127,70 +185,10 @@
     </div>
 
     <p>Hay que tener en cuenta que el atributo <span class="html-atri">id</span> no se puede repetir, es decir, no puede haber dos elementos con el mismo valor del atributo <span class="html-atri">id</span> (independientemente de que los elementos tengan etiquetas iguales o distintas).</p>
-  </section>
-
-  <section id="universales">
-    <h2>Selectores universales: *, . y #</h2>
-
-    <p>Si se escribe un asterisco (*), las propiedades afectan a todos los elementos de la página. En el ejemplo siguiente, tanto el párrafo <span class="html-eti">&lt;p&gt;</span> como la dirección <span class="html-eti">&lt;address&gt;</span> se ven de color rojo.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-css">* {
-  color: red;
-}</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/selectores/selectores-universales-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/selectores/selectores-universales-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
 
     <hr class="corta">
 
-    <p>Para definir una clase que afecte a cualquier etiqueta, se debe escribir un punto y el nombre de la clase. En el ejemplo siguiente, cualquier elemento de clase "aviso" se ve de color rojo.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-css">.aviso {
-  color: red;
-}</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/selectores/selectores-universales-2.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/selectores/selectores-universales-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>También se podría utilizar el selector *.clase</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-css">*.aviso {
-  color: red;
-}</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/selectores/selectores-universales-3.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/selectores/selectores-universales-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p>Para definir un id que afecte a cualquier etiqueta, se debe escribir una almohadilla y el nombre del <span class="html-atri">id</span>. En el ejemplo siguiente, el elemento de <span class="html-atri">id</span> "aviso" se ven de color rojo.</p>
+    <p>Para definir un <span class="html-atri">id</span> que se pueda aplicar a cualquier etiqueta, se puede escribir como selector una almohadilla y el nombre del <span class="html-atri">id</span> (#nombre-id) o el selector universal *#nombre-id. En los dos ejemplos siguientes, cualquier elemento con <span class="html-atri">id</span> "aviso" se ve de color rojo.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -211,7 +209,7 @@
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-css">#aviso {
+<code class="language-css">*#aviso {
   color: red;
 }</code>
 </pre>
@@ -224,7 +222,7 @@
       </div>
     </div>
 
-    <p>Hay que tener en cuenta que el atributo <span class="html-atri">id</span> no se puede repetir, es decir, que no puede haber en una página web dos elementos con el mismo valor del atributo <span class="html-atri">id</span> (independientemente de que los elementos tengan etiquetas iguales o distintas). En el caso de que la misma hoja de estilo se enlace desde varias páginas web, en cada una de esas páginas sí que puede haber un elemento (del mismo tipo o distinto en cada página) con el mismo valor del atributo <span class="html-atri">id</span>.</p>
+    <p>Aunque en una página web no puede haber dos elementos con el mismo valor del atributo <span class="html-atri">id</span>, en páginas distintas sí que puede haber dos elementos con el mismo valor del atributo <span class="html-atri">id</span>. Si la misma hoja de estilo se enlaza desde varias páginas web, el selector universal afectará en cada página a los elementos con el <span class="html-atri">id</span> correspondiente.</p>
   </section>
 
   <section id="descendientes">
@@ -412,7 +410,7 @@ p[class="p1 p2"] {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de noviembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 13 de diciembre de 2018</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
