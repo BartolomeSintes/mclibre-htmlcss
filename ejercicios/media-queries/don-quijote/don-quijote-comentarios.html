@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Comentarios al ejercicio Don Quijote Capítulo primero. Ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../../../varios/favicon.ico">
+</head>
+
+<body>
+  <h1>Comentarios al ejercicio Don Quijote Capítulo primero</h1>
+
+  <nav>
+    <p>
+      <a href="../../../index.html"><img src="../../../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+      <a href="../../index.html"><img src="../../../varios/iconos/icono-ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Don Quijote Capítulo primero</h2>
+
+      <ul>
+        <li><a href="#comentarios-media-queries">Media queries</a></li>
+        <li><a href="#comentarios-etiquetas">Etiquetas</a></li>
+        <!--
+        <li><a href="#comentarios-cabecera">Cabecera</a></li>
+        <li><a href="#comentarios-clases">Clases</a></li>
+        <li><a href="#comentarios-posicionamiento">Posicionamiento</a></li>
+        <li><a href="#comentarios-estilos">Estilos</a></li>
+-->
+        <li><a href="#comentarios-solucion">Solución</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p class="incompleto"><img src="../../../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Estos comentarios se encuentran en elaboración.</p>
+
+  <section id="comentarios-etiquetas">
+      <h2>Etiquetas</h2>
+
+      <p>No es necesario modificar la página html, ya que la plantilla ya incluye todas las etiquetas necesarias.</p>
+
+      <p>No es necesario crear divisiones alrededor de cada cita. La forma cuadrada y el borde se puede dar directamente al párrafo <span class="html-eti">&lt;p&gt;</span>.</p>
+    </section>
+
+  <section id="comentarios-media-queries">
+    <h2>Consultas de medios (<i>media queries</i>)</h2>
+
+    <p>Con respecto al ancho de la ventana, la página tiene tres <i>breakpoints</i>, 480px, 720px y 1024px, que definen cuatro rangos de tamaños:</p>
+    <ul>
+      <li>hasta 479px</li>
+      <li>entre 480 y 719px</li>
+      <li>entre 720 y 1023px</li>
+      <li>desde 1024px</li>
+    </ul>
+  </section>
+
+  <!--
+  <section id="comentarios-cabecera">
+    <h2>Cabecera</h2>
+
+    <p>En la cabecera <span class="html-eti">&lt;head&gt;</span> de la página hay que:</p>
+    <ul>
+      <li>modificar el título <span class="html-eti">&lt;title&gt;</span> de la página</li>
+      <li>añadir la etiqueta <span class="html-eti">&lt;meta</span> <span class="html-atri">name</span>=<span class="html-atri-valor">"viewport"</span> <span class="html-eti"> ... &gt;</span> necesaria en dispositivos móviles</li>
+      <li>añadir la etiqueta <span class="html-eti">&lt;link <span class="html-atri">rel</span>=<span class="html-atri-valor">"stylesheet"</span> ... &gt;</span> de enlace a la hoja de estilo</li>
+    </ul>
+  </section>
+
+  <section id="comentarios-clases">
+    <h2>Clases</h2>
+
+    <p>Cada cita tiene la letra inicial diferente al resto del párrafo. Se podría utilizar una etiqueta <span class="html-eti">&lt;span&gt;</span> con clase, pero puesto que se trata del primer carácter, se puede utilizar simplemente el pseudo-elemento <span class="css-pseudo">::first-letter</span>, que no requiere añadir nada al código fuente html.</p>
+  </section>
+
+  <section id="comentarios-posicionamiento">
+    <h2>Posicionamiento</h2>
+
+    <p>Los párrafos tienen forma cuadrada y tienen todos el mismo tamaño, independientemente del contenido, lo que se puede conseguir dando el mismo valor a las propiedades <span class="css-prop">width</span> y <span class="css-prop">height</span>.</p>
+
+    <p>Las citas se muestran una al lado de la otra formando una trama rectangular. Además, al hacer zoom o al estrechar o ensanchar la ventana, el número de citas por fila se ajusta automáticamente. Eso se puede conseguir con posicionamiento flotante.</p>
+
+    <p>Si el tamaño del párrafo es suficientemente grande, no es necesario definir la propiedad <span class="css-prop">overflow</span>, aunque por precaución se puede incluir en la hoja de estilo.</p>
+
+    <p>Como no hay ningún elemento después de las citas, no hace falta utilizar la propiedad <span class="css-prop">clear</span> en ningún elemento.</p>
+
+    <hr class="corta">
+
+    <p>La letra inicial de cada párrafo (pseudo-elemento <span class="css-pseudo">::first-letter</span>) tiene posicionamiento flotante.</p>
+
+    <h3>Diferencia entre Firefox y Chrome / Internet Explorer</h3>
+
+    <p>En Internet Explorer y Chrome la letra capital se muestra con espacio en blanco por arriba y por abajo, espacio que corresponde al interlineado, mientras que Firefox no muestra ese espacio, como muestran las capturas siguientes.</p>
+
+    <p class="captura">
+      <img src="oscar-wilde-diferencia-ff-gc-1.png" alt="Resultado en Google Chrome e Internet Explorer" title="Resultado en Google Chrome e Internet Explorer" width="300" height="165">
+      <img src="oscar-wilde-diferencia-ff-gc-2.png" alt="Resultado en Firefox" title="Resultado en Firefox" width="300" height="165">
+    </p>
+
+    <p>Para que la letra inicial ocupe en vertical sólo dos líneas de texto en Chrome e Internet Explorer, se debe utilizar la propiedad <span class="css-prop">line-height</span> en el pseudo-elemento <span class="css-pseudo">::first-letter</span>. Firefox muestra la letra inicial de la misma manera con ella o sin ella.</p>
+  </section>
+
+  <section id="comentarios-estilos">
+    <h2>Estilos</h2>
+
+    <p>Estas son las propiedades CSS utilizadas:</p>
+
+    <ul>
+      <li>Página (<span class="html-eti">body</span>):
+        <ul>
+          <li>color de fondo: <span class="css-prop">background-color</span></li>
+          <li>tipo de letra: <span class="css-prop">font-family</span></li>
+        </ul>
+      </li>
+      <li>Título principal (<span class="html-eti">h1</span>):
+        <ul>
+          <li>margen: <span class="css-prop">margin</span></li>
+          <li>color: <span class="css-prop">color</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          <li>separación de letras: <span class="css-prop">letter-spacing</span></li>
+          <li>alineación: <span class="css-prop">text-align</span></li>
+          <li>mayúsculas: <span class="css-prop">text-transform</span></li>
+        </ul>
+      </li>
+      <li>Párrafo (<span class="html-eti">p</span>):
+        <ul>
+          <li>posicionamiento flotante: <span class="css-prop">float</span></li>
+          <li>ancho: <span class="css-prop">width</span></li>
+          <li>alto: <span class="css-prop">height</span></li>
+          <li>visibilidad de elementos que no caben: <span class="css-prop">overflow</span></li>
+          <li>borde: <span class="css-prop">border</span></li>
+          <li>margen: <span class="css-prop">margin</span></li>
+          <li>margen interior: <span class="css-prop">padding</span></li>
+          <li>color de fondo: <span class="css-prop">background-color</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          <li>cursivas: <span class="css-prop">font-style</span></li>
+        </ul>
+      </li>
+      <li>primer carácter del párrafo (<span class="html-eti">p</span><span class="css-pseudo">::first-letter</span>):
+        <ul>
+          <li>posicionamiento flotante: <span class="css-prop">float</span></li>
+          <li>color: <span class="css-prop">color</span></li>
+          <li>tamaño de letra: <span class="css-prop">font-size</span></li>
+          <li>cursivas: <span class="css-prop">font-style</span></li>
+          <li>interlineado: <span class="css-prop">line-height</span></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+-->
+
+  <section id="comentarios-solucion">
+    <h2>Solución del ejercicio</h2>
+
+    <p>El código HTML del ejercicio puede consultarse abriendo la <a href="don-quijote-formateado.html">página web del ejercicio</a> y abriendo el código fuente (<span class="soft-atajo-teclado">Ctrl+U</span>).</p>
+
+    <p>La hoja de estilo del ejercicio puede consultarse abriendo este enlace a la <a href="don-quijote.css">hoja de estilo del ejercicio Don Quijote Capítulo primero</a>.</p>
+
+    <p>Tenga en cuenta que en estos ejercicios hay a menudo varias maneras de conseguir el mismo resultado, por lo que la solución no es nunca única.</p>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 7 de enero de 2018</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
