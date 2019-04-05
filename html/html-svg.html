@@ -27,10 +27,10 @@
 
       <ul>
         <li><a href="#introduccion">Introducción</a></li>
+        <li><a href="#sintaxis">Sintaxis de SVG</a></li>
         <li><a href="#imagenes">Imágenes SVG</a></li>
-        <li><a href="#svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a></li>
         <li><a href="#plano">Plano SVG</a></li>
-        <li><a href="#atributos">Atributos de <span class="html-eti">&lt;svg&gt;</span></a>
+        <li><a href="#svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a>
           <ul>
             <li><a href="#atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
             <li><a href="#atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
@@ -96,6 +96,21 @@
     </ul>
   </section>
 
+  <section id="sintaxis">
+    <h2>Sintaxis de SVG</h2>
+
+    <p>SVG es un lenguaje XML, por lo que su sintaxis sigue las reglas del XML. SVG 2.0 (actualmente, abril de 2019, en elaboración) permitirá que el SVG incluido en un documento HTML5 siga la sintaxis HTML, pero por el momento las etiquetas SVG incluidas en páginas web deben seguir la sintaxis XML.</p>
+
+    <p>En la lección <a href="html-xhtml-diferencias.html">Diferencias entre HTML y XHTML</a> se comentan las diferencias de sintaxis entre HTML y XHTML (que son las mismas que entre HTML y SVG, ya que tanto XHTML como SVG son lenguajes basados en XML). Las más llamativas son las siguientes:</p>
+    <ul>
+      <li>Hay un elemento raíz que contiene al resto de elementos.</li>
+      <li>Todas las etiquetas están cerradas.</li>
+      <li>Las etiquetas de cierre coinciden con las de apertura (incluso en el uso de mayúsculas y minúsculas).</li>
+      <li>Todos los atributos tienen algún valor.</li>
+      <li>Los valores de los atributos están entre comillas (simples o dobles).</li>
+    </ul>
+  </section>
+
   <section id="imagenes">
     <h2>Imágenes SVG</h2>
 
@@ -103,13 +118,9 @@
 
     <p>El ejemplo siguiente muestra una imagen SVG incluida en una página web (concretamente, en un párrafo <span class="html-eti">&lt;p&gt;</span>):</p>
 
-    <div class="filaflex">
-      <div class="resultado-html nogrow">
-        <p>
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
-            <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" />
-          </svg>
-        </p>
+    <div class="filaflex nogrow">
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/imagenes/img-svg.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="codigo">
         <pre>
@@ -123,18 +134,21 @@
 &lt;/p&gt;</code>
 </pre>
       </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
 
     <p>El ejemplo siguiente muestra una imagen SVG enlazada desde una página web (mediante la etiqueta <span class="html-eti">&lt;img&gt;</span> y el contenido del fichero enlazado (estrella.svg):</p>
 
-    <div class="filaflex">
-      <div class="resultado-html nogrow">
-        <p><img src="../img/svg/estrella.svg" alt="Estrella SVG"></p>
+    <div class="filaflex nogrow">
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/imagenes/img-svg-2.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="columnaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;&lt;img src="../img/svg/estrella.svg" alt="Estrella SVG"&gt;&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;&lt;img src="estrella.svg" alt="Estrella SVG"&gt;&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="codigo">
@@ -149,15 +163,12 @@
   </pre>
         </div>
       </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
 
     <p>La declaración xml (la primera línea del fichero estrella.svg del ejemplo anterior) es optativa si la versión de XML es 1.0 y obligatoria si la versión de XML es 1.1. En cualquier caso, se aconseja incluirla y aprovecharla para declarar el juego de caracteres del documento (como en el ejemplo, UTF-8).</p>
-  </section>
-
-  <section id="svg">
-    <h2>La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
-
-    <p>La etiqueta <span class="html-eti">&lt;svg&gt;</span> engloba toda la imagen SVG e incluye las formas que forman la imagen.</p>
   </section>
 
   <section id="plano">
@@ -186,8 +197,10 @@
     </p>
   </section>
 
-  <section id="atributos">
-    <h2>Los atributos de la etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+  <section id="svg">
+    <h2>La etiqueta <span class="html-eti">&lt;svg&gt;</span></h2>
+
+    <p>La etiqueta <span class="html-eti">&lt;svg&gt;</span> engloba toda la imagen SVG e incluye las formas que forman la imagen.</p>
 
     <section id="atributos-version-xmlns">
       <h3>Los atributos <span class="html-atri">version</span> y <span class="html-atri">xmlns</span></h3>
@@ -610,7 +623,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de septiembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 5 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
