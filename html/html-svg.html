@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>SVG</h1>
+  <h1>SVG (1)</h1>
 
   <nav>
     <p>
@@ -23,7 +23,7 @@
     </p>
 
     <div class="toc">
-      <h2>SVG</h2>
+      <h2>SVG (1)</h2>
 
       <ul>
         <li><a href="#introduccion">Introducción</a></li>
@@ -37,12 +37,13 @@
             <li><a href="#atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
           </ul>
         </li>
-        <li><a href="#reutilizar-inkscape">Simplificar imágenes</a></li>
+        <li><a href="#elementos-superpuestos">Elementos superpuestos</a></li>
+        <li><a href="#margenes-viewbox">Márgenes en <span class="html-atri">viewBox</span></a></li>
       </ul>
     </div>
   </nav>
 
-  <p>En esta lección se trata la etiqueta principal de SVG, la etiqueta <span class="html-eti">&lt;svg&gt;</span>. Las formas básicas SVG (líneas, rectángulos, círculos, cuvas, etc.) se comentan en la lección <a href="svg-formas-1.html">Formas básicas SVG</a>. Algunas formas más avanzadas se comentan en la lección <a href="svg-formas-2.html">Formas avanzadas SVG</a>.</p>
+  <p>En esta lección se trata la etiqueta principal de SVG, la etiqueta <span class="html-eti">&lt;svg&gt;</span>. Las formas básicas SVG (líneas, rectángulos, círculos, cuvas, etc.) se comentan en la lección <a href="svg-formas-1.html">Formas básicas SVG</a>. Algunas formas más avanzadas se comentan en la lección <a href="svg-formas-2.html">Formas avanzadas SVG</a>. En la lección <a href="html-svg-2.html">SVG (2)</a> se tratan otros aspectos relacionados con las imágenes SVG.</p>
 
   <section id="introduccion">
     <h2>Qué es SVG</h2>
@@ -275,7 +276,7 @@
           <p>En el primer ejemplo, se ve todo el círculo porque la zona visible definida por <span class="html-atri">viewBox</span> empieza arriba a la izquierda en el punto (-100, -100) y tiene un tamaño de 200 x 200. El tamaño de la imagen es también de 200 x 200.</p>
 
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
                 <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
@@ -299,7 +300,7 @@
           <p>Si en ese mismo dibujo la zona visible definida por <span class="html-atri">viewBox</span> empieza en el punto (-5, -5) y tiene un tamaño de 105 x 105 sólo se verá el primer cuadrante (valores X e Y positivos). El tamaño de la imagen es también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
                 <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
@@ -323,7 +324,7 @@
           <p>Si quiséramos mostrar el tercer cuadrante (valores X e Y negativos, la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105. El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
                 <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
@@ -355,7 +356,7 @@
       <ul>
         <li>En este primer ejemplo, el tamaño de la imagen coincide con el tamaño de la zona visible
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
               </svg>
@@ -373,7 +374,7 @@
         </li>
         <li>En este segundo ejemplo, el tamaño de la imagen es el cuádruple (el doble en horizontal y el doble en vertical) de la zona visible.
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
               </svg>
@@ -391,7 +392,7 @@
         </li>
         <li>En este tercer ejemplo, el tamaño de la imagen es la cuarta parte (la mitad en horizontal y la mitad en vertical) de la zona visible.
           <div class="filaflex">
-            <div class="resultado-html nogrow">
+            <div class="resultado-html-sin-borde nogrow">
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
                 <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
               </svg>
@@ -414,7 +415,7 @@
       <p>Si no hay atributo <span class="html-atri">viewBox</span>, la zona visible empieza en el origen (0, 0) y el tamaño definido por <span class="html-atri">width</span> y <span class="html-atri">height</span> es el tamaño de la zona visible.</p>
 
       <div class="filaflex">
-        <div class="resultado-html nogrow">
+        <div class="resultado-html-sin-borde nogrow">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
             <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
           </svg>
@@ -432,198 +433,189 @@
     </section>
   </section>
 
-  <section id="reutilizar-inkscape">
-    <h2>Simplificar una imagen hecha con Inkscape</h2>
+  <section id="elementos-superpuestos">
+    <h2>Elementos superpuestos</h2>
 
-    <p>Las imágenes SVG se pueden crear escribiendo las etiquetas directamente en un procesador de textos (como Visual Studio Code), pero también se pueden utilizar editores gráficos como Inkscape o descargar de repositorios como <a href="https://openclipart.org/">Open Clip Art</a>. El inconveniente de utilizar imágenes creadas con Inkscape es que Inkscape genera más código del necesario, por lo que a menudo conviene simplificar ese código.</p>
+    <p>Los elementos de un dibujo SVG se van dibujando en el mismo orden en que se encuentran en el código fuente. Si dos elementos se superponen, uno se dibujará sobre el otro, como muestran los ejemplos siguientes.</p>
 
-    <p>Como ejemplo, si creamos con Inkscape la imagen de la estrella de los ejemplos anteriores y la guardamos como SVG plano, obtendríamos un código fuente similar a este:</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
-&lt;svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 47.098932 43.986142"
-   height="166.24683"
-   width="178.0117"&gt;
-  &lt;defs
-     id="defs2" /&gt;
-  &lt;metadata
-     id="metadata5"&gt;
-    &lt;rdf:RDF&gt;
-      &lt;cc:Work
-         rdf:about=""&gt;
-        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
-        &lt;dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
-        &lt;dc:title&gt;&lt;/dc:title&gt;
-      &lt;/cc:Work&gt;
-    &lt;/rdf:RDF&gt;
-  &lt;/metadata&gt;
-  &lt;g
-     transform="translate(-29.104793,-97.353467)"
-     id="layer1"&gt;
-    &lt;path
-       transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
-       id="use3717"
-       d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
-       style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
-  &lt;/g&gt;
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="75" cy="75" r="75" fill="red" />
+          <circle cx="125" cy="75" r="75" fill="mediumseagreen" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="75" cy="75" r="75" <span class="codigo-resaltado">fill="red"</span> /&gt;
+  &lt;circle cx="125" cy="75" r="75" <span class="codigo-resaltado">fill="mediumseagreen"</span> /&gt;
 &lt;/svg&gt;</code>
 </pre>
+      </div>
     </div>
 
-    <hr class="corta">
-
-    <p>Para simplificar una imagen SVG podemos:</p>
-
-    <ul>
-      <li>utilizar la aplicación web <a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a> (el tamaño y calidad del resultado depende de las opciones elegidas).
-
-        <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGOMG produciría el siguiente resultado:</p>
-
-        <div class="filaflex">
-          <div class="resultado-html nogrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="178" height="166.2" viewBox="0 0 47.1 44">
-              <path fill="#ff0" stroke="red" stroke-width="2.9" d="M86.2 89.1l-19 14.3 7.6 22.5-19.4-13.6-19 14.2 6.9-22.7L23.9 90l23.7-.3 7.1-22.8 7.7 22.5z" transform="matrix(.18778 .59795 -.61066 .18387 74 -27.1)" />
-            </svg>
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" width="178" height="166.2" viewBox="0 0 47.1 44"&gt;
-  &lt;path fill="#ff0" stroke="red" stroke-width="2.9"
-    d="M86.2 89.1l-19 14.3 7.6 22.5-19.4-13.6-19 14.2 6.9-22.7L23.9 90l23.7-.3 7.1-22.8 7.7 22.5z"
-    transform="matrix(.18778 .59795 -.61066 .18387 74 -27.1)"/&gt;
-&lt;/svg&gt;</code>
-</pre>
-          </div>
-        </div>
-      </li>
-      <li>utilizar la aplicación de escritorio <a href="https://github.com/RazrFalcon/svgcleaner-gui">SVGCleaner</a> (disponible para Windows, Linux y Mac):
-
-        <p>En el caso de la imagen de la estrella hecho con Inkscape, SVGCleaner produciría el siguiente resultado:</p>
-
-        <div class="filaflex">
-          <div class="resultado-html nogrow">
-            <svg xmlns="http://www.w3.org/2000/svg" height="166.2" viewBox="0 0 47.1 44" width="178">
-              <path d="m86.2 89.1-19 14.3 7.6 22.5-19.4-13.6-19.1 14.2 7-22.7-19.4-13.8 23.7-.3 7.1-22.8 7.7 22.5z" fill="#ff0" stroke="#f00" stroke-width="2.9" transform="matrix(.2 .6 -.6 .2 74.1 -27.2)" />
-            </svg>
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" height="166.2" viewBox="0 0 47.1 44" width="178"&gt;
-  &lt;path d="m86.2 89.1-19 14.3 7.6 22.5-19.4-13.6-19.1 14.2 7-22.7-19.4-13.8 23.7-.3 7.1-22.8 7.7 22.5z"
-    fill="#ff0" stroke="#f00" stroke-width="2.9" transform="matrix(.2 .6 -.6 .2 74.1 -27.2)"/&gt;
-&lt;/svg&gt;</code>
-</pre>
-          </div>
-        </div>
-
-      </li>
-      <li>hacerlo a mano con un editor de texto plano. Se pueden conseguir ficheros más pequeños que con SVGOMG o SVGCleaner, pero invirtiendo mucho más tiempo.
-
-        <p>Para insertarla en un documento html 5 es necesario eliminar parte de este código:</p>
-
-        <div class="codigo">
-          <pre>
-<code class="language-html"><del>&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</del>
-&lt;svg
-    <del>xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:cc="http://creativecommons.org/ns#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:svg="http://www.w3.org/2000/svg"</del>
-    xmlns="http://www.w3.org/2000/svg"
-    id="svg8"
-    version="1.1"
-    viewBox="0 0 47.098932 43.986142"
-    height="166.24683"
-    width="178.0117"&gt;
-  <del>&lt;defs
-      id="defs2" /&gt;
-  &lt;metadata
-      id="metadata5"&gt;
-    &lt;rdf:RDF&gt;
-      &lt;cc:Work
-          rdf:about=""&gt;
-        &lt;dc:format&gt;image/svg+xml&lt;/dc:format&gt;
-        &lt;dc:type
-            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /&gt;
-        &lt;dc:title&gt;&lt;/dc:title&gt;
-      &lt;/cc:Work&gt;
-    &lt;/rdf:RDF&gt;
-  &lt;/metadata&gt;</del>
-  &lt;g
-      transform="translate(-29.104793,-97.353467)"
-      id="layer1"&gt;
-    &lt;path
-        transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
-        id="use3717"
-        d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
-        style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
-  &lt;/g&gt;
-&lt;/svg&gt;</code>
-</pre>
-        </div>
-
-        <p>Por lo que la imagen podría quedar así:</p>
-
-        <div class="filaflex">
-          <div class="resultado-html nogrow">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.098932 43.986142" height="166.24683" width="178.0117">
-              <g transform="translate(-29.104793,-97.353467)" id="layer1">
-                <path transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)" id="use3717" d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z" style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" />
-              </g>
-            </svg>
-          </div>
-          <div class="codigo">
-            <pre>
-<code class="language-html">&lt;svg xmlns="http://www.w3.org/2000/svg" version="1.1"
-  viewBox="0 0 47.098932 43.986142" height="166.24683" width="178.0117"&gt;
-  &lt;g
-    transform="translate(-29.104793,-97.353467)"
-    id="layer1"&gt;
-    &lt;path
-      transform="matrix(0.18778215,0.59794988,-0.61065612,0.18387486,103.16359,70.246888)"
-      id="use3717"
-      d="M 86.178573,89.113093 67.232722,103.35429 74.82756,125.90309 55.428784,112.28529 36.33054,126.47637 43.287288,103.8189 23.889086,90.040679 47.587368,89.655397 54.696864,66.948905 62.386461,89.368253 Z"
-      style="fill:#ffff00;stroke:#ff0000;stroke-width:2.92960906;stroke-miterlimit:4;stroke-dasharray:none" /&gt;
-  &lt;/g&gt;
-&lt;/svg&gt;</code>
-</pre>
-          </div>
-        </div>
-
-        <p>Ese código se puede simplificar todavía más, hasta obtener el código que se ha utilizado en esta lección:</p>
-
-        <div class="filaflex">
-          <div class="resultado-html nogrow">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="170" height="165" viewBox="0 0 170 165">
-              <polygon fill="yellow" stroke="red" stroke-width="7" points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" />
-            </svg>
-          </div>
-          <div class="codigo">
-            <pre>
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="125" cy="75" r="75" fill="mediumseagreen" />
+          <circle cx="75" cy="75" r="75" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-      width="170" height="165" viewBox="0 0 170 165"&gt;
-  &lt;polygon fill="yellow" stroke="red" stroke-width="7"
-    points="129,150 85,119 41,150 57,104 15,66 68,66 85,15 102,65 156,66 113,98" /&gt;
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="125" cy="75" r="75" <span class="codigo-resaltado">fill="mediumseagreen"</span> /&gt;
+  &lt;circle cx="75" cy="75" r="75" <span class="codigo-resaltado">fill="red"</span> /&gt;
+&lt;/svg&gt;</code>
+  </pre>
+      </div>
+    </div>
+
+    <p>Un elemento puede así ocultar completamente a otro, como muestran los ejemplos siguientes.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="100" cy="75" r="75" fill="red" />
+          <circle cx="100" cy="75" r="50" fill="mediumseagreen" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="red"</span> /&gt;
+  &lt;circle cx="100" cy="75" r="50" <span class="codigo-resaltado">fill="mediumseagreen"</span> /&gt;
 &lt;/svg&gt;</code>
 </pre>
-          </div>
-        </div>
-      </li>
-    </ul>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="100" cy="75" r="50" fill="mediumseagreen" />
+          <circle cx="100" cy="75" r="75" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="100" cy="75" r="50" <span class="codigo-resaltado">fill="mediumseagreen"</span> /&gt;
+  &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="red"</span> /&gt;
+&lt;/svg&gt;</code>
+  </pre>
+      </div>
+    </div>
+
+    <p>Una manera de no ocultar los objetos superpuestos es utilizar el relleno transparente (<span class="html-atri">fill</span>="<span class="html-atri-valor">none</span>"), como muestran los ejemplos siguientes. El elemento con relleno transparente deberá tener color de trazo (<span class="html-atri">stroke</span>="<span class="html-atri-valor"><i>color</i></span>") para que sea visible.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="100" cy="75" r="75" fill="white" stroke="red" />
+          <circle cx="100" cy="75" r="50" fill="mediumseagreen" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="white"</span> stroke="red" /&gt;
+  &lt;circle cx="100" cy="75" r="50" fill="mediumseagreen" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="100" cy="75" r="50" fill="mediumseagreen" />
+          <circle cx="100" cy="75" r="75" fill="white" stroke="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+  &lt;circle cx="100" cy="75" r="50" fill="mediumseagreen" /&gt;
+  &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="white"</span> stroke="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="220" height="170" viewBox="-10 -10 220 170">
+          <circle cx="100" cy="75" r="50" fill="mediumseagreen" />
+          <circle cx="100" cy="75" r="75" fill="none" stroke="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="220" height="170"   viewBox="-10 -10 220 170"&gt;
+     &lt;circle cx="100" cy="75" r="50" fill="mediumseagreen" /&gt;
+     &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="none"</span> stroke="red" /&gt;
+&lt;/svg&gt;</code>
+  </pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="margenes-viewbox">
+    <h2>Márgenes en <span class="html-atri">viewBox</span></h2>
+
+    <p>Para asegurarse de que todo el dibujo sea visible, es conveniente elegir un <span class="html-atri">viewbox</span> un poco más grande que la zona ocupada por los elementos del dibujo.</p>
+
+    <p>En el ejemplo siguiente los centros de los círculos está situado en la esquina superior izquierda y en la esquina inferior derecha de la zona visible y por eso sólo puede verse la cuarta parte de ambos círculos.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100">
+          <circle cx="0" cy="0" r="10" fill="red" />
+          <circle cx="100" cy="100" r="10" fill="mediumseagreen" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+   width="100" height="100"   viewBox="<span class="codigo-resaltado">0 0 100 100</span>"&gt;
+   &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
+   &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Haciendo que la zona visible empiece más arriba a la izquierda y termine más abajo a la derecha, los círculos se verían completos. En este caso, hemos ampliado la zona 10 unidades por los cuatro lados, por lo que el tamaño de la zona visible pasa de 100 a 120.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html-sin-borde nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="-10 -10 120 120">
+          <circle cx="0" cy="0" r="10" fill="red" />
+          <circle cx="100" cy="100" r="10" fill="mediumseagreen" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+   width="120" height="120"   viewBox="<span class="codigo-resaltado">-10 -10 120 120</span>"&gt;
+   &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
+   &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de abril de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de abril de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
