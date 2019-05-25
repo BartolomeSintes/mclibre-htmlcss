@@ -155,7 +155,7 @@
             } else {
                 print "    <p>Se muestran aquí $contador caracteres ";
             }
-            print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Se puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 11.0</a> en formato PDF.</p>\n";
+            print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Se puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>\n";
             print "\n";
         }
 
@@ -664,10 +664,11 @@
     );
 
     $grupos_dibujos = array(
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-misc",          "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
-        array($caracteres_unicode, "Emoticonos",                                        "emoticonos",             "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
-        array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",             "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",     "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"),
+        array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-misc",       "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
+        array($caracteres_unicode, "Emoticonos",                                        "emoticonos",          "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
+        array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",          "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
+        array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",  "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"),
+        array($caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",      "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"),
     );
 
     $grupos_secuencias = array(
