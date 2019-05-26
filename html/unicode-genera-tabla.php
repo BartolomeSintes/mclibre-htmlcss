@@ -676,11 +676,11 @@
         array($cu_banderas_sudivisiones,   "Banderas (subdivisiones)",                  "banderas-2",              "",                                                0, "", ""),
         array($cu_otros,                   "Otros",                                     "otros",                   "",                                                0, "", ""),
         array($cu_familias,                "Familias",                                  "familias",                "",                                                0, "", ""),
-        array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
         array($cu_objetos_generos_colores, "Género: Profesiones",                       "hm-profesiones",          "",                                                0, "", ""),
         array($cu_fitzpatrick_n,           "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
         array($cu_fitzpatrick_excepciones, "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
         array($cu_generos,                 "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
+        array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
 
         //  array("Colores de piel",                                     "colores-piel",    "", 0, "0261D", "1F9FF"),
         //  array("Otros",                                               "otros",           "", 4, "0002A", "1F4FF"),
@@ -690,9 +690,9 @@
         array($cu_fitzpatrick_1,           "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
         array($cu_fitzpatrick_n,           "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
         array($cu_fitzpatrick_excepciones, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
-        array($cu_generos,                 "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
         array($cu_objetos_generos_colores, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
         array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
+        array($cu_generos,                 "Colores de piel NO EN TWEMOJI",             "colores-piel",            "",                                                0, "", ""),
     );
 
     $grupos_restos = array(
@@ -701,10 +701,10 @@
         array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
     );
 
-    //  genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
-    genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
+    // genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
+    // genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
     // genera_grupos($grupos_secuencias,   ["ss", "te"]);
-    // genera_tablas($grupos_secuencias_2, ["ss", "te"]);
+    genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
     //  genera_grupos($grupos_restos);
 
