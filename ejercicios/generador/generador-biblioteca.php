@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_name("generador_ejercicios");
 session_start();
 
