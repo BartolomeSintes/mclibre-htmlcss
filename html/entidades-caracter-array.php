@@ -1,6 +1,6 @@
 <?php
 // 12 de noviembre de 2017
-// Lista de entidades de caracter HTML sacada de
+// Lista de entidades de carácter HTML sacada de
 // https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 
 $entidades_caracter = array(
@@ -155,14 +155,14 @@ $entidades_caracter = array(
   array("&lsquo;",    "lsquo",    "&amp;lsquo;",    "&amp;#x2018;", "HTML 4.0",  "comilla simple izquierda"),
   array("&lt;",       "lt",       "&amp;lt;",       "&amp;#x3C;",   "HTML 2.0",  "menor"),
   array("&macr;",     "macr",     "&amp;macr;",     "&amp;#xAF;",   "HTML 3.2",  "acento macron"),
-  array("&mdash;",    "mdash",    "&amp;mdash;",    "&amp;#x2014;", "HTML 4.0",  "raya (guión largo)"),
+  array("&mdash;",    "mdash",    "&amp;mdash;",    "&amp;#x2014;", "HTML 4.0",  "raya (guion largo)"),
   array("&micro;",    "micro",    "&amp;micro;",    "&amp;#xB5;",   "HTML 3.2",  "micro"),
   array("&middot;",   "middot",   "&amp;middot;",   "&amp;#xB7;",   "HTML 3.2",  "punto medio"),
   array("&minus;",    "minus",    "&amp;minus;",    "&amp;#x2212;", "HTML 4.0",  "menos"),
   array("&mu;",       "mu",       "&amp;mu;",       "&amp;#x3BC;",  "HTML 4.0",  "letra griega mu minúscula"),
   array("&nabla;",    "nabla",    "&amp;nabla;",    "&amp;#x2207;", "HTML 4.0",  "operador nabla"),
   array("&nbsp;",     "nbsp",     "&amp;nbsp;",     "&amp;#xA0;",   "HTML 3.2",  "espacio en blanco"),
-  array("&ndash;",    "ndash",    "&amp;ndash;",    "&amp;#x2013;", "HTML 4.0",  "semirraya (guión medio)"),
+  array("&ndash;",    "ndash",    "&amp;ndash;",    "&amp;#x2013;", "HTML 4.0",  "semirraya (guion medio)"),
   array("&ne;",       "ne",       "&amp;ne;",       "&amp;#x2260;", "HTML 4.0",  "distinto de"),
   array("&ni;",       "ni",       "&amp;ni;",       "&amp;#x220B;", "HTML 4.0",  "contiene a"),
   array("&not;",      "not",      "&amp;not;",      "&amp;#xAC;",   "HTML 3.2",  "negación"),
@@ -174,7 +174,7 @@ $entidades_caracter = array(
   array("&ocirc;",    "ocirc",    "&amp;ocirc;",    "&amp;#xF4;",   "HTML 2.0",  "letra o minúscula con acento circunflejo"),
   array("&oelig;",    "oelig",    "&amp;oelig;",    "&amp;#x153;",  "HTML 4.0",  "ligadura oe minúscula"),
   array("&ograve;",   "ograve",   "&amp;ograve;",   "&amp;#xF2;",   "HTML 2.0",  "letra o minúscula con acento grave"),
-  array("&oline;",    "oline",    "&amp;oline;",    "&amp;#x203E;", "HTML 4.0",  "guión alto"),
+  array("&oline;",    "oline",    "&amp;oline;",    "&amp;#x203E;", "HTML 4.0",  "guion alto"),
   array("&omega;",    "omega",    "&amp;omega;",    "&amp;#x3C9;",  "HTML 4.0",  "letra griega omega minúscula"),
   array("&omicron;",  "omicron",  "&amp;omicron;",  "&amp;#x3BF;",  "HTML 4.0",  "letra griega omicron minúscula"),
   array("&oplus;",    "oplus",    "&amp;oplus;",    "&amp;#x2295;", "HTML 4.0",  "signo más rodeado por un círculo"),
@@ -217,7 +217,7 @@ $entidades_caracter = array(
   array("&scaron;",   "scaron",   "&amp;scaron;",   "&amp;#x161;",  "HTML 4.0",  "letra s minúscula con caron"),
   array("&sdot;",     "sdot",     "&amp;sdot;",     "&amp;#x22C5;", "HTML 4.0",  "operador punto"),
   array("&sect;",     "sect",     "&amp;sect;",     "&amp;#xA7;",   "HTML 3.2",  "sección"),
-  array("&shy;",      "shy",      "&amp;shy;",      "&amp;#xAD;",   "HTML 3.2",  "guión de corte automático"),
+  array("&shy;",      "shy",      "&amp;shy;",      "&amp;#xAD;",   "HTML 3.2",  "guion de corte automático"),
   array("&sigma;",    "sigma",    "&amp;sigma;",    "&amp;#x3C3;",  "HTML 4.0",  "letra griega sigma minúscula"),
   array("&sigmaf;",   "sigmaf",   "&amp;sigmaf;",   "&amp;#x3C2;",  "HTML 4.0",  "letra griega sigma final minúscula"),
   array("&sim;",      "sim",      "&amp;sim;",      "&amp;#x223C;", "HTML 4.0",  "operador tilde"),

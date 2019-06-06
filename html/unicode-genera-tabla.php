@@ -572,10 +572,10 @@
                 $cad2 .= $tmp . "-";
                 $cad3 .=  "&#x" . $c2 . ";";
             }
-            $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guión final que sobra
+            $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
             print "        <th>$cad1</th>\n";
             print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustitue al segundo caracter de la secuencia
+            // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustitue al segundo carácter de la secuencia
             $cad2 = str_replace("26f9-fe0f-", "26f9-", $cad2);
             $cad2 = str_replace("1f3cb-fe0f-", "1f3cb-", $cad2);
             $cad2 = str_replace("1f3cc-fe0f-", "1f3cc-", $cad2);
