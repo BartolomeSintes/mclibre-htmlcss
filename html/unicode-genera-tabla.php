@@ -574,7 +574,7 @@
             }
             $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
             print "        <th>$cad1</th>\n";
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustitue al segundo carácter de la secuencia
             $cad2 = str_replace("26f9-fe0f-", "26f9-", $cad2);
             $cad2 = str_replace("1f3cb-fe0f-", "1f3cb-", $cad2);
@@ -590,29 +590,36 @@
             }
             $pos = strpos($cad3, ";", 4);
             $cad3 = substr_replace($cad3, "&#x1F3FB;", $pos + 1, 0);
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
             $cad3 = str_replace("&#x1F3FB;", "&#x1F3FC;", $cad3);
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             $cad2 = str_replace("1f3fc", "1f3fd", $cad2);
             $cad3 = str_replace("&#x1F3FC;", "&#x1F3FD;", $cad3);
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             $cad2 = str_replace("1f3fd", "1f3fe", $cad2);
             $cad3 = str_replace("&#x1F3FD;", "&#x1F3FE;", $cad3);
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
-            print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            /*
-        print "        <th>$cad1</th>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp.svg\">&#x" . $c[0][0] . ";</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fb.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FB;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fc.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FC;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fd.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FD;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3fe.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FE;</a></span></td>\n";
-        print "        <td><span class=\"te\"><a href=\"$rutaSVG/$tmp-1f3ff.svg\">&#x" . $c[0][0] . ";&#x200D;&#x1F3FF;</a></span></td>\n";
-*/
-            print "        <td>" . strtoupper($c[1]) . " </td>\n";
+            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            print "        <td class=\"no\">$c[1]</td>\n";
+
+            // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            // $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
+            // $cad3 = str_replace("&#x1F3FB;", "&#x1F3FC;", $cad3);
+            // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            // $cad2 = str_replace("1f3fc", "1f3fd", $cad2);
+            // $cad3 = str_replace("&#x1F3FC;", "&#x1F3FD;", $cad3);
+            // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            // $cad2 = str_replace("1f3fd", "1f3fe", $cad2);
+            // $cad3 = str_replace("&#x1F3FD;", "&#x1F3FE;", $cad3);
+            // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            // $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
+            // $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
+            // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
+            // print "        <td>" . strtoupper($c[1]) . " </td>\n";
+
             print "      </tr>\n";
         }
         print "    </table>\n";
