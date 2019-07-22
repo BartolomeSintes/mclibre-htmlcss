@@ -60,13 +60,6 @@
     <section id="uso-zoom">
       <h3>Zoom</h3>
 
-      <p>Internet Explorer 11 dispone de dos tipos de zoom:</p>
-
-      <ul>
-        <li>el clásico, que sólo cambia el tamaño del texto y sólo permite elegir entre cinco tamaños de texto (Muy grande, Grande, Mediano, Pequeño, Muy pequeño), mediante el menú <span class="soft-menu">Ver &gt; Tamaño de texto</span>.</li>
-        <li>el introducido en Internet Explorer 7, que aumenta todos los elementos de la página (texto e imágenes), mediante el menú <span class="soft-menu">Herramientas &gt; Zoom</span>, las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>,</li>
-      </ul>
-
       <p>Firefox dispone de dos tipos de zoom:</p>
 
       <ul>
@@ -260,45 +253,17 @@
       </section>
     </section>
 
-    <section id="tablas">
-      <h3>Tablas</h3>
-
-      <section id="tablas-rules">
-        <h4>El atributo <span class="html-atri">rules</span></h4>
-
-        <p class="incompleto">Nota: No comprobado en Edge.</p>
-
-        <p>En Firefox, cuando el modo de bordes no está establecido las tablas se ven en modo de bordes separado, pero si está el atributo <span class="html-atri">rules</span> las tablas se ven en modo colapsado. Pero en Edge e Internet Explorer, aunque esté el atributo <span class="html-atri">rules</span> las tablas se ven en modo separado.</p>
-
-        <p><strong>Nota</strong>: En este caso no sé cuál de los dos no hace las cosas correctamente, porque aunque Firefox suele seguir mejor las normas, Firefox tiene bugs relacionados con los modos de bordes de las tablas.</p>
-      </section>
-    </section>
-
-    <section id="posicionamiento">
-      <h3>Posicionamiento</h3>
-
-      <section id="posicionamiento-fijo">
-        <h4>Posicionamiento fijo</h4>
-
-        <p class="incompleto">Nota: No comprobado en Edge.</p>
-
-        <p>Edge e Internet Explorer no aplican correctamente el posicionamiento fijo (<span class="css-prop">position</span>: <span class="css-valor">fixed</span>) a una tabla. Colocan la leyenda (<span class="html-eti">caption</span>) en el lugar correcto, pero no las celdas de la tabla. Firefox lo hace bien. Si la tabla está metida en una división y el posicionamiento lo tiene la división, Edge y Internet Explorer ya lo hacen bien.</p>
-      </section>
-    </section>
-
     <section id="formularios">
       <h3>Formularios</h3>
 
       <section id="input-number">
-        <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span>
-        </h4>
-        <p>Internet Explorer sólo muestra mensajes de error en algunos casos muy concretos, si se mezclan letras y números envía el dato y si se escriben sólo letras no muestra mensajes de error aunque no envía nada en el control.</p>
+        <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></h4>
 
         <p>En el caso de los números decimales:</p>
         <ul>
           <li>Chrome admite la coma (,) y el punto (.) como separadores de la parte decimal.</li>
           <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
-          <li>Internet Explorer 11 no reconoce el atributo <span class="html-atri">step</span> y no muestra mensajes de error; además envía cualquier cosa que no tenga letras, aunque no sea un número válido.</li>
+          <li>Microsoft Edge sólo admite el punto (.) como separador de la parte decimal.</li>
         </ul>
       </section>
     </section>
@@ -319,8 +284,8 @@
           </div>
           <div class="codigo">
             <pre>
-  <code class="language-html">&lt;link rel="icon" type="image/svg+xml" href="favicon-cdlibre.svg" sizes="any"&gt;</code>
-  </pre>
+<code class="language-html">  &lt;link rel="icon" type="image/svg+xml" href="favicon-cdlibre.svg" sizes="any"&gt;</code>
+</pre>
           </div>
           <div class="resultado-object">
             <object type="text/html" data="../html/ejemplos/favicon/favicon-svg-16.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
@@ -334,7 +299,7 @@
       <section id="favicons-locales">
         <h3>Favicons en archivos locales</h3>
 
-        <p>Internet Explorer no muestra los favicons si las páginas no están colgadas en un servidor (es decir, si se abren como un archivo file://).</p>
+        <p>Microsoft Edge no muestra los favicons si las páginas no están colgadas en un servidor público (tanto si se abren como un archivo file://... como en un servidor local http://localhost/...).</p>
       </section>
 
       <section id="favicons-animados">
@@ -374,9 +339,8 @@
       <p>Si un párrafo tiene sobrerrayado y el tamaño de las palabras no es siempre el mismo:</p>
 
       <ul>
-        <li>Chrome dibuja la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
-        <li>Firefox mantiene la línea de sobrerrayado a la misma altura a lo largo de todo el párrafo, pero no tengo claro cómo elige la altura</li>
-        <li>Internet Explorer también mantiene la línea de sobrerrayado a la misma altura a lo largo de todo el párrafo, basándose en el carácter más alto</li>
+        <li>Chrome y Microsoft Edge dibujan la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
+        <li>Firefox mantiene la línea de sobrerrayado a la misma altura a lo largo de todo el párrafo, pero basándose en el texto de menor tamaño.</li>
       </ul>
 
       <p>Probablemente, la recomendación no especifica qué hacer en este caso particular y cada navegador ha adoptado una solución diferente (<span class="incompleto">por confirmar</span>)</p>
@@ -389,13 +353,21 @@
         </div>
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p style="text-decoration: overline"&gt;Un
+<code class="language-html">&lt;p style="text-decoration: overline"&gt;
+  Un
   &lt;span style="font-size: 200%"&gt;párrafo&lt;/span&gt;
-  &lt;span style="font-size: 300%"&gt;sobrerrayado&lt;/span&gt;.&lt;/p&gt;</code>
+  &lt;span style="font-size: 300%"&gt;sobrerrayado&lt;/span&gt;.
+&lt;/p&gt;
+
+&lt;p style="text-decoration: overline"&gt;
+  &lt;span style="font-size: 300%"&gt;Otro&lt;/span&gt;
+  &lt;span style="font-size: 200%"&gt;párrafo&lt;/span&gt;
+  sobrerrayado.
+&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="../css/ejemplos/texto/text-decoration-11.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="../css/ejemplos/texto/text-decoration-11.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
           <a href="../css/ejemplos/texto/text-decoration-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -488,7 +460,7 @@ p.oblique {
       <section id="css-fuente-font-size-adjust">
         <h4>Propiedad <span class="css-prop">font-size-adjust</span></h4>
 
-        <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Internet Explorer.</p>
+        <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Microsoft Edge.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -936,7 +908,7 @@ width: 25%;
         <section id="diferencias-outline-en-linea">
           <h5>Contorno de un elemento en-línea</h5>
 
-          <p>El contorno de un elemento en-línea no se muestra de la misma manera en Internet Explorer y Google Chrome que en Firefox.</p>
+          <p>El contorno de un elemento en-línea no se muestra de la misma manera en microsoft Edge y Google Chrome que en Firefox.</p>
 
           <div class="filaflex">
             <div class="codigo">
@@ -993,18 +965,12 @@ p {
   <section id="otros">
     <h2>Otros</h2>
 
-    <section id="otros-svg">
-      <h3>SVG</h3>
-
-      <p>Internet Explorer muestra los elementos svg situados fuera de la zona definida por <span class="html-atri">viewBox</span>, mientras que Firefox y Google Chrome sólo muestran los elementos o la parte de los elementos situados dentro de la zona definida por <span class="html-atri">viewBox</span>.</p>
-    </section>
-
     <section id="otros-mathml">
       <h3>MathML</h3>
 
-      <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Internet Explorer 11 requiere un plug-in para mostrar elementos MathML.</p>
+      <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Microsoft Edge requiere un plug-in para mostrar elementos MathML.</p>
 
-      <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Internet Explorer no. El motivo es es que Internet Explorer carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
+      <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Microsoft Edge no. El motivo es es que Microsoft Edge carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
     </section>
 
     <section id="otros-apng">
@@ -1034,7 +1000,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de octubre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 22 de julio de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
