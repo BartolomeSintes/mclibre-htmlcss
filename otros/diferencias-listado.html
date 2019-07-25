@@ -69,148 +69,6 @@
 
       <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
     </section>
-
-    <section id="uso-teclas-formularios">
-      <h3>Teclas de acceso en formularios</h3>
-
-      <p>El atributo <span class="html-atri">accesskey</span> establece la combinación de teclas que coloca el foco en un elemento de un formulario.</p>
-
-      <ul>
-        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Google Chrome utilizan normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Microsoft Edge combina ambos comportamientos: utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, pero también permite la combinación <kbd>Alt+tecla</kbd> cuando no está asociada a ninguna acción</li>
-      </ul>
-
-      <p>En el ejemplo siguiente Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> para situar el cursor en las cajas de texto, Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd> y Microsoft Edge utiliza ambas:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con a" accesskey="a"&gt;
-&lt;input type="text" name="texto2" value="Acceso con i" accesskey="i"&gt;
-&lt;input type="text" name="texto3" value="Acceso con o" accesskey="o"&gt;
-&lt;input type="text" name="texto4" value="Acceso con u" accesskey="u"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
-
-      <p>En el ejemplo siguiente, Chrome y Microsoft Edge no pueden acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que esta combinación traslada el foco a la barra de dirección, pero pueden hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto1" value="Acceso con d" accesskey="d"&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>En el ejemplo siguiente, Chrome no puede acceder a la caja de texto con la combinación <kbd>Alt+e</kbd>, ya que esta combinación abre el menú de herramientas, pero puede hacerlo con la combinación <kbd>Alt+Shift+e</kbd>:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto2" value="Acceso con e" accesskey="e"&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-3.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
-      <ul>
-        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Chrome y Microsoft Edge utilizan la combinación <kbd>Alt+tecla</kbd></li>
-      </ul>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con 1" accesskey="1"&gt;
-&lt;input type="text" name="texto2" value="Acceso con 2" accesskey="2"&gt;
-&lt;input type="text" name="texto3" value="Acceso con 3" accesskey="3"&gt;
-&lt;input type="text" name="texto4" value="Acceso con 4" accesskey="4"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-4.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con ," accesskey=","&gt;
-&lt;input type="text" name="texto2" value="Acceso con -" accesskey="."&gt;
-&lt;input type="text" name="texto3" value="Acceso con +" accesskey="+"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-5.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <hr class="corta">
-
-      <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
-
-      <ul>
-        <li>Google Chrome no avanza de uno a otro</li>
-        <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Microsoft Edge avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
-      </ul>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con z" accesskey="z"&gt;
-&lt;input type="text" name="texto2" value="Acceso con z" accesskey="z"&gt;
-&lt;input type="text" name="texto3" value="Acceso con z" accesskey="z"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-6.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con w" accesskey="w"&gt;
-&lt;input type="text" name="texto2" value="Acceso con W" accesskey="W"&gt;
-&lt;input type="text" name="texto3" value="Acceso con W" accesskey="W"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../html/ejemplos/formularios/accesskey-7.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../html/ejemplos/formularios/accesskey-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
   </section>
 
   <section id="html">
@@ -256,8 +114,160 @@
     <section id="formularios">
       <h3>Formularios</h3>
 
-      <section id="input-number">
-        <h4>Número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></h4>
+      <section id="formularios-accesskey">
+        <h4 class="con-aside">El atributo <span class="html-atri">accesskey</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#atributo-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>El atributo <span class="html-atri">accesskey</span> establece la combinación de teclas que coloca el foco en un elemento de un formulario.</p>
+
+        <ul>
+          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Google Chrome utilizan normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Microsoft Edge combina ambos comportamientos: utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, pero también permite la combinación <kbd>Alt+tecla</kbd> cuando no está asociada a ninguna acción</li>
+        </ul>
+
+        <p>En el ejemplo siguiente Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> para situar el cursor en las cajas de texto, Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd> y Microsoft Edge utiliza ambas:</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con a" accesskey="a"&gt;
+&lt;input type="text" name="texto2" value="Acceso con i" accesskey="i"&gt;
+&lt;input type="text" name="texto3" value="Acceso con o" accesskey="o"&gt;
+&lt;input type="text" name="texto4" value="Acceso con u" accesskey="u"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
+
+        <p>En el ejemplo siguiente, Chrome y Microsoft Edge no pueden acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que esta combinación traslada el foco a la barra de dirección, pero pueden hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;input type="text" name="texto1" value="Acceso con d" accesskey="d"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En el ejemplo siguiente, Chrome no puede acceder a la caja de texto con la combinación <kbd>Alt+e</kbd>, ya que esta combinación abre el menú de herramientas, pero puede hacerlo con la combinación <kbd>Alt+Shift+e</kbd>:</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">&lt;input type="text" name="texto2" value="Acceso con e" accesskey="e"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-3.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
+        <ul>
+          <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Chrome y Microsoft Edge utilizan la combinación <kbd>Alt+tecla</kbd></li>
+        </ul>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con 1" accesskey="1"&gt;
+&lt;input type="text" name="texto2" value="Acceso con 2" accesskey="2"&gt;
+&lt;input type="text" name="texto3" value="Acceso con 3" accesskey="3"&gt;
+&lt;input type="text" name="texto4" value="Acceso con 4" accesskey="4"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-4.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con ," accesskey=","&gt;
+&lt;input type="text" name="texto2" value="Acceso con -" accesskey="."&gt;
+&lt;input type="text" name="texto3" value="Acceso con +" accesskey="+"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-5.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <hr class="corta">
+
+        <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
+
+        <ul>
+          <li>Google Chrome no avanza de uno a otro</li>
+          <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Microsoft Edge avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
+        </ul>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con z" accesskey="z"&gt;
+&lt;input type="text" name="texto2" value="Acceso con z" accesskey="z"&gt;
+&lt;input type="text" name="texto3" value="Acceso con z" accesskey="z"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-6.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;input type="text" name="texto1" value="Acceso con w" accesskey="w"&gt;
+&lt;input type="text" name="texto2" value="Acceso con W" accesskey="W"&gt;
+&lt;input type="text" name="texto3" value="Acceso con W" accesskey="W"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/accesskey-7.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/accesskey-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios-input-number">
+        <h4 class="con-aside">Caja de texto de tipo número: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-number"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
 
         <p>En el caso de los números decimales:</p>
         <ul>
@@ -265,6 +275,130 @@
           <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
           <li>Microsoft Edge sólo admite el punto (.) como separador de la parte decimal.</li>
         </ul>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre><code class="language-html">Escriba un número:<br>&lt;input type="number" name="numero"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-number-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-number-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios-input-month">
+        <h4 class="con-aside">Caja de texto de tipo mes: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-month"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar el mes y el año, pero Firefox no lo hace.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">Mes: &lt;input type="month" name="mes" size="20"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-month-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-month-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios-input-week">
+        <h4 class="con-aside">Caja de texto de tipo semana: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-week"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar la semana y el año, pero Firefox no lo hace.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">Semana: &lt;input type="week" name="semana" size="20"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-week-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-week-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios-input-datetime-local">
+        <h4 class="con-aside">Caja de texto de tipo fecha y hora: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-datetime-local"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar la fecha y hora, pero Firefox no lo hace.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">Fecha y hora: &lt;input type="datetime-local" name="fecha" size="20"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-datetime-local-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-date-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="formularios-input-image">
+        <h4 class="con-aside">Caja de texto de tipo imagen: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-image"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Google Chrome y Microsoft Edge envían el nombre de una caja de texto de tipo <span class="html-atri-valor">image</span> cuando se define el atributo <span class="html-atri">value</span>, pero Firefox no lo hace.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;input type="image" name="diana" value="click me" src="diana.svg"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-image-4.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-image-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
       </section>
     </section>
 
@@ -970,14 +1104,14 @@ width: 25%;
           </div>
         </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
-        </div>
-        <div class="codigo">
-          <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">body {
   background-color: black;
   color: white;
@@ -987,23 +1121,23 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/interface/outline-12.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/interface/outline-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/interface/outline-12.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/interface/outline-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
-        </div>
-        <div class="codigo">
-          <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">body {
   background-color: red;
   color: white;
@@ -1013,14 +1147,14 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/interface/outline-13.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/interface/outline-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/interface/outline-13.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/interface/outline-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
       </section>
 
       <section id="outline-invert">
@@ -1059,14 +1193,14 @@ p {
           </div>
         </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
-        </div>
-        <div class="codigo">
-          <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">body {
   background-color: black;
   color: white;
@@ -1076,23 +1210,23 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/interface/outline-12.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/interface/outline-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../css/ejemplos/interface/outline-12.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../css/ejemplos/interface/outline-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
 
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
-        </div>
-        <div class="codigo">
-          <pre>
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-css">body {
   background-color: red;
   color: white;
@@ -1102,14 +1236,14 @@ p {
   outline: invert 3px solid;
 }</code>
 </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/interface/outline-13.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/interface/outline-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
         </div>
-        <div class="resultado-object">
-          <object type="text/html" data="../css/ejemplos/interface/outline-13.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="../css/ejemplos/interface/outline-13.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
       </section>
     </section>
   </section>
@@ -1157,7 +1291,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 25 de julio de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

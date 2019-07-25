@@ -407,11 +407,12 @@
 
     <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">El atributo <span class="html-atri">target</span> con el valor <span class="html-atri-valor">_blank</span> provoca que el navegador abra el enlace en una nueva pestaña. Por desgracia, desde esa nueva pestaña se puede cambiar la página que muestra la pestaña inicial, lo que permite engañar al usuario (como explica <a href="https://mathiasbynens.github.io/rel-noopener/">Mathias Bynens</a>). Esta posibilidad se puede controlar mediante el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>", que impide que la nueva pestaña pueda manejar la primera. Por ese motivo, para proteger a nuestros visitantes, se recomienda añadir siempre este atributo a cualquier enlace a una página externa que se abra en una nueva pestaña.</p>
 
-    <p>Actualmente (diciembre de 2018), los navegadores han empezado a tratar de impedir este tipo de ataque. Desde octubre de 2018 Safari aplica automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>" y Firefox tiene previsto hacerlo en Firefox 65 (que se publicará en enero de 2019).</p>
+    <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque. Desde octubre de 2018 Safari aplica automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Firefox tenía previsto hacerlo en Firefox 65 (que se publicó en enero de 2019), pero actualmente (julio de 2019) todavía no lo ha implementado.</p>
 
     <p>Referencia:</p>
     <ul>
-      <li><a href="https://www.ghacks.net/2018/11/30/firefox-security-relnoopener-for-target_blank/">Firefox security: rel=noopener for target=_blank</a></li>
+      <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1522083">Mozilla bug  1522083: Make target=_blank on a/area elements imply rel=noopener by default</a></li>
+      <li><a href="https://www.ghacks.net/2018/11/30/firefox-security-relnoopener-for-target_blank/">Firefox security: rel=noopener for target=_blank</a> (noviembre de 2018)</li>
     </ul>
   </section>
 
@@ -529,7 +530,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de diciembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 24 de julio de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
