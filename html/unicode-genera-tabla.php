@@ -171,7 +171,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp = strtolower($c[0][0]);
                         while ($tmp[0] == "0") {
                             $tmp = substr($tmp, 1);
@@ -187,7 +187,7 @@
                 // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 2) {
@@ -201,7 +201,7 @@
                     print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -220,7 +220,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 3) {
@@ -234,7 +234,7 @@
                     print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -257,7 +257,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 4) {
@@ -271,7 +271,7 @@
                     print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -298,7 +298,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 5) {
@@ -312,7 +312,7 @@
                     print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -343,7 +343,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";</strong><br>decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 6) {
@@ -357,7 +357,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -392,7 +392,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 7) {
@@ -406,7 +406,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span>\n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -445,7 +445,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) == 8) {
@@ -459,7 +459,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[2] == "T") {
+                    if ($c[3] == "T") {
                         $tmp0 = strtolower($c[0][0]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
@@ -502,7 +502,7 @@
                 }
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";&amp;#x" . $c[0][7] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";&amp;#" . hexdec($c[0][7]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[3]</p>\n";
+                print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
             }
@@ -603,7 +603,7 @@
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
-            print "        <td class=\"no\">$c[3]</td>\n";
+            print "        <td class=\"no\">$c[4]</td>\n";
 
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
             // $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
@@ -618,7 +618,7 @@
             // $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             // $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            // print "        <td>" . strtoupper($c[3]) . " </td>\n";
+            // print "        <td>" . strtoupper($c[4]) . " </td>\n";
 
             print "      </tr>\n";
         }
