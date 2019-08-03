@@ -83,8 +83,10 @@
             border-spacing: 20px 0;
         }
 
-        table.u span.te {
-            font-family: "Twemoji";
+        table.u tr { height: 90px; }
+
+        table.u .te {
+            /* font-family: "Twemoji"; */
             font-size: 80px;
         }
 
@@ -171,7 +173,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
+                    if ($c[4] == "T") {
                         $tmp = strtolower($c[0][0]);
                         while ($tmp[0] == "0") {
                             $tmp = substr($tmp, 1);
@@ -187,7 +189,7 @@
                 // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
+                print "      <p class=\"no\">$c[5]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) > 1) {
@@ -213,7 +215,7 @@
                     print "</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
+                    if ($c[4] == "T") {
                         print "        <span class=\"te\"><a href=\"$rutaSVG/";
                         for ($i = 0; $i < count($c[0]) - 1; $i++) {
                             $tmp0 = strtolower($c[0][$i]);
@@ -257,7 +259,7 @@
                     print "&amp;#x" . hexdec($tmp) . ";";
                 }
                 print "</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
+                print "      <p class=\"no\">$c[5]</p>\n";
                 print "    </div>\n";
                 print "\n";
             }
@@ -358,7 +360,7 @@
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
-            print "        <td class=\"no\">$c[4]</td>\n";
+            print "        <td class=\"no\">$c[5]</td>\n";
 
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
             // $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
@@ -373,7 +375,7 @@
             // $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             // $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            // print "        <td>" . strtoupper($c[4]) . " </td>\n";
+            // print "        <td>" . strtoupper($c[5]) . " </td>\n";
 
             print "      </tr>\n";
         }
@@ -411,7 +413,7 @@
         array($caracteres_unicode, "Símbolos misceláneos",                              "simbolos-misc",          "U02600-miscellaneous-symbols.pdf",              1, "2600",  "26FF"),
         array($caracteres_unicode, "Dingbats",                                          "dingbats",               "U02700-dingbats.pdf",                           1, "2700",  "27BF"),
         array($caracteres_unicode, "Flechas suplementarias B",                          "flechas-suplementarias", "U02900-supplemental-arrows-b.pdf",              1, "2900",  "297F"),
-        array($caracteres_unicode, "Símbolos y flechas misceláneos",                    "simbolos-flechas",       "U02B00-miscellaneous-symbols-and-arrows.pdf",   1, "2B00",  "2BEF"),
+        array($caracteres_unicode, "Símbolos y flechas misceláneos",                    "simbolos-flechas",       "U02B00-miscellaneous-symbols-and-arrows.pdf",   1, "2B00",  "2BFF"),
         array($caracteres_unicode, "Símbolos y puntuación CJK",                         "cjk",                    "U03000-cjk-symbols-and-punctuation.pdf",        1, "3000",  "303F"),
         array($caracteres_unicode, "Símbolos CJK con círculo alrededor",                "cjk-circulo",            "U03200-enclosed-cjk-letters-and-months.pdf",    1, "3200",  "32FF"),
         //  array($caracteres_unicode, "Símbolos musicales",                                "musica",                 "U1D100.pdf",                                    1, "1D100", "1D1E8"),
@@ -453,10 +455,10 @@
     $grupos_secuencias_2 = array(
         array($piel_1,   "Colores de piel",               "colores-piel", "", 0, "", ""),
         array($genero_1, "Colores de piel",               "colores-piel", "", 0, "", ""),
-        array($genero_3, "Colores de piel",               "colores-piel", "", 0, "", ""),
         array($genero_2, "Colores de piel",               "colores-piel", "", 0, "", ""),
-        array($pelo_1,   "Pelo",                          "pelo",         "", 0, "", ""),
+        array($genero_3, "Colores de piel",               "colores-piel", "", 0, "", ""),
         array($genero_4, "Colores de piel NO EN TWEMOJI", "colores-piel", "", 0, "", ""),
+        array($pelo_1,   "Pelo",                          "pelo",         "", 0, "", ""),
     );
 
     $grupos_restos = array(
@@ -465,8 +467,8 @@
         array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
     );
 
-    // genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
-    // genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
+    genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
+    genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
     genera_grupos($grupos_secuencias,   ["ss", "te"]);
     genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
