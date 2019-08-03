@@ -190,318 +190,73 @@
                 print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
-            } elseif (count($c[0]) == 2) {
+            } elseif (count($c[0]) > 1) {
                 print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . "</p>\n";
+                print "      <p class=\"uc\">";
+                foreach ($c[0] as $tmp) {
+                    print "U+$tmp ";
+                }
+                print "</p>\n";
                 print "      <p class=\"si\">\n";
                 if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                    print "        <span class=\"ss\">";
+                    foreach ($c[0] as $tmp) {
+                        print "&#x$tmp;";
+                    }
+                    print "</span> \n";
                 }
                 if (in_array("sy", $fuentes)) {
-                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span> \n";
+                    print "          <span class=\"sy\">";
+                    foreach ($c[0] as $tmp) {
+                        print "&#x$tmp;";
+                    }
+                    print "</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
                     if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
+                        print "        <span class=\"te\"><a href=\"$rutaSVG/";
+                        for ($i = 0; $i < count($c[0]) - 1; $i++) {
+                            $tmp0 = strtolower($c[0][$i]);
+                            while ($tmp0[0] == "0") {
+                                $tmp0 = substr($tmp0, 1);
+                            }
+                            print "$tmp0-";
+                        }
+                        $tmp0 = strtolower($c[0][$i]);
                         while ($tmp0[0] == "0") {
                             $tmp0 = substr($tmp0, 1);
                         }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
+                        print "$tmp0";
+                        print ".svg\">";
+                        foreach ($c[0] as $tmp) {
+                            print "&#x$tmp;";
                         }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</a></span>\n";
+                        print "</a></span>\n";
                     } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
+                        print "        <span class=\"te\">";
+                        foreach ($c[0] as $tmp) {
+                            print "&#x$tmp;";
+                        }
+                        print "</span>\n";
                     }
                 }
                 if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 3) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span> \n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
+                    print "        <span class=\"ne\">";
+                    foreach ($c[0] as $tmp) {
+                        print "&#x$tmp;";
                     }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";</span>\n";
+                    print "</span>\n";
                 }
                 print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 4) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
+                print "      <p class=\"en\">hexadecimal: <strong>";
+                foreach ($c[0] as $tmp) {
+                    print "&amp;#x$tmp;";
                 }
-                if (in_array("sy", $fuentes)) {
-                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span> \n";
+                print "</strong><br>decimal: <strong>";
+                foreach ($c[0] as $tmp) {
+                    print "&amp;#x" . hexdec($tmp) . ";";
                 }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        $tmp3 = strtolower($c[0][3]);
-                        while ($tmp3[0] == "0") {
-                            $tmp3 = substr($tmp3, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 5) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "          <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span> \n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        $tmp3 = strtolower($c[0][3]);
-                        while ($tmp3[0] == "0") {
-                            $tmp3 = substr($tmp3, 1);
-                        }
-                        $tmp4 = strtolower($c[0][4]);
-                        while ($tmp4[0] == "0") {
-                            $tmp4 = substr($tmp4, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";</strong><br>decimal: <strong>&amp;#x" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 6) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        $tmp3 = strtolower($c[0][3]);
-                        while ($tmp3[0] == "0") {
-                            $tmp3 = substr($tmp3, 1);
-                        }
-                        $tmp4 = strtolower($c[0][4]);
-                        while ($tmp4[0] == "0") {
-                            $tmp4 = substr($tmp4, 1);
-                        }
-                        $tmp5 = strtolower($c[0][5]);
-                        while ($tmp5[0] == "0") {
-                            $tmp5 = substr($tmp5, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4-$tmp5.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 7) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . " U+" . $c[0][6] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span>\n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        $tmp3 = strtolower($c[0][3]);
-                        while ($tmp3[0] == "0") {
-                            $tmp3 = substr($tmp3, 1);
-                        }
-                        $tmp4 = strtolower($c[0][4]);
-                        while ($tmp4[0] == "0") {
-                            $tmp4 = substr($tmp4, 1);
-                        }
-                        $tmp5 = strtolower($c[0][5]);
-                        while ($tmp5[0] == "0") {
-                            $tmp5 = substr($tmp5, 1);
-                        }
-                        $tmp6 = strtolower($c[0][6]);
-                        while ($tmp6[0] == "0") {
-                            $tmp6 = substr($tmp6, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4-$tmp5-$tmp6.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[4]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) == 8) {
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . " U+" . $c[0][1] . " U+" . $c[0][2] . " U+" . $c[0][3] . " U+" . $c[0][4] . " U+" . $c[0][5] . " U+" . $c[0][6] . " U+" . $c[0][7] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "        <span class=\"sy\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span> \n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[3] == "T") {
-                        $tmp0 = strtolower($c[0][0]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        $tmp1 = strtolower($c[0][1]);
-                        while ($tmp1[0] == "0") {
-                            $tmp1 = substr($tmp1, 1);
-                        }
-                        $tmp2 = strtolower($c[0][2]);
-                        while ($tmp2[0] == "0") {
-                            $tmp2 = substr($tmp2, 1);
-                        }
-                        $tmp3 = strtolower($c[0][3]);
-                        while ($tmp3[0] == "0") {
-                            $tmp3 = substr($tmp3, 1);
-                        }
-                        $tmp4 = strtolower($c[0][4]);
-                        while ($tmp4[0] == "0") {
-                            $tmp4 = substr($tmp4, 1);
-                        }
-                        $tmp5 = strtolower($c[0][5]);
-                        while ($tmp5[0] == "0") {
-                            $tmp5 = substr($tmp5, 1);
-                        }
-                        $tmp6 = strtolower($c[0][6]);
-                        while ($tmp6[0] == "0") {
-                            $tmp6 = substr($tmp6, 1);
-                        }
-                        $tmp7 = strtolower($c[0][7]);
-                        while ($tmp7[0] == "0") {
-                            $tmp6 = substr($tmp7, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp0-$tmp1-$tmp2-$tmp3-$tmp4-$tmp5-$tmp6-$tmp7.svg\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";&#x" . $c[0][1] . ";&#x" . $c[0][2] . ";&#x" . $c[0][3] . ";&#x" . $c[0][4] . ";&#x" . $c[0][5] . ";&#x" . $c[0][6] . ";&#x" . $c[0][7] . ";</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";&amp;#x" . $c[0][1] . ";&amp;#x" . $c[0][2] . ";&amp;#x" . $c[0][3] . ";&amp;#x" . $c[0][4] . ";&amp;#x" . $c[0][5] . ";&amp;#x" . $c[0][6] . ";&amp;#x" . $c[0][7] . ";</strong><br>decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";&amp;#" . hexdec($c[0][1]) . ";&amp;#" . hexdec($c[0][2]) . ";&amp;#" . hexdec($c[0][3]) . ";&amp;#" . hexdec($c[0][4]) . ";&amp;#" . hexdec($c[0][5]) . ";&amp;#" . hexdec($c[0][6]) . ";&amp;#" . hexdec($c[0][7]) . ";</strong></p>\n";
+                print "</strong></p>\n";
                 print "      <p class=\"no\">$c[4]</p>\n";
                 print "    </div>\n";
                 print "\n";
@@ -575,7 +330,7 @@
             $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
             print "        <th>$cad1</th>\n";
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
-            // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustitue al segundo carácter de la secuencia
+            // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustituye al segundo carácter de la secuencia
             $cad2 = str_replace("26f9-fe0f-", "26f9-", $cad2);
             $cad2 = str_replace("1f3cb-fe0f-", "1f3cb-", $cad2);
             $cad2 = str_replace("1f3cc-fe0f-", "1f3cc-", $cad2);
@@ -671,35 +426,37 @@
     );
 
     $grupos_dibujos = array(
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-misc",       "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
-        array($caracteres_unicode, "Emoticonos",                                        "emoticonos",          "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
-        array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",          "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",  "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"),
-        array($caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",      "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"),
+        array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-misc",      "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
+        array($caracteres_unicode, "Emoticonos",                                        "emoticonos",         "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
+        array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",         "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
+        array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl", "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"),
+        array($caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",     "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"),
     );
 
     $grupos_secuencias = array(
-        array($cu_banderas,                "Banderas",                                  "banderas",                "",                                                0, "", ""),
-        array($cu_banderas_sudivisiones,   "Banderas (subdivisiones)",                  "banderas-2",              "",                                                0, "", ""),
-        array($cu_otros,                   "Otros",                                     "otros",                   "",                                                0, "", ""),
-        array($cu_familias,                "Familias",                                  "familias",                "",                                                0, "", ""),
-        array($cu_objetos_generos_colores, "Género: Profesiones",                       "hm-profesiones",          "",                                                0, "", ""),
-        array($cu_fitzpatrick_n,           "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
-        array($cu_fitzpatrick_excepciones, "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
-        array($cu_generos,                 "Género: Actividades",                       "hm-actividades",          "",                                                0, "", ""),
-        array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
+        array($cu_banderas,     "Banderas",                 "banderas",       "", 0, "", ""),
+        array($cu_banderas_sub, "Banderas (subdivisiones)", "banderas-2",     "", 0, "", ""),
+        array($cu_otros,        "Otros",                    "otros",          "", 0, "", ""),
+        array($cu_familias,     "Familias",                 "familias",       "", 0, "", ""),
+        array($cu_parejas_1,    "Parejas",                  "parejas",        "", 0, "", ""),
+        array($cu_parejas_2,    "Parejas",                  "parejas",        "", 0, "", ""),
+        array($genero_2,        "Género: Profesiones",      "hm-profesiones", "", 0, "", ""),
+        array($genero_1,        "Género: Actividades",      "hm-actividades", "", 0, "", ""),
+        array($genero_3,        "Género: Actividades",      "hm-actividades", "", 0, "", ""),
+        array($genero_4,        "Género: Actividades",      "hm-actividades", "", 0, "", ""),
+        array($pelo_1,          "Pelo",                     "pelo",           "", 0, "", ""),
 
         //  array("Colores de piel",                                     "colores-piel",    "", 0, "0261D", "1F9FF"),
         //  array("Otros",                                               "otros",           "", 4, "0002A", "1F4FF"),
     );
 
     $grupos_secuencias_2 = array(
-        array($cu_fitzpatrick_1,           "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
-        array($cu_fitzpatrick_n,           "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
-        array($cu_fitzpatrick_excepciones, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
-        array($cu_objetos_generos_colores, "Colores de piel",                           "colores-piel",            "",                                                0, "", ""),
-        array($cu_colores_pelos,           "Pelo",                                      "pelo",                    "",                                                0, "", ""),
-        array($cu_generos,                 "Colores de piel NO EN TWEMOJI",             "colores-piel",            "",                                                0, "", ""),
+        array($piel_1,   "Colores de piel",               "colores-piel", "", 0, "", ""),
+        array($genero_1, "Colores de piel",               "colores-piel", "", 0, "", ""),
+        array($genero_3, "Colores de piel",               "colores-piel", "", 0, "", ""),
+        array($genero_2, "Colores de piel",               "colores-piel", "", 0, "", ""),
+        array($pelo_1,   "Pelo",                          "pelo",         "", 0, "", ""),
+        array($genero_4, "Colores de piel NO EN TWEMOJI", "colores-piel", "", 0, "", ""),
     );
 
     $grupos_restos = array(
@@ -708,12 +465,12 @@
         array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
     );
 
-    genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
-    genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
-    // genera_grupos($grupos_secuencias,   ["ss", "te"]);
-    // genera_tablas($grupos_secuencias_2, ["ss", "te"]);
+    // genera_grupos($grupos_simbolos,     ["ss", "sy", "te"]);
+    // genera_grupos($grupos_dibujos,      ["ss", "sy", "te"]);
+    genera_grupos($grupos_secuencias,   ["ss", "te"]);
+    genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
-    //  genera_grupos($grupos_restos);
+    // genera_grupos($grupos_restos);
 
     ?>
 </body>
