@@ -173,7 +173,7 @@
                     print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[4] == "T") {
+                    if ($c[5] == "T") {
                         $tmp = strtolower($c[0][0]);
                         while ($tmp[0] == "0") {
                             $tmp = substr($tmp, 1);
@@ -189,7 +189,7 @@
                 // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
                 print "      </p>\n";
                 print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[5]</p>\n";
+                print "      <p class=\"no\">$c[6]</p>\n";
                 print "    </div>\n";
                 print "\n";
             } elseif (count($c[0]) > 1) {
@@ -215,7 +215,7 @@
                     print "</span> \n";
                 }
                 if (in_array("te", $fuentes)) {
-                    if ($c[4] == "T") {
+                    if ($c[5] == "T") {
                         print "        <span class=\"te\"><a href=\"$rutaSVG/";
                         for ($i = 0; $i < count($c[0]) - 1; $i++) {
                             $tmp0 = strtolower($c[0][$i]);
@@ -259,7 +259,7 @@
                     print "&amp;#x" . hexdec($tmp) . ";";
                 }
                 print "</strong></p>\n";
-                print "      <p class=\"no\">$c[5]</p>\n";
+                print "      <p class=\"no\">$c[6]</p>\n";
                 print "    </div>\n";
                 print "\n";
             }
@@ -360,7 +360,7 @@
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
-            print "        <td class=\"no\">$c[5]</td>\n";
+            print "        <td class=\"no\">$c[6]</td>\n";
 
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
             // $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
@@ -375,7 +375,7 @@
             // $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             // $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            // print "        <td>" . strtoupper($c[5]) . " </td>\n";
+            // print "        <td>" . strtoupper($c[6]) . " </td>\n";
 
             print "      </tr>\n";
         }
