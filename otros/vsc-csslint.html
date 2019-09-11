@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Lint. Visual Studio Code. Informática. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/highlight-htmlcss.css">
+  <script src="../varios/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+<body>
+  <h1>Visual Studio Code. CSS Lint</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>
+        VSC: CSS Lint
+      </h2>
+
+      <ul>
+        <li><a href="#que-es">Qué es CSS Lint</a>
+          <ul>
+            <li><a href="#csslint-errores">Errores</a></li>
+            <li><a href="#csslint-consejos">Consejos</a></li>
+          </ul>
+        </li>
+        <li><a href="#vsc-csslint">CSS Lint en VS Code</a>
+          <ul>
+            <li><a href="#vsc-csslint-config">Preferencias</a></li>
+            <li><a href="#vsc-csslint-config-defecto">Predeterminadas</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="que-es">
+    <h2>Qué es CSS Lint</h2>
+
+    <p><strong>lint</strong> fue el nombre de un programa creado a finales de los 70 para analizar programas escritos en C en busca de expresiones sintácticamente correctas pero que pudieran dar lugar a errores en los programas. Actualmente, <strong>lint</strong> se utiliza para referirse a las heramientas que analizan programas o documentos en busca de errores sintácticos, de posibles fuentes de errores, o incluso programas que no siguen reglas de estilo.</p>
+
+    <p><a href="http://csslint.net/">CSS Lint</a> es un validador de hojas de estilo que nos da dos tipos de avisos:</p>
+
+    <ul>
+      <li>Errores: CSS Lint identifica los errores que no permiten interpretar correctamente la hoja de estilo.</li>
+      <li>Consejos: CSS Lint considera que algunos usos de las hojas de estilo no son recomendables, por diferentes razones.</li>
+    </ul>
+
+    <p>Los errores deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga errores. Pero los consejos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos.</p>
+
+    <section id="csslint-errores">
+      <h3>Errores detectados por CSS Lint</h3>
+
+      <p>CSS Lint indica varios tipos de errores, que debemos corregir necesariamente:</p>
+
+      <ul>
+        <li>los errores de sintaxis se indican con la frase "Parsing errors":
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p
+  color: black;</code>
+</pre>
+            </div>
+            <div class="resultado-html">
+              <p>Parsing Errors - Expected LBRACE at line 1, col 15. (errors)</p>
+            </div>
+          </div>
+        </li>
+        <li>errores en el nombre de las propiedades:
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p {
+  colour: black;
+}</code>
+</pre>
+            </div>
+            <div class="resultado-html">
+              <p>Require use of known properties - Unknown property 'colour'. (known-properties)</p>
+            </div>
+          </div>
+        </li>
+        <li>errores en los valores de las propiedades:
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">p {
+  color: negro;
+}</code>
+</pre>
+            </div>
+            <div class="resultado-html">
+              <p>Require use of known properties - Expected (&lt;color&gt; | inherit) but found 'negro'. (known-properties)</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="csslint-consejos">
+      <h3>Consejos proporcionados por CSS Lint</h3>
+
+      <p>CSS Lint proporciona una serie de consejos para evitar problemas en diferentes ámbitos. Estos avisos no tiene por qué corregirse, ya que no son errores, pero en general conviene tenerlos en cuenta. En la web de CSS Lint se puede consultar la <a href="http://csslint.net/about.html">lista comentada de consejos de CSS Lint</a> y la <a href="https://github.com/CSSLint/csslint/wiki/Rules">lista resumida de consejos</a>.</p>
+
+      <p>Actualmente (octubre de 2018), los consejos son los siguientes:</p>
+
+      <p><strong>Nota</strong>: Los consejos que muestra VSCode se indican con el logotipo de VSCode (<img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">). El tipo de mensaje se indica con los logotipos
+        <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32"> (no se muestra ningún aviso),
+        <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32"> (se muestra como aviso) y
+        <img src="../varios/iconos/icono-vsc-error.svg" alt="Visual Studio Code Error" width="32" height="32"> (se muestra como error),
+      </p>
+
+      <ul>
+        <li>Posibles errores:
+          <p>Estas reglas identifican posibles errores:</p>
+          <ul>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              box-model: <a href="https://github.com/CSSLint/csslint/wiki/Beware-of-box-model-size">Beware of box model size</a>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
+              display-property-grouping: <a href="https://github.com/CSSLint/csslint/wiki/Require-properties-appropriate-for-display">Require properties appropriate for display</a>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              duplicate-properties: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties">Disallow duplicate properties</a>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
+              empty-rules: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-empty-rules">Disallow empty rules</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
+              known-properties: <a href="https://github.com/CSSLint/csslint/wiki/Require-use-of-known-properties">Require use of known properties</a></li>
+          </ul>
+        </li>
+
+        <li>Compatibilidad
+          <p>Estas reglas identifican problemas de compatibilidad entre navegadores:</p>
+          <ul>
+            <li>adjoining-classes: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-adjoining-classes">Disallow adjoining classes</a>
+              <p>CSS Lint desaconseja el uso de clases múltiples, ya que estas no funcionan en Internet Explorer 6 (y anteriores).</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">div.a.b {
+  background-color: #E56F60;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow adjoining classes - Don't use adjoining classes.</p>
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo. El objetivo de estos apuntes no es tratar las particularidades de navegadores obsoletos.</p>
+            </li>
+            <li>box-sizing: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-box-sizing">Disallow box-sizing</a>
+              <p>CSS Lint incluye dos avisos complementarios relativos al modelo de caja.</p>
+
+              <p>Por un lado, CSS Lint genera un aviso cuando se utilizan las propiedades <span class="css-prop">border</span> o <span class="css-prop">padding</span> junto con <span class="css-prop">width</span>. Este aviso simplemente nos recuerda que en el modelo de caja CSS 2, el tamaño del borde y del margen interior se añaden al tamaño del elemento definido con la propiedad <span class="css-prop">width</span>.</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">div {
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Beware of broken box size. Using width with border can sometimes make elements larger than you expect.</p>
+
+                  <p>Beware of broken box size. Using width with padding can sometimes make elements larger than you expect.</p>
+                </div>
+              </div>
+
+              <p>Ese aviso se puede evitar utilizando la propiedad CSS 3 <span class="css-prop">box-sizing</span>: <span class="css-valor">border-box</span>, que hace que los tamaños del borde y del margen interior se descuenten del tamaño definido con la propiedad <span class="css-prop">width</span>. Pero, al usar esa propiedad, CSS Lint genera un aviso que nos recuerda que esa propiedad no funciona en versiones antiguas de los navegadores.</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">div {
+  box-sizing: border-box;
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 5px;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow use of box-sizing - The box-sizing property isn't supported in IE6 and IE7</p>
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              compatible-vendor-prefixes: <a href="https://github.com/CSSLint/csslint/wiki/Require-compatible-vendor-prefixes">Require compatible vendor prefixes</a>
+            </li>
+            <li>gradients: <a href="https://github.com/CSSLint/csslint/wiki/Require-all-gradient-definitions">Require all gradient definitions</a></li>
+            <li>text-indent: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-negative-text-indent">Disallow negative text-indent</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
+              vendor-prefix: <a href="https://github.com/CSSLint/csslint/wiki/Require-standard-property-with-vendor-prefix">Require standard property with vendor prefix</a>
+            </li>
+            <li>fallback-colors: <a href="https://github.com/CSSLint/csslint/wiki/Require-fallback-colors">Require fallback colors</a></li>
+            <li>star-property-hack: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-star-hack">Disallow star hack</a></li>
+            <li>underscore-property-hack: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-underscore-hack">Disallow underscore hack</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
+              bulletproof-font-face: <a href="https://github.com/CSSLint/csslint/wiki/Bulletproof-font-face">Bulletproof font-face</a> (new in v0.9.10)
+
+              <p>En los ejercicios propuestos en estos apuntes, se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que provoca un aviso de CSS Lint:</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">@font-face {
+  font-family: "MyFontFamily";
+  src: url("myfont.woff")
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Use the bulletproof @font-face syntax - @font-face declaration doesn't follow the fontspring bulletproof syntax.</p>
+                </div>
+              </div>
+
+              <p>CSS Lint aconseja utilizar una declaración <span class="css-arroba">@font-face</span> más complicada, que funcione en todos los navegadores (sobre todo, en versiones antiguas de Internet Explorer).</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">@font-face {
+  font-family: 'MyFontFamily';
+  src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),
+       url('myfont-webfont.woff') format('woff'),
+       url('myfont-webfont.ttf')  format('truetype'),
+       url('myfont-webfont.svg#svgFontName') format('svg');
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes se ha utilizado la versión sencilla para no tener que manejar tantos formatos de fuentes y porque el objetivo de estos apuntes no es tratar las particularidades de cada navegador (aunque en algunos casos se comenten).</p>
+            </li>
+          </ul>
+        </li>
+
+        <li>Rendimiento
+          <p>Estas reglas identifican problema de rendimiento (y tamaño).</p>
+          <ul>
+            <li>font-faces: Don<a href="https://github.com/CSSLint/csslint/wiki/Don%27t-use-too-many-web-fonts">'t use too many web fonts</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              import: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-%40import">Disallow @import</a>
+
+              <p>Si en la hoja de estilo se utilizan reglas-arroba @import, CSS Lint genera un aviso "Disallow @import".</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">@import url("http://fonts.googleapis.com/css?family=Ribeye+Marrow");</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow @import - @import prevents parallel downloads, use &lt;link&gt; instead. (import)</p>
+                </div>
+              </div>
+
+              <p>Cuando se utiliza una regla-arroba @import, el navegador descarga el archivo al que se hace referencia y se espera a que termine la descarga para continuar leyendo la hoja de estilo. Eso ralentiza la carga de la página completa, por lo que CSS Lint aconseja utilizar en su lugar un enlace <span class="html-eti">&lt;link&gt;</span> en la página web (en la hoja de estilo no haría falta escribir nada), ya que la descarga de varios ficheros sí que se gestiona en paralelo. Pero entonces la asignación de la fuente a los elementos se debe hacer también en la página web.</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-html">&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ribeye+Marrow"&gt;
+&lt;style&gt;
+h1 {
+    font-family: "RibEye Marrow", cursive;
+}
+&lt;/style&gt;</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y las fuentes de Google Fonts se llaman desde la hoja de estilo.</p>
+            </li>
+            <li>
+              regex-selectors: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-selectors-that-look-like-regular-expressions">Disallow selectors that look like regular expressions</a>
+              <p>En los ejercicios sobre fuentes de iconos incluidos en estos apuntes en los que se utilizan las <a href="https://icomoon.io/app/#/select">fuentes de icomoon.io</a>, se utiliza la hoja de estilo generada por icomoon que provoca dos avisos.</p>
+
+              <p>Por un lado, un aviso desaconseja el uso de selectores de atributos CSS 3 que utilicen expresiones regulares, en este caso, ^= (empieza por ...) y *= (incluye ...) por su lentitud. Por otro lado, desaconseja el uso de selectores de atributos que no incluyan etiquetas, también debido a su lentitud.</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+        <code class="language-css">[class^="icon-"], [class*="icon-"] {
+          ...
+        }</code>
+        </pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow selectors that look like regexs - Attribute selectors with ^= are slow!</p>
+
+                  <p>Disallow unqualified attribute selectors - Unqualified attrbiute selectors are known to be slow.</p>
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              universal-selector: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-universal-selector">Disallow universal selector</a>
+            </li>
+            <li>unqualified-attributes: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-unqualified-attribute-selectors">Disallow unqualified attribute selectors</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              zero-units: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-units-for-zero-values">Disallow units for zero values</a>
+            </li>
+            <li>overqualified-elements: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-overqualified-elements">Disallow overqualified elements</a>
+
+              <p>Si en la hoja de estilo se escribe un selector que contenga una etiqueta y una clase, CSS Lint genera un aviso "Disallow overqualified elements".</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">p.ejemplo {
+  color: gray;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow overqualified elements - Element (p.ejemplo) is overqualified, just use .ejemplo without element name. (overqualified-elements)</p>
+                </div>
+              </div>
+
+              <p>CSS Lint aconseja utilizar selectores universales para facilitar la reutilización de clases (es decir, para que la clase se pueda aplicar a cualquier elemento en la página web).</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">.ejemplo {
+  color: gray;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                </div>
+              </div>
+
+              <p>CSS Lint admite etiquetas con clase cuando especifican casos particulares de un selector universal:</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">.ejemplo {
+  color: blue;
+}
+
+p.ejemplo {
+  color: red;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y los selectores contienen las etiquetas y las clases, salvo cuando la clase se aplica a varias etiquetas.</p>
+            </li>
+            <li>shorthand: <a href="https://github.com/CSSLint/csslint/wiki/Require-shorthand-properties">Require shorthand properties</a></li>
+            <li>duplicate-background-images: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-background-images">Disallow duplicate background images</a></li>
+          </ul>
+        </li>
+
+        <li>Mantenimiento y duplicación
+          <p>Estas reglas ayudan a conseguir un código legible y mantenible por otras personas:</p>
+          <ul>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              floats: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-too-many-floats">Disallow too many floats</a>
+            </li>
+            <li>font-sizes: Don<a href="https://github.com/CSSLint/csslint/wiki/Don%27t-use-too-many-font-size-declarations">'t use too many font-size declarations</a></li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              ids: Disallow <a href="https://github.com/CSSLint/csslint/wiki/Disallow-IDs-in-selectors">IDs in selectors</a>
+              <p>CSS Lint desaconseja el uso de ids en los selectores porque no se pueden reutilizar en una misma página web y aconseja utilizar clases en su lugar.</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">div#intro {
+  background-color: #E56F60;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Disallow IDs in selectors - Don't use IDs in selectors.</p>
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo ya que en la mayoría de los casos las hojas de estilo sólo se utilizan en una página.</p>
+            </li>
+            <li>
+              <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
+              <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32">
+              important: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-%21important">Disallow !important</a>
+            </li>
+            <li>order-alphabetical: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-non-alphabetical">Disallow non alphabetical</a>
+              <p>Si en la hoja de estilo no se escriben las propiedades en orden alfabético, CSS Lint genera un aviso "Alphabetical order".</p>
+
+              <div class="filaflex">
+                <div class="codigo">
+                  <pre>
+<code class="language-css">p.intro {
+  margin-left: 30%;
+  margin-right: 30%;
+  font-family: sans-serif;
+  line-height: 200%;
+  text-align: justify;
+}</code>
+</pre>
+                </div>
+                <div class="resultado-html">
+                  <p>Alphabetical order - Rule doesn't have all its properties in alphabetical order.</p>
+                </div>
+              </div>
+
+              <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y las propiedades están en otro orden (primero las propiedades relacionadas con el posicionamiento, después las relacionadas con el modelo de caja, después los colores y después el resto de propiedades, como se comenta en <a href="http://www.mclibre.org/consultar/htmlcss/css/css-guia-estilo.html#orden-propiedades">la guía de estilo de las hojas de estilo</a>).</p>
+            </li>
+          </ul>
+        </li>
+
+        <li>Accesibilidad
+          <p>Estas reglas identifican posibles problemas de accesibilidad:</p>
+          <ul>
+            <li>outline-none: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-outline%3Anone">Disallow outline:none</a></li>
+          </ul>
+        </li>
+        <li>CSS orientadas a objetos
+          <p>Estas reglas están basadas en los principios de las <a href="https://github.com/stubbornella/oocss/wiki">CSS orientadas a objetos (OOCSS)</a>:</p>
+          <ul>
+            <li>qualified-headings: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-qualified-headings">Disallow qualified headings</a></li>
+            <li>unique-headings: <a href="https://github.com/CSSLint/csslint/wiki/Headings-should-only-be-defined-once">Headings should only be defined once</a></li>
+          </ul>
+
+          <p>CSS Lint aconseja que en un sitio web todos los títulos (<span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) se muestren con el mismo estilo. Por ello, CSS Lint genera un aviso si se definen varios estilos de una misma etiqueta de título, o incluso si se escriben selectores que pudieran permitir definir varios estilos de una misma etiqueta de título (aunque no lo hagan).</p>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">h2 {
+  color: blue;
+}
+
+h2.aviso  {
+    color: red;
+}</code>
+</pre>
+            </div>
+            <div class="resultado-html">
+              <p>Headings should only be defined once - heading (h2) has already been defined.</p>
+            </div>
+          </div>
+
+          <div class="filaflex">
+            <div class="codigo">
+              <pre>
+<code class="language-css">div h2  {
+  color: red;
+}</code>
+</pre>
+            </div>
+            <div class="resultado-html">
+              <p>Disallow qualified headings - Heading (h2) should not be qualified.</p>
+            </div>
+          </div>
+
+          <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+  <section id="vsc-csslint">
+    <h2>CSS Lint en Visual Studio Code</h2>
+
+    <p>Visual Studio Code incorpora una parte de los avisos de CSS Lint. En el archivo de configuración de Visual Studio Code hay una serie de preferencias de configuración relacionadas con CSS Lint.</p>
+
+    <section id="vsc-csslint-config">
+      <h3>Preferencias de configuración de Visual Studio Code</h3>
+
+      <p>Las preferencias de configuración relacionadas con CSS Lint tienen tres valores posibles:</p>
+
+      <ul>
+        <li><span class="json-cadena">"error"</span>: el error se muestra en la ventana del terminal.
+          <p class="captura">
+            <img src="../img/vscode/vsc-csslint-1.png" alt="VSC. Error CSS Lint" width="1024" height="290">
+          </p>
+          <p><strong>Nota</strong>: En la configuración predeterminada de Visual Studio Code no hay preferencias establecidas como errores. Para realizar esta captura se ha modificado la preferencia correspondiente.</p>
+        </li>
+        <li>
+          <span class="json-cadena">"warning"</span>: el aviso se muestra en la ventana de terminal.
+          <p class="captura">
+            <img src="../img/vscode/vsc-csslint-2.png" alt="VSC. Aviso CSS Lint" width="1024" height="290">
+          </p>
+        </li>
+        <li><span class="json-cadena">"ignore"</span>: no se muestra ningún aviso</li>
+      </ul>
+    </section>
+
+    <section id="vsc-csslint-config-defecto">
+      <h3>Preferencias de configuración predeterminadas de Visual Studio Code</h3>
+
+      <p>Estas son actualmente (octubre de 2018) las preferencias de configuración de Visual Studio Code relacionadas con CSS Lint.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+  // Número de parámetros no válido.
+  "css.lint.argumentsInColorFunction": "error",
+
+  // No use "width" o "height" cuando se utilice "padding" o "border".
+  "css.lint.boxModel": "ignore",
+
+  // Cuando use un prefijo específico del proveedor, asegúrese de incluir todas las demás propiedades específicas del proveedor.
+  "css.lint.compatibleVendorPrefixes": "ignore",
+
+  // No utilice las definiciones de estilo duplicados.
+  "css.lint.duplicateProperties": "ignore",
+
+  // No utilice conjuntos de reglas vacías.
+  "css.lint.emptyRules": "warning",
+
+  // Evite usar `float`. Usarlo puede provocar CSS frágiles que pueden romperse fácilmente si un aspecto del diseño cambia.
+  "css.lint.float": "ignore",
+
+  // la regla `@font-face` debe definir las propiedades `src` y `font-family`.
+  "css.lint.fontFaceProperties": "warning",
+
+  // Colores hexadecimales deben consistir en tres o seis números hexadecimales.
+  "css.lint.hexColorLength": "error",
+
+  // Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.
+  "css.lint.idSelector": "ignore",
+
+  // Las modificaciones de IE solo son necesarias cuando se admite IE7 y versiones anteriores.
+  "css.lint.ieHack": "ignore",
+
+  // Evite usar `!important`. Es una indicación que la especificidad de todo el CSS se ha salido de control y debe ser refactorizada.
+  "css.lint.important": "ignore",
+
+  // Las instrucciones Import no se cargan en paralelo.
+  "css.lint.importStatement": "ignore",
+
+  // La propiedad se ignora a causa de la pantalla. Por ejemplo, con "display: inline", las propiedades "width", "height", "margin-top", "margin-bottom" y "float" no tienen ningún efecto.
+  "css.lint.propertyIgnoredDueToDisplay": "warning",
+
+  // El selector universal (`*`) es conocido por ser lento.
+  "css.lint.universalSelector": "ignore",
+
+  // Regla At desconocida.
+  "css.lint.unknownAtRules": "warning",
+
+  // Propiedad desconocida.
+  "css.lint.unknownProperties": "warning",
+
+  // Propiedad específica del proveedor desconocida.
+  "css.lint.unknownVendorSpecificProperties": "ignore",
+
+  // Cuando se utiliza un prefijo de proveedor específico, también incluye la propiedad estándar.
+  "css.lint.vendorPrefix": "warning",
+
+  // No se necesita una unidad para cero.
+  "css.lint.zeroUnits": "ignore",
+
+  // Hace un seguimiento de la comunicación entre VSCode y el servidor de lenguaje CSS.
+  "css.trace.server": "off",
+
+  // Habilita o deshabilita todas las validaciones.
+  "css.validate": true
+}</code>
+</pre>
+      </div>
+
+      <p>Entre las preferencias anteriores, las siguientes preferencias no parecen estar relacionadas con recomendaciones de CSS Lint.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+// Número de parámetros no válido.
+"css.lint.argumentsInColorFunction": "error",
+
+// Colores hexadecimales deben consistir en tres o seis números hexadecimales.
+"css.lint.hexColorLength": "error",
+
+// Las modificaciones de IE solo son necesarias cuando se admite IE7 y versiones anteriores.
+"css.lint.ieHack": "ignore",
+
+// Regla At desconocida.
+"css.lint.unknownAtRules": "warning",
+
+// Propiedad específica del proveedor desconocida.
+"css.lint.unknownVendorSpecificProperties": "ignore",
+
+// Hace un seguimiento de la comunicación entre VSCode y el servidor de lenguaje CSS.
+"css.trace.server": "off",
+
+// Habilita o deshabilita todas las validaciones.
+"css.validate": true
+</code>
+</pre>
+      </div>
+    </section>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 27 de octubre de 2018</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

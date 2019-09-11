@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML y CSS. Configuración recomendada. Visual Studio Code. Informática. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/highlight-htmlcss.css">
+  <script src="../varios/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+<body>
+  <h1>Visual Studio Code. Configuración recomendada para el curso Páginas web HTML y hojas de estilo CSS</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>VSC HTML / CSS</h2>
+
+      <ul>
+        <li><a href="#temas">Temas de color</a></li>
+        <li><a href="#area-trabajo">Área de trabajo</a></li>
+        <li><a href="#preferencias">Preferencias</a></li>
+        <li><a href="#extensiones">Extensiones</a></li>
+        <li><a href="#tareas">Tareas</a></li>
+        <li><a href="#atajos-teclado">Atajos de teclado</a></li>
+        <li><a href="#otros">Otros</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Esta es la configuración de Visual Studio Code que se recomienda para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+  <p>Antes de configurar Visual Studio Code, se recomienda leer la lección <a href="vsc-personalizacion.html">Personalización de VSC</a>, en la que se explica detalladamente cómo se personaliza Visual Studio Code.</p>
+
+  <section id="temas">
+    <h2>Tema de color recomendado para el curso de HTML y CSS</h2>
+
+    <p>El tema de color es un aspecto muy personal por lo que se deja a elección del alumno el tema de color empleado.</p>
+
+    <p>En las capturas de los apuntes se empleará el Tema Light+ (default light).</p>
+
+    <p class="captura">
+      <img src="../img/vscode/vsc-tema-light.png" alt="VSC. Tema Light+ predeterminado" width="1024" height="576">
+    </p>
+  </section>
+
+  <section id="area-trabajo">
+    <h2>Área de trabajo</h2>
+
+    <p>Esta es el área de trabajo recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+    <ol>
+      <li>Cree la carpeta Documentos &gt; LMSGI &gt; HTML:
+
+        <p class="captura">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="170">
+        </p>
+      </li>
+
+      <li>Cree las carpeta Documentos &gt; LMSGI &gt; HTML &gt; ejercicios y Documentos &gt; LMSGI &gt; HTML &gt; pruebas:
+        <p class="captura">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
+        </p>
+      </li>
+
+      <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
+        <p class="captura">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="190">
+        </p>
+      </li>
+
+      <li>Elija la carpeta Documentos &gt; LMSGI &gt; HTML:
+        <p class="captura">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="576">
+        </p>
+      </li>
+
+      <li>Haga clic en el icono Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
+        <p class="captura">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="210">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="preferencias">
+    <h2>Preferencias de configuración recomendadas para el curso de HTML y CSS</h2>
+
+    <p>Estas son las preferencias de configuración que se aconseja establecer para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+    <p>En primer lugar, se muestran todas las preferencias juntas, para que se puedan copiar fácilmente, y a continuación se comentan una a una cada preferencia.</p>
+
+    <p>Algunas preferencias son importantes porque corresponden a prácticas extendidas en el ámbito del desarrollo web y otras son preferencias personales que el alumno puede seguir o no.</p>
+
+    <p>La preferencia propuesta relacionada con el <a href="#cierre-automatico">cierre automático de etiquetas</a> requiere la instalación de una extensión.</p>
+
+    <section id="todas-preferencias">
+      <h3>Todas las preferencias</h3>
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+  // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  //
+  // Controla cómo debe representar el editor los espacios en blanco.
+  "editor.renderWhitespace": "all",
+  //
+  // Controla cómo se deben ajustar las líneas.
+  "editor.wordWrap": "on",
+  //
+  // Carácter predeterminado de final de línea.
+  "files.eol": "\n",
+  //
+  // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
+  "files.trimTrailingWhitespace": true,
+  //
+  // Habilita o deshabilita el cierre automático de las etiquetas HTML.
+  "html.autoClosingTags": false,
+  //
+  // Finalizar con una nueva línea.
+  "html.format.endWithNewline": true,
+  //
+  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante.
+  "html.format.extraLiners": "body",
+  //
+  // Cantidad máxima de caracteres por línea (0 = deshabilitar).
+  "html.format.wrapLineLength": 0,
+  //
+  // Establecer los valores de configuración que se reemplazarán para el lenguaje [html].
+  // Sangrado de dos espacios
+  "[html]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  //
+  // Tema Light+ (default light)
+  "workbench.colorTheme": "Default Light+",
+  //
+  // Configuración de extensiones recomendadas
+  //
+  // Configuración de Close HTML/XML tag
+  // Tiene en cuenta las etiquetas vacías de HTML para no cerrarlas
+  "closeTag.ignoreTags": "html",
+  //
+}</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="mostrar-espacios">
+      <h3>Mostrar espacios en blanco</h3>
+
+      <p>Esta preferencia hace que VSC muestre un punto en cada espacio en blanco. Es una ayuda visual para poder contar fácilmente el número de espacios en blanco.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Controla cómo debe representar el editor los espacios en blanco.
+  "editor.renderWhitespace": "all",
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="ajuste-linea">
+      <h3>Ajuste de línea</h3>
+
+      <p>Esta preferencia hace que VSC aproveche todo el ancho de pantalla para mostrar los documentos y no añada saltos de línea al formatear el documento.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Controla cómo se deben ajustar las líneas.
+  "editor.wordWrap": "on",
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="salto-linea">
+      <h3>Salto de línea</h3>
+
+      <p>Esta preferencia fuerza a VSC a utilizar el carácter LF para los saltos de líneas (habitual en GNU/Linux) y no los caracteres habituales en Windows (CR LF). Esta es la configuración más extendida en el ámbito del desarrollo web.</p>
+
+      <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows es uno de estos programas, por lo que este programa no se recomienda para editar los documentos creados en este curso.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Carácter predeterminado de final de línea. Utilice \n para LF y \r\n para CRLF.
+  "files.eol": "\n",
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="espacios-finales">
+      <h3>Espacios al final de las líneas</h3>
+
+      <p>Esta preferencia hace que, al guardar un archivo, VSC borre los espacios en blanco situados al final de las líneas. Esos espacios son innecesarios y lo único que hacen es ocupar espacio.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
+  "files.trimTrailingWhitespace": true,
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="cierre-automatico">
+      <h3>Cierre automático de etiquetas</h3>
+
+      <p>Cuando se crea una página web desde cero, resulta conveniente que el editor cierre automáticamente las etiquetas, para no olvidarse de hacerlo. Al escribir una etiqueta, Visual Studio Code añade automáticamente la etiqueta de cierre después del cursor, de manera que lo que se escribe a continuación queda encerrado en el interior de la etiqueta.</p>
+
+      <p>Pero para hacer los ejercicios propuestos en este curso, el cierre automático complica la realización de los ejercicios. En los ejercicios se proporciona siempre el texto de la página web, para ahorrar al alumno el trabajo de copiarlo. Hacer un ejercicio es añadir las etiquetas de apertura al principio de los fragmentos de texto y etiquetas de cierre al final. En esta situación, el cierre automático de las etiquetas es un inconveniente, ya que el cierre se crea al principio del fragmento de texto, no al final.</p>
+
+      <p>Por ello, para hacer los ejercicios de este curso, en vez del cierre automático se propone la siguiente configuración:</p>
+      <ul>
+        <li>Deshabilite el cierre automático en el archivo de configuración de usuario o de área de trabajo:
+          <div class="codigo">
+            <pre>
+<code class="language-json">  // Habilita o deshabilita el cierre automático de las etiquetas HTML.
+  "html.autoClosingTags": false,
+  //</code>
+</pre>
+          </div>
+        </li>
+        <li>Instale la extensión <a href="#close-html-xml-tag">Close HTML/XML tag</a> que se comenta en el apartado de Extensiones recomendadas.</li>
+      </ul>
+      <p>De esta manera podrá combinar el cierre automático, ya que al escribir una etiqueta de apertura Visual Studio Code le da la posibilidad de cerrar las etiquetas pulsando <span class="soft-atajo-teclado">Intro</span>, y el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span> que habilita la extensión Close HTML/XML tag.</p>
+    </section>
+
+    <section id="linea-final">
+      <h3>Añadir salto de línea en la línea final</h3>
+
+      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que el último carácter de un documento sea un único salto de línea (LF). Si se trata de documentos independientes (como una página web) no es algo imprescindible, pero si se trata de documentos que se pueden cargar uno detrás de otro para crear un único documento (como un programa PHP), resulta conveniente para evitar que la última línea de un documento se una a la primera del documento siguiente.</p>
+
+      <p>Las normas <a href="https://es.wikipedia.org/wiki/POSIX">POSIX</a> especifican que en los ficheros de texto, todas las líneas deben terminar con el carácter salto de línea.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Finalizar con una nueva línea.
+  "html.format.endWithNewline": true,
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="linea-delante">
+      <h3>Etiquetas con línea en blanco delante</h3>
+
+      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que delante de determinadas etiquetas haya al menos una línea en blanco. Yo tengo las costumbre de dejar siempre una línea en blanco delante de <span class="html-eti">&lt;body&gt;</span>, pero no delante de <span class="html-eti">&lt;head&gt;</span> ni de <span class="html-eti">&lt;/html&gt;</span>.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. "null" tiene como valores predeterminados "head, body, /html".
+  "html.format.extraLiners": "body",
+  //</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="longitud-linea">
+      <h3>Longitud de línea</h3>
+
+      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que ninguna línea exceda el número de caracteres indicado y añada saltos de línea cuando sea necesario. Yo tengo la costumbre de mantener los párrafos de texto en una sola línea, aunque sea muy larga, para que al modificar el texto no se queden unas líneas más largas que otras. Para ello, esta preferencia tiene que tener el valor 0.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Cantidad máxima de caracteres por línea (0 = deshabilitar).
+  "html.format.wrapLineLength": 0,
+  //</code>
+</pre>
+      </div>
+
+      <p>Referencia: <a href="https://code.visualstudio.com/updates/vMarch#_languages-html">Novedades VSC 1.0: Formateador HTML</a></p>
+    </section>
+
+    <section id="sangrado">
+      <h3>Sangrado: Tabuladores y tamaño del sangrado</h3>
+
+      <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
+
+      <p>Por otro lado, los tabuladores equivalían en principio a 8 espacios en blanco. Si sólo se necesita un nivel de sangrado, 8 espacios no es demasiado, pero si el documento necesita varios niveles de sangrado, ese valor es demasiado grande. Lo habitual es utilizar un sangrado de 4 espacios si se trata de código fuente de programas y de 2 si se trata de páginas web u hojas de estilo.</p>
+
+      <p>Esta configuración tiene una sintaxis distinta al resto porque es específica para html (páginas web y hojas de estilo). Es necesario reiniciar Visual Studio Code tras modificar esta configuración para que se aplique el tamaño del sangrado deseado en los nuevos ficheros.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Establecer los valores de configuración que se reemplazarán para el lenguaje [html].
+  // Sangrado de dos espacios
+  "[html]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+  //</code>
+</pre>
+      </div>
+    </section>
+  </section>
+
+  <section id="extensiones">
+    <h2>Extensiones recomendadas para el curso de HTML y CSS</h2>
+
+    <p>Para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/index.html">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> se aconseja instalar las extensiones Image Preview, Close HTML/XML tag, HTMLHint y CSScomb.</p>
+
+    <p>Estas extensiones, que se comentan a continuación, se pueden instalar de forma individual, o de forma conjunta mediante el mclibre.org HTML+CSS Extension Pack. Aunque instale el Extension Pack, lea los apartados correspondientes a cada extensión y la lección <a href="vsc-htmlcss-extensiones.html">Uso de extensiones</a>.</p>
+
+    <section id="mclibre-html-css">
+      <h3>mclibre.org HTML+CSS Extension Pack: paquete de extensiones</h3>
+
+      <p><img src="../img/vscode/vsc-extension-mclibre-html-css-logo.png" alt="Logotipo de mclibre.org HTML+CSS Extension Pack" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Bartolomé Sintes</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=BartolomeSintes.mclibre-org-html-css-extension-pack">mclibre.org HTML+CSS Extension Pack</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/BartolomeSintes/mclibre-org-vscode-html-css-extension-pack">mclibre.org HTML+CSS Extension Pack</a></p>
+
+      <hr class="corta">
+
+      <p>Esta extensión instala de forma conjunta las cinco extensiones que se comentan a continuación, pero no las configura. Cada extensión debe configurarse manualmente.</p>
+    </section>
+
+    <section id="image-preview">
+      <h3>Image preview: Información de imágenes</h3>
+
+      <p><img src="../img/vscode/vsc-extension-image-preview-logo.png" alt="Logotipo de Image preview" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Kiss Tamás</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview">Image preview</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/kisstkondoros/gutter-preview">Image preview</a></p>
+
+      <hr class="corta">
+
+      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-image-preview">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle y capturas de pantalla el uso de esta extensión</p>
+
+      <p>Al situar el cursor sobre la ruta de una imagen, se muestra un cuadro con una miniatura de la imagen y el tamaño de la imagen. Además, haciendo
+        <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.</p>
+
+      <p>En este curso, utilizaremos esta extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente.</p>
+
+    </section>
+
+    <section id="close-html-xml-tag">
+      <h3>Close HTML/XML tag: Cierre de etiquetas</h3>
+
+      <p><img src="../img/vscode/vsc-extension-close-html-xhtml-tag-logo.png" alt="Logotipo de Close HTML/XML tag" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Compulim</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-closetag">Close HTML/XML tag</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/compulim/vscode-closetag">Close HTML/XML tag</a></p>
+
+      <hr class="corta">
+
+      <p>Al pulsar el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>, se añade automáticamente la etiqueta de cierre de la etiqueta abierta anterior.</p>
+
+      <p>El ejemplo siguiente muestra la configuración seguida en las hojas de estilo del curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Configuración de Close HTML/XML tag
+  // Tiene en cuenta las etiquetas vacías de HTML para no cerrarlas
+  "closeTag.ignoreTags": "html",
+  //</code>
+</pre>
+      </div>
+
+      <hr class="corta">
+
+      <p><strong>Problemas detectados:</strong></p>
+      <ul>
+        <li>La etiqueta de cierre se añade aunque la etiqueta de cierre ya esté escrita en el documento. La extensión sólo se fija en lo que hay antes de la posición del cursor, no en lo que hay después.</li>
+      </ul>
+    </section>
+
+    <section id="tag-inserter">
+      <h3>Tag Inserter: Añade etiquetas alrededor del texto seleccionado</h3>
+
+      <p><img src="../img/vscode/vsc-extension-no-logo.png" alt="Logotipo genérico" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: l7ssha</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=l7ssha.tag-inserter">Tag Inserter</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/l7ssha/TagInserter">Tag Inserter</a></p>
+
+      <hr class="corta">
+
+      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-tag-inserter">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle y capturas de pantalla el uso de esta extensión</p>
+
+      <p>Para añadir una etiqueta alrededor de un texto:</p>
+      <ul>
+        <li>seleccione con el ratón el texto alrededor del cual se quiere añadir una etiqueta</li>
+        <li>pulse el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+i</span></li>
+        <li>se abrirá en la parte superior la paleta de comandos</li>
+        <li>escriba en ella la etiqueta deseada (puede incluir atributos) y pulse <kbd>Intro</kbd></li>
+      </ul>
+
+      <p>En este curso utilizaremos esta extensión para realizar los ejercicios, en los que se proporciona el texto de la página web sin etiquetas.</p>
+    </section>
+
+    <section id="htmlhint">
+      <h3>HTMLHint: Validación de HTML</h3>
+
+      <p><img src="../img/vscode/vsc-extension-htmlhint.png" alt="Logotipo de HTMLHint" width="129" height="128" class="izquierda"></p>
+
+      <p>Autor: Mike Kaufman</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=mkaufman.HTMLHint">HTMLHint</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/Microsoft/vscode-htmlhint">HTMLHint</a></p>
+
+      <hr class="corta">
+
+      <p>La extensión HTMLHint permite que Visual Studio Code utilice el analizador de código estático <a href="https://htmlhint.io/">HTMLHint</a>.</p>
+
+      <p>El uso de esta extensión se comenta en la lección <a href="vsc-htmlcss-validacion.html#validacion-html">Validación de HTML y CSS en Visual Studio Code</a>.</p>
+
+      <p>Para modificar la configuración predeterminada de HTMLHint se debe crear un fichero <strong>.htmlhintrc</strong> en la raíz del área de trabajo.</p>
+
+      <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+  "tagname-lowercase": true,
+  "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+  "attr-value-double-quotes": true,
+  "doctype-first": true,
+  "tag-pair": true,
+  "spec-char-escape": true,
+  "id-unique": true,
+  "src-not-empty": true,
+  "attr-no-duplication": true,
+  "title-require": true,
+
+  "alt-require": true,
+  "tag-self-close": false,
+  "attr-value-not-empty": false,
+  "id-class-ad-disabled": true
+}</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="csscomb">
+      <h3>CSScomb: Formateador de CSS</h3>
+
+      <p><img src="../img/vscode/vsc-extension-csscomb.png" alt="Logotipo de CSScomb" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Denis Malinochkin</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-csscomb">CSScomb</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/mrmlnc/vscode-csscomb">CSScomb</a></p>
+
+      <hr class="corta">
+
+      <p>La extensión CSScomb permite que Visual Studio Code utilice el formateador de código CSS <a href="http://csscomb.com/">CSScomb</a>.</p>
+
+      <p>Para que CSScomb formatee el código de la hoja de estilo, hay que pulsar la tecla <span class="soft-atajo-teclado">F1</span> y escribir el comando <span class="soft-atajo-teclado">csscomb</span>.</p>
+
+      <hr class="corta">
+
+      <p>El estilo de formato concreto que aplica CSScomb se configura en el archivo de configuración de usuario o en el del espacio de trabajo mediante la configuración csscomb.preset.</p>
+
+      <p>El ejemplo siguiente muestra la configuración seguida en las hojas de estilo del curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Configuración de CSScomb
+  "csscomb.preset": {
+    "always-semicolon": true,               // Añade punto y coma (;) tras las propiedades
+    "color-case": "lower",                  // Escribe los códigos de color en minúsculas
+    "block-indent": "  ",                   // Sangrado de dos espacios
+    "element-case": "lower",                // Escribe los selectores en minúsculas
+    "eof-newline": true,                    // Añade un espacio al final del archivo
+    "leading-zero": true,                   // Añade un cero antes de un punto decimal
+    "quotes": "double",                     // Añade comillas dobles
+    "space-before-colon": "",               // Elimina los espacios en blanco antes de los dos puntos (:)
+    "space-after-colon": " ",               // Añade un espacio en blanco después de los dos puntos (:)
+    "space-before-combinator": " ",         // Añade un espacio en blanco antes de un combinador de selectores
+    "space-after-combinator": " ",          // Añade un espacio en blanco después de un combinador de selectores
+    "space-between-declarations": "\n",     // Cada propiedad ocupa un línea
+    "space-before-opening-brace": " ",      // El selector y la llave de apertura ({) están separados por un espacio
+    "space-after-opening-brace": "\n",      // Tras la llave de apertura ({) hay un salto de línea
+    "space-after-selector-delimiter": " ",  // Las comas (,) en los selectores están seguidas por un espacio en blanco
+    "space-before-selector-delimiter": "",  // Las comas (,) en los selectores no están precedidas de un espacio en blanco
+    "space-before-closing-brace": "\n",     // Antes de la llave de cierre (}) hay un salto de línea
+    "strip-spaces": true,                   // Se eliminan los espacios en blanco situados al final de las líneas
+    "tab-size": true,                       // El tabulador se convierte a espacios en blanco (el número de espacios definido para el sangrado)
+    "unitless-zero": true,                  // Elimina las unidades de los valores nulos (0)
+    "vendor-prefix-align": true             // Alinea las propiedades específicas de cada navegador para facilitar la lectura
+  },
+  //</code>
+</pre>
+      </div>
+    </section>
+  </section>
+
+  <section id="tareas">
+    <h2>Tareas recomendadas para el curso de HTML y CSS</h2>
+
+    <p>Estas son las tareas que se aconseja crear para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+    <p>Una vez definidas las tareas, se recomienda definir los atajos de teclado que ejecuten estas tareas, tal y como se comenta en el apartado sobre <a href="#atajos-teclado">Atajos de teclado recomendados</a>.</p>
+
+    <section id="abrir-navegador">
+      <h3>Abrir páginas en el navegador</h3>
+
+      <p>Las siguientes tareas permiten abrir en los navegadores Firefox y Chrome las páginas que se están editando en Visual Studio Code. Compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+  // Tareas recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Abrir en Firefox",
+      "command": "explorer",
+      "windows": {
+        "command": "C:/Program Files/Mozilla Firefox/firefox.exe"
+      },
+      "args": [
+          "${file}"
+      ],
+      "presentation": {
+        "reveal": "never"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Abrir en Chrome",
+      "command": "explorer",
+      "windows": {
+        "command": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+      },
+      "args": [
+        "${file}"
+      ],
+      "presentation": {
+        "reveal": "never"
+      },
+      "problemMatcher": []
+      }
+  ]
+}</code>
+</pre>
+      </div>
+    </section>
+  </section>
+
+  <section id="atajos-teclado">
+    <h2>Atajos de teclado recomendados para el curso de HTML y CSS</h2>
+
+    <p>Estos son los atajos de teclado que se aconseja definir para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+    <p>Estos dos atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code.</p>
+
+    <p>Antes de definir estos atajos de teclado es necesario crear las tareas correspondientes. Las tareas recomendadas para el curso de HTML y CSS se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</p>
+
+    <p>Este es el contenido del archivo <i>keybindings.json</i>:</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-json">// Atajos de teclado recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+[
+  {
+    "key": "ctrl+alt+f",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Abrir en Firefox"
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Abrir en Chrome"
+  }
+]</code>
+</pre>
+    </div>
+
+    <section id="atajos-utilizar">
+      <h3>Utilizar atajos de teclado</h3>
+
+      <p>Estos son los pasos a realizar para utilizar alguno de los atajos de teclado personalizados:</p>
+
+      <ol>
+        <li>Abra en una pestaña la página web que quiera abrir en un navegador:
+          <p class="captura">
+            <img src="../img/vscode/vsc-htmlcss-atajos-usar-1.png" alt="VSC. Utilizar tarea" width="1024" height="380">
+          </p>
+        </li>
+        <li>Pulse el atajo de teclado. Por ejemplo, <span class="soft-atajo-teclado">Ctrl+Alt+f</span>, uno de los atajos de teclado recomendados para el curso de HTML y CSS.</li>
+        <li>En el ejemplo de las capturas, la página abierta en Visual Studio Code se abriría en el navegador:
+          <p class="captura">
+            <img src="../img/vscode/vsc-htmlcss-atajos-usar-2.png" alt="VSC. Utilizar tarea" width="1024" height="260">
+          </p>
+        </li>
+      </ol>
+    </section>
+  </section>
+
+  <section id="otros">
+    <h2>Otros (en elaboración)</h2>
+
+    <ul>
+      <li>Extensiones
+        <ul>
+          <li>Renombrar etiquetas: <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag en Marketplace</a></li>
+          <li>Ordenar atributos: <a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-attrs-sorter">Sorting HTML and Jade attributes en Marketplace</a></li>
+          <li><a href="https://github.com/alefragnani/vscode-project-manager">Project Manager</a></li>
+          <li>Brackets Surround para VSC: <a href="https://github.com/Microsoft/vscode/issues/1307">VSC issue 1307</a></li>
+          <li>Validador CSS: <a href="https://marketplace.visualstudio.com/items?itemName=smelukov.vscode-csstree">CSSTree validator</a></li>
+          <li>Formatear CSS: <a href="https://marketplace.visualstudio.com/items?itemName=aeschli.vscode-css-formatter">CSS Formatter</a></li>
+          <li>Ordenar propiedades en CSS: <a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-postcss-sorting">PostCSS sorting</a></li>
+        </ul>
+      </li>
+      <li><a href="https://code.visualstudio.com/docs/supporting/faq#_how-to-disable-telemetry-reporting">Remove telemetry</a></li>
+      <li><a href="https://code.visualstudio.com/updates/vMarch#_utf8-bom-support">UTF-8 con o sin BOM</a></li>
+      <li><a href="https://editorconfig.org/">EditorConfig</a></li>
+      <li><a href="https://code.visualstudio.com/docs/languages/html#_format-html">No formatear algunas etiquetas</a></li>
+      <li>A veces, parece que Visual Studio Code ha bloqueado los archivos (por ejemplo, si se intenta sustituir una imagen por otra). No pasa siempre, pero parece que está relacionado con una preferencia de git, que está comprobando si hay cambios y bloquea temporalmente los archivos. La preferencia es
+        <div class="codigo">
+          <pre>
+<code class="language-json">  // Si la búsqueda automática está habilitada
+  "git.autofetch": true</code>
+</pre>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 21 de noviembre de 2018</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
