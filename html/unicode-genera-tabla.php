@@ -27,7 +27,7 @@
         div.u {
             display: flex;
             flex-direction: column;
-            flex: 0 1 300px;
+            flex: 0 1 200px;
             margin: 5px;
             border: black 1px solid;
             text-align: center;
@@ -162,99 +162,26 @@
         }
 
         foreach ($matriz as $c) {
-            if (count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
-                print "    <div class=\"u\">\n";
-                print "      <p class=\"uc\">U+" . $c[0][0] . "</p>\n";
-                print "      <p class=\"si\">\n";
-                if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">&#x" . $c[0][0] . ";</span> \n";
-                }
-                if (in_array("sy", $fuentes)) {
-                    print "        <span class=\"sy\">&#x" . $c[0][0] . ";</span> \n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[5] == "T") {
-                        $tmp = strtolower($c[0][0]);
-                        while ($tmp[0] == "0") {
-                            $tmp = substr($tmp, 1);
-                        }
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/$tmp.svg\">&#x" . $c[0][0] . ";</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">&#x" . $c[0][0] . ";</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">&#x" . $c[0][0] . ";</span> \n";
-                }
-                // print "        <span class=\"te\">&#x" . $c[0][0] . ";</span> \n";
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>&amp;#x" . $c[0][0] . ";</strong> &nbsp; &nbsp; decimal: <strong>&amp;#" . hexdec($c[0][0]) . ";</strong></p>\n";
-                print "      <p class=\"no\">$c[6]</p>\n";
-                print "    </div>\n";
-                print "\n";
-            } elseif (count($c[0]) > 1) {
+            if (count($c[0]) > 1 || count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                 print "    <div class=\"u\">\n";
                 print "      <p class=\"uc\">";
                 foreach ($c[0] as $tmp) {
                     print "U+$tmp ";
                 }
                 print "</p>\n";
-                print "      <p class=\"si\">\n";
+                print "      <p class=\"si\">";
                 if (in_array("ss", $fuentes)) {
-                    print "        <span class=\"ss\">";
                     foreach ($c[0] as $tmp) {
                         print "&#x$tmp;";
                     }
-                    print "</span> \n";
                 }
-                if (in_array("sy", $fuentes)) {
-                    print "          <span class=\"sy\">";
-                    foreach ($c[0] as $tmp) {
-                        print "&#x$tmp;";
-                    }
-                    print "</span> \n";
-                }
-                if (in_array("te", $fuentes)) {
-                    if ($c[5] == "T") {
-                        print "        <span class=\"te\"><a href=\"$rutaSVG/";
-                        for ($i = 0; $i < count($c[0]) - 1; $i++) {
-                            $tmp0 = strtolower($c[0][$i]);
-                            while ($tmp0[0] == "0") {
-                                $tmp0 = substr($tmp0, 1);
-                            }
-                            print "$tmp0-";
-                        }
-                        $tmp0 = strtolower($c[0][$i]);
-                        while ($tmp0[0] == "0") {
-                            $tmp0 = substr($tmp0, 1);
-                        }
-                        print "$tmp0";
-                        print ".svg\">";
-                        foreach ($c[0] as $tmp) {
-                            print "&#x$tmp;";
-                        }
-                        print "</a></span>\n";
-                    } else {
-                        print "        <span class=\"te\">";
-                        foreach ($c[0] as $tmp) {
-                            print "&#x$tmp;";
-                        }
-                        print "</span>\n";
-                    }
-                }
-                if (in_array("ne", $fuentes)) {
-                    print "        <span class=\"ne\">";
-                    foreach ($c[0] as $tmp) {
-                        print "&#x$tmp;";
-                    }
-                    print "</span>\n";
-                }
-                print "      </p>\n";
-                print "      <p class=\"en\">hexadecimal: <strong>";
+                print "</p>\n";
+                print "      <p class=\"en\"><strong>";
                 foreach ($c[0] as $tmp) {
                     print "&amp;#x$tmp;";
                 }
-                print "</strong><br>decimal: <strong>";
+                print "</strong></p>\n";
+                print "      <p class=\"en\"><strong>";
                 foreach ($c[0] as $tmp) {
                     print "&amp;#x" . hexdec($tmp) . ";";
                 }
@@ -263,6 +190,76 @@
                 print "    </div>\n";
                 print "\n";
             }
+            // 2019-08-05. Muestra el carácter en symbola y twemoji
+            // print "    <div class=\"u\">\n";
+            // print "      <p class=\"uc\">";
+            // foreach ($c[0] as $tmp) {
+            //     print "U+$tmp ";
+            // }
+            // print "</p>\n";
+            // print "      <p class=\"si\">\n";
+            // if (in_array("ss", $fuentes)) {
+            //     print "        <span class=\"ss\">";
+            //     foreach ($c[0] as $tmp) {
+            //         print "&#x$tmp;";
+            //     }
+            //     print "</span> \n";
+            // }
+            // if (in_array("sy", $fuentes)) {
+            //     print "          <span class=\"sy\">";
+            //     foreach ($c[0] as $tmp) {
+            //         print "&#x$tmp;";
+            //     }
+            //     print "</span> \n";
+            // }
+            // if (in_array("te", $fuentes)) {
+            //     if ($c[5] == "T") {
+            //         print "        <span class=\"te\"><a href=\"$rutaSVG/";
+            //         for ($i = 0; $i < count($c[0]) - 1; $i++) {
+            //             $tmp0 = strtolower($c[0][$i]);
+            //             while ($tmp0[0] == "0") {
+            //                 $tmp0 = substr($tmp0, 1);
+            //             }
+            //             print "$tmp0-";
+            //         }
+            //         $tmp0 = strtolower($c[0][$i]);
+            //         while ($tmp0[0] == "0") {
+            //             $tmp0 = substr($tmp0, 1);
+            //         }
+            //         print "$tmp0";
+            //         print ".svg\">";
+            //         foreach ($c[0] as $tmp) {
+            //             print "&#x$tmp;";
+            //         }
+            //         print "</a></span>\n";
+            //     } else {
+            //         print "        <span class=\"te\">";
+            //         foreach ($c[0] as $tmp) {
+            //             print "&#x$tmp;";
+            //         }
+            //         print "</span>\n";
+            //     }
+            // }
+            // if (in_array("ne", $fuentes)) {
+            //     print "        <span class=\"ne\">";
+            //     foreach ($c[0] as $tmp) {
+            //         print "&#x$tmp;";
+            //     }
+            //     print "</span>\n";
+            // }
+            // print "      </p>\n";
+            // print "      <p class=\"en\">hexadecimal: <strong>";
+            // foreach ($c[0] as $tmp) {
+            //     print "&amp;#x$tmp;";
+            // }
+            // print "</strong><br>decimal: <strong>";
+            // foreach ($c[0] as $tmp) {
+            //     print "&amp;#x" . hexdec($tmp) . ";";
+            // }
+            // print "</strong></p>\n";
+            // print "      <p class=\"no\">$c[6]</p>\n";
+            // print "    </div>\n";
+            // print "\n";
         }
         print "    </div>\n";
         print "  </section>\n";
@@ -400,12 +397,12 @@
 
 
     $grupos_simbolos = array(
-        array($caracteres_unicode, "Controles y Latin básico",                          "controles-latin",        "U00000-c0-controls-and-basic-latin.pdf",        1, "0000",  "007F"),
+        // array($caracteres_unicode, "Controles y Latin básico",                          "controles-latin",        "U00000-c0-controls-and-basic-latin.pdf",        1, "0000",  "007F"),
         array($caracteres_unicode, "Suplemento controles y Latin-1",                    "controles-sup",          "U00080-c1-controls-and-latin-1-supplement.pdf", 1, "0080",  "00FF"),
-        array($caracteres_unicode, "Puntuación",                                        "puntuacion",             "U02000-general-punctuation.pdf",                1, "2000",  "206F"),
+        // array($caracteres_unicode, "Puntuación",                                        "puntuacion",             "U02000-general-punctuation.pdf",                1, "2000",  "206F"),
         array($caracteres_unicode, "Símbolos de monedas",                               "monedas",                "U020A0-currency-symbols.pdf",                   1, "20A0",  "20BF"),
         array($caracteres_unicode, "Símbolos con letras",                               "simbolos-letras",        "U02100-letterlike-symbols.pdf",                 1, "2100",  "214F"),
-        array($caracteres_unicode, "Flechas",                                           "flechas",                "U02190-arrows.pdf",                             1, "2190",  "21FF"),
+        // array($caracteres_unicode, "Flechas",                                           "flechas",                "U02190-arrows.pdf",                             1, "2190",  "21FF"),
         array($caracteres_unicode, "Símbolos técnicos misceláneos",                     "tecnicos-misc",          "U02300-miscellaneous-technical.pdf",            1, "2300",  "23FE"),
         array($caracteres_unicode, "Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",        "U02460-enclosed-alphanumerics.pdf",             1, "2460",  "24FF"),
         array($caracteres_unicode, "Cajas",                                             "cajas",                  "U02500-box-drawing.pdf",                        1, "2500",  "257F"),

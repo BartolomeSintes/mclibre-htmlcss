@@ -297,9 +297,9 @@ $cu_banderas_sub = array(
   // array(array("1F3F3", "1F308"), "", "", "", "F", "T", "rainbow flag"),
   // 2018-08-28 En emojione rainbow flag eran dos caracteres, pero con twemoji son cuatro
   array(array("1F3F4", "0200D", "02620", "0FE0F"), "11", "", "WC", "F", "T", "pirate flag"),
-  array(array("1F3F4", "E0067", "E0062", "E0065", "E006E", "E0067", "E007F"), "10", "", "", "T", "England"),
-  array(array("1F3F4", "E0067", "E0062", "E0073", "E0063", "E0074", "E007F"), "10", "", "", "T", "Scotland"),
-  array(array("1F3F4", "E0067", "E0062", "E0077", "E006C", "E0073", "E007F"), "10", "", "", "T", "Wales"),
+  array(array("1F3F4", "E0067", "E0062", "E0065", "E006E", "E0067", "E007F"), "10", "", "", "", "T", "England"),
+  array(array("1F3F4", "E0067", "E0062", "E0073", "E0063", "E0074", "E007F"), "10", "", "", "", "T", "Scotland"),
+  array(array("1F3F4", "E0067", "E0062", "E0077", "E006C", "E0073", "E007F"), "10", "", "", "", "T", "Wales"),
 );
 
 $cu_otros = array(
@@ -424,11 +424,11 @@ $cu_parejas_2 = array(
   array(array("1F9D1", "1F3FE", "0200D", "1F91D", "0200D", "1F9D1", "1F3FC"), "12", "", "WC", "F", "T", "people holding hands"),
   array(array("1F9D1", "1F3FE", "0200D", "1F91D", "0200D", "1F9D1", "1F3FD"), "12", "", "WC", "F", "T", "people holding hands"),
   array(array("1F9D1", "1F3FE", "0200D", "1F91D", "0200D", "1F9D1", "1F3FE"), "12", "", "WC", "F", "T", "people holding hands"),
-  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FB"), "12", "", "F", "T", "people holding hands"),
-  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FC"), "12", "", "F", "T", "people holding hands"),
-  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FD"), "12", "", "F", "T", "people holding hands"),
-  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FE"), "12", "", "F", "T", "people holding hands"),
-  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FF"), "12", "", "F", "T", "people holding hands"),
+  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FB"), "12", "", "", "F", "T", "people holding hands"),
+  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FC"), "12", "", "", "F", "T", "people holding hands"),
+  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FD"), "12", "", "", "F", "T", "people holding hands"),
+  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FE"), "12", "", "", "F", "T", "people holding hands"),
+  array(array("1F9D1", "1F3FF", "0200D", "1F91D", "0200D", "1F9D1", "1F3FF"), "12", "", "", "F", "T", "people holding hands"),
 );
 
 $genero_1 = array(
