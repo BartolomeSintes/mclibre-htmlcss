@@ -37,9 +37,9 @@
     </div>
   </nav>
 
-  <p>Esta es la configuración de Visual Studio Code que se recomienda para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+  <p>Esta es la configuración de Visual Studio Code que se recomienda para seguir este curso.</p>
 
-  <p>Antes de configurar Visual Studio Code, se recomienda leer la lección <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html">Personalización de VSC</a> de los apuntes de Informática general, en la que se explica detalladamente cómo se personaliza Visual Studio Code.</p>
+  <p>Esta lección no detalla los pasos para configurar Visual Studio Code. En caso necesario, puede consultar la lección <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html">Personalización de VSC</a> de los apuntes de <a href="http://www.mclibre.org/consultar/informatica/index.html">Informática general</a>, en la que se explica detalladamente cómo se personaliza Visual Studio Code. En dichos apuntes también puede consultar lecciones dedicadas a Visual Studio Code, como <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc.html">Presentación general</a>, <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-instalacion.html">Instalación</a>, <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-uso.html">Uso</a> y otras, que le pueden ser de ayuda si no conoce Visual Studio Code.</p>
 
   <section id="temas">
     <h2>Tema de color recomendado para el curso de HTML y CSS</h2>
@@ -74,7 +74,7 @@
 
       <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
         <p class="captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="190">
+          <img src="../img/vscode/vsc-htmlcss-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
@@ -104,53 +104,98 @@
     <p>La preferencia propuesta relacionada con el <a href="#cierre-automatico">cierre automático de etiquetas</a> requiere la instalación de una extensión.</p>
 
     <section id="todas-preferencias">
-      <h3>Todas las preferencias</h3>
+      <h3>Preferencias globales (Usuario)</h3>
       <div class="codigo">
         <pre>
 <code class="language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
-  // Controla cómo debe representar el editor los espacios en blanco.
+  // Editor: Minimap enabled
+  // Controla si se muestra el minimapa.
+  "editor.minimap.enabled": false,
+  //
+  // Editor: Render Whitespace
+  // Controla la forma en que el editor debe representar los caracteres de espacio en blanco.
   "editor.renderWhitespace": "all",
   //
-  // Controla cómo se deben ajustar las líneas.
+  // Editor: Word Wrap
+  // Controla cómo deben ajustarse las líneas.
   "editor.wordWrap": "on",
   //
+  // Files: eol
   // Carácter predeterminado de final de línea.
   "files.eol": "\n",
   //
+  // Files: Trim Trailing Whitespace
   // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
   "files.trimTrailingWhitespace": true,
   //
+  // Git: Autofetch
+  // Si se habilita, se comprobarán automáticamente los commits del repositorio remoto.
+  "git.autofetch": true,
+  //
+  // HTML: Auto Closing Tags
   // Habilita o deshabilita el cierre automático de las etiquetas HTML.
   "html.autoClosingTags": false,
   //
+  // HTML: Format: End With Newline
   // Finalizar con una nueva línea.
   "html.format.endWithNewline": true,
   //
-  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante.
+  // HTML: Format Extra Liners
+  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. null equivale a "head, body, /html".
   "html.format.extraLiners": "body",
   //
+  // HTML: Format Wrap Line Length
   // Cantidad máxima de caracteres por línea (0 = deshabilitar).
   "html.format.wrapLineLength": 0,
   //
-  // Establecer los valores de configuración que se reemplazarán para el lenguaje [html].
-  // Sangrado de dos espacios
+  // Editor: Insert Spaces
+  // Insertar espacios al presionar "TAB".
+  // Editor: Tab Size
+  // El número de espacios a los que equivale una tabulación
   "[html]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
   },
   //
-  // Tema Light+ (default light)
-  "workbench.colorTheme": "Default Light+",
+  // Configuración de extensiones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
-  // Configuración de extensiones recomendadas
-  //
-  // Configuración de Close HTML/XML tag
-  // Tiene en cuenta las etiquetas vacías de HTML para no cerrarlas
+  // Extensión Close HTML/XML tag
+  // Close Tag: Ignore Tags
+  // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
   //
 }</code>
+</pre>
+      </div>
+
+      <h3>Preferencias de área de trabajo o carpeta (Área de trabajo)</h3>
+      <div class="codigo">
+        <pre>
+<code class="language-json">{
+  // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  //
+  // Workbench: Color Theme
+  // Tema de color
+  "workbench.colorTheme": "Default Light+",
+  //
+}</code>
+</pre>
+      </div>
+    </section>
+
+    <section id="mostrar-minimapa">
+      <h3>Mostrar minimapa</h3>
+
+      <p>Esta preferencia hace que VSC oculte el minimapa.</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Editor: Minimap enabled
+  // Controla si se muestra el minimapa.
+  "editor.minimap.enabled": false,
+  //</code>
 </pre>
       </div>
     </section>
@@ -162,7 +207,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Controla cómo debe representar el editor los espacios en blanco.
+<code class="language-json">  // Editor: Render Whitespace
+  // Controla la forma en que el editor debe representar los caracteres de espacio en blanco.
   "editor.renderWhitespace": "all",
   //</code>
 </pre>
@@ -176,7 +222,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Controla cómo se deben ajustar las líneas.
+<code class="language-json">  // Editor: Word Wrap
+  // Controla cómo deben ajustarse las líneas.
   "editor.wordWrap": "on",
   //</code>
 </pre>
@@ -188,11 +235,12 @@
 
       <p>Esta preferencia fuerza a VSC a utilizar el carácter LF para los saltos de líneas (habitual en GNU/Linux) y no los caracteres habituales en Windows (CR LF). Esta es la configuración más extendida en el ámbito del desarrollo web.</p>
 
-      <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows es uno de estos programas, por lo que este programa no se recomienda para editar los documentos creados en este curso.</p>
+      <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows 7 es uno de estos programas, por lo que no se recomienda editar los documentos creados en este curso con el Bloc de notas de Windows 7.</p>
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Carácter predeterminado de final de línea. Utilice \n para LF y \r\n para CRLF.
+<code class="language-json">  // Files: eol
+  // Carácter predeterminado de final de línea.
   "files.eol": "\n",
   //</code>
 </pre>
@@ -206,7 +254,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
+<code class="language-json">  // Files: Trim Trailing Whitespace
+  // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
   "files.trimTrailingWhitespace": true,
   //</code>
 </pre>
@@ -225,7 +274,8 @@
         <li>Deshabilite el cierre automático en el archivo de configuración de usuario o de área de trabajo:
           <div class="codigo">
             <pre>
-<code class="language-json">  // Habilita o deshabilita el cierre automático de las etiquetas HTML.
+<code class="language-json">  // HTML: Auto Closing Tags
+  // Habilita o deshabilita el cierre automático de las etiquetas HTML.
   "html.autoClosingTags": false,
   //</code>
 </pre>
@@ -245,7 +295,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Finalizar con una nueva línea.
+<code class="language-json">  // HTML: Format: End With Newline
+  // Finalizar con una nueva línea.
   "html.format.endWithNewline": true,
   //</code>
 </pre>
@@ -259,7 +310,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. "null" tiene como valores predeterminados "head, body, /html".
+<code class="language-json">  // HTML: Format Extra Liners
+  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. null equivale a "head, body, /html".
   "html.format.extraLiners": "body",
   //</code>
 </pre>
@@ -273,7 +325,8 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Cantidad máxima de caracteres por línea (0 = deshabilitar).
+<code class="language-json">  // HTML: Format Wrap Line Length
+  // Cantidad máxima de caracteres por línea (0 = deshabilitar).
   "html.format.wrapLineLength": 0,
   //</code>
 </pre>
@@ -293,17 +346,34 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Establecer los valores de configuración que se reemplazarán para el lenguaje [html].
-  // Sangrado de dos espacios
+<code class="language-json">  // Editor: Insert Spaces
+  // Insertar espacios al presionar "TAB".
+  // Editor: Tab Size
+  // El número de espacios a los que equivale una tabulación
   "[html]": {
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   //</code>
 </pre>
       </div>
     </section>
+
+  <section id="tema">
+    <h3>Tema de color</h3>
+
+    <p>Esta preferencia selecciona el tema de color. En estos apuntes del curso de HTML y CSS se recomienda guardarla en las preferencias del área de trabajo porque los apuntes de los cursos de Python y PHP se recomienda otro tema de color.</p>
+
+    <div class="codigo">
+      <pre>
+<code class="language-json">  // Workbench: Color Theme
+  // Tema de color
+  "workbench.colorTheme": "Default Light+",
+  //</code>
+</pre>
+    </div>
   </section>
+</section>
 
   <section id="extensiones">
     <h2>Extensiones recomendadas para el curso de HTML y CSS</h2>
@@ -369,8 +439,9 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Configuración de Close HTML/XML tag
-  // Tiene en cuenta las etiquetas vacías de HTML para no cerrarlas
+<code class="language-json">  // Extensión Close HTML/XML tag
+  // Close Tag: Ignore Tags
+  // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
   //</code>
 </pre>
@@ -605,7 +676,7 @@
         <li>Pulse el atajo de teclado. Por ejemplo, <span class="soft-atajo-teclado">Ctrl+Alt+f</span>, uno de los atajos de teclado recomendados para el curso de HTML y CSS.</li>
         <li>En el ejemplo de las capturas, la página abierta en Visual Studio Code se abriría en el navegador:
           <p class="captura">
-            <img src="../img/vscode/vsc-htmlcss-atajos-usar-2.png" alt="VSC. Utilizar tarea" width="1024" height="260">
+            <img src="../img/vscode/vsc-htmlcss-atajos-usar-2.png" alt="VSC. Utilizar tarea" width="1024" height="160">
           </p>
         </li>
       </ol>
@@ -634,8 +705,10 @@
       <li>A veces, parece que Visual Studio Code ha bloqueado los archivos (por ejemplo, si se intenta sustituir una imagen por otra). No pasa siempre, pero parece que está relacionado con una preferencia de git, que está comprobando si hay cambios y bloquea temporalmente los archivos. La preferencia es
         <div class="codigo">
           <pre>
-<code class="language-json">  // Si la búsqueda automática está habilitada
-  "git.autofetch": true</code>
+<code class="language-json">  // Git: Autofetch
+  // Si se habilita, se comprobarán automáticamente los commits del repositorio remoto.
+  "git.autofetch": true,
+  //</code>
 </pre>
         </div>
       </li>
@@ -643,7 +716,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de noviembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 15 de septiembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
