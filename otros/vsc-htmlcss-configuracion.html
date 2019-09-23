@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
-  <link rel="stylesheet" href="../varios/highlight-htmlcss.css">
-  <script src="../varios/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+  <link rel="stylesheet" href="../varios/prism-light.css">
+  <script src="../varios/prism-copy.js"></script>
+  <script src="../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -159,12 +157,15 @@
     "editor.tabSize": 2
   },
   //
+  //
   // Configuración de extensiones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
   // Extensión Close HTML/XML tag
-  // Close Tag: Ignore Tags
+  //
+  // Close HTML/XML Tag: Ignore Tags
   // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
+  //
   //
 }</code>
 </pre>
@@ -179,6 +180,7 @@
   // Workbench: Color Theme
   // Tema de color
   "workbench.colorTheme": "Default Light+",
+  //
   //
 }</code>
 </pre>
@@ -380,7 +382,7 @@
 
     <p>Para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/index.html">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> se aconseja instalar las extensiones Image Preview, Close HTML/XML tag, HTMLHint y CSScomb.</p>
 
-    <p>Estas extensiones, que se comentan a continuación, se pueden instalar de forma individual, o de forma conjunta mediante el mclibre.org HTML+CSS Extension Pack. Aunque instale el Extension Pack, lea los apartados correspondientes a cada extensión y la lección <a href="vsc-htmlcss-extensiones.html">Uso de extensiones</a>.</p>
+    <p>Estas extensiones, que se comentan a continuación, se pueden instalar una a una, pero también se pueden instalar de forma conjunta mediante el mclibre.org HTML+CSS Extension Pack. Aunque instale el Extension Pack, lea los apartados correspondientes a cada extensión y la lección <a href="vsc-htmlcss-extensiones.html">Uso de extensiones</a>.</p>
 
     <section id="mclibre-html-css">
       <h3>mclibre.org HTML+CSS Extension Pack: paquete de extensiones</h3>
@@ -587,7 +589,7 @@
     <p>Una vez definidas las tareas, se recomienda definir los atajos de teclado que ejecuten estas tareas, tal y como se comenta en el apartado sobre <a href="#atajos-teclado">Atajos de teclado recomendados</a>.</p>
 
     <section id="abrir-navegador">
-      <h3>Abrir páginas en el navegador</h3>
+      <h3>Abrir páginas en el navegador (como ficheros)</h3>
 
       <p>Las siguientes tareas permiten abrir en los navegadores Firefox y Chrome las páginas que se están editando en Visual Studio Code. Compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador:</p>
 
@@ -625,11 +627,13 @@
         "reveal": "never"
       },
       "problemMatcher": []
-      }
+    },
   ]
 }</code>
 </pre>
       </div>
+
+      <p>En las tareas, en los valores de "args" pueden utilizarse las variables que se comentan en la página <a href="https://code.visualstudio.com/docs/editor/variables-reference">Listado de variables</a> de la documentación oficial de Visual Studio Code.</p>
     </section>
   </section>
 
@@ -657,7 +661,7 @@
     "key": "ctrl+alt+c",
     "command": "workbench.action.tasks.runTask",
     "args": "Abrir en Chrome"
-  }
+  },
 ]</code>
 </pre>
     </div>
@@ -716,7 +720,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de septiembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de septiembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
