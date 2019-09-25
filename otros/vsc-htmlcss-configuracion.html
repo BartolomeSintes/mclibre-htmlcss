@@ -108,6 +108,10 @@
 <code class="language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
+  // Editor: Insert Spaces
+  // Insertar espacios al presionar "TAB"
+  "editor.insertSpaces": true,
+  //
   // Editor: Minimap enabled
   // Controla si se muestra el minimapa.
   "editor.minimap.enabled": false,
@@ -148,13 +152,16 @@
   // Cantidad máxima de caracteres por línea (0 = deshabilitar).
   "html.format.wrapLineLength": 0,
   //
-  // Editor: Insert Spaces
-  // Insertar espacios al presionar "TAB".
-  // Editor: Tab Size
-  // El número de espacios a los que equivale una tabulación
+  // HTML
+  // Establece los valores de configuración que se reemplazarán para el lenguaje HTML
   "[html]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+  },
+  //
+  // CSS
+  // Establece los valores de configuración que se reemplazarán para el lenguaje CSS
+  "[css]": {
+    "editor.tabSize": 4,
   },
   //
   //
@@ -187,195 +194,74 @@
       </div>
     </section>
 
-    <section id="mostrar-minimapa">
-      <h3>Mostrar minimapa</h3>
+    <hr class="corta">
 
-      <p>Esta preferencia hace que VSC oculte el minimapa.</p>
+    <p>Esta es la justificación de la elección de estas preferencias de configuración:</p>
+    <ul>
+      <li>"editor.insertSpaces": true,
+        <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
+      </li>
 
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Editor: Minimap enabled
-  // Controla si se muestra el minimapa.
-  "editor.minimap.enabled": false,
-  //</code>
-</pre>
-      </div>
-    </section>
+      <li>"editor.minimap.enabled": false
+        <p>Esta preferencia hace que VSC oculte el minimapa.</p>
+      </li>
 
-    <section id="mostrar-espacios">
-      <h3>Mostrar espacios en blanco</h3>
+      <li>"editor.renderWhitespace": "all"
+        <p>Esta preferencia hace que VSC muestre un punto en cada espacio en blanco. Es una ayuda visual para poder contar fácilmente el número de espacios en blanco.</p>
+      </li>
 
-      <p>Esta preferencia hace que VSC muestre un punto en cada espacio en blanco. Es una ayuda visual para poder contar fácilmente el número de espacios en blanco.</p>
+      <li>"editor.wordWrap": "on"
+        <p>Esta preferencia hace que VSC aproveche todo el ancho de pantalla para mostrar los documentos y no añada saltos de línea al formatear el documento.</p>
+      </li>
 
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Editor: Render Whitespace
-  // Controla la forma en que el editor debe representar los caracteres de espacio en blanco.
-  "editor.renderWhitespace": "all",
-  //</code>
-</pre>
-      </div>
-    </section>
+      <li>"files.eol": "\n"
+        <p>Esta preferencia fuerza a VSC a utilizar el carácter LF para los saltos de líneas (habitual en GNU/Linux) y no los caracteres habituales en Windows (CR LF). Esta es la configuración más extendida en el ámbito del desarrollo web.</p>
 
-    <section id="ajuste-linea">
-      <h3>Ajuste de línea</h3>
+        <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows 7 es uno de estos programas, por lo que no se recomienda editar los documentos creados en este curso con el Bloc de notas de Windows 7.</p>
+      </li>
 
-      <p>Esta preferencia hace que VSC aproveche todo el ancho de pantalla para mostrar los documentos y no añada saltos de línea al formatear el documento.</p>
+      <li>"files.trimTrailingWhitespace": true
+        <p>Esta preferencia hace que, al guardar un archivo, VSC borre los espacios en blanco situados al final de las líneas. Esos espacios son innecesarios y lo único que hacen es ocupar espacio.</p>
+      </li>
 
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Editor: Word Wrap
-  // Controla cómo deben ajustarse las líneas.
-  "editor.wordWrap": "on",
-  //</code>
-</pre>
-      </div>
-    </section>
+      <li>"git.autofetch": true
+        <p>A veces, parece que Visual Studio Code ha bloqueado los archivos (por ejemplo, si se intenta sustituir una imagen por otra). No pasa siempre, pero parece que está relacionado con una preferencia de git, que está comprobando si hay cambios y bloquea temporalmente los archivos.</p>
+      </li>
 
-    <section id="salto-linea">
-      <h3>Salto de línea</h3>
+      <li>"html.autoClosingTags": false
+        <p>Cuando se crea una página web desde cero, resulta conveniente que el editor cierre automáticamente las etiquetas, para no olvidarse de hacerlo. Al escribir una etiqueta, Visual Studio Code añade automáticamente la etiqueta de cierre después del cursor, de manera que lo que se escribe a continuación queda encerrado en el interior de la etiqueta.</p>
 
-      <p>Esta preferencia fuerza a VSC a utilizar el carácter LF para los saltos de líneas (habitual en GNU/Linux) y no los caracteres habituales en Windows (CR LF). Esta es la configuración más extendida en el ámbito del desarrollo web.</p>
+        <p>Pero para hacer los ejercicios propuestos en este curso, el cierre automático complica la realización de los ejercicios. En los ejercicios se proporciona siempre el texto de la página web, para ahorrar al alumno el trabajo de copiarlo. Hacer un ejercicio es añadir las etiquetas de apertura al principio de los fragmentos de texto y etiquetas de cierre al final. En esta situación, el cierre automático de las etiquetas es un inconveniente, ya que el cierre se crea al principio del fragmento de texto, no al final.</p>
 
-      <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows 7 es uno de estos programas, por lo que no se recomienda editar los documentos creados en este curso con el Bloc de notas de Windows 7.</p>
+        <p>Por ello, para hacer los ejercicios de este curso, en vez del cierre automático se propone la extensión <a href="#close-html-xml-tag">Close HTML/XML tag</a> que, mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>, cierra la última etiqueta abierta.</p>
+      </li>
 
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Files: eol
-  // Carácter predeterminado de final de línea.
-  "files.eol": "\n",
-  //</code>
-</pre>
-      </div>
-    </section>
+      <li> "html.format.endWithNewline": true
+        <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que el último carácter de un documento sea un único salto de línea (LF). Si se trata de documentos independientes (como una página web) no es algo imprescindible, pero si se trata de documentos que se pueden cargar uno detrás de otro para crear un único documento (como un programa PHP), resulta conveniente para evitar que la última línea de un documento se una a la primera del documento siguiente.</p>
 
-    <section id="espacios-finales">
-      <h3>Espacios al final de las líneas</h3>
+        <p>Las normas <a href="https://es.wikipedia.org/wiki/POSIX">POSIX</a> especifican que en los ficheros de texto, todas las líneas deben terminar con el carácter salto de línea.</p>
+      </li>
 
-      <p>Esta preferencia hace que, al guardar un archivo, VSC borre los espacios en blanco situados al final de las líneas. Esos espacios son innecesarios y lo único que hacen es ocupar espacio.</p>
+      <li>"html.format.extraLiners": "body"
+        <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que delante de determinadas etiquetas haya al menos una línea en blanco. Yo tengo las costumbre de dejar siempre una línea en blanco delante de <span class="html-eti">&lt;body&gt;</span>, pero no delante de <span class="html-eti">&lt;head&gt;</span> ni de <span class="html-eti">&lt;/html&gt;</span>.</p>
+      </li>
 
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Files: Trim Trailing Whitespace
-  // Si se habilita, se recortará el espacio final cuando se guarde un archivo.
-  "files.trimTrailingWhitespace": true,
-  //</code>
-</pre>
-      </div>
-    </section>
+      <li>"html.format.wrapLineLength": 0
+        <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que ninguna línea exceda el número de caracteres indicado y añada saltos de línea cuando sea necesario. Yo tengo la costumbre de mantener los párrafos de texto en una sola línea, aunque sea muy larga, para que al modificar el texto no se queden unas líneas más largas que otras. Para ello, esta preferencia tiene que tener el valor 0.</p>
 
-    <section id="cierre-automatico">
-      <h3>Cierre automático de etiquetas</h3>
+        <p>Referencia: <a href="https://code.visualstudio.com/updates/vMarch#_languages-html">Novedades VSC 1.0: Formateador HTML</a></p>
+      </li>
 
-      <p>Cuando se crea una página web desde cero, resulta conveniente que el editor cierre automáticamente las etiquetas, para no olvidarse de hacerlo. Al escribir una etiqueta, Visual Studio Code añade automáticamente la etiqueta de cierre después del cursor, de manera que lo que se escribe a continuación queda encerrado en el interior de la etiqueta.</p>
+      <li>"editor.tabSize": 2 / 4
+        <p>Como en una página web suele haber bastante anidamiento, en los ficheros .html se recomienda un sangrado de sólo 2 espacios. Pero una hoja de estilo no suele haber más que uno o dos niveles de anidamiento, por lo que el sangrado puede ser de 4 espacios.</p>
+      </li>
 
-      <p>Pero para hacer los ejercicios propuestos en este curso, el cierre automático complica la realización de los ejercicios. En los ejercicios se proporciona siempre el texto de la página web, para ahorrar al alumno el trabajo de copiarlo. Hacer un ejercicio es añadir las etiquetas de apertura al principio de los fragmentos de texto y etiquetas de cierre al final. En esta situación, el cierre automático de las etiquetas es un inconveniente, ya que el cierre se crea al principio del fragmento de texto, no al final.</p>
+      <li>"workbench.colorTheme": "Default Light+"
 
-      <p>Por ello, para hacer los ejercicios de este curso, en vez del cierre automático se propone la siguiente configuración:</p>
-      <ul>
-        <li>Deshabilite el cierre automático en el archivo de configuración de usuario o de área de trabajo:
-          <div class="codigo">
-            <pre>
-<code class="language-json">  // HTML: Auto Closing Tags
-  // Habilita o deshabilita el cierre automático de las etiquetas HTML.
-  "html.autoClosingTags": false,
-  //</code>
-</pre>
-          </div>
-        </li>
-        <li>Instale la extensión <a href="#close-html-xml-tag">Close HTML/XML tag</a> que se comenta en el apartado de Extensiones recomendadas.</li>
-      </ul>
-      <p>De esta manera podrá combinar el cierre automático, ya que al escribir una etiqueta de apertura Visual Studio Code le da la posibilidad de cerrar las etiquetas pulsando <span class="soft-atajo-teclado">Intro</span>, y el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span> que habilita la extensión Close HTML/XML tag.</p>
-    </section>
-
-    <section id="linea-final">
-      <h3>Añadir salto de línea en la línea final</h3>
-
-      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que el último carácter de un documento sea un único salto de línea (LF). Si se trata de documentos independientes (como una página web) no es algo imprescindible, pero si se trata de documentos que se pueden cargar uno detrás de otro para crear un único documento (como un programa PHP), resulta conveniente para evitar que la última línea de un documento se una a la primera del documento siguiente.</p>
-
-      <p>Las normas <a href="https://es.wikipedia.org/wiki/POSIX">POSIX</a> especifican que en los ficheros de texto, todas las líneas deben terminar con el carácter salto de línea.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // HTML: Format: End With Newline
-  // Finalizar con una nueva línea.
-  "html.format.endWithNewline": true,
-  //</code>
-</pre>
-      </div>
-    </section>
-
-    <section id="linea-delante">
-      <h3>Etiquetas con línea en blanco delante</h3>
-
-      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que delante de determinadas etiquetas haya al menos una línea en blanco. Yo tengo las costumbre de dejar siempre una línea en blanco delante de <span class="html-eti">&lt;body&gt;</span>, pero no delante de <span class="html-eti">&lt;head&gt;</span> ni de <span class="html-eti">&lt;/html&gt;</span>.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // HTML: Format Extra Liners
-  // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. null equivale a "head, body, /html".
-  "html.format.extraLiners": "body",
-  //</code>
-</pre>
-      </div>
-    </section>
-
-    <section id="longitud-linea">
-      <h3>Longitud de línea</h3>
-
-      <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que ninguna línea exceda el número de caracteres indicado y añada saltos de línea cuando sea necesario. Yo tengo la costumbre de mantener los párrafos de texto en una sola línea, aunque sea muy larga, para que al modificar el texto no se queden unas líneas más largas que otras. Para ello, esta preferencia tiene que tener el valor 0.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // HTML: Format Wrap Line Length
-  // Cantidad máxima de caracteres por línea (0 = deshabilitar).
-  "html.format.wrapLineLength": 0,
-  //</code>
-</pre>
-      </div>
-
-      <p>Referencia: <a href="https://code.visualstudio.com/updates/vMarch#_languages-html">Novedades VSC 1.0: Formateador HTML</a></p>
-    </section>
-
-    <section id="sangrado">
-      <h3>Sangrado: Tabuladores y tamaño del sangrado</h3>
-
-      <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
-
-      <p>Por otro lado, los tabuladores equivalían en principio a 8 espacios en blanco. Si sólo se necesita un nivel de sangrado, 8 espacios no es demasiado, pero si el documento necesita varios niveles de sangrado, ese valor es demasiado grande. Lo habitual es utilizar un sangrado de 4 espacios si se trata de código fuente de programas y de 2 si se trata de páginas web u hojas de estilo.</p>
-
-      <p>Esta configuración tiene una sintaxis distinta al resto porque es específica para html (páginas web y hojas de estilo). Es necesario reiniciar Visual Studio Code tras modificar esta configuración para que se aplique el tamaño del sangrado deseado en los nuevos ficheros.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Editor: Insert Spaces
-  // Insertar espacios al presionar "TAB".
-  // Editor: Tab Size
-  // El número de espacios a los que equivale una tabulación
-  "[html]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2
-  },
-  //</code>
-</pre>
-      </div>
-    </section>
-
-  <section id="tema">
-    <h3>Tema de color</h3>
-
-    <p>Esta preferencia selecciona el tema de color. En estos apuntes del curso de HTML y CSS se recomienda guardarla en las preferencias del área de trabajo porque los apuntes de los cursos de Python y PHP se recomienda otro tema de color.</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-json">  // Workbench: Color Theme
-  // Tema de color
-  "workbench.colorTheme": "Default Light+",
-  //</code>
-</pre>
-    </div>
+        <p>Esta preferencia selecciona el tema de color. En estos apuntes del curso de HTML y CSS se recomienda guardarla en las preferencias del área de trabajo porque los apuntes de los cursos de Python y PHP se recomienda otro tema de color.</p>
+      </li>
+    </ul>
   </section>
-</section>
 
   <section id="extensiones">
     <h2>Extensiones recomendadas para el curso de HTML y CSS</h2>
@@ -397,7 +283,60 @@
 
       <hr class="corta">
 
-      <p>Esta extensión instala de forma conjunta las cinco extensiones que se comentan a continuación, pero no las configura. Cada extensión debe configurarse manualmente.</p>
+      <p>Esta extensión instala de forma conjunta las seis extensiones que se comentan a continuación, pero no las configura. La configuración de las extensiones que necesitan ser configuradas se debe realizar manualmente.</p>
+    </section>
+
+    <section id="auto-rename-tag">
+      <h3>Auto Rename Tag: Renombra las etiquetas de apertura y cierre</h3>
+
+      <p><img src="../img/vscode/vsc-extension-auto-rename-tag-logo.png" alt="Logotipo Auto Rename Tag" height="128" class="izquierda"></p>
+
+      <p>Autor: Jun Han</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/formulahendry/vscode-auto-rename-tag">Auto Rename Tag</a></p>
+
+      <hr class="corta">
+
+      <p>Esta extensión facilita la edición de una página web. Cuando se modifica una etiqueta de apertura, modifica automáticamente la etiqueta de cierre correspondiente (y viceversa).</p>
+    </section>
+
+    <section id="close-html-xml-tag">
+      <h3>Close HTML/XML tag: Cierre de etiquetas</h3>
+
+      <p><img src="../img/vscode/vsc-extension-close-html-xhtml-tag-logo.png" alt="Logotipo de Close HTML/XML tag" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Compulim</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-closetag">Close HTML/XML tag</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/compulim/vscode-closetag">Close HTML/XML tag</a></p>
+
+      <hr class="corta">
+
+      <p>Al pulsar el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>, se añade automáticamente la etiqueta de cierre de la etiqueta abierta anterior.</p>
+
+      <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
+
+      <div class="codigo">
+        <pre>
+<code class="language-json">  // Extensión Close HTML/XML tag
+  //
+  // Close Tag: Ignore Tags
+  // Específica las etiquetas que serán ignoradas y no serán cerradas.
+  "closeTag.ignoreTags": "html",
+  //
+  //</code>
+</pre>
+      </div>
+
+      <hr class="corta">
+
+      <p><strong>Problemas detectados:</strong></p>
+      <ul>
+        <li>La etiqueta de cierre se añade aunque la etiqueta de cierre ya esté escrita en el documento. La extensión sólo se fija en lo que hay antes de la posición del cursor, no en lo que hay después.</li>
+      </ul>
     </section>
 
     <section id="image-preview">
@@ -419,42 +358,6 @@
         <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.</p>
 
       <p>En este curso, utilizaremos esta extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente.</p>
-
-    </section>
-
-    <section id="close-html-xml-tag">
-      <h3>Close HTML/XML tag: Cierre de etiquetas</h3>
-
-      <p><img src="../img/vscode/vsc-extension-close-html-xhtml-tag-logo.png" alt="Logotipo de Close HTML/XML tag" width="128" height="128" class="izquierda"></p>
-
-      <p>Autor: Compulim</p>
-
-      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=Compulim.compulim-vscode-closetag">Close HTML/XML tag</a></p>
-
-      <p>Repositorio GitHub: <a href="https://github.com/compulim/vscode-closetag">Close HTML/XML tag</a></p>
-
-      <hr class="corta">
-
-      <p>Al pulsar el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>, se añade automáticamente la etiqueta de cierre de la etiqueta abierta anterior.</p>
-
-      <p>El ejemplo siguiente muestra la configuración seguida en las hojas de estilo del curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">  // Extensión Close HTML/XML tag
-  // Close Tag: Ignore Tags
-  // Específica las etiquetas que serán ignoradas y no serán cerradas.
-  "closeTag.ignoreTags": "html",
-  //</code>
-</pre>
-      </div>
-
-      <hr class="corta">
-
-      <p><strong>Problemas detectados:</strong></p>
-      <ul>
-        <li>La etiqueta de cierre se añade aunque la etiqueta de cierre ya esté escrita en el documento. La extensión sólo se fija en lo que hay antes de la posición del cursor, no en lo que hay después.</li>
-      </ul>
     </section>
 
     <section id="tag-inserter">
@@ -706,21 +609,11 @@
       <li><a href="https://code.visualstudio.com/updates/vMarch#_utf8-bom-support">UTF-8 con o sin BOM</a></li>
       <li><a href="https://editorconfig.org/">EditorConfig</a></li>
       <li><a href="https://code.visualstudio.com/docs/languages/html#_format-html">No formatear algunas etiquetas</a></li>
-      <li>A veces, parece que Visual Studio Code ha bloqueado los archivos (por ejemplo, si se intenta sustituir una imagen por otra). No pasa siempre, pero parece que está relacionado con una preferencia de git, que está comprobando si hay cambios y bloquea temporalmente los archivos. La preferencia es
-        <div class="codigo">
-          <pre>
-<code class="language-json">  // Git: Autofetch
-  // Si se habilita, se comprobarán automáticamente los commits del repositorio remoto.
-  "git.autofetch": true,
-  //</code>
-</pre>
-        </div>
-      </li>
     </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de septiembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 25 de septiembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
