@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>HTML 5.2. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>HTML. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
 </head>
 
 <body>
-  <h1>HTML 5</h1>
+  <h1>Los elementos del HTML</h1>
 
   <nav>
     <p>
@@ -18,77 +18,133 @@
     </p>
 
     <div class="toc">
-      <h2>HTML 5</h2>
+      <h2>Elementos del HTML</h2>
     </div>
   </nav>
 
-  <section id="normas">
-    <h2>Normas y recomendaciones actuales</h2>
+  <p>Los elementos del HTML están definidos en la norma HTML living standard, del WHATWG. Esta norma se puede consultar en la web en su <a href="https://html.spec.whatwg.org/multipage/">versión paginada</a> o en su <a href="https://html.spec.whatwg.org/">versión de una sola página</a>.</p>
 
-    <ul>
-      <li><a href="https://html.spec.whatwg.org/multipage/">HTML living standard</a>, del WHATWG -
-        <a href="https://html.spec.whatwg.org/">versión de una sola página</a></li>
-      <li>HTML 5. 2 (publicada el 14/12/2017):
-        <a href="https://www.w3.org/TR/2017/REC-html52-20171214/">Recomendación HTML 5.2</a> -
-        <a href="https://www.w3.org/TR/2017/REC-html52-20171214/single-page.html">versión de una sola página</a> -
-        <a href="http://w3c.github.io/test-results/html52/implementation-report.html">HTML 5.2 Implementation report</a>
-      </li>
-      <li>HTML 5. 3 (borradores):
-        <a href="https://www.w3.org/TR/html53/">Último borrador publicado</a>
-        (<a href="https://www.w3.org/TR/html53/single-page.html">versión de una sola página</a>)
-      </li>
-    </ul>
+  <p>A cada elemento corresponde una etiqueta (también llamadas marcas), por lo que estos tres términos (elementos, etiqueta y marca) son intercambiables.</p>
 
-    <h3>Normas y recomendaciones anteriores</h3>
+  <p>En la norma, las diferentes etiquetas están agrupadas en las siguientes categorías:</p>
 
-    <ul>
-      <li>HTML 5 (publicada el 28/10/2014, retirada en marzo de 2018):
-        <a href="https://www.w3.org/TR/2018/SPSD-html5-20180327/">Recomendación HTML 5</a> -
-        <a href="https://www.w3.org/TR/2014/REC-html5-20141028/single-page.html">versión de una sola página</a>
-      </li>
-      <li>Nota del W3C <a href="https://www.w3.org/TR/2014/NOTE-html5-diff-20141209/">Diferencias entre HTML 5 y HTML4 (09/12/2014)</a></li>
-      <li>HTML 5. 1 (publicada el 01/11/2016):
-        <a href="https://www.w3.org/TR/2016/REC-html51-20161101/">Recomendación HTML 5.1</a> -
-        <a href="https://www.w3.org/TR/2016/REC-html51-20161101/single-page.html">versión de una sola página</a> -
-        <a href="http://w3c.github.io/test-results/html51/implementation-report.html">HTML 5.1 Implementation report</a>
-      </li>
-      <li>HTML 5. 1 2º edición (publicada el 03/10/2017):
-        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/">Recomendación HTML 5.1 2º ed</a> -
-        <a href="https://www.w3.org/TR/2017/REC-html51-20171003/single-page.html">versión de una sola página</a>
-      </li>
-    </ul>
-  </section>
+  <ul>
+    <li>Elemento raíz
+      <p>El elemento raíz de una página web es el elemento <span class="html-eti">&lt;html&gt;</span>, que abarca todo el documento excepto la declaración de tipo de documento inicial.</p>
+      <p>El elemento raíz contiene dos elementos: la parte no visible de la página (<span class="html-eti">&lt;head&gt;</span>) y la parte visible (<span class="html-eti">&lt;body&gt;)</span></p>
+    </li>
 
-  <section id="elementos">
-    <h2>Elementos de HTML 5</h2>
+    <li>Metadatos
+      <p>El elemento <span class="html-eti">&lt;head&gt;</span> contiene información de carácter general (metadatos) que no se muestra en la ventana del navegador. Esta información se recoge en los elementos <span class="html-eti">&lt;title&gt;</span>, <span class="html-eti">&lt;base&gt;</span>, <span class="html-eti">&lt;link&gt;</span>, <span class="html-eti">&lt;meta&gt;</span> y <span class="html-eti">&lt;style&gt;</span>.</p>
+    </li>
 
-    <p class="incompleto">Esta página está por escribir</p>
+    <li>Secciones
+      <p>Las secciones son las partes temáticas en las que se puede dividir el contenido de una página web.</p>
+      <p>La sección más importante es <span class="html-eti">&lt;body&gt;</span> que abarca todo el contenido de la página web que se visualiza en el navegador. Los otros tipos de secciones son
+        <span class="html-eti">&lt;header&gt;</span>,
+        <span class="html-eti">&lt;nav&gt;</span>,
+        <span class="html-eti">&lt;section&gt;</span>,
+        <span class="html-eti">&lt;article&gt;</span>,
+        <span class="html-eti">&lt;h1&gt; ...&lt;h6&gt;</span>,
+        <span class="html-eti">&lt;aside&gt;</span>,
+        <span class="html-eti">&lt;footer&gt;</span> y
+        <span class="html-eti">&lt;address&gt;</span>.
+      </p>
+    </li>
 
-    <h3>Elemento raíz</h3>
+    <li>Bloques de contenido
+      <p>Las etiquetas de bloque permiten definir bloques de contenido coherente, formado por texto e imágenes. Visualmente, cada bloque se suele mostrar separado del resto de bloques.</p>
+      <p>El bloque de contenido más simple es el párrafo (etiqueta <span class="html-eti">&lt;p&gt;</span>), pero existen otros tipos como
+        <span class="html-eti">&lt;hr&gt;</span>,
+        <span class="html-eti">&lt;pre&gt;</span>,
+        <span class="html-eti">&lt;blockquote&gt;</span>,
+        <span class="html-eti">&lt;figure&gt;</span>,
+        <span class="html-eti">&lt;figcaption&gt;</span>,
+        <span class="html-eti">&lt;div&gt;</span> y
+        <span class="html-eti">&lt;main&gt;</span>,
+        además de los diferentes tipos de lista <span class="html-eti">&lt;ol&gt;</span>, <span class="html-eti">&lt;ul&gt;</span> y <span class="html-eti">&lt;dl&gt;</span> (y sus componentes <span class="html-eti">&lt;li&gt;</span>, , <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span>).
+      </p>
+    </li>
 
-    <h3>Metadatos</h3>
+    <li>Texto en línea
+      <p>Las etiquetas de texto en línea son las más numerosas y se emplean para identificar fragmentos de texto que tienen un significado especial. Normalmente, los elementos de texto en línea se encuentran dentro de elementos de bloque, modificaciones o tablas.</p>
 
-    <h3>Secciones</h3>
+      <p>Las etiquetas de texto en línea más habituales son <span class="html-eti">&lt;br&gt;</span>, <span class="html-eti">&lt;span&gt;</span>, <span class="html-eti">&lt;em&gt;</span> y <span class="html-eti">&lt;strong&gt;</span>, así como la etiqueta de enlace <span class="html-eti">&lt;a&gt;</span>.</p>
 
-    <h3>Bloques de contenido</h3>
+      <p>Otras etiquetas que se utilizan menos son <span class="html-eti">&lt;small&gt;</span>, <span class="html-eti">&lt;s&gt;</span>, <span class="html-eti">&lt;cite&gt;</span>, <span class="html-eti">&lt;q&gt;</span>, <span class="html-eti">&lt;dfn&gt;</span>, <span class="html-eti">&lt;abbr&gt;</span>, <span class="html-eti">&lt;time&gt;</span>, <span class="html-eti">&lt;kbd&gt;</span>, <span class="html-eti">&lt;sub&gt;</span>, <span class="html-eti">&lt;sup&gt;</span>, <span class="html-eti">&lt;i&gt;</span>, <span class="html-eti">&lt;b&gt;</span> y <span class="html-eti">&lt;mark&gt;</span>.</p>
 
-    <h3>Texto en línea</h3>
+      <p>Las etiquetas de texto en línea utilizadas más raramente son <span class="html-eti">&lt;data&gt;</span>, <span class="html-eti">&lt;code&gt;</span>, <span class="html-eti">&lt;var&gt;</span>, <span class="html-eti">&lt;samp&gt;</span>, <span class="html-eti">&lt;u&gt;</span>, <span class="html-eti">&lt;ruby&gt;</span>, <span class="html-eti">&lt;rb&gt;</span>, <span class="html-eti">&lt;rt&gt;</span>, <span class="html-eti">&lt;rtc&gt;</span>, <span class="html-eti">&lt;rp&gt;</span>, <span class="html-eti">&lt;bdi&gt;</span>, <span class="html-eti">&lt;bdo&gt;</span> y <span class="html-eti">&lt;wbr&gt;</span>.</p>
+    </li>
 
-    <h3>Modificaciones</h3>
+    <li>Modificaciones
+      <p>Esta categoría incluye únicamente dos etiquetas, <span class="html-eti">&lt;del&gt;</span> y <span class="html-eti">&lt;ins&gt;</span>, pensadas para identificar las modificaciones que se han realizado en un texto.</p>
+    </li>
 
-    <h3>Contenido incrustado</h3>
+    <li>Contenido incrustado
+      <p>Una página web es un docuemnto de texto, pero puede contener elementos "incrustados" como imágenes, vídeo, audio, etc.</p>
 
-    <h3>Tablas</h3>
+      <p>La principal etiqueta es la etiqueta <span class="html-eti">&lt;img&gt;</span>, que permite incluir imágenes, pero existen etiquetas para otros tipos de formatos:
+        <span class="html-eti">&lt;picture&gt;</span>,
+        <span class="html-eti">&lt;source&gt;</span>,
+        <span class="html-eti">&lt;iframe&gt;</span>,
+        <span class="html-eti">&lt;embed&gt;</span>,
+        <span class="html-eti">&lt;object&gt;</span>,
+        <span class="html-eti">&lt;param&gt;</span>,
+        <span class="html-eti">&lt;video&gt;</span>,
+        <span class="html-eti">&lt;audio&gt;</span>,
+        <span class="html-eti">&lt;track&gt;</span>,
+        <span class="html-eti">&lt;map&gt;</span> y
+        <span class="html-eti">&lt;area&gt;</span>.
+      </p>
+    </li>
 
-    <h3>Formularios</h3>
+    <li>Tablas
+      <p>Una página web puede mostrar información en formato de tabla, con filas y columnas.</p>
 
-    <h3>Scripts</h3>
+      <p>Las etiquetas que permiten definir las tablas son:
+        <span class="html-eti">&lt;table&gt;</span>,
+        <span class="html-eti">&lt;td&gt;</span>,
+        <span class="html-eti">&lt;th&gt;</span>
+        <span class="html-eti">&lt;tr&gt;</span>
+        <span class="html-eti">&lt;thead&gt;</span>,
+        <span class="html-eti">&lt;tbody&gt;</span>
+        <span class="html-eti">&lt;tfoot&gt;</span>,
+        <span class="html-eti">&lt;caption&gt;</span>,
+        <span class="html-eti">&lt;col&gt;</span> y
+        <span class="html-eti">&lt;colspan&gt;</span>.</p>
+    </li>
 
-    <h3>Otros</h3>
-  </section>
+    <li>Formularios
+      <p>Una página web puede contener formularios, que permiten al usuario proporcionar información. Normalmente dicha información se envía a un servidor para ser procesada por un programa, aunque también puede ser procesada en el navegador mediante un programa escrito en el lenguaje JavaScript.</p>
+
+      <p>Las etiquetas relacionadas con formularios son:
+        <span class="html-eti">&lt;form&gt;</span>,
+        <span class="html-eti">&lt;fieldset&gt;</span>,
+        <span class="html-eti">&lt;label&gt;</span>,
+        <span class="html-eti">&lt;input&gt;</span>,
+        <span class="html-eti">&lt;button&gt;</span>,
+        <span class="html-eti">&lt;textarea&gt;</span> y
+        <span class="html-eti">&lt;select&gt;</span>.
+      </p>
+    </li>
+
+    <li>Elementos interactivos
+      <p>Los elementos HTML son normalmente elementos fijos y su posible interactividad se consigue mediante JavaScript, pero existen un par de elementos que permiten cierta interactividad (muy limitada) sin necesidad de JavaScript: <span class="html-eti">&lt;details&gt;</span>, <span class="html-eti">&lt;summary&gt;</span> y <span class="html-eti">&lt;dialog&gt;</span>.</p>
+    </li>
+
+    <li>Scripts
+      <p>Los navegadores son capaces de ejecutar programas escritos en el lenguaje de programación JavaScript. Estos programas se suelen denominar <i>scripts</i>. Varias etiquetas permiten integrar estos programas en una página web:
+        <span class="html-eti">&lt;script&gt;</span>,
+        <span class="html-eti">&lt;noscript&gt;</span>,
+        <span class="html-eti">&lt;template&gt;</span>,
+        <span class="html-eti">&lt;slot&gt;</span> y
+        <span class="html-eti">&lt;canvas&gt;</span>.
+      </p>
+    </li>
+  </ul>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de diciembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
