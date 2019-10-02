@@ -46,7 +46,7 @@
 
     <p>En las capturas de los apuntes se empleará el Tema Light+ (default light).</p>
 
-    <p class="captura">
+    <p class="mcl-captura">
       <img src="../img/vscode/vsc-tema-light.png" alt="VSC. Tema Light+ predeterminado" width="1024" height="576">
     </p>
   </section>
@@ -59,31 +59,31 @@
     <ol>
       <li>Cree la carpeta Documentos &gt; LMSGI &gt; HTML:
 
-        <p class="captura">
+        <p class="mcl-captura">
           <img src="../img/vscode/vsc-htmlcss-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="170">
         </p>
       </li>
 
       <li>Cree las carpeta Documentos &gt; LMSGI &gt; HTML &gt; ejercicios y Documentos &gt; LMSGI &gt; HTML &gt; pruebas:
-        <p class="captura">
+        <p class="mcl-captura">
           <img src="../img/vscode/vsc-htmlcss-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
       <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
-        <p class="captura">
+        <p class="mcl-captura">
           <img src="../img/vscode/vsc-htmlcss-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
       <li>Elija la carpeta Documentos &gt; LMSGI &gt; HTML:
-        <p class="captura">
+        <p class="mcl-captura">
           <img src="../img/vscode/vsc-htmlcss-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="576">
         </p>
       </li>
 
       <li>Haga clic en el icono Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
-        <p class="captura">
+        <p class="mcl-captura">
           <img src="../img/vscode/vsc-htmlcss-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="210">
         </p>
       </li>
@@ -545,26 +545,48 @@
 
     <p>Estos son los atajos de teclado que se aconseja definir para seguir el curso de <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
 
-    <p>Estos dos atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code.</p>
+    <p>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</p>
 
-    <p>Antes de definir estos atajos de teclado es necesario crear las tareas correspondientes. Las tareas recomendadas para el curso de HTML y CSS se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</p>
+    <p>Los siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet).</p>
 
     <p>Este es el contenido del archivo <i>keybindings.json</i>:</p>
 
     <div class="codigo">
       <pre>
-<code class="language-json">// Atajos de teclado recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
-[
-  {
-    "key": "ctrl+alt+f",
-    "command": "workbench.action.tasks.runTask",
-    "args": "Abrir en Firefox"
-  },
-  {
-    "key": "ctrl+alt+c",
-    "command": "workbench.action.tasks.runTask",
-    "args": "Abrir en Chrome"
-  },
+<code class="language-json">[
+    // Atajos de teclado recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+    {
+        // Tarea: Abrir en Firefox
+        "key": "ctrl+alt+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Abrir en Firefox"
+    },
+    {
+        // Tarea: Abrir en Chrome
+        "key": "ctrl+alt+c",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Abrir en Chrome"
+    },
+    {
+        // Emmet: Borrar etiqueta
+        "key": "ctrl+alt+e ctrl+alt+b",
+        "command": "editor.emmet.action.removeTag"
+    },
+    {
+        // Emmet: Insertar tamaño imagen
+        "key": "ctrl+alt+e ctrl+alt+t",
+        "command": "editor.emmet.action.updateImageSize"
+    },
+    {
+        // Emmet: Seleccionar elemento superior
+        "key": "ctrl+alt+e ctrl+alt+s",
+        "command": "editor.emmet.action.balanceOut"
+    },
+    {
+        // Emmet: Seleccionar elemento inferior
+        "key": "ctrl+alt+e ctrl+alt+i",
+        "command": "editor.emmet.action.balanceIn"
+    },
 ]</code>
 </pre>
     </div>
@@ -576,13 +598,13 @@
 
       <ol>
         <li>Abra en una pestaña la página web que quiera abrir en un navegador:
-          <p class="captura">
+          <p class="mcl-captura">
             <img src="../img/vscode/vsc-htmlcss-atajos-usar-1.png" alt="VSC. Utilizar tarea" width="1024" height="380">
           </p>
         </li>
         <li>Pulse el atajo de teclado. Por ejemplo, <span class="soft-atajo-teclado">Ctrl+Alt+f</span>, uno de los atajos de teclado recomendados para el curso de HTML y CSS.</li>
         <li>En el ejemplo de las capturas, la página abierta en Visual Studio Code se abriría en el navegador:
-          <p class="captura">
+          <p class="mcl-captura">
             <img src="../img/vscode/vsc-htmlcss-atajos-usar-2.png" alt="VSC. Utilizar tarea" width="1024" height="160">
           </p>
         </li>
@@ -596,7 +618,6 @@
     <ul>
       <li>Extensiones
         <ul>
-          <li>Renombrar etiquetas: <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag en Marketplace</a></li>
           <li>Ordenar atributos: <a href="https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-attrs-sorter">Sorting HTML and Jade attributes en Marketplace</a></li>
           <li><a href="https://github.com/alefragnani/vscode-project-manager">Project Manager</a></li>
           <li>Brackets Surround para VSC: <a href="https://github.com/Microsoft/vscode/issues/1307">VSC issue 1307</a></li>
@@ -613,7 +634,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 25 de septiembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
