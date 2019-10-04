@@ -99,7 +99,7 @@
 
     <p>Algunas preferencias son importantes porque corresponden a prácticas extendidas en el ámbito del desarrollo web y otras son preferencias personales que el alumno puede seguir o no.</p>
 
-    <p>La preferencia propuesta relacionada con el <a href="#cierre-automatico">cierre automático de etiquetas</a> requiere la instalación de una extensión.</p>
+    <p>Las preferencias propuestas relacionadas con extensiones requieren la instalación de las extensiones correspondientes.</p>
 
     <section id="todas-preferencias">
       <h3>Preferencias globales (Usuario)</h3>
@@ -165,13 +165,42 @@
   },
   //
   //
-  // Configuración de extensiones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  // Configuraciones de extensiones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
-  // Extensión Close HTML/XML tag
+  // Extension Close HTML/XML Tag
   //
-  // Close HTML/XML Tag: Ignore Tags
+  // CloseTag : IgnoreTags
   // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
+  //
+  //
+  // Extensión CSScomb
+  //
+  // CSScomb : Preset
+  // Opciones de configuración de CSScomb
+  "csscomb.preset": {
+    "always-semicolon": true,              // Añade punto y coma (;) tras las propiedades
+    "color-case": "lower",                 // Escribe los códigos de color en minúsculas
+    "block-indent": "    ",                // Sangrado de cuatro espacios
+    "element-case": "lower",               // Escribe los selectores en minúsculas
+    "eof-newline": true,                   // Añade un espacio al final del archivo
+    "leading-zero": true,                  // Añade un cero antes de un punto decimal
+    "quotes": "double",                    // Añade comillas dobles
+    "space-before-colon": "",              // Elimina los espacios en blanco antes de los dos puntos (:)
+    "space-after-colon": " ",              // Añade un espacio en blanco después de los dos puntos (:)
+    "space-before-combinator": " ",        // Añade un espacio en blanco antes de un combinador de selectores
+    "space-after-combinator": " ",         // Añade un espacio en blanco después de un combinador de selectores
+    "space-between-declarations": "\n",    // Cada propiedad ocupa una línea
+    "space-before-opening-brace": " ",     // El selector y la llave de apertura ({) están separados por un espacio
+    "space-after-opening-brace": "\n",     // Tras la llave de apertura ({) hay un salto de línea
+    "space-after-selector-delimiter": " ", // Las comas (,) en los selectores están seguidas por un espacio en blanco
+    "space-before-selector-delimiter": "", // Las comas (,) en los selectores no están precedidas de un espacio en blanco
+    "space-before-closing-brace": "\n",    // Antes de la llave de cierre (}) hay un salto de línea
+    "strip-spaces": true,                  // Se eliminan los espacios en blanco situados al final de las líneas
+    "tab-size": true,                      // El tabulador se convierte a espacios en blanco (el número de espacios definido para el sangrado)
+    "unitless-zero": true,                 // Elimina las unidades de los valores nulos (0)
+    "vendor-prefix-align": true            // Alinea las propiedades específicas de cada navegador para facilitar la lectura
+  },
   //
   //
 }</code>
@@ -357,7 +386,7 @@
       <p>Al situar el cursor sobre la ruta de una imagen, se muestra un cuadro con una miniatura de la imagen y el tamaño de la imagen. Además, haciendo
         <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.</p>
 
-      <p>En este curso, utilizaremos esta extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente.</p>
+      <p><strong>Nota</strong>: En cursos anteriores recomendaba este extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente. Pero en septiembre de 2019 añadí a la lista de atajos recomendados un atajo de teclado que permite crear de forma inmediata los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>. Sitúe el cursor en el interior de la etiqueta <span class="html-eti">img</span> y escriba el atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+t</span> y automáticamente se añadirán los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> con los valores de la imagen. La extensión Image Preview sigue siendo útil para ver una miniatura de la imagen, pero ya no es necesaria para indicar los tamaños.</p>
     </section>
 
     <section id="tag-inserter">
@@ -399,7 +428,7 @@
 
       <hr class="corta">
 
-      <p>La extensión HTMLHint permite que Visual Studio Code utilice el analizador de código estático <a href="https://htmlhint.io/">HTMLHint</a>.</p>
+      <p>La extensión HTMLHint permite que Visual Studio Code utilice el analizador de código estático <a href="https://htmlhint.com/">HTMLHint</a>.</p>
 
       <p>El uso de esta extensión se comenta en la lección <a href="vsc-htmlcss-validacion.html#validacion-html">Validación de HTML y CSS en Visual Studio Code</a>.</p>
 
@@ -442,9 +471,9 @@
 
       <hr class="corta">
 
-      <p>La extensión CSScomb permite que Visual Studio Code utilice el formateador de código CSS <a href="http://csscomb.com/">CSScomb</a>.</p>
+      <p>La extensión CSScomb permite que Visual Studio Code utilice el formateador de código CSS <a href="http://csscomb.com/">CSScomb</a> [<a href="https://github.com/csscomb/csscomb.js">Repositorio GitHub</a>.</p>
 
-      <p>Para que CSScomb formatee el código de la hoja de estilo, hay que pulsar la tecla <span class="soft-atajo-teclado">F1</span> y escribir el comando <span class="soft-atajo-teclado">csscomb</span>.</p>
+      <p>Para que CSScomb formatee el código de la hoja de estilo, hay que pulsar la tecla <span class="soft-atajo-teclado">F1</span> y escribir el comando <span class="soft-atajo-teclado">csscomb</span>. Se puede también crear un atajo de teclado para ejecutar la orden (en los <a href="#atajos-teclado">atajos de teclado recomendados</a> se define el atajo <span class="soft-atajo-teclado">Alt+Máy+c Alt+Máy+f</span>).</p>
 
       <hr class="corta">
 
@@ -454,30 +483,34 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">  // Configuración de CSScomb
+<code class="language-json">  // Extensión CSScomb
+  //
+  // CSScomb : Preset
+  // Opciones de configuración de CSScomb
   "csscomb.preset": {
-    "always-semicolon": true,               // Añade punto y coma (;) tras las propiedades
-    "color-case": "lower",                  // Escribe los códigos de color en minúsculas
-    "block-indent": "  ",                   // Sangrado de dos espacios
-    "element-case": "lower",                // Escribe los selectores en minúsculas
-    "eof-newline": true,                    // Añade un espacio al final del archivo
-    "leading-zero": true,                   // Añade un cero antes de un punto decimal
-    "quotes": "double",                     // Añade comillas dobles
-    "space-before-colon": "",               // Elimina los espacios en blanco antes de los dos puntos (:)
-    "space-after-colon": " ",               // Añade un espacio en blanco después de los dos puntos (:)
-    "space-before-combinator": " ",         // Añade un espacio en blanco antes de un combinador de selectores
-    "space-after-combinator": " ",          // Añade un espacio en blanco después de un combinador de selectores
-    "space-between-declarations": "\n",     // Cada propiedad ocupa un línea
-    "space-before-opening-brace": " ",      // El selector y la llave de apertura ({) están separados por un espacio
-    "space-after-opening-brace": "\n",      // Tras la llave de apertura ({) hay un salto de línea
-    "space-after-selector-delimiter": " ",  // Las comas (,) en los selectores están seguidas por un espacio en blanco
-    "space-before-selector-delimiter": "",  // Las comas (,) en los selectores no están precedidas de un espacio en blanco
-    "space-before-closing-brace": "\n",     // Antes de la llave de cierre (}) hay un salto de línea
-    "strip-spaces": true,                   // Se eliminan los espacios en blanco situados al final de las líneas
-    "tab-size": true,                       // El tabulador se convierte a espacios en blanco (el número de espacios definido para el sangrado)
-    "unitless-zero": true,                  // Elimina las unidades de los valores nulos (0)
-    "vendor-prefix-align": true             // Alinea las propiedades específicas de cada navegador para facilitar la lectura
+    "always-semicolon": true,              // Añade punto y coma (;) tras las propiedades
+    "color-case": "lower",                 // Escribe los códigos de color en minúsculas
+    "block-indent": "    ",                // Sangrado de cuatro espacios
+    "element-case": "lower",               // Escribe los selectores en minúsculas
+    "eof-newline": true,                   // Añade un espacio al final del archivo
+    "leading-zero": true,                  // Añade un cero antes de un punto decimal
+    "quotes": "double",                    // Añade comillas dobles
+    "space-before-colon": "",              // Elimina los espacios en blanco antes de los dos puntos (:)
+    "space-after-colon": " ",              // Añade un espacio en blanco después de los dos puntos (:)
+    "space-before-combinator": " ",        // Añade un espacio en blanco antes de un combinador de selectores
+    "space-after-combinator": " ",         // Añade un espacio en blanco después de un combinador de selectores
+    "space-between-declarations": "\n",    // Cada propiedad ocupa una línea
+    "space-before-opening-brace": " ",     // El selector y la llave de apertura ({) están separados por un espacio
+    "space-after-opening-brace": "\n",     // Tras la llave de apertura ({) hay un salto de línea
+    "space-after-selector-delimiter": " ", // Las comas (,) en los selectores están seguidas por un espacio en blanco
+    "space-before-selector-delimiter": "", // Las comas (,) en los selectores no están precedidas de un espacio en blanco
+    "space-before-closing-brace": "\n",    // Antes de la llave de cierre (}) hay un salto de línea
+    "strip-spaces": true,                  // Se eliminan los espacios en blanco situados al final de las líneas
+    "tab-size": true,                      // El tabulador se convierte a espacios en blanco (el número de espacios definido para el sangrado)
+    "unitless-zero": true,                 // Elimina las unidades de los valores nulos (0)
+    "vendor-prefix-align": true            // Alinea las propiedades específicas de cada navegador para facilitar la lectura
   },
+  //
   //</code>
 </pre>
       </div>
@@ -547,6 +580,8 @@
 
     <p>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</p>
 
+    <p>El tercer atajo ejecuta CSScomb, extensión que formatea hojas de estilo CSS. Lógicamente, este atajo sólo debe utilizarse cuando se edita una hoja de estilo.</p>
+
     <p>Los siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet).</p>
 
     <p>Este es el contenido del archivo <i>keybindings.json</i>:</p>
@@ -566,6 +601,11 @@
         "key": "ctrl+alt+c",
         "command": "workbench.action.tasks.runTask",
         "args": "Abrir en Chrome"
+    },
+    {
+        // Extensión CSScomb: Ejecutar
+        "key": "alt+shift+c alt+shift+f",
+        "command": "csscomb.execute"
     },
     {
         // Emmet: Borrar etiqueta
@@ -634,7 +674,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 3 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
