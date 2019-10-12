@@ -81,63 +81,92 @@
 
     <p>Las páginas web se pueden validar en Visual Studio Code mediante la extensión <a href="vsc-htmlcss-configuracion.html#htmlhint">HTMLHint</a>. Esta extensión instala y utiliza el analizador de código estático <a href="https://htmlhint.com/">HTMLHint</a>. Este validador no detecta todos los posibles errores, pero sí los más importantes.</p>
 
-    <p>Al instalar la extensión HTMLHint, el validador de páginas web está activado de forma predeterminada. En el archivo de <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">Preferencias de configuración</a> se encuentran las preferencias de esta extensión:</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-json">// Control whether htmlhint is enabled for HTML files or not.
-"htmlhint.enable": true,
-
-// The associated document types to be linted.
-"htmlhint.documentSelector": [
-  "html",
-  "htm"
-],
-
-// The htmlhint options object to provide args to the htmlhint command.
-"htmlhint.options": {},</code>
-</pre>
-    </div>
-
     <p>Los tipos de errores detectados de forma predeterminada por la extensión HTMLHint son los siguientes:</p>
     <ul>
-      <li>"tagname-lowercase": los nombres de las etiquetas están escritas en minúsculas</li>
-      <li>"attr-lowercase": los nombres de los atributos están escritos en minúsculas. Se puede indicar una lista de atributos que contienen mayúsculas (por ejemplo, algunos atributos de las etiquetas SVG), escribiéndola entre corchetes</li>
-      <li>"attr-value-double-quotes": los valores de los atributos están escritos entre comillas</li>
-      <li>"doctype-first": el documento contiene el preámbulo DOCTYPE</li>
-      <li>"tag-pair": las etiquetas están emparejadas correctamente</li>
-      <li>"spec-char-escape": los caracteres especiales están escritos como entidades de carácter</li>
-      <li>"id-unique": los atributos <span class="html-atri">id</span> no están repetidos</li>
-      <li>"src-not-empty": el documento no está vacío</li>
-      <li>"attr-no-duplication": los atributos no están duplicados</li>
-      <li>"title-require": el documento contiene el elemento <span class="html-eti">&lt;title&gt;</span></li>
+      <li>"attr-lowercase": los nombres de los atributos deben escribirse en minúsculas. Se puede indicar una lista excepciones (por ejemplo, algunos atributos de las etiquetas SVG)</li>
+      <li>"attr-no-duplication": los atributos no deben duplicarse</li>
+      <li>"attr-value-double-quotes": los valores de los atributos deben escribirse entre comillas dobles</li>
+      <li>"doctype-first": el documento debe incluir el preámbulo DOCTYPE</li>
+      <li>"id-unique": los atributos <span class="html-atri">id</span> no deben repetirse</li>
+      <li>"spec-char-escape": los caracteres especiales deben escribirse como entidades de carácter</li>
+      <li>"src-not-empty": los atributos que hacen referencia a un elemento externo (<span class="html-atri">src</span>, <span class="html-atri">href</span>, <span class="html-atri">data</span>) no deben ser vacíos</li>
+      <li>"tag-pair": las etiquetas deben cerrarse y estar correctamente anidadas</li>
+      <li>"tagname-lowercase": los nombres de las etiquetas deben escribirse en minúsculas</li>
+      <li>"title-require": el documento debe incluir el elemento <span class="html-eti">&lt;title&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
     </ul>
 
     <p>Además, HTMLHint permite detectar otro tipos de errores:</p>
 
     <ul>
-      <li>"attr-value-not-empty": los atributos tienen un valor establecido</li>
-      <li>"tag-self-close": las etiquetas vacías están incluyen el carácter /</li>
-      <li>"head-script-disabled": no hay etiquetas <span class="html-eti">&lt;script&gt;</span> en <span class="html-eti">&lt;head&gt;</span>class</li>
-      <li>"alt-require": las imágenes contienen el atributo <span class="html-atri">alt</span></li>
-      <li>"doctype-html5": los documentos son html5</li>
-      <li>"id-class-value": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> utilizan guiones bajos (underline), guiones (dash) o camelCase (hump)</li>
-      <li>"style-disabled": no se incluyen bloques <span class="html-eti">&lt;style&gt;</span></li>
-      <li>"inline-style-disabled": no se utiliza el atributo <span class="html-atri">style</span></li>
-      <li>"inline-script-disabled": no se utilizan atributos que puedan contener scripts</li>
-      <li>"space-tab-mixed-disabled": el sangrado contiene únicamente espacios (space), cuatro espacios (space4), tabuladores (tab)</li>
-      <li>"id-class-ad-disabled": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> no contienen la palabra "ad" (que bloquean los bloqueadores de publicidad)</li>
-      <li>"href-abs-or-rel": las direcciones son absolutas (abs) o relativas (rel)</li>
-      <li>"attr-unsafe-chars": los atributos no contienen caracteres "inseguros"</li>
+      <li>"alt-require": las imágenes deben incluir el atributo <span class="html-atri">alt</span></li>
+      <li>"attr-unsafe-chars": los atributos no deben incluir caracteres "inseguros" [referencia: <a href="https://github.com/htmlhint/HTMLHint/wiki/attr-unsafe-chars">documentación de HTMLHint</a>]</li>
+      <li>"attr-value-not-empty": los atributos deben tener establecido algún valor</li>
+      <li>"doctype-html5": el preámbulo DOCTYPE debe indicar el tipo html</li>
+      <li>"head-script-disabled": no deben utilizarse etiquetas <span class="html-eti">&lt;script&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
+      <li>"href-abs-or-rel": las direcciones deben ser absolutas (abs) o relativas (rel)</li>
+      <li>"id-class-ad-disabled": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> no deben contener la palabra "ad" (que bloquean los bloqueadores de publicidad)</li>
+      <li>"id-class-value": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> deben utilizar guiones bajos (underline), guiones (dash) o camelCase (hump)</li>
+      <li>"inline-script-disabled": los atributos no deben contener scripts</li>
+      <li>"inline-style-disabled": no se debe utilizar el atributo <span class="html-atri">style</span></li>
+      <li>"space-tab-mixed-disabled": el sangrado debe contener únicamente espacios (space), cuatro espacios (space4) o tabuladores (tab)</li>
+      <li>"style-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;style&gt;</span></li>
+      <li>"tag-self-close": las etiquetas vacías deben incluir el carácter final /</li>
     </ul>
 
     <p>El valor de cada propiedad suele true (activada) o false (desactivada), salvo en los casos en que ofrece más posibilidades (en la explicación anterior los valores se han indicado entre paréntesis).</p>
 
+    <p><strong>Notas</strong>:</p>
+    <ul>
+      <li>Yo diría que la opción "attr-unsafe-chars" de HTMLHint no funciona en la extensión.</li>
+      <li>HTML-Hint dispone de una opción "empty-tag-not-self-closed" (las etiquetas vacías no deben incluir el carácter final) que no está disponible en la extensión. [referencia: <a href="https://github.com/microsoft/vscode-htmlhint/issues/65">issue 65 abierta por mí el 12/10/2019</a></li>
+    </ul>
+
     <hr class="corta">
 
-    <p>Para modificar la configuración predeterminada de HTMLHint se debe crear un fichero <strong>.htmlhintrc</strong> en la raíz del proyecto. La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
-    <div class="codigo">
-      <pre>
+    <p>Se puede modificar la configuración predeterminada de la extensión HTMLHint detallando las opciones deseadas:</p>
+    <ul>
+      <li>en el archivo de configuración <strong>settings.json</strong> (de usuario o de proyecto).</li>
+      <li>creando un fichero <strong>.htmlhintrc</strong> en la raíz del proyecto de Visual Studio Code.</li>
+    </ul>
+
+    <p>En ambos casos, es necesario incluir las diez propiedades predeterminadas ya que dejan de aplicarse de manera predeterminada.</p>
+
+    <hr class="corta">
+
+    <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente: (se muestran las dos formas alternativas de hacerlo)</p>
+
+    <ul>
+      <li>en el archivo de configuración <strong>settings.json</strong> (de usuario o de proyecto):
+        <div class="codigo">
+          <pre>
+<code class="language-json">  // Extensión HTMLHint
+  //
+  // HTMLHint: Options
+  // Opciones de configuración de HTMLHint
+  "htmlhint.options": {
+    "tagname-lowercase": true,
+    "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-value-double-quotes": true,
+    "doctype-first": true,
+    "tag-pair": true,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "attr-no-duplication": true,
+    "title-require": true,
+
+    "alt-require": true,
+    "doctype-html5": true,
+    "id-class-ad-disabled": true
+  },
+  //
+  //</code>
+</pre>
+        </div>
+      </li>
+      <li>como fichero <strong>.htmlhintrc</strong> en la raíz del proyecto de Visual Studio Code:
+        <div class="codigo">
+          <pre>
 <code class="language-json">{
   "tagname-lowercase": true,
   "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
@@ -151,12 +180,13 @@
   "title-require": true,
 
   "alt-require": true,
-  "tag-self-close": true,
-  "attr-value-not-empty": true,
+  "doctype-html5": true,
   "id-class-ad-disabled": true
 }</code>
 </pre>
-    </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <section id="validacion-css">

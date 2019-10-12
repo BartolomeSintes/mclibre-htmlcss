@@ -8,6 +8,7 @@
   <link rel="icon" href="../varios/favicon.ico">
   <link rel="stylesheet" href="../varios/prism-light.css">
   <script src="../varios/prism-copy.js"></script>
+  <script src="../varios/prism.js"></script>
   <script src="../varios/clipboard.min.js"></script>
 </head>
 
@@ -105,7 +106,7 @@
       <h3>Preferencias globales (Usuario)</h3>
       <div class="codigo">
         <pre>
-<code class="language-json">{
+<code class="copy-language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
   // Editor: Insert Spaces
@@ -172,6 +173,28 @@
   // CloseTag : IgnoreTags
   // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
+  //
+  //
+  // Extensión HTMLHint
+  //
+  // HTMLHint: Options
+  // Opciones de configuración de HTMLHint
+  "htmlhint.options": {
+    "tagname-lowercase": true,
+    "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-value-double-quotes": true,
+    "doctype-first": true,
+    "tag-pair": true,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "attr-no-duplication": true,
+    "title-require": true,
+
+    "alt-require": true,
+    "doctype-html5": true,
+    "id-class-ad-disabled": true
+  },
   //
   //
   // Extensión CSScomb
@@ -454,28 +477,31 @@
 
       <p>El uso de esta extensión se comenta en la lección <a href="vsc-htmlcss-validacion.html#validacion-html">Validación de HTML y CSS en Visual Studio Code</a>.</p>
 
-      <p>Para modificar la configuración predeterminada de HTMLHint se debe crear un fichero <strong>.htmlhintrc</strong> en la raíz del área de trabajo.</p>
-
       <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
       <div class="codigo">
         <pre>
-<code class="language-json">{
-  "tagname-lowercase": true,
-  "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
-  "attr-value-double-quotes": true,
-  "doctype-first": true,
-  "tag-pair": true,
-  "spec-char-escape": true,
-  "id-unique": true,
-  "src-not-empty": true,
-  "attr-no-duplication": true,
-  "title-require": true,
+<code class="language-json">  // Extensión HTMLHint
+  //
+  // HTMLHint: Options
+  // Opciones de configuración de HTMLHint
+  "htmlhint.options": {
+    "tagname-lowercase": true,
+    "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-value-double-quotes": true,
+    "doctype-first": true,
+    "tag-pair": true,
+    "spec-char-escape": true,
+    "id-unique": true,
+    "src-not-empty": true,
+    "attr-no-duplication": true,
+    "title-require": true,
 
-  "alt-require": true,
-  "tag-self-close": false,
-  "attr-value-not-empty": false,
-  "id-class-ad-disabled": true
-}</code>
+    "alt-require": true,
+    "doctype-html5": true,
+    "id-class-ad-disabled": true
+  },
+  //
+  //</code>
 </pre>
       </div>
     </section>
@@ -575,7 +601,7 @@
 
       <div class="codigo">
         <pre>
-<code class="language-json">{
+<code class="copy-language-json">{
   // Tareas recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
 
   "version": "2.0.0",
@@ -632,7 +658,7 @@
 
     <div class="codigo">
       <pre>
-<code class="language-json">[
+<code class="copy-language-json">[
     // Atajos de teclado recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
     {
         // Tarea: Abrir en Firefox
@@ -718,7 +744,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 13 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
