@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../../../varios/favicon.ico">
+  <link rel="stylesheet" href="../../../varios/prism-light.css">
+  <script src="../../../varios/prism-copy.js"></script>
+  <script src="../../../varios/prism.js"></script>
+  <script src="../../../varios/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -23,10 +27,11 @@
 
       <ul>
         <li><a href="#ejercicio-1">1 - Abrir páginas</a></li>
-        <li><a href="#ejercicio-2">2 - HTMLHint, Close Tag</a></li>
-        <li><a href="#ejercicio-3">3 - Tag Inserter, Auto Rename Tag</a></li>
-        <li><a href="#ejercicio-4">4 - Image Preview</a></li>
-        <li><a href="#ejercicio-5">5 - CSScomb</a></li>
+        <li><a href="#ejercicio-2">2 - HTMLHint</a></li>
+        <li><a href="#ejercicio-3">3 - Close Tag</a></li>
+        <li><a href="#ejercicio-4">4 - Tag Inserter, Auto Rename Tag</a></li>
+        <li><a href="#ejercicio-5">5 - Image Preview</a></li>
+        <li><a href="#ejercicio-6">6 - CSScomb</a></li>
       </ul>
     </div>
   </nav>
@@ -60,31 +65,72 @@
   </section>
 
   <section id="ejercicio-2">
-    <h2>VS Code 2 - Extensiones HTMLHint y Close HTML/XML Tag</h2>
+    <h2>VS Code 2 - Extensión HTMLHint</h2>
 
     <ol>
-      <li>Abra en Visual Studio Code la página <strong>vscode-2.html</strong>.</li>
+      <li>Cree en Visual Studio Code la página <strong>vscode-2.html</strong>.</li>
+      <li>Copie y pegue el siguiente código HTML en la página <strong>vscode-2.html</strong>:
+        <div class="codigo">
+          <pre>
+<code class="copy-language-html">&lt;html LANG="es"&gt;
+&lt;!DOCTYPE html+css&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href=""&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;P id="a"&gt;Esta página web NO es una página HTML válida.
+
+  &lt;p id='a'&gt; 5 &gt; 4&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src="a.png"&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+        </div>
+      </li>
+      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 13 errores. Haga clic en él para ver los errores detectados.</span>
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-1.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
+        </p>
+        <p>Si no se muestran los 13 errores, compruebe que la extensión HTMLHint está instalada y revise la configuración de la extensión HTMLHint, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
+      </li>
+      <li>Corrija algunos de los errores y compruebe que van desapareciendo de la lista a medida que se van corrigiendo:
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-2.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-3">
+    <h2>VS Code 3 - Extensión Close HTML/XML Tag</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>vscode-3.html</strong>.</li>
       <li>Borre la etiqueta de cierre <span class="html-eti">&lt;/p&gt;</span> (línea 13).</li>
       <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de un error. Haga clic en él para ver el error detectado. Compruebe que efectivamente señala la ausencia del cierre de la etiqueta <span class="html-eti">&lt;p&gt;</span>
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-2-1.png" alt="VSC. Error CSS Lint" width="1024" height="320">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-1.png" alt="VSC. Error HTMLHint" width="1024" height="320">
         </p>
         <p>Si no se muestra el error, compruebe que la extensión HTMLHint está instalada y revise la configuración de la extensión HTMLHint, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
       </li>
       <li>Corrija el error situando el cursor al final del párrafo y pulsando el atajo de teclado <span class="soft-atajo-teclado">Ctrl+.</span>. Compruebe que se añade el cierre de la etiqueta <span class="html-eti">&lt;/p&gt;</span>. Compruebe que el indicador de error ya no muestra ningún error.
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-2-2.png" alt="VSC. Error CSS Lint" width="1024" height="320">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-2.png" alt="VSC. Error HTMLHint" width="1024" height="320">
         </p>
         <p>Si no se añade la etiqueta , compruebe que la extensión Close HTML/XML Tag está instalada y revise la configuración de la extensión Close HTML/XML Tag, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#close-html-xml-tag">Configuración de Visual Studio Code</a>.</p>
       </li>
     </ol>
   </section>
 
-  <section id="ejercicio-3">
-    <h2>VS Code 3 - Extensiones Tag Inserter y Auto Rename Tag</h2>
+  <section id="ejercicio-4">
+    <h2>VS Code 4 - Extensiones Tag Inserter y Auto Rename Tag</h2>
 
     <ol>
-      <li>Abra en Visual Studio Code la página <strong>vscode-3.html</strong>.</li>
+      <li>Abra en Visual Studio Code la página <strong>vscode-4.html</strong>.</li>
       <li>Compruebe que el texto de la línea 11 no está rodeado de etiquetas.</li>
       <li>Seleccione el texto de la línea 11 (sin los espacios iniciales).</li>
       <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Alt+Máy+i</span>. Compruebe que se abre un cuadro de texto en la parte superior, escriba <strong>h2</strong> y pulse Intro.
@@ -96,19 +142,19 @@
     </ol>
   </section>
 
-  <section id="ejercicio-4">
-    <h2>VS Code 4 - Extensión Image Preview</h2>
+  <section id="ejercicio-5">
+    <h2>VS Code 5 - Extensión Image Preview</h2>
 
     <ol>
-      <li>Abra en Visual Studio Code la página <strong>vscode-4.html</strong>.</li>
+      <li>Abra en Visual Studio Code la página <strong>vscode-5.html</strong>.</li>
       <li>Abra la página en el navegador. El resultado debe ser este (el logotipo es muy grande, pues ocupa todo el ancho de la pantalla):
 
         <div class="filaflex">
           <div class="resultado-object">
-            <object type="text/html" data="vscode-4.html" style="height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+            <object type="text/html" data="vscode-5.html" style="height: 15em;">ERROR (no puede mostrarse el objeto)</object>
           </div>
           <div class="icono-enlace">
-            <a href="vscode-4.html"><img src="../../../varios/iconos/icono-enlace.svg" alt="Enlace a ejemplo" title="Enlace a ejemplo" width="31" height="36"></a>
+            <a href="vscode-5.html"><img src="../../../varios/iconos/icono-enlace.svg" alt="Enlace a ejemplo" title="Enlace a ejemplo" width="31" height="36"></a>
           </div>
         </div>
       </li>
@@ -120,19 +166,19 @@
     </ol>
   </section>
 
-  <section id="ejercicio-5">
-    <h2>VS Code 5 - Extensión CSScomb</h2>
+  <section id="ejercicio-6">
+    <h2>VS Code 6 - Extensión CSScomb</h2>
 
     <ol>
-      <li>Abra en Visual Studio Code la página <strong>vscode-5.html</strong>.</li>
+      <li>Abra en Visual Studio Code la página <strong>vscode-6.html</strong>.</li>
       <li>Abra la página en el navegador. El resultado debe ser este:
 
         <div class="filaflex">
           <div class="resultado-object">
-            <object type="text/html" data="vscode-5.html" style="height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+            <object type="text/html" data="vscode-6.html" style="height: 15em;">ERROR (no puede mostrarse el objeto)</object>
           </div>
           <div class="icono-enlace">
-            <a href="vscode-5.html"><img src="../../../varios/iconos/icono-enlace.svg" alt="Enlace a ejemplo" title="Enlace a ejemplo" width="31" height="36"></a>
+            <a href="vscode-6.html"><img src="../../../varios/iconos/icono-enlace.svg" alt="Enlace a ejemplo" title="Enlace a ejemplo" width="31" height="36"></a>
           </div>
         </div>
       </li>
@@ -145,7 +191,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 12 de octubre de 2019</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
       Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
