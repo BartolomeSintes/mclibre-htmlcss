@@ -52,7 +52,7 @@
       </li>
       <li>Compruebe que la dirección de la página es <strong>file:///C://Users/NombreDeUsuario/Documents/LMSGI NombreAlumno/HTML/ejericios/puesta-en-marcha/vscode-1.html</strong>, donde NombreDeUsuario es el nombre del usuario de Windows y NombreDeAlumno es su nombre.
       </li>
-      <li>El resultado en el navegador debe ser este:
+      <li>El resultado en el navegador debe ser el siguiente:
         <div class="filaflex">
           <div class="resultado-object">
             <object type="text/html" data="vscode-1.html" style="height: 10em;">ERROR (no puede mostrarse el objeto)</object>
@@ -107,13 +107,13 @@
   </section>
 
   <section id="ejercicio-3">
-      <h2>VS Code 3 - CSS Lint</h2>
+    <h2>VS Code 3 - CSS Lint</h2>
 
-      <ol>
-        <li>Cree en Visual Studio Code la página <strong>vscode-3.css</strong>.</li>
-        <li>Copie y pegue el siguiente código CSS en la página <strong>vscode-3.css</strong>:
-          <div class="codigo">
-            <pre>
+    <ol>
+      <li>Cree en Visual Studio Code la página <strong>vscode-3.css</strong>.</li>
+      <li>Copie y pegue el siguiente código CSS en la página <strong>vscode-3.css</strong>:
+        <div class="codigo">
+          <pre>
 <code class="copy-language-css">@font-face { }
 
 @test { }
@@ -129,16 +129,16 @@ p {
 
 #ab { }</code>
   </pre>
-          </div>
-        </li>
-        <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 avisos. Haga clic en él para ver los errores detectados.
-          <p class="mcl-captura">
-            <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-csslint-1.png" alt="VSC. Errores CSS Lint" width="1024" height="576">
-          </p>
-          <p>Si no se muestra el aviso "Selectors should not contain IDs", revise la configuración de Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
-        </li>
-      </ol>
-    </section>
+        </div>
+      </li>
+      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 avisos. Haga clic en él para ver los errores detectados.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-csslint-1.png" alt="VSC. Errores CSS Lint" width="1024" height="576">
+        </p>
+        <p>Si no se muestra el aviso "Selectors should not contain IDs", revise la configuración de Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
+      </li>
+    </ol>
+  </section>
 
   <section id="ejercicio-4">
     <h2>VS Code 4 - Extensión Close HTML/XML Tag</h2>
@@ -182,7 +182,7 @@ p {
 
     <ol>
       <li>Abra en Visual Studio Code la página <strong>vscode-6.html</strong>.</li>
-      <li>Abra la página en el navegador. El resultado debe ser este (el logotipo es muy grande, pues ocupa todo el ancho de la pantalla):
+      <li>Abra la página en el navegador. El resultado debe ser el siguiente (el logotipo es muy grande, pues ocupa todo el ancho de la pantalla):
 
         <div class="filaflex">
           <div class="resultado-object">
@@ -197,7 +197,11 @@ p {
         <p>Si no se muestra la ventana, compruebe que la extensión Image Preview está instalada.</p>
       </li>
       <li>Pulse el atajo <span class="soft-atajo-teclado">Ctrl+Alt+e Ctrl+Alt+t</span> y compruebe que se añaden los atributos <span class="html-atri">width</span> = <span class="html-atri-valor">100</span> y <span class="html-atri">height</span> = <span class="html-atri-valor">100</span>.</li>
-      <li>Guarde la página en Visual Studio Code y actualice la página en el navegador. Compruebe que la imagen ya se muestra al tamaño 100px x 100px.</li>
+      <li>Guarde la página en Visual Studio Code y actualice la página en el navegador. Compruebe que la imagen ya se muestra al tamaño 100px x 100px.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-emmet-image-size-1.png" alt="VSC. Atributos width y height en imagen" width="1014" height="230">
+        </p>
+      </li>
     </ol>
   </section>
 
@@ -206,7 +210,7 @@ p {
 
     <ol>
       <li>Abra en Visual Studio Code la página <strong>vscode-7.html</strong>.</li>
-      <li>Abra la página en el navegador. El resultado debe ser este:
+      <li>Abra la página en el navegador. El resultado debe ser el siguiente:
 
         <div class="filaflex">
           <div class="resultado-object">
@@ -218,15 +222,29 @@ p {
         </div>
       </li>
       <li>Abra la hoja de estilo <strong>vscode-7.css</strong>.</li>
-      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Máy+c Alt+Máy+f</span> y compruebe que se formatea correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, etc.
+      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Máy+c Alt+Máy+f</span> y compruebe que se formatea correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, orden de etiquetas, etc.
+        <div class="codigo">
+          <pre>
+<code class="copy-language-css">body {
+  background-color: wheat;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+</code>
+</pre>
+        </div>
         <p>Si no se formatea correctamente la hoja de estilo, compruebe que la extensión CSScomb está instalada y revise la configuración de la extensión CSScomb, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#csscomb">Configuración de Visual Studio Code</a>.</p>
       </li>
-      <li>Guarde la hoja de estilo en Visual Studio Code y actualice la página en el navegador. Compruebe que la página se ve exactamente igual que antes.</li>
+      <li>Guarde la hoja de estilo y actualice la página en el navegador. Compruebe que la página se ve exactamente igual que antes.</li>
     </ol>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 15 de octubre de 2019</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
       Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>

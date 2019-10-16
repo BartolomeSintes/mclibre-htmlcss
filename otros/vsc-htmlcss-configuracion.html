@@ -109,6 +109,10 @@
 <code class="copy-language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
+  // CSS Lint: idSelector
+  // Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.
+  "css.lint.idSelector": "warning",
+  //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
   "editor.insertSpaces": true,
@@ -154,13 +158,13 @@
   "html.format.wrapLineLength": 0,
   //
   // HTML
-  // Establece los valores de configuración que se reemplazarán para el lenguaje HTML
+  // Establece los valores de configuración específicos para el lenguaje HTML
   "[html]": {
     "editor.tabSize": 2,
   },
   //
   // CSS
-  // Establece los valores de configuración que se reemplazarán para el lenguaje CSS
+  // Establece los valores de configuración específicos para el lenguaje CSS
   "[css]": {
     "editor.tabSize": 4,
   },
@@ -180,20 +184,22 @@
   // HTMLHint: Options
   // Opciones de configuración de HTMLHint
   "htmlhint.options": {
-    "tagname-lowercase": true,
+    // Opciones predeterminadas
     "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-no-duplication": true,
     "attr-value-double-quotes": true,
     "doctype-first": true,
-    "tag-pair": true,
-    "spec-char-escape": true,
     "id-unique": true,
+    "spec-char-escape": true,
     "src-not-empty": true,
-    "attr-no-duplication": true,
+    "tag-pair": true,
+    "tagname-lowercase": true,
     "title-require": true,
 
+    // Opciones adicionales
     "alt-require": true,
     "doctype-html5": true,
-    "id-class-ad-disabled": true
+    "id-class-ad-disabled": true,
   },
   //
   //
@@ -255,7 +261,7 @@
       <h3>Preferencias de área de trabajo o carpeta (Área de trabajo)</h3>
       <div class="codigo">
         <pre>
-<code class="language-json">{
+<code class="copy-language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
   // Workbench: Color Theme
@@ -272,6 +278,9 @@
 
     <p>Esta es la justificación de la elección de estas preferencias de configuración:</p>
     <ul>
+      <li>"css.lint.idSelector": "warning",
+        <p>CSS Lint recomienda que los selectores no contengan identificadores (<span class="html-atri">id</span>) porque estas reglas están estrechamente ligadas a HTML.</p>
+      </li>
       <li>"editor.insertSpaces": true,
         <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
       </li>
@@ -393,6 +402,8 @@
 
       <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
 
+      <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
+
       <div class="codigo">
         <pre>
 <code class="language-json">  // Extensión Close HTML/XML tag
@@ -475,9 +486,12 @@
 
       <p>La extensión HTMLHint permite que Visual Studio Code utilice el analizador de código estático <a href="https://htmlhint.com/">HTMLHint</a>.</p>
 
-      <p>El uso de esta extensión se comenta en la lección <a href="vsc-htmlcss-validacion.html#validacion-html">Validación de HTML y CSS en Visual Studio Code</a>.</p>
+      <p>El uso de esta extensión y el signicado de sus opciones de configuración se comentan en la lección <a href="vsc-htmlcss-validacion.html">Validación de HTML y CSS en Visual Studio Code</a>.</p>
 
       <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente:</p>
+
+      <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
+
       <div class="codigo">
         <pre>
 <code class="language-json">  // Extensión HTMLHint
@@ -485,20 +499,22 @@
   // HTMLHint: Options
   // Opciones de configuración de HTMLHint
   "htmlhint.options": {
-    "tagname-lowercase": true,
+    // Opciones predeterminadas
     "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-no-duplication": true,
     "attr-value-double-quotes": true,
     "doctype-first": true,
-    "tag-pair": true,
-    "spec-char-escape": true,
     "id-unique": true,
+    "spec-char-escape": true,
     "src-not-empty": true,
-    "attr-no-duplication": true,
+    "tag-pair": true,
+    "tagname-lowercase": true,
     "title-require": true,
 
+    // Opciones adicionales
     "alt-require": true,
     "doctype-html5": true,
-    "id-class-ad-disabled": true
+    "id-class-ad-disabled": true,
   },
   //
   //</code>
@@ -528,6 +544,8 @@
       <p>El estilo de formato concreto que aplica CSScomb se configura en el archivo de configuración de usuario o en el del espacio de trabajo mediante la configuración csscomb.preset.</p>
 
       <p>El ejemplo siguiente muestra la configuración seguida en las hojas de estilo del curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a>.</p>
+
+      <p><strong>Nota</strong>: Estas preferencias están incluidas en el apartado anterior de preferencias de configuración. No es necesario añadirlas si ya se han añadido anteriormente.</p>
 
       <div class="codigo">
         <pre>
@@ -570,11 +588,11 @@
         // Modelo de caja: tamaño
          "box-sizing", "width", "min-width", "max-width", "height", "min-height", "max-height", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
         // Modelo de caja: borde, outline, fondos
-        "opacity", "color", "border", "border-width", "border-style", "border-color", "border-top", "border-top-width", "border-top-style", "border-top-color", "border-right", "border-right-width", "border-right-style", "border-right-color", "border-bottom", "border-bottom-width", "border-bottom-style", "border-bottom-color", "border-left", "border-left-width", "border-left-style", "border-left-color", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius", "border-image", "border-image-source", "border-image-slice", "border-image-width", "border-image-outset", "border-image-repeat", "outline", "outline-width", "outline-style", "outline-color", "outline-offset", "background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y", "background-clip", "background-origin", "background-size", "box-decoration-break", "box-shadow", "text-shadow",
+        "opacity", "border", "border-width", "border-style", "border-color", "border-top", "border-top-width", "border-top-style", "border-top-color", "border-right", "border-right-width", "border-right-style", "border-right-color", "border-bottom", "border-bottom-width", "border-bottom-style", "border-bottom-color", "border-left", "border-left-width", "border-left-style", "border-left-color", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius", "border-image", "border-image-source", "border-image-slice", "border-image-width", "border-image-outset", "border-image-repeat", "outline", "outline-width", "outline-style", "outline-color", "outline-offset", "background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y", "background-clip", "background-origin", "background-size", "box-decoration-break", "box-shadow", "text-shadow",
+        // Texto
+        "color", "cursor", "font", "font-family", "src", "font-size", "font-style", "font-variant", "font-weight", "letter-spacing", "line-height", "quotes", "resize", "text-align", "text-align-last", "text-decoration", "text-indent", "text-justify", "text-outline", "text-transform", "vertical-align", "white-space", "word-spacing",
         // Tablas y listas
         "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse", "list-style", "list-style-position", "list-style-type", "list-style-image", "content", "counter-increment", "counter-reset",
-        // Texto
-        "cursor", "font", "font-family", "src", "font-size", "font-style", "font-variant", "font-weight", "letter-spacing", "line-height", "quotes", "resize", "text-align", "text-align-last", "text-decoration", "text-indent", "text-justify", "text-outline", "text-transform", "vertical-align", "white-space", "word-spacing",
         // Animaciones y transformaciones
         "animation", "animation-delay", "animation-direction", "animation-duration", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "transform", "transform-origin", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function",
       ],
@@ -597,7 +615,9 @@
     <section id="abrir-navegador">
       <h3>Abrir páginas en el navegador (como ficheros)</h3>
 
-      <p>Las siguientes tareas permiten abrir en los navegadores Firefox y Chrome las páginas que se están editando en Visual Studio Code. Compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador:</p>
+      <p>Las siguientes tareas permiten abrir en los navegadores Firefox y Chrome las páginas que se están editando en Visual Studio Code.</p>
+
+      <p>Compruebe que la ruta de los ejecutables de los navegadores que aparecen en las tareas coinciden con las rutas de los ejecutables en su ordenador. Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
 
       <div class="codigo">
         <pre>
@@ -610,7 +630,7 @@
       "label": "Abrir en Firefox",
       "command": "explorer",
       "windows": {
-        "command": "C:/Program Files/Mozilla Firefox/firefox.exe"
+        "command": "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>"
       },
       "args": [
           "${file}"
@@ -624,7 +644,7 @@
       "label": "Abrir en Chrome",
       "command": "explorer",
       "windows": {
-        "command": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+        "command": "<span class="codigo-resaltado">C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</span>"
       },
       "args": [
         "${file}"
@@ -700,26 +720,6 @@
 ]</code>
 </pre>
     </div>
-
-    <section id="atajos-utilizar">
-      <h3>Utilizar atajos de teclado</h3>
-
-      <p>Estos son los pasos a realizar para utilizar alguno de los atajos de teclado personalizados:</p>
-
-      <ol>
-        <li>Abra en una pestaña la página web que quiera abrir en un navegador:
-          <p class="mcl-captura">
-            <img src="../img/vscode/vsc-htmlcss-atajos-usar-1.png" alt="VSC. Utilizar tarea" width="1024" height="380">
-          </p>
-        </li>
-        <li>Pulse el atajo de teclado. Por ejemplo, <span class="soft-atajo-teclado">Ctrl+Alt+f</span>, uno de los atajos de teclado recomendados para el curso de HTML y CSS.</li>
-        <li>En el ejemplo de las capturas, la página abierta en Visual Studio Code se abriría en el navegador:
-          <p class="mcl-captura">
-            <img src="../img/vscode/vsc-htmlcss-atajos-usar-2.png" alt="VSC. Utilizar tarea" width="1024" height="160">
-          </p>
-        </li>
-      </ol>
-    </section>
   </section>
 
   <section id="otros">
@@ -744,7 +744,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 13 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

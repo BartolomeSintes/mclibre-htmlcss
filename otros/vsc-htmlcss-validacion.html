@@ -26,18 +26,12 @@
       <ul>
         <li><a href="#interfaz">Interfaz de validación</a></li>
         <li><a href="#validacion-html">Validación HTML</a></li>
-        <li><a href="#validacion-css">Validación CSS</a>
-          <ul>
-            <li><a href="#errores">Errores</a></li>
-            <li><a href="#avisos">Avisos</a></li>
-            <li><a href="#desactivados">Desactivados</a></li>
-          </ul>
-        </li>
+        <li><a href="#validacion-css">Validación CSS</a></li>
       </ul>
     </div>
   </nav>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Esta lección está en elaboración.</p>
+  <p>Visual Studio Code no realiza validaciones completas de las páginas web ni de las hojas de estilo, pero puede ayudar a corregir algunos errores en estos archivos.</p>
 
   <section id="interfaz">
     <h2>Interfaz de validación en Visual Studio Code</h2>
@@ -81,6 +75,10 @@
 
     <p>Las páginas web se pueden validar en Visual Studio Code mediante la extensión <a href="vsc-htmlcss-configuracion.html#htmlhint">HTMLHint</a>. Esta extensión instala y utiliza el analizador de código estático <a href="https://htmlhint.com/">HTMLHint</a>. Este validador no detecta todos los posibles errores, pero sí los más importantes.</p>
 
+    <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> se encuentra en la lección <a href="vsc-htmlcss-configuracion.html#htmlhint">Configuración recomendada para HTML y CSS</a>.</p>
+
+    <hr class="corta">
+
     <p>Los tipos de errores detectados de forma predeterminada por la extensión HTMLHint son los siguientes:</p>
     <ul>
       <li>"attr-lowercase": los nombres de los atributos deben escribirse en minúsculas. Se puede indicar una lista excepciones (por ejemplo, algunos atributos de las etiquetas SVG)</li>
@@ -95,7 +93,7 @@
       <li>"title-require": el documento debe incluir el elemento <span class="html-eti">&lt;title&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
     </ul>
 
-    <p>Además, HTMLHint permite detectar otro tipos de errores:</p>
+    <p>Además, HTMLHint permite detectar otro tipos de errores (que están desactivados de forma predeterminada):</p>
 
     <ul>
       <li>"alt-require": las imágenes deben incluir el atributo <span class="html-atri">alt</span></li>
@@ -123,20 +121,10 @@
 
     <hr class="corta">
 
-    <p>Se puede modificar la configuración predeterminada de la extensión HTMLHint detallando las opciones deseadas:</p>
+    <p>Se puede modificar la configuración predeterminada de la extensión HTMLHint de dos maneras, detallando las opciones deseadas:</p>
     <ul>
-      <li>en el archivo de configuración <strong>settings.json</strong> (de usuario o de proyecto).</li>
-      <li>creando un fichero <strong>.htmlhintrc</strong> en la raíz del proyecto de Visual Studio Code.</li>
-    </ul>
+      <li>en el archivo de configuración <strong>settings.json</strong> (de usuario o de proyecto).
 
-    <p>En ambos casos, es necesario incluir las diez propiedades predeterminadas ya que dejan de aplicarse de manera predeterminada.</p>
-
-    <hr class="corta">
-
-    <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> es la siguiente: (se muestran las dos formas alternativas de hacerlo)</p>
-
-    <ul>
-      <li>en el archivo de configuración <strong>settings.json</strong> (de usuario o de proyecto):
         <div class="codigo">
           <pre>
 <code class="language-json">  // Extensión HTMLHint
@@ -144,268 +132,89 @@
   // HTMLHint: Options
   // Opciones de configuración de HTMLHint
   "htmlhint.options": {
-    "tagname-lowercase": true,
-    "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
-    "attr-value-double-quotes": true,
-    "doctype-first": true,
-    "tag-pair": true,
-    "spec-char-escape": true,
-    "id-unique": true,
-    "src-not-empty": true,
-    "attr-no-duplication": true,
-    "title-require": true,
-
-    "alt-require": true,
-    "doctype-html5": true,
-    "id-class-ad-disabled": true
+    // Aquí se escribirían las propiedades ...
   },
   //
   //</code>
 </pre>
         </div>
       </li>
-      <li>como fichero <strong>.htmlhintrc</strong> en la raíz del proyecto de Visual Studio Code:
+      <li>creando un fichero <strong>.htmlhintrc</strong> en la raíz del proyecto de Visual Studio Code.
         <div class="codigo">
           <pre>
 <code class="language-json">{
-  "tagname-lowercase": true,
-  "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
-  "attr-value-double-quotes": true,
-  "doctype-first": true,
-  "tag-pair": true,
-  "spec-char-escape": true,
-  "id-unique": true,
-  "src-not-empty": true,
-  "attr-no-duplication": true,
-  "title-require": true,
-
-  "alt-require": true,
-  "doctype-html5": true,
-  "id-class-ad-disabled": true
+  // Aquí se escribirían las propiedades ...
 }</code>
 </pre>
         </div>
       </li>
     </ul>
+
+    <p>En ambos casos, sería necesario incluir las diez propiedades predeterminadas ya que dejan de aplicarse de manera predeterminada.</p>
   </section>
 
   <section id="validacion-css">
     <h2>Validación de CSS en Visual Studio Code</h2>
 
-    <p>Visual Studio Code incluye un validador de hojas de estilo similar a <a href="http://csslint.net/">CSSLint</a>.</p>
+    <p>Visual Studio Code detecta los errores de sintaxis en las hojas de estilo. Estos errores deben corregirse puesto que impiden que la hoja de estilo se interprete correctamente.</p>
 
-    <p><i>lint</i> fue el nombre de un programa creado a finales de los 70 para analizar programas escritos en C en busca de expresiones sintácticamente correctas pero que pudieran dar lugar a errores en los programas. Actualmente, <i>lint</i> se utiliza de forma genérica para referirse a las heramientas que analizan programas o documentos en busca de errores sintácticos, de posibles fuentes de errores, o incluso programas que no siguen reglas de estilo.</p>
+    <p>Además, Visual Studio Code también incluye un validador de hojas de estilo basado en <a href="vsc-csslint.html">CSS Lint</a> que proporciona consejos que ayudan a mejorar las hojas de estilo.</p>
 
-    <hr class="corta">
-
-    <p>El validador de hojas de estilo de Visual Studio Code está activado de forma predeterminada. En el archivo de <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">Preferencias de configuración</a> se encuentra la preferencia que permite desactivar o activar la validación:</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-json">{
-  // Habilita o deshabilita todas las validaciones
-  "css.validate": true,
-}</code>
-</pre>
-    </div>
-
-    <p>En el archivo de <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">Preferencias de configuración</a> se encuentran también las preferencia que permiten desactivar o activar cada uno de los tipos de validación disponibles.</p>
-
-    <hr class="corta">
-
-    <p>Como CSSLint, Visual Studio Code nos da dos tipos de avisos:</p>
+    <p>En el archivo de <a href="http://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">Preferencias de configuración</a>, Visual Studio Code permite especificar el tipo de mensaje mostrado al usuario para cada una de las reglas de validación disponibles:</p>
     <ul>
-      <li><a href="#errores">Errores (errors)</a></li>
-      <li><a href="#avisos">Avisos (warnings)</a></li>
+      <li>Errores (errors). Los errores deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga estos errores.</li>
+      <li>Avisos (warnings). Los avisos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos o pueden ser consejos pensados para hojas de estilo complejas, no hojas de estilo sencillas como las que se utilizan en este curso. A medida que el alumno vaya adquiriendo experiencia, podrá ir juzgando por sí mismo si seguir o no esos consejos.</li>
+      <li>Ignorar (ignore). Se ignora la regla y no se muestra ningún mensaje al usuario.</li>
     </ul>
 
-    <p>Los errores deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga errores.</p>
+    <p>La configuración recomendada para seguir el curso <a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="http://www.mclibre.org/">mclibre.org</a> se encuentra en la lección <a href="vsc-htmlcss-configuracion.html#preferencias">Configuración recomendada para HTML y CSS</a>.</p>
 
-    <p>Pero los consejos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos o pueden ser consejos pensados para hojas de estilo complejas, no hojas de estilo sencillas como las que se utilizan en este curso. A medida que el alumno vaya adquiriendo experiencia, podrá ir juzgando por sí mismo si seguir o no esos consejos.</p>
+    <hr class="corta">
 
-    <section id="errores">
-      <h2>Errores (errors)</h2>
-
-      <p>El validador de hojas de estilo de Visual Studio Code tiene configurados de forma predeterminada como errores los siguientes tipos de validación.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Los colores hexadecimales deben estar formados por tres o seis números hexadecimales.
-  "css.lint.hexColorLength": "error",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Número de parámetros no válido
-  "css.lint.argumentsInColorFunction": "error",
-}</code>
-</pre>
-      </div>
-    </section>
-
-    <section id="avisos">
-      <h2>Avisos (warnings)</h2>
-
-      <p>El validador de hojas de estilo de Visual Studio Code tiene configurados de forma predeterminada como avisos los siguientes tipos de validación.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Cuando use un prefijo específico del proveedor, incluya también la propiedad estándar.
-  "css.lint.vendorPrefix": "warning",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // No use conjuntos de reglas vacíos
-  "css.lint.emptyRules": "warning",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // La regla @font-face debe definir las propiedades "src" y "font-family"
-  "css.lint.fontFaceProperties": "warning",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Propiedad desconocida.
-  "css.lint.unknownProperties": "warning",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // La propiedad se ignora a causa de la pantalla. Por ejemplo, con 'display: inline', el ancho, el alto, el margen superior e inferior y las propiedades de float no tienen efecto.
-  "css.lint.propertyIgnoredDueToDisplay": "warning",
-}</code>
-</pre>
-      </div>
-    </section>
-
-    <section id="desactivados">
-      <h2>Validaciones desactivadas</h2>
-
-      <p>El validador de hojas de estilo de Visual Studio Code tiene desactivados de forma predeterminada los siguientes tipos de validación.</p>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Cuando use un prefijo específico del proveedor, compruebe que también haya incluido el resto de propiedades específicas del proveedor.
-  "css.lint.compatibleVendorPrefixes": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // No use definiciones de estilo duplicadas
-  "css.lint.duplicateProperties": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Las instrucciones Import no se cargan en paralelo
-  "css.lint.importStatement": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // No use ancho o alto con el relleno o los bordes.
-  "css.lint.boxModel": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Se sabe que el selector universal (*) es lento
-  "css.lint.universalSelector": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // No se necesita una unidad para cero
-  "css.lint.zeroUnits": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Las modificaciones de IE solo son necesarias cuando admiten IE7 y anteriores
-  "css.lint.ieHack": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Propiedad específica del proveedor desconocida.
-  "css.lint.unknownVendorSpecificProperties": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-  // Le recomendamos no usar !important. Esto indica que la especificidad de todo el CSS está fuera de control y que debe refactorizarse.
-  "css.lint.important": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-    // Le recomendamos no usar 'float'. Los floats producen CSS frágiles, fáciles de corromper si cambia cualquier aspecto del diseño.
-    "css.lint.float": "ignore",
-}</code>
-</pre>
-      </div>
-
-      <div class="codigo">
-        <pre>
-<code class="language-json">{
-    // Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.
-    "css.lint.idSelector": "ignore",
-}</code>
-</pre>
-      </div>
-    </section>
+    <p>La configuración predeterminada de Visual Studio Code es la siguiente:</p>
+    <ul>
+      <li>Errores ("error"):
+        <ul>
+          <li>"css.lint.argumentsInColorFunction": Número de parámetros no válido.</li>
+          <li>"css.lint.hexColorLength": Los colores hexadecimales deben estar formados por tres o seis números hexadecimales.</li>
+        </ul>
+      </li>
+      <li>Avisos ("warning")
+        <ul>
+          <li>"css.lint.emptyRules": No use conjuntos de reglas vacíos.</li>
+          <li>"css.lint.fontFaceProperties": La regla @font-face debe definir las propiedades "src" y "font-family".</li>
+          <li>"css.lint.propertyIgnoredDueToDisplay": La propiedad se ignora a causa de la pantalla. Por ejemplo, con "display: inline", las propiedades "width", "height", "margin-top", "margin-bottom" y "float" no tienen ningún efecto.</li>
+          <li>"css.lint.unknownAtRules: Regla At desconocida.</li>
+          <li>"css.lint.unknownProperties": Propiedad desconocida.</li>
+          <li>"css.lint.validProperties": [], // Lista de propiedades que no se validan con la regla"unknownProperties",</li>
+          <li>"css.lint.vendorPrefix": Cuando use un prefijo específico del proveedor, incluya también la propiedad estándar.</li>
+        </ul>
+      </li>
+      <li>Validaciones desactivadas ("ignore")
+        <ul>
+          <li>"css.lint.boxModel": No use "width" o "height" al usar "padding" o "border".</li>
+          <li>"css.lint.compatibleVendorPrefixes": Cuando use un prefijo específico del proveedor, compruebe que también haya incluido el resto de propiedades específicas del proveedor.</li>
+          <li>"css.lint.duplicateProperties": No use definiciones de estilo duplicadas.</li>
+          <li>"css.lint.float": Le recomendamos no usar 'float'. Los floats producen CSS frágiles que pueden dañarse fácilmente si cambia cualquier aspecto del diseño.</li>
+          <li>"css.lint.idSelector": Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.</li>
+          <li>"css.lint.ieHack": Las modificaciones de IE solo son necesarias cuando se admite IE7 y anteriores.</li>
+          <li>"css.lint.important": Evite usar !important. Es una indicación que la especificidad de todo el CSS está fuera de control y debe ser refactorizarse. </li>
+          <li>"css.lint.importStatement": Las instrucciones Import no se cargan en paralelo.</li>
+          <li>"css.lint.universalSelector": Se sabe que el selector universal ("*"") es lento.</li>
+          <li>"css.lint.unknownVendorSpecificProperties": Propiedad específica del proveedor desconocida.</li>
+          <li>"css.lint.zeroUnits": No se necesita una unidad para cero.</li>
+        </ul>
+      </li>
+      <li>Otras:
+        <ul>
+          <li>"css.validate": true, Habilita o deshabilita todas las validaciones</li>
+        </ul>
+      </li>
+    </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de abril de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 14 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
