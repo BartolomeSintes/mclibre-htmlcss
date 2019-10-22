@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$contrasena = recoge("contrasena");
 
-if ($dato == "") {
+if ($contrasena == "") {
     print "  <p>No ha escrito ninguna contraseña.</p>\n";
 } else {
-    print "  <p>La contraseña escrita es <strong>$dato</strong>.</p>\n";
+    print "  <p>La contraseña escrita es <strong>$contrasena</strong>.</p>\n";
 }
 print "\n";
 ?>

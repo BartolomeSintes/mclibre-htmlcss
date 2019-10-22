@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$busqueda = recoge("busqueda");
 
-if ($dato == "") {
-   print "  <p>No ha indicado ninguna cadena de búsqueda.</p>\n";
+if ($busqueda == "") {
+    print "  <p>No ha indicado ninguna cadena de búsqueda.</p>\n";
 } else {
-   print "  <p>La cadena de búsqueda indicada es <strong>$dato</strong>.</p>\n";
+    print "  <p>La cadena de búsqueda indicada es <strong>$busqueda</strong>.</p>\n";
 }
 print "\n";
 ?>

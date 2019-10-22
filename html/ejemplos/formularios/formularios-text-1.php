@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$texto = recoge("texto");
 
-if ($dato == "") {
+if ($texto == "") {
     print "  <p>No ha escrito ningún texto.</p>\n";
 } else {
-    print "  <p>El texto escrito es <strong>$dato</strong>.</p>\n";
+    print "  <p>El texto escrito es <strong>$texto</strong>.</p>\n";
 }
 print "\n";
 ?>

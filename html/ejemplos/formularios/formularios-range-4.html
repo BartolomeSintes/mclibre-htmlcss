@@ -8,13 +8,21 @@
 
 <body>
   <form action="formularios-range-4.php" method="get">
-    <p>Indique su nivel (Malo, Regular, Bueno):
-      <input type="range" name="dato" min="1" max="3" list="lista-rango">
+    <p>
+      Indique su nivel (Malo, Regular, Bueno):
+      <input type="range" name="rango" min="1" max="3" list="lista-rango">
       <datalist id="lista-rango">
         <option value="1" label="Malo"></option>
         <option value="2" label="Regular"></option>
         <option value="3" label="Bueno"></option>
-      </datalist></p>
+        <!--
+          2019-10-22
+          He tenido que añadir los cierres de option porque HTMLHint en VSCode dice que es necesario
+          pero mirando la recomendación yo diría que no hace falta. El validador dice que es igual de
+          válido con cierre que sin ellos.
+        -->
+      </datalist>
+    </p>
 
     <p>
       <input type="submit" value="Enviar">

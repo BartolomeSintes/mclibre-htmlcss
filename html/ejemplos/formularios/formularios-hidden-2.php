@@ -8,7 +8,7 @@
 
 <body>
   <form action="formularios-hidden-3.php" method="get">
-    <p>Escriba su edad: <input type="number" name="dato"></p>
+    <p>Escriba su edad: <input type="number" name="edad"></p>
 
     <p>
       <input type="submit" value="Enviar">
@@ -28,9 +28,9 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$nombre = recoge("nombre");
 
-print "      <input type=\"hidden\" name=\"nombre\" value=\"$dato\">\n";
+print "      <input type=\"hidden\" name=\"nombre\" value=\"$nombre\">\n";
 ?>
     </p>
   </form>

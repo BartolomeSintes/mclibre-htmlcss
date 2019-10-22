@@ -13,7 +13,7 @@ $radio = rand(10, 20);
 $cx = rand(20, 80);
 $cy = rand(20, 80);
 print "    <p>Haga clic en el círculo negro o fuera de él:\n";
-print "      <input type=\"image\" name=\"dato\" src=\"formularios-image.php?radio=$radio&amp;cx=$cx&amp;cy=$cy\" alt=\"Punto\" style=\"vertical-align: top;\">\n";
+print "      <input type=\"image\" name=\"punto\" src=\"formularios-image.php?radio=$radio&amp;cx=$cx&amp;cy=$cy\" alt=\"Punto\" style=\"vertical-align: top;\">\n";
 print "      <input type=\"hidden\" name=\"radio\" value=\"$radio\">\n";
 print "      <input type=\"hidden\" name=\"cx\" value=\"$cx\">\n";
 print "      <input type=\"hidden\" name=\"cy\" value=\"$cy\">\n";

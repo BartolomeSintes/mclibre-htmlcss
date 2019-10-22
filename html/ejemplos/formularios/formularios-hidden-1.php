@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$nombre = recoge("nombre");
 
-if ($dato == "") {
+if ($nombre == "") {
     print "  <p>No se ha recibido ningún nombre.</p>\n";
 } else {
-    print "  <p>Hola, <strong>$dato</strong>.</p>\n";
+    print "  <p>Hola, <strong>$nombre</strong>.</p>\n";
 }
 print "\n";
 ?>

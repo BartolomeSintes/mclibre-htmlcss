@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$mes = recoge("mes");
 
-if ($dato == "") {
+if ($mes == "") {
     print "  <p>No ha indicado ningún mes.</p>\n";
 } else {
-    print "  <p>El mes indicado es <strong>$dato</strong>.</p>\n";
+    print "  <p>El mes indicado es <strong>$mes</strong>.</p>\n";
 }
 print "\n";
 ?>

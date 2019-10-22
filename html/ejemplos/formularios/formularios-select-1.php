@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$menu = recoge("menu");
 
-if ($dato == "") {
+if ($menu == "") {
     print "  <p>No ha seleccionado ninguna opción.</p>\n";
 } else {
-    print "  <p>La opción elegida es <strong>$dato</strong>.</p>\n";
+    print "  <p>La opción elegida es <strong>$menu</strong>.</p>\n";
 }
 print "\n";
 

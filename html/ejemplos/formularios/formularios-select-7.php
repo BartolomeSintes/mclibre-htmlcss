@@ -23,15 +23,15 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$menu = recoge("menu");
 
-if ($dato == "") {
+if ($menu == "") {
     print "  <p>No ha seleccionado ninguna opción.</p>\n";
-} elseif (count($dato) == 1) {
-    print "  <p>La opción elegida es <strong>$dato[0]</strong>.</p>\n";
+} elseif (count($menu) == 1) {
+    print "  <p>La opción elegida es <strong>$menu[0]</strong>.</p>\n";
 } else {
     print "  <p>Las opciones elegidas son ";
-    foreach ($dato as $valor) {
+    foreach ($menu as $valor) {
         print "<strong>$valor</strong>, ";
     }
     print "</p>\n";

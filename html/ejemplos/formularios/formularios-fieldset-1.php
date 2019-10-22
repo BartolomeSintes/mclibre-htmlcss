@@ -24,14 +24,14 @@ function recoge($var)
 }
 
 $nombre = recoge("nombre");
-$edad = recoge("edad");
-$p1 = recoge("p1");
-$p2 = recoge("p2");
+$edad   = recoge("edad");
+$p1     = recoge("p1");
+$p2     = recoge("p2");
 
 if ($nombre == "") {
     print "  <p>No ha indicado su nombre.</p>\n";
-}   else {
-  print "  <p>Su nombre es <strong>$nombre</strong>.</p>\n";
+} else {
+    print "  <p>Su nombre es <strong>$nombre</strong>.</p>\n";
 }
 print "\n";
 

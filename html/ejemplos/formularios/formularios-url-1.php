@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$direccion = recoge("direccion");
 
-if ($dato == "") {
+if ($direccion == "") {
    print "  <p>No ha indicado ninguna URL.</p>\n";
 } else {
-   print "  <p>La URL indicada es <strong>$dato</strong>.</p>\n";
+   print "  <p>La URL indicada es <strong>$direccion</strong>.</p>\n";
 }
 print "\n";
 ?>

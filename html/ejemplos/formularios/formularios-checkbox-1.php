@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$casilla = recoge("casilla");
 
-if ($dato == "") {
+if ($casilla == "") {
     print "  <p>No se ha recibido nada.</p>\n";
 } else {
-    print "  <p>El dato recibido es <strong>$dato</strong>.</p>\n";
+    print "  <p>El dato recibido es <strong>$casilla</strong>.</p>\n";
 }
 print "\n";
 

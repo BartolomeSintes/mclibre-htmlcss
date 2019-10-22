@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$numero = recoge("numero");
 
-if ($dato == "") {
+if ($numero == "") {
     print "  <p>No ha indicado ningún número.</p>\n";
 } else {
-    print "  <p>El número indicado es <strong>$dato</strong>.</p>\n";
+    print "  <p>El número indicado es <strong>$numero</strong>.</p>\n";
 }
 print "\n";
 print "  <p><a href=\"formularios-number-3.html\">Volver al formulario.</a></p>\n";

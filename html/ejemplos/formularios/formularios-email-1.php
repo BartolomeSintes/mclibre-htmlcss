@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$correo = recoge("correo");
 
-if ($dato == "") {
+if ($correo == "") {
     print "  <p>No ha indicado ninguna dirección de correo.</p>\n";
 } else {
-    print "  <p>La dirección de correo indicada es <strong>$dato</strong>.</p>\n";
+    print "  <p>La dirección de correo indicada es <strong>$correo</strong>.</p>\n";
 }
 print "\n";
 ?>

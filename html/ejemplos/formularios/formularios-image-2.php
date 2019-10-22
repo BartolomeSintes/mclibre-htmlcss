@@ -10,19 +10,26 @@
 <?php
 function recoge($var)
 {
-  $tmp = (isset($_REQUEST[$var]))
-    ? trim(htmlspecialchars($_REQUEST[$var], ENT_QUOTES, "UTF-8"))
-    : "";
-  return $tmp;
+    if (!isset($_REQUEST[$var])) {
+        $tmp = "";
+    } elseif (!is_array($_REQUEST[$var])) {
+        $tmp = trim(htmlspecialchars($_REQUEST[$var], ENT_QUOTES, "UTF-8"));
+    } else {
+        $tmp = $_REQUEST[$var];
+        array_walk_recursive($tmp, function (&$valor) {
+            $valor = trim(htmlspecialchars($valor, ENT_QUOTES, "UTF-8"));
+        });
+    }
+    return $tmp;
 }
 
 $radio = recoge("radio");
 $cx = recoge("cx");
 $cy = recoge("cy");
-$datoX = recoge("dato_x");
-$datoY = recoge("dato_y");
+$puntoX = recoge("punto_x");
+$puntoY = recoge("punto_y");
 
-if (($datoX - $cx) * ($datoX -$cx) + ($datoY - $cy) * ($datoY -$cy) > $radio * $radio) {
+if (($puntoX - $cx) * ($puntoX -$cx) + ($puntoY - $cy) * ($puntoY -$cy) > $radio * $radio) {
     print "  <p>No ha hecho clic en el círculo negro.</p>\n";
 } else {
     print "  <p>Ha hecho clic en el círculo negro.</p>\n";

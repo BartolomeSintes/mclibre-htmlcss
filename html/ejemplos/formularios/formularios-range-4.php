@@ -23,15 +23,16 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
-if ($dato == "") {
+$rango = recoge("rango");
+
+if ($rango == "") {
     print "  <p>No ha indicado ningún nivel.</p>\n";
 } else {
-    print "  <p>El nivel indicado es <strong>$dato</strong>.</p>\n";
+    print "  <p>El nivel indicado es <strong>$rango</strong>.</p>\n";
 }
 print "\n";
 
-print "  <p><a href=\"formularios-range-3.html\">Volver al formulario.</a></p>\n";
+print "  <p><a href=\"formularios-range-4.html\">Volver al formulario.</a></p>\n";
 ?>
 </body>
 </html>

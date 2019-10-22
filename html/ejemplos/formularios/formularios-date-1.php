@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$fecha = recoge("fecha");
 
-if ($dato == "") {
+if ($fecha == "") {
     print "  <p>No ha indicado ninguna fecha.</p>\n";
 } else {
-    print "  <p>La fecha indicada es <strong>$dato</strong>.</p>\n";
+    print "  <p>La fecha indicada es <strong>$fecha</strong>.</p>\n";
 }
 print "\n";
 ?>

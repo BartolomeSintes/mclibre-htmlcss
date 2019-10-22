@@ -23,11 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
-if ($dato == "") {
+$colorElegido = recoge("colorElegido");
+
+if ($colorElegido == "") {
   print "  <p>No ha elegido ningún color.</p>\n";
 } else {
-  print "  <p>El color elegido es <strong>$dato</strong>.</p>\n";
+  print "  <p>El color elegido es <strong>$colorElegido</strong>.</p>\n";
 }
 print "\n";
 

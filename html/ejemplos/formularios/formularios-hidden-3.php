@@ -24,7 +24,7 @@ function recoge($var)
 }
 
 $nombre = recoge("nombre");
-$dato = recoge("dato");
+$edad = recoge("edad");
 
 if ($nombre == "") {
     print "  <p>No ha escrito su nombre.</p>\n";
@@ -33,10 +33,10 @@ if ($nombre == "") {
 }
 print "\n";
 
-if ($dato == "") {
+if ($edad == "") {
     print "  <p>No ha indicado su edad.</p>\n";
 } else {
-    print "  <p>Su edad es <strong>$dato</strong>.</p>\n";
+    print "  <p>Su edad es <strong>$edad</strong>.</p>\n";
 }
 print "\n";
 ?>

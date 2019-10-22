@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$dato = recoge("dato");
+$telefono = recoge("telefono");
 
-if ($dato == "") {
+if ($telefono == "") {
     print "  <p>No ha indicado ningún número de teléfono.</p>\n";
 } else {
-    print "  <p>El número de teléfono indicado es <strong>$dato</strong>.</p>\n";
+    print "  <p>El número de teléfono indicado es <strong>$telefono</strong>.</p>\n";
 }
 print "\n";
 ?>
