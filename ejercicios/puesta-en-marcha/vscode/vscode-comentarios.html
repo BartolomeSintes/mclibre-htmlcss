@@ -50,7 +50,7 @@
       <li>Abra la página <strong>vscode-1.html</strong> en Firefox y Chrome con los atajos de teclado <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c.</span>.
         <p>Si no se abre el navegador correspondiente, revise los atajos de teclado creados en Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#atajos-teclado">Configuración de Visual Studio Code</a>.</p>
       </li>
-      <li>Compruebe que la dirección de la página es <strong>file:///C://Users/NombreDeUsuario/Documents/LMSGI NombreAlumno/HTML/ejericios/puesta-en-marcha/vscode-1.html</strong>, donde NombreDeUsuario es el nombre del usuario de Windows y NombreDeAlumno es su nombre.
+      <li>Compruebe que la dirección de la página es <strong>file:///C://Users/NombreDeUsuario/Documents/LMSGI NombreAlumno/HTML/ejercicios/puesta-en-marcha/vscode-1.html</strong>, donde NombreDeUsuario es el nombre del usuario de Windows y NombreDeAlumno es su nombre.
       </li>
       <li>El resultado en el navegador debe ser el siguiente:
         <div class="filaflex">
@@ -221,30 +221,42 @@ p {
           </div>
         </div>
       </li>
-      <li>Abra la hoja de estilo <strong>vscode-7.css</strong>.</li>
-      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Máy+c Alt+Máy+f</span> y compruebe que se formatea correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, orden de etiquetas, etc.
+      <li>Abra la hoja de estilo <strong>vscode-7.css</strong>. Esta hoja de estilo no es incorrecta, pero no sigue el estilo recomendado en estos apuntes.
+
         <div class="codigo">
           <pre>
-<code class="copy-language-css">body {
+<code class="language-css">     BODY      {background-color:wheat;font-family : sans-serif    ;     }
+  h1 { text-transform       : uppercase;      text-align       :     center     }
+
+
+</code>
+</pre>
+        </div>
+      </li>
+      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Máy+c Alt+Máy+f</span> y compruebe que se formatea más o menos correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, orden de etiquetas, punto y coma tras cada propiedad, etc).
+        <div class="codigo">
+          <pre>
+<code class="language-css">     body {
   background-color: wheat;
-  font-family: sans-serif;
+  font-family: sans-serif    ;
 }
 
 h1 {
-  text-align: center;
+  text-align: center;     ;
   text-transform: uppercase;
 }
 </code>
 </pre>
         </div>
-        <p>Si no se formatea correctamente la hoja de estilo, compruebe que la extensión CSScomb está instalada y revise la configuración de la extensión CSScomb, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#csscomb">Configuración de Visual Studio Code</a>.</p>
+        <p>Si no obtiene este resultado, compruebe que la extensión CSScomb está instalada y revise la configuración de la extensión CSScomb, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#csscomb">Configuración de Visual Studio Code</a>.</p>
+        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <strong>Nota</strong>: CSSComb no corrige los espacios iniciales de la primera línea y añade un segundo punto y coma en la propiedad reordenada que antes no tenía punto y coma. El 16/10/2019 abrí dos <i>issues</i> (<a href="https://github.com/csscomb/csscomb.js/issues/621">csscomb#621</a> y <a href="https://github.com/csscomb/csscomb.js/issues/622">csscomb#622</a>) en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes.</p>
       </li>
       <li>Guarde la hoja de estilo y actualice la página en el navegador. Compruebe que la página se ve exactamente igual que antes.</li>
     </ol>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 16 de octubre de 2019</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
       Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
