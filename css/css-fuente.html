@@ -472,7 +472,74 @@
       </p>
     </aside>
 
-    <p>La propiedad <span class="css-prop">font-family</span> permite establecer el tipo de letra (fuente) del elemento. Se puede escribir el nombre concreto de una fuente (escribiéndolo entre comillas si el nombre contiene espacios), pero hay que tener en cuenta que si la persona que ve la página no tiene esa fuente instalada en su ordenador (o la tiene, pero con otro nombre), su navegador utilizará una fuente distinta. Para evitar este problema se puede utilizar uno de los nombres genéricos (<span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span>, <span class="css-valor">cursive</span> o <span class="css-valor">fantasy</span>). Los navegadores tienen asociados a cada nombre genérico una fuente que sí que está instalada en el ordenador.</p>
+    <p>La propiedad <span class="css-prop">font-family</span> permite establecer el tipo de letra (fuente) del elemento.</p>
+
+    <p>La propiedad <span class="css-prop">font-family</span> puede tomar como valor el nombre concreto de una fuente. El nombre de la fuente debe escribirse entre comillas si contiene espacios (y puede escribirse entre comillas si no contiene espacios). Si el ordenador no tiene instalada la fuente indicada, el navegador utilizará una fuente de la familia genérica <span class="css-valor">serif</span> (que se explica a continuación). En los ejemplos siguientes si no está instalada alguna de las fuentes Arial, Segoe UI u Homer Simpson, el ejemplo se verá en el mismo tipo de letra que el cuarto ejemplo.</p>
+
+    <div class="filaflex">
+        <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: Arial;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-family-06.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-family-06.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+    <div class="filaflex">
+        <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Segoe UI";
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-family-07.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-family-07.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+    <div class="filaflex">
+        <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "Homer Simpson UI";
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-family-08.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-family-08.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+    <div class="filaflex">
+        <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: serif;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/fuentes/font-family-09.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/fuentes/font-family-09.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    <p>Para evitar este problema se puede utilizar uno de los nombres de familia de fuentes genéricos <span class="css-valor">serif</span>, <span class="css-valor">sans-serif</span>, <span class="css-valor">monospace</span>, <span class="css-valor">cursive</span> y <span class="css-valor">fantasy</span>. Los navegadores tienen asociados a cada nombre genérico una fuente que sí que está instalada en el ordenador (salvo en el caso de la familia genérica <span class="css-valor">fantasy</span> que puede no tener asociada ninguna fuente especial).</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -554,18 +621,18 @@
       </div>
     </div>
 
-    <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista. Los nombres de las fuentes deben escribirse entre comillas si contienen espacios.</p>
+    <p>Si el valor de la propiedad <span class="css-prop">font-family</span> son varios nombres de fuentes separados por comas, el navegador aplicará la primera fuente de la lista que esté instalada en el ordenador. Por ello es conveniente incluir en último lugar uno de los nombres genéricos, por si acaso el resto de fuentes no estuvieran disponibles. Hay que tener en cuenta también que si una fuente no contiene un carácter determinado, el navegador busca ese carácter en las siguientes fuentes de la lista.</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "Palatino", sans-serif;
+  font-family: "Constantia", serif;
 }</code>
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fuentes/font-family-11.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/fuentes/font-family-11.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fuentes/font-family-11.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -576,12 +643,12 @@
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "Tahoma", "Geneva", sans-serif;
+  font-family: "Segoe IU", sans-serif;
 }</code>
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fuentes/font-family-12.html" style="width: 100%; height: 6em">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/fuentes/font-family-12.html" style="width: 100%; height: 7em">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fuentes/font-family-12.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -592,7 +659,7 @@
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "Homer Simpson", cursive;
+  font-family: "Consolas", monospace;
 }</code>
 </pre>
       </div>
@@ -604,13 +671,15 @@
       </div>
     </div>
 
-    <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas.</p>
+    <p>Los nombres de fuentes se pueden escribir en mayúsculas o minúsculas. En lo ejemplos siguientes se escribe la fuente Arial de cuatro maneras distintas. La última forma es incorrecta (porque el nombre de la fuente está escrito con espacios), por lo que el ejemplo se ve con una fuente <span class="css-valor">serif</span>.</p>
+
+    <p><strong>Nota</strong>: En una enumeración de fuentes, lo lógico es poner al final la familia genérica a la que pertencen el resto de fuentes. Así, en los ejemplos siguientes lo lógico sería haber escrito la familia genérica <span class="css-valor">sans-serif</span>. Pero estos ejemplos no se ha hecho así para que se pueda identificar fácilmente cuándo el navegador no puede aplicar la fuente (concretamente, en el último ejemplo).</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "Arial", serif;
+  font-family: "arial", serif;
 }</code>
 </pre>
       </div>
@@ -626,7 +695,7 @@
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "arial", serif;
+  font-family: "ARIAL", serif;
 }</code>
 </pre>
       </div>
@@ -642,7 +711,7 @@
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  font-family: "ARIAL", serif;
+  font-family: "ArIaL", serif;
 }</code>
 </pre>
       </div>
@@ -651,6 +720,22 @@
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fuentes/font-family-23.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  font-family: "a r i a l", serif;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fuentes/font-family-24.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fuentes/font-family-24.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
   </section>
@@ -1745,7 +1830,7 @@ p {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 26 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
