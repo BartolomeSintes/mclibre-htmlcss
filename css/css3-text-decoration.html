@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Decoración de texto. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Decoración de texto. CSS 3 / CSS 4. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>CSS 3: Decoración de texto</h1>
+  <h1>CSS 3 / CSS 4: Decoración de texto</h1>
 
   <nav>
     <p>
@@ -23,21 +23,23 @@
     </p>
 
     <div class="toc">
-      <h2>CSS 3: Decoración texto</h2>
+      <h2>CSS 3/4: Decoración texto</h2>
 
       <ul>
-        <li><a href="#text-decoration">Líneas: <span class="css-prop">text-decoration</span></a></li>
-        <li><a href="#text-emphasis">Énfasis: <span class="css-prop">text-emphasis</span></a></li>
+        <li><a href="#text-decoration-css3">Líneas CSS3: <span class="css-prop">text-decoration</span></a></li>
+        <li><a href="#text-decoration-css4">Líneas CSS4: <span class="css-prop">text-decoration</span></a></li>
+        <li><a href="#text-emphasis-css3">Énfasis CSS3: <span class="css-prop">text-emphasis</span></a></li>
+        <li><a href="#text-emphasis-css4">Énfasis CSS4: <span class="css-prop">text-emphasis</span></a></li>
       </ul>
     </div>
   </nav>
 
-  <p>La futura recomendación <a href="https://www.w3.org/TR/css-text-decor-3/">CSS 3: Decoración de texto</a>, actualmente (octubre de 2018) en elaboración, permite añadir al texto ciertos tipos de decoración que amplian los disponibles en CSS 2.</p>
+  <p>Las futuras recomendaciones <a href="https://www.w3.org/TR/css-text-decor-3/">CSS 3: Decoración de texto</a> y <a href="https://www.w3.org/TR/css-text-decor-4/">CSS 4: Decoración de texto</a>, actualmente (octubre de 2019) en elaboración, permiten añadir al texto ciertos tipos de decoración que amplian los disponibles en CSS 2.</p>
 
-  <section id="text-decoration">
-    <h2>Decoración con líneas: <span class="css-prop">text-decoration</span></h2>
+  <section id="text-decoration-css3">
+    <h2>CSS 3 Decoración con líneas: <span class="css-prop">text-decoration</span></h2>
 
-    <p>Esta propiedad ya existía en CSS 2, aunque CSS 3 amplía sus posibilidades.</p>
+    <p>Esta propiedad ya existía en CSS 2, aunque <a href="https://www.w3.org/TR/css-text-decor-3/">CSS 3: Decoración de texto</a> (actualmente -octubre de 2019- en elaboración) amplía sus posibilidades.</p>
 
     <p>Las propiedades de decoración de texto mediante una línea son las siguientes:</p>
 
@@ -46,11 +48,10 @@
       <li><span class="css-prop">text-decoration-line</span>: <span class="css-valor">none</span> | <span class="css-valor">underline</span> | <span class="css-valor">overline</span> | <span class="css-valor">line-through</span> | <span class="css-valor">blink</span><br> Posición de la línea</li>
       <li><span class="css-prop">text-decoration-style</span>: <span class="css-valor">solid</span> | <span class="css-valor">double</span> | <span class="css-valor">dotted</span> | <span class="css-valor">dashed</span> | <span class="css-valor">wavy</span><br> Estilo de línea </li>
       <li><span class="css-prop">text-decoration-color</span>: color <br> Color de la línea:</li>
-      <li><span class="css-prop">text-decoration-skip</span>: <span class="css-valor">none</span> | <span class="css-valor">objects</span> | <span class="css-valor">spaces</span> | <span class="css-valor">ink</span> | <span class="css-valor">edges</span> | box-<span class="css-valor">decoration</span><br> Elementos que se salta la línea</li>
       <li><span class="css-prop">text-underline-position</span>: <span class="css-valor">under</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span><br> Posición de la línea respecto al texto</li>
     </ul>
 
-    <p>Actualmente (octubre de 2018), la propiedad <span class="css-prop">text-decoration</span> funciona en Chrome, Firefox y Edge.</p>
+    <p>Actualmente (octubre de 2019), la propiedad <span class="css-prop">text-decoration</span> funciona en Chrome, Firefox y Edge.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -87,10 +88,35 @@
     </div>
   </section>
 
-  <section id="text-emphasis">
-    <h2>Énfasis: <span class="css-prop">text-emphasis</span></h2>
+  <section id="text-decoration-css4">
+    <h2>CSS 4 Decoración con líneas: <span class="css-prop">text-decoration</span></h2>
 
-    <p>La propiedad <span class="css-prop">text-emphasis</span> está pensada para añadir un símbolo al texto. Estos símbolos se utilizan en los lenguajes asiáticos orientales para enfatizar el texto.</p>
+    <p>Algunas propiedades que los navegadores no admiten todavía se han incoporado en la futura recomendación <a href="https://www.w3.org/TR/css-text-decor-4/">CSS 4: Decoración de texto</a>, actualmente (octubre de 2019) en elaboración.</p>
+
+    <p>Las propiedades de decoración de texto mediante una línea son las siguientes:</p>
+
+    <ul>
+      <li>
+        <span class="css-prop">text-decoration-skip</span>: <span class="css-valor">none</span> | <span class="css-valor">objects</span> | <span class="css-valor">spaces</span> | <span class="css-valor">ink</span> | <span class="css-valor">edges</span> | box-<span class="css-valor">decoration</span><br>
+        Elementos que se salta la línea
+      </li>
+      <li>
+        <span class="css-prop">text-decoration-skip-ink</span>: <span class="css-valor">auto</span> | <span class="css-valor">none</span><br>
+        Si la línea salta o no los elementos
+      </li>
+      <li><span class="css-prop">text-decoration-line</span>: añade los valores <span class="css-valor">spelling-error</span> | <span class="css-valor">grammar-error</span></li>
+      <li>
+        <span class="css-prop">text-underline-offset</span>: <span class="css-valor">auto</span> | <span class="css-valor">from-font</span> | <span class="css-valor">longitud</span><br>
+        Desplazamiento de la línea
+      </li>
+      <li><span class="css-prop">text-decoration-thickness</span>: <span class="css-valor">auto</span> | <span class="css-valor">from-font</span> | <span class="css-valor">longitud</span></li>
+    </ul>
+  </section>
+
+  <section id="text-emphasis-css3">
+    <h2>CSS 3 Énfasis: <span class="css-prop">text-emphasis</span></h2>
+
+    <p>La propiedad <span class="css-prop">text-emphasis</span> de <a href="https://www.w3.org/TR/css-text-decor-3/">CSS 3: Decoración de texto</a> (actualmente -octubre de 2019- en elaboración) está pensada para añadir un símbolo al texto. Estos símbolos se utilizan en los lenguajes asiáticos orientales para enfatizar el texto.</p>
 
     <ul>
       <li><span class="css-prop">text-emphasis</span>: propiedad compuesta<br> Espera dos valores (<span class="css-prop">text-emphasis-style</span>, <span class="css-prop">text-emphasis-color</span>)</li>
@@ -99,7 +125,7 @@
       <li><span class="css-prop">text-emphasis-position</span>: <span class="css-valor">over</span> | <span class="css-valor">under</span> &amp;&amp; <span class="css-valor">right</span> | <span class="css-valor">left</span></li>
     </ul>
 
-    <p>Actualmente (octubre de 2018), las propiedades <span class="css-prop">text-emphasis</span>, <span class="css-prop">text-emphasis-style</span> y <span class="css-prop">text-emphasis-position</span> funcionan en Firefox y Edge, pero no en Chrome.</p>
+    <p>Actualmente (octubre de 2019), las propiedades <span class="css-prop">text-emphasis</span>, <span class="css-prop">text-emphasis-style</span> y <span class="css-prop">text-emphasis-position</span> funcionan en Firefox y Edge, pero no en Chrome.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
@@ -227,7 +253,7 @@
       </div>
     </div>
 
-    <p>Actualmente (octubre de 2018), la propiedad <span class="css-prop">text-emphasis-position</span> funciona en Firefox, pero no en Chrome y en Edge.</p>
+    <p>Actualmente (octubre de 2019), la propiedad <span class="css-prop">text-emphasis-position</span> funciona en Firefox, pero no en Chrome y en Edge.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
@@ -252,8 +278,22 @@
     </div>
   </section>
 
+
+  <section id="text-emphasis-css4">
+    <h2>CSS 4 Énfasis: <span class="css-prop">text-emphasis</span></h2>
+
+    <p>Algunas propiedades que los navegadores no admiten todavía se han incoporado en la futura recomendación <a href="https://www.w3.org/TR/css-text-decor-4/">CSS 4: Decoración de texto</a>, actualmente (octubre de 2019) en elaboración.</p>
+
+    <ul>
+        <li>
+          <span class="css-prop">text-emphasis-skip</span>: <span class="css-valor">spaces</span> | <span class="css-valor">punctuation</span> | <span class="css-valor">symbols</span> | <span class="css-valor">narrow</span><br>
+          Elementos en los que añade énfasis
+        </li>
+    </ul>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 27 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
