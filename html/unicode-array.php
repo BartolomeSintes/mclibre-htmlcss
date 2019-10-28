@@ -2875,10 +2875,10 @@ $caracteres_unicode = array(
   array(array("1FA93"), "12", "", "WC", "F", "T", "axe"),
   array(array("1FA94"), "12", "", "WC", "F", "T", "diya lamp"),
   array(array("1FA95"), "12", "", "WC", "F", "T", "banjo"),
-);
+// );
 
 
-/*
+// /*
   // Estos caracteres no sé si vale la pena enseñarlos
 
   // Musical Symbols
@@ -3526,4 +3526,4 @@ $caracteres_unicode = array(
   array(array("1F772"), "6.0", "", "W", "", "", "alchemical symbol for half dram"),
   array(array("1F773"), "6.0", "", "W", "", "", "alchemical symbol for half ounce"),
 );
-*/
+// */
