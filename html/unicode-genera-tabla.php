@@ -218,7 +218,7 @@
                         print "</strong></p>\n";
                         print "      <p class=\"en\"><strong>";
                         foreach ($c[0] as $tmp) {
-                            print "&amp;#x" . hexdec($tmp) . ";";
+                            print "&amp;#" . hexdec($tmp) . ";";
                         }
                         print "</strong></p>\n";
                         print "      <p class=\"no\">$c[6]</p>\n";
@@ -293,7 +293,7 @@
                         }
                         print "</strong><br>decimal: <strong>";
                         foreach ($c[0] as $tmp) {
-                            print "&amp;#x" . hexdec($tmp) . ";";
+                            print "&amp;#" . hexdec($tmp) . ";";
                         }
                         print "</strong></p>\n";
                         print "      <p class=\"no\">$c[6]</p>\n";
@@ -371,6 +371,7 @@
         print "      </tr>\n";
         foreach ($matriz as $c) {
             print "      <tr>\n";
+            print "        <th>";
             $cad1 = $cad2 = $cad3 = "";
             foreach ($c[0] as $c2) {
                 $tmp = strtolower($c2);
@@ -380,9 +381,11 @@
                 $cad1 .= "U+" . $c2 . " ";
                 $cad2 .= $tmp . "-";
                 $cad3 .=  "&#x" . $c2 . ";";
+                print "&amp;#x$c2;<wbr>";
             }
+            print "</th>\n";
             $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
-            print "        <th>$cad1</th>\n";
+            // print "        <th>$cad1 &amp;#x$c2;</th>\n";
             print "        <td class=\"ss\">$cad3</td>\n";
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustituye al segundo carácter de la secuencia
@@ -483,9 +486,6 @@
         array($caracteres_unicode, "Dingbats decorativos",                              "dingbats-decorativos",   "U1F650.pdf",                                    1, "1F650", "1F67F"),
         array($caracteres_unicode, "Símbolos alquímicos",                               "simbolos-alquimicos",    "U1F700.pdf",                                    1, "1F700", "1F773"),
         array($caracteres_unicode, "Formas geométricas extendidas",                     "geometricas-extendidas", "U1F780.pdf",                                    1, "1F780", "1F7EB"),
-    );
-
-    $grupos_dibujos = array(
         array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-pict-misc", "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
         array($caracteres_unicode, "Emoticonos",                                        "emoticonos",         "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
         array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",         "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
@@ -525,8 +525,8 @@
         array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
     );
 
+    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6
     // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
-    // genera_grupos($grupos_dibujos, ["ss", "sy", "te"]);
     // genera_grupos($grupos_secuencias, ["ss", "te"]);
     genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
