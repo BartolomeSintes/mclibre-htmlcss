@@ -628,7 +628,8 @@
       <pre>
 <code class="language-html">&lt;table border="1" &gt;
   &lt;caption&gt;Leyenda&lt;/caption&gt;
-  &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;1&lt;/td&gt;
@@ -640,15 +641,15 @@
 </pre>
     </div>
 
-    <p>Cada etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a una columna, en el mismo orden (la primera etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a la primera columna, y así sucesivamente). En el ejemplo anterior, hay definidas dos grupos de columnas, el primero de los cuales abarca dos columnas y el segundo una columna.</p>
+    <p>Cada etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a una columna, en el mismo orden (la primera etiqueta <span class="html-eti">&lt;col&gt;</span> corresponde a la primera columna, y así sucesivamente). En el ejemplo anterior, hay definidos dos grupos de columnas, el primero de los cuales abarca dos columnas y el segundo una columna.</p>
 
-    <p>Puede haber menos etiquetas <span class="html-eti">&lt;col&gt;</span> que columnas en la tabla (también puede haber más, pero serían innecesarias).</p>
+    <p>El número de columnas que se defina mediante etiquetas <span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colgroup&gt;</span> debe coincidir con el número de columnas de la tabla.</p>
 
-    <p>En una tabla puede haber únicamente etiquetas <span class="html-eti">&lt;col&gt;</span> (es decir, puede no haber etiquetas <span class="html-eti">&lt;colgroup&gt;)</span>, pero si hay una etiqueta <span class="html-eti">&lt;colgroup&gt;</span> ya no puede haber etiquetas <span class="html-eti">&lt;col&gt;</span> que no estén dentro de una etiqueta <span class="html-eti">&lt;colgroup&gt;</span>.</p>
+    <p>Todas las etiquetas <span class="html-eti">&lt;col&gt;</span> deben estar incluidas en algún <span class="html-eti">&lt;colgroup&gt;</span>. Si alguna o algunas etiquetas <span class="html-eti">&lt;col&gt;</span> no están incluidas en ninguna etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, los navegadores crean automáticamente etiquetas <span class="html-eti">&lt;colgroup&gt;</span> que agrupan las etiquetas <span class="html-eti">&lt;col&gt;</span> "huérfanas" consecutivas. Por ejemplo, si no se incluye ninguna etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, el navegador creará un etiqueta <span class="html-eti">&lt;colgroup&gt;</span> que agrupe todas las columnas. Y si se incluye una o varias etiquetas <span class="html-eti">&lt;colgroup&gt;</span>, pero quedan etiquetas <span class="html-eti">&lt;col&gt;</span> no incluidas en ninguno de los <span class="html-eti">&lt;colgroup&gt;</span>, el navegador creará etiquetas <span class="html-eti">&lt;colgroup&gt;</span> para esas etiquetas <span class="html-eti">&lt;col&gt;</span>.</p>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 29 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

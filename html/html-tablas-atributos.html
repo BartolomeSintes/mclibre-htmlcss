@@ -273,7 +273,7 @@ td, th {
     <section id="atributo-col-span">
       <h3>El atributo <span class="html-atri">span</span></h3>
 
-      <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al hace referencia la etiqueta <span class="html-eti">&lt;col&gt;</span>.</p>
+      <p>El atributo <span class="html-atri">span</span> permite que una etiqueta <span class="html-eti">&lt;col&gt;</span> haga referencia a varias columnas seguidas. El valor del atributo <span class="html-atri">span</span> indica el número de columnas al que hace referencia la etiqueta <span class="html-eti">&lt;col&gt;</span>.</p>
 
       <div class="filaflex">
         <div class="columnaflex">
@@ -281,7 +281,7 @@ td, th {
             <pre>
 <code class="language-html">&lt;table border="1"&gt;
   &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
-  &lt;col span="2"&gt;&lt;col&gt;
+  &lt;col span="2" class="fondo"&gt;&lt;col&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;Celda 1&lt;/td&gt;
@@ -299,7 +299,7 @@ td, th {
           </div>
           <div class="codigo">
             <pre>
-<code class="language-css">col {
+<code class="language-css">col.fondo {
   background-color: lightblue;
 }</code>
 </pre>
@@ -325,23 +325,24 @@ td, th {
 
       <p>Pero si se utiliza el atributo <span class="html-atri">span</span> en la etiqueta <span class="html-eti">&lt;colgroup&gt;</span>, no se pueden incluir etiquetas <span class="html-eti">&lt;col&gt;</span> en el <span class="html-eti">&lt;colgroup&gt;</span>.</p>
 
+      <p>En los tres ejemplos siguientes se pueden ver las tres maneras de definir un grupo de dos columnas. El <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris porque tiene clase <span class="css-valor">fondo</span>. La tercera columna no se ve de color gris porque aunque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para la tercera columna, este <span class="html-eti">&lt;colgroup&gt;</span> no tiene clase <span class="css-valor">fondo</span>:</p>
+
       <div class="filaflex">
         <div class="columnaflex">
           <div class="codigo">
             <pre>
 <code class="language-html">&lt;table border="1"&gt;
-  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
-  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;&lt;col&gt;
-  &lt;tbody&gt;
-  ...</code>
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup span="2" class="fondo"&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
 </pre>
           </div>
           <div class="codigo">
             <pre>
-<code class="language-css">colgroup {
-  background-color: lightgrey;
-}<br>col {
-  background-color: lightblue;
+<code class="language-css">colgroup.fondo {
+background-color: lightgrey;
 }</code>
 </pre>
           </div>
@@ -353,25 +354,22 @@ td, th {
           <a href="ejemplos/tablas-atributos/colgroup-span-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
-
       <div class="filaflex">
         <div class="columnaflex">
           <div class="codigo">
             <pre>
 <code class="language-html">&lt;table border="1"&gt;
-  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
-  &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;&lt;col&gt;
-  &lt;tbody&gt;
-  ...</code>
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup class="fondo"&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
 </pre>
           </div>
           <div class="codigo">
             <pre>
-<code class="language-css">colgroup {
-  background-color: lightgrey;
-}
-col {
-  background-color: lightblue;
+<code class="language-css">colgroup.fondo {
+background-color: lightgrey;
 }</code>
 </pre>
           </div>
@@ -383,24 +381,24 @@ col {
           <a href="ejemplos/tablas-atributos/colgroup-span-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
-
       <div class="filaflex">
         <div class="columnaflex">
           <div class="codigo">
             <pre>
 <code class="language-html">&lt;table border="1"&gt;
-  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
-  &lt;colgroup&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;&lt;col&gt;
-  &lt;tbody&gt;
-  ...</code>
+&lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col span="2"&gt;&lt;/colgroup&gt;
+&lt;col&gt;
+&lt;tbody&gt;
+...</code>
 </pre>
           </div>
           <div class="codigo">
             <pre>
 <code class="language-css">colgroup {
-  background-color: lightgrey;
+background-color: lightgrey;
 }<br>col {
-  background-color: lightblue;
+background-color: lightblue;
 }</code>
 </pre>
           </div>
@@ -412,11 +410,109 @@ col {
           <a href="ejemplos/tablas-atributos/colgroup-span-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+
+      <p>Para entender el resultado de los ejemplos siguientes, hay que tener en cuenta que los navegadores añaden etquetas <span class="html-eti">&lt;colgroup&gt;</span> alrededor de las etiquetas <span class="html-eti">&lt;col&gt;</span> consecutivas no incluidas en etiquetas <span class="html-eti">&lt;colgroup&gt;</span>.</p>
+
+      <ul>
+        <li>En el ejemplo siguiente, el <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris. La tercera columna también se ve de color gris porque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para la tercera columna:
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}</code>
+</pre>
+              </div>
+            </div>
+            <div class="resultado-object">
+              <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-4.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="ejemplos/tablas-atributos/colgroup-span-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+            </div>
+          </div>
+        </li>
+        <li>En el ejemplo siguiente, el <span class="html-eti">&lt;colgroup&gt;</span> abarca las dos primeras columnas y se ven de color gris. En este caso la tercera columna se ve de color azul porque aunque el navegador añade un <span class="html-eti">&lt;colgroup&gt;</span> para esa columna, la regla para <span class="css-sele">col</span> tiene precedencia sobre la regla para el <span class="css-sele">colgroup</span>:
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup span="2"&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}
+col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </div>
+            </div>
+            <div class="resultado-object">
+              <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-5.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="ejemplos/tablas-atributos/colgroup-span-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+            </div>
+          </div>
+        </li>
+        <li>En el ejemplo siguiente, todas las columnas se ven de color azul porque el <span class="html-eti">&lt;colgroup&gt;</span> contiene etiquetas <span class="html-eti">&lt;col&gt;</span> y la regla para <span class="css-sele">col</span> tiene precedencia sobre la regla para el <span class="css-sele">colgroup</span>:
+          <div class="filaflex">
+            <div class="columnaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Esto es la leyenda&lt;/caption&gt;
+  &lt;colgroup&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
+  &lt;col&gt;
+  &lt;tbody&gt;
+  ...</code>
+</pre>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-css">colgroup {
+  background-color: lightgrey;
+}
+col {
+  background-color: lightblue;
+}</code>
+</pre>
+              </div>
+            </div>
+            <div class="resultado-object">
+              <object type="text/html" data="ejemplos/tablas-atributos/colgroup-span-6.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+            </div>
+            <div class="icono-enlace">
+              <a href="ejemplos/tablas-atributos/colgroup-span-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de marzo de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 30 de octubre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
