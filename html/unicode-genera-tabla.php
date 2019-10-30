@@ -92,11 +92,16 @@
 
         table.u {
             border-spacing: 20px 0;
+            border-collapse: collapse;
         }
 
-        table.u col {
+        table.u colgroup {
             border-right: black 1px solid;
+            border-left: black 1px solid;
         }
+
+        table.u tr.fila-estrecha { height: auto;
+      border-bottom: black 1px solid; }
 
         table.u tr { height: 90px; }
 
@@ -343,16 +348,26 @@
         }
 
         print "    <table class=\"u\">\n";
-        print "       <col><col span=\"2\"><col span=\"2\"><col span=\"2\"><col span=\"2\"><col span=\"2\"><col>\n";
-        print "      <tr>\n";
-        print "        <th></th>\n";
-        print "        <th colspan=\"2\"></th>\n";
+        print "      <col>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <colgroup span=\"2\" class=\"borde-lateral\"></colgroup>\n";
+        print "      <col>\n";
+        print "      <tr class=\"fila-estrecha\">\n";
+        print "        <th rowspan=\"2\">Códigos</th>\n";
+        print "        <th colspan=\"2\" rowspan=\"2\">Sin color de piel</th>\n";
+        print "        <th colspan=\"10\">Con color de piel</th>\n";
+        print "        <th rowspan=\"2\">Nombres</th>\n";
+        print "      </tr>\n";
+        print "      <tr class=\"fila-estrecha\">\n";
         print "        <th colspan=\"2\">&amp;#x1F3FB;</th>\n";
         print "        <th colspan=\"2\">&amp;#x1F3FC;</th>\n";
         print "        <th colspan=\"2\">&amp;#x1F3FD;</th>\n";
         print "        <th colspan=\"2\">&amp;#x1F3FE;</th>\n";
         print "        <th colspan=\"2\">&amp;#x1F3FF;</th>\n";
-        print "        <th></th>\n";
         print "      </tr>\n";
         foreach ($matriz as $c) {
             print "      <tr>\n";
