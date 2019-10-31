@@ -2019,7 +2019,7 @@ $caracteres_unicode = array(
   array(array("1F4FB"), "6.0", "", "WC", "F", "T", "radio"),
   array(array("1F4FC"), "6.0", "", "WC", "F", "T", "videocassette"),
   array(array("1F4FD"), "7", "", "W", "F", "T", "film projector"),
-  array(array("1F4FE"), "7", "", "W", "F", "T", "portable stereo"),
+  array(array("1F4FE"), "7", "", "W", "F", "", "portable stereo"),
   array(array("1F4FF"), "8", "", "WC", "F", "T", "prayer beads"),
   array(array("1F500"), "6.0", "", "WC", "F", "T", "twisted rightwards arrows"),
   array(array("1F501"), "6.0", "", "WC", "F", "T", "clockwise rightwards and leftwards open circle arrows"),

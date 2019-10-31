@@ -403,23 +403,33 @@
             $pos = strpos($cad3, ";", 4);
             $cad3 = substr_replace($cad3, "&#x1F3FB;", $pos + 1, 0);
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if (in_array("te", $fuentes)) {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
             $cad3 = str_replace("&#x1F3FB;", "&#x1F3FC;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if (in_array("te", $fuentes)) {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             $cad2 = str_replace("1f3fc", "1f3fd", $cad2);
             $cad3 = str_replace("&#x1F3FC;", "&#x1F3FD;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if (in_array("te", $fuentes)) {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             $cad2 = str_replace("1f3fd", "1f3fe", $cad2);
             $cad3 = str_replace("&#x1F3FD;", "&#x1F3FE;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if (in_array("te", $fuentes)) {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if (in_array("te", $fuentes)) {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             print "        <td class=\"no\">$c[6]</td>\n";
 
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
@@ -444,7 +454,7 @@
         print "\n";
     }
 
-    function genera_tablas($grupos, $fuentes)
+    function genera_tablas($grupos)
     {
         print "  <ul>\n";
         foreach ($grupos as $g) {
@@ -454,43 +464,43 @@
         print "\n";
 
         foreach ($grupos as $g) {
-            genera_tabla_colores_piel($g[0], $g[1], $g[2], $g[3], $g[4], $g[5], $g[6], $fuentes);
+            genera_tabla_colores_piel($g[0], $g[1], $g[2], $g[3], $g[4], $g[5], $g[6], $g[7]);
         }
     }
 
 
-    $grupos_simbolos = array(
-        array($caracteres_unicode, "Controles y Latin básico",                          "controles-latin",        "U00000-c0-controls-and-basic-latin.pdf",        1, "0000",  "007F"),
-        array($caracteres_unicode, "Suplemento controles y Latin-1",                    "controles-sup",          "U00080-c1-controls-and-latin-1-supplement.pdf", 1, "0080",  "00FF"),
-        array($caracteres_unicode, "Puntuación",                                        "puntuacion",             "U02000-general-punctuation.pdf",                1, "2000",  "206F"),
-        array($caracteres_unicode, "Símbolos de monedas",                               "monedas",                "U020A0-currency-symbols.pdf",                   1, "20A0",  "20BF"),
-        array($caracteres_unicode, "Símbolos con letras",                               "simbolos-letras",        "U02100-letterlike-symbols.pdf",                 1, "2100",  "214F"),
-        array($caracteres_unicode, "Flechas",                                           "flechas",                "U02190-arrows.pdf",                             1, "2190",  "21FF"),
-        array($caracteres_unicode, "Símbolos técnicos misceláneos",                     "tecnicos-misc",          "U02300-miscellaneous-technical.pdf",            1, "2300",  "23FE"),
-        array($caracteres_unicode, "Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",        "U02460-enclosed-alphanumerics.pdf",             1, "2460",  "24FF"),
-        array($caracteres_unicode, "Cajas",                                             "cajas",                  "U02500-box-drawing.pdf",                        1, "2500",  "257F"),
-        array($caracteres_unicode, "Formas geométricas",                                "formas-geometricas",     "U025A0-geometric-shapes.pdf",                   1, "25A0",  "25FF"),
-        array($caracteres_unicode, "Símbolos misceláneos",                              "simbolos-misc",          "U02600-miscellaneous-symbols.pdf",              1, "2600",  "26FF"),
-        array($caracteres_unicode, "Dingbats",                                          "dingbats",               "U02700-dingbats.pdf",                           1, "2700",  "27BF"),
-        array($caracteres_unicode, "Flechas suplementarias B",                          "flechas-suplementarias", "U02900-supplemental-arrows-b.pdf",              1, "2900",  "297F"),
-        array($caracteres_unicode, "Símbolos y flechas misceláneos",                    "simbolos-flechas",       "U02B00-miscellaneous-symbols-and-arrows.pdf",   1, "2B00",  "2BFF"),
-        array($caracteres_unicode, "Símbolos y puntuación CJK",                         "cjk",                    "U03000-cjk-symbols-and-punctuation.pdf",        1, "3000",  "303F"),
-        array($caracteres_unicode, "Símbolos CJK con círculo alrededor",                "cjk-circulo",            "U03200-enclosed-cjk-letters-and-months.pdf",    1, "3200",  "32FF"),
-        array($caracteres_unicode, "Símbolos musicales",                                "musica",                 "U1D100.pdf",                                    1, "1D100", "1D1E8"),
-        array($caracteres_unicode, "Fichas de Mahjong",                                 "fichas-mahjong",         "U1F000-mahjong-tiles.pdf",                      1, "1F000", "1F02B"),
-        array($caracteres_unicode, "Fichas de dominó",                                  "domino",                 "U1F030.pdf",                                    1, "1F030", "1F093"),
-        array($caracteres_unicode, "Cartas",                                            "cartas",                 "U1F0A0-playing-cards.pdf",                      1, "1F0A0", "1F0F5"),
-        array($caracteres_unicode, "Suplemento alfanuméricos con círculo alrededor",    "alfanum-circulo-sup",    "U1F100-enclosed-alphanumeric-supplement.pdf",   1, "1F100", "1F1FF"),
-        array($caracteres_unicode, "Suplemento ideográfico con círculo alrededor",      "ideografico-circulo-sup", "U1F200-enclosed-ideographic-supplement.pdf",   1, "1F200", "1F2FF"),
-        array($caracteres_unicode, "Dingbats decorativos",                              "dingbats-decorativos",   "U1F650.pdf",                                    1, "1F650", "1F67F"),
-        array($caracteres_unicode, "Símbolos alquímicos",                               "simbolos-alquimicos",    "U1F700.pdf",                                    1, "1F700", "1F773"),
-        array($caracteres_unicode, "Formas geométricas extendidas",                     "geometricas-extendidas", "U1F780.pdf",                                    1, "1F780", "1F7EB"),
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-pict-misc", "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"),
-        array($caracteres_unicode, "Emoticonos",                                        "emoticonos",         "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"),
-        array($caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",         "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"),
-        array($caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl", "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"),
-        array($caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",     "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"),
-    );
+    $grupos_simbolos = [
+        [$caracteres_unicode, "Controles y Latin básico",                          "controles-latin",         "U00000-c0-controls-and-basic-latin.pdf",           1, "0000",  "007F" ],
+        [$caracteres_unicode, "Suplemento controles y Latin-1",                    "controles-sup",           "U00080-c1-controls-and-latin-1-supplement.pdf",    1, "0080",  "00FF" ],
+        [$caracteres_unicode, "Puntuación",                                        "puntuacion",              "U02000-general-punctuation.pdf",                   1, "2000",  "206F" ],
+        [$caracteres_unicode, "Símbolos de monedas",                               "monedas",                 "U020A0-currency-symbols.pdf",                      1, "20A0",  "20BF" ],
+        [$caracteres_unicode, "Símbolos con letras",                               "simbolos-letras",         "U02100-letterlike-symbols.pdf",                    1, "2100",  "214F" ],
+        [$caracteres_unicode, "Flechas",                                           "flechas",                 "U02190-arrows.pdf",                                1, "2190",  "21FF" ],
+        [$caracteres_unicode, "Símbolos técnicos misceláneos",                     "tecnicos-misc",           "U02300-miscellaneous-technical.pdf",               1, "2300",  "23FE" ],
+        [$caracteres_unicode, "Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",         "U02460-enclosed-alphanumerics.pdf",                1, "2460",  "24FF" ],
+        [$caracteres_unicode, "Cajas",                                             "cajas",                   "U02500-box-drawing.pdf",                           1, "2500",  "257F" ],
+        [$caracteres_unicode, "Formas geométricas",                                "formas-geometricas",      "U025A0-geometric-shapes.pdf",                      1, "25A0",  "25FF" ],
+        [$caracteres_unicode, "Símbolos misceláneos",                              "simbolos-misc",           "U02600-miscellaneous-symbols.pdf",                 1, "2600",  "26FF" ],
+        [$caracteres_unicode, "Dingbats",                                          "dingbats",                "U02700-dingbats.pdf",                              1, "2700",  "27BF" ],
+        [$caracteres_unicode, "Flechas suplementarias B",                          "flechas-suplementarias",  "U02900-supplemental-arrows-b.pdf",                 1, "2900",  "297F" ],
+        [$caracteres_unicode, "Símbolos y flechas misceláneos",                    "simbolos-flechas",        "U02B00-miscellaneous-symbols-and-arrows.pdf",      1, "2B00",  "2BFF" ],
+        [$caracteres_unicode, "Símbolos y puntuación CJK",                         "cjk",                     "U03000-cjk-symbols-and-punctuation.pdf",           1, "3000",  "303F" ],
+        [$caracteres_unicode, "Símbolos CJK con círculo alrededor",                "cjk-circulo",             "U03200-enclosed-cjk-letters-and-months.pdf",       1, "3200",  "32FF" ],
+        [$caracteres_unicode, "Símbolos musicales",                                "musica",                  "U1D100-musical-symbols.pdf",                       1, "1D100", "1D1E8"],
+        [$caracteres_unicode, "Fichas de Mahjong",                                 "fichas-mahjong",          "U1F000-mahjong-tiles.pdf",                         1, "1F000", "1F02B"],
+        [$caracteres_unicode, "Fichas de dominó",                                  "domino",                  "U1F030-domino-tiles.pdf",                          1, "1F030", "1F093"],
+        [$caracteres_unicode, "Cartas",                                            "cartas",                  "U1F0A0-playing-cards.pdf",                         1, "1F0A0", "1F0F5"],
+        [$caracteres_unicode, "Suplemento alfanuméricos con círculo alrededor",    "alfanum-circulo-sup",     "U1F100-enclosed-alphanumeric-supplement.pdf",      1, "1F100", "1F1FF"],
+        [$caracteres_unicode, "Suplemento ideográfico con círculo alrededor",      "ideografico-circulo-sup", "U1F200-enclosed-ideographic-supplement.pdf",       1, "1F200", "1F2FF"],
+        [$caracteres_unicode, "Dingbats decorativos",                              "dingbats-decorativos",    "U1F650-ornamental-dingbats.pdf",                   1, "1F650", "1F67F"],
+        [$caracteres_unicode, "Símbolos alquímicos",                               "simbolos-alquimicos",     "U1F700-alchemical-symbols.pdf",                    1, "1F700", "1F773"],
+        [$caracteres_unicode, "Formas geométricas extendidas",                     "geometricas-extendidas",  "U1F780-geometric-shapes-extended.pdf",             1, "1F780", "1F7EB"],
+        [$caracteres_unicode, "Símbolos y pictogramas misceláneos",                "simbolos-pict-misc",      "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"],
+        [$caracteres_unicode, "Emoticonos",                                        "emoticonos",              "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"],
+        [$caracteres_unicode, "Símbolos de transporte y mapas",                    "transporte",              "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"],
+        [$caracteres_unicode, "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",      "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"],
+        [$caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",          "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"],
+    ];
 
     $grupos_secuencias = array(
         array($cu_banderas,     "Banderas",                 "banderas",         "", 0, "", ""),
@@ -510,12 +520,12 @@
     );
 
     $grupos_secuencias_2 = array(
-        array($piel_1,   "Colores de piel (1)",           "colores-piel-1", "", 0, "", ""),
-        array($genero_1, "Colores de piel (2)",           "colores-piel-2", "", 0, "", ""),
-        array($genero_2, "Colores de piel (3)",           "colores-piel-3", "", 0, "", ""),
-        array($genero_3, "Colores de piel (4)",           "colores-piel-4", "", 0, "", ""),
-        array($genero_4, "Colores de piel NO EN TWEMOJI", "colores-piel-5", "", 0, "", ""),
-        array($pelo_1,   "Pelo",                          "pelo",         "", 0, "", ""),
+        array($piel_1,   "Colores de piel (1)",           "colores-piel-1", "", 0, "", "", ["ss", "te"]),
+        array($genero_1, "Colores de piel (2)",           "colores-piel-2", "", 0, "", "", ["ss", "te"]),
+        array($genero_2, "Colores de piel (3)",           "colores-piel-3", "", 0, "", "", ["ss", "te"]),
+        array($genero_3, "Colores de piel (4)",           "colores-piel-4", "", 0, "", "", ["ss", "te"]),
+        array($genero_4, "Colores de piel NO EN TWEMOJI", "colores-piel-5", "", 0, "", "", ["ss"]),
+        array($pelo_1,   "Pelo",                          "pelo",           "", 0, "", "", ["ss", "te"]),
     );
 
     $grupos_restos = array(
