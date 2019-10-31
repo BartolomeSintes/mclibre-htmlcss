@@ -198,45 +198,45 @@
                 if (count($c[0]) > 1 || count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                     if ($muestra == SIMBOLOS) {
                         // 2019-10-27. Muestra el carácter en sans-serif sólo
-                        print "    <div class=\"u\">\n";
-                        print "      <p class=\"uc\">";
+                        print "      <div class=\"u\">\n";
+                        print "        <p class=\"uc\">";
                         foreach ($c[0] as $tmp) {
-                            print "U+$tmp ";
+                            print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
                         }
                         print "</p>\n";
-                        print "      <p class=\"si\">";
+                        print "        <p class=\"si\">";
                         if (in_array("ss", $fuentes)) {
                             foreach ($c[0] as $tmp) {
-                                print "&#x$tmp;";
+                                print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
                             }
                         }
                         print "</p>\n";
-                        print "      <p class=\"en\"><strong>";
+                        print "        <p class=\"en\"><strong>";
                         foreach ($c[0] as $tmp) {
-                            print "&amp;#x$tmp;";
+                            print "&amp;#x" . dechex(hexdec($tmp)) . ";";
                         }
                         print "</strong></p>\n";
-                        print "      <p class=\"en\"><strong>";
+                        print "        <p class=\"en\"><strong>";
                         foreach ($c[0] as $tmp) {
                             print "&amp;#" . hexdec($tmp) . ";";
                         }
                         print "</strong></p>\n";
-                        print "      <p class=\"no\">$c[6]</p>\n";
-                        print "    </div>\n";
+                        print "        <p class=\"no\">$c[6]</p>\n";
+                        print "      </div>\n";
                         print "\n";
                     } elseif ($c[5] == "T") {
                         // 2019-08-05. Muestra el carácter en symbola y twemoji
-                        print "    <div class=\"u\">\n";
-                        print "      <p class=\"uc\">";
+                        print "      <div class=\"u\">\n";
+                        print "        <p class=\"uc\">";
                         foreach ($c[0] as $tmp) {
-                            print "U+$tmp ";
+                            print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
                         }
                         print "</p>\n";
-                        print "      <p class=\"si\">\n";
+                        print "        <p class=\"si\">\n";
                         if (in_array("ss", $fuentes)) {
-                            print "        <span class=\"ss\">";
+                            print "          <span class=\"ss\">";
                             foreach ($c[0] as $tmp) {
-                                print "&#x$tmp;";
+                                print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
                             }
                             print "</span> \n";
                         }
@@ -251,7 +251,7 @@
 
                         if (in_array("te", $fuentes)) {
                             if ($c[5] == "T") {
-                                print "        <span class=\"te\"><a href=\"$rutaSVG/";
+                                print "          <span class=\"te\"><a href=\"$rutaSVG/";
                                 for ($i = 0; $i < count($c[0]) - 1; $i++) {
                                     $tmp0 = strtolower($c[0][$i]);
                                     while ($tmp0[0] == "0") {
@@ -266,7 +266,7 @@
                                 print "$tmp0";
                                 print ".svg\">";
                                 foreach ($c[0] as $tmp) {
-                                    print "&#x$tmp;";
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
                                 }
                                 print "</a></span>\n";
                             }
@@ -280,24 +280,24 @@
                             // }
                         }
                         if (in_array("ne", $fuentes)) {
-                            print "        <span class=\"ne\">";
+                            print "          <span class=\"ne\">";
                             foreach ($c[0] as $tmp) {
                                 print "&#x$tmp;";
                             }
                             print "</span>\n";
                         }
-                        print "      </p>\n";
-                        print "      <p class=\"en\">hexadecimal: <strong>";
+                        print "        </p>\n";
+                        print "        <p class=\"en\">hexadecimal: <strong>";
                         foreach ($c[0] as $tmp) {
-                            print "&amp;#x$tmp;";
+                            print "&amp;#x" . dechex(hexdec($tmp)) . ";";
                         }
                         print "</strong><br>decimal: <strong>";
                         foreach ($c[0] as $tmp) {
                             print "&amp;#" . hexdec($tmp) . ";";
                         }
                         print "</strong></p>\n";
-                        print "      <p class=\"no\">$c[6]</p>\n";
-                        print "    </div>\n";
+                        print "        <p class=\"no\">$c[6]</p>\n";
+                        print "      </div>\n";
                         print "\n";
                     }
                     // 2019-08-05. Muestra el carácter en symbola y twemoji
@@ -380,12 +380,11 @@
                 }
                 $cad1 .= "U+" . $c2 . " ";
                 $cad2 .= $tmp . "-";
-                $cad3 .=  "&#x" . $c2 . ";";
-                print "&amp;#x$c2;<wbr>";
+                $cad3 .=  "&#x" . strtoupper(dechex(hexdec($c2))) . ";";
+                print "&amp;#x" . strtoupper(dechex(hexdec($c2))) . ";<wbr>";
             }
             print "</th>\n";
             $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
-            // print "        <th>$cad1 &amp;#x$c2;</th>\n";
             print "        <td class=\"ss\">$cad3</td>\n";
             print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
             // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustituye al segundo carácter de la secuencia
@@ -494,17 +493,17 @@
     );
 
     $grupos_secuencias = array(
-        array($cu_banderas,     "Banderas",                 "banderas",       "", 0, "", ""),
-        array($cu_banderas_sub, "Banderas (subdivisiones)", "banderas-2",     "", 0, "", ""),
-        array($cu_otros,        "Otros",                    "otros",          "", 0, "", ""),
-        array($cu_familias,     "Familias",                 "familias",       "", 0, "", ""),
+        array($cu_banderas,     "Banderas",                 "banderas",         "", 0, "", ""),
+        array($cu_banderas_sub, "Banderas (subdivisiones)", "banderas-2",       "", 0, "", ""),
+        array($cu_otros,        "Otros",                    "otros",            "", 0, "", ""),
+        array($cu_familias,     "Familias",                 "familias",         "", 0, "", ""),
         array($cu_parejas_1,    "Parejas (1)",              "parejas-1",        "", 0, "", ""),
         array($cu_parejas_2,    "Parejas (2)",              "parejas-2",        "", 0, "", ""),
-        array($genero_2,        "Género: Profesiones",      "hm-profesiones", "", 0, "", ""),
+        array($genero_2,        "Género: Profesiones",      "hm-profesiones",   "", 0, "", ""),
         array($genero_1,        "Género: Actividades (1)",  "hm-actividades-1", "", 0, "", ""),
         array($genero_3,        "Género: Actividades (2)",  "hm-actividades-2", "", 0, "", ""),
         array($genero_4,        "Género: Actividades (3)",  "hm-actividades-3", "", 0, "", ""),
-        array($pelo_1,          "Pelo",                     "pelo",           "", 0, "", ""),
+        array($pelo_1,          "Pelo",                     "pelo",             "", 0, "", ""),
 
         //  array("Colores de piel",                                     "colores-piel",    "", 0, "0261D", "1F9FF"),
         //  array("Otsros",                                               "otros",           "", 4, "0002A", "1F4FF"),
@@ -525,9 +524,11 @@
         array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
     );
 
-    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6
+    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
     // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
+    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
     // genera_grupos($grupos_secuencias, ["ss", "te"]);
+    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
     genera_tablas($grupos_secuencias_2, ["ss", "te"]);
 
     // genera_grupos($grupos_restos);
