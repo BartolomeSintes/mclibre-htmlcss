@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Otros. Secuencias Unicode. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <style>
+    @font-face {
+      font-family: "Twemoji";
+      src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
+    }
+
+    div.u-l {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    div.u-l2 {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    div.u {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 300px;
+      margin: 5px;
+      border: black 1px solid;
+      text-align: center;
+    }
+
+    div.u p:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    div.u p {
+      margin: 0;
+      padding: 5px 10px;
+    }
+
+    div.u p.uc {
+      font-weight: bold;
+    }
+
+    div.u p.si {
+      font-size: 80px;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    div.u span.ss {
+      font-family: sans-serif;
+      border-right: 2px solid black;
+      padding-right: 20px;
+    }
+
+    div.u span.te {
+      font-family: "Twemoji";
+    }
+
+    div.u p.en {}
+
+    div.u p.no {
+      flex: 1 0 auto;
+      text-transform: uppercase;
+    }
+
+    div.u a {
+      border: none;
+      text-decoration: none;
+      color: black;
+    }
+
+    table.u {
+      border-spacing: 20px 0;
+    }
+
+    table.u span.te {
+      font-family: "Twemoji";
+      font-size: 80px;
+    }
+
+    table.u a {
+      border: none;
+      text-decoration: none;
+      color: black;
+    }
+
+    span.grande {
+      font-size: 1.5rem;
+    }
+
+    span.muy-grande {
+      font-size: 3rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Secuencias Unicode: Otros</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Secuencias: Otros</h2>
+
+      <ul>
+        <li><a href="#familias">Familias</a></li>
+        <li><a href="#parejas-1">Parejas de enamorados</a></li>
+        <li><a href="#parejas-2">Enamorados besándose</a></li>
+        <li><a href="#parejas-piel-1">Parejas neutras colores piel</a></li>
+        <li><a href="#parejas-piel-2">Parejas género colores piel</a></li>
+        <li><a href="#otros">Otros</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Esta página muestra algunos dibujos que se pueden conseguir mediante secuencias de caracteres Unicode y que no están incluidos en otras páginas .</p>
+
+  <p>Para entender esta página se recomienda leer las lecciones:</p>
+  <ul>
+    <li><a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</li>
+    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres Unicode en una página web</li>
+    <li><a href="html-unicode-secuencias.html">Secuencias</a>, que muestra cómo se definen las secuencias de caracteres Unicode que corresponden a dibujos (banderas, emojis, etc.)</li>
+  </ul>
+
+  <p>Esta página es la sexta de un grupo de páginas que muestran diferentes símbolos Unicode agrupados por temas:</p>
+  <ul>
+    <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los dibujos en color)</li>
+    <li><a href="html-unicode-dibujos.html">Dibujos</a>, que muestra únicamente los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+    <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
+    <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
+    <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
+    <li><a href="html-unicode-secuencias-otros.html">Otros</a>, que muestra otras secuencias Unicode (familias, parejas, etc.)</li>
+    <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
+  </ul>
+
+  <section id="info">
+    <h2>Información contenida en las fichas</h2>
+
+    <p>Las fichas siguientes muestran los dibujos (emoticonos, emojis y otros) correspondientes a secuencias de Unicode. Para cada secuencia se muestra:</p>
+
+    <ul>
+      <li>la secuencia de códigos Unicode hexadecimal (el formato es U+HHHH, donde HHHH es un número hexadecimal)</li>
+      <li>el carácter en dos tipos de letra, (si no existe el carácter en la fuente, el navegador muestra el código Unicode en un cuadrado de borde negro)
+        <ul>
+          <li>la fuente <span class="css-valor">sans-serif</span> (la fuente aplicada depende del sistema operativo, del navegador e incluso del carácter, por lo que se recomienda ver esta lección en Firefox, Chrome y Edge)</li>
+          <li>la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, que utiliza Firefox en Windows 7 (aunque la versión que se muestra en los ejemplos es la proporcionada por <a href="https://github.com/eosrei/twemoji-color-font">Twitter Color Emoji SVGinOT Font</a>, de abril de 2019, por lo que faltan algunos caracteres). Además, la imagen enlaza con la página del repositorio Twemoji desde la que se puede descargar el icono en formato SVG para utilizarlo como imagen independiente.</li>
+        </ul>
+      </li>
+      <li>las entidades numéricas de la secuencia de caracteres (en formato hexadecimal y decimal)</li>
+      <li>el nombre de la secuencia (en inglés)</li>
+    </ul>
+  </section>
+
+
+  <section id="familias">
+    <h2>Familias</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f466.svg">&#x1F468;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f467.svg">&#x1F468;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f466.svg">&#x1F469;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f467.svg">&#x1F469;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: woman, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F466 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F466;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f466-200d-1f466.svg">&#x1F468;&#x200D;&#x1F466;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, boy, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F467 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f467-200d-1f466.svg">&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, girl, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F467 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f467-200d-1f467.svg">&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, girl, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F466 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f466-200d-1f466.svg">&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, boy, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f467-200d-1f466.svg">&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, girl, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F467 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f467-200d-1f467.svg">&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: woman, girl, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F468 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f468-200d-1f466.svg">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f468;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128104;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, man, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F468 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f468-200d-1f467.svg">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f468;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128104;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, man, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f466.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, woman, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f467.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, woman, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F469 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f469-200d-1f466.svg">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, woman, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F469 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f469-200d-1f467.svg">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: woman, woman, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F468 U+200D U+1F466 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F466;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f468-200d-1f466-200d-1f466.svg">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F466;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f468;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128104;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, man, boy, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f468-200d-1f467-200d-1f466.svg">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f468;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128104;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, man, girl, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F468 U+200D U+1F467 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f468-200d-1f467-200d-1f467.svg">&#x1F468;&#x200D;&#x1F468;&#x200D;&#x1F467;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f468;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128104;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, man, girl, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f466-200d-1f466.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, woman, boy, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f467-200d-1f466.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: man, woman, girl, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f467-200d-1f467.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: man, woman, girl, girl</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F469 U+200D U+1F466 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f469-200d-1f466-200d-1f466.svg">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, woman, boy, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f469-200d-1f467-200d-1f466.svg">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+        <p class="no">family: woman, woman, girl, boy</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+1F469 U+200D U+1F467 U+200D U+1F467 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f469-200d-1f467-200d-1f467.svg">&#x1F469;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F467;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128103;</strong></p>
+        <p class="no">family: woman, woman, girl, girl</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="parejas-1">
+    <h2>Parejas de enamorados</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2764-fe0f-200d-1f468.svg">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;</strong></p>
+        <p class="no">couple with heart: man man</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F468 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f468.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;</strong></p>
+        <p class="no">couple with heart: woman man</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F469 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F469;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f469.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F469;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f469;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128105;</strong></p>
+        <p class="no">couple with heart: woman woman</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="parejas-2">
+    <h2>Parejas de enamorados besándose</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F468 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2764-fe0f-200d-1f48b-200d-1f468.svg">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong></p>
+        <p class="no">kiss: man man</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f48b-200d-1f468.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong></p>
+        <p class="no">kiss: woman man</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F469 </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F469;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f48b-200d-1f469.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F469;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f469;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128105;</strong></p>
+        <p class="no">kiss: woman woman</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="parejas-piel-1">
+    <h2>Parejas neutras y colores de piel</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F9D1 U+200D U+1F91D U+200D U+1F9D1 </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-200d-1f91d-200d-1f9d1.svg">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;</strong><br>decimal: <strong>&amp;#129489;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FB U+200D U+1F91D U+200D U+1F9D1 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fb-200d-1f91d-200d-1f9d1-1f3fb.svg">&#x1F9D1;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127995;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FC U+200D U+1F91D U+200D U+1F9D1 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fc-200d-1f91d-200d-1f9d1-1f3fb.svg">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#129489;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127995;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FC U+200D U+1F91D U+200D U+1F9D1 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fc-200d-1f91d-200d-1f9d1-1f3fc.svg">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#129489;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127996;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FD U+200D U+1F91D U+200D U+1F9D1 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fd-200d-1f91d-200d-1f9d1-1f3fb.svg">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#129489;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127995;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FD U+200D U+1F91D U+200D U+1F9D1 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fd-200d-1f91d-200d-1f9d1-1f3fc.svg">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#129489;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127996;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FD U+200D U+1F91D U+200D U+1F9D1 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fd-200d-1f91d-200d-1f9d1-1f3fd.svg">&#x1F9D1;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#129489;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127997;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FE U+200D U+1F91D U+200D U+1F9D1 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fe-200d-1f91d-200d-1f9d1-1f3fb.svg">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#129489;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127995;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FE U+200D U+1F91D U+200D U+1F9D1 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fe-200d-1f91d-200d-1f9d1-1f3fc.svg">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#129489;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127996;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FE U+200D U+1F91D U+200D U+1F9D1 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fe-200d-1f91d-200d-1f9d1-1f3fd.svg">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#129489;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127997;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FE U+200D U+1F91D U+200D U+1F9D1 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fe-200d-1f91d-200d-1f9d1-1f3fe.svg">&#x1F9D1;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#129489;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127998;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3ff-200d-1f91d-200d-1f9d1-1f3fb.svg">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127995;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3ff-200d-1f91d-200d-1f9d1-1f3fc.svg">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127996;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3ff-200d-1f91d-200d-1f9d1-1f3fd.svg">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127997;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3ff-200d-1f91d-200d-1f9d1-1f3fe.svg">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127998;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FF </p>
+        <p class="si">
+          <span class="ss">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3ff-200d-1f91d-200d-1f9d1-1f3ff.svg">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127999;</strong></p>
+        <p class="no">people holding hands</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="parejas-piel-2">
+    <h2>Parejas con género y colores de piel</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F468 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f468-1f3fe.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127998;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F468 U+1F3FF </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f468-1f3ff.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127999;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fc-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fc-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F468 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fc-200d-1f91d-200d-1f468-1f3fe.svg">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128105;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127998;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F468 U+1F3FF </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fc-200d-1f91d-200d-1f468-1f3ff.svg">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127999;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f468-1f3fe.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127998;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FF </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f468-1f3ff.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127999;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FF </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f468-1f3ff.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FF;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127999;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f468-1f3fe.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127998;</strong></p>
+        <p class="no">woman and man holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FC U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fc-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F468;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128104;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fd-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F468;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128104;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FD U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fd-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F468;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128104;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fe-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128104;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fe-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128104;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FE U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3fe-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F468;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128104;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3ff-200d-1f91d-200d-1f468-1f3fb.svg">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3ff-200d-1f91d-200d-1f468-1f3fc.svg">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127996;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3ff-200d-1f91d-200d-1f468-1f3fd.svg">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127997;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F468 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3ff-200d-1f91d-200d-1f468-1f3fe.svg">&#x1F468;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127998;</strong></p>
+        <p class="no">men holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F469 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fc-200d-1f91d-200d-1f469-1f3fb.svg">&#x1F469;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127995;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F469 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f469-1f3fb.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127995;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FD U+200D U+1F91D U+200D U+1F469 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fd-200d-1f91d-200d-1f469-1f3fc.svg">&#x1F469;&#x1F3FD;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fd;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127996;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F469 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f469-1f3fb.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127995;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F469 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f469-1f3fc.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127996;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FE U+200D U+1F91D U+200D U+1F469 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fe-200d-1f91d-200d-1f469-1f3fd.svg">&#x1F469;&#x1F3FE;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fe;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127998;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127997;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F469 U+1F3FB </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f469-1f3fb.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FB;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127995;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F469 U+1F3FC </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f469-1f3fc.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FC;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127996;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F469 U+1F3FD </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FD;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f469-1f3fd.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FD;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127997;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F469 U+1F3FE </p>
+        <p class="si">
+          <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FE;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-1f91d-200d-1f469-1f3fe.svg">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FE;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127998;</strong></p>
+        <p class="no">women holding hands</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="otros">
+    <h2>Otros</h2>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+23 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x23;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/23-20e3.svg">&#x23;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x23;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#35;&amp;#8419;</strong></p>
+        <p class="no">number sign + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2A U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x2A;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/2a-20e3.svg">&#x2A;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x2a;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#42;&amp;#8419;</strong></p>
+        <p class="no">asterisk + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+30 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x30;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/30-20e3.svg">&#x30;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x30;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#48;&amp;#8419;</strong></p>
+        <p class="no">digit zero + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+31 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x31;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/31-20e3.svg">&#x31;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x31;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#49;&amp;#8419;</strong></p>
+        <p class="no">digit one + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+32 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x32;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/32-20e3.svg">&#x32;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x32;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#50;&amp;#8419;</strong></p>
+        <p class="no">digit two + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+33 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x33;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/33-20e3.svg">&#x33;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x33;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#51;&amp;#8419;</strong></p>
+        <p class="no">digit three + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+34 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x34;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/34-20e3.svg">&#x34;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x34;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#52;&amp;#8419;</strong></p>
+        <p class="no">digit four + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+35 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x35;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/35-20e3.svg">&#x35;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x35;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#53;&amp;#8419;</strong></p>
+        <p class="no">digit five + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+36 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x36;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/36-20e3.svg">&#x36;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x36;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#54;&amp;#8419;</strong></p>
+        <p class="no">digit six + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+37 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x37;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/37-20e3.svg">&#x37;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x37;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#55;&amp;#8419;</strong></p>
+        <p class="no">digit seven + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+38 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x38;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/38-20e3.svg">&#x38;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x38;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#56;&amp;#8419;</strong></p>
+        <p class="no">digit eight + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+39 U+20E3 </p>
+        <p class="si">
+          <span class="ss">&#x39;&#x20E3;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/39-20e3.svg">&#x39;&#x20E3;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x39;&amp;#x20e3;</strong><br>decimal: <strong>&amp;#57;&amp;#8419;</strong></p>
+        <p class="no">digit nine + combining enclosing keycap</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F441 U+200D U+1F5E8 </p>
+        <p class="si">
+          <span class="ss">&#x1F441;&#x200D;&#x1F5E8;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f441-200d-1f5e8.svg">&#x1F441;&#x200D;&#x1F5E8;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f441;&amp;#x200d;&amp;#x1f5e8;</strong><br>decimal: <strong>&amp;#128065;&amp;#8205;&amp;#128488;</strong></p>
+        <p class="no">eye in speech bubble</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 6 de noviembre de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

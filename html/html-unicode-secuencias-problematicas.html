@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Problemáticas. Secuencias Unicode. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <style>
+    @font-face {
+      font-family: "Twemoji";
+      src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
+    }
+
+    div.u-l {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+    div.u-l2 {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    div.u {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 300px;
+      margin: 5px;
+      border: black 1px solid;
+      text-align: center;
+    }
+
+    div.u p:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    div.u p {
+      margin: 0;
+      padding: 5px 10px;
+    }
+
+    div.u p.uc {
+      background-color: #ddd;
+      font-weight: bold;
+    }
+
+    div.u p.si {
+      font-size: 80px;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    div.u span.ss {
+      font-family: sans-serif;
+      border-right: 2px solid black;
+      padding-right: 20px;
+    }
+
+    div.u span.te {
+      font-family: "Twemoji";
+    }
+
+    div.u p.en {
+      background-color: #ddd;
+    }
+
+    div.u p.no {
+      text-transform: uppercase;
+    }
+
+    div.u a {
+      border: none;
+      text-decoration: none;
+      color: black;
+    }
+
+    table.u {
+      border-collapse: collapse;
+      border-spacing: 20px 0;
+    }
+
+    table.u colgroup {
+      border-right: black 1px solid;
+      border-left: black 1px solid;
+    }
+
+    table.u span.te {
+      font-family: "Twemoji";
+      font-size: 80px;
+    }
+
+    table.u a {
+      border: none;
+      text-decoration: none;
+      color: black;
+    }
+
+    table.u tr {
+      height: 90px;
+    }
+
+    table.u tr.fila-estrecha {
+      height: auto;
+      border-bottom: black 1px solid;
+    }
+
+    table.u .ss {
+      font-family: sans-serif;
+      font-size: 80px;
+    }
+
+    table.u .te {
+      font-family: "Twemoji";
+      font-size: 80px;
+    }
+
+    table.u td.no {
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Secuencias Unicode: Problemáticas</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Secuencias Problemáticas</h2>
+
+      <ul>
+        <li><a href="#genero-3c">Género (3)</a></li>
+        <li><a href="#genero-4b">Género (4)</a></li>
+        <li><a href="#colores-piel-1b">Colores (2) NO WINDOWS</a></li>
+        <li><a href="#colores-piel-3b">Colores (5) NO TWEMOJI</a></li>
+        <li><a href="#colores-piel-3c">Colores (5) NO WINDOWS</a></li>
+        <li><a href="#colores-piel-3d">Colores (5) NO WINDOWS, NO TWEMOJI</a></li>
+        <li><a href="#colores-piel-4">Colores (6) NO WINDOWS</a></li>
+        <li><a href="#colores-piel-4b">Colores (6) NO WINDOWS</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Esta página muestra las secuencias Unicode que actualmente (noviembre de 2019) no se ven correctamente en varios sistemas operativos.</p>
+
+  <p>Para entender esta página se recomienda leer las lecciones:</p>
+  <ul>
+    <li><a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</li>
+    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres Unicode en una página web</li>
+    <li><a href="html-unicode-secuencias.html">Secuencias</a>, que muestra cómo se definen las secuencias de caracteres Unicode que corresponden a dibujos (banderas, emojis, etc.)</li>
+  </ul>
+
+  <p>Esta página es la séptima de un grupo de páginas que muestran diferentes símbolos Unicode agrupados por temas:</p>
+  <ul>
+    <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los dibujos en color)</li>
+    <li><a href="html-unicode-dibujos.html">Dibujos</a>, que muestra únicamente los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+    <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
+    <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
+    <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
+    <li><a href="html-unicode-secuencias-otros.html">Otros</a>, que muestra otras secuencias Unicode (familias, parejas, etc.)</li>
+    <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
+  </ul>
+
+
+  <section id="info">
+    <h2>Información contenida en las fichas</h2>
+
+    <p>Las fichas siguientes muestran los dibujos (emoticonos, emojis y otros) correspondientes a secuencias de Unicode. Para cada secuencia se muestra:</p>
+
+    <ul>
+      <li>la secuencia de códigos Unicode hexadecimal (el formato es U+HHHH, donde HHHH es un número hexadecimal)</li>
+      <li>el carácter en dos tipos de letra, (si no existe el carácter en la fuente, el navegador muestra el código Unicode en un cuadrado de borde negro)
+        <ul>
+          <li>la fuente <span class="css-valor">sans-serif</span> (la fuente aplicada depende del sistema operativo, del navegador e incluso del carácter, por lo que se recomienda ver esta lección en Firefox, Chrome y Edge)</li>
+          <li>la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, que utiliza Firefox en Windows 7 (aunque la versión que se muestra en los ejemplos es la proporcionada por <a href="https://github.com/eosrei/twemoji-color-font">Twitter Color Emoji SVGinOT Font</a>, de abril de 2019, por lo que faltan algunos caracteres). Además, la imagen enlaza con la página del repositorio Twemoji desde la que se puede descargar el icono en formato SVG para utilizarlo como imagen independiente.</li>
+        </ul>
+      </li>
+      <li>las entidades numéricas de la secuencia de caracteres (en formato hexadecimal y decimal)</li>
+      <li>el nombre de la secuencia (en inglés)</li>
+    </ul>
+  </section>
+
+  <section id="genero-3c">
+    <h2>Género (3)</h2>
+
+    <div class="u-l2">
+      <div class="u">
+        <p class="uc">U+1F935 U+200D U+2640 U+FE0F </p>
+        <p class="si">
+          <span class="ss">&#x1F935;&#x200D;&#x2640;&#xFE0F;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-200d-2640-fe0f.svg">&#x1F935;&#x200D;&#x2640;&#xFE0F;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f935;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#129333;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
+        <p class="no">woman in tuxedo</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F935 U+200D U+2642 U+FE0F </p>
+        <p class="si">
+          <span class="ss">&#x1F935;&#x200D;&#x2642;&#xFE0F;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-200d-2642-fe0f.svg">&#x1F935;&#x200D;&#x2642;&#xFE0F;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f935;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#129333;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
+        <p class="no">man in tuxedo</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="genero-4b">
+    <h2>Género (4)</h2>
+
+    <div class="u-l2">
+      <div class="u">
+        <p class="uc">U+1F574 U+FE0F U+200D U+2640 U+FE0F </p>
+        <p class="si">
+          <span class="ss">&#x1F574;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-fe0f-200d-2640-fe0f.svg">&#x1F574;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f574;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128372;&amp;#65039;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
+        <p class="no">woman in bussiness suit levitating</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F574 U+FE0F U+200D U+2642 U+FE0F </p>
+        <p class="si">
+          <span class="ss">&#x1F574;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</span>
+          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-fe0f-200d-2642-fe0f.svg">&#x1F574;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></span>
+        </p>
+        <p class="en">hexadecimal: <strong>&amp;#x1f574;&amp;#xfe0f;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128372;&amp;#65039;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
+        <p class="no">man in bussiness suit levitating</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="colores-piel-1b">
+    <h2>Colores de piel (2) NO EN WINDOWS</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x26F7;<wbr></th>
+        <td class="ss">&#x26F7;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7.svg">&#x26F7;</a></td>
+        <td class="ss">&#x26F7;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7-1f3fb.svg">&#x26F7;&#x1F3FB;</a></td>
+        <td class="ss">&#x26F7;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7-1f3fc.svg">&#x26F7;&#x1F3FC;</a></td>
+        <td class="ss">&#x26F7;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7-1f3fd.svg">&#x26F7;&#x1F3FD;</a></td>
+        <td class="ss">&#x26F7;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7-1f3fe.svg">&#x26F7;&#x1F3FE;</a></td>
+        <td class="ss">&#x26F7;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f7-1f3ff.svg">&#x26F7;&#x1F3FF;</a></td>
+        <td class="no">skier</td>
+      </tr>
+      <tr>
+        <th>&amp;#x26F9;<wbr></th>
+        <td class="ss">&#x26F9;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9.svg">&#x26F9;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fb.svg">&#x26F9;&#x1F3FB;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fc.svg">&#x26F9;&#x1F3FC;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fd.svg">&#x26F9;&#x1F3FD;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fe.svg">&#x26F9;&#x1F3FE;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3ff.svg">&#x26F9;&#x1F3FF;</a></td>
+        <td class="no">person with ball</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CB;<wbr></th>
+        <td class="ss">&#x1F3CB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb.svg">&#x1F3CB;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fb.svg">&#x1F3CB;&#x1F3FB;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fc.svg">&#x1F3CB;&#x1F3FC;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fd.svg">&#x1F3CB;&#x1F3FD;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fe.svg">&#x1F3CB;&#x1F3FE;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3ff.svg">&#x1F3CB;&#x1F3FF;</a></td>
+        <td class="no">weight lifter</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CC;<wbr></th>
+        <td class="ss">&#x1F3CC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc.svg">&#x1F3CC;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fb.svg">&#x1F3CC;&#x1F3FB;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fc.svg">&#x1F3CC;&#x1F3FC;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fd.svg">&#x1F3CC;&#x1F3FD;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fe.svg">&#x1F3CC;&#x1F3FE;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3ff.svg">&#x1F3CC;&#x1F3FF;</a></td>
+        <td class="no">golfer</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F574;<wbr></th>
+        <td class="ss">&#x1F574;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574.svg">&#x1F574;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fb.svg">&#x1F574;&#x1F3FB;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fc.svg">&#x1F574;&#x1F3FC;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fd.svg">&#x1F574;&#x1F3FD;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fe.svg">&#x1F574;&#x1F3FE;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3ff.svg">&#x1F574;&#x1F3FF;</a></td>
+        <td class="no">man in bussiness suit levitating</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F575;<wbr></th>
+        <td class="ss">&#x1F575;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575.svg">&#x1F575;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FB;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fb.svg">&#x1F575;&#x1F3FB;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FC;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fc.svg">&#x1F575;&#x1F3FC;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FD;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fd.svg">&#x1F575;&#x1F3FD;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FE;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fe.svg">&#x1F575;&#x1F3FE;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FF;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3ff.svg">&#x1F575;&#x1F3FF;</a></td>
+        <td class="no">sleuth or spy</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="colores-piel-3b">
+    <h2>Colores de piel (5) NO EN TWEMOJI</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x1F46F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F46F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-200d-2640-fe0f.svg">&#x1F46F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fb-200d-2640-fe0f.svg">&#x1F46F;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fc-200d-2640-fe0f.svg">&#x1F46F;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fd-200d-2640-fe0f.svg">&#x1F46F;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fe-200d-2640-fe0f.svg">&#x1F46F;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3ff-200d-2640-fe0f.svg">&#x1F46F;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">women with bunny ears</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F46F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F46F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-200d-2642-fe0f.svg">&#x1F46F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fb-200d-2642-fe0f.svg">&#x1F46F;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fc-200d-2642-fe0f.svg">&#x1F46F;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fd-200d-2642-fe0f.svg">&#x1F46F;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3fe-200d-2642-fe0f.svg">&#x1F46F;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F46F;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46f-1f3ff-200d-2642-fe0f.svg">&#x1F46F;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">men with bunny ears</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F93C;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F93C;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-200d-2640-fe0f.svg">&#x1F93C;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fb-200d-2640-fe0f.svg">&#x1F93C;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fc-200d-2640-fe0f.svg">&#x1F93C;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fd-200d-2640-fe0f.svg">&#x1F93C;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fe-200d-2640-fe0f.svg">&#x1F93C;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3ff-200d-2640-fe0f.svg">&#x1F93C;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">women wrestling</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F93C;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F93C;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-200d-2642-fe0f.svg">&#x1F93C;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fb-200d-2642-fe0f.svg">&#x1F93C;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fc-200d-2642-fe0f.svg">&#x1F93C;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fd-200d-2642-fe0f.svg">&#x1F93C;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3fe-200d-2642-fe0f.svg">&#x1F93C;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F93C;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f93c-1f3ff-200d-2642-fe0f.svg">&#x1F93C;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">men wrestling</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F9DF;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F9DF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-200d-2640-fe0f.svg">&#x1F9DF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fb-200d-2640-fe0f.svg">&#x1F9DF;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fc-200d-2640-fe0f.svg">&#x1F9DF;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fd-200d-2640-fe0f.svg">&#x1F9DF;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fe-200d-2640-fe0f.svg">&#x1F9DF;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3ff-200d-2640-fe0f.svg">&#x1F9DF;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman zombie</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F9DF;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F9DF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-200d-2642-fe0f.svg">&#x1F9DF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fb-200d-2642-fe0f.svg">&#x1F9DF;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fc-200d-2642-fe0f.svg">&#x1F9DF;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fd-200d-2642-fe0f.svg">&#x1F9DF;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3fe-200d-2642-fe0f.svg">&#x1F9DF;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DF;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9df-1f3ff-200d-2642-fe0f.svg">&#x1F9DF;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man zombie</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="colores-piel-3c">
+    <h2>Colores de piel (5) NO EN WINDOWS</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x1F935;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F935;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-200d-2640-fe0f.svg">&#x1F935;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fb-200d-2640-fe0f.svg">&#x1F935;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fc-200d-2640-fe0f.svg">&#x1F935;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fd-200d-2640-fe0f.svg">&#x1F935;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fe-200d-2640-fe0f.svg">&#x1F935;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3ff-200d-2640-fe0f.svg">&#x1F935;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman in tuxedo</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F935;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F935;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-200d-2642-fe0f.svg">&#x1F935;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fb-200d-2642-fe0f.svg">&#x1F935;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fc-200d-2642-fe0f.svg">&#x1F935;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fd-200d-2642-fe0f.svg">&#x1F935;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3fe-200d-2642-fe0f.svg">&#x1F935;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F935;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f935-1f3ff-200d-2642-fe0f.svg">&#x1F935;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man in tuxedo</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="colores-piel-3d">
+    <h2>Colores de piel (5) NO EN WINDOWS, NO EN TWEMOJI</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x1F9DE;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F9DE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-200d-2640-fe0f.svg">&#x1F9DE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fb-200d-2640-fe0f.svg">&#x1F9DE;&#x1F3FB;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fc-200d-2640-fe0f.svg">&#x1F9DE;&#x1F3FC;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fd-200d-2640-fe0f.svg">&#x1F9DE;&#x1F3FD;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fe-200d-2640-fe0f.svg">&#x1F9DE;&#x1F3FE;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3ff-200d-2640-fe0f.svg">&#x1F9DE;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman genie</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F9DE;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F9DE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-200d-2642-fe0f.svg">&#x1F9DE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fb-200d-2642-fe0f.svg">&#x1F9DE;&#x1F3FB;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fc-200d-2642-fe0f.svg">&#x1F9DE;&#x1F3FC;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fd-200d-2642-fe0f.svg">&#x1F9DE;&#x1F3FD;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3fe-200d-2642-fe0f.svg">&#x1F9DE;&#x1F3FE;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F9DE;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9de-1f3ff-200d-2642-fe0f.svg">&#x1F9DE;&#x1F3FF;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man genie</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="colores-piel-4">
+    <h2>Colores de piel (6) NO EN WINDOWS</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x26F9;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2640-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fb-200d-2640-fe0f.svg">&#x26F9;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fc-200d-2640-fe0f.svg">&#x26F9;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fd-200d-2640-fe0f.svg">&#x26F9;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fe-200d-2640-fe0f.svg">&#x26F9;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3ff-200d-2640-fe0f.svg">&#x26F9;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman bouncing ball</td>
+      </tr>
+      <tr>
+        <th>&amp;#x26F9;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2642-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fb-200d-2642-fe0f.svg">&#x26F9;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fc-200d-2642-fe0f.svg">&#x26F9;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fd-200d-2642-fe0f.svg">&#x26F9;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3fe-200d-2642-fe0f.svg">&#x26F9;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x26F9;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-1f3ff-200d-2642-fe0f.svg">&#x26F9;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man bouncing ball</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CB;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F3CB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-fe0f-200d-2640-fe0f.svg">&#x1F3CB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fb-200d-2640-fe0f.svg">&#x1F3CB;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fc-200d-2640-fe0f.svg">&#x1F3CB;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fd-200d-2640-fe0f.svg">&#x1F3CB;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fe-200d-2640-fe0f.svg">&#x1F3CB;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3ff-200d-2640-fe0f.svg">&#x1F3CB;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman lifting weights</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CB;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-fe0f-200d-2642-fe0f.svg">&#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fb-200d-2642-fe0f.svg">&#x1F3CB;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fc-200d-2642-fe0f.svg">&#x1F3CB;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fd-200d-2642-fe0f.svg">&#x1F3CB;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3fe-200d-2642-fe0f.svg">&#x1F3CB;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CB;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cb-1f3ff-200d-2642-fe0f.svg">&#x1F3CB;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man lifting weights</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CC;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F3CC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-fe0f-200d-2640-fe0f.svg">&#x1F3CC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fb-200d-2640-fe0f.svg">&#x1F3CC;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fc-200d-2640-fe0f.svg">&#x1F3CC;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fd-200d-2640-fe0f.svg">&#x1F3CC;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fe-200d-2640-fe0f.svg">&#x1F3CC;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3ff-200d-2640-fe0f.svg">&#x1F3CC;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman golfing</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F3CC;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F3CC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-fe0f-200d-2642-fe0f.svg">&#x1F3CC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fb-200d-2642-fe0f.svg">&#x1F3CC;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fc-200d-2642-fe0f.svg">&#x1F3CC;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fd-200d-2642-fe0f.svg">&#x1F3CC;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3fe-200d-2642-fe0f.svg">&#x1F3CC;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F3CC;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3cc-1f3ff-200d-2642-fe0f.svg">&#x1F3CC;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man golfing</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F575;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F575;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-fe0f-200d-2640-fe0f.svg">&#x1F575;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fb-200d-2640-fe0f.svg">&#x1F575;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fc-200d-2640-fe0f.svg">&#x1F575;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fd-200d-2640-fe0f.svg">&#x1F575;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fe-200d-2640-fe0f.svg">&#x1F575;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3ff-200d-2640-fe0f.svg">&#x1F575;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman detective</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F575;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F575;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-fe0f-200d-2642-fe0f.svg">&#x1F575;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fb-200d-2642-fe0f.svg">&#x1F575;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fc-200d-2642-fe0f.svg">&#x1F575;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fd-200d-2642-fe0f.svg">&#x1F575;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3fe-200d-2642-fe0f.svg">&#x1F575;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F575;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3ff-200d-2642-fe0f.svg">&#x1F575;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man detective</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="colores-piel-4b">
+    <h2>Colores de piel (6) NO EN WINDOWS</h2>
+
+    <table class="u">
+      <col>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <colgroup span="2" class="borde-lateral"></colgroup>
+      <col>
+      <tr class="fila-estrecha">
+        <th rowspan="2">Códigos</th>
+        <th colspan="2" rowspan="2">Sin color de piel</th>
+        <th colspan="10">Con color de piel</th>
+        <th rowspan="2">Nombres</th>
+      </tr>
+      <tr class="fila-estrecha">
+        <th colspan="2">&amp;#x1F3FB;</th>
+        <th colspan="2">&amp;#x1F3FC;</th>
+        <th colspan="2">&amp;#x1F3FD;</th>
+        <th colspan="2">&amp;#x1F3FE;</th>
+        <th colspan="2">&amp;#x1F3FF;</th>
+      </tr>
+      <tr>
+        <th>&amp;#x1F574;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2640;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F574;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-fe0f-200d-2640-fe0f.svg">&#x1F574;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fb-200d-2640-fe0f.svg">&#x1F574;&#x1F3FB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fc-200d-2640-fe0f.svg">&#x1F574;&#x1F3FC;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fd-200d-2640-fe0f.svg">&#x1F574;&#x1F3FD;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fe-200d-2640-fe0f.svg">&#x1F574;&#x1F3FE;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3ff-200d-2640-fe0f.svg">&#x1F574;&#x1F3FF;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></td>
+        <td class="no">woman in bussiness suit levitating</td>
+      </tr>
+      <tr>
+        <th>&amp;#x1F574;<wbr>&amp;#xFE0F;<wbr>&amp;#x200D;<wbr>&amp;#x2642;<wbr>&amp;#xFE0F;<wbr></th>
+        <td class="ss">&#x1F574;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-fe0f-200d-2642-fe0f.svg">&#x1F574;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fb-200d-2642-fe0f.svg">&#x1F574;&#x1F3FB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fc-200d-2642-fe0f.svg">&#x1F574;&#x1F3FC;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fd-200d-2642-fe0f.svg">&#x1F574;&#x1F3FD;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3fe-200d-2642-fe0f.svg">&#x1F574;&#x1F3FE;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="ss">&#x1F574;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</td>
+        <td class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f574-1f3ff-200d-2642-fe0f.svg">&#x1F574;&#x1F3FF;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></td>
+        <td class="no">man in bussiness suit levitating</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 6 de noviembre de 2019</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="http://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="http://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>

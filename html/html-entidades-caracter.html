@@ -25,7 +25,6 @@
 
       <ul>
         <li><a href="#que-son">Qué son</a></li>
-        <li><a href="#secuencias-zwj">Secuencias ZWJ</a></li>
         <li><a href="#caracteres-especiales">Caracteres especiales</a></li>
         <li><a href="#entidades-caracter-html5">Entidades carácter HTML5</a></li>
         <li><a href="#entidades-caracter-html4">Entidades carácter HTML4</a></li>
@@ -35,14 +34,22 @@
 
   <p>En esta lección se explica cómo incluir cualquier carácter o secuencia de caracteres Unicode en una página web, mediante entidades de carácter o entidades numéricas.</p>
 
-  <p>Antes de leer esta lección se recomienda leer la lección <a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</p>
-
-  <p>Después de esta lección se recomienda leer las páginas, que contienen ejemplos de entidades numéricas:</p>
-
+  <p>Esta lección es la segunda lección de un grupo de tres lecciones que se recomienda leer en el siguiente orden:</p>
   <ul>
-    <li><a href="html-unicode-simbolos.html">Símbolos gráficos en Unicode</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos</li>
-    <li><a href="html-unicode-dibujos.html">Dibujos en Unicode</a>, que muestra los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
-    <li><a href="html-unicode-secuencias.html">Secuencias ZWJ</a>, que muestra algunas secuencias ZWJ que corresponden a dibujos (banderas, emojis, etc.)</li>
+    <li><a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</li>
+    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres Unicode en una página web</li>
+    <li><a href="html-unicode-secuencias.html">Secuencias</a>, que muestra cómo se definen las secuencias de caracteres Unicode que corresponden a dibujos (banderas, emojis, etc.)</li>
+  </ul>
+
+  <p>Como complemento a las lecciones anteriores, las páginas siguientes muestran diferentes símbolos Unicode agrupados por temas:</p>
+  <ul>
+    <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los dibujos en color)</li>
+    <li><a href="html-unicode-dibujos.html">Dibujos</a>, que muestra únicamente los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+    <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
+    <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
+    <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
+    <li><a href="html-unicode-secuencias-otros.html">Otros</a>, que muestra otras secuencias Unicode (familias, parejas, etc.)</li>
+    <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
   </ul>
 
   <section id="que-son">
@@ -230,69 +237,6 @@
     <p><strong>Nota</strong>:</p>
     <ul>
       <li><a href="https://bugzilla.mozilla.org/buglist.cgi?quicksearch=twemoji">Bugs de Firefox relacionados con Twemoji</a></li>
-    </ul>
-  </section>
-
-  <section id="secuencias-zwj">
-    <h2>Secuencias Zero-width Joiner (ZWJ) de caracteres Unicode</h2>
-
-    <p>El carácter ZWJ (Zero-Width Joiner, es decir Conector sin anchura) es el carácter Unicode U+200D. Se introdujo para indicar que dos o más caracteres se deben escribir en forma conectada, y se utiliza de forma habitual en escrituras como la árabe o las indias. El carácter ZWJ se escribe entre los dos caracteres que se quieren considerar conjuntamente.</p>
-
-    <p>Posteriormente, el uso del carácter ZWJ se ha extendido para otros usos, permitiendo unir caracteres para producir un nuevo carácter. Es importante señalar que los navegadores parecen mostrar el resultado aunque se omita el carácter ZWJ, simplemente escribiendo los caracteres uno a continuación del otro, sin separación.</p>
-
-    <p>Por ejemplo, los pictogramas de las banderas del mundo se pueden expresar combinado dos caracteres Unicode del rango U+1F1E6 al U+1F1FF (que representan los caracteres de la A a la Z, pero para su uso como indicadores regionales). Los dos caracteres a elegir en cada caso son los que corresponden al código <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1</a> del país. Por ejemplo, como el código ISO 3166-1 de España es ES, al unir los caracteres U+1F1EA (letra E) y U+1F1F8 (letra S) se mostrará la bandera de España (aunque el resultado depende del sistema operativo y del navegador utilizado <span class="incompleto">[completar]</span>).</p>
-
-    <p>Este mismo sistema se utiliza para combinar dos o más <em>emojis</em> en un único <em>emoji</em>. Por ejemplo para mostrar personajes humanos con diferente color de piel. Combinando el carácter &amp;#x1F467 (chica) y el carácter &amp;#x1F3FF; (modificador de emojis Fitzpatrick tipo 6, el más oscuro) se mostrará el emoji de una chica con la piel oscura.</p>
-
-    <p>Las secuencias de <em>emojis</em> de Unicode están definidas en el <a href="http://www.unicode.org/emoji/charts/emoji-zwj-sequences.html">catálogo de secuencias emoji ZWJ</a>.</p>
-
-    <hr class="corta">
-
-    <p>El ejemplo siguiente contiene las dos secuencias mencionadas, para que usted mismo compruebe cómo se ven en su navegador y sistema operativo:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;p style="font-size: 4rem;"&gt;&amp;#x1F1EA; + &amp;#x1F1F8; = &amp;#x1F1EA;&amp;#x200D;&amp;#x1F1F8;&lt;/p&gt;
-
-&lt;p style="font-size: 4rem;"&gt;&amp;#x1F467; + &amp;#x1F3FF; = &amp;#x1F467;&amp;#x200D;&amp;#x1F3FF;&lt;/p&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/texto/entidades-zwj.html" style="width: 100%; height: 14em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/texto/entidades-zwj.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>Las capturas siguientes muestran cómo se ve actualmente (octubre de 2019) el ejemplo anterior en Firefox en Windows 7, en Google Chrome en Windows 7 y en Windows 10:</p>
-    <ul>
-      <li>Firefox en Windows 7:
-        <p>
-          <img src="unicode/entidades-zwj-win7-ff.png" alt="Secuencias ZWJ en Windows 7 con Firefox" width="350" height="175" class="vmedio">
-        </p>
-      </li>
-      <li>Chrome/Internet Explorer en Windows 7:
-        <p>
-          <img src="unicode/entidades-zwj-win7-gc.png" alt="Secuencias ZWJ en Windows 7 con Chrome" width="370" height="175" class="vmedio">
-        </p>
-      </li>
-      <li>Navegadores en Windows 10:
-        <p>
-          <img src="unicode/entidades-zwj-win10.png" alt="Secuencias ZWJ en Windows 10" width="350" height="135" class="vmedio">
-        </p>
-      </li>
-      <li>Navegadores en Android 9:
-        <p>
-          <img src="unicode/entidades-zwj-android-9.png" alt="Secuencias ZWJ en Android" width="383" height="175" class="vmedio">
-        </p>
-      </li>
-      <li>Safari en iOS 13:
-        <p>
-          <img src="unicode/entidades-zwj-safari-13.png" alt="Secuencias ZWJ en iOS" width="427" height="175">
-        </p>
-      </li>
     </ul>
   </section>
 
@@ -2628,7 +2572,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de noviembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 6 de noviembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

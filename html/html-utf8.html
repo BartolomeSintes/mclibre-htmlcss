@@ -38,13 +38,22 @@
 
   <p>En esta lección se explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8 y su uso en HTML.</p>
 
-  <p>Tras esta lección se recomienda leer las lecciones:</p>
-
+  <p>Esta lección es la primera lección de un grupo de tres lecciones que se recomienda leer en el siguiente orden:</p>
   <ul>
-    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres y secuencias de caracteres Unicode en una página web</li>
-    <li><a href="html-unicode-simbolos.html">Símbolos gráficos en Unicode</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos</li>
-    <li><a href="html-unicode-dibujos.html">Dibujos en Unicode</a>, que muestra los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
-    <li><a href="html-unicode-secuencias.html">Secuencias ZWJ</a>, que muestra algunas secuencias ZWJ que corresponden a dibujos (banderas, emojis, etc.)</li>
+    <li><a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</li>
+    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres Unicode en una página web</li>
+    <li><a href="html-unicode-secuencias.html">Secuencias</a>, que muestra cómo se definen las secuencias de caracteres Unicode que corresponden a dibujos (banderas, emojis, etc.)</li>
+  </ul>
+
+  <p>Como complemento a las lecciones anteriores, las páginas siguientes muestran diferentes símbolos Unicode agrupados por temas:</p>
+  <ul>
+    <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los dibujos en color)</li>
+    <li><a href="html-unicode-dibujos.html">Dibujos</a>, que muestra únicamente los caracteres Unicode que corresponden a dibujos (emoticonos, emojis, etc.)</li>
+    <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
+    <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
+    <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
+    <li><a href="html-unicode-secuencias-otros.html">Otros</a>, que muestra otras secuencias Unicode (familias, parejas, etc.)</li>
+    <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
   </ul>
 
   <section id="bits">
@@ -389,15 +398,19 @@
 
     <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y actualmente (octubre de 2019) las últimas versiones publicadas, <a href="http://blog.unicode.org/2019/05/unicode-12-1-en.html">Unicode 12.1</a> y <a href="http://blog.unicode.org/2019/03/announcing-unicode-standard-version-120.html">Unicode 12.0</a>, contienen más de 137.000 caracteres. Los dos bytes de la propuesta inicial se quedaron cortos y la norma actual utiliza cuatro bytes para codificar los caracteres.</p>
 
-    <p>El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede decir que existen tres opciones:</p>
+    <p>El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede resumir en que existen tres opciones:</p>
 
     <ul>
-      <li>UTF-32: cada carácter ocupa 4 bytes</li>
-      <li>UTF-16: cada carácter ocupa dos bytes si está entre los primeros 65.536 (256x256) caracteres de Unicode y tres o cuatro bytes para el resto de caracteres.</li>
-      <li>UTF-8: cada carácter ocupa 1 byte si está entre los primeros 128 caracteres de Unicode, o dos bytes si está entre los primeros 65.536 (256x256) caracteres o cuatro bytes para el resto de caracteres</li>
+      <li>UTF-32: cada carácter ocupa cuatro bytes.</li>
+      <li>UTF-16: cada carácter ocupa dos bytes si está entre los primeros 65.536 (256x256) caracteres de Unicode y cuatro bytes para el resto de caracteres.</li>
+      <li>UTF-8: cada carácter ocupa un byte si está entre los primeros 128 caracteres de Unicode, 2 bytes si está entre los primeros 2048 caracteres, 3 bytes si está entre los primeros 65536 (256x256) o cuatro bytes para el resto de caracteres.</li>
     </ul>
 
-    <p><strong>Nota:</strong> Unicode no utiliza todos los bits de cada carácter. UTF-8 de 1 byte utiliza 7 bits (incluye 128 caracteres), UTF-16 de 2 bytes utiliza 11 bits (incluye 1920 caracteres de los 2048 posibles), etc.</p>
+    <p><strong>Notas:</strong></p>
+    <ul>
+      <li>Unicode no utiliza todos los bits de cada carácter. UTF-8 de 1 byte utiliza 7 bits (incluye 128 caracteres), UTF-16 de 2 bytes utiliza 11 bits (incluye 1920 caracteres de los 2048 posibles), etc.</li>
+      <li>Existen dos variantes de UTF-16: Big Endian, en la que el byte más significativo se pone en primera posición, y Little Endian, en la que el byte más significativo se pone en segunda posición.</li>
+    </ul>
 
     <p>La tabla siguiente muestra algunos caracteres codificados en Windows-1252, UTF-8 o UTF-16:</p>
 
@@ -427,12 +440,28 @@
         <td>E2 82 AC</td>
       </tr>
       <tr>
-        <th>UTF-16</th>
+        <th>UTF-16 (BE)</th>
         <td>00 61</td>
         <td>00 E1</td>
         <td>00 65</td>
         <td>00 E9</td>
         <td>20 AC</td>
+      </tr>
+      <tr>
+        <th>UTF-16 (LE)</th>
+        <td>61 00</td>
+        <td>E1 00</td>
+        <td>65 00</td>
+        <td>E9 00</td>
+        <td>AC 20</td>
+      </tr>
+      <tr>
+        <th>UTF-32</th>
+        <td>00 00 00 61</td>
+        <td>00 00 00 E1</td>
+        <td>00 00 00 65</td>
+        <td>00 00 00 E9</td>
+        <td>00 00 20 AC</td>
       </tr>
     </table>
 
@@ -573,7 +602,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 6 de noviembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
