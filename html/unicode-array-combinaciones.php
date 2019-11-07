@@ -540,6 +540,14 @@ $genero_1 = array(
   array(array("1F469", "0200D", "1F680"), "", "SC", "WC", "F", "T", "woman astronaut"),
   array(array("1F468", "0200D", "1F692"), "", "SC", "WC", "F", "T", "man firefighter"),
   array(array("1F469", "0200D", "1F692"), "", "SC", "WC", "F", "T", "woman firefighter"),
+  array(array("1F468", "0200D", "1F9B0"), "", "SC", "WC", "F", "T", "man, red haired"),
+  array(array("1F469", "0200D", "1F9B0"), "", "SC", "WC", "F", "T", "woman, red haired"),
+  array(array("1F468", "0200D", "1F9B1"), "", "SC", "WC", "F", "T", "man, curly haired"),
+  array(array("1F469", "0200D", "1F9B1"), "", "SC", "WC", "F", "T", "woman, curly haired"),
+  array(array("1F468", "0200D", "1F9B2"), "", "SC", "WC", "F", "T", "man, bald"),
+  array(array("1F469", "0200D", "1F9B2"), "", "SC", "WC", "F", "T", "woman, bald"),
+  array(array("1F468", "0200D", "1F9B3"), "", "SC", "WC", "F", "T", "man, white haired"),
+  array(array("1F469", "0200D", "1F9B3"), "", "SC", "WC", "F", "T", "woman, white haired"),
   array(array("1F468", "0200D", "1F9AF"), "12", "SC", "WC", "F", "T", "man with probing cane"),
   array(array("1F469", "0200D", "1F9AF"), "12", "SC", "WC", "F", "T", "woman with probing cane"),
   array(array("1F468", "0200D", "1F9BC"), "12", "SC", "WC", "F", "T", "man in motorized wheelchair"),
@@ -690,21 +698,6 @@ $genero_4b = array(
   // son como $genero_3 pero NO ESTÁN EN WINDOW3
   array(array("1F574", "0FE0F", "0200D", "02640", "0FE0F"), "", "", "", "F", "T", "woman in bussiness suit levitating"),
   array(array("1F574", "0FE0F", "0200D", "02642", "0FE0F"), "", "", "", "F", "T", "man in bussiness suit levitating"),
-);
-
-$pelo_1 = array(
-  // Código Fitzpatrick se inserta en segunda posición
-  // Hombres/Mujeres: 1F468 (man), 1F469 (woman)
-  // Tipos de pelo:
-  array(array("1F468", "0200D", "1F9B0"), "", "SC", "WC", "F", "T", "man, red haired"),
-  array(array("1F468", "0200D", "1F9B1"), "", "SC", "WC", "F", "T", "man, curly haired"),
-  array(array("1F468", "0200D", "1F9B2"), "", "SC", "WC", "F", "T", "man, bald"),
-  array(array("1F468", "0200D", "1F9B3"), "", "SC", "WC", "F", "T", "man, white haired"),
-
-  array(array("1F469", "0200D", "1F9B0"), "", "SC", "WC", "F", "T", "woman, red haired"),
-  array(array("1F469", "0200D", "1F9B1"), "", "SC", "WC", "F", "T", "woman, curly haired"),
-  array(array("1F469", "0200D", "1F9B2"), "", "SC", "WC", "F", "T", "woman, bald"),
-  array(array("1F469", "0200D", "1F9B3"), "", "SC", "WC", "F", "T", "woman, white haired"),
 );
 
 $piel_1 = array(

@@ -524,7 +524,6 @@
         array($genero_2,                                      "Género (2)",    "genero-2",     "", 0, "", "", ["ss", "te"]),
         array(array_merge($genero_3, $genero_3b, $genero_3d), "Género (3)",    "genero-3",     "", 0, "", "", ["ss", "te"]),
         array($genero_4,                                      "Género (4)",    "genero-4",     "", 0, "", "", ["ss", "te"]),
-        array($pelo_1,                                        "Tipos de pelo", "pelo",         "", 0, "", "", ["ss", "te"]),
 
         //  array("Colores de piel",                                     "colores-piel",    "", 0, "0261D", "1F9FF"),
         //  array("Otros",                                               "otros",           "", 4, "0002A", "1F4FF"),
@@ -538,11 +537,10 @@
 
     // Colores de piel que funcionan en Windows y en Twemoji
     $grupos_secuencias_4 = array(
-        array($pelo_1,    "Colores de piel (1)",               "pelo",            "", 0, "", "", ["ss", "te"]),
-        array($piel_1,    "Colores de piel (2)",               "colores-piel-1",  "", 0, "", "", ["ss", "te"]),
-        array($genero_1,  "Colores de piel (3)",               "colores-piel-2",  "", 0, "", "", ["ss", "te"]),
-        array($genero_2,  "Colores de piel (4)",               "colores-piel-3",  "", 0, "", "", ["ss", "te"]),
-        array($genero_3,  "Colores de piel (5)",               "colores-piel-2b", "", 0, "", "", ["ss", "te"]),
+        array($piel_1,    "Colores de piel (1)",               "colores-piel-1",  "", 0, "", "", ["ss", "te"]),
+        array($genero_1,  "Colores de piel (2)",               "colores-piel-2",  "", 0, "", "", ["ss", "te"]),
+        array($genero_2,  "Colores de piel (3)",               "colores-piel-3",  "", 0, "", "", ["ss", "te"]),
+        array($genero_3,  "Colores de piel (2-b)",               "colores-piel-2b", "", 0, "", "", ["ss", "te"]),
     );
 
     // Colores de piel que NO funcionan en Windows o en Twemoji
@@ -566,8 +564,8 @@
 
     // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
     // genera_grupos($grupos_secuencias_1,  ["ss", "te"]);      // Banderas
-    genera_grupos($grupos_secuencias_2,  ["ss", "te"]);      // Otros
-    // genera_grupos($grupos_secuencias_3,  ["ss", "te"]);      // Géneros OK
+    // genera_grupos($grupos_secuencias_2,  ["ss", "te"]);      // Otros
+    genera_grupos($grupos_secuencias_3,  ["ss", "te"]);      // Géneros OK
     // genera_grupos($grupos_secuencias_3b, ["ss", "te"]);      // Géneros: No Windows o No Twemoji
     // genera_tablas($grupos_secuencias_4,  ["ss", "te"]);      // Colores de piel: OK
     // genera_tablas($grupos_secuencias_4b, ["ss", "te"]);      // Colores de piel: No Windows o No Twemoji
