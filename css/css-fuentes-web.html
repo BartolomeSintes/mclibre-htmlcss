@@ -107,7 +107,7 @@ p {
     <p>En la regla <span class="css-arroba">@font-face</span>:</p>
     <ul>
       <li>La propiedad <span class="css-prop">font-family</span> establece cómo tenemos que llamar a la fuente en la hoja de estilo. Si el nombre contiene espacios en blanco, es necesario escribir el nombre entre comillas.</li>
-      <li>La propiedad <span class="css-prop">src</span> indica el camino (absoluto o relativo) del fichero de la fuente.</li>
+      <li>La propiedad <span class="css-prop">src</span> indica el camino (absoluto o relativo) del fichero de la fuente. En el caso de indicar un camino relativo, el camino relativo es el camino relativo de la fuente con respecto a la hoja de estilo, no respecto a la página web.</li>
     </ul>
 
     <p>Una vez definido el nombre de la fuente, se puede hacer referencia a ella en las propiedades <span class="css-prop">font-family</span>.</p>
@@ -202,22 +202,22 @@ p {
       <ul>
         <li>Seleccione la fuente haciendo clic en el símbolo <span style="color: white; background-color: red; font-size: 20px; padding: 0 6px 0 5px; font-weight: bold; border-radius: 15px;">+</span>:
           <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-1.png" alt="Google Fonts" width="1005" height="390">
+            <img src="../img/google-fonts/google-fonts-descargar-woff-1.png" alt="Google Fonts" width="1014" height="530">
           </p>
         </li>
         <li>Haga clic en la barra negra que se mostrará en la parte inferior de la ventana:
           <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-2.png" alt="Google Fonts" width="1004" height="499">
+            <img src="../img/google-fonts/google-fonts-descargar-woff-2.png" alt="Google Fonts" width="1014" height="610">
           </p>
         </li>
-        <li>Se mostrará el código a insertar como enlace a hoja de estilo. Personalmente, yo recomiendo hacerlo como regla-arroba <span class="css-arroba">@import</span>, que se muestra en el punto siguiente, porque de esa manera se escribe todo en la hoja de estilo):
+        <li>Se mostrará el código a insertar como enlace a hoja de estilo. Personalmente, yo recomiendo hacerlo como regla-arroba <span class="css-arroba">@import</span>, que se muestra en el punto siguiente, porque de esa manera se escribe todo en la hoja de estilo:
           <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-03.png" alt="Google Fonts" width="730" height="540">
+            <img src="../img/google-fonts/google-fonts-03.png" alt="Google Fonts" width="1014" height="430">
           </p>
         </li>
         <li>Haga clic en <span class="css-arroba">@import</span> y se mostrará el código a insertar como regla-arroba <span class="css-arroba">@import</span> (recomendado):
           <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-04.png" alt="Google Fonts" width="730" height="560">
+            <img src="../img/google-fonts/google-fonts-04.png" alt="Google Fonts" width="1014" height="460">
           </p>
         </li>
       </ul>
@@ -235,53 +235,51 @@ p {
     <section id="google-fonts-descargar-woff2">
       <h3>Descargar las fuentes de Google Fonts en formato WOFF2</h3>
 
-      <p>Cuando se descarga una fuente de <a href="https://fonts.google.com/">Google Fonts</a>, tan sólo se incluye la fuente en formato ttf. Para obtenerla en formato woff, puede convertir la fuente ttf en woff utilizando alguna de las aplicaciones web comentadas en el apartado <a href="#woff">Fuentes WOFF (Web Open Font Format)</a> de esta lección. Para obtenerla en formato woff2, también puede seguir el procedimiento que se comenta a continuación.</p>
+      <p>Cuando se descarga una fuente de <a href="https://fonts.google.com/">Google Fonts</a>, tan sólo se incluye la fuente en formato TTF. Para obtenerla en formato WOFF2 puede utilizar alguno de estos procedimientos:</p>
 
-      <ol>
-        <li>Seleccione la fuente haciendo clic en el símbolo <span style="color: white; background-color: red; font-size: 20px; padding: 0 6px 0 5px; font-weight: bold; border-radius: 15px;">+</span>:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-1.png" alt="Google Fonts" width="1005" height="390">
-          </p>
+      <ul>
+        <li>Actualmente (noviembre de 2019), la forma más sencilla es utilizar páginas como <a href="https://canonicalized.com/local-font/">https://canonicalized.com/local-font/</a>, que permiten elegir una fuente y descargar un fichero zip con la fuente en varios formatos (WOFF2, WOFF, TTF, EOT, SVG).</li>
+        <li>Si la página anterior no está disponible, puede descargar de Google Fonts la fuente en formato TTF y convertirlas utilizando páginas como <a href="https://www.fontsquirrel.com/tools/webfont-generator">Font Squirrel</a> o <a href="https://www.web-font-generator.com/">Web Font Generator</a>.</li>
+        <li>Por último, también es posible descargar de Google Fonts una fuente en formato WOFF2, aunque el procedimiento es un poco laborioso:
+          <ol>
+            <li>Seleccione la fuente haciendo clic en el símbolo <span style="color: white; background-color: red; font-size: 20px; padding: 0 6px 0 5px; font-weight: bold; border-radius: 15px;">+</span>:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-1.png" alt="Google Fonts" width="1014" height="530">
+              </p>
+            </li>
+            <li>Haga clic en la barra negra que se mostrará en la parte inferior de la ventana:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-2.png" alt="Google Fonts" width="1014" height="610">
+              </p>
+            </li>
+            <li>Se mostrará el código a insertar como enlace a hoja de estilo. En la pestaña <span class="css-arroba">standard</span> o la pestaña <span class="css-arroba">@import</span>, seleccione y copie la dirección web <strong>http://fonts.googleapis.com/css?family=...</strong>:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-3.png" alt="Google Fonts" width="1014" height="420">
+              </p>
+            </li>
+            <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Se mostrará un documento de texto en el que se puede encontrar la dirección web de un archivo woff2. Puede haber varias versiones de la misma fuente (en la captura el documento contiene dos enlaces a diferentes versiones de la fuente). Normalmente, la versión a descargar es la versión <strong>latin</strong>, pero si esa versión no contiene todos los caracteres necesarios (acentos, etc.), a veces es necesario descargar la versión <strong>latin-extended</strong> u otras. Copie la dirección web de la versión elegida.
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-4.png" alt="Google Fonts" width="1024" height="380">
+              </p>
+            </li>
+            <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Automáticamente, el navegador le dará la opción de guardar la fuente. Haga clic en Guardar archivo y en Aceptar:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-5.png" alt="Google Fonts" width="1024" height="420">
+              </p>
+            </li>
+            <li>En la carpeta de descargas se mostrará el archivo woff2 descargado:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-6.png" alt="Google Fonts" width="1024" height="240">
+              </p>
+            </li>
+            <li>Cambie el nombre del fichero al nombre de la fuente para facilitar su uso posterior:
+              <p class="mcl-captura">
+                <img src="../img/google-fonts/google-fonts-descargar-woff-7.png" alt="Google Fonts" width="1024" height="210">
+              </p>
+            </li>
+          </ol>
         </li>
-        <li>Haga clic en la barra negra que se mostrará en la parte inferior de la ventana:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-2.png" alt="Google Fonts" width="1004" height="499">
-          </p>
-        </li>
-        <li>Se mostrará el código a insertar como enlace a hoja de estilo. En la pestaña <span class="css-arroba">standard</span> o la pestaña <span class="css-arroba">@import</span>, seleccione y copie la dirección web <strong>http://fonts.googleapis.com/css?family=...</strong>:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-3.png" alt="Google Fonts" width="1004" height="320">
-          </p>
-        </li>
-        <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Se mostrará un documento de texto en el que se puede encontrar la dirección web de un archivo woff2. Puede haber varias versiones de la misma fuente (en la captura el documento contiene dos enlaces a diferentes versiones de la fuente). Normalmente, la versión a descargar es la versión <strong>latin</strong>, pero si esa versión no contiene todos los caracteres necesarios (acentos, etc.), a veces es necesario descargar la versión <strong>latin-extended</strong> u otras. Copie la dirección web de la versión elegida.
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-4.png" alt="Google Fonts" width="1004" height="370">
-          </p>
-        </li>
-        <li>Pegue esa dirección en la barra de dirección del navegador y pulse <kbd>Intro</kbd>. Automáticamente, el navegador le dará la opción de guardar la fuente. Haga clic en Guardar archivo y en Aceptar:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-5.png" alt="Google Fonts" width="1024" height="420">
-          </p>
-        </li>
-        <li>En la carpeta de descargas se mostrará el archivo woff2 descargado:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-6.png" alt="Google Fonts" width="1024" height="170">
-          </p>
-        </li>
-        <li>Cambie el nombre del fichero al nombre de la fuente para facilitar su uso posterior:
-          <p class="mcl-captura">
-            <img src="../img/google-fonts/google-fonts-descargar-woff-7.png" alt="Google Fonts" width="1024" height="170">
-          </p>
-        </li>
-      </ol>
-    </section>
-
-    <section id="google-fonts-descargar-woff2-localfont">
-      <h3>Descargar las fuentes de Google Fonts de otras páginas</h3>
-
-      <p>Existen otras páginas que permiten descargar las fuentes de Google Fonts, pero a veces esas páginas dejan de estar disponibles.</p>
-
-      <p>Actualmente (octubre de 2019), está disponible la web <a href="https://canonicalized.com/local-font/">https://canonicalized.com/local-font/</a>.</p>
+      </ul>
     </section>
   </section>
 
@@ -336,7 +334,7 @@ src: url("mystery-quest.woff2");
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de noviembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 12 de noviembre de 2019</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
