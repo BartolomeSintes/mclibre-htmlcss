@@ -65,7 +65,7 @@ $texto = "@charset \"utf-8\";
 @import url(\"mclibre-pie.css\");
 /* Paginas web HTML / XHTML y hojas de estilo CSS
    Bartolome Sintes Marco
-   http://www.mclibre.org
+   https://www.mclibre.org
 
    CSS ejercicio:  Gatos
    27 de noviembre de 2014
