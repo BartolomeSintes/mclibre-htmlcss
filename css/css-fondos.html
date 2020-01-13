@@ -110,7 +110,7 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-   background: lightblue url("caballo.svg") top left / 100px;
+   background: lightblue url("caballo.svg") left top / 100px;
 }
 /* Imagen de fondo caballo.svg: <img src="ejemplos/fondos/caballo.svg" alt="Imagen de ejemplo para fondo" width="205" height="106"> */</code>
 </pre>
@@ -127,13 +127,13 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
 
     <hr class="corta">
 
-    <p>Tenga cuidado al utilizar conjuntamente la propiedad compuesta <span class="css-prop">background</span> y las propiedades individuales. Si se utiliza la propiedad compuesta <span class="css-prop">background</span> y además las propiedades individuales, es necesario escribir primero la propiedad compuesta, ya que la propiedad <span class="css-prop">background</span> anula las propiedades de fondo anteriores. En el primer ejemplo siguiente, no se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background</span> anula la propiedad <span class="css-prop">background-color</span> anterior. En el segundo ejemplo, sí que se ve el color <span class="css-valor">orange</span> porque la propiedad <span class="css-prop">background-color</span> está después de la propiedad <span class="css-prop">background</span>.</p>
+    <p>Tenga cuidado al utilizar conjuntamente la propiedad compuesta <span class="css-prop">background</span> y las propiedades individuales. Si se utiliza la propiedad compuesta <span class="css-prop">background</span> y además las propiedades individuales, es necesario escribir primero la propiedad compuesta, ya que la propiedad <span class="css-prop">background</span> anula las propiedades de fondo anteriores. En el primer ejemplo siguiente, no se ve el color <span class="css-valor">lightgray</span> porque la propiedad <span class="css-prop">background</span> anula la propiedad <span class="css-prop">background-color</span> anterior. En el segundo ejemplo, sí que se ve el color <span class="css-valor">lightgray</span> porque la propiedad <span class="css-prop">background-color</span> está después de la propiedad <span class="css-prop">background</span>.</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background-color: orange;
+  background-color: lightgray;
   background: url("gota.png");
 }</code>
 </pre>
@@ -151,7 +151,7 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
         <pre>
 <code class="language-css">html {
   background: url("gota.png");
-  background-color: orange;
+  background-color: lightgray;
 }</code>
 </pre>
       </div>
@@ -247,8 +247,8 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background: url("rosa-1f339.svg") top left repeat-y,
-    hsl(105, 80%, 85%) url("tulipan-1f337.svg") top right repeat-y;
+  background: url("rosa-1f339.svg") left top repeat-y,
+    hsl(105, 80%, 85%) url("tulipan-1f337.svg") right top repeat-y;
   padding: 0 70px;
 }</code>
 </pre>
@@ -268,8 +268,8 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background: hsl(105, 80%, 85%) url("rosa-1f339.svg") top left repeat-y,
-    url("tulipan-1f337.svg") top right repeat-y;
+  background: hsl(105, 80%, 85%) url("rosa-1f339.svg") left top repeat-y,
+    url("tulipan-1f337.svg") right top repeat-y;
   padding: 0 70px;
   /* No es correcto poner color de fondo a una imagen de fondo
      que no sea la última.
@@ -278,7 +278,7 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fondos/background-multiple-5.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/fondos/background-multiple-5.html" style="width: 100%; height: 12em">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fondos/background-multiple-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -325,7 +325,7 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background: gold url("fuego-1f525.svg");  }
+  background: gold url("fuego-1f525.svg");
 }</code>
 </pre>
       </div>
@@ -341,12 +341,12 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background: gold url("tartan.png"); }
+  background: gold url("tartan.png");
 }</code>
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/fondos/background-color-3.html" style="width: 100%; height: 11em">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/fondos/background-color-3.html" style="width: 100%; height: 12em">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fondos/background-color-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -367,13 +367,13 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
 
     <p>La propiedad <span class="css-prop">background-image</span> establece cualquier imagen como fondo de un elemento. La sintaxis es la siguiente background-image: url("nombre_de_la_imagen"), en la que el nombre de la imagen debe indicar el nombre (y la extensión) de la imagen, así como el camino absoluto o relativo desde la hoja de estilo. Las comillas que rodean el nombre de la imagen sólo son necesarias si hay espacios en blanco en el nombre de la imagen. Se pueden utilizar comillas simples (') o dobles ("). Si hay espacios en blanco entre url y el paréntesis, los navegadores no muestran la imagen de fondo.</p>
 
-    <p>En el ejemplo siguiente, se utiliza la imagen siguiente: <img src="../img/fondos/verde.jpg" alt="Imagen para fondo" title="Imagen para fondo" width="64" height="64">. Esta imagen se llama verde.jpg y se encuentra en la misma carpeta que la hoja de estilo.</p>
+    <p>En el ejemplo siguiente, se utiliza la imagen siguiente: <img src="../img/fondos/tartan.png" alt="Imagen para fondo" title="Imagen para fondo" width="64" height="64">. Esta imagen se llama tartan.png y se encuentra en la misma carpeta que la hoja de estilo.</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background-image: url("verde.jpg");
+  background-image: url("tartan.png");
 }</code>
 </pre>
       </div>
@@ -389,7 +389,7 @@ Imagen de fondo: <img src="ejemplos/fondos/tartan.png" alt="Imagen de ejemplo pa
       <div class="codigo">
         <pre>
 <code class="language-css">html {
-  background-image: url("verde.jpg");
+  background-image: url("tartan.png");
 }</code>
 </pre>
       </div>
