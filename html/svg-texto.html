@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Texto. SVG. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.ico">
+  <link rel="stylesheet" href="../varios/highlight-htmlcss.css">
+  <script src="../varios/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <h1>Texto SVG</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Texto SVG</h2>
+
+      <ul>
+        <li><a href="#svg-etiqueta-text">Texto: <span class="html-eti">&lt;text&gt;</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>En esta lección se tratan las etiquetas SVG que permiten incluir texto en un dibujo SVG y su principales atributos.</p>
+
+  <section id="svg-etiqueta-text">
+    <h2 class="con-aside">Texto: <span class="html-eti">&lt;text&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">&lt;text&gt;</span><br>
+        <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/text.html#TextElement"><img src="../varios/iconos/icono-svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element/text"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La etiqueta <span class="html-eti">&lt;text&gt;</span> dibuja texto.</p>
+
+    <p>Los atributos más habituales de <span class="html-eti">&lt;text&gt;</span> son:</p>
+    <ul>
+      <li><span class="html-atri">x</span>: abcisa de la esquina inferior izquierda del texto</li>
+      <li><span class="html-atri">y</span>: ordenada de la esquina inferior izquierda del texto</li>
+      <li><span class="html-atri">font-family</span>: tipo de letra</li>
+      <li><span class="html-atri">font-size</span>: tamaño del tipo de letra</li>
+      <li><span class="html-atri">text-anchor</span>: alineación del texto</li>
+      <li><span class="html-atri">transform</span>: transformación geométrica del texto</li>
+    </ul>
+
+    <p>Los atributos que suelen escribirse siempre son las coordenadas <span class="html-atri">x</span> e <span class="html-atri">y</span> que indican la posición del texto en el plano SVG:</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100">
+          <text x="10" y="20">¡Hola, mundo!</text>
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100"&gt;
+  &lt;text x="10" y="20"&gt;¡Hola, mundo!&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Las coordenadas <span class="html-atri">x</span> e <span class="html-atri">y</span> en principio corresponden a la esquina inferior izquierda del texto, como muestra el siguiente ejemplo en el que se dibujan unos círculos en la misma posición que el texto:</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100">
+          <text x="10" y="20">¡Hola, mundo!</text>
+          <circle cx="10" cy="20" r="2" fill="red" />
+          <text x="10" y="50">¡Hola, mundo!</text>
+          <circle cx="10" cy="50" r="2" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="120" height="100" viewBox="0 0 120 100"&gt;
+  &lt;text <span class="codigo-resaltado">x="10"</span> <span class="codigo-resaltado">y="20"</span>&gt;Hola, mundo!&lt;/text&gt;
+  &lt;circle cx="10" cy="20" r="2" fill="red" /&gt;
+  &lt;text <span class="codigo-resaltado">x="10"</span> <span class="codigo-resaltado">y="50"</span>&gt;Hola, mundo!&lt;/text&gt;
+  &lt;circle cx="10" cy="50" r="2" fill="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>El tamaño del tipo de letra <span class="html-atri">font-size</span> sigue la sintaxis y valores de las hojas de estilo CSS, excepto que aquí se puede omitir la unidad y entonces se interpreta como píxeles:</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="10" y="20">¡Hola, mundo!</text>
+          <text x="10" y="50" font-size="24">¡Hola, mundo!</text>
+          <text x="10" y="80" font-size="24px">¡Hola, mundo!</text>
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="10" y="20"&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="10" y="50" <span class="codigo-resaltado">font-size="24"</span>&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="10" y="80" <span class="codigo-resaltado">font-size="24px"</span>&gt;¡Hola, mundo!&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>El tipo de letra <span class="html-atri">font-family</span> sigue la sintaxis y valores de las hojas de estilo CSS:</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="10" y="50" font-family="monospace" font-size="24">¡Hola, mundo!</text>
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="10" y="50" <span class="codigo-resaltado">font-family="monospace"</span> font-size="24"&gt;¡Hola, mundo!&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>Para poder utilizar fuentes web mediante la regla-arroba <span class="css-arroba">@import</span> debemos definir un bloque <span class="html-eti">&lt;style&gt;</span> en un bloque de definiciones <span class="html-eti">&lt;defs&gt;</span>, El tipo de letra <span class="html-atri">font-family</span> es como el de las hojas de estilo CSS:</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <defs>
+            <style>
+              @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+
+            </style>
+          </defs>
+          <text x="10" y="50" font-family="Mystery Quest" font-size="30">¡Hola, mundo!</text>
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+<span class="codigo-resaltado-caja">  &lt;defs&gt;
+    &lt;style&gt;
+      @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+    &lt;/style&gt;
+  &lt;/defs&gt;</span>
+  &lt;text x="10" y="50" <span class="codigo-resaltado">font-family="Mystery Quest"</span> font-size="30"&gt;¡Hola, mundo!&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>El atributo <span class="html-atri">text-anchor</span> permite cambiar la posición de las coordenadas <span class="html-atri">x</span> e <span class="html-atri">y</span> con respecto al texto, lo que facilita alinear diferentes etiquetas <span class="html-eti">&lt;text&gt;</span> entre sí:</p>
+
+    <p>De forma predeterminada, las coordenadas <span class="html-atri">x</span> e <span class="html-atri">y</span> corresponden al extremo izquierdo del texto.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="10" y="20">¡Hola, mundo!</text>
+          <text x="10" y="50">Texto SVG</text>
+          <text x="10" y="80">Más texto SVG</text>
+          <circle cx="10" cy="90" r="2" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="10" y="20"&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="10" y="50"&gt;Texto SVG&lt;/text&gt;
+  &lt;text x="10" y="80"&gt;Más texto SVG&lt;/text&gt;
+  &lt;circle <span class="codigo-resaltado">cx="10"</span> cy="90" r="2" fill="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>El valor <span class="html-atri-valor">start</span> corresponde también al extremo izquierdo del texto.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="10" y="20" text-anchor="start">¡Hola, mundo!</text>
+          <text x="10" y="50" text-anchor="start">Texto SVG</text>
+          <text x="10" y="80" text-anchor="start">Más texto SVG</text>
+          <circle cx="10" cy="90" r="2" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="10" y="20" <span class="codigo-resaltado">text-anchor="start"</span>&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="10" y="50" <span class="codigo-resaltado">text-anchor="start"</span>&gt;Texto SVG&lt;/text&gt;
+  &lt;text x="10" y="80" <span class="codigo-resaltado">text-anchor="start"</span>&gt;Más texto SVG&lt;/text&gt;
+  &lt;circle <span class="codigo-resaltado">cx="10"</span> cy="90" r="2" fill="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>El valor <span class="html-atri-valor">middle</span> corresponde al centro del texto.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="100" y="20" text-anchor="middle">¡Hola, mundo!</text>
+          <text x="100" y="50" text-anchor="middle">Texto SVG</text>
+          <text x="100" y="80" text-anchor="middle">Más texto SVG</text>
+          <circle cx="100" cy="90" r="2" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="100" y="20" <span class="codigo-resaltado">text-anchor="middle"</span>&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="100" y="50" <span class="codigo-resaltado">text-anchor="middle"</span>&gt;Texto SVG&lt;/text&gt;
+  &lt;text x="100" y="80" <span class="codigo-resaltado">text-anchor="middle"</span>&gt;Más texto SVG&lt;/text&gt;
+  &lt;circle <span class="codigo-resaltado">cx="100"</span> cy="90" r="2" fill="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+
+    <p>El valor <span class="html-atri-valor">end</span> corresponde al extremo derecho del texto.</p>
+
+    <div class="filaflex">
+      <div class="resultado-html nogrow">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+          <text x="180" y="20" text-anchor="end">¡Hola, mundo!</text>
+          <text x="180" y="50" text-anchor="end">Texto SVG</text>
+          <text x="180" y="80" text-anchor="end">Más texto SVG</text>
+          <circle cx="180" cy="90" r="2" fill="red" />
+        </svg>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100"&gt;
+  &lt;text x="180" y="20" <span class="codigo-resaltado">text-anchor="end"</span>&gt;¡Hola, mundo!&lt;/text&gt;
+  &lt;text x="180" y="50" <span class="codigo-resaltado">text-anchor="end"</span>&gt;Texto SVG&lt;/text&gt;
+  &lt;text x="180" y="80" <span class="codigo-resaltado">text-anchor="end"</span>&gt;Más texto SVG&lt;/text&gt;
+  &lt;circle <span class="codigo-resaltado">cx="180"</span> cy="90" r="2" fill="red" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 7 de abril de 2020</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
