@@ -25,6 +25,7 @@
 
       <ul>
         <li><a href="#svg-etiqueta-text">Texto: <span class="html-eti">&lt;text&gt;</span></a></li>
+        <li><a href="#caracteres-admitidos">Caracteres admitidos</a></li>
       </ul>
     </div>
   </nav>
@@ -261,8 +262,112 @@
     </div>
   </section>
 
+  <section id="caracteres-admitidos">
+    <h2>Caracteres admitidos</h2>
+
+    <p>La etiqueta <span class="html-eti">&lt;text&gt;</span> puede incluir cualquier carácter Unicode mediante <strong>entidades numéricas</strong>, tanto en un documento html como en una imagen SVG.</p>
+
+    <div class="filaflex">
+      <div class="resultado-object nogrow">
+        <object type="text/html" data="ejemplos/imagenes/img-svg-text-entidad-numerica.html" style="width: 100%; height: 90px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+      width="50" height="50" viewBox="0 0 50 50"&gt;
+    &lt;text x="5" y="40" font-size="60" &gt;<span class="codigo-resaltado">&amp;#xa9;</span>&lt;/text&gt;
+  &lt;/svg&gt;
+&lt;/p&gt;</code>
+</pre>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg-text-entidad-numerica.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="resultado-object nogrow">
+        <object type="text/html" data="ejemplos/imagenes/img-svg-text-entidad-numerica-2.html" style="width: 100%; height: 90px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;
+  &lt;img src="img-svg-entidad-numerica.svg" alt="Entidad numérica en imagen SVG" width="50" height="50"&gt;
+&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="50" height="50" viewBox="0 0 50 50"&gt;
+  &lt;text x="5" y="40" font-size="60" &gt;<span class="codigo-resaltado">&amp;#xa9;</span>&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg-text-entidad-numerica-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>La etiqueta <span class="html-eti">&lt;text&gt;</span> puede incluir cualquier carácter Unicode mediante <strong>entidades de carácter</strong>, pero sólo en un documento html, no en una imagen SVG.</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+      </div>
+      <div class="resultado-object nogrow">
+        <object type="text/html" data="ejemplos/imagenes/img-svg-text-entidad-caracter.html" style="width: 100%; height: 90px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;
+  &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+      width="50" height="50" viewBox="0 0 50 50"&gt;
+    &lt;text x="5" y="40" font-size="60" &gt;<span class="codigo-resaltado">&amp;copy;</span>&lt;/text&gt;
+  &lt;/svg&gt;
+&lt;/p&gt;</code>
+</pre>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg-text-entidad-caracter.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+      </div>
+      <div class="resultado-object nogrow">
+        <object type="text/html" data="ejemplos/imagenes/img-svg-text-entidad-caracter-2.html" style="width: 100%; height: 90px;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;
+  &lt;img src="img-svg-entidad-numerica.svg" alt="Entidad de carácter en imagen SVG" width="50" height="50"&gt;
+&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    width="50" height="50" viewBox="0 0 50 50"&gt;
+  &lt;text x="5" y="40" font-size="60" &gt;<span class="codigo-resaltado">&amp;copy;</span>&lt;/text&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/imagenes/img-svg-text-entidad-caracter-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de abril de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 27 de abril de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
