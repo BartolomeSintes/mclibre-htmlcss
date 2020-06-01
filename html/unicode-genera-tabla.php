@@ -572,6 +572,8 @@
 
     // genera_grupos($grupos_restos);
 
+    // 2020-06-01 CUIDADO QUE HE CREADO UN GRUPOO NUEVO EN UNICODE 13: ANIMALES $animales HASTA QUE ME ACLARE DONDE INCLUIRLOS
+
     ?>
 </body>
 
