@@ -6,10 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   <style>
     @font-face {
       font-family: "Symbola";
-      src: url("unicode/Symbola.ttf");
+      src: url("unicode/Symbola.otf");
     }
 
     @font-face {
@@ -26,53 +27,79 @@
     div.u {
       display: flex;
       flex-direction: column;
-      flex: 0 1 150px;
+      flex: 0 1 200px;
       margin: 5px;
       border: black 1px solid;
       text-align: center;
     }
 
-    div.u p:nth-child(odd) {
+    div.u2 {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 300px;
+      margin: 5px;
+      border: black 1px solid;
+      text-align: center;
+    }
+
+    div.u p:nth-child(odd),
+    div.u2 p:nth-child(odd) {
       background-color: #eee;
     }
 
-    div.u p {
+    div.u p,
+    div.u2 p {
       margin: 0;
       padding: 5px 10px;
     }
 
-    div.u p.uc {
+    div.u p.uc,
+    div.u2 p.uc {
       font-weight: bold;
     }
 
-    div.u p.si {
+    div.u p.si,
+    div.u2 p.si {
       font-size: 80px;
       line-height: 100px;
       text-align: center;
     }
 
-    div.u span.ss {
+    div.u span.ss,
+    div.u2 span.ss {
       font-family: sans-serif;
       border-right: 2px solid black;
       padding-right: 20px;
     }
 
-    div.u span.sy {
+    div.u span.sy,
+    div.u2 span.sy {
       font-family: "Symbola";
     }
 
-    div.u span.te {
+    div.u span.te,
+    div.u2 span.te {
       font-family: "Twemoji";
+      font-size: 90px;
     }
 
-    div.u p.en {}
+    div.u .twe,
+    div.u2 .twe {
+      height: 90px;
+      vertical-align: text-bottom;
+    }
 
-    div.u p.no {
+    div.u p.en,
+    div.u2 p.en {}
+
+    div.u p.no,
+    div.u2 p.no {
       flex: 1 0 auto;
       text-transform: uppercase;
     }
 
-    div.u a {
+    div.u a,
+    div.u2 a {
       border: none;
       text-decoration: none;
       color: black;
@@ -80,10 +107,34 @@
 
     table.u {
       border-spacing: 20px 0;
+      border-collapse: collapse;
     }
 
-    table.u span.te {
+    table.u colgroup {
+      border-right: black 1px solid;
+      border-left: black 1px solid;
+    }
+
+    table.u tr.fila-estrecha {
+      height: auto;
+      border-bottom: black 1px solid;
+    }
+
+    table.u tr {
+      height: 90px;
+    }
+
+    table.u .ss {
+      font-family: sans-serif;
+      font-size: 80px;
+    }
+
+    table.u .te {
       font-family: "Twemoji";
+      font-size: 80px;
+    }
+
+    table.u .twe {
       font-size: 80px;
     }
 
@@ -138,7 +189,8 @@
         <li><a href="#emoticonos">Emoticonos</a></li>
         <li><a href="#transporte">Transporte y mapas</a></li>
         <li><a href="#simbolos-misc-supl">Símbolos y pict. misc. supl.</a></li>
-        <li><a href="#simbolos-ext-a">Símbolos y pict. extend. A</a></li></ul>
+        <li><a href="#simbolos-ext-a">Símbolos y pict. extend. A</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -169,7 +221,7 @@
 
     <ul>
       <li>el código Unicode hexadecimal (el formato es U+HHHH, donde HHHH es un número hexadecimal)</li>
-      <li>el carácter en la fuente <span class="css-valor">sans-serif</span>. La fuente aplicada depende del sistema operativo, del navegador e incluso del carácter (si no existe el carácter en la fuente, el navegador muestra el código Unicode en un cuadrado de borde negro).</li>
+      <li>el carácter en la fuente <span class="css-valor">sans-serif</span>. La fuente aplicada depende del sistema operativo, del navegador e incluso del carácter (si no existe el carácter en la fuente, el navegador muestra el código Unicode en un cuadrado de borde negro). En los casos en que Windows 10 no muestra el carácter, a la derecha del cuadrado de borde negro se ha añadido el carácter en una fuente que sí contiene el carácter (<span class="css-valor">Twemoji</span> para <i>emojis</i> y <span class="css-valor">Symbola</span> para el resto).</li>
       <li>la entidad numérica de ese carácter (en formato hexadecimal y decimal)</li>
       <li>el nombre del carácter (en inglés)</li>
     </ul>
@@ -178,7 +230,7 @@
   <section id="controles-latin">
     <h2>Controles y Latin básico</h2>
 
-    <p>Se muestran aquí 12 caracteres Unicode del grupo que se extiende desde el carácter U+0000 hasta el carácter U+007F. Puede descargar la <a href="unicode/U00000-c0-controls-and-basic-latin.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 12 caracteres Unicode del grupo que se extiende desde el carácter U+00000 hasta el carácter U+0007F. Puede descargar la <a href="unicode/U00000-c0-controls-and-basic-latin.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -283,7 +335,7 @@
   <section id="controles-sup">
     <h2>Suplemento controles y Latin-1</h2>
 
-    <p>Se muestran aquí 2 caracteres Unicode del grupo que se extiende desde el carácter U+0080 hasta el carácter U+00FF. Puede descargar la <a href="unicode/U00080-c1-controls-and-latin-1-supplement.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 2 caracteres Unicode del grupo que se extiende desde el carácter U+0080 hasta el carácter U+00FF. Puede descargar la <a href="unicode/U00080-c1-controls-and-latin-1-supplement.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -308,7 +360,7 @@
   <section id="puntuacion">
     <h2>Puntuación</h2>
 
-    <p>Se muestran aquí 25 caracteres Unicode del grupo que se extiende desde el carácter U+2000 hasta el carácter U+206F. Puede descargar la <a href="unicode/U02000-general-punctuation.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 25 caracteres Unicode del grupo que se extiende desde el carácter U+2000 hasta el carácter U+206F. Puede descargar la <a href="unicode/U02000-general-punctuation.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -517,7 +569,7 @@
   <section id="monedas">
     <h2>Símbolos de monedas</h2>
 
-    <p>Se muestran aquí 32 caracteres Unicode del grupo que se extiende desde el carácter U+20A0 hasta el carácter U+20BF. Puede descargar la <a href="unicode/U020A0-currency-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 32 caracteres Unicode del grupo que se extiende desde el carácter U+20A0 hasta el carácter U+20BF. Puede descargar la <a href="unicode/U020A0-currency-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -782,7 +834,7 @@
   <section id="simbolos-letras">
     <h2>Símbolos con letras</h2>
 
-    <p>Se muestran aquí 22 caracteres Unicode del grupo que se extiende desde el carácter U+2100 hasta el carácter U+214F. Puede descargar la <a href="unicode/U02100-letterlike-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 22 caracteres Unicode del grupo que se extiende desde el carácter U+2100 hasta el carácter U+214F. Puede descargar la <a href="unicode/U02100-letterlike-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -967,7 +1019,7 @@
   <section id="flechas">
     <h2>Flechas</h2>
 
-    <p>Se muestran aquí 8 caracteres Unicode del grupo que se extiende desde el carácter U+2190 hasta el carácter U+21FF. Puede descargar la <a href="unicode/U02190-arrows.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 8 caracteres Unicode del grupo que se extiende desde el carácter U+2190 hasta el carácter U+21FF. Puede descargar la <a href="unicode/U02190-arrows.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -1040,7 +1092,7 @@
   <section id="tecnicos-misc">
     <h2>Símbolos técnicos misceláneos</h2>
 
-    <p>Se muestran aquí 253 caracteres Unicode del grupo que se extiende desde el carácter U+2300 hasta el carácter U+23FE. Puede descargar la <a href="unicode/U02300-miscellaneous-technical.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 253 caracteres Unicode del grupo que se extiende desde el carácter U+2300 hasta el carácter U+23FE. Puede descargar la <a href="unicode/U02300-miscellaneous-technical.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -3073,7 +3125,7 @@
   <section id="alfanum-circulo">
     <h2>Símbolos alfanuméricos con círculo alrededor</h2>
 
-    <p>Se muestra aquí 1 carácter Unicode del grupo que se extiende desde el carácter U+2460 hasta el carácter U+24FF. Puede descargar la <a href="unicode/U02460-enclosed-alphanumerics.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestra aquí 1 carácter Unicode del grupo que se extiende desde el carácter U+2460 hasta el carácter U+24FF. Puede descargar la <a href="unicode/U02460-enclosed-alphanumerics.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -3090,7 +3142,7 @@
   <section id="cajas">
     <h2>Cajas</h2>
 
-    <p>Se muestran aquí 128 caracteres Unicode del grupo que se extiende desde el carácter U+2500 hasta el carácter U+257F. Puede descargar la <a href="unicode/U02500-box-drawing.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 128 caracteres Unicode del grupo que se extiende desde el carácter U+2500 hasta el carácter U+257F. Puede descargar la <a href="unicode/U02500-box-drawing.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -4123,7 +4175,7 @@
   <section id="formas-geometricas">
     <h2>Formas geométricas</h2>
 
-    <p>Se muestran aquí 12 caracteres Unicode del grupo que se extiende desde el carácter U+25A0 hasta el carácter U+25FF. Puede descargar la <a href="unicode/U025A0-geometric-shapes.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 12 caracteres Unicode del grupo que se extiende desde el carácter U+25A0 hasta el carácter U+25FF. Puede descargar la <a href="unicode/U025A0-geometric-shapes.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -4228,7 +4280,7 @@
   <section id="simbolos-misc">
     <h2>Símbolos misceláneos</h2>
 
-    <p>Se muestran aquí 256 caracteres Unicode del grupo que se extiende desde el carácter U+2600 hasta el carácter U+26FF. Puede descargar la <a href="unicode/U02600-miscellaneous-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 256 caracteres Unicode del grupo que se extiende desde el carácter U+2600 hasta el carácter U+26FF. Puede descargar la <a href="unicode/U02600-miscellaneous-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -5084,7 +5136,7 @@
         <p class="si">&#x266A;</p>
         <p class="en"><strong>&amp;#x266a;</strong></p>
         <p class="en"><strong>&amp;#9834;</strong></p>
-        <p class="no">eight note</p>
+        <p class="no">eighth note</p>
       </div>
 
       <div class="u">
@@ -6285,7 +6337,7 @@
   <section id="dingbats">
     <h2>Dingbats</h2>
 
-    <p>Se muestran aquí 192 caracteres Unicode del grupo que se extiende desde el carácter U+2700 hasta el carácter U+27BF. Puede descargar la <a href="unicode/U02700-dingbats.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 192 caracteres Unicode del grupo que se extiende desde el carácter U+2700 hasta el carácter U+27BF. Puede descargar la <a href="unicode/U02700-dingbats.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -7830,7 +7882,7 @@
   <section id="flechas-suplementarias">
     <h2>Flechas suplementarias B</h2>
 
-    <p>Se muestran aquí 2 caracteres Unicode del grupo que se extiende desde el carácter U+2900 hasta el carácter U+297F. Puede descargar la <a href="unicode/U02900-supplemental-arrows-b.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 2 caracteres Unicode del grupo que se extiende desde el carácter U+2900 hasta el carácter U+297F. Puede descargar la <a href="unicode/U02900-supplemental-arrows-b.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -7855,7 +7907,7 @@
   <section id="simbolos-flechas">
     <h2>Símbolos y flechas misceláneos</h2>
 
-    <p>Se muestran aquí 252 caracteres Unicode del grupo que se extiende desde el carácter U+2B00 hasta el carácter U+2BFF. Puede descargar la <a href="unicode/U02B00-miscellaneous-symbols-and-arrows.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 253 caracteres Unicode del grupo que se extiende desde el carácter U+2B00 hasta el carácter U+2BFF. Puede descargar la <a href="unicode/U02B00-miscellaneous-symbols-and-arrows.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -9042,6 +9094,17 @@
         <p class="no">rightwards black arrow</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+2B97 </p>
+        <p class="si">
+          <span class="ss">&#x2B97;</span>
+          <span class="sy">&#x2B97;</span>
+        </p>
+        <p class="en"><strong>&amp;#x2b97;</strong></p>
+        <p class="en"><strong>&amp;#11159;</strong></p>
+        <p class="no">symbol for type A electronics</p>
+      </div>
+
       <div class="u">
         <p class="uc">U+2B98 </p>
         <p class="si">&#x2B98;</p>
@@ -9314,25 +9377,34 @@
         <p class="no">up arrowhead in a rectangle box</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BBA </p>
-        <p class="si">&#x2BBA;</p>
+        <p class="si">
+          <span class="ss">&#x2BBA;</span>
+          <span class="sy">&#x2BBA;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bba;</strong></p>
         <p class="en"><strong>&amp;#11194;</strong></p>
         <p class="no">overlapping white squares</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BBB </p>
-        <p class="si">&#x2BBB;</p>
+        <p class="si">
+          <span class="ss">&#x2BBB;</span>
+          <span class="sy">&#x2BBB;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bbb;</strong></p>
         <p class="en"><strong>&amp;#11195;</strong></p>
         <p class="no">overlapping white and black squares</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BBC </p>
-        <p class="si">&#x2BBC;</p>
+        <p class="si">
+          <span class="ss">&#x2BBC;</span>
+          <span class="sy">&#x2BBC;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bbc;</strong></p>
         <p class="en"><strong>&amp;#11196;</strong></p>
         <p class="no">overlapping black squares</p>
@@ -9434,9 +9506,12 @@
         <p class="no">black medium right-pointing triangle centered</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BC9 </p>
-        <p class="si">&#x2BC9;</p>
+        <p class="si">
+          <span class="ss">&#x2BC9;</span>
+          <span class="sy">&#x2BC9;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bc9;</strong></p>
         <p class="en"><strong>&amp;#11209;</strong></p>
         <p class="no">neptune form two</p>
@@ -9506,209 +9581,287 @@
         <p class="no">uncertainty sign</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD2 </p>
-        <p class="si">&#x2BD2;</p>
+        <p class="si">
+          <span class="ss">&#x2BD2;</span>
+          <span class="sy">&#x2BD2;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd2;</strong></p>
         <p class="en"><strong>&amp;#11218;</strong></p>
         <p class="no">group mark</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD3 </p>
-        <p class="si">&#x2BD3;</p>
+        <p class="si">
+          <span class="ss">&#x2BD3;</span>
+          <span class="sy">&#x2BD3;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd3;</strong></p>
         <p class="en"><strong>&amp;#11219;</strong></p>
         <p class="no">pluto form two</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD4 </p>
-        <p class="si">&#x2BD4;</p>
+        <p class="si">
+          <span class="ss">&#x2BD4;</span>
+          <span class="sy">&#x2BD4;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd4;</strong></p>
         <p class="en"><strong>&amp;#11220;</strong></p>
         <p class="no">pluto form three</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD5 </p>
-        <p class="si">&#x2BD5;</p>
+        <p class="si">
+          <span class="ss">&#x2BD5;</span>
+          <span class="sy">&#x2BD5;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd5;</strong></p>
         <p class="en"><strong>&amp;#11221;</strong></p>
         <p class="no">pluto form four</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD6 </p>
-        <p class="si">&#x2BD6;</p>
+        <p class="si">
+          <span class="ss">&#x2BD6;</span>
+          <span class="sy">&#x2BD6;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd6;</strong></p>
         <p class="en"><strong>&amp;#11222;</strong></p>
         <p class="no">pluto form five</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD7 </p>
-        <p class="si">&#x2BD7;</p>
+        <p class="si">
+          <span class="ss">&#x2BD7;</span>
+          <span class="sy">&#x2BD7;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd7;</strong></p>
         <p class="en"><strong>&amp;#11223;</strong></p>
         <p class="no">transpluto</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD8 </p>
-        <p class="si">&#x2BD8;</p>
+        <p class="si">
+          <span class="ss">&#x2BD8;</span>
+          <span class="sy">&#x2BD8;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd8;</strong></p>
         <p class="en"><strong>&amp;#11224;</strong></p>
         <p class="no">proserpina</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BD9 </p>
-        <p class="si">&#x2BD9;</p>
+        <p class="si">
+          <span class="ss">&#x2BD9;</span>
+          <span class="sy">&#x2BD9;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bd9;</strong></p>
         <p class="en"><strong>&amp;#11225;</strong></p>
         <p class="no">astraea</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDA </p>
-        <p class="si">&#x2BDA;</p>
+        <p class="si">
+          <span class="ss">&#x2BDA;</span>
+          <span class="sy">&#x2BDA;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bda;</strong></p>
         <p class="en"><strong>&amp;#11226;</strong></p>
         <p class="no">hygiea</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDB </p>
-        <p class="si">&#x2BDB;</p>
+        <p class="si">
+          <span class="ss">&#x2BDB;</span>
+          <span class="sy">&#x2BDB;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bdb;</strong></p>
         <p class="en"><strong>&amp;#11227;</strong></p>
         <p class="no">pholus</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDC </p>
-        <p class="si">&#x2BDC;</p>
+        <p class="si">
+          <span class="ss">&#x2BDC;</span>
+          <span class="sy">&#x2BDC;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bdc;</strong></p>
         <p class="en"><strong>&amp;#11228;</strong></p>
         <p class="no">nessus</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDD </p>
-        <p class="si">&#x2BDD;</p>
+        <p class="si">
+          <span class="ss">&#x2BDD;</span>
+          <span class="sy">&#x2BDD;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bdd;</strong></p>
         <p class="en"><strong>&amp;#11229;</strong></p>
         <p class="no">white moon selena</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDE </p>
-        <p class="si">&#x2BDE;</p>
+        <p class="si">
+          <span class="ss">&#x2BDE;</span>
+          <span class="sy">&#x2BDE;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bde;</strong></p>
         <p class="en"><strong>&amp;#11230;</strong></p>
         <p class="no">black diamond on cross</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BDF </p>
-        <p class="si">&#x2BDF;</p>
+        <p class="si">
+          <span class="ss">&#x2BDF;</span>
+          <span class="sy">&#x2BDF;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bdf;</strong></p>
         <p class="en"><strong>&amp;#11231;</strong></p>
         <p class="no">true light moon arta</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE0 </p>
-        <p class="si">&#x2BE0;</p>
+        <p class="si">
+          <span class="ss">&#x2BE0;</span>
+          <span class="sy">&#x2BE0;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be0;</strong></p>
         <p class="en"><strong>&amp;#11232;</strong></p>
         <p class="no">cupido</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE1 </p>
-        <p class="si">&#x2BE1;</p>
+        <p class="si">
+          <span class="ss">&#x2BE1;</span>
+          <span class="sy">&#x2BE1;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be1;</strong></p>
         <p class="en"><strong>&amp;#11233;</strong></p>
         <p class="no">hades</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE2 </p>
-        <p class="si">&#x2BE2;</p>
+        <p class="si">
+          <span class="ss">&#x2BE2;</span>
+          <span class="sy">&#x2BE2;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be2;</strong></p>
         <p class="en"><strong>&amp;#11234;</strong></p>
         <p class="no">zeus</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE3 </p>
-        <p class="si">&#x2BE3;</p>
+        <p class="si">
+          <span class="ss">&#x2BE3;</span>
+          <span class="sy">&#x2BE3;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be3;</strong></p>
         <p class="en"><strong>&amp;#11235;</strong></p>
         <p class="no">kronos</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE4 </p>
-        <p class="si">&#x2BE4;</p>
+        <p class="si">
+          <span class="ss">&#x2BE4;</span>
+          <span class="sy">&#x2BE4;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be4;</strong></p>
         <p class="en"><strong>&amp;#11236;</strong></p>
         <p class="no">apollon</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE5 </p>
-        <p class="si">&#x2BE5;</p>
+        <p class="si">
+          <span class="ss">&#x2BE5;</span>
+          <span class="sy">&#x2BE5;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be5;</strong></p>
         <p class="en"><strong>&amp;#11237;</strong></p>
         <p class="no">admetos</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE6 </p>
-        <p class="si">&#x2BE6;</p>
+        <p class="si">
+          <span class="ss">&#x2BE6;</span>
+          <span class="sy">&#x2BE6;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be6;</strong></p>
         <p class="en"><strong>&amp;#11238;</strong></p>
         <p class="no">vulcanus</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE7 </p>
-        <p class="si">&#x2BE7;</p>
+        <p class="si">
+          <span class="ss">&#x2BE7;</span>
+          <span class="sy">&#x2BE7;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be7;</strong></p>
         <p class="en"><strong>&amp;#11239;</strong></p>
         <p class="no">poseidon</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE8 </p>
-        <p class="si">&#x2BE8;</p>
+        <p class="si">
+          <span class="ss">&#x2BE8;</span>
+          <span class="sy">&#x2BE8;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be8;</strong></p>
         <p class="en"><strong>&amp;#11240;</strong></p>
         <p class="no">left half black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BE9 </p>
-        <p class="si">&#x2BE9;</p>
+        <p class="si">
+          <span class="ss">&#x2BE9;</span>
+          <span class="sy">&#x2BE9;</span>
+        </p>
         <p class="en"><strong>&amp;#x2be9;</strong></p>
         <p class="en"><strong>&amp;#11241;</strong></p>
         <p class="no">right black half star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BEA </p>
-        <p class="si">&#x2BEA;</p>
+        <p class="si">
+          <span class="ss">&#x2BEA;</span>
+          <span class="sy">&#x2BEA;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bea;</strong></p>
         <p class="en"><strong>&amp;#11242;</strong></p>
         <p class="no">star with left half black</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BEB </p>
-        <p class="si">&#x2BEB;</p>
+        <p class="si">
+          <span class="ss">&#x2BEB;</span>
+          <span class="sy">&#x2BEB;</span>
+        </p>
         <p class="en"><strong>&amp;#x2beb;</strong></p>
         <p class="en"><strong>&amp;#11243;</strong></p>
         <p class="no">star with right hlaf black</p>
@@ -9746,129 +9899,177 @@
         <p class="no">downwards two-headed arrow with triangle arrowheads</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF0 </p>
-        <p class="si">&#x2BF0;</p>
+        <p class="si">
+          <span class="ss">&#x2BF0;</span>
+          <span class="sy">&#x2BF0;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf0;</strong></p>
         <p class="en"><strong>&amp;#11248;</strong></p>
         <p class="no">eris form one</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF1 </p>
-        <p class="si">&#x2BF1;</p>
+        <p class="si">
+          <span class="ss">&#x2BF1;</span>
+          <span class="sy">&#x2BF1;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf1;</strong></p>
         <p class="en"><strong>&amp;#11249;</strong></p>
         <p class="no">eris form two</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF2 </p>
-        <p class="si">&#x2BF2;</p>
+        <p class="si">
+          <span class="ss">&#x2BF2;</span>
+          <span class="sy">&#x2BF2;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf2;</strong></p>
         <p class="en"><strong>&amp;#11250;</strong></p>
         <p class="no">sedna</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF3 </p>
-        <p class="si">&#x2BF3;</p>
+        <p class="si">
+          <span class="ss">&#x2BF3;</span>
+          <span class="sy">&#x2BF3;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf3;</strong></p>
         <p class="en"><strong>&amp;#11251;</strong></p>
         <p class="no">russian astrological symbol vigintile</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF4 </p>
-        <p class="si">&#x2BF4;</p>
+        <p class="si">
+          <span class="ss">&#x2BF4;</span>
+          <span class="sy">&#x2BF4;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf4;</strong></p>
         <p class="en"><strong>&amp;#11252;</strong></p>
         <p class="no">russian astrological symbol novile</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF5 </p>
-        <p class="si">&#x2BF5;</p>
+        <p class="si">
+          <span class="ss">&#x2BF5;</span>
+          <span class="sy">&#x2BF5;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf5;</strong></p>
         <p class="en"><strong>&amp;#11253;</strong></p>
         <p class="no">russian astrological symbol quintile</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF6 </p>
-        <p class="si">&#x2BF6;</p>
+        <p class="si">
+          <span class="ss">&#x2BF6;</span>
+          <span class="sy">&#x2BF6;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf6;</strong></p>
         <p class="en"><strong>&amp;#11254;</strong></p>
         <p class="no">russian astrological symbol binovile</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF7 </p>
-        <p class="si">&#x2BF7;</p>
+        <p class="si">
+          <span class="ss">&#x2BF7;</span>
+          <span class="sy">&#x2BF7;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf7;</strong></p>
         <p class="en"><strong>&amp;#11255;</strong></p>
         <p class="no">russian astrological symbol sentagon</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF8 </p>
-        <p class="si">&#x2BF8;</p>
+        <p class="si">
+          <span class="ss">&#x2BF8;</span>
+          <span class="sy">&#x2BF8;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf8;</strong></p>
         <p class="en"><strong>&amp;#11256;</strong></p>
         <p class="no">russian astrological symbol tredecile</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BF9 </p>
-        <p class="si">&#x2BF9;</p>
+        <p class="si">
+          <span class="ss">&#x2BF9;</span>
+          <span class="sy">&#x2BF9;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bf9;</strong></p>
         <p class="en"><strong>&amp;#11257;</strong></p>
         <p class="no">equals sign with infinity below</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFA </p>
-        <p class="si">&#x2BFA;</p>
+        <p class="si">
+          <span class="ss">&#x2BFA;</span>
+          <span class="sy">&#x2BFA;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bfa;</strong></p>
         <p class="en"><strong>&amp;#11258;</strong></p>
         <p class="no">united symbol</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFB </p>
-        <p class="si">&#x2BFB;</p>
+        <p class="si">
+          <span class="ss">&#x2BFB;</span>
+          <span class="sy">&#x2BFB;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bfb;</strong></p>
         <p class="en"><strong>&amp;#11259;</strong></p>
         <p class="no">separated symbol</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFC </p>
-        <p class="si">&#x2BFC;</p>
+        <p class="si">
+          <span class="ss">&#x2BFC;</span>
+          <span class="sy">&#x2BFC;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bfc;</strong></p>
         <p class="en"><strong>&amp;#11260;</strong></p>
         <p class="no">doubled symbol</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFD </p>
-        <p class="si">&#x2BFD;</p>
+        <p class="si">
+          <span class="ss">&#x2BFD;</span>
+          <span class="sy">&#x2BFD;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bfd;</strong></p>
         <p class="en"><strong>&amp;#11261;</strong></p>
         <p class="no">passed symbol</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFE </p>
-        <p class="si">&#x2BFE;</p>
+        <p class="si">
+          <span class="ss">&#x2BFE;</span>
+          <span class="sy">&#x2BFE;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bfe;</strong></p>
         <p class="en"><strong>&amp;#11262;</strong></p>
         <p class="no">reversed rith angle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+2BFF </p>
-        <p class="si">&#x2BFF;</p>
+        <p class="si">
+          <span class="ss">&#x2BFF;</span>
+          <span class="sy">&#x2BFF;</span>
+        </p>
         <p class="en"><strong>&amp;#x2bff;</strong></p>
         <p class="en"><strong>&amp;#11263;</strong></p>
         <p class="no">hellschreiber pause symbol</p>
@@ -9880,7 +10081,7 @@
   <section id="cjk">
     <h2>Símbolos y puntuación CJK</h2>
 
-    <p>Se muestran aquí 4 caracteres Unicode del grupo que se extiende desde el carácter U+3000 hasta el carácter U+303F. Puede descargar la <a href="unicode/U03000-cjk-symbols-and-punctuation.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 4 caracteres Unicode del grupo que se extiende desde el carácter U+3000 hasta el carácter U+303F. Puede descargar la <a href="unicode/U03000-cjk-symbols-and-punctuation.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -9921,7 +10122,7 @@
   <section id="cjk-circulo">
     <h2>Símbolos CJK con círculo alrededor</h2>
 
-    <p>Se muestran aquí 54 caracteres Unicode del grupo que se extiende desde el carácter U+3200 hasta el carácter U+32FF. Puede descargar la <a href="unicode/U03200-enclosed-cjk-letters-and-months.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 54 caracteres Unicode del grupo que se extiende desde el carácter U+3200 hasta el carácter U+32FF. Puede descargar la <a href="unicode/U03200-enclosed-cjk-letters-and-months.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -10362,7 +10563,7 @@
   <section id="musica">
     <h2>Símbolos musicales</h2>
 
-    <p>Se muestran aquí 231 caracteres Unicode del grupo que se extiende desde el carácter U+1D100 hasta el carácter U+1D1E8. Puede descargar la <a href="unicode/U1D100-musical-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 231 caracteres Unicode del grupo que se extiende desde el carácter U+1D100 hasta el carácter U+1D1E8. Puede descargar la <a href="unicode/U1D100-musical-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -12219,7 +12420,7 @@
   <section id="fichas-mahjong">
     <h2>Fichas de Mahjong</h2>
 
-    <p>Se muestran aquí 44 caracteres Unicode del grupo que se extiende desde el carácter U+1F000 hasta el carácter U+1F02B. Puede descargar la <a href="unicode/U1F000-mahjong-tiles.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 44 caracteres Unicode del grupo que se extiende desde el carácter U+1F000 hasta el carácter U+1F02B. Puede descargar la <a href="unicode/U1F000-mahjong-tiles.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -12580,7 +12781,7 @@
   <section id="domino">
     <h2>Fichas de dominó</h2>
 
-    <p>Se muestran aquí 100 caracteres Unicode del grupo que se extiende desde el carácter U+1F030 hasta el carácter U+1F093. Puede descargar la <a href="unicode/U1F030-domino-tiles.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 100 caracteres Unicode del grupo que se extiende desde el carácter U+1F030 hasta el carácter U+1F093. Puede descargar la <a href="unicode/U1F030-domino-tiles.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -13389,7 +13590,7 @@
   <section id="cartas">
     <h2>Cartas</h2>
 
-    <p>Se muestran aquí 82 caracteres Unicode del grupo que se extiende desde el carácter U+1F0A0 hasta el carácter U+1F0F5. Puede descargar la <a href="unicode/U1F0A0-playing-cards.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 82 caracteres Unicode del grupo que se extiende desde el carácter U+1F0A0 hasta el carácter U+1F0F5. Puede descargar la <a href="unicode/U1F0A0-playing-cards.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -14054,9 +14255,42 @@
   <section id="alfanum-circulo-sup">
     <h2>Suplemento alfanuméricos con círculo alrededor</h2>
 
-    <p>Se muestran aquí 50 caracteres Unicode del grupo que se extiende desde el carácter U+1F100 hasta el carácter U+1F1FF. Puede descargar la <a href="unicode/U1F100-enclosed-alphanumeric-supplement.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 56 caracteres Unicode del grupo que se extiende desde el carácter U+1F100 hasta el carácter U+1F1FF. Puede descargar la <a href="unicode/U1F100-enclosed-alphanumeric-supplement.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
+      <div class="u2">
+        <p class="uc">U+1F10D </p>
+        <p class="si">
+          <span class="ss">&#x1F10D;</span>
+          <span class="sy">&#x1F10D;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f10d;</strong></p>
+        <p class="en"><strong>&amp;#127245;</strong></p>
+        <p class="no">no rights reserved</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F10E </p>
+        <p class="si">
+          <span class="ss">&#x1F10E;</span>
+          <span class="sy">&#x1F10E;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f10e;</strong></p>
+        <p class="en"><strong>&amp;#127246;</strong></p>
+        <p class="no">share alike</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F10F </p>
+        <p class="si">
+          <span class="ss">&#x1F10F;</span>
+          <span class="sy">&#x1F10F;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f10f;</strong></p>
+        <p class="en"><strong>&amp;#127247;</strong></p>
+        <p class="no">non commercial</p>
+      </div>
+
       <div class="u">
         <p class="uc">U+1F12B </p>
         <p class="si">&#x1F12B;</p>
@@ -14121,12 +14355,48 @@
         <p class="no">raised md sign</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F16C </p>
-        <p class="si">&#x1F16C;</p>
+        <p class="si">
+          <span class="ss">&#x1F16C;</span>
+          <span class="sy">&#x1F16C;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f16c;</strong></p>
         <p class="en"><strong>&amp;#127340;</strong></p>
         <p class="no">raised mr sign</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F16D </p>
+        <p class="si">
+          <span class="ss">&#x1F16D;</span>
+          <span class="sy">&#x1F16D;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f16d;</strong></p>
+        <p class="en"><strong>&amp;#127341;</strong></p>
+        <p class="no">creative commons license</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F16E </p>
+        <p class="si">
+          <span class="ss">&#x1F16E;</span>
+          <span class="sy">&#x1F16E;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f16e;</strong></p>
+        <p class="en"><strong>&amp;#127342;</strong></p>
+        <p class="no">public domain</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F16F </p>
+        <p class="si">
+          <span class="ss">&#x1F16F;</span>
+          <span class="sy">&#x1F16F;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f16f;</strong></p>
+        <p class="en"><strong>&amp;#127343;</strong></p>
+        <p class="no">attribution, credit</p>
       </div>
 
       <div class="u">
@@ -14463,7 +14733,7 @@
   <section id="ideografico-circulo-sup">
     <h2>Suplemento ideográfico con círculo alrededor</h2>
 
-    <p>Se muestran aquí 64 caracteres Unicode del grupo que se extiende desde el carácter U+1F200 hasta el carácter U+1F2FF. Puede descargar la <a href="unicode/U1F200-enclosed-ideographic-supplement.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 64 caracteres Unicode del grupo que se extiende desde el carácter U+1F200 hasta el carácter U+1F2FF. Puede descargar la <a href="unicode/U1F200-enclosed-ideographic-supplement.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -14834,9 +15104,12 @@
         <p class="no">squared cjk unified ideograph-55B6</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F23B </p>
-        <p class="si">&#x1F23B;</p>
+        <p class="si">
+          <span class="ss">&#x1F23B;</span>
+          <span class="sy">&#x1F23B;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f23b;</strong></p>
         <p class="en"><strong>&amp;#127547;</strong></p>
         <p class="no">squared cjk unified ideograph-914d</p>
@@ -14930,49 +15203,67 @@
         <p class="no">circled ideograph accept</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F260 </p>
-        <p class="si">&#x1F260;</p>
+        <p class="si">
+          <span class="ss">&#x1F260;</span>
+          <span class="sy">&#x1F260;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f260;</strong></p>
         <p class="en"><strong>&amp;#127584;</strong></p>
         <p class="no">rounded symbol for fu</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F261 </p>
-        <p class="si">&#x1F261;</p>
+        <p class="si">
+          <span class="ss">&#x1F261;</span>
+          <span class="sy">&#x1F261;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f261;</strong></p>
         <p class="en"><strong>&amp;#127585;</strong></p>
         <p class="no">rounded symbol for lu</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F262 </p>
-        <p class="si">&#x1F262;</p>
+        <p class="si">
+          <span class="ss">&#x1F262;</span>
+          <span class="sy">&#x1F262;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f262;</strong></p>
         <p class="en"><strong>&amp;#127586;</strong></p>
         <p class="no">rounded symbol for shou</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F263 </p>
-        <p class="si">&#x1F263;</p>
+        <p class="si">
+          <span class="ss">&#x1F263;</span>
+          <span class="sy">&#x1F263;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f263;</strong></p>
         <p class="en"><strong>&amp;#127587;</strong></p>
         <p class="no">rounded symbol for xi</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F264 </p>
-        <p class="si">&#x1F264;</p>
+        <p class="si">
+          <span class="ss">&#x1F264;</span>
+          <span class="sy">&#x1F264;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f264;</strong></p>
         <p class="en"><strong>&amp;#127588;</strong></p>
         <p class="no">rounded symbol for shuangxi</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F265 </p>
-        <p class="si">&#x1F265;</p>
+        <p class="si">
+          <span class="ss">&#x1F265;</span>
+          <span class="sy">&#x1F265;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f265;</strong></p>
         <p class="en"><strong>&amp;#127589;</strong></p>
         <p class="no">rounded symbol for cai</p>
@@ -14984,7 +15275,7 @@
   <section id="dingbats-decorativos">
     <h2>Dingbats decorativos</h2>
 
-    <p>Se muestran aquí 48 caracteres Unicode del grupo que se extiende desde el carácter U+1F650 hasta el carácter U+1F67F. Puede descargar la <a href="unicode/U1F650-ornamental-dingbats.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 48 caracteres Unicode del grupo que se extiende desde el carácter U+1F650 hasta el carácter U+1F67F. Puede descargar la <a href="unicode/U1F650-ornamental-dingbats.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -15377,7 +15668,7 @@
   <section id="simbolos-alquimicos">
     <h2>Símbolos alquímicos</h2>
 
-    <p>Se muestran aquí 116 caracteres Unicode del grupo que se extiende desde el carácter U+1F700 hasta el carácter U+1F773. Puede descargar la <a href="unicode/U1F700-alchemical-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 116 caracteres Unicode del grupo que se extiende desde el carácter U+1F700 hasta el carácter U+1F773. Puede descargar la <a href="unicode/U1F700-alchemical-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -16314,7 +16605,7 @@
   <section id="geometricas-extendidas">
     <h2>Formas geométricas extendidas</h2>
 
-    <p>Se muestran aquí 101 caracteres Unicode del grupo que se extiende desde el carácter U+1F780 hasta el carácter U+1F7EB. Puede descargar la <a href="unicode/U1F780-geometric-shapes-extended.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 101 caracteres Unicode del grupo que se extiende desde el carácter U+1F780 hasta el carácter U+1F7EB. Puede descargar la <a href="unicode/U1F780-geometric-shapes-extended.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -16365,9 +16656,12 @@
         <p class="no">medium bold white circle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F786 </p>
-        <p class="si">&#x1F786;</p>
+        <p class="si">
+          <span class="ss">&#x1F786;</span>
+          <span class="sy">&#x1F786;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f786;</strong></p>
         <p class="en"><strong>&amp;#128902;</strong></p>
         <p class="no">bold white circle</p>
@@ -16381,9 +16675,12 @@
         <p class="no">heavy white circle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F788 </p>
-        <p class="si">&#x1F788;</p>
+        <p class="si">
+          <span class="ss">&#x1F788;</span>
+          <span class="sy">&#x1F788;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f788;</strong></p>
         <p class="en"><strong>&amp;#128904;</strong></p>
         <p class="no">very heavy white circle</p>
@@ -16397,17 +16694,23 @@
         <p class="no">extremely heavy white circle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F78A </p>
-        <p class="si">&#x1F78A;</p>
+        <p class="si">
+          <span class="ss">&#x1F78A;</span>
+          <span class="sy">&#x1F78A;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f78a;</strong></p>
         <p class="en"><strong>&amp;#128906;</strong></p>
         <p class="no">white circle containing black small circle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F78B </p>
-        <p class="si">&#x1F78B;</p>
+        <p class="si">
+          <span class="ss">&#x1F78B;</span>
+          <span class="sy">&#x1F78B;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f78b;</strong></p>
         <p class="en"><strong>&amp;#128907;</strong></p>
         <p class="no">round target</p>
@@ -16429,25 +16732,34 @@
         <p class="no">black slightly small square</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F78E </p>
-        <p class="si">&#x1F78E;</p>
+        <p class="si">
+          <span class="ss">&#x1F78E;</span>
+          <span class="sy">&#x1F78E;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f78e;</strong></p>
         <p class="en"><strong>&amp;#128910;</strong></p>
         <p class="no">light white square</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F78F </p>
-        <p class="si">&#x1F78F;</p>
+        <p class="si">
+          <span class="ss">&#x1F78F;</span>
+          <span class="sy">&#x1F78F;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f78f;</strong></p>
         <p class="en"><strong>&amp;#128911;</strong></p>
         <p class="no">medium white square</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F790 </p>
-        <p class="si">&#x1F790;</p>
+        <p class="si">
+          <span class="ss">&#x1F790;</span>
+          <span class="sy">&#x1F790;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f790;</strong></p>
         <p class="en"><strong>&amp;#128912;</strong></p>
         <p class="no">bold white square</p>
@@ -16517,9 +16829,12 @@
         <p class="no">black very small diamond</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F799 </p>
-        <p class="si">&#x1F799;</p>
+        <p class="si">
+          <span class="ss">&#x1F799;</span>
+          <span class="sy">&#x1F799;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f799;</strong></p>
         <p class="en"><strong>&amp;#128921;</strong></p>
         <p class="no">black medium small diamond</p>
@@ -16565,9 +16880,12 @@
         <p class="no">black very small lozenge</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F79F </p>
-        <p class="si">&#x1F79F;</p>
+        <p class="si">
+          <span class="ss">&#x1F79F;</span>
+          <span class="sy">&#x1F79F;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f79f;</strong></p>
         <p class="en"><strong>&amp;#128927;</strong></p>
         <p class="no">black medium small lozenge</p>
@@ -16837,9 +17155,12 @@
         <p class="no">light three pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7C1 </p>
-        <p class="si">&#x1F7C1;</p>
+        <p class="si">
+          <span class="ss">&#x1F7C1;</span>
+          <span class="sy">&#x1F7C1;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7c1;</strong></p>
         <p class="en"><strong>&amp;#128961;</strong></p>
         <p class="no">medium three pointed black star</p>
@@ -16869,9 +17190,12 @@
         <p class="no">light four pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7C5 </p>
-        <p class="si">&#x1F7C5;</p>
+        <p class="si">
+          <span class="ss">&#x1F7C5;</span>
+          <span class="sy">&#x1F7C5;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7c5;</strong></p>
         <p class="en"><strong>&amp;#128965;</strong></p>
         <p class="no">medium four pointed black star</p>
@@ -16917,9 +17241,12 @@
         <p class="no">heavy five pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7CB </p>
-        <p class="si">&#x1F7CB;</p>
+        <p class="si">
+          <span class="ss">&#x1F7CB;</span>
+          <span class="sy">&#x1F7CB;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7cb;</strong></p>
         <p class="en"><strong>&amp;#128971;</strong></p>
         <p class="no">medium six pointed black star</p>
@@ -16949,9 +17276,12 @@
         <p class="no">medium eight pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7CF </p>
-        <p class="si">&#x1F7CF;</p>
+        <p class="si">
+          <span class="ss">&#x1F7CF;</span>
+          <span class="sy">&#x1F7CF;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7cf;</strong></p>
         <p class="en"><strong>&amp;#128975;</strong></p>
         <p class="no">heavy eight pointed black star</p>
@@ -16965,9 +17295,12 @@
         <p class="no">very heavy eight pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D1 </p>
-        <p class="si">&#x1F7D1;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D1;</span>
+          <span class="sy">&#x1F7D1;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d1;</strong></p>
         <p class="en"><strong>&amp;#128977;</strong></p>
         <p class="no">heavy eight pointed pinwheel star</p>
@@ -16981,9 +17314,12 @@
         <p class="no">light twelve pointed black star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D3 </p>
-        <p class="si">&#x1F7D3;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D3;</span>
+          <span class="sy">&#x1F7D3;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d3;</strong></p>
         <p class="en"><strong>&amp;#128979;</strong></p>
         <p class="no">heavy twelve pointed black star</p>
@@ -16997,33 +17333,45 @@
         <p class="no">heavy twelve pointed pinwheel star</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D5 </p>
-        <p class="si">&#x1F7D5;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D5;</span>
+          <span class="sy">&#x1F7D5;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d5;</strong></p>
         <p class="en"><strong>&amp;#128981;</strong></p>
         <p class="no">circled triangle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D6 </p>
-        <p class="si">&#x1F7D6;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D6;</span>
+          <span class="sy">&#x1F7D6;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d6;</strong></p>
         <p class="en"><strong>&amp;#128982;</strong></p>
         <p class="no">negative circled triangle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D7 </p>
-        <p class="si">&#x1F7D7;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D7;</span>
+          <span class="sy">&#x1F7D7;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d7;</strong></p>
         <p class="en"><strong>&amp;#128983;</strong></p>
         <p class="no">circled square</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F7D8 </p>
-        <p class="si">&#x1F7D8;</p>
+        <p class="si">
+          <span class="ss">&#x1F7D8;</span>
+          <span class="sy">&#x1F7D8;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f7d8;</strong></p>
         <p class="en"><strong>&amp;#128984;</strong></p>
         <p class="no">negative circled square</p>
@@ -17131,7 +17479,7 @@
   <section id="simbolos-pict-misc">
     <h2>Símbolos y pictogramas misceláneos</h2>
 
-    <p>Se muestran aquí 768 caracteres Unicode del grupo que se extiende desde el carácter U+1F300 hasta el carácter U+1F5FF. Puede descargar la <a href="unicode/U1F300-miscellaneous-symbols-and-pictographs.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 768 caracteres Unicode del grupo que se extiende desde el carácter U+1F300 hasta el carácter U+1F5FF. Puede descargar la <a href="unicode/U1F300-miscellaneous-symbols-and-pictographs.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -21862,9 +22210,12 @@
         <p class="no">menorah with nine branches</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F54F </p>
-        <p class="si">&#x1F54F;</p>
+        <p class="si">
+          <span class="ss">&#x1F54F;</span>
+          <span class="sy">&#x1F54F;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f54f;</strong></p>
         <p class="en"><strong>&amp;#128335;</strong></p>
         <p class="no">bowl of hygieia</p>
@@ -23284,7 +23635,7 @@
   <section id="emoticonos">
     <h2>Emoticonos</h2>
 
-    <p>Se muestran aquí 80 caracteres Unicode del grupo que se extiende desde el carácter U+1F600 hasta el carácter U+1F64F. Puede descargar la <a href="unicode/U1F600-emoticons.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 80 caracteres Unicode del grupo que se extiende desde el carácter U+1F600 hasta el carácter U+1F64F. Puede descargar la <a href="unicode/U1F600-emoticons.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -23933,7 +24284,7 @@
   <section id="transporte">
     <h2>Símbolos de transporte y mapas</h2>
 
-    <p>Se muestran aquí 110 caracteres Unicode del grupo que se extiende desde el carácter U+1F680 hasta el carácter U+1F6FF. Puede descargar la <a href="unicode/U1F680-transport-and-map-symbols.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 114 caracteres Unicode del grupo que se extiende desde el carácter U+1F680 hasta el carácter U+1F6FF. Puede descargar la <a href="unicode/U1F680-transport-and-map-symbols.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
       <div class="u">
@@ -24600,17 +24951,23 @@
         <p class="no">shopping trolley</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F6D3 </p>
-        <p class="si">&#x1F6D3;</p>
+        <p class="si">
+          <span class="ss">&#x1F6D3;</span>
+          <span class="sy">&#x1F6D3;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f6d3;</strong></p>
         <p class="en"><strong>&amp;#128723;</strong></p>
         <p class="no">stupa</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F6D4 </p>
-        <p class="si">&#x1F6D4;</p>
+        <p class="si">
+          <span class="ss">&#x1F6D4;</span>
+          <span class="sy">&#x1F6D4;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f6d4;</strong></p>
         <p class="en"><strong>&amp;#128724;</strong></p>
         <p class="no">pagoda</p>
@@ -24622,6 +24979,28 @@
         <p class="en"><strong>&amp;#x1f6d5;</strong></p>
         <p class="en"><strong>&amp;#128725;</strong></p>
         <p class="no">hindu temple</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F6D6 </p>
+        <p class="si">
+          <span class="ss">&#x1F6D6;</span>
+          <span class="twe">&#x1F6D6;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f6d6;</strong></p>
+        <p class="en"><strong>&amp;#128726;</strong></p>
+        <p class="no">hut</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F6D7 </p>
+        <p class="si">
+          <span class="ss">&#x1F6D7;</span>
+          <span class="twe">&#x1F6D7;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f6d7;</strong></p>
+        <p class="en"><strong>&amp;#128727;</strong></p>
+        <p class="no">elevator</p>
       </div>
 
       <div class="u">
@@ -24816,109 +25195,178 @@
         <p class="no">auto rickshaw</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+1F6FB </p>
+        <p class="si">
+          <span class="ss">&#x1F6FB;</span>
+          <span class="twe">&#x1F6FB;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f6fb;</strong></p>
+        <p class="en"><strong>&amp;#128763;</strong></p>
+        <p class="no">pickup truck</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F6FC </p>
+        <p class="si">
+          <span class="ss">&#x1F6FC;</span>
+          <span class="twe">&#x1F6FC;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f6fc;</strong></p>
+        <p class="en"><strong>&amp;#128764;</strong></p>
+        <p class="no">roller skate</p>
+      </div>
+
     </div>
   </section>
 
   <section id="simbolos-misc-supl">
     <h2>Símbolos y pictogramas misceláneos suplementarios</h2>
 
-    <p>Se muestran aquí 244 caracteres Unicode del grupo que se extiende desde el carácter U+1F900 hasta el carácter U+1F9FF. Puede descargar la <a href="unicode/U1F900-supplemental-symbols-and-pictographs.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 254 caracteres Unicode del grupo que se extiende desde el carácter U+1F900 hasta el carácter U+1F9FF. Puede descargar la <a href="unicode/U1F900-supplemental-symbols-and-pictographs.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F900 </p>
-        <p class="si">&#x1F900;</p>
+        <p class="si">
+          <span class="ss">&#x1F900;</span>
+          <span class="sy">&#x1F900;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f900;</strong></p>
         <p class="en"><strong>&amp;#129280;</strong></p>
         <p class="no">circled cross formee with four dots</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F901 </p>
-        <p class="si">&#x1F901;</p>
+        <p class="si">
+          <span class="ss">&#x1F901;</span>
+          <span class="sy">&#x1F901;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f901;</strong></p>
         <p class="en"><strong>&amp;#129281;</strong></p>
         <p class="no">circled cross formee with two dots</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F902 </p>
-        <p class="si">&#x1F902;</p>
+        <p class="si">
+          <span class="ss">&#x1F902;</span>
+          <span class="sy">&#x1F902;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f902;</strong></p>
         <p class="en"><strong>&amp;#129282;</strong></p>
         <p class="no">circled cross formee</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F903 </p>
-        <p class="si">&#x1F903;</p>
+        <p class="si">
+          <span class="ss">&#x1F903;</span>
+          <span class="sy">&#x1F903;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f903;</strong></p>
         <p class="en"><strong>&amp;#129283;</strong></p>
         <p class="no">left half circle with four dots</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F904 </p>
-        <p class="si">&#x1F904;</p>
+        <p class="si">
+          <span class="ss">&#x1F904;</span>
+          <span class="sy">&#x1F904;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f904;</strong></p>
         <p class="en"><strong>&amp;#129284;</strong></p>
         <p class="no">left half circle with three dots</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F905 </p>
-        <p class="si">&#x1F905;</p>
+        <p class="si">
+          <span class="ss">&#x1F905;</span>
+          <span class="sy">&#x1F905;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f905;</strong></p>
         <p class="en"><strong>&amp;#129285;</strong></p>
         <p class="no">left half circle with two dots</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F906 </p>
-        <p class="si">&#x1F906;</p>
+        <p class="si">
+          <span class="ss">&#x1F906;</span>
+          <span class="sy">&#x1F906;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f906;</strong></p>
         <p class="en"><strong>&amp;#129286;</strong></p>
         <p class="no">left half circle with dot</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F907 </p>
-        <p class="si">&#x1F907;</p>
+        <p class="si">
+          <span class="ss">&#x1F907;</span>
+          <span class="sy">&#x1F907;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f907;</strong></p>
         <p class="en"><strong>&amp;#129287;</strong></p>
         <p class="no">left half circle</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F908 </p>
-        <p class="si">&#x1F908;</p>
+        <p class="si">
+          <span class="ss">&#x1F908;</span>
+          <span class="sy">&#x1F908;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f908;</strong></p>
         <p class="en"><strong>&amp;#129288;</strong></p>
         <p class="no">downward facing hook</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F909 </p>
-        <p class="si">&#x1F909;</p>
+        <p class="si">
+          <span class="ss">&#x1F909;</span>
+          <span class="sy">&#x1F909;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f909;</strong></p>
         <p class="en"><strong>&amp;#129289;</strong></p>
         <p class="no">downward facing notched hook</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F90A </p>
-        <p class="si">&#x1F90A;</p>
+        <p class="si">
+          <span class="ss">&#x1F90A;</span>
+          <span class="sy">&#x1F90A;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f90a;</strong></p>
         <p class="en"><strong>&amp;#129290;</strong></p>
         <p class="no">downward facing hook with dot</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1F90B </p>
-        <p class="si">&#x1F90B;</p>
+        <p class="si">
+          <span class="ss">&#x1F90B;</span>
+          <span class="sy">&#x1F90B;</span>
+        </p>
         <p class="en"><strong>&amp;#x1f90b;</strong></p>
         <p class="en"><strong>&amp;#129291;</strong></p>
         <p class="no">downward facing notched hook with dot</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F90C </p>
+        <p class="si">
+          <span class="ss">&#x1F90C;</span>
+          <span class="twe">&#x1F90C;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f90c;</strong></p>
+        <p class="en"><strong>&amp;#129292;</strong></p>
+        <p class="no">pinched fingers</p>
       </div>
 
       <div class="u">
@@ -25729,6 +26177,17 @@
         <p class="no">yawning face</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+1F972 </p>
+        <p class="si">
+          <span class="ss">&#x1F972;</span>
+          <span class="twe">&#x1F972;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f972;</strong></p>
+        <p class="en"><strong>&amp;#129394;</strong></p>
+        <p class="no">smiling face with tear</p>
+      </div>
+
       <div class="u">
         <p class="uc">U+1F973 </p>
         <p class="si">&#x1F973;</p>
@@ -25759,6 +26218,28 @@
         <p class="en"><strong>&amp;#x1f976;</strong></p>
         <p class="en"><strong>&amp;#129398;</strong></p>
         <p class="no">freezing face</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F977 </p>
+        <p class="si">
+          <span class="ss">&#x1F977;</span>
+          <span class="twe">&#x1F977;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f977;</strong></p>
+        <p class="en"><strong>&amp;#129399;</strong></p>
+        <p class="no">ninja</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F978 </p>
+        <p class="si">
+          <span class="ss">&#x1F978;</span>
+          <span class="twe">&#x1F978;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f978;</strong></p>
+        <p class="en"><strong>&amp;#129400;</strong></p>
+        <p class="no">disguised face</p>
       </div>
 
       <div class="u">
@@ -26089,6 +26570,28 @@
         <p class="no">swan</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+1F9A3 </p>
+        <p class="si">
+          <span class="ss">&#x1F9A3;</span>
+          <span class="twe">&#x1F9A3;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9a3;</strong></p>
+        <p class="en"><strong>&amp;#129443;</strong></p>
+        <p class="no">mammoth</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F9A4 </p>
+        <p class="si">
+          <span class="ss">&#x1F9A4;</span>
+          <span class="twe">&#x1F9A4;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9a4;</strong></p>
+        <p class="en"><strong>&amp;#129444;</strong></p>
+        <p class="no">dodo</p>
+      </div>
+
       <div class="u">
         <p class="uc">U+1F9A5 </p>
         <p class="si">&#x1F9A5;</p>
@@ -26135,6 +26638,39 @@
         <p class="en"><strong>&amp;#x1f9aa;</strong></p>
         <p class="en"><strong>&amp;#129450;</strong></p>
         <p class="no">oyster</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F9AB </p>
+        <p class="si">
+          <span class="ss">&#x1F9AB;</span>
+          <span class="twe">&#x1F9AB;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9ab;</strong></p>
+        <p class="en"><strong>&amp;#129451;</strong></p>
+        <p class="no">beaver</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F9AC </p>
+        <p class="si">
+          <span class="ss">&#x1F9AC;</span>
+          <span class="twe">&#x1F9AC;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9ac;</strong></p>
+        <p class="en"><strong>&amp;#129452;</strong></p>
+        <p class="no">bison</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F9AD </p>
+        <p class="si">
+          <span class="ss">&#x1F9AD;</span>
+          <span class="twe">&#x1F9AD;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9ad;</strong></p>
+        <p class="en"><strong>&amp;#129453;</strong></p>
+        <p class="no">seal</p>
       </div>
 
       <div class="u">
@@ -26367,6 +26903,17 @@
         <p class="en"><strong>&amp;#x1f9ca;</strong></p>
         <p class="en"><strong>&amp;#129482;</strong></p>
         <p class="no">ice cube</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1F9CB </p>
+        <p class="si">
+          <span class="ss">&#x1F9CB;</span>
+          <span class="twe">&#x1F9CB;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1f9cb;</strong></p>
+        <p class="en"><strong>&amp;#129483;</strong></p>
+        <p class="no">bubble tea</p>
       </div>
 
       <div class="u">
@@ -26783,20 +27330,26 @@
   <section id="simbolos-ext-a">
     <h2>Símbolos y pictogramas extendidos A</h2>
 
-    <p>Se muestran aquí 16 caracteres Unicode del grupo que se extiende desde el carácter U+1FA70 hasta el carácter U+1FAFF. Puede descargar la <a href="unicode/U1FA70-symbols-and-pictographs-extended-a.pdf">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>
+    <p>Se muestran aquí 57 caracteres Unicode del grupo que se extiende desde el carácter U+1FA70 hasta el carácter U+1FAFF. Puede descargar la <a href="unicode/U1FA70-symbols-and-pictographs-extended-a.pdf">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>
 
     <div class="u-l">
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1FA70 </p>
-        <p class="si">&#x1FA70;</p>
+        <p class="si">
+          <span class="ss">&#x1FA70;</span>
+          <span class="twe">&#x1FA70;</span>
+        </p>
         <p class="en"><strong>&amp;#x1fa70;</strong></p>
         <p class="en"><strong>&amp;#129648;</strong></p>
         <p class="no">ballet shoes</p>
       </div>
 
-      <div class="u">
+      <div class="u2">
         <p class="uc">U+1FA71 </p>
-        <p class="si">&#x1FA71;</p>
+        <p class="si">
+          <span class="ss">&#x1FA71;</span>
+          <span class="twe">&#x1FA71;</span>
+        </p>
         <p class="en"><strong>&amp;#x1fa71;</strong></p>
         <p class="en"><strong>&amp;#129649;</strong></p>
         <p class="no">one-piece swimsuit</p>
@@ -26816,6 +27369,17 @@
         <p class="en"><strong>&amp;#x1fa73;</strong></p>
         <p class="en"><strong>&amp;#129651;</strong></p>
         <p class="no">shorts</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA74 </p>
+        <p class="si">
+          <span class="ss">&#x1FA74;</span>
+          <span class="twe">&#x1FA74;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa74;</strong></p>
+        <p class="en"><strong>&amp;#129652;</strong></p>
+        <p class="no">thong sandal</p>
       </div>
 
       <div class="u">
@@ -26866,6 +27430,50 @@
         <p class="no">parachute</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+1FA83 </p>
+        <p class="si">
+          <span class="ss">&#x1FA83;</span>
+          <span class="twe">&#x1FA83;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa83;</strong></p>
+        <p class="en"><strong>&amp;#129667;</strong></p>
+        <p class="no">boomerang</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA84 </p>
+        <p class="si">
+          <span class="ss">&#x1FA84;</span>
+          <span class="twe">&#x1FA84;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa84;</strong></p>
+        <p class="en"><strong>&amp;#129668;</strong></p>
+        <p class="no">magic wand</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA85 </p>
+        <p class="si">
+          <span class="ss">&#x1FA85;</span>
+          <span class="twe">&#x1FA85;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa85;</strong></p>
+        <p class="en"><strong>&amp;#129669;</strong></p>
+        <p class="no">pinata</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA86 </p>
+        <p class="si">
+          <span class="ss">&#x1FA86;</span>
+          <span class="twe">&#x1FA86;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa86;</strong></p>
+        <p class="en"><strong>&amp;#129670;</strong></p>
+        <p class="no">nesting dolls</p>
+      </div>
+
       <div class="u">
         <p class="uc">U+1FA90 </p>
         <p class="si">&#x1FA90;</p>
@@ -26914,11 +27522,419 @@
         <p class="no">banjo</p>
       </div>
 
+      <div class="u2">
+        <p class="uc">U+1FA96 </p>
+        <p class="si">
+          <span class="ss">&#x1FA96;</span>
+          <span class="twe">&#x1FA96;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa96;</strong></p>
+        <p class="en"><strong>&amp;#129686;</strong></p>
+        <p class="no">military helmet</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA97 </p>
+        <p class="si">
+          <span class="ss">&#x1FA97;</span>
+          <span class="twe">&#x1FA97;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa97;</strong></p>
+        <p class="en"><strong>&amp;#129687;</strong></p>
+        <p class="no">accordion</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA98 </p>
+        <p class="si">
+          <span class="ss">&#x1FA98;</span>
+          <span class="twe">&#x1FA98;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa98;</strong></p>
+        <p class="en"><strong>&amp;#129688;</strong></p>
+        <p class="no">long drum</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA99 </p>
+        <p class="si">
+          <span class="ss">&#x1FA99;</span>
+          <span class="twe">&#x1FA99;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa99;</strong></p>
+        <p class="en"><strong>&amp;#129689;</strong></p>
+        <p class="no">coin</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9A </p>
+        <p class="si">
+          <span class="ss">&#x1FA9A;</span>
+          <span class="twe">&#x1FA9A;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9a;</strong></p>
+        <p class="en"><strong>&amp;#129690;</strong></p>
+        <p class="no">carpentry saw</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9B </p>
+        <p class="si">
+          <span class="ss">&#x1FA9B;</span>
+          <span class="twe">&#x1FA9B;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9b;</strong></p>
+        <p class="en"><strong>&amp;#129691;</strong></p>
+        <p class="no">screwdriver</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9C </p>
+        <p class="si">
+          <span class="ss">&#x1FA9C;</span>
+          <span class="twe">&#x1FA9C;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9c;</strong></p>
+        <p class="en"><strong>&amp;#129692;</strong></p>
+        <p class="no">ladder</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9D </p>
+        <p class="si">
+          <span class="ss">&#x1FA9D;</span>
+          <span class="twe">&#x1FA9D;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9d;</strong></p>
+        <p class="en"><strong>&amp;#129693;</strong></p>
+        <p class="no">hook</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9E </p>
+        <p class="si">
+          <span class="ss">&#x1FA9E;</span>
+          <span class="twe">&#x1FA9E;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9e;</strong></p>
+        <p class="en"><strong>&amp;#129694;</strong></p>
+        <p class="no">mirror</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FA9F </p>
+        <p class="si">
+          <span class="ss">&#x1FA9F;</span>
+          <span class="twe">&#x1FA9F;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fa9f;</strong></p>
+        <p class="en"><strong>&amp;#129695;</strong></p>
+        <p class="no">window</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA0 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA0;</span>
+          <span class="twe">&#x1FAA0;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa0;</strong></p>
+        <p class="en"><strong>&amp;#129696;</strong></p>
+        <p class="no">plunger</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA1 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA1;</span>
+          <span class="twe">&#x1FAA1;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa1;</strong></p>
+        <p class="en"><strong>&amp;#129697;</strong></p>
+        <p class="no">sewing needle</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA2 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA2;</span>
+          <span class="twe">&#x1FAA2;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa2;</strong></p>
+        <p class="en"><strong>&amp;#129698;</strong></p>
+        <p class="no">knot</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA3 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA3;</span>
+          <span class="twe">&#x1FAA3;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa3;</strong></p>
+        <p class="en"><strong>&amp;#129699;</strong></p>
+        <p class="no">bucket</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA4 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA4;</span>
+          <span class="twe">&#x1FAA4;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa4;</strong></p>
+        <p class="en"><strong>&amp;#129700;</strong></p>
+        <p class="no">mouse trap</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA5 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA5;</span>
+          <span class="twe">&#x1FAA5;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa5;</strong></p>
+        <p class="en"><strong>&amp;#129701;</strong></p>
+        <p class="no">toothbrush</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA6 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA6;</span>
+          <span class="twe">&#x1FAA6;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa6;</strong></p>
+        <p class="en"><strong>&amp;#129702;</strong></p>
+        <p class="no">headstone</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA7 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA7;</span>
+          <span class="twe">&#x1FAA7;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa7;</strong></p>
+        <p class="en"><strong>&amp;#129703;</strong></p>
+        <p class="no">placard</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAA8 </p>
+        <p class="si">
+          <span class="ss">&#x1FAA8;</span>
+          <span class="twe">&#x1FAA8;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1faa8;</strong></p>
+        <p class="en"><strong>&amp;#129704;</strong></p>
+        <p class="no">rock</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB0 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB0;</span>
+          <span class="twe">&#x1FAB0;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab0;</strong></p>
+        <p class="en"><strong>&amp;#129712;</strong></p>
+        <p class="no">fly</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB1 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB1;</span>
+          <span class="twe">&#x1FAB1;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab1;</strong></p>
+        <p class="en"><strong>&amp;#129713;</strong></p>
+        <p class="no">worm</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB2 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB2;</span>
+          <span class="twe">&#x1FAB2;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab2;</strong></p>
+        <p class="en"><strong>&amp;#129714;</strong></p>
+        <p class="no">beetle</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB3 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB3;</span>
+          <span class="twe">&#x1FAB3;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab3;</strong></p>
+        <p class="en"><strong>&amp;#129715;</strong></p>
+        <p class="no">cockroach</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB4 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB4;</span>
+          <span class="twe">&#x1FAB4;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab4;</strong></p>
+        <p class="en"><strong>&amp;#129716;</strong></p>
+        <p class="no">potted plant</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB5 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB5;</span>
+          <span class="twe">&#x1FAB5;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab5;</strong></p>
+        <p class="en"><strong>&amp;#129717;</strong></p>
+        <p class="no">wood</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAB6 </p>
+        <p class="si">
+          <span class="ss">&#x1FAB6;</span>
+          <span class="twe">&#x1FAB6;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fab6;</strong></p>
+        <p class="en"><strong>&amp;#129718;</strong></p>
+        <p class="no">feather</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAC0 </p>
+        <p class="si">
+          <span class="ss">&#x1FAC0;</span>
+          <span class="twe">&#x1FAC0;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fac0;</strong></p>
+        <p class="en"><strong>&amp;#129728;</strong></p>
+        <p class="no">anatomical heart</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAC1 </p>
+        <p class="si">
+          <span class="ss">&#x1FAC1;</span>
+          <span class="twe">&#x1FAC1;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fac1;</strong></p>
+        <p class="en"><strong>&amp;#129729;</strong></p>
+        <p class="no">lungs</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAC2 </p>
+        <p class="si">
+          <span class="ss">&#x1FAC2;</span>
+          <span class="twe">&#x1FAC2;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fac2;</strong></p>
+        <p class="en"><strong>&amp;#129730;</strong></p>
+        <p class="no">people hugging</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD0 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD0;</span>
+          <span class="twe">&#x1FAD0;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad0;</strong></p>
+        <p class="en"><strong>&amp;#129744;</strong></p>
+        <p class="no">blueberries</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD1 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD1;</span>
+          <span class="twe">&#x1FAD1;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad1;</strong></p>
+        <p class="en"><strong>&amp;#129745;</strong></p>
+        <p class="no">bell pepper</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD2 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD2;</span>
+          <span class="twe">&#x1FAD2;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad2;</strong></p>
+        <p class="en"><strong>&amp;#129746;</strong></p>
+        <p class="no">olive</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD3 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD3;</span>
+          <span class="twe">&#x1FAD3;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad3;</strong></p>
+        <p class="en"><strong>&amp;#129747;</strong></p>
+        <p class="no">flatbread</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD4 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD4;</span>
+          <span class="twe">&#x1FAD4;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad4;</strong></p>
+        <p class="en"><strong>&amp;#129748;</strong></p>
+        <p class="no">tamale</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD5 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD5;</span>
+          <span class="twe">&#x1FAD5;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad5;</strong></p>
+        <p class="en"><strong>&amp;#129749;</strong></p>
+        <p class="no">fondue</p>
+      </div>
+
+      <div class="u2">
+        <p class="uc">U+1FAD6 </p>
+        <p class="si">
+          <span class="ss">&#x1FAD6;</span>
+          <span class="twe">&#x1FAD6;</span>
+        </p>
+        <p class="en"><strong>&amp;#x1fad6;</strong></p>
+        <p class="en"><strong>&amp;#129750;</strong></p>
+        <p class="no">teapot</p>
+      </div>
+
     </div>
   </section>
 
+  <script>
+    var twemojis = document.getElementsByClassName('twe');
+    var i;
+    for (i = 0; i < twemojis.length; i++) {
+      twemoji.parse(twemojis[i], {
+        className: "twe",
+        folder: "svg",
+        ext: ".svg"
+      });
+    }
+  </script>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 6 de noviembre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 7 de junio de 20202</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
