@@ -4,7 +4,7 @@
     // IMPORTANTE: PARA GENERAR LA PÁGINA DE SIMBOLOS (SOLO SIMBOLO) O DE EMOJIS (SIMBOLO Y TWEMOJI)
     define("EMOJIS", 1);    // sólo muestra emojis (es decir, los que están en twemoji)
     define("SIMBOLOS", 0);  // muestra todos los caracteres
-    $muestra = EMOJIS;
+    $muestra = SIMBOLOS;
 ?>
 
 <head>
@@ -150,36 +150,6 @@
             color: black;
         }
     </style>
-    <!-- SIN FLEXBOX
-<style>
-    @font-face {
-      font-family: "Symbola";
-      src: url("unicode/Symbola.otf");
-    }
-    @font-face {
-      font-family: "Noto Emoji";
-      src: url("unicode/NotoEmoji-Regular.ttf");
-    }
-    @font-face {
-      font-family: "Twemoji";
-      src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
-    }
-    div.u { float: left; width: 500px; height: 230px; margin: 10px; border: black 1px solid; text-align: center; }
-    div.u p { margin: 0; padding: 5px 10px; }
-    div.u p.uc { background-color: #ddd; font-weight: bold; }
-    div.u p.si { font-size: 80px; line-height: 100px; text-align: center; }
-    div.u span.ss { font-family: sans-serif; border-right: 2px solid black; padding-right: 20px;}
-    div.u span.sy { font-family: "Symbola";}
-    div.u span.ne { font-family: "Noto Emoji";}
-    div.u span.te { font-family: "Twemoji"; }
-    div.u p.en { background-color: #ddd; }
-    div.u p.no { text-transform: uppercase; }
-    div.u a { border: none; text-decoration: none; color: black; }
-    table.u { border-spacing: 20px 0; }
-    table.u span.te { font-family: "Twemoji"; font-size: 80px; }
-    table.u a { border: none; text-decoration: none; color: black; }
-  </style>
-  -->
 </head>
 
 <body>
@@ -190,6 +160,62 @@
     // $rutaSVG = "https://github.com/emojione/emojione/blob/2.2.7/assets/svg";
     // $rutaSVG = "https://github.com/twitter/twemoji/blob/gh-pages/2/svg"; // cambiado en 2019-10-27
     $rutaSVG = "https://github.com/twitter/twemoji/blob/master/assets/svg";
+
+
+    function genera_variantes($matriz, $grupo, $id)
+    {
+        global $rutaSVG, $muestra;
+
+        $contador = count($matriz);
+
+        if ($contador > 0) {
+            print "  <section id=\"$id\">\n";
+            print "    <h2>$grupo</h2>\n";
+            print "\n";
+
+            if ($contador == 1) {
+                print "    <p>Se muestra aquí $contador carácter de variación</p>\n";
+            } else {
+                print "    <p>Se muestran aquí $contador caracteres de variación</p>\n";
+            }
+            print "\n";
+            print "    <div class=\"u-l\">\n";
+            foreach ($matriz as $origen) {
+                $triplete = [$origen, $origen, $origen];
+                $triplete[1][0][] = "0FE0E";
+                $triplete[2][0][] = "0FE0F";
+                foreach ($triplete as $c) {
+                    print "      <div class=\"u\">\n";
+                    print "        <p class=\"uc\">";
+                    foreach ($c[0] as $tmp) {
+                        print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
+                    }
+                    print "</p>\n";
+                    print "        <p class=\"si\">";
+                    foreach ($c[0] as $tmp) {
+                        print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                    }
+                    print "</p>\n";
+                    print "        <p class=\"en\"><strong>";
+                    foreach ($c[0] as $tmp) {
+                        print "&amp;#x" . dechex(hexdec($tmp)) . ";";
+                    }
+                    print "</strong></p>\n";
+                    print "        <p class=\"en\"><strong>";
+                    foreach ($c[0] as $tmp) {
+                        print "&amp;#" . hexdec($tmp) . ";";
+                    }
+                    print "</strong></p>\n";
+                    print "        <p class=\"no\">$c[7]</p>\n";
+                    print "      </div>\n";
+                    print "\n";
+                }
+            }
+            print "    </div>\n";
+            print "  </section>\n";
+            print "\n";
+        }
+    }
 
 
     function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fuentes)
@@ -208,6 +234,7 @@
                 }
             }
         }
+
         if (!$cuenta || $cuenta && $contador > 0) {
             print "  <section id=\"$id\">\n";
             print "    <h2>$grupo</h2>\n";
@@ -328,7 +355,6 @@
                             print "      </div>\n";
                             print "\n";
                         }
-
                     } elseif ($c[5] == "T") {
                         // 2019-08-05. Muestra el carácter en symbola y twemoji
                         print "      <div class=\"u\">\n";
@@ -635,6 +661,11 @@
         [$caracteres_unicode, "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",          "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"],
     ];
 
+    // Secuencias de Variación
+    $grupos_variacion = array(
+        [$variacion, "Secuencias de variación",     "variacion",         "",           1, "00000",  "1FAFF" ],
+    );
+
     // Banderas
     $grupos_secuencias_1 = array(
         array($cu_banderas,     "Banderas",                  "banderas",     "", 0, "", ""),
@@ -694,15 +725,16 @@
 
     // HAY QUE CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
     // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
+    genera_variantes($variacion, "Secuencias de variación", "variacion");
 
     // HAY CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
     // genera_grupos($grupos_secuencias_1, ["ss", "te"]);      // Banderas
     // genera_grupos($grupos_secuencias_2, ["ss", "te"]);      // Géneros OK
     // genera_tablas($grupos_secuencias_3, ["ss", "te"]);      // Colores de piel: OK
     // genera_grupos($grupos_secuencias_4, ["ss", "te"]);      // Familias y parejas
-    genera_grupos($grupos_secuencias_problematicas_1, ["ss", "te"]);     // Animales y otros: No Windows
-    genera_grupos($grupos_secuencias_problematicas_2, ["ss", "te"]);     // Géneros: No Windows o No Twemoji
-    genera_tablas($grupos_secuencias_problematicas_3, ["ss", "te"]);     // Colores de piel: No Windows o No Twemoji
+    // genera_grupos($grupos_secuencias_problematicas_1, ["ss", "te"]);     // Animales y otros: No Windows
+    // genera_grupos($grupos_secuencias_problematicas_2, ["ss", "te"]);     // Géneros: No Windows o No Twemoji
+    // genera_tablas($grupos_secuencias_problematicas_3, ["ss", "te"]);     // Colores de piel: No Windows o No Twemoji
 
     ?>
 
