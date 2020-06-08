@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php
+    // IMPORTANTE: PARA GENERAR LA PÁGINA DE SIMBOLOS (SOLO SIMBOLO) O DE EMOJIS (SIMBOLO Y TWEMOJI)
     define("EMOJIS", 1);    // sólo muestra emojis (es decir, los que están en twemoji)
     define("SIMBOLOS", 0);  // muestra todos los caracteres
     $muestra = EMOJIS;
@@ -12,10 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../varios/htmlcss.css" title="Color">
     <link rel="icon" href="../varios/favicon.ico">
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <style>
         @font-face {
             font-family: "Symbola";
-            src: url("unicode/Symbola.ttf");
+            src: url("unicode/Symbola.otf");
         }
 
         @font-face {
@@ -44,47 +46,68 @@
             text-align: center;
         }
 
-        div.u p:nth-child(odd) {
+        div.u2 {
+            display: flex;
+            flex-direction: column;
+<?php
+    if ($muestra == SIMBOLOS) {
+        print "            flex: 0 1 300px;\n";
+    } else {
+        print "            flex: 0 1 420px;\n";
+    }
+?>
+            margin: 5px;
+            border: black 1px solid;
+            text-align: center;
+        }
+
+        div.u p:nth-child(odd), div.u2 p:nth-child(odd)  {
             background-color: #eee;
         }
 
-        div.u p {
+        div.u p, div.u2 p  {
             margin: 0;
             padding: 5px 10px;
         }
 
-        div.u p.uc {
+        div.u p.uc, div.u2 p.uc {
             font-weight: bold;
         }
 
-        div.u p.si {
+        div.u p.si, div.u2 p.si {
             font-size: 80px;
             line-height: 100px;
             text-align: center;
         }
 
-        div.u span.ss {
+        div.u span.ss, div.u2 span.ss {
             font-family: sans-serif;
             border-right: 2px solid black;
             padding-right: 20px;
         }
 
-        div.u span.sy {
+        div.u span.sy, div.u2 span.sy {
             font-family: "Symbola";
         }
 
-        div.u span.te {
+        div.u span.te, div.u2 span.te {
             font-family: "Twemoji";
+            font-size: 90px;
         }
 
-        div.u p.en {}
+        div.u .twe, div.u2 .twe {
+            height: 90px;
+            vertical-align: text-bottom;
+        }
 
-        div.u p.no {
+        div.u p.en, div.u2 p.en {}
+
+        div.u p.no, div.u2 p.no {
             flex: 1 0 auto;
             text-transform: uppercase;
         }
 
-        div.u a {
+        div.u a, div.u2 a {
             border: none;
             text-decoration: none;
             color: black;
@@ -100,8 +123,10 @@
             border-left: black 1px solid;
         }
 
-        table.u tr.fila-estrecha { height: auto;
-      border-bottom: black 1px solid; }
+        table.u tr.fila-estrecha {
+            height: auto;
+            border-bottom: black 1px solid;
+        }
 
         table.u tr { height: 90px; }
 
@@ -114,6 +139,11 @@
             font-family: "Twemoji";
             font-size: 80px;
         }
+
+        table.u .twe {
+            font-size: 80px;
+        }
+
         table.u a {
             border: none;
             text-decoration: none;
@@ -124,7 +154,7 @@
 <style>
     @font-face {
       font-family: "Symbola";
-      src: url("unicode/Symbola.ttf");
+      src: url("unicode/Symbola.otf");
     }
     @font-face {
       font-family: "Noto Emoji";
@@ -189,7 +219,7 @@
                 } else {
                     print "    <p>Se muestran aquí $contador caracteres ";
                 }
-                print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 12.1</a> en formato PDF.</p>\n";
+                print "Unicode del grupo que se extiende desde el carácter U+$inicial hasta el carácter U+$final. Puede descargar la <a href=\"unicode/$pdf\">tabla de códigos de caracteres Unicode 13.0</a> en formato PDF.</p>\n";
                 print "\n";
             }
 
@@ -197,33 +227,108 @@
             foreach ($matriz as $c) {
                 if (count($c[0]) > 1 || count($c[0]) == 1 && hexdec($c[0][0]) >= hexdec($inicial) && hexdec($c[0][0]) <= hexdec($final)) { // no sé si es necesario convertirlo a decimal, pero por si acaso
                     if ($muestra == SIMBOLOS) {
-                        // 2019-10-27. Muestra el carácter en sans-serif sólo
-                        print "      <div class=\"u\">\n";
-                        print "        <p class=\"uc\">";
-                        foreach ($c[0] as $tmp) {
-                            print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
-                        }
-                        print "</p>\n";
-                        print "        <p class=\"si\">";
-                        if (in_array("ss", $fuentes)) {
+                        // 2019-06-07. Muestra el carácter en sans-serif sólo o en symbola o en twemoji
+                        if ($c[3] == "W" || $c[3] == "WC") {
+                            print "      <div class=\"u\">\n";
+                            print "        <p class=\"uc\">";
                             foreach ($c[0] as $tmp) {
-                                print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
                             }
+                            print "</p>\n";
+                            print "        <p class=\"si\">";
+                            if (in_array("ss", $fuentes)) {
+                                foreach ($c[0] as $tmp) {
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                }
+                            }
+                            print "</p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#x" . dechex(hexdec($tmp)) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#" . hexdec($tmp) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"no\">$c[7]</p>\n";
+                            print "      </div>\n";
+                            print "\n";
+                        } elseif ($c[5] == "T") {
+                            print "      <div class=\"u2\">\n";
+                            print "        <p class=\"uc\">";
+                            foreach ($c[0] as $tmp) {
+                                print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
+                            }
+                            print "</p>\n";
+                            print "        <p class=\"si\">\n";
+                            print "          <span class=\"ss\">";
+                            if (in_array("ss", $fuentes)) {
+                                foreach ($c[0] as $tmp) {
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                }
+                            }
+                            print "</span>\n";
+                            print "          <span class=\"twe\">";
+                            if (in_array("ss", $fuentes)) {
+                                foreach ($c[0] as $tmp) {
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                }
+                            }
+                            print "</span>\n";
+                            print "        </p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#x" . dechex(hexdec($tmp)) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#" . hexdec($tmp) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"no\">$c[7]</p>\n";
+                            print "      </div>\n";
+                            print "\n";
+                        } else {
+                            print "      <div class=\"u2\">\n";
+                            print "        <p class=\"uc\">";
+                            foreach ($c[0] as $tmp) {
+                                print "U+" . strtoupper(dechex(hexdec($tmp))) . " ";
+                            }
+                            print "</p>\n";
+                            print "        <p class=\"si\">\n";
+                            print "          <span class=\"ss\">";
+                            if (in_array("ss", $fuentes)) {
+                                foreach ($c[0] as $tmp) {
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                }
+                            }
+                            print "</span>\n";
+                            print "          <span class=\"sy\">";
+                            if (in_array("ss", $fuentes)) {
+                                foreach ($c[0] as $tmp) {
+                                    print "&#x" . strtoupper(dechex(hexdec($tmp))) . ";";
+                                }
+                            }
+                            print "</span>\n";
+                            print "        </p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#x" . dechex(hexdec($tmp)) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"en\"><strong>";
+                            foreach ($c[0] as $tmp) {
+                                print "&amp;#" . hexdec($tmp) . ";";
+                            }
+                            print "</strong></p>\n";
+                            print "        <p class=\"no\">$c[7]</p>\n";
+                            print "      </div>\n";
+                            print "\n";
                         }
-                        print "</p>\n";
-                        print "        <p class=\"en\"><strong>";
-                        foreach ($c[0] as $tmp) {
-                            print "&amp;#x" . dechex(hexdec($tmp)) . ";";
-                        }
-                        print "</strong></p>\n";
-                        print "        <p class=\"en\"><strong>";
-                        foreach ($c[0] as $tmp) {
-                            print "&amp;#" . hexdec($tmp) . ";";
-                        }
-                        print "</strong></p>\n";
-                        print "        <p class=\"no\">$c[6]</p>\n";
-                        print "      </div>\n";
-                        print "\n";
+
                     } elseif ($c[5] == "T") {
                         // 2019-08-05. Muestra el carácter en symbola y twemoji
                         print "      <div class=\"u\">\n";
@@ -251,7 +356,11 @@
 
                         if (in_array("te", $fuentes)) {
                             if ($c[5] == "T") {
-                                print "          <span class=\"te\"><a href=\"$rutaSVG/";
+                                if ($c[6] == "TW") {
+                                    print "          <span class=\"twe\"><a href=\"$rutaSVG/";
+                                } else {
+                                    print "          <span class=\"te\"><a href=\"$rutaSVG/";
+                                }
                                 for ($i = 0; $i < count($c[0]) - 1; $i++) {
                                     $tmp0 = strtolower($c[0][$i]);
                                     while ($tmp0[0] == "0") {
@@ -296,7 +405,7 @@
                             print "&amp;#" . hexdec($tmp) . ";";
                         }
                         print "</strong></p>\n";
-                        print "        <p class=\"no\">$c[6]</p>\n";
+                        print "        <p class=\"no\">$c[7]</p>\n";
                         print "      </div>\n";
                         print "\n";
                     }
@@ -386,7 +495,11 @@
             print "</th>\n";
             $cad2 = substr($cad2, 0, strlen($cad2) - 1); // quito el guion final que sobra
             print "        <td class=\"ss\">$cad3</td>\n";
-            print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            if ($c[6] == "TW") {
+                print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            } else {
+                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+            }
             // CUIDADO: Hay varios casos especiales en los que el Fitzpatrick sustituye al segundo carácter de la secuencia
             $cad2 = str_replace("26f9-fe0f-", "26f9-", $cad2);
             $cad2 = str_replace("1f3cb-fe0f-", "1f3cb-", $cad2);
@@ -404,33 +517,53 @@
             $cad3 = substr_replace($cad3, "&#x1F3FB;", $pos + 1, 0);
             print "        <td class=\"ss\">$cad3</td>\n";
             if (in_array("te", $fuentes)) {
-                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                if ($c[6] == "TW") {
+                    print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                } else {
+                    print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                }
             }
             $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
             $cad3 = str_replace("&#x1F3FB;", "&#x1F3FC;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
             if (in_array("te", $fuentes)) {
-                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                if ($c[6] == "TW") {
+                    print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                } else {
+                    print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                }
             }
             $cad2 = str_replace("1f3fc", "1f3fd", $cad2);
             $cad3 = str_replace("&#x1F3FC;", "&#x1F3FD;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
             if (in_array("te", $fuentes)) {
-                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                if ($c[6] == "TW") {
+                    print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                } else {
+                    print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                }
             }
             $cad2 = str_replace("1f3fd", "1f3fe", $cad2);
             $cad3 = str_replace("&#x1F3FD;", "&#x1F3FE;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
             if (in_array("te", $fuentes)) {
-                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                if ($c[6] == "TW") {
+                    print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                } else {
+                    print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                }
             }
             $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             print "        <td class=\"ss\">$cad3</td>\n";
             if (in_array("te", $fuentes)) {
-                print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                if ($c[6] == "TW") {
+                    print "        <td class=\"twe\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                } else {
+                    print "        <td class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></td>\n";
+                }
             }
-            print "        <td class=\"no\">$c[6]</td>\n";
+            print "        <td class=\"no\">$c[7]</td>\n";
 
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
             // $cad2 = str_replace("1f3fb", "1f3fc", $cad2);
@@ -445,7 +578,7 @@
             // $cad2 = str_replace("1f3fe", "1f3ff", $cad2);
             // $cad3 = str_replace("&#x1F3FE;", "&#x1F3FF;", $cad3);
             // print "        <td><span class=\"te\"><a href=\"$rutaSVG/$cad2.svg\">$cad3</a></span></td>\n";
-            // print "        <td>" . strtoupper($c[6]) . " </td>\n";
+            // print "        <td>" . strtoupper($c[7]) . " </td>\n";
 
             print "      </tr>\n";
         }
@@ -464,13 +597,13 @@
         print "\n";
 
         foreach ($grupos as $g) {
-            genera_tabla_colores_piel($g[0], $g[1], $g[2], $g[3], $g[4], $g[5], $g[6], $g[7]);
+            genera_tabla_colores_piel($g[0], $g[1], $g[2], $g[3], $g[4], $g[5], $g[7], $g[7]);
         }
     }
 
 
     $grupos_simbolos = [
-        [$caracteres_unicode, "Controles y Latin básico",                          "controles-latin",         "U00000-c0-controls-and-basic-latin.pdf",           1, "0000",  "007F" ],
+        [$caracteres_unicode, "Controles y Latin básico",                          "controles-latin",         "U00000-c0-controls-and-basic-latin.pdf",           1, "00000",  "0007F" ],
         [$caracteres_unicode, "Suplemento controles y Latin-1",                    "controles-sup",           "U00080-c1-controls-and-latin-1-supplement.pdf",    1, "0080",  "00FF" ],
         [$caracteres_unicode, "Puntuación",                                        "puntuacion",              "U02000-general-punctuation.pdf",                   1, "2000",  "206F" ],
         [$caracteres_unicode, "Símbolos de monedas",                               "monedas",                 "U020A0-currency-symbols.pdf",                      1, "20A0",  "20BF" ],
@@ -508,73 +641,82 @@
         array($cu_banderas_sub, "Banderas (subdivisiones)",  "banderas-2",   "", 0, "", ""),
     );
 
-    // Otros
-    $grupos_secuencias_2 = array(
-        array($cu_familias,       "Familias",                              "familias",     "", 0, "", ""),
-        array($cu_parejas_1,      "Parejas de enamorados",                 "parejas-1",    "", 0, "", ""),
-        array($cu_parejas_2,      "Parejas de enamorados besándose",       "parejas-2",    "", 0, "", ""),
-        array($cu_parejas_piel_1, "Parejas neutras y colores de piel",     "parejas-piel-1",    "", 0, "", ""),
-        array($cu_parejas_piel_2, "Parejas con género y colores de piel", "parejas-piel-2",    "", 0, "", ""),
-        array($cu_otros,          "Otros",                                 "otros",        "", 0, "", ""),
-    );
-
     // Géneros que funcionan en Windows y en Twemoji
-    $grupos_secuencias_3 = array(
-        array($genero_1,                                      "Género (1)",    "genero-1",     "", 0, "", "", ["ss", "te"]),
-        array($genero_2,                                      "Género (2)",    "genero-2",     "", 0, "", "", ["ss", "te"]),
-        array(array_merge($genero_3, $genero_3b, $genero_3d), "Género (3)",    "genero-3",     "", 0, "", "", ["ss", "te"]),
-        array($genero_4,                                      "Género (4)",    "genero-4",     "", 0, "", "", ["ss", "te"]),
+    $grupos_secuencias_2 = array(
+        array($genero_1, "Género (1)",    "genero-1",     "", 0, "", "", ["ss", "te"]),
+        array($genero_2, "Género (2)",    "genero-2",     "", 0, "", "", ["ss", "te"]),
+        // CUIDADO $problematicas_piel_1 están separados de $genero_3 porque al poner colores de piel no salen bien en Windows
+        // Lo que me faltaría es ordenar los elementos, porque ahora se añaden al final
+        // pero no tengo claro cómo ordenar matrices multidimensionales https://www.php.net/manual/es/function.array-multisort.php
+        array(array_merge($genero_3, $problematicas_piel_1), "Género (3)",    "genero-3",     "", 0, "", "", ["ss", "te"]),
+        array(array_merge($genero_4), "Género (4)",    "genero-4",     "", 0, "", "", ["ss", "te"]),
 
         //  array("Colores de piel",                                     "colores-piel",    "", 0, "0261D", "1F9FF"),
         //  array("Otros",                                               "otros",           "", 4, "0002A", "1F4FF"),
     );
 
-    // Géneros que NO funcionan en Windows o en Twemoji
-    $grupos_secuencias_3b = array(
-        array($genero_3c,       "Género (3C)",              "genero-3c",    "", 0, "", "", ["ss", "te"]),
-        array($genero_4b,       "Género (4B)",              "genero-4b",    "", 0, "", "", ["ss", "te"]),
+    // Colores de piel que funcionan en Windows y en Twemoji
+    $grupos_secuencias_3 = array(
+        array($piel_1,    "Colores de piel (1)",     "colores-piel-1",  "", 0, "", "", ["ss", "te"]),
+        array($genero_1,  "Colores de piel (2)",     "colores-piel-2",  "", 0, "", "", ["ss", "te"]),
+        array($genero_2,  "Colores de piel (3)",     "colores-piel-3",  "", 0, "", "", ["ss", "te"]),
+        array($genero_3,  "Colores de piel (4)",     "colores-piel-4",  "", 0, "", "", ["ss", "te"]),
     );
 
-    // Colores de piel que funcionan en Windows y en Twemoji
+    // Parejas y familias
     $grupos_secuencias_4 = array(
-        array($piel_1,    "Colores de piel (1)",               "colores-piel-1",  "", 0, "", "", ["ss", "te"]),
-        array($genero_1,  "Colores de piel (2)",               "colores-piel-2",  "", 0, "", "", ["ss", "te"]),
-        array($genero_2,  "Colores de piel (3)",               "colores-piel-3",  "", 0, "", "", ["ss", "te"]),
-        array($genero_3,  "Colores de piel (2-b)",               "colores-piel-2b", "", 0, "", "", ["ss", "te"]),
+        array($cu_familias,       "Familias",                              "familias",          "", 0, "", ""),
+        array($cu_parejas_1,      "Parejas de enamorados",                 "parejas-1",         "", 0, "", ""),
+        array($cu_parejas_2,      "Parejas de enamorados besándose",       "parejas-2",         "", 0, "", ""),
+        array($cu_parejas_piel_1, "Parejas neutras y colores de piel",     "parejas-piel-1",    "", 0, "", ""),
+        array($cu_parejas_piel_2, "Parejas con género y colores de piel",  "parejas-piel-2",    "", 0, "", ""),
+    );
+
+    $grupos_secuencias_problematicas_1 = array(
+        array($problematicas_otros,  "Varios", "varios-problemas", "", 0, "", "", ["ss", "te"]),
+    );
+
+    // Géneros que NO funcionan en Windows o en Twemoji
+    $grupos_secuencias_problematicas_2 = array(
+        array($problematicas_genero_1, "Género (1)",  "genero-1-problemas",    "", 0, "", "", ["ss", "te"]),
+        array($problematicas_genero_2, "Género (2)",  "genero-2-problemas",    "", 0, "", "", ["ss", "te"]),
+        array($problematicas_genero_3, "Género (3)",  "genero-3-problemas",    "", 0, "", "", ["ss", "te"]),
+        array($problematicas_genero_4, "Género (4)",  "genero-4-problemas",    "", 0, "", "", ["ss", "te"]),
     );
 
     // Colores de piel que NO funcionan en Windows o en Twemoji
-    $grupos_secuencias_4b = array(
-        array($piel_1b,   "Colores de piel (2) NO EN WINDOWS",                "colores-piel-1b", "", 0, "", "", ["ss", "te"]),
-        array($genero_3b, "Colores de piel (5) NO EN TWEMOJI",                "colores-piel-3b", "", 0, "", "", ["ss", "te"]),
-        array($genero_3c, "Colores de piel (5) NO EN WINDOWS",                "colores-piel-3c", "", 0, "", "", ["ss", "te"]),
-        array($genero_3d, "Colores de piel (5) NO EN WINDOWS, NO EN TWEMOJI", "colores-piel-3d", "", 0, "", "", ["ss", "te"]),
-        array($genero_4,  "Colores de piel (6) NO EN WINDOWS",                "colores-piel-4",  "", 0, "", "", ["ss", "te"]),
-        array($genero_4b, "Colores de piel (6) NO EN WINDOWS",                "colores-piel-4b", "", 0, "", "", ["ss", "te"]),
+    $grupos_secuencias_problematicas_3 = array(
+        array($problematicas_piel_1,  "Colores de piel (1)",   "colores-piel-1-problemas", "", 0, "", "", ["ss", "te"]),
+        array($problematicas_piel_2,  "Colores de piel (2)",   "colores-piel-2-problemas",  "", 0, "", "", ["ss", "te"]),
+        array($problematicas_piel_3,  "Colores de piel (3)",   "colores-piel-3-problemas",  "", 0, "", "", ["ss", "te"]),
+        array($problematicas_piel_4,  "Colores de piel (4)",   "colores-piel-4-problemas",  "", 0, "", "", ["ss", "te"]),
     );
 
-    $grupos_restos = array(
-        //  array("Restos",                                              "restos",          "", 1, "00000", "FFFFF"),
-        array("Restos",                                              "restos",          "", 4, "1F3C3", "FFFFF"),
-        array("Restos",                                              "restos",          "", 5, "1F3C3", "FFFFF"),
-    );
-
-    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
+    // HAY QUE CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
     // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
 
-    // CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
-    // genera_grupos($grupos_secuencias_1,  ["ss", "te"]);      // Banderas
-    // genera_grupos($grupos_secuencias_2,  ["ss", "te"]);      // Otros
-    genera_grupos($grupos_secuencias_3,  ["ss", "te"]);      // Géneros OK
-    // genera_grupos($grupos_secuencias_3b, ["ss", "te"]);      // Géneros: No Windows o No Twemoji
-    // genera_tablas($grupos_secuencias_4,  ["ss", "te"]);      // Colores de piel: OK
-    // genera_tablas($grupos_secuencias_4b, ["ss", "te"]);      // Colores de piel: No Windows o No Twemoji
-
-    // genera_grupos($grupos_restos);
-
-    // 2020-06-01 CUIDADO QUE HE CREADO UN GRUPOO NUEVO EN UNICODE 13: ANIMALES $animales HASTA QUE ME ACLARE DONDE INCLUIRLOS
+    // HAY CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
+    // genera_grupos($grupos_secuencias_1, ["ss", "te"]);      // Banderas
+    // genera_grupos($grupos_secuencias_2, ["ss", "te"]);      // Géneros OK
+    // genera_tablas($grupos_secuencias_3, ["ss", "te"]);      // Colores de piel: OK
+    // genera_grupos($grupos_secuencias_4, ["ss", "te"]);      // Familias y parejas
+    genera_grupos($grupos_secuencias_problematicas_1, ["ss", "te"]);     // Animales y otros: No Windows
+    genera_grupos($grupos_secuencias_problematicas_2, ["ss", "te"]);     // Géneros: No Windows o No Twemoji
+    genera_tablas($grupos_secuencias_problematicas_3, ["ss", "te"]);     // Colores de piel: No Windows o No Twemoji
 
     ?>
+
+  <script>
+    var twemojis = document.getElementsByClassName('twe');
+    var i;
+    for (i = 0; i < twemojis.length; i++) {
+      twemoji.parse(twemojis[i], {
+        className: "twe",
+        folder: "svg",
+        ext: ".svg"
+      });
+    }
+  </script>
 </body>
 
 </html>

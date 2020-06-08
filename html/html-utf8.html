@@ -52,7 +52,7 @@
     <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
     <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
     <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
-    <li><a href="html-unicode-secuencias-otros.html">Otros</a>, que muestra otras secuencias Unicode (familias, parejas, etc.)</li>
+    <li><a href="html-unicode-secuencias-parejas.html">Parejas</a>, que muestra las secuencias Unicode que corresponden a parejas y familias</li>
     <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
   </ul>
 
@@ -323,7 +323,11 @@
   <section id="unicode">
     <h2>El juego de caracteres universal: Unicode</h2>
 
-    <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, que utilizaba dos bytes para codificar cada carácter.</p>
+    <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, </p>
+
+    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en marzo de 2020, <a href="http://blog.unicode.org/2020/03/announcing-unicode-standard-version-130.html">Unicode 13.0</a>, contiene más de 143.000 caracteres.</p>
+
+    <p>Las primeras versiones de Unicode se publicaron más o menos cada dos años pero desde 2009 Unicode se publica anualmente (la próxima versión 14.0 se publicará con seis meses de retraso debido a la epidemia del coronavirus Covd-19).</p>
 
     <p class="mcl-svg-diagrama-temporal">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1200" viewBox="-120 -60 1200 120">
@@ -393,16 +397,12 @@
         <text x="876" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">12.0</text>
         <circle cx="906" cy="0" r="5" fill="#990000" />
         <text x="906" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">13.0</text>
-        <!--
-        <circle cx="906" cy="0" r="5" fill="white" stroke="#990000" stroke-width="2" />
-        <text x="906" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">13.0</text>
-        -->
+        <circle cx="952" cy="0" r="5" fill="white" stroke="#990000" stroke-width="2" />
+        <text x="952" y="25" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">14.0</text>
       </svg>
     </p>
 
-    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y actualmente (marzo de 2020) las últimas versiones publicadas, <a href="http://blog.unicode.org/2020/03/announcing-unicode-standard-version-130.html">Unicode 13.0</a>, contienen más de 143.000 caracteres. Los dos bytes de la propuesta inicial se quedaron cortos y la norma actual utiliza cuatro bytes para codificar los caracteres.</p>
-
-    <p>El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede resumir en que existen tres opciones:</p>
+    <p>La primera versión de Unicode utilizaba dos bytes para codificar cada carácter, pero con el paso del tiempo los dos bytes se quedaron cortos y la norma actual utiliza cuatro bytes para codificar los caracteres. El inconveniente de utilizar 4 bytes para codificar los caracteres es que se ocupa cuatro veces más espacio que codificando con un byte y se necesita cuatro veces más tiempo para transmitirlos. Para optimizar, se decidió que los primeros valores de Unicode coincidieran con los de ASCII, de manera que los textos ingleses pudieran seguir utilizando un byte por carácter. Aunque el tema es bastante complejo, se puede resumir en que existen tres opciones:</p>
 
     <ul>
       <li>UTF-32: cada carácter ocupa cuatro bytes.</li>
