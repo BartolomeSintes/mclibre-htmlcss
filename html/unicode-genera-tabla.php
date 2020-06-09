@@ -725,14 +725,14 @@
 
     // HAY QUE CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
     // genera_grupos($grupos_simbolos, ["ss", "sy", "te"]);
-    genera_variantes($variacion, "Secuencias de variación", "variacion");
+    // genera_variantes($variacion, "Secuencias de variación", "variacion");
 
     // HAY CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A EMOJIS
     // genera_grupos($grupos_secuencias_1, ["ss", "te"]);      // Banderas
     // genera_grupos($grupos_secuencias_2, ["ss", "te"]);      // Géneros OK
     // genera_tablas($grupos_secuencias_3, ["ss", "te"]);      // Colores de piel: OK
     // genera_grupos($grupos_secuencias_4, ["ss", "te"]);      // Familias y parejas
-    // genera_grupos($grupos_secuencias_problematicas_1, ["ss", "te"]);     // Animales y otros: No Windows
+    genera_grupos($grupos_secuencias_problematicas_1, ["ss", "te"]);     // Animales y otros: No Windows
     // genera_grupos($grupos_secuencias_problematicas_2, ["ss", "te"]);     // Géneros: No Windows o No Twemoji
     // genera_tablas($grupos_secuencias_problematicas_3, ["ss", "te"]);     // Colores de piel: No Windows o No Twemoji
 

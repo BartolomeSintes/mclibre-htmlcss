@@ -869,14 +869,14 @@ $genero_1 = array(
   // 1F468/1F69/1F9D1 + 200D + XXX
   array(array("1F468", "0200D", "1F33E"), "", "SC", "WC", "F", "T", "TF", "man farmer"),
   array(array("1F469", "0200D", "1F33E"), "", "SC", "WC", "F", "T", "TF", "woman farmer"),
-  array(array("1F468", "0200D", "1F3A4"), "", "SC", "WC", "F", "T", "TF", "man singer"),
-  array(array("1F469", "0200D", "1F3A4"), "", "SC", "WC", "F", "T", "TF", "woman singer"),
-  array(array("1F468", "0200D", "1F3A8"), "", "SC", "WC", "F", "T", "TF", "man artist"),
-  array(array("1F469", "0200D", "1F3A8"), "", "SC", "WC", "F", "T", "TF", "woman artist"),
   array(array("1F468", "0200D", "1F373"), "", "SC", "WC", "F", "T", "TF", "man cook"),
   array(array("1F469", "0200D", "1F373"), "", "SC", "WC", "F", "T", "TF", "woman cook"),
   array(array("1F468", "0200D", "1F393"), "", "SC", "WC", "F", "T", "TF", "man student"),
   array(array("1F469", "0200D", "1F393"), "", "SC", "WC", "F", "T", "TF", "woman student"),
+  array(array("1F468", "0200D", "1F3A4"), "", "SC", "WC", "F", "T", "TF", "man singer"),
+  array(array("1F469", "0200D", "1F3A4"), "", "SC", "WC", "F", "T", "TF", "woman singer"),
+  array(array("1F468", "0200D", "1F3A8"), "", "SC", "WC", "F", "T", "TF", "man artist"),
+  array(array("1F469", "0200D", "1F3A8"), "", "SC", "WC", "F", "T", "TF", "woman artist"),
   array(array("1F468", "0200D", "1F3EB"), "", "SC", "WC", "F", "T", "TF", "man teacher"),
   array(array("1F469", "0200D", "1F3EB"), "", "SC", "WC", "F", "T", "TF", "woman teacher"),
   array(array("1F468", "0200D", "1F3ED"), "", "SC", "WC", "F", "T", "TF", "man factory worker"),
@@ -1016,60 +1016,6 @@ $genero_4 = array(  // son como $problematicas_piel_4 =
   array(array("1F575", "0FE0F", "0200D", "02642", "0FE0F"), "", "", "WC", "F", "T", "TF", "man detective"),
 );
 
-$problematicas_genero_1 = array(
-  // 1F468/1F69/1F9D1 + 200D + XXX
-  // No disponibles en Windows 10
-  array(array("1F9D1", "0200D", "1F33E"), "13", "", "", "", "T", "TW", "person farmer"),
-  array(array("1F9D1", "0200D", "1F3A4"), "13", "", "", "", "T", "TW", "person singer"),
-  array(array("1F9D1", "0200D", "1F3A8"), "13", "", "", "", "T", "TW", "person artist"),
-  array(array("1F9D1", "0200D", "1F373"), "13", "", "", "", "T", "TW", "person cook"),
-  array(array("1F9D1", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "person feeding baby"),
-  array(array("1F468", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "man feeding baby"),
-  array(array("1F469", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "woman feeding baby"),
-  array(array("1F468", "0200D", "1F384"), "", "", "", "", "T", "TW", "father christmas"),       // NO TENGO CLARO SI EXISTE EN UNICODE
-  array(array("1F469", "0200D", "1F384"), "9", "", "", "", "T", "TW", "mother christmas"),
-  array(array("1F9D1", "0200D", "1F384"), "13", "", "", "", "T", "TW", "claus"),
-  array(array("1F9D1", "0200D", "1F393"), "13", "", "", "", "T", "TW", "person student"),
-  array(array("1F9D1", "0200D", "1F3EB"), "13", "", "", "", "T", "TW", "person teacher"),
-  array(array("1F9D1", "0200D", "1F3ED"), "13", "", "", "", "T", "TW", "person factory worker"),
-  array(array("1F9D1", "0200D", "1F4BB"), "13", "", "", "", "T", "TW", "person technologist"),
-  array(array("1F9D1", "0200D", "1F4BC"), "13", "", "", "", "T", "TW", "person office worker"),
-  array(array("1F9D1", "0200D", "1F527"), "13", "", "", "", "T", "TW", "person mechanic"),
-  array(array("1F9D1", "0200D", "1F52C"), "13", "", "", "", "T", "TW", "person scientist"),
-  array(array("1F9D1", "0200D", "1F680"), "13", "", "", "", "T", "TW", "person astronaut"),
-  array(array("1F9D1", "0200D", "1F692"), "13", "", "", "", "T", "TW", "person firefighter"),
-  array(array("1F9D1", "0200D", "1F9AF"), "13", "", "", "", "T", "TW", "person with probing cane"),
-  array(array("1F9D1", "0200D", "1F9B0"), "13", "", "", "", "T", "TW", "person, red haired"),
-  array(array("1F9D1", "0200D", "1F9B1"), "13", "", "", "", "T", "TW", "person curly haired"),
-  array(array("1F9D1", "0200D", "1F9B2"), "13", "", "", "", "T", "TW", "person, bald"),
-  array(array("1F9D1", "0200D", "1F9B3"), "13", "", "", "", "T", "TW", "person, white haired"),
-  array(array("1F9D1", "0200D", "1F9BC"), "13", "", "", "", "T", "TW", "person in motorized wheelchair"),
-  array(array("1F9D1", "0200D", "1F9BD"), "13", "", "", "", "T", "TW", "person in manual wheelchair"),
-);
-
-$problematicas_genero_2 = array(
-  // 1F468/1F69/1F9D1 + 200D + XXX + FE0F
-  // No disponibles en Windows 10
-  array(array("1F9D1", "0200D", "02695", "0FE0F"), "13", "", "", "", "T", "TW", "person health worker"),
-  array(array("1F9D1", "0200D", "02696", "0FE0F"), "13", "", "", "", "T", "TW", "person judge"),
-  array(array("1F9D1", "0200D", "02708", "0FE0F"), "13", "", "", "", "T", "TW", "person pilot"),
-);
-
-$problematicas_genero_3 = array(
-  // XXX + 200D + 2640/2642 + FE0F
-  // No disponibles en Windows 10
-  array(array("1F470", "0200D", "02640", "0FE0F"), "13", "", "", "", "T", "TW", "woman with veil"),
-  array(array("1F470", "0200D", "02642", "0FE0F"), "13", "", "", "", "T", "TW", "man with veil"),
-  array(array("1F935", "0200D", "02640", "0FE0F"), "", "", "", "F", "T", "TW", "woman in tuxedo"),
-  array(array("1F935", "0200D", "02642", "0FE0F"), "", "", "", "F", "T", "TW", "man in tuxedo"),
-);
-
-$problematicas_genero_4 = array(
-  // XXX + FE0F + 200D + 2640/2642 + FE0F
-  array(array("1F574", "0FE0F", "0200D", "02640", "0FE0F"), "", "", "", "F", "T", "TF", "woman in bussiness suit levitating"),
-  array(array("1F574", "0FE0F", "0200D", "02642", "0FE0F"), "", "", "", "F", "T", "TF", "man in bussiness suit levitating"),
-);
-
 $piel_1 = array(
   // Combinaciones: Color de piel
   // Código Fitzpatrick se inserta en segunda posición (al final)
@@ -1184,6 +1130,60 @@ $piel_1 = array(
   array(array("1F9DD"), "10", "SC", "WC", "F", "T", "TF", "elf"),
 );
 
+$problematicas_genero_1 = array(
+  // 1F468/1F69/1F9D1 + 200D + XXX
+  // No disponibles en Windows 10
+  array(array("1F9D1", "0200D", "1F33E"), "13", "", "", "", "T", "TW", "person farmer"),
+  array(array("1F9D1", "0200D", "1F3A4"), "13", "", "", "", "T", "TW", "person singer"),
+  array(array("1F9D1", "0200D", "1F3A8"), "13", "", "", "", "T", "TW", "person artist"),
+  array(array("1F9D1", "0200D", "1F373"), "13", "", "", "", "T", "TW", "person cook"),
+  array(array("1F9D1", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "person feeding baby"),
+  array(array("1F468", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "man feeding baby"),
+  array(array("1F469", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "woman feeding baby"),
+  array(array("1F468", "0200D", "1F384"), "", "", "", "", "T", "TW", "father christmas"),       // NO TENGO CLARO SI EXISTE EN UNICODE
+  array(array("1F469", "0200D", "1F384"), "9", "", "", "", "T", "TW", "mother christmas"),
+  array(array("1F9D1", "0200D", "1F384"), "13", "", "", "", "T", "TW", "claus"),
+  array(array("1F9D1", "0200D", "1F393"), "13", "", "", "", "T", "TW", "person student"),
+  array(array("1F9D1", "0200D", "1F3EB"), "13", "", "", "", "T", "TW", "person teacher"),
+  array(array("1F9D1", "0200D", "1F3ED"), "13", "", "", "", "T", "TW", "person factory worker"),
+  array(array("1F9D1", "0200D", "1F4BB"), "13", "", "", "", "T", "TW", "person technologist"),
+  array(array("1F9D1", "0200D", "1F4BC"), "13", "", "", "", "T", "TW", "person office worker"),
+  array(array("1F9D1", "0200D", "1F527"), "13", "", "", "", "T", "TW", "person mechanic"),
+  array(array("1F9D1", "0200D", "1F52C"), "13", "", "", "", "T", "TW", "person scientist"),
+  array(array("1F9D1", "0200D", "1F680"), "13", "", "", "", "T", "TW", "person astronaut"),
+  array(array("1F9D1", "0200D", "1F692"), "13", "", "", "", "T", "TW", "person firefighter"),
+  array(array("1F9D1", "0200D", "1F9AF"), "13", "", "", "", "T", "TW", "person with probing cane"),
+  array(array("1F9D1", "0200D", "1F9B0"), "13", "", "", "", "T", "TW", "person, red haired"),
+  array(array("1F9D1", "0200D", "1F9B1"), "13", "", "", "", "T", "TW", "person curly haired"),
+  array(array("1F9D1", "0200D", "1F9B2"), "13", "", "", "", "T", "TW", "person, bald"),
+  array(array("1F9D1", "0200D", "1F9B3"), "13", "", "", "", "T", "TW", "person, white haired"),
+  array(array("1F9D1", "0200D", "1F9BC"), "13", "", "", "", "T", "TW", "person in motorized wheelchair"),
+  array(array("1F9D1", "0200D", "1F9BD"), "13", "", "", "", "T", "TW", "person in manual wheelchair"),
+);
+
+$problematicas_genero_2 = array(
+  // 1F468/1F69/1F9D1 + 200D + XXX + FE0F
+  // No disponibles en Windows 10
+  array(array("1F9D1", "0200D", "02695", "0FE0F"), "13", "", "", "", "T", "TW", "person health worker"),
+  array(array("1F9D1", "0200D", "02696", "0FE0F"), "13", "", "", "", "T", "TW", "person judge"),
+  array(array("1F9D1", "0200D", "02708", "0FE0F"), "13", "", "", "", "T", "TW", "person pilot"),
+);
+
+$problematicas_genero_3 = array(
+  // XXX + 200D + 2640/2642 + FE0F
+  // No disponibles en Windows 10
+  array(array("1F470", "0200D", "02640", "0FE0F"), "13", "", "", "", "T", "TW", "woman with veil"),
+  array(array("1F470", "0200D", "02642", "0FE0F"), "13", "", "", "", "T", "TW", "man with veil"),
+  array(array("1F935", "0200D", "02640", "0FE0F"), "", "", "", "F", "T", "TW", "woman in tuxedo"),
+  array(array("1F935", "0200D", "02642", "0FE0F"), "", "", "", "F", "T", "TW", "man in tuxedo"),
+);
+
+$problematicas_genero_4 = array(
+  // XXX + FE0F + 200D + 2640/2642 + FE0F
+  array(array("1F574", "0FE0F", "0200D", "02640", "0FE0F"), "", "", "", "F", "T", "TF", "woman in bussiness suit levitating"),
+  array(array("1F574", "0FE0F", "0200D", "02642", "0FE0F"), "", "", "", "F", "T", "TF", "man in bussiness suit levitating"),
+);
+
 $problematicas_piel_1 = array(
   // XXX + 200D + 2640/2642 + FE0F
   // No funcionan en Twemoji
@@ -1280,8 +1280,9 @@ $problematicas_otros = array(
   array(array("00038", "020E3"), "", "", "", "", "T", "TW", "digit eight + combining enclosing keycap"),
   array(array("00039", "020E3"), "", "", "", "", "T", "TW", "digit nine + combining enclosing keycap"),
   array(array("1F408", "0200D", "02B1B"), "13", "", "", "", "T", "TW", "black cat"),
+  array(array("1F415", "0200D", "1F9BA"), "12", "", "WC", "F", "T", "TW", "service dog"),
   array(array("1F441", "0200D", "1F5E8"), "", "", "WC", "F", "T", "TW", "eye in speech bubble"),
+  array(array("1F43B", "0200D", "02744", "0FE0F"), "13", "", "", "", "T", "TW", "polar bear"),
   // array(array("1F441", "1F5E8"), "", "", "WC", "F", "T", "TF", "eye in speech bubble"),
   // 2018-08-29 En emojione speech bubble eran dos caracteres, pero con twemoji son tres
-  array(array("1F43B", "0200D", "02744", "0FE0F"), "13", "", "", "", "T", "TW", "polar bear"),
 );
