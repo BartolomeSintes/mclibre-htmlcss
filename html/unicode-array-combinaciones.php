@@ -36,10 +36,13 @@
 // No los saco todos de la web porque tarda mucho en cargarse. El problema es que algunos dibujos han cambiado
 // Cuando publiquen la fuente, pondré que salgan todos de la fuente.
 
+
+// http://xahlee.info/comp/unicode_hand_gesture.html
+
 $variacion = array(
   // Selectores de variación  VS15 y VS 16 0FE0E/0FE0F
   // La lista está en https://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-variation-sequences.txt
-  // En unicode º13 hay 354
+  // En unicode 13 hay 354
   // pero sólo muestro las que se ven distintas en Windows
   // array(array("00023"), "", "", "W", "", "", "", "number sign"),
   // array(array("0002A"), "", "", "W", "", "", "", "asterisk"),
@@ -1265,7 +1268,23 @@ $problematicas_piel_4 = array(
   array(array("1F977"), "", "SC", "WC", "F", "T", "TW", "ninja"),
 );
 
+
 $problematicas_otros = array(
+  [["00023", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap number sign"],
+  [["0002A", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap asterisk"],
+  [["00030", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit zero"],
+  [["00031", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit one"],
+  [["00032", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit two"],
+  [["00033", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit three"],
+  [["00034", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit four"],
+  [["00035", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit five"],
+  [["00036", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit six"],
+  [["00037", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit seven"],
+  [["00038", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit eight"],
+  [["00039", "020E3"], "", "VST", "W10", "", "SHOW-YES", "", "TWE", "TCF", "keycap digit nine"],
+);
+
+  $problematicas_otros = array(
   // Combinaciones: Varios
   array(array("00023", "020E3"), "", "", "", "", "T", "TW", "number sign + combining enclosing keycap"),
   array(array("0002A", "020E3"), "", "", "", "", "T", "TW", "asterisk + combining enclosing keycap"),
@@ -1280,8 +1299,8 @@ $problematicas_otros = array(
   array(array("00038", "020E3"), "", "", "", "", "T", "TW", "digit eight + combining enclosing keycap"),
   array(array("00039", "020E3"), "", "", "", "", "T", "TW", "digit nine + combining enclosing keycap"),
   array(array("1F408", "0200D", "02B1B"), "13", "", "", "", "T", "TW", "black cat"),
-  array(array("1F415", "0200D", "1F9BA"), "12", "", "WC", "F", "T", "TW", "service dog"),
-  array(array("1F441", "0200D", "1F5E8"), "", "", "WC", "F", "T", "TW", "eye in speech bubble"),
+  array(array("1F415", "0200D", "1F9BA"), "12", "", "", "", "T", "TW", "service dog"),
+  array(array("1F441", "0200D", "1F5E8"), "", "", "", "F", "T", "TW", "eye in speech bubble"),
   array(array("1F43B", "0200D", "02744", "0FE0F"), "13", "", "", "", "T", "TW", "polar bear"),
   // array(array("1F441", "1F5E8"), "", "", "WC", "F", "T", "TF", "eye in speech bubble"),
   // 2018-08-29 En emojione speech bubble eran dos caracteres, pero con twemoji son tres
