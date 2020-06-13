@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php
-    // IMPORTANTE: PARA GENERAR LA PÁGINA DE SIMBOLOS (SOLO SIMBOLO) O DE EMOJIS (SIMBOLO Y TWEMOJI)
-    define("EMOJIS", 1);    // sólo muestra emojis (es decir, los que están en twemoji)
-    define("SIMBOLOS", 0);  // muestra todos los caracteres
-    $muestra = EMOJIS;
-?>
-
 <head>
     <meta charset="utf-8">
     <title>Genera fichas Pictogramas. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
@@ -34,7 +27,7 @@
         div.u {
             display: flex;
             flex-direction: column;
-            flex: 0 1 200px;
+            flex: 0 1 210px;
             margin: 5px;
             border: black 1px solid;
             text-align: center;
@@ -160,6 +153,7 @@ define("TWV", 7);   // En qué versión se incluyó en Twemoji
 define("TWO", 8);   // Si está en la fuente Twemoji Color Font o en GitHub: TCF / TGH
 define("DESC", 9);   // Descripción
 define("PAG_SIMBOLOS", "Símbolos");
+define("PAG_EMOJIS", "Emojis");
 // $rutaSVG = "https://github.com/emojione/emojione/blob/2.2.7/assets/svg";
 // $rutaSVG = "https://github.com/twitter/twemoji/blob/gh-pages/2/svg"; // cambiado en 2019-10-27
 define("RUTAS_SVG", "https://github.com/twitter/twemoji/blob/master/assets/svg");
@@ -277,13 +271,13 @@ function genera_ficha($simbolos)
     }
     print "        </p>\n";
     // Entidad numérica hexadecimal
-    print "        <p class=\"en\"><strong>";
+    print "        <p class=\"en\">Hex: <strong>";
     foreach ($simbolos[0][0][UCO] as $tmp) {
         print "&amp;#x" . dechex(hexdec($tmp)) . ";";
     }
     print "</strong></p>\n";
     // Entidad numérica adecimal
-    print "        <p class=\"en\"><strong>";
+    print "        <p class=\"en\">Dec: <strong>";
     foreach ($simbolos[0][0][UCO] as $tmp) {
         print "&amp;#" . hexdec($tmp) . ";";
     }
@@ -303,6 +297,7 @@ function prepara_ficha($c, $fuentes, $pagina)
     // $fuente puede ser SS, SYM, TGH, TCF o mixto SS-TCF-TGH-SYM, SS-TGH, SS-SYM, SS-TGH-
     $datos = [];
     foreach ($fuentes as $fuente) {
+        $tmp = [];
         if ($fuente == "") {
             print "<h1>Error: No se ha indicado fuente en genera_fichas()</h1>\n";
         } elseif ($fuente == "SS") {
@@ -329,16 +324,26 @@ function prepara_ficha($c, $fuentes, $pagina)
             $tmp = [$c, "TCF"];
         } elseif ($fuente == "SYM") {
             $tmp = [$c, "SYM"];
+        } elseif ($fuente == "TCF-TGH") {
+            if ($c[TWO] == "TCF") {
+                $tmp = [$c, "TCF"];
+            } elseif ($c[TWO] == "TGH") {
+                $tmp = [$c, "TGH"];
+            }
         }
         if ($pagina == PAG_SIMBOLOS) {
             if ($fuente == "SYM" && $c[WIN] != "") {
             } else {
                 $datos[] = $tmp;
-                // aVer($tmp);
             }
-        }
+        } elseif ($pagina == PAG_EMOJIS) {
+            if ($fuente == "SS-VSE") {
+                $datos[] = $tmp;
+            } elseif ($fuente == "TCF-TGH" && $c[TWE] != "") {
+                $datos[] = $tmp;
+            }
+        };
     }
-    // aVer($datos);
     genera_ficha($datos);
     // if ($segundo == "TGH" || $c[WIN] == "" && $c[TWO] == "TGH" && $c[VS] != "VST") {
     //     print genera_caracter($c[UCO], "TGH");
@@ -349,7 +354,6 @@ function prepara_ficha($c, $fuentes, $pagina)
 function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fuentes, $pagina)
 {
     global $muestra;
-    // aVer("genera_grupo");
     if ($cuenta) {
         $contador = count($matriz);
     }
@@ -371,8 +375,6 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
 
         print "    <div class=\"u-l\">\n";
         foreach ($matriz as $c) {
-            // aVer($c);
-            // aver($fuentes);
             prepara_ficha($c, $fuentes, $pagina);
         }
         print "    </div>\n";
@@ -384,7 +386,6 @@ function genera_grupo($matriz, $grupo, $id, $pdf, $cuenta, $inicial, $final, $fu
 function genera_grupos($pagina, $fuentes)
 {
     global $grupos;
-    // aVer("genera_grupos");
     print "  <ul>\n";
     foreach ($grupos[$pagina] as $g) {
         print "    <li><a href=\"#$g[2]\">$g[1]</a></li>\n";
@@ -411,10 +412,8 @@ function filtra_grupo($caracteres, $inicial, $final, $pagina){
     foreach ($caracteres as $c) {
         if (hexdec($c[UCO][0]) >= hexdec($inicial) && hexdec($c[UCO][0]) <= hexdec($final)) {
             $resultado[] = $c;
-            // aver($c);
         }
     }
-    // aVer($resultado);
     $resultado2 = [];
     foreach ($resultado as $c) {
         // Esto filtra los caracteres que simplemente no quiero ver en ningún caso
@@ -422,9 +421,12 @@ function filtra_grupo($caracteres, $inicial, $final, $pagina){
             if ($c[VS] != "" || $c[TWE] == "") {
                 $resultado2[] = $c;
             }
+        } elseif ($pagina == PAG_EMOJIS) {
+            if ($c[VS] != "" || $c[TWE] == "TWE") {
+                $resultado2[] = $c;
+            }
         }
     }
-    // aVer($resultado2);
     return $resultado2;
 }
 
@@ -460,6 +462,39 @@ $grupos = [
         [filtra_grupo($caracteres_unicode, "1F680", "1F6FF", PAG_SIMBOLOS), "Símbolos de transporte y mapas",                    "transporte",              "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"],
         [filtra_grupo($caracteres_unicode, "1F900", "1F9FF", PAG_SIMBOLOS), "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",      "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"],
         [filtra_grupo($caracteres_unicode, "1FA70", "1FAFF", PAG_SIMBOLOS), "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",          "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"],
+    ],
+
+    PAG_EMOJIS => [
+        [filtra_grupo($caracteres_unicode,  "0000",  "007F", PAG_EMOJIS), "Controles y Latin básico",                          "controles-latin",         "U00000-c0-controls-and-basic-latin.pdf",           1, "0000",  "007F" ],
+        [filtra_grupo($caracteres_unicode,  "0080",  "00FF", PAG_EMOJIS), "Suplemento controles y Latin-1",                    "controles-sup",           "U00080-c1-controls-and-latin-1-supplement.pdf",    1, "0080",  "00FF" ],
+        [filtra_grupo($caracteres_unicode,  "2000",  "206F", PAG_EMOJIS), "Puntuación",                                        "puntuacion",              "U02000-general-punctuation.pdf",                   1, "2000",  "206F" ],
+        [filtra_grupo($caracteres_unicode,  "20A0",  "20BF", PAG_EMOJIS), "Símbolos de monedas",                               "monedas",                 "U020A0-currency-symbols.pdf",                      1, "20A0",  "20BF" ],
+        [filtra_grupo($caracteres_unicode,  "2100",  "214F", PAG_EMOJIS), "Símbolos con letras",                               "simbolos-letras",         "U02100-letterlike-symbols.pdf",                    1, "2100",  "214F" ],
+        [filtra_grupo($caracteres_unicode,  "2190",  "21FF", PAG_EMOJIS), "Flechas",                                           "flechas",                 "U02190-arrows.pdf",                                1, "2190",  "21FF" ],
+        [filtra_grupo($caracteres_unicode,  "2300",  "23FE", PAG_EMOJIS), "Símbolos técnicos misceláneos",                     "tecnicos-misc",           "U02300-miscellaneous-technical.pdf",               1, "2300",  "23FE" ],
+        [filtra_grupo($caracteres_unicode,  "2460",  "24FF", PAG_EMOJIS), "Símbolos alfanuméricos con círculo alrededor",      "alfanum-circulo",         "U02460-enclosed-alphanumerics.pdf",                1, "2460",  "24FF" ],
+        [filtra_grupo($caracteres_unicode,  "2500",  "257F", PAG_EMOJIS), "Cajas",                                             "cajas",                   "U02500-box-drawing.pdf",                           1, "2500",  "257F" ],
+        [filtra_grupo($caracteres_unicode,  "25A0",  "25FF", PAG_EMOJIS), "Formas geométricas",                                "formas-geometricas",      "U025A0-geometric-shapes.pdf",                      1, "25A0",  "25FF" ],
+        [filtra_grupo($caracteres_unicode,  "2600",  "26FF", PAG_EMOJIS), "Símbolos misceláneos",                              "simbolos-misc",           "U02600-miscellaneous-symbols.pdf",                 1, "2600",  "26FF" ],
+        [filtra_grupo($caracteres_unicode,  "2700",  "27BF", PAG_EMOJIS), "Dingbats",                                          "dingbats",                "U02700-dingbats.pdf",                              1, "2700",  "27BF" ],
+        [filtra_grupo($caracteres_unicode,  "2900",  "297F", PAG_EMOJIS), "Flechas suplementarias B",                          "flechas-suplementarias",  "U02900-supplemental-arrows-b.pdf",                 1, "2900",  "297F" ],
+        [filtra_grupo($caracteres_unicode,  "2B00",  "2BFF", PAG_EMOJIS), "Símbolos y flechas misceláneos",                    "simbolos-flechas",        "U02B00-miscellaneous-symbols-and-arrows.pdf",      1, "2B00",  "2BFF" ],
+        [filtra_grupo($caracteres_unicode,  "3000",  "303F", PAG_EMOJIS), "Símbolos y puntuación CJK",                         "cjk",                     "U03000-cjk-symbols-and-punctuation.pdf",           1, "3000",  "303F" ],
+        [filtra_grupo($caracteres_unicode,  "3200",  "32FF", PAG_EMOJIS), "Símbolos CJK con círculo alrededor",                "cjk-circulo",             "U03200-enclosed-cjk-letters-and-months.pdf",       1, "3200",  "32FF" ],
+        [filtra_grupo($caracteres_unicode, "1D100", "1D1E8", PAG_EMOJIS), "Símbolos musicales",                                "musica",                  "U1D100-musical-symbols.pdf",                       1, "1D100", "1D1E8"],
+        [filtra_grupo($caracteres_unicode, "1F000", "1F02B", PAG_EMOJIS), "Fichas de Mahjong",                                 "fichas-mahjong",          "U1F000-mahjong-tiles.pdf",                         1, "1F000", "1F02B"],
+        [filtra_grupo($caracteres_unicode, "1F030", "1F093", PAG_EMOJIS), "Fichas de dominó",                                  "domino",                  "U1F030-domino-tiles.pdf",                          1, "1F030", "1F093"],
+        [filtra_grupo($caracteres_unicode, "1F0A0", "1F0F5", PAG_EMOJIS), "Cartas",                                            "cartas",                  "U1F0A0-playing-cards.pdf",                         1, "1F0A0", "1F0F5"],
+        [filtra_grupo($caracteres_unicode, "1F100", "1F1FF", PAG_EMOJIS), "Suplemento alfanuméricos con círculo alrededor",    "alfanum-circulo-sup",     "U1F100-enclosed-alphanumeric-supplement.pdf",      1, "1F100", "1F1FF"],
+        [filtra_grupo($caracteres_unicode, "1F200", "1F2FF", PAG_EMOJIS), "Suplemento ideográfico con círculo alrededor",      "ideografico-circulo-sup", "U1F200-enclosed-ideographic-supplement.pdf",       1, "1F200", "1F2FF"],
+        [filtra_grupo($caracteres_unicode, "1F650", "1F67F", PAG_EMOJIS), "Dingbats decorativos",                              "dingbats-decorativos",    "U1F650-ornamental-dingbats.pdf",                   1, "1F650", "1F67F"],
+        [filtra_grupo($caracteres_unicode, "1F700", "1F773", PAG_EMOJIS), "Símbolos alquímicos",                               "simbolos-alquimicos",     "U1F700-alchemical-symbols.pdf",                    1, "1F700", "1F773"],
+        [filtra_grupo($caracteres_unicode, "1F780", "1F7EB", PAG_EMOJIS), "Formas geométricas extendidas",                     "geometricas-extendidas",  "U1F780-geometric-shapes-extended.pdf",             1, "1F780", "1F7EB"],
+        [filtra_grupo($caracteres_unicode, "1F300", "1F5FF", PAG_EMOJIS), "Símbolos y pictogramas misceláneos",                "simbolos-pict-misc",      "U1F300-miscellaneous-symbols-and-pictographs.pdf", 1, "1F300", "1F5FF"],
+        [filtra_grupo($caracteres_unicode, "1F600", "1F64F", PAG_EMOJIS), "Emoticonos",                                        "emoticonos",              "U1F600-emoticons.pdf",                             1, "1F600", "1F64F"],
+        [filtra_grupo($caracteres_unicode, "1F680", "1F6FF", PAG_EMOJIS), "Símbolos de transporte y mapas",                    "transporte",              "U1F680-transport-and-map-symbols.pdf",             1, "1F680", "1F6FF"],
+        [filtra_grupo($caracteres_unicode, "1F900", "1F9FF", PAG_EMOJIS), "Símbolos y pictogramas misceláneos suplementarios", "simbolos-misc-supl",      "U1F900-supplemental-symbols-and-pictographs.pdf",  1, "1F900", "1F9FF"],
+        [filtra_grupo($caracteres_unicode, "1FA70", "1FAFF", PAG_EMOJIS), "Símbolos y pictogramas extendidos A",               "simbolos-ext-a",          "U1FA70-symbols-and-pictographs-extended-a.pdf",    1, "1FA70", "1FAFF"],
     ],
 
     // Secuencias de Variación
@@ -530,6 +565,9 @@ function genera_pagina($pagina)
     if ($pagina == PAG_SIMBOLOS) {
         // HAY QUE CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
         genera_grupos(PAG_SIMBOLOS, ["SS-VST", "SYM"]);
+    } elseif ($pagina == PAG_EMOJIS) {
+        // HAY QUE CAMBIAR VARIABLE $MUESTRA EN LINEA 6 A SIMBOLOS O EMOJIS
+        genera_grupos(PAG_EMOJIS, ["SS-VSE", "TCF-TGH"]);
     }
     // genera_variantes($variacion, "Secuencias de variación", "variacion");
 
@@ -545,6 +583,7 @@ function genera_pagina($pagina)
 
 //aVer(filtra_grupo($caracteres_unicode, "0000", "007F", PAG_SIMBOLOS));
 genera_pagina(PAG_SIMBOLOS);
+// genera_pagina(PAG_EMOJIS);
 
 // Puñetitas varias
 // * No he tenido en cuenta si hay un carácter simple que no se ve en Windows pero sí está en twemoji
