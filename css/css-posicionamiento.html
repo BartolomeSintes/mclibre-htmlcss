@@ -35,7 +35,7 @@
     <li><a href="css-posicionamiento-absoluto.html">absoluto</a>:</li>
   </ul>
 
-  <p>El esquema normal es el que se aplica por omisión. En el esquema de posicionamiento normal, los elementos se muestran en la pantalla en el mismo orden en que se encuentran en el código fuente de la página. Los elementos de bloque (<span class="html-eti">&lt;p&gt;</span>, <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) ocupan todo el ancho de la página y la altura necesaria para mostrar todo su contenido.</p>
+  <p>El esquema normal es el que se aplica por omisión. En el esquema de posicionamiento normal, los elementos se muestran en la pantalla en el mismo orden en que se encuentran en el código fuente de la página. Los elementos de bloque (<span class="html-eti">&lt;p&gt;</span>, <span class="html-eti">&lt;h1&gt;</span>, <span class="html-eti">&lt;h2&gt;</span>, etc.) ocupan todo el ancho de la página y tienen la altura necesaria para mostrar todo su contenido.</p>
 
   <p>El esquema flotante es el que permite que un elemento no ocupe todo el ancho de la pantalla y se muestre a la izquierda o a la derecha de la página con otros elementos a su lado. En el esquema de posicionamiento flotante, los elementos se muestran en la pantalla en el mismo orden en que se encuentran en el código fuente, pero pueden estar desplazados a derecha a izquierda. Para asignar el esquema de posicionamiento flotante a un elemento se utiliza la propiedad <span class="css-prop">float</span>.</p>
 
@@ -46,67 +46,107 @@
   <p>La imagen siguiente muestra cómo podrían mostrarse cuatro bloques de una página que en el código fuente estuvieran seguidos.</p>
 
   <ul>
-    <li>en el esquema normal los bloques se muestran en el mismo orden que en el código fuente;</li>
-    <li> en el esquema flotante se puede colocar un bloque a un lado (en el ejemplo, el bloque 2 de sitúa a la izquierda) y el bloque siguiente se puede colocar a su lado (en el ejemplo, el bloque 3 se sitúa a la derecha del 2);</li>
-    <li>en el esquema absoluto los bloques se pueden colocar en cualquier orden y posición, incluso superponiéndose.</li>
+    <li>En el esquema normal los bloques se muestran en el mismo orden que en el código fuente y su tamaño vertical es proporcional al contenido.</li>
+    <li>En el esquema flotante los bloques también se muestran en el mismo orden que en el código fuente, pero los elementos consecutivos se pueden colocar uno al lado del otro (en el ejemplo, el bloque 2 de sitúa a la izquierda) y el bloque siguiente se puede colocar a su lado (en el ejemplo, el bloque 3 se sitúa a la derecha del 2, pero como no cabe entero a la derecha del 2, se muestra también a continuación). Como en el esquema normal, el tamaño vertical es proporcional al contenido;</li>
+    <li>En el esquema absoluto los bloques se pueden colocar en cualquier orden y posición, incluso superponiéndose.</li>
   </ul>
 
   <p class="mcl-svg-figura">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="650" viewBox="0 0 600 600" style="background-color: white" font-family="sans-serif">
-        <title>Esquemas de posicionamiento clásico (CSS 2)</title>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="850" viewBox="0 0 800 500" style="background-color: white" font-family="sans-serif">
+      <title>Esquemas de posicionamiento clásico (CSS 2)</title>
 
-        <text x="95" y="50" text-anchor="middle" font-size="32">Esquema</text>
-        <text x="95" y="80" text-anchor="middle" font-size="32">normal</text>
+      <text x="95" y="50" text-anchor="middle" font-size="32">Código</text>
+      <text x="95" y="80" text-anchor="middle" font-size="32">fuente</text>
 
-        <rect x="20" y="100" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
-        <text x="95" y="160" text-anchor="middle" font-size="56">1</text>
+      <rect x="20" y="100" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="95" y="160" text-anchor="middle" font-size="56">1</text>
+      <text x="25" y="115" text-anchor="start" font-size="12">
+        <tspan>&lt;p&gt;Este es el primer</tspan>
+        <tspan x="25" dy="15">elemento de la página</tspan>
+        <tspan x="25" dy="15">que puede ser un párrafo</tspan>
+        <tspan x="25" dy="15">o cualquier otra cosa, </tspan>
+        <tspan x="25" dy="15">como un título.&lt;/p&gt;</tspan>
+      </text>
 
-        <rect x="20" y="190" width="150" height="60" fill="none" stroke="black" stroke-width="3" />
-        <text x="95" y="242" text-anchor="middle" font-size="56">2</text>
+      <rect x="20" y="190" width="150" height="60" fill="none" stroke="black" stroke-width="3" />
+      <text x="95" y="242" text-anchor="middle" font-size="56">2</text>
+      <text x="25" y="205" text-anchor="start" font-size="12">
+        <tspan>&lt;p&gt;Este es el segundo</tspan>
+        <tspan x="25" dy="17">elemento, más corto que </tspan>
+        <tspan x="25" dy="17">el primero.&lt;/p&gt;</tspan>
+      </text>
 
-        <rect x="20" y="260" width="150" height="120" fill="none" stroke="black" stroke-width="3" />
-        <text x="95" y="340" text-anchor="middle" font-size="56">3</text>
+      <rect x="20" y="260" width="150" height="120" fill="none" stroke="black" stroke-width="3" />
+      <text x="95" y="340" text-anchor="middle" font-size="56">3</text>
+      <text x="25" y="275" text-anchor="start" font-size="12">
+        <tspan>&lt;p&gt;Este es el tercer</tspan>
+        <tspan x="25" dy="16">elemento de la página</tspan>
+        <tspan x="25" dy="16">un poco más largo que</tspan>
+        <tspan x="25" dy="16">los anteriores. Cualquiera</tspan>
+        <tspan x="25" dy="16">podría contener también</tspan>
+        <tspan x="25" dy="16">elementos en línea,</tspan>
+        <tspan x="25" dy="16">como imágenes.&lt;/p&gt;</tspan>
+      </text>
 
-        <rect x="20" y="390" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
-        <text x="95" y="450" text-anchor="middle" font-size="56">4</text>
+      <rect x="20" y="390" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="95" y="450" text-anchor="middle" font-size="56">4</text>
+      <text x="25" y="405" text-anchor="start" font-size="12">
+        <tspan>&lt;p&gt;Este es el cuarto</tspan>
+        <tspan x="25" dy="15">elemento de la página</tspan>
+        <tspan x="25" dy="15">Da lo mismo cuál</tspan>
+        <tspan x="25" dy="15">sea más largo o más</tspan>
+        <tspan x="25" dy="15">corto.&lt;/p&gt;</tspan>
+      </text>
 
+      <text x="295" y="50" text-anchor="middle" font-size="32">Esquema</text>
+      <text x="295" y="80" text-anchor="middle" font-size="32">normal</text>
 
-        <text x="295" y="50" text-anchor="middle" font-size="32">Esquema</text>
-        <text x="295" y="80" text-anchor="middle" font-size="32">flotante</text>
+      <rect x="220" y="100" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="295" y="160" text-anchor="middle" font-size="56">1</text>
 
-        <rect x="220" y="100" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
-        <text x="295" y="160" text-anchor="middle" font-size="56">1</text>
+      <rect x="220" y="190" width="150" height="60" fill="none" stroke="black" stroke-width="3" />
+      <text x="295" y="242" text-anchor="middle" font-size="56">2</text>
 
-        <rect x="220" y="190" width="90" height="90" fill="none" stroke="blue" stroke-width="3" />
-        <text x="265" y="255" text-anchor="middle" font-size="56">2</text>
+      <rect x="220" y="260" width="150" height="120" fill="none" stroke="black" stroke-width="3" />
+      <text x="295" y="340" text-anchor="middle" font-size="56">3</text>
 
-        <polygon points="320,190 370,190 370,380 220,380 220,290 320,290 "
-            fill="none" stroke-width="3" stroke="black" />
-        <text x="295" y="360" text-anchor="middle" font-size="56">3</text>
+      <rect x="220" y="390" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="295" y="450" text-anchor="middle" font-size="56">4</text>
 
-        <rect x="220" y="390" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
-        <text x="295" y="450" text-anchor="middle" font-size="56">4</text>
+      <text x="495" y="50" text-anchor="middle" font-size="32">Esquema</text>
+      <text x="495" y="80" text-anchor="middle" font-size="32">flotante</text>
 
+      <rect x="420" y="100" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="495" y="160" text-anchor="middle" font-size="56">1</text>
 
-        <text x="495" y="50" text-anchor="middle" font-size="32">Esquema</text>
-        <text x="495" y="80" text-anchor="middle" font-size="32">absoluto</text>
+      <rect x="420" y="190" width="90" height="90" fill="none" stroke="blue" stroke-width="3" />
+      <text x="465" y="255" text-anchor="middle" font-size="56">2</text>
 
-        <rect x="530" y="120" width="50" height="320" fill="none" stroke="blue" stroke-width="3" />
-        <text x="555" y="300" text-anchor="middle" font-size="56">4</text>
+      <polygon points="520,190 570,190 570,380 420,380 420,290 520,290 " fill="none" stroke-width="3" stroke="black" />
+      <text x="495" y="350" text-anchor="middle" font-size="56">3</text>
 
-        <rect x="430" y="100" width="105" height="170" fill="white" stroke="blue" stroke-width="3" />
-        <text x="480" y="210" text-anchor="middle" font-size="56">3</text>
+      <rect x="420" y="390" width="150" height="80" fill="none" stroke="black" stroke-width="3" />
+      <text x="495" y="450" text-anchor="middle" font-size="56">4</text>
 
-        <rect x="420" y="250" width="100" height="100" fill="white" stroke="blue" stroke-width="3" />
-        <text x="470" y="320" text-anchor="middle" font-size="56">1</text>
+      <text x="695" y="50" text-anchor="middle" font-size="32">Esquema</text>
+      <text x="695" y="80" text-anchor="middle" font-size="32">absoluto</text>
 
-        <rect x="440" y="330" width="120" height="80" fill="white" stroke="blue" stroke-width="3" />
-        <text x="500" y="390" text-anchor="middle" font-size="56">2</text>
-      </svg>
-    </p>
+      <rect x="730" y="120" width="50" height="320" fill="none" stroke="blue" stroke-width="3" />
+      <text x="755" y="300" text-anchor="middle" font-size="56">4</text>
+
+      <rect x="630" y="100" width="105" height="170" fill="white" stroke="blue" stroke-width="3" />
+      <text x="680" y="210" text-anchor="middle" font-size="56">3</text>
+
+      <rect x="620" y="250" width="100" height="100" fill="white" stroke="blue" stroke-width="3" />
+      <text x="670" y="320" text-anchor="middle" font-size="56">1</text>
+
+      <rect x="640" y="330" width="120" height="80" fill="white" stroke="blue" stroke-width="3" />
+      <text x="700" y="390" text-anchor="middle" font-size="56">2</text>
+    </svg>
+  </p>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de diciembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 8 de enero de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
