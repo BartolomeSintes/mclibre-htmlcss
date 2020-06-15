@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Diferencias entre Chrome y Firefox. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Diferencias entre Microsoft Edge y Chrome y Firefox. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.ico">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <h1>Diferencias entre Chrome y Firefox</h1>
+  <h1>Diferencias entre Microsoft Edge y Chrome y Firefox</h1>
 
   <nav>
     <p>
@@ -26,43 +26,19 @@
       <h2>Diferencias GC/FF/ME</h2>
 
       <ul>
-        <li><a href="#uso">Utilización del navegador</a></li>
         <li><a href="#html">HTML</a></li>
         <li><a href="#css">CSS</a></li>
       </ul>
     </div>
   </nav>
 
-  <p>En esta página se recopilan las diferencias entre Chrome y Firefox que aparecen en otras lecciones de estos apuntes. Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes.</p>
+  <p>En esta página se recopilan las diferencias que había entre Microsoft Edge, el navegador incluido en Windows 10 entre 2015 y 2019, y Chrome y Firefox. En 2018 Microsoft anunció la sustitución de Microsoft Edge por un navegador basado en Chromium, el motor de Chrome, cuya primera versión estable se publicó finalmente en enero de 2020. Este nuevo navegador se sigue llamando Microsoft Edge, aunque también se le suele denominar Edge Chromium cuando se le quiere distinguir de la versión anterior. Estas diferencias aparecían en otras lecciones de estos apuntes, pero en junio de 2020 las he eliminado de los apuntes.</p>
 
-  <p>En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con los iconos <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">, <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">.</p>
+  <p>En esta página se incluyen únicamente ejemplos en los que Chrome y Firefox se comportan de forma diferente, aunque también se indica el comportamiento en ellos de Microsoft Edge. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">, <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32"> o <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">, <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32"> o <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">.</p>
 
-  <p>En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con los iconos <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">, <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32"></p>
+  <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes.</p>
 
-  <section id="uso">
-    <h2>Utilización del navegador</h2>
-
-    <section id="css-utf">
-      <h3>Archivos CSS en UTF-8</h3>
-
-      <p>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8.</p>
-    </section>
-
-    <section id="uso-zoom">
-      <h3>Zoom</h3>
-
-      <p>Firefox dispone de dos tipos de zoom:</p>
-
-      <ul>
-        <li>uno que sólo cambia el tamaño de texto,</li>
-        <li>otro que aumenta todos los elementos de la página (texto e imágenes)</li>
-      </ul>
-
-      <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
-    </section>
-  </section>
-
-  <section id="html">
+    <section id="html">
     <h2>HTML</h2>
 
     <section id="formularios">
@@ -81,9 +57,10 @@
         <ul>
           <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
           <li>Google Chrome utilizan normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Microsoft Edge combina ambos comportamientos: utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, pero también permite la combinación <kbd>Alt+tecla</kbd> cuando no está asociada a ninguna acción</li>
         </ul>
 
-        <p>En el ejemplo siguiente Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> para situar el cursor en las cajas de texto, mientras que Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd>:</p>
+        <p>En el ejemplo siguiente Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> para situar el cursor en las cajas de texto, Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd> y Microsoft Edge utiliza ambas:</p>
 
         <div class="filaflex">
           <div class="codigo">
@@ -104,7 +81,7 @@
 
         <p>Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
 
-        <p>En el ejemplo siguiente, Chrome no puede acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que esta combinación traslada el foco a la barra de dirección, pero puede hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
+        <p>En el ejemplo siguiente, Chrome y Microsoft Edge no pueden acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que esta combinación traslada el foco a la barra de dirección, pero pueden hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
 
         <div class="filaflex">
           <div class="codigo">
@@ -135,7 +112,7 @@
         <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
         <ul>
           <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-          <li>Chrome utiliza la combinación <kbd>Alt+tecla</kbd></li>
+          <li>Chrome y Microsoft Edge utilizan la combinación <kbd>Alt+tecla</kbd></li>
         </ul>
 
         <div class="filaflex">
@@ -178,6 +155,7 @@
         <ul>
           <li>Google Chrome no avanza de uno a otro</li>
           <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
+          <li>Microsoft Edge avanza de uno a otro con la combinación <kbd>Alt+tecla</kbd> y retrocede de uno a otro con <kbd>Alt+Shift+tecla</kbd></li>
         </ul>
 
         <div class="filaflex">
@@ -225,6 +203,7 @@
         <ul>
           <li>Chrome admite la coma (,) y el punto (.) como separadores de la parte decimal.</li>
           <li>Firefox sólo admite la coma (,) como separador de la parte decimal.</li>
+          <li>Microsoft Edge sólo admite el punto (.) como separador de la parte decimal.</li>
         </ul>
 
         <div class="filaflex">
@@ -248,12 +227,13 @@
           </p>
         </aside>
 
-        <p>Google Chrome muestra un control específico para seleccionar el mes y el año, pero Firefox no lo hace.</p>
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar el mes y el año, pero Firefox no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre><code class="language-html">Mes: &lt;input type="month" name="mes" size="20"&gt;</code></pre>
@@ -281,12 +261,13 @@
           </p>
         </aside>
 
-        <p>Google Chrome muestra un control específico para seleccionar la semana y el año, pero Firefox no lo hace.</p>
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar la semana y el año, pero Firefox no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre><code class="language-html">Semana: &lt;input type="week" name="semana" size="20"&gt;</code></pre>
@@ -314,12 +295,13 @@
           </p>
         </aside>
 
-        <p>Google Chrome muestra un control específico para seleccionar la fecha y hora, pero Firefox no lo hace.</p>
+        <p>Google Chrome y Microsoft Edge muestran un control específico para seleccionar la fecha y hora, pero Firefox no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre><code class="language-html">Fecha y hora: &lt;input type="datetime-local" name="fecha" size="20"&gt;</code></pre>
@@ -338,6 +320,34 @@
           <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1306217">Bug 1306217: Implement the layout for for &lt;input type="datetime-local"&gt;</a></li>
         </ul>
       </section>
+
+      <section id="formularios-input-image">
+        <h4 class="con-aside">Control de tipo imagen: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-formularios.html#control-input-image"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge envía el nombre de un control de tipo <span class="html-atri-valor">image</span> cuando se define el atributo <span class="html-atri">value</span>, pero Firefox y Google Chrome no lo hacen.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;input type="image" name="diana" value="click me" src="diana.svg" alt="Diana"&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/formularios/formularios-image-4.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-image-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
     </section>
 
     <section id="favicons">
@@ -351,12 +361,13 @@
           </p>
         </aside>
 
-        <p>Firefox admite favicons en formato SVG, pero Google Chrome no.</p>
+        <p>Firefox admite favicons en formato SVG, pero Google Chrome y Microsoft Edge no.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -372,6 +383,17 @@
         </div>
       </section>
 
+      <section id="favicons-locales">
+        <h4 class="con-aside">Favicons en archivos locales</h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-favicon.html#ejemplos"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge no muestra los favicons si las páginas no están colgadas en un servidor público (tanto si se abren como un archivo file://... como en un servidor local http://localhost/...).</p>
+      </section>
+
       <section id="favicons-animados">
         <h4 class="con-aside">Favicons animados</h4>
         <aside class="enlace-norma">
@@ -380,12 +402,13 @@
           </p>
         </aside>
 
-        <p>Firefox admite favicons animados, pero Google Chrome no.</p>
+        <p>Firefox y Microsoft Edge admiten favicons animados, pero Google Chrome no.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="resultado-object">
             <object type="text/html" data="../html/ejemplos/favicon/favicon-animado.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
@@ -400,7 +423,9 @@
     <section id="otros-mathml">
       <h3>MathML</h3>
 
-      <p>Firefox es capaz de mostrar elementos MathML, pero Chrome no.</p>
+      <p>Firefox es capaz de mostrar elementos MathML sin necesidad de plug-ins, aunque es necesario instalar fuentes adecuadas. Microsoft Edge requiere un plug-in para mostrar elementos MathML.</p>
+
+      <p>Firefox es capaz de mostrar archivos locales con elementos MathML. Microsoft Edge no. El motivo es es que Microsoft Edge carga cualquier documento con el tipo MIME text/html, mientras que Firefox carga los documentos que tienen la extensión .xhtml con el tipo MIME application/xhtml+xml.</p>
     </section>
   </section>
 
@@ -410,9 +435,152 @@
     <section id="css-alternativas">
       <h3>Hojas de estilo alternativas</h3>
 
-      <p>Firefox permite elegir hojas de estilo alternativas, pero Chrome no.</p>
+      <p>Firefox permite elegir hojas de estilo alternativas, pero Chrome y Microsoft Edge no.</p>
     </section>
 
+    <section id="pseudo-clases-pseudo-elementos">
+      <h3>Pseudo-clases y pseudo-elementos</h3>
+
+      <section id="pseudo-enlace">
+        <h4 class="con-aside">Pseudo-clases de enlace</h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-pseudoclases.html#pseudo-clase-enlace"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge "recuerda" los enlaces visitados mientras no se recargue la página, mientras que Firefox y Google Chrome los recuerdan hasta que se borra el historial en el navegador.</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">a:link {
+  color: green;
+}</code>
+  </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases-link-visited-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases-link-visited-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-css">a:visited {
+  color: red;
+}</code>
+  </pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases-link-visited-2.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases-link-visited-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pseudo-first-line">
+        <h4 class="con-aside">El pseudo-elemento <span class="css-pseudo">::first-line</span></h4>
+
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-pseudoclases.html#pseudo-first-line"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Aunque en el ejemplo siguiente, Google Chrome muestra la primera línea en mayúsculas, pero no correctamente. Parte del texto se pierde por el lado derecho. Parece como si Chrome calculara las palabras que se muestran en la primera línea de texto teniendo en cuenta el tamaño en minúsculas y al aplicar posteriormente el cambio a mayúsculas, el tamaño es mayor y el texto se extiende por la derecha, fuera de la vista.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p::first-line {
+  text-transform: uppercase;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases-first-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases-first-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="pseudo-first-letter">
+        <h4 class="con-aside">El pseudo-elemento <span class="css-pseudo">::first-letter</span></h4>
+
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-pseudoclases.html#pseudo-first-letter"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Si la imagen situada al principio del elemento es una imagen flotante, Firefox no modifica el aspecto de la primera letra de texto, aunque Chrome y Edge sí lo hacen.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p::first-letter {
+  color: red;
+}
+
+img {
+  float: right;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases-first-5.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases-first-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p::first-letter {
+  color: red;
+}
+
+img {
+  float: left;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/pseudoclases/pseudoclases-first-6.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/pseudoclases/pseudoclases-first-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p><strong>Nota</strong>: En realidad no tengo claro si quien lo hace bien es Firefox o Chrome y Edge.</p>
+      </section>
+    </section>
     <section id="css-fuente">
       <h3>Fuente</h3>
 
@@ -424,7 +592,7 @@
           </p>
         </aside>
 
-        <p>Si el ordenador dispone de fuentes que tengan ambas variantes, Firefox distingue entre los valores <span class="css-valor">italic</span> y <span class="css-valor">oblique</span> de la propiedad <span class="css-prop">font-style</span>, mientras que Google Chrome no lo hace.</p>
+        <p>Si el ordenador dispone de fuentes que tengan ambas variantes, Firefox distingue entre los valores <span class="css-valor">italic</span> y <span class="css-valor">oblique</span> de la propiedad <span class="css-prop">font-style</span>, mientras que Google Chrome y Microsoft Edge no lo hacen.</p>
 
         <p>El ejemplo siguiente puede verse correctamente en Firefox una vez instalada la fuente libre <a href="https://www.fontsquirrel.com/fonts/latin-modern-roman">Latin Modern Roman</a> (realmente son 11 fuentes distintas para cubrir las variantes más habituales).</p>
 
@@ -432,6 +600,7 @@
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -469,12 +638,13 @@ p.oblique {
           </p>
         </aside>
 
-        <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome.</p>
+        <p>La propiedad <span class="css-prop">font-size-adjust</span> funciona parcialmente en Firefox, pero no en Google Chrome ni Microsoft Edge.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -495,6 +665,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -516,6 +687,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -549,7 +721,7 @@ p.oblique {
         <p>Si un párrafo tiene sobrerrayado y el tamaño de las palabras no es siempre el mismo:</p>
 
         <ul>
-          <li>Chrome dibuja la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
+          <li>Chrome y Microsoft Edge dibujan la línea en la parte superior de cada carácter, desplazándola verticalmente en función del tamaño del carácter.</li>
           <li>Firefox mantiene la línea de sobrerrayado a la misma altura a lo largo de todo el párrafo, pero basándose en el texto de menor tamaño.</li>
         </ul>
 
@@ -559,6 +731,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32">
             <img src="../varios/iconos/icono-ff-unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32">
+            <img src="../varios/iconos/icono-edge-unknown.svg" alt="Por determinar en Edge" title="Por determinar en Edge" width="48" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -596,12 +769,13 @@ p.oblique {
           </p>
         </aside>
 
-        <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Chrome no lo hace.</p>
+        <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Chrome y Microsoft Edge no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -622,6 +796,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -643,6 +818,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -673,12 +849,13 @@ p.oblique {
           </p>
         </aside>
 
-        <p>Google Chrome no permite establecer el icono que muestra el elemento interactivo <span class="html-eti">&lt;summary&gt;</span> de <span class="html-eti">&lt;details&gt;</span> con la propiedad <span class="css-prop">list-style-type</span>, pero Firefox sí lo hace.</p>
+        <p>Google Chrome y Microsoft Edge no permiten establecer el icono que muestra el elemento interactivo <span class="html-eti">&lt;summary&gt;</span> de <span class="html-eti">&lt;details&gt;</span> con la propiedad <span class="css-prop">list-style-type</span>, pero Firefox sí lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -699,6 +876,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -720,7 +898,71 @@ p.oblique {
     <section id="css-interface-usuario">
       <h3>Interface de usuario</h3>
 
-     <section id="outline-en-linea">
+      <section id="cursor-context-menu">
+        <h4 class="con-aside">El valor <span class="css-valor">context-menu</span> de la propiedad <span class="css-prop">cursor</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-interface.html#cursor"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge muestra el icono correspondiente al valor <span class="css-valor">context-menu</span> de la propiedad <span class="css-prop">cursor</span>, pero Firefox y Google Chrome no lo hacen.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  cursor: context-menu;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/interface/cursor-context-menu.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/interface/cursor-context-menu.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="cursor-formatos">
+        <h4 class="con-aside">La propiedad <span class="css-prop">cursor</span></h4>
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-interface.html#cursor"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge solamente admite en la propiedad <span class="css-prop">cursor</span> cursores en <a href="https://en.wikipedia.org/wiki/ICO_%28icon_image_file_format%29" title="Formato CUR en Wikipedia (en inglés)">formato ICO o CUR</a>, (ICO es el formato de los iconos de Windows y CUR es el formato de los cursores no animados de Windows, prácticamente idéntico al formato ICO), mientras que Firefox y Google Chrome admiten otros formatos de imagen.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  cursor: url("exclamacion.png"), wait;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/interface/cursor-url-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/interface/cursor-url-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="outline-en-linea">
         <h4 class="con-aside">Contorno <span class="css-prop">outline</span> de un elemento en-línea</h4>
         <aside class="enlace-norma">
           <p>
@@ -728,12 +970,13 @@ p.oblique {
           </p>
         </aside>
 
-        <p>El contorno de un elemento en-línea no se muestra de la misma manera en Google Chrome que en Firefox.</p>
+        <p>El contorno de un elemento en-línea no se muestra de la misma manera en Microsoft Edge y Google Chrome que en Firefox.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32">
             <img src="../varios/iconos/icono-ff-unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32">
+            <img src="../varios/iconos/icono-edge-unknown.svg" alt="Por determinar en Edge" title="Por determinar en Edge" width="48" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -754,6 +997,7 @@ p.oblique {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -779,6 +1023,7 @@ p {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -809,12 +1054,13 @@ p {
           </p>
         </aside>
 
-        <p>Firefox y Google Chrome no muestran el valor <span class="css-valor">invert</span>. En la <a href="bugs-mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
+        <p>Firefox y Google Chrome no muestran el valor <span class="css-valor">invert</span>, mientras que Microsoft Edge sí lo hace. En la <a href="bugs-mozilla.html#bug-359497">página de bugs de Firefox</a> se explica qué motivos dan los desarrolladores de Firefox para no hacerlo.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -840,6 +1086,7 @@ p {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
@@ -865,6 +1112,7 @@ p {
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
             <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
           </div>
           <div class="codigo">
             <pre>
