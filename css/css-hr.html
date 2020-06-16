@@ -81,7 +81,7 @@
   <section id="color">
     <h2>Color: <span class="css-prop">color</span>, <span class="css-prop">background-color</span> y <span class="css-prop">border-color</span></h2>
 
-    <p>La propiedad <span class="css-prop">background-color</span> establece el color de la línea, aunque en Firefox la línea debe tener más de 2px de altura para ser visible y en Edge y Chrome basta con tener establecida la propiedad <span class="css-prop">height</span>.</p>
+    <p>La propiedad <span class="css-prop">background-color</span> establece el color de la línea, aunque en Firefox la línea debe tener más de 2px de altura para ser visible y en Chrome basta con tener establecida la propiedad <span class="css-prop">height</span>.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -169,13 +169,12 @@
 
     <hr class="corta">
 
-    <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Chrome y Edge no lo hace, como se comenta en la <a href="../otros/diferencias-listado.html#css-hr-color">página de diferencias entre navegadores</a>.</p>
+    <p>En Firefox la propiedad <span class="css-prop">color</span> establece el color del borde de la línea, pero en Chrome no lo hace, como se comenta en la <a href="../otros/diferencias-listado.html#css-hr-color">página de diferencias entre navegadores</a>.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
         <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
         <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
       </div>
       <div class="codigo">
         <pre>
@@ -197,7 +196,6 @@
       <div class="icono-navegadores">
         <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
         <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
       </div>
       <div class="codigo">
         <pre>
@@ -220,7 +218,6 @@
       <div class="icono-navegadores">
         <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
         <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-        <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
       </div>
       <div class="codigo">
         <pre>
@@ -382,23 +379,16 @@
 
     <p>Cuando se aplican las propiedades <span class="css-prop">margin-left</span>, <span class="css-prop">margin-right</span> y <span class="css-prop">width</span> a una línea, la línea se dibuja a la izquierda del espacio definido por los márgenes si hay <span class="css-prop">margin-left</span> o a la derecha si sólo hay <span class="css-prop">margin-right</span>.</p>
 
-    <p>Edge no interpreta correctamente las propiedades <span class="css-prop">margin-left</span> y <span class="css-prop">margin-right</span> cuando se utilizan junto con <span class="css-prop">width</span>. En Edge, la línea se dibuja en el centro del espacio definido por los márgenes.</p>
-
-    <p>En el ejemplo siguiente, la línea se sitúa a la izquierda del todo en Firefox y Chrome, pero en el centro en Edge:</p>
+    <p>En el ejemplo siguiente, la línea se sitúa a la izquierda del todo:</p>
 
     <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
-        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
-      </div>
       <div class="codigo">
         <pre>
 <code class="language-css">hr {
-background-color: red;
-height: 10px;
-margin-left: 0%;
-width: 50%;
+  background-color: red;
+  height: 10px;
+  margin-left: 0%;
+  width: 50%;
 }</code>
 </pre>
       </div>
@@ -410,21 +400,16 @@ width: 50%;
       </div>
     </div>
 
-    <p>En el ejemplo siguiente, la línea se sitúa a la derecha del todo en Firefox y Chrome, pero en el centro en Edge:</p>
+    <p>En el ejemplo siguiente, la línea se sitúa a la derecha del todo:</p>
 
     <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
-        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
-      </div>
       <div class="codigo">
         <pre>
 <code class="language-css">hr {
-background-color: red;
-height: 10px;
-margin-right: 0%;
-width: 50%;
+  background-color: red;
+  height: 10px;
+  margin-right: 0%;
+  width: 50%;
 }</code>
 </pre>
       </div>
@@ -436,21 +421,16 @@ width: 50%;
       </div>
     </div>
 
-    <p>En el ejemplo siguiente, la línea se sitúa a partir del centro en Firefox y Chrome, pero en el centro de la mitad derecha en Edge:</p>
+    <p>En el ejemplo siguiente, la línea se sitúa a partir del centro:</p>
 
     <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
-        <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
-      </div>
       <div class="codigo">
         <pre>
 <code class="language-css">hr {
-background-color: red;
-height: 10px;
-margin-left: 50%;
-width: 25%;
+  background-color: red;
+  height: 10px;
+  margin-left: 50%;
+  width: 25%;
 }</code>
 </pre>
       </div>
@@ -464,7 +444,7 @@ width: 25%;
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de noviembre de 2017</p>
+    <p class="ultmod">Última modificación de esta página: 16 de junio de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
