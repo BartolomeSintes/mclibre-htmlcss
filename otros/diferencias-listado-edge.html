@@ -26,6 +26,7 @@
       <h2>Diferencias GC/FF/ME</h2>
 
       <ul>
+        <li><a href="#uso">Utilización del navegador</a></li>
         <li><a href="#html">HTML</a></li>
         <li><a href="#css">CSS</a></li>
       </ul>
@@ -37,6 +38,12 @@
   <p>En esta página se incluyen únicamente ejemplos en los que Chrome y Firefox se comportan de forma diferente, aunque también se indica el comportamiento en ellos de Microsoft Edge. En los casos en los que el comportamiento del navegador se puede considerar correcto, se indica con el icono <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">, <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32"> o <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">. En los casos en los que el comportamiento del navegador se puede considerar erróneo, se indica con el icono <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">, <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32"> o <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">.</p>
 
   <p>Esta página no pretende ser una relación exhaustiva de diferencias, sino simplemente recopilar las diferencias que encontré al redactar estos apuntes.</p>
+
+  <section id="uso">
+    <h2>Utilización del navegador</h2>
+
+    <p>Para ver el código fuente de una página web en Edge, primero hay que abrir la página about:flags y marcar la casilla "Mostrar código fuente". A partir de ese momento, al hacer clic derecho sobre cualquier página, el menú contextual mostrará la opción <span class="soft-menu">Ver origen</span>. El código fuente se muestra en la ventana de desarrolladores.</p>
+  </section>
 
   <section id="html">
     <h2>HTML</h2>
@@ -79,7 +86,7 @@
           </p>
         </aside>
 
-        <p>Edge aumenta el tamaño de la fuente al destactar la etiqueta <span class="html-eti">&lt;kbd&gt;</span> usando un tipo de letra no proporcional (propiedad <span class="css-prop">font-family</span>: <span class="css-valor">monospace</span>), mientras de Firefox y Chrome no lo hacen.</p>
+        <p>Edge aumenta el tamaño de la fuente al destactar la etiqueta <span class="html-eti">&lt;kbd&gt;</span> usando un tipo de letra no proporcional (propiedad <span class="css-prop">font-family</span>: <span class="css-valor">monospace</span>), mientras que Firefox y Chrome no lo hacen.</p>
 
         <div class="filaflex">
           <div class="codigo">
@@ -92,6 +99,223 @@
           </div>
           <div class="icono-enlace">
             <a href="../html/ejemplos/texto/kbd.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="text-emphasis-css3">
+        <h4 class="con-aside">CSS 3 Énfasis: <span class="css-prop">text-emphasis</span></h4>
+
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css3-text-decoration.html#text-emphasis-css3"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Las propiedades <span class="css-prop">text-emphasis</span>, <span class="css-prop">text-emphasis-style</span> y <span class="css-prop">text-emphasis-position</span> funcionan en Firefox y Edge, pero no en Chrome.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: dot red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: circle red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: double-circle red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-3.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: triangle red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-4.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: sesame red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-5.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: "X" red;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-6.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>La propiedad <span class="css-prop">text-emphasis-position</span> funciona en Firefox, pero no en Chrome ni en Edge.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">p {
+  text-emphasis: double-circle red;
+  text-emphasis-position: under right;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/text-decoration/text-emphasis-position.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/text-decoration/text-emphasis-position.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="imagen">
+      <h3>Imágenes</h3>
+
+      <section id="img-formatos-apng">
+        <h4 class="con-aside">APNG</h4>
+
+        <aside class="enlace-norma">
+          <p>
+            <a href="../html/html-imagenes.html#img-formatos-apng"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Microsoft Edge no muestra las imágenes APNG, mientras que Firefox y Chrome sí lo hacen.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;img src="apng-balon.png" alt="Ejemplo de imagen en formato APNG"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/imagenes/apng-1.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/imagenes/apng-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;img src="apng-balon.png" alt="Ejemplo de imagen en formato APNG"
+  style="background-color: lightblue"&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/imagenes/apng-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/imagenes/apng-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
           </div>
         </div>
       </section>
@@ -1394,6 +1618,156 @@ p.oblique {
     <section id="css-listas">
       <h3>Listas</h3>
 
+      <section id="list-style-type">
+        <h4 class="con-aside">Tipo predefinidos de marcador: <span class="css-prop">list-style-type</span></h4>
+
+        <aside class="enlace-norma">
+          <p>
+            <a href="../css/css-listas.html#list-style-type"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+          </p>
+        </aside>
+
+        <p>Edge no muestra algunos de los valores de la propiedad <span class="css-prop">list-style-type</span>, mientras que Firefox y Chrome sí lo hacen. En su luagr, Edge muestra la lista como una lista no ordenada estándar.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">ul {
+  list-style-type: hebrew;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/listas/list-style-type-14.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/listas/list-style-type-14.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">ul {
+  list-style-type: hiragana;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/listas/list-style-type-18.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/listas/list-style-type-18.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">ul {
+  list-style-type: katakana;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/listas/list-style-type-19.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/listas/list-style-type-19.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">ul {
+  list-style-type: hiragana-iroha;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/listas/list-style-type-20.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/listas/list-style-type-20.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-css">ul {
+  list-style-type: katakana-iroha;
+}</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../css/ejemplos/listas/list-style-type-21.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../css/ejemplos/listas/list-style-type-21.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="listas-anidadas">
+        <h4>Lista dentro de lista</h4>
+
+        <p>La lista del ejemplo se ve de forma distinta en Google Chrome, Firefox y Microsoft Edge:</p>
+
+        <p>Se trata de una lista no ordenada dentro de otra lista no ordenada. La lista superior no contiene ningún texto, salvo la lista inferior. Google Chrome y Firefox muestran dos marcadores a la misma altura, mientras que Edge los muestra a diferentes alturas.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+            <img src="../varios/iconos/icono-edge-X.svg" alt="Incorrecto en Edge" title="Incorrecto en Edge" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Elemento de lista&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../otros/ejemplos/diferencias/lista-en-lista.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../otros/ejemplos/diferencias/lista-en-lista.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
       <section id="css-listas-icono-summary-details">
         <h4 class="con-aside">Icono del elemento <span class="html-eti">&lt;summary&gt;</span> de <span class="html-eti">&lt;details&gt;</span></h4>
         <aside class="enlace-norma">
@@ -1601,6 +1975,7 @@ p {
 
       <section id="outline-invert">
         <h4 class="con-aside">Color <span class="css-valor">invert</span> en la propiedad <span class="css-prop">outline</span></h4>
+
         <aside class="enlace-norma">
           <p>
             <a href="../css/css-interface.html#outline"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
@@ -1688,10 +2063,45 @@ p {
         </div>
       </section>
     </section>
+
+    <section id="columns">
+      <h3 class="con-aside">La propiedad compuesta <span class="css-prop">columns</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <a href="../css/css3-columnas.html#columns"><img src="../varios/iconos/icono-diferencias.svg" alt="Ir a la lección" title="Ir a la lección" width="32" height="32"></a>
+        </p>
+      </aside>
+
+      <p>Si se escriben dos valores en la propiedad compuesta <span class="css-prop">columns</span>, si el elemento tiene un tamaño predefinido, Firefox y Edge hacen caso únicamente al número de columnas, pero si el elemento no tiene un tamaño predefinido (tablas, elementos flotantes, etc.), se hace caso de los dos valores. Chrome no lo hace.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+          <img src="../varios/iconos/icono-edge.svg" alt="Correcto en Edge" title="Correcto en Edge" width="33" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  columns: 2 8em;
+  float: left;
+  text-align: justify;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="../css/ejemplos/columnas/columns-3.html" style="width: 100%; height: 19em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="../css/ejemplos/columnas/columns-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 15 de junio de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 17 de junio de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
