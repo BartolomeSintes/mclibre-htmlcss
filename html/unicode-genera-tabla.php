@@ -582,8 +582,8 @@ function genera_pagina($pagina)
 }
 
 //aVer(filtra_grupo($caracteres_unicode, "0000", "007F", PAG_SIMBOLOS));
-genera_pagina(PAG_SIMBOLOS);
-// genera_pagina(PAG_EMOJIS);
+// genera_pagina(PAG_SIMBOLOS);
+genera_pagina(PAG_EMOJIS);
 
 // Puñetitas varias
 // * No he tenido en cuenta si hay un carácter simple que no se ve en Windows pero sí está en twemoji
