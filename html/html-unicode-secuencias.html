@@ -16,6 +16,12 @@
       src: url("unicode/TwitterColorEmoji-SVGinOT.ttf");
     }
 
+    p.ejemplo-secuencia {
+      font-size: 3rem;
+      line-height: 4rem;
+      margin: 1rem 0;
+    }
+
     div.u-l {
       display: flex;
       flex-flow: row wrap;
@@ -27,41 +33,51 @@
       flex-flow: row wrap;
     }
 
-    div.u {
+    div.u,
+    div.u2 {
       display: flex;
       flex-direction: column;
-      flex: 0 1 300px;
       margin: 5px;
       border: black 1px solid;
       text-align: center;
     }
 
-    div.u p:nth-child(odd) {
+    div.u {
+      flex: 0 1 300px;
+    }
+
+    div.u2 {
+      flex: 0 1 400px;
+    }
+
+    div.u p:nth-child(odd),
+    div.u2 p:nth-child(odd) {
       background-color: #eee;
     }
 
-    div.u p {
+    div.u p,
+    div.u2 p {
       margin: 0;
       padding: 5px 10px;
     }
 
-    div.u p.uc {
+    p.uc {
       font-weight: bold;
     }
 
-    div.u p.si {
+    p.si {
       font-size: 80px;
       line-height: 100px;
       text-align: center;
     }
 
-    div.u span.ss {
+    span.ss {
       font-family: sans-serif;
       border-right: 2px solid black;
       padding-right: 20px;
     }
 
-    div.u span.te {
+    span.te {
       font-family: "Twemoji";
     }
 
@@ -69,32 +85,18 @@
       height: 90px;
     }
 
-    div.u .twe {
+    .twe {
       height: 90px;
       vertical-align: text-bottom;
     }
 
-    div.u p.no {
+    p.no {
       flex: 1 0 auto;
       text-transform: uppercase;
     }
 
-    div.u a {
-      border: none;
-      text-decoration: none;
-      color: black;
-    }
-
-    table.u {
-      border-spacing: 20px 0;
-    }
-
-    table.u span.te {
-      font-family: "Twemoji";
-      font-size: 80px;
-    }
-
-    table.u a {
+    div.u a,
+    div.u2 a {
       border: none;
       text-decoration: none;
       color: black;
@@ -124,17 +126,27 @@
       <h2>Secuencias</h2>
 
       <ul>
-        <li><a href="#banderas">Banderas</a></li>
-        <li><a href="#selectores-variacion">Selector Texto / Emoji</a></li>
-        <li><a href="#fitzpatrick">Color de piel</a></li>
-        <li><a href="#secuencias-zwj">Secuencias ZWJ</a></li>
-        <li><a href="#familias">Familias</a></li>
-        <li><a href="#enamorados">Parejas de enamorados</a></li>
-        <li><a href="#enamorados-besandose">Enamorados besándose</a></li>
-        <li><a href="#parejas-neutras-colores-piel">Parejas neutras colores piel</a></li>
-        <li><a href="#parejas-genero-colores-piel">Parejas género colores piel</a></li>
-        <li><a href="#generos">Géneros</a></li>
-        <li><a href="#banderas-subdivisiones">Banderas (subdivisiones)</a></li>
+        <li><a href="#secuencias">Secuencias</a>
+          <ul>
+            <li><a href="#selectores-variacion">Selector Texto / Emoji</a></li>
+            <li><a href="#fitzpatrick">Color de piel (Fitzpatrick)</a></li>
+            <li><a href="#secuencias-zwj">Secuencias ZWJ</a></li>
+          </ul>
+        </li>
+        <li><a href="#tipos">Tipos de secuencias</a>
+          <ul>
+            <li><a href="#generos">Géneros</a></li>
+            <li><a href="#colores-piel">Colores de piel</a></li>
+            <li><a href="#familias">Familias</a></li>
+            <li><a href="#enamorados">Parejas de enamorados</a></li>
+            <li><a href="#enamorados-besandose">Enamorados besándose</a></li>
+            <li><a href="#parejas-neutras-colores-piel">Parejas neutras colores piel</a></li>
+            <li><a href="#parejas-genero-colores-piel">Parejas género colores piel</a></li>
+            <li><a href="#banderas">Banderas</a></li>
+            <li><a href="#banderas-subdivisiones">Banderas (subdivisiones)</a></li>
+            <li><a href="#otras">Otras</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
   </nav>
@@ -151,7 +163,7 @@
   <p>Como complemento a las lecciones anteriores, las páginas siguientes muestran diferentes símbolos Unicode agrupados por temas:</p>
   <ul>
     <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los emojis que tiene versión en modo texto)</li>
-    <li><a href="html-unicode-dibujos.html">Dibujos</a>, que muestra únicamente los caracteres Unicode que corresponden a los emojis (en color)</li>
+    <li><a href="html-unicode-dibujos.html">Emojis</a>, que muestra únicamente los caracteres Unicode que corresponden a los emojis (en color)</li>
     <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
     <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
     <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
@@ -159,12 +171,10 @@
     <li><a href="html-unicode-secuencias-problematicas.html">Problemáticas</a>, que muestra las secuencias Unicode que los sistemas operativos o navegadores no admiten actualmente</li>
   </ul>
 
-  <p class="incompleto"><img src="../varios/iconos/icono-en-construccion.svg" alt="En construcción" title="En construcción" width="55" height="48">Falta alguna descripción de tipos de secuencias.</p>
-
   <section id="info">
     <h2>Información contenida en las fichas</h2>
 
-    <p>Las fichas siguientes muestran los dibujos (emoticonos, emojis y otros) correspondientes a secuencias de Unicode. Para cada secuencia se muestra:</p>
+    <p>Los ejemplos de secuencias Unicode de esta lección se muestran en forma de fichas. En cada ficha se muestra:</p>
 
     <ul>
       <li>la secuencia de códigos Unicode hexadecimal (el formato es U+HHHH, donde HHHH es un número hexadecimal)</li>
@@ -179,742 +189,1136 @@
     </ul>
   </section>
 
-  <section id="banderas">
-    <h2>Banderas</h2>
+  <section id="secuencias">
+    <h2>Secuencias Unicode</h2>
 
-    <p>Los emojis correspondientes a las banderas de los países del mundo se obtienen escribiendo el código de dos letras <a href="https://es.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> correspondiente al país. Las letras que se deben utilizar son los caracteres Unicode denominados letras para símbolos de indicadores regionales, que se extienden del carácter U+1F1E6 (letra A) a U+1F1FF (letra Z).</p>
+    <p>Las secuencias Unicode están formadas por varios caracteres Unicode consecutivos, sin espacios intermedios. El número de caracteres que forman las secuencias puede oscilar entre dos y ocho caracteres. Las secuencias permitidas están definidas en la norma Unicode.</p>
 
-    <hr class="corta">
+    <p>Algunas secuencias Unicode combinan varios caracteres que corresponden cada uno de ellos a un emoji, pero la mayoría utiliza también una serie de caracteres especiales: los selectores de variación VS16 y VS 16, los modificadores Fitzpatrick o el carácter Zero-width Joiner (ZWJ).</p>
 
-    <p>Por ejemplo, para mostrar la bandera de España se deben escribir (sin espacios entre ellos) los caracteres de indicadores regionales E (U+1F1EA) y S (U+1F1F8):</p>
+    <p>Se explican a continuación estos tres tipos de caracteres especiales:</p>
 
-    <div class="u" style="width: 300px">
-      <p class="uc">U+1F1EA U+1F1F8 </p>
-      <p class="si">
-        <span class="ss">&#x1F1EA;&#x1F1F8;</span>
-        <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f1ea-1f1f8.svg">&#x1F1EA;&#x1F1F8;</a></span>
-      </p>
-      <p class="en">hexadecimal: <strong>&amp;#x1f1ea;&amp;#x1f1f8;</strong><br>decimal: <strong>&amp;#127466;&amp;#127480;</strong></p>
-      <p class="no">ES: Spain</p>
-    </div>
+    <section id="selectores-variacion">
+      <h3>Selectores de variación VS15 y VS16 (texto/emoji)</h3>
 
-    <p>El ejemplo siguiente muestra cómo se incluiría en una página web la secuencia que representa la bandera de España:</p>
+      <p>Algunos caracteres Unicode tienen varias representaciones gráficas posibles. Para indicar la representación deseada se debe escribir a continuación del carácter Unicode uno de los dieciséis <a href="https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)">selectores de variación</a>, sin espacios en blanco intermedios. Los selectores de variación son los caracteres Unicode desde U+FE00 a U+FE0F, aunque existe otro grupo de 256 selectores de variación adicionales.</p>
 
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
+      <p>Una de las posibles variaciones en las representaciones gráficas es la variación texto/emoji. Algunos caracteres se pueden representar como texto (suelen ser unos dibujos esquemáticos en blanco y negro) o como emojis (suelen ser dibujos más elaborados y en color). Puede consultar la <a href="https://unicode.org/emoji/charts/emoji-variants.html">lista completa de caracteres con representaciones texto/emoji</a>.</p>
+
+      <p>La representación como texto se indica con el selector de variación VS15 (carácter U+FE0E) y la representación como emoji se indica con el selector de variación VS16 (carácter U+FE0F). Los caracteres que admiten ambas representaciones tienen una representación predeterminada, que puede ser una u otra.</p>
+
+      <hr class="corta">
+
+      <p>Por ejemplo, los caracteres Unicode U+231A (reloj) y U26F9 (persona con balón) admiten las dos representaciones, pero tienen representaciones predeterminadas distintas:</p>
+
+      <p class="ejemplo-secuencia">&#x231a; + VS15 = &#x231a;&#xfe0e;</p>
+
+      <div class="u-l2">
+        <div class="u">
+          <p class="uc">U+231A </p>
+          <p class="si">
+            &#x231A;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x231a;</strong><br>decimal: <strong>&amp;#8986;</strong></p>
+          <p class="no">watch</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+231A U+FE0E</p>
+          <p class="si">
+            &#x231A;&#xFE0E;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x231a;&amp;#xfe0e;</strong><br>decimal: <strong>&amp;#8986;&amp;#65038;</strong></p>
+          <p class="no">watch (TEXTO)</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+231A U+FE0F</p>
+          <p class="si">
+            &#x231A;&#xFE0F;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x231a;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#8986;&amp;#65039;</strong></p>
+          <p class="no">watch (EMOJI)</p>
+        </div>
+      </div>
+
+      <p class="ejemplo-secuencia">&#x26f9; + VS16 = &#x26f9;&#xfe0f;</p>
+
+      <div class="u-l2">
+        <div class="u">
+          <p class="uc">U+26F9 </p>
+          <p class="si">
+            &#x26F9;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x26f9;</strong><br>decimal: <strong>&amp;#9977;</strong></p>
+          <p class="no">person with ball</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+26F9 U+FE0E</p>
+          <p class="si">
+            &#x26F9;&#xFE0E;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0e;</strong><br>decimal: <strong>&amp;#9977;&amp;#65038;</strong></p>
+          <p class="no">person with ball (TEXTO)</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+26F9 U+FE0F</p>
+          <p class="si">
+            &#x26F9;&#xFE0F;
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;</strong></p>
+          <p class="no">person with ball (EMOJI)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitzpatrick">
+      <h3>Colores de piel (modificadores Fitzpatrick)</h3>
+
+      <p>Los modificadores <a href="https://es.wikipedia.org/wiki/Fototipo">Fitzpatrick</a> son cinco caracteres Unicode consecutivos, desde U+1F3FB hasta U+1F3FF, que representan cinco tonalidades de piel, de la más clara a la más oscura.</p>
+
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F3FB </p>
+          <p class="si">
+            <span class="ss">&#x1F3FB;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fb.svg">&#x1F3FB;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#127995;</strong></p>
+          <p class="no">emoji modifier Fitzpatrick type-1-2</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+1F3FC </p>
+          <p class="si">
+            <span class="ss">&#x1F3FC;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fc.svg">&#x1F3FC;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#127996;</strong></p>
+          <p class="no">emoji modifier Fitzpatrick type-3</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+1F3FD </p>
+          <p class="si">
+            <span class="ss">&#x1F3FD;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fd.svg">&#x1F3FD;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#127997;</strong></p>
+          <p class="no">emoji modifier Fitzpatrick type-4</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+1F3FE </p>
+          <p class="si">
+            <span class="ss">&#x1F3FE;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fe.svg">&#x1F3FE;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#127998;</strong></p>
+          <p class="no">emoji modifier Fitzpatrick type-5</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+1F3FF </p>
+          <p class="si">
+            <span class="ss">&#x1F3FF;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3ff.svg">&#x1F3FF;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#127999;</strong></p>
+          <p class="no">emoji modifier Fitzpatrick type-6</p>
+        </div>
+      </div>
+
+      <p>Cuando estos caracteres se escriben a continuación de algunos emojis que representan individuos, los emojis se muestran con el color de piel correspondiente.</p>
+
+      <hr class="corta">
+
+      <p>Por ejemplo, para mostrar el emoji de una niña con la piel oscura, se deben escribir (sin espacios entre ellos) el carácter correspondiente a una niña (U+1F467) y el modificador Fitzpatrick de tipo 6 (U+1F3FF):</p>
+
+      <p class="ejemplo-secuencia">&#x1f467; + &#x1f3ff; = &#x1f467;&#x1f3ff;</p>
+
+      <div class="u-l2">
+        <div class="u">
+          <p class="uc">U+1F467 </p>
+          <p class="si">
+            <span class="ss">&#x1F467;</span>
+            <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f467.svg">&#x1F467;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128103;</strong></p>
+          <p class="no">girl</p>
+        </div>
+
+        <div class="u">
+          <p class="uc">U+1F467 U+1F3FF</p>
+          <p class="si">
+            <span class="ss">&#x1F467;&#x1F3FF;</span>
+            <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f467-1f3ff.svg">&#x1f467;&#x1f3ff;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f467;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128103;&amp;#127999;</strong></p>
+          <p class="no">girl: dark skin tone</p>
+        </div>
+      </div>
+
+      <p>El ejemplo siguiente muestra el carácter &amp;#x1F467 (chica) seguido de cada uno de los modificadores Fitzpatrick:</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
 <code class="language-html">
-  &lt;p style="font-size: 4rem;"&gt;&amp;#x1F1EA; + &amp;#x1F1F8; = <span class="codigo-resaltado">&amp;#x1F1EA;&amp;#x1F1F8;</span>&lt;/p&gt;
-</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/texto/entidades-banderas.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/texto/entidades-banderas.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
+&lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FB; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FB;</span>&lt;/p&gt;
 
-    <p>Las capturas siguientes muestran cómo se ve actualmente (octubre de 2019) el ejemplo anterior en varios sistemas operativos:</p>
+&lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FC; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FC;</span>&lt;/p&gt;
 
-    <div class="u-l">
-      <div class="resultado-object">
-        <p>Firefox en Windows 7:</p>
-        <p>
-          <img src="unicode/entidades-banderas-win7-ff.png" alt="Banderas en Windows 7 con Firefox" width="350" height="90" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Chrome/Internet Explorer en Windows 7:</p>
-        <p>
-          <img src="unicode/entidades-banderas-win7-gc.png" alt="Banderas en Windows 7 con Chrome" width="260" height="72" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Navegadores en Windows 10:</p>
-        <p>
-          <img src="unicode/entidades-banderas-win10.png" alt="Banderas en Windows 10" width="210" height="45" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Navegadores en Android 9/10:</p>
-        <p>
-          <img src="unicode/entidades-banderas-android-9.png" alt="Banderas en Android" width="376" height="80" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Safari en iOS 13:</p>
-        <p>
-          <img src="unicode/entidades-banderas-safari-13.png" alt="Banderas en iOS" width="325" height="75">
-        </p>
-      </div>
-    </div>
-  </section>
+&lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FD; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FD;</span>&lt;/p&gt;
 
-  <section id="selectores-variacion">
-    <h2>Selectores de variación VS15 y VS16</h2>
+&lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FE; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FE;</span>&lt;/p&gt;
 
-    <p>Algunos caracteres Unicode tienen varias representaciones gráficas posibles. Para indicar la representación deseada se debe escribir a continuación del carácter Unicode uno de los dieciséis <a href="https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)">selectores de variación</a>, sin espacios en blanco intermedios. Los selectores de variación son los caracteres Unicode desde U+FE00 a U+FE0F, aunque existe otro grupo de 256 selectores de variación adicionales.</p>
-
-    <p>Una de las posibles variaciones en las representaciones gráficas es la variación texto/emoji. Algunos caracteres se pueden representar como texto (suelen ser unos dibujos esquemáticos en blanco y negro) o como emojis (suelen ser dibujos más elaborados y en color). Puede consultar la <a href="https://unicode.org/emoji/charts/emoji-variants.html">lista completa de caracteres con representaciones texto/emoji</a>.</p>
-
-    <p>La representación como texto se indica con el selector de variación VS15 (carácter U+FE0E) y la representación como emoji se indica con el selector de variación VS16 (carácter U+FE0F). Los caracteres que admiten ambas representaciones tienen una representación predeterminada, que puede ser una u otra.</p>
-
-    <p>Por ejemplo, los caracteres Unicode U+231A (reloj) y U26F9 (persona con balón) admiten las dos representaciones, pero tienen representaciones predeterminadas distintas:</p>
-
-    <div class="u-l2">
-      <div class="u">
-        <p class="uc">U+231A </p>
-        <p class="si">
-          &#x231A;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x231a;</strong><br>decimal: <strong>&amp;#8986;</strong></p>
-        <p class="no">watch</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+231A U+FE0E</p>
-        <p class="si">
-          &#x231A;&#xFE0E;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x231a;&amp;#xfe0e;</strong><br>decimal: <strong>&amp;#8986;&amp;#65038;</strong></p>
-        <p class="no">watch (TEXTO)</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+231A U+FE0F</p>
-        <p class="si">
-          &#x231A;&#xFE0F;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x231a;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#8986;&amp;#65039;</strong></p>
-        <p class="no">watch (EMOJI)</p>
-      </div>
-    </div>
-
-    <div class="u-l2">
-      <div class="u">
-        <p class="uc">U+26F9 </p>
-        <p class="si">
-          &#x26F9;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x26f9;</strong><br>decimal: <strong>&amp;#9977;</strong></p>
-        <p class="no">person with ball</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+26F9 U+FE0E</p>
-        <p class="si">
-          &#x26F9;&#xFE0E;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0e;</strong><br>decimal: <strong>&amp;#9977;&amp;#65038;</strong></p>
-        <p class="no">person with ball (TEXTO)</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+26F9 U+FE0F</p>
-        <p class="si">
-          &#x26F9;&#xFE0F;
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;</strong></p>
-        <p class="no">person with ball (EMOJI)</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="fitzpatrick">
-    <h2>Colores de piel (modificador Fitzpatrick)</h2>
-
-    <p>Los modificadores <a href="https://es.wikipedia.org/wiki/Fototipo">Fitzpatrick</a> son cinco caracteres Unicode consecutivos, desde U+1F3FB hasta U+1F3FF, que representan cinco tonalidades de piel, de la más clara a la más oscura.</p>
-
-    <div class="u-l">
-      <div class="u">
-        <p class="uc">U+1F3FB </p>
-        <p class="si">
-          <span class="ss">&#x1F3FB;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fb.svg">&#x1F3FB;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f3fb;</strong><br>decimal: <strong>&amp;#127995;</strong></p>
-        <p class="no">emoji modifier Fitzpatrick type-1-2</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+1F3FC </p>
-        <p class="si">
-          <span class="ss">&#x1F3FC;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fc.svg">&#x1F3FC;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f3fc;</strong><br>decimal: <strong>&amp;#127996;</strong></p>
-        <p class="no">emoji modifier Fitzpatrick type-3</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+1F3FD </p>
-        <p class="si">
-          <span class="ss">&#x1F3FD;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fd.svg">&#x1F3FD;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f3fd;</strong><br>decimal: <strong>&amp;#127997;</strong></p>
-        <p class="no">emoji modifier Fitzpatrick type-4</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+1F3FE </p>
-        <p class="si">
-          <span class="ss">&#x1F3FE;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3fe.svg">&#x1F3FE;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#127998;</strong></p>
-        <p class="no">emoji modifier Fitzpatrick type-5</p>
-      </div>
-
-      <div class="u">
-        <p class="uc">U+1F3FF </p>
-        <p class="si">
-          <span class="ss">&#x1F3FF;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3ff.svg">&#x1F3FF;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#127999;</strong></p>
-        <p class="no">emoji modifier Fitzpatrick type-6</p>
-      </div>
-    </div>
-
-    <p>Cuando estos caracteres se escriben a continuación de algunos emojis que representan individuos, los emojis se muestran con el color de piel correspondiente.</p>
-
-    <hr class="corta">
-
-    <p>Por ejemplo, para mostrar el emoji de una niña con la piel oscura, se deben escribir (sin espacios entre ellos) el carácter correspodiente a una niña (U+1F467) y el modificador Fitzpatrick de tipo 6 (U+1F1F8):</p>
-
-    <div class="u-l2">
-      <div class="u">
-        <p class="uc">U+1F467 </p>
-        <p class="si">
-          <span class="ss">&#x1F467;</span>
-          <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f467.svg">&#x1F467;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f467;</strong><br>decimal: <strong>&amp;#128103;</strong></p>
-        <p class="no">girl</p>
-      </div>
-
-      <div class="u" style="width: 300px">
-        <p class="uc">U+1F467 U+1F3FF</p>
-        <p class="si">
-          <span class="ss">&#x1F467;&#x1F3FF;</span>
-          <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f467-1f3ff.svg">&#x1f467;&#x1f3ff;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f467;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128103;&amp;#127999;</strong></p>
-        <p class="no">girl: dark skin tone</p>
-      </div>
-    </div>
-
-    <p>El ejemplo siguiente muestra el carácter &amp;#x1F467 (chica) seguido de cada uno de los modificadores Fitzpatrick:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">
-  &lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FB; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FB;</span>&lt;/p&gt;
-
-  &lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FC; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FC;</span>&lt;/p&gt;
-
-  &lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FD; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FD;</span>&lt;/p&gt;
-
-  &lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FE; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FE;</span>&lt;/p&gt;
-
-  &lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FF; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FF;</span>&lt;/p&gt;
+&lt;p style="font-size: 3rem; line-height: 1rem;"&gt;&amp;#x1F467; + &amp;#x1F3FF; = <span class="codigo-resaltado">&amp;#x1F467;&amp;#x1F3FF;</span>&lt;/p&gt;
 </code>
   </pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/texto/entidades-fitzpatrick.html" style="width: 100%; height: 23em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/texto/entidades-fitzpatrick.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
       </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/texto/entidades-fitzpatrick.html" style="width: 100%; height: 23em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/texto/entidades-fitzpatrick.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
+    </section>
 
-    <p>Las capturas siguientes muestran cómo se ve actualmente (octubre de 2019) el ejemplo anterior en Firefox en Windows 7, en Google Chrome en Windows 7 y en Windows 10:</p>
+    <section id="secuencias-zwj">
+      <h3>Secuencias Zero-width Joiner (ZWJ) de caracteres Unicode</h3>
 
-    <div class="u-l">
-      <div class="resultado-object">
-        <p>Firefox en Windows 7:</p>
-        <p>
-          <img src="unicode/entidades-fitzpatrick-win7-ff.png" alt="Secuencia Fitzpatrick en Windows 7 con Firefox" width="350" height="85" class="vmedio">
-        </p>
+      <p>El carácter ZWJ (Zero-Width Joiner, es decir Conector sin anchura) es el carácter Unicode U+200D. Se introdujo para indicar que dos o más caracteres se deben escribir en forma conectada y se utiliza de forma habitual en escrituras como la árabe o las indias. El carácter ZWJ se escribe entre los dos caracteres que se quieren considerar conjuntamente, sin espacios intermedios.</p>
+
+      <p>El carácter ZWJ también se utiliza para definir nuevos emojis combinando dos o más emojis simples, como puede verse en el <a href="http://www.unicode.org/emoji/charts/emoji-zwj-sequences.html">catálogo de secuencias emoji ZWJ</a>.</p>
+
+      <p>En algunos casos, los navegadores muestran el resultado aunque se omita el carácter ZWJ, escribiendo los caracteres uno a continuación del otro, sin separación, pero no se recomienda hacerlo.</p>
+
+      <hr class="corta">
+
+      <p>Por ejemplo, para mostrar el emoji de un perro guía se debe escribir el carácter correspondiente a un perro (U+1F415) y el carácter correspondiente a un chaleco salvavidas (U+1F9BA), intercalando el carácter ZWJ (U+0200D), sin espacios entre ellos:</p>
+
+      <p class="ejemplo-secuencia">&#x1F415; + ZWJ + &#x1F9BA; = &#x1F415;&#x200D;&#x1F9BA;</p>
+
+      <div class="u-l2">
+        <div class="u">
+          <p class="uc">U+1F415 U+200D U+1F9BA </p>
+          <p class="si">
+            <span class="ss">&#x1F415;&#x200D;&#x1F9BA;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f415-200d-1f9ba.svg">&#x1F415;&#x200D;&#x1F9BA;</a></span>
+          </p>
+          <p class="en">
+            Hex: <strong>&amp;#x1f415;&amp;#x200d;&amp;#x1f9ba;</strong><br>
+            Dec: <strong>&amp;#128021;&amp;#8205;&amp;#129466;</strong>
+          </p>
+          <p class="no">service dog</p>
+        </div>
       </div>
-      <div class="resultado-object">
-        <p>Chrome/Internet Explorer en Windows 7:</p>
-        <p>
-          <img src="unicode/entidades-fitzpatrick-win7-gc.png" alt="Secuencia Fitzpatrick en Windows 7 con Chrome" width="370" height="80" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Navegadores en Windows 10:</p>
-        <p>
-          <img src="unicode/entidades-fitzpatrick-win10.png" alt="Secuencia Fitzpatrick en Windows 10" width="350" height="75" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Navegadores en Android 9/10:</p>
-        <p>
-          <img src="unicode/entidades-fitzpatrick-android-9.png" alt="Secuencia Fitzpatrick en Android" width="375" height="100" class="vmedio">
-        </p>
-      </div>
-      <div class="resultado-object">
-        <p>Safari en iOS 13:</p>
-        <p>
-          <img src="unicode/entidades-fitzpatrick-safari-13.png" alt="Secuencia Fitzpatrick en iOS" width="427" height="80">
-        </p>
-      </div>
-    </div>
+    </section>
   </section>
 
-  <section id="secuencias-zwj">
-    <h2>Secuencias Zero-width Joiner (ZWJ) de caracteres Unicode</h2>
+  <section id="tipos">
+    <h2>Tipos de secuencias</h2>
 
-    <p>El carácter ZWJ (Zero-Width Joiner, es decir Conector sin anchura) es el carácter Unicode U+200D. Se introdujo para indicar que dos o más caracteres se deben escribir en forma conectada y se utiliza de forma habitual en escrituras como la árabe o las indias. El carácter ZWJ se escribe entre los dos caracteres que se quieren considerar conjuntamente, sin espacios intermedios.</p>
+    <p>Algunas secuencias Unicode siguen reglas de construcción similares. Se explican a continuación estas reglas.</p>
 
-    <p>El carácter ZWJ también se utiliza para definir nuevos emojis combinando dos o más emojis simples, como puede verse en el <a href="http://www.unicode.org/emoji/charts/emoji-zwj-sequences.html">catálogo de secuencias emoji ZWJ</a>.</p>
+    <section id="generos">
+      <h3>Géneros (masculino, femenino, neutro)</h3>
 
-    <p>En algunos casos, los navegadores muestran el resultado aunque se omita el carácter ZWJ, escribiendo los caracteres uno a continuación del otro, sin separación, pero no se recomienda hacerlo.</p>
+      <p>Los emojis correspondientes a profesiones o actividades con personajes masculinos, femeninos o neutros se obtienen mediante varios tipos de secuencias ZWJ:</p>
 
-    <p>En los apartados siguientes se comentan de forma separada varios tipos de secuencias ZWJ que producen emojis relacionados entre sí (familias, parejas, emojis con género específico, etc.).</p>
-  </section>
+      <ul>
+        <li id="genero-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#genero-1">apartado Género (1) de la lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
+          <ul>
+            <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>) o U+1F9D1 (adulto sin género <span class="grande">&#x1f9d1;</span>)</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter de un objeto relacionado con la profesión</li>
+          </ul>
 
-  <section id="familias">
-    <h2>Familias</h2>
+          <p><strong>Nota</strong>: Actualmente (junio 2020), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
-    <p>Los emojis correspondientes a las familias formadas por uno o dos padres o madres y uno o dos hijos o hijas se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>), U+1F466 (niño <span class="grande">&#x1f466;</span>) y U+1F467 (niña <span class="grande">&#x1f467;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Las únicas restricciones es que los padres deben escribirse antes que los hijos, que si los padres son un hombre y una mujer, el hombre debe escribirse antes que la mujer y que si los hijos son un niño y una niña, la niña debe escribirse antes que el niño.</p>
+          <hr class="corta">
 
-    <hr class="corta">
+          <p>Por ejemplo, para mostrar un hombre, una mujer o un personaje neutro cocineros se debe escribir la secuencia Hombre/Mujer/Adulto + ZWJ + Sartén (U+1F468/U+1F469/U+1F9D1 U+200D U+1F373):</p>
 
-    <p>Por ejemplo, para mostrar la familia mostrada por un padre y una madre y un niño y una niña se debe escribir la secuencia Hombre + ZWJ + Mujer + ZWJ + Niña + ZWJ + Niño (U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466)</p>
+          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x1F373; = &#x1F469;&#x200D;&#x1F373;</p>
 
-    <p style="font-size: 4rem; line-height: 4rem;">&#x1F468; + &#x1F469; + &#x1F467; + &#x1F466; = &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</p>
+          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x1F373; = &#x1F468;&#x200D;&#x1F373;</p>
 
-    <div class="u-l2">
-      <div class="u">
-        <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
-        <p class="si">
-          <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f467-200d-1f466.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
-        <p class="no">family: man, woman, girl, boy</p>
+          <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x1F373; = &#x1F9D1;&#x200D;&#x1F373;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F468 U+200D U+1F373 </p>
+              <p class="si">
+                <span class="ss">&#x1F468;&#x200D;&#x1F373;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f373.svg">&#x1F468;&#x200D;&#x1F373;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f373;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#127859;</strong></p>
+              <p class="no">man cook</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F469 U+200D U+1F373 </p>
+              <p class="si">
+                <span class="ss">&#x1F469;&#x200D;&#x1F373;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f373.svg">&#x1F469;&#x200D;&#x1F373;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f373;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#127859;</strong></p>
+              <p class="no">woman cook</p>
+            </div>
+
+            <div class="u2">
+              <p class="uc">U+1F9D1 U+200D U+1F373 </p>
+              <p class="si">
+                <span class="ss">&#x1F9D1;&#x200D;&#x1F373;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-200d-1f373.svg">&#x1F9D1;&#x200D;&#x1F373;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f373;</strong><br>
+                Dec: <strong>&amp;#129489;&amp;#8205;&amp;#127859;</strong>
+              </p>
+              <p class="no">person cook</p>
+            </div>
+          </div>
+        </li>
+        <li id="genero-2">Si el carácter Unicode del objeto se puede dibujar en modo texto (en blanco y negro) o en modo emoji (en color), tras el objeto se debe escribir el selector de variación 16 U+FE0F para indicar que se quiere un emoji. Así, las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#genero-2">apartado Género (2) de la lección Secuencias: Géneros</a> serían similares al caso anterior, pero con cuatro caracteres, sin espacios entre ellos:
+          <ul>
+            <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>) o U+1F9D1 (adulto sin género <span class="grande">&#x1f9d1;</span>)</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter de un objeto relacionado con la profesión</li>
+            <li>el selector de variación VS16</li>
+          </ul>
+
+          <p><strong>Nota</strong>: Actualmente (junio 2020), Windows 10 no muestra las secuencias con personajes neutros.</p>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar un hombre, una mujer o un personaje neutro médicos se debe escribir la secuencia Hombre/Mujer + ZWJ + Vara de Esculapio + VS16 (U+1F468/U+1F469 U+200D U+2695 U+FE0F), ya que la vara de Esculapio tiene la representación determinada en modo texto.</p>
+
+          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x2695; + VS16 = &#x1F468; + ZWJ + &#x2695;&#xFE0F; = &#x1F468;&#x200D;&#x2695;&#xFE0F;</p>
+
+          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2695; + VS16 = &#x1F469; + ZWJ + &#x2695;&#xFE0F; = &#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
+
+          <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x2695; + VS16 = &#x1F9D1; + ZWJ + &#x2695;&#xFE0F; = &#x1F9D1;&#x200D;&#x2695;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F468 U+200D U+2695 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F468;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2695-fe0f.svg">&#x1F468;&#x200D;&#x2695;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
+              <p class="no">man health worker</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F469 U+200D U+2695 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F469;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2695-fe0f.svg">&#x1F469;&#x200D;&#x2695;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
+              <p class="no">woman health worker</p>
+            </div>
+
+            <div class="u2">
+              <p class="uc">U+1F9D1 U+200D U+2695 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-200d-2695-fe0f.svg">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#129489;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+              </p>
+              <p class="no">person health worker</p>
+            </div>
+          </div>
+
+          <p><strong>Nota</strong>: En Windows 10 el emoji se muestra aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
+        </li>
+        <li id="genero-3">Algunos emojis son personajes humanos y Unicode permite que podamos personalizar su género (masculino o femenino) añadiendo el carácter Unicode U+2640 (signo femenino <span class="grande">&#x2640;</span>) o U+2642 (signo masculino <span class="grande">&#x2642;</span>). Además, como los caracteres U+2640 y U+2642 existen en modo texto o modo emoji, se debe añadir al final el selector de variación 16 U+FE0F. Así, las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#genero-3">apartado Género (3) de la lección Secuencias: Géneros</a> tienen cuatro caracteres, sin espacios entre ellos:
+
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter U+2640 (femenino <span class="grande">&#x2640;</span>) o U+2642 (masculino <span class="grande">&#x2642;</span>)</li>
+            <li>el selector de variación VS16</li>
+          </ul>
+
+          <p><strong>Nota</strong>: Actualmente (junio de 2020), Windows 10 no distingue entre las versiones texto y emoji de los caracteres U+2640 y U+2642, aunque sí representa la mayoría de estas secuencias.</p>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar un hombre o una mujer caminando se debe escribir la secuencia: Paseante + ZWJ + Masculino/Femenino + VS16 (U+1F6B6 U+200D U+2640/U+2642 U+FE0F).</p>
+
+          <p class="ejemplo-secuencia">&#x1F6B6; + ZWJ + &#x2640; + VS16 = &#x1F6B6; + ZWJ + &#x2640;&#xfe0f; = &#x1F6B6;&#x200D;&#x2640;&#xFE0F;</p>
+
+          <p class="ejemplo-secuencia">&#x1F6B6; + ZWJ + &#x2642; + VS16 = &#x1F6B6; + ZWJ + &#x2642;&#xfe0f; = &#x1F6B6;&#x200D;&#x2642;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F6B6 U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2640-fe0f.svg">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128694;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
+              <p class="no">woman walking</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F6B6 U+200D U+2642 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2642-fe0f.svg">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128694;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
+              <p class="no">man walking</p>
+            </div>
+          </div>
+
+        </li>
+        <li id="genero-4">Si el carácter Unicode del personaje humano se puede dibujar en modo texto (en blanco y negro) o en modo emoji (en color), tras el objeto se debe escribir el selector de variación 16 U+FE0F para indicar que se quiere un emoji. Así, las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#genero-4">apartado Género (4) de la lección Secuencias: Géneros</a> son similares al caso anterior, pero con cinco caracteres:
+
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el selector de variación VS16</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter U+2640 (femenino <span class="grande">&#x2640;</span>) o U+2642 (masculino <span class="grande">&#x2642;</span>)</li>
+            <li>el selector de variación VS16</li>
+          </ul>
+
+          <p><strong>Nota</strong>: Actualmente (junio de 2020), Windows 10 no distingue entre las versiones texto y emoji de los caracteres U+2640 y U+2642, aunque sí representa la mayoría de estas secuencias.</p>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar un hombre o una mujer botando una pelota se debe escribir la secuencia Individuo con pelota + VS16 + ZWJ + Masculino/Femenino + VS16 (U+26F9 U+FE0F U+200D U+2640/U+2642 U+FE0F) ya que el carácter individuo con pelota tiene la representación predeterminada en modo texto.</p>
+
+          <p class="ejemplo-secuencia">&#x26f9; + VS16 + ZWJ + &#x2640; + VS16 = &#x26f9;&#xfe0f; + ZWJ + &#x2640;&#xfe0f; = &#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;;</p>
+
+          <p class="ejemplo-secuencia">&#x26f9; + VS16 + ZWJ + &#x2642 + VS16 = &#x26f9;&#xfe0f; + ZWJ + &#x2642;&#xfe0f; = &#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+26F9 U+FE0F U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2640-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
+              <p class="no">woman bouncing ball</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+26F9 U+FE0F U+200D U+2642 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2642-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
+              <p class="no">man bouncing ball</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="colores-piel">
+      <h3>Colores de piel</h3>
+
+      <p>Los emojis correspondientes a humanos con colores de piel específicos se obtienen mediante varios tipos de secuencias, pero utilizando siempre los modificadores Fitzpatrick (desde U+1F3FB hasta U+1F3FF).</p>
+
+      <ul>
+        <li id="colores-piel-texto">En el caso de los caracteres Unicode cuya representación predeterminada es en modo texto, se debe escribir el modificador Fitzpatrizk tras el carácter correspondiente, sin espacios entre ellos. En estos casos el tono de color de piel se traduce en una trama de puntos más o menos densa. Así, las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#colores-piel-texto">apartado Colores de piel modo texto de la lección Secuencias: Colores de piel</a> están formadas por dos caracteres:
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el modificador Fitzpatrick</li>
+          </ul>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar en modo texto el carácter de la mano extendida con la piel oscura, se deben escribir (sin espacios entre ellos) el carácter correspondiente a la mano extendida (U+1F590) y el modificador Fitzpatrick de tipo 6 (U+1F1FF):</p>
+
+          <p class="ejemplo-secuencia">&#x1F590; + &#x1F3FF; = &#x1F590;&#x1F3FF;</p>
+
+          <div class="u-l2">
+
+            <div class="u">
+              <p class="uc">U+1F590</p>
+              <p class="si">&#x1F590;</p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f590;</strong><br>
+                Dec: <strong>&amp;#128400;</strong>
+              </p>
+              <p class="no">raised hand with fingers splayed</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F590 U+1F3FF </p>
+              <p class="si">
+                <span class="ss">&#x1F590;&#x1F3FF;</span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f590;&amp;#x1f3ff;</strong><br>
+                Dec: <strong>&amp;#128400;&amp;#127999;</strong>
+              </p>
+              <p class="no">raised hand with fingers splayed: dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li id="colores-piel-1a">En el caso de los caracteres Unicode cuya representación predeterminada es en modo emoji, se debe escribir el modificador Fitzpatrizk tras el carácter correspondiente, sin espacios entre ellos. Como en el caso anterior, algunas de las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#colores-piel-1">apartado Colores de piel (1) de la lección Secuencias: Colores de piel</a> están formadas por dos caracteres:
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el modificador Fitzpatrick</li>
+          </ul>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar el carácter de la oreja con la piel oscura, se deben escribir (sin espacios entre ellos) el carácter correspondiente a laoreja (U+1F442 ) y el modificador Fitzpatrick de tipo 6 (U+1F1FF):</p>
+
+          <p class="ejemplo-secuencia">&#x1F442; + &#x1F3FF; = &#x1F442;&#x1F3FF;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F442 </p>
+              <p class="si">
+                <span class="ss">&#x1F442;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f442.svg">&#x1F442;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f442;</strong><br>
+                Dec: <strong>&amp;#128066;</strong>
+              </p>
+              <p class="no">ear</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F442 U+1F3FF </p>
+              <p class="si">
+                <span class="ss">&#x1F442;&#x1F3FF;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f442-1f3ff.svg">&#x1F442;&#x1F3FF;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f442;&amp;#x1f3ff;</strong><br>
+                Dec: <strong>&amp;#128066;&amp;#127999;</strong>
+              </p>
+              <p class="no">ear: dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li id="colores-piel-1b">En el caso de los caracteres Unicode cuya representación predeterminada es en modo texto pero que quieren mostrar en modo emoji, se debe escribir el modificador Fitzpatrizk tras el carácter correspondiente y el selector de variación VS16 (carácter U+FE0F), sin espacios entre ellos. En este caso, algunas de las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#colores-piel-1">apartado Colores de piel (1) de la lección Secuencias: Colores de piel</a>  están formadas por tres caracteres:
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el selector de variación VS16</li>
+            <li>el modificador Fitzpatrick</li>
+          </ul>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar en modo emoji el carácter de la mano extendida con la piel oscura, se deben escribir (sin espacios entre ellos) el carácter correspondiente a la mano extendida (U+1F590), el selector de variación VS16 (carácter U+FE0F) y el modificador Fitzpatrick de tipo 6 (U+1F1FF):</p>
+
+          <p class="ejemplo-secuencia">&#x1F590; + VS16 + &#x1F3FF; = &#x1F590;&#xFE0F; + &#x1F3FF; = &#x1F590;&#xFE0F;&#x1F3FF;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F590 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F590;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f590.svg">&#x1F590;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f590;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#128400;&amp;#65039;</strong>
+              </p>
+              <p class="no">raised hand with fingers splayed</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F590 U+FE0F U+1F3FF </p>
+              <p class="si">
+                <span class="ss">&#x1F590;&#xFE0F;&#x1F3FF;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f590-1f3ff.svg">&#x1F590;&#xFE0F;&#x1F3FF;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f590;&amp;#xfe0f;&amp;#x1f3ff;</strong><br>
+                Dec: <strong>&amp;#128400;&amp;#65039;&amp;#127999;</strong>
+              </p>
+              <p class="no">raised hand with fingers splayed: dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li id="colores-piel-2-3">En el caso de las secuencias ZWJ en las que el género se indica con los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>) o U+1F9D1 (adulto sin género <span class="grande">&#x1f9d1;</span>), el modificador Fitzpatrizk se debe escribir en segunda posición, sin espacios entre ellos. En este caso, las secuencias que se muestran en los apartados <a href="html-unicode-secuencias-colores.html#colores-piel-2">Colores de piel (2)</a> y <a href="html-unicode-secuencias-colores.html#colores-piel-3">Colores de piel (3)</a> de la lección Secuencias: Colores de piel tienen cuatro o cinco caracteres:
+          <ul>
+            <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>) o U+1F9D1 (adulto sin género <span class="grande">&#x1f9d1;</span>)</li>
+            <li>el modificador Firtzpatrick</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter de un objeto relacionado con la profesión</li>
+            <li>el selector de variación VS16 (en su caso)</li>
+          </ul>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar la secuencia ZWJ del artista masculino con la piel oscura, se debe intercalar el modificador Fitzpatrick de tipo 6 (U+1F1FF) en la segunda posición de la secuencia ZWJ del artista masculino:</p>
+
+          <p class="ejemplo-secuencia">&#x1f468; + ZWJ + &#x1f3a8; = &#x1f468;&#x200d;&#x1f3a8;</p>
+
+          <p class="ejemplo-secuencia">&#x1f468; + &#x1f3ff; + ZWJ + &#x1f3a8; = &#x1f468;&#x1f3ff; + ZWJ + &#x1f3a8; = &#x1f468;&#x1f3ff;&#x200d;&#x1f3a8;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F468 U+200D U+1F3A8 </p>
+              <p class="si">
+                <span class="ss">&#x1F468;&#x200D;&#x1F3A8;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f3a8.svg">&#x1F468;&#x200D;&#x1F3A8;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f3a8;</strong><br>
+                Dec: <strong>&amp;#128104;&amp;#8205;&amp;#127912;</strong>
+              </p>
+              <p class="no">man artist</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F468 U+1F3FF U+200D U+1F3A8 </p>
+              <p class="si">
+                <span class="ss">&#x1F468;&#x1F3FF;&#x200D;&#x1F3A8;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-1f3ff-200d-1f3a8.svg">&#x1F468;&#x1F3FF;&#x200D;&#x1F3A8;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f3a8;</strong><br>
+                Dec: <strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#127912;</strong>
+              </p>
+              <p class="no">man artist: dark skin tone</p>
+            </div>
+          </div>
+
+          <p>De la misma manera, para mostrar la secuencia ZWJ de la mujer médico con la piel oscura, se debe intercalar el modificador Fitzpatrick de tipo 6 (U+1F1FF) en la segunda posición de la secuencia ZWJ de la mujer médico:</p>
+
+          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2695; + VS16 = &#x1F469; + ZWJ + &#x2695;&#xFE0F; = &#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
+          <p class="ejemplo-secuencia">&#x1F469; + &#x1F3FF; + ZWJ + &#x2695; + VS16 = &#x1F469;&#x1F3FF; + ZWJ + &#x2695;&#xFE0F; = &#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F469 U+200D U+2695 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F469;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2695-fe0f.svg">&#x1F469;&#x200D;&#x2695;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#128105;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman health worker</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F469 U+1F3FF U+200D U+2695 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3ff-200d-2695-fe0f.svg">&#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman health worker: dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li id="colores-piel-4-5">En el caso de las secuencias ZWJ en las que el género se indica con los caracteres U+2640 (signo femenino <span class="grande">&#x2640;</span>) o U+2642 (signo masculino <span class="grande">&#x2642;</span>), el modificador Fitzpatrizk también se debe escribir en segunda posición (o en tercera posición si el primero requiere el selector de variación VS16), sin espacios entre ellos. En este caso, las secuencias que se muestran en los apartados <a href="html-unicode-secuencias-colores.html#colores-piel-4">Colores de piel (4)</a> y <a href="html-unicode-secuencias-colores.html#colores-piel-5">Colores de piel (5)</a> de la lección Secuencias: Colores de piel tienen cinco o seis caracteres:
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el selector de variación VS16 (en su caso)</li>
+            <li>el modificador Fitzpatrick</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter U+2640 (femenino <span class="grande">&#x2640;</span>) o U+2642 (masculino <span class="grande">&#x2642;</span>)</li>
+            <li>el selector de variación VS16</li>
+          </ul>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar la secuencia ZWJ de la mujer corriendo con la piel oscura, se debe intercalar el modificador Fitzpatrick de tipo 6 (U+1F1FF) en la segunda posición de la secuencia ZWJ de la mujer corriendo:</p>
+
+          <p class="ejemplo-secuencia">&#x1F3C3; + ZWJ + &#x2640; VS16 = &#x1F3C3;&#x200D;&#x2640;&#xFE0F;</p>
+
+          <p class="ejemplo-secuencia">&#x1F3C3; + &#x1F3FF; + ZWJ + &#x2640; + VS16 = &#x1F3C3;&#x1F3FF; + ZWJ + &#x2640;&#xFE0F; = &#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F3C3 U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F3C3;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3c3-200d-2640-fe0f.svg">&#x1F3C3;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f3c3;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#127939;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman running</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3c3-1f3ff-200d-2640-fe0f.svg">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman running: dark skin tone</p>
+            </div>
+          </div>
+
+          <p>Sin embargo, para mostrar la secuencia ZWJ de la mujer detective con la piel oscura, se debe intercalar el modificador Fitzpatrick de tipo 6 (U+1F1FF) en la tercera posición de la secuencia ZWJ de la mujer detective, ya que el segundo carácter de la secuencia es un selector de variación VS16:</p>
+
+          <p class="ejemplo-secuencia">&#x1F575; + VS16 + ZWJ + &#x2640; + VS16 = &#x1F575;&#xFE0F; + ZWJ + &#x2640;&#xFE0F; = &#x1F575;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</p>
+          <p class="ejemplo-secuencia">&#x1F575; + VS16 + &#x1F3FF; + ZWJ + &#x2640; + VS16 = &#x1F575;&#xFE0F; + &#x1F3FF; + ZWJ + &#x2640;&#xFE0F; = &#x1F575;&#xFE0F;&#x1F3FF; + ZWJ + &#x2640;&#xFE0F; = &#x1F575;&#xFE0F;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</p>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F575 U+FE0F U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F575;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-fe0f-200d-2640-fe0f.svg">&#x1F575;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f575;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#128373;&amp;#65039;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman detective</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F575 U+FE0F U+1F3FF U+200D U+2640 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F575;&#xFE0F;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f575-1f3ff-200d-2640-fe0f.svg">&#x1F575;&#xFE0F;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</a></span>
+              </p>
+              <p class="en">
+                Hex: <strong>&amp;#x1f575;&amp;#xfe0f;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
+                Dec: <strong>&amp;#128373;&amp;#65039;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman detective: dark skin tone</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="familias">
+      <h3>Familias</h3>
+
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#familias">apartado Familias de la lección Secuencias: Parejas</a> representan familias formadas por uno o dos padres o madres y uno o dos hijos o hijas y se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>), U+1F469 (mujer <span class="grande">&#x1f469;</span>), U+1F466 (niño <span class="grande">&#x1f466;</span>) y U+1F467 (niña <span class="grande">&#x1f467;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Las únicas restricciones es que los padres deben escribirse antes que los hijos, que si los padres son un hombre y una mujer, el hombre debe escribirse antes que la mujer y que si los hijos son un niño y una niña, la niña debe escribirse antes que el niño.</p>
+
+      <hr class="corta">
+
+      <p>Por ejemplo, para mostrar la familia mostrada por un padre y una madre y un niño y una niña se debe escribir la secuencia Hombre + ZWJ + Mujer + ZWJ + Niña + ZWJ + Niño (U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466)</p>
+
+      <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x1F469; + ZWJ + &#x1F467; + ZWJ + &#x1F466; = &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</p>
+
+      <div class="u-l2">
+        <div class="u">
+          <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
+          <p class="si">
+            <span class="ss">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f469-200d-1f467-200d-1f466.svg">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
+          <p class="no">family: man, woman, girl, boy</p>
+        </div>
       </div>
-    </div>
 
-    <p><strong>Nota</strong>: Actualmente (noviembre de 2019), Windows 10 muestra emojis aunque no se respeten las restricciones (escribir la mujer antes del hombre o el niño antes de la niña), pero yo diría que no es correcto.</p>
-  </section>
+      <p><strong>Nota</strong>: Actualmente (junio de 2020), Windows 10 muestra emojis aunque no se respeten las restricciones (escribir la mujer antes del hombre o el niño antes de la niña), pero yo diría que no es correcto.</p>
+    </section>
 
-  <section id="enamorados">
-    <h2>Parejas de enamorados</h2>
+    <section id="enamorados">
+      <h3>Parejas de enamorados</h3>
 
-    <p>Los emojis correspondientes a las parejas de enamorados se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) intercalados con los caracteres U+2764 U+FE0F (corazón <span class="grande">&#x2764;</span> con selector de variación 16, que muestra el corazón como emoji <span class="grande">&#x2764;&#xfe0f;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. La única restricción es que en la pareja formada por un hombre y una mujer, el hombre debe escribirse antes que la mujer.</p>
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#parejas-1">apartado Parejas de enamorados de la lección Secuencias: Parejas</a> representan parejas de enamorados y se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) intercalados con los caracteres U+2764 U+FE0F (corazón <span class="grande">&#x2764;</span> con selector de variación 16, que muestra el corazón como emoji <span class="grande">&#x2764;&#xfe0f;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. La única restricción es que en la pareja formada por un hombre y una mujer, el hombre debe escribirse antes que la mujer.</p>
 
-    <hr class="corta">
+      <ul>
+        <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter Corazón</li>
+        <li>el selector de variación VS16</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+      </ul>
 
-    <p>Por ejemplo, para mostrar dos hombres enamorados se debe escribir la secuencia Hombre + Corazón VS16 + Hombre (U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468):</p>
+      <hr class="corta">
 
-    <p style="font-size: 4rem; line-height: 4rem;">&#x1F468; + &#x2764;&#xFE0F; + &#x1F468; = &#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</p>
+      <p>Por ejemplo, para mostrar dos hombres enamorados se debe escribir la secuencia Hombre + Corazón + VS16 + Hombre (U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468):</p>
 
-    <div class="u" style="width: 550px">
-      <p class="uc">U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468 </p>
-      <p class="si">
-        <span class="ss">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</span>
-        <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2764-fe0f-200d-1f468.svg">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</a></span>
-      </p>
-      <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;</strong></p>
-      <p class="no">couple with heart: man man</p>
-    </div>
+      <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x2764; + VS16 + ZWJ + &#x1F468; = &#x1F468; + ZWJ + &#x2764;&#xFE0F; + ZWJ + &#x1F468; = &#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</p>
 
-    <p><strong>Nota</strong>: Actualmente (noviembre de 2019), Windows 10 muestra el emoji aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
-  </section>
 
-  <section id="enamorados-besandose">
-    <h2>Parejas de enamorados besándose</h2>
-
-    <p>Los emojis correspondientes a las parejas de enamorados besándose se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) intercalados con los caracteres U+2764 U+FE0F (corazón <span class="grande">&#x2764;</span> con selector de variación 16, que muestra el corazón como emoji <span class="grande">&#x2764;&#xfe0f;</span>) y U+1F48B (beso <span class="grande">&#x1F48B;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. La única restricción es que en la pareja formada por un hombre y una mujer, la mujer debe escribirse antes que el hombre.</p>
-
-    <p>Por ejemplo, para mostrar un hombre y una mujer enamorados besándose se debe escribir la secuencia Mujer + Corazón VS16 + Beso + Mujer (U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468):</p>
-
-    <p style="font-size: 4rem; line-height: 4rem;">&#x1F469; + &#x2764;&#xFE0F; + &#x1F48B; + &#x1F468; = &#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</p>
-
-    <div class="u-l">
-      <div class="u">
-        <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 </p>
-        <p class="si">
-          <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</span>
-          <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f48b-200d-1f468.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong></p>
-        <p class="no">kiss: woman man</p>
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F468 U+200D U+2764 U+FE0F U+200D U+1F468 </p>
+          <p class="si">
+            <span class="ss">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2764-fe0f-200d-1f468.svg">&#x1F468;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;</strong></p>
+          <p class="no">couple with heart: man man</p>
+        </div>
       </div>
-    </div>
 
-    <p><strong>Nota</strong>: Actualmente (noviembre de 2019), Windows 10 muestra el emoji aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
-  </section>
+      <p><strong>Nota</strong>: Actualmente (junio de 2020), Windows 10 muestra el emoji aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
+    </section>
 
-  <section id="parejas-neutras-colores-piel">
-    <h2>Parejas neutras (y colores de piel)</h2>
+    <section id="enamorados-besandose">
+      <h3>Parejas de enamorados besándose</h3>
 
-    <p>El emoji correspondiente a una pareja neutra se obtiene combinando dos caracteres U+1F9D1 (persona <span class="grande">&#x1f9d1;</span>) intercalados con el caracter U+1F91D (apretón de manos <span class="grande">&#x1f91d;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.</p>
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#parejas-2">apartado Parejas de enamorados besándose de la lección Secuencias: Parejas</a> representan parejas de enamorados besándose y se obtienen combinando los caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) intercalados con los caracteres U+2764 U+FE0F (corazón <span class="grande">&#x2764;</span> con selector de variación 16, que muestra el corazón como emoji <span class="grande">&#x2764;&#xfe0f;</span>) y U+1F48B (marca de beso <span class="grande">&#x1F48B;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. La única restricción es que en la pareja formada por un hombre y una mujer, la mujer debe escribirse antes que el hombre.</p>
 
-    <p style="font-size: 4rem; line-height: 4rem;">&#x1F9D1; + &#x1F91D; + &#x1F9D1; = &#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</p>
+      <ul>
+        <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter Corazón</li>
+        <li>el selector de variación VS16</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter Marca de labios</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+      </ul>
 
-    <div class="u-l">
-      <div class="u">
-        <p class="uc">U+1F9D1 U+200D U+1F91D U+200D U+1F9D1 </p>
-        <p class="si">
-          <span class="ss">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</span>
-          <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-200d-1f91d-200d-1f9d1.svg">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;</strong><br>decimal: <strong>&amp;#129489;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;</strong></p>
-        <p class="no">people holding hands</p>
+      <hr class="corta">
+
+      <p>Por ejemplo, para mostrar un hombre y una mujer enamorados besándose se debe escribir la secuencia Mujer + Corazón + VS16 + Beso + Mujer (U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468):</p>
+
+      <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2764; + VS16 + ZWJ + &#x1F48B; + ZWJ + &#x1F468; = &#x1F469; + ZWJ + &#x2764;&#xFE0F; + ZWJ + &#x1F48B; + ZWJ + &#x1F468; = &#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</p>
+
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 </p>
+          <p class="si">
+            <span class="ss">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2764-fe0f-200d-1f48b-200d-1f468.svg">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong></p>
+          <p class="no">kiss: woman man</p>
+        </div>
       </div>
-    </div>
 
-    <p>A partir de este emoji podemos obtener 25 parejas neutras distintas en las que cada uno de los miembros de la pareja puede tener el color de piel que queramos, añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF). Por ejemplo:</p>
+      <p><strong>Nota</strong>: Actualmente (junio de 2020), Windows 10 muestra el emoji aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
+    </section>
 
-    <p style="font-size: 4rem; line-height: 4rem;">&#x1F9D1; &#x1F3FC; + &#x1F91D; + &#x1F9D1; &#x1F3FF; = &#x1F9D1;&#x1F3FC; + &#x1F91D; + &#x1F9D1;&#x1F3FF; = &#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</p>
+    <section id="parejas-neutras-colores-piel">
+      <h3>Parejas neutras (y colores de piel)</h3>
 
-    <div class="u-l">
-      <div class="u">
-        <p class="uc">U+1F9D1 U+1F3FC U+200D U+1F91D U+200D U+1F9D1 U+1F3FF </p>
-        <p class="si">
-          <span class="ss">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</span>
-          <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fc-200d-1f91d-200d-1f9d1-1f3ff.svg">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</a></span>
-        </p>
-        <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#129489;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127999;</strong></p>
-        <p class="no">people holding hands</p>
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#parejas-piel-1">apartado Parejas neutras con colores de piel de la lección Secuencias: Parejas</a> representan parejas neutras y se obtienen combinando dos caracteres U+1F9D1 (adulto sin género definido <span class="grande">&#x1f9d1;</span>) intercalados con el caracter U+1F91D (apretón de manos <span class="grande">&#x1f91d;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.</p>
+
+      <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x1F91D; + ZWJ + &#x1F9D1; = &#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</p>
+
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F9D1 U+200D U+1F91D U+200D U+1F9D1 </p>
+          <p class="si">
+            <span class="ss">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</span>
+            <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-200d-1f91d-200d-1f9d1.svg">&#x1F9D1;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;</strong><br>decimal: <strong>&amp;#129489;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;</strong></p>
+          <p class="no">people holding hands</p>
+        </div>
       </div>
-    </div>
-  </section>
-  <section id="parejas-genero-colores-piel">
-    <h2>Parejas con género (y colores de piel)</h2>
 
-    <p>Los emojis correspondientes a parejas con género (hombre-mujer, hombre-hombre o mujer-mujer) se obtienen de dos formas distintas, dependiendo si los dos miembros de la pareja tienen o no el mismo color de piel.</p>
+      <p>A partir de este emoji podemos obtener 25 parejas neutras distintas en las que cada uno de los miembros de la pareja puede tener el color de piel que queramos, añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF).</p>
 
-    <ul>
-      <li>Si los dos miembros tienen el mismo color de piel, los emojis se obtienen a partir de los caracteres U+1F46B (hombre y mujer de la mano <span class="grande">&#x1f46b;</span>), U+1F46C (dos hombres de la mano <span class="grande">&#x1f46c;</span>) y U+1F46D (dos mujeres de la mano <span class="grande">&#x1f46d;</span>), añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF). En este caso no se utilizan caracteres ZWJ.
+      <ul>
+        <li>el carácter U+1F9D1 (adulto sin género definido <span class="grande">&#x1f9d1;</span>)</li>
+        <li>un modificador Fitzpatrick</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter Apretón de manos</li>
+        <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+        <li>el carácter U+1F9D1 (adulto sin género definido <span class="grande">&#x1f9d1;</span>)</li>
+        <li>un modificador Fitzpatrick</li>
+      </ul>
 
-        <p><strong>Nota</strong>: En el caso de la pareja hombre-mujer, la posición de ambos no está definida (dependiendo del sistema operativo, el hombre puede estar a la izquierda o a la derecha de la mujer).</p>
+      <hr class="corta">
 
-        <div class="u-l2">
-          <div class="u">
-            <p class="uc">U+1F46B </p>
-            <p class="si">
-              <span class="ss">&#x1F46B;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46b.svg">&#x1F46B;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f46b;</strong><br>decimal: <strong>&amp;#128107;</strong></p>
-            <p class="no">man and woman holding hands</p>
-          </div>
+      <p>Por ejemplo, para mostrar una pareja de dos adultos sin género definido, uno de tez clara y otro de tez oscura, se debe escribir la secuencia Adulto + FP Tipo 3 + ZWJ + Apretón de manos + ZWJ + Adulto + FP Tipo 6 (U+1F9D1 U+1F3FC U+200D U+1F91D U+200D U+1F9D1 U+1F3FF):</p>
 
-          <div class="u">
-            <p class="uc">U+1F46C </p>
-            <p class="si">
-              <span class="ss">&#x1F46C;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46c.svg">&#x1F46C;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f46c;</strong><br>decimal: <strong>&amp;#128108;</strong></p>
-            <p class="no">two men holding hands</p>
-          </div>
+      <p class="ejemplo-secuencia">&#x1F9D1; + &#x1F3FC; + ZWJ + &#x1F91D; + ZWJ + &#x1F9D1; + &#x1F3FF; = &#x1F9D1;&#x1F3FC; + ZWJ + &#x1F91D; + ZWJ + &#x1F9D1;&#x1F3FF; = &#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</p>
 
-          <div class="u">
-            <p class="uc">U+1F46D </p>
-            <p class="si">
-              <span class="ss">&#x1F46D;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46d.svg">&#x1F46D;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f46d;</strong><br>decimal: <strong>&amp;#128109;</strong></p>
-            <p class="no">two women holding hands</p>
-          </div>
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F9D1 U+1F3FC U+200D U+1F91D U+200D U+1F9D1 U+1F3FF </p>
+          <p class="si">
+            <span class="ss">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</span>
+            <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f9d1-1f3fc-200d-1f91d-200d-1f9d1-1f3ff.svg">&#x1F9D1;&#x1F3FC;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f9d1;&amp;#x1f3fc;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#129489;&amp;#127996;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127999;</strong></p>
+          <p class="no">people holding hands</p>
         </div>
+      </div>
+    </section>
 
-        <p>A partir de cada uno de estos tres emojis podemos obtener 5 parejas distintas en las que los dos miembros de la pareja tienen el mismo color de piel, añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF). Por ejemplo:</p>
+    <section id="parejas-genero-colores-piel">
+      <h3>Parejas con género (y colores de piel)</h3>
 
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F46D U+1F3FE </p>
-            <p class="si">
-              <span class="ss">&#x1F46D;&#x1F3FE;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46d-1f3fe.svg">&#x1F46D;&#x1F3FE;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f46d;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128109;&amp;#127998;</strong></p>
-            <p class="no">women holding hands: medium-dark skin tone</p>
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#parejas-piel-2">apartado Parejas con género y con colores de piel de la lección Secuencias: Parejas</a> representan parejas con género (hombre-mujer, hombre-hombre o mujer-mujer) se obtienen de dos formas distintas, dependiendo si los dos miembros de la pareja tienen o no el mismo color de piel.</p>
+
+      <p><strong>Nota</strong>: En el caso de la pareja hombre-mujer, la posición de ambos no está definida (dependiendo del sistema operativo, el hombre puede estar a la izquierda o a la derecha de la mujer).</p>
+
+      <ul>
+        <li>Si los dos miembros tienen el mismo color de piel, los emojis se obtienen a partir de los caracteres U+1F46B (hombre y mujer de la mano <span class="grande">&#x1f46b;</span>), U+1F46C (dos hombres de la mano <span class="grande">&#x1f46c;</span>) y U+1F46D (dos mujeres de la mano <span class="grande">&#x1f46d;</span>), añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF). En este caso no se utilizan caracteres ZWJ.
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F46B </p>
+              <p class="si">
+                <span class="ss">&#x1F46B;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46b.svg">&#x1F46B;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f46b;</strong><br>decimal: <strong>&amp;#128107;</strong></p>
+              <p class="no">man and woman holding hands</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F46C </p>
+              <p class="si">
+                <span class="ss">&#x1F46C;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46c.svg">&#x1F46C;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f46c;</strong><br>decimal: <strong>&amp;#128108;</strong></p>
+              <p class="no">two men holding hands</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F46D </p>
+              <p class="si">
+                <span class="ss">&#x1F46D;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46d.svg">&#x1F46D;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f46d;</strong><br>decimal: <strong>&amp;#128109;</strong></p>
+              <p class="no">two women holding hands</p>
+            </div>
           </div>
+
+          <p>A partir de cada uno de estos tres emojis podemos obtener 5 parejas distintas en las que los dos miembros de la pareja tienen el mismo color de piel, añadiendo el modificador Fitzpatrick correspondiente (de U+1F3FB a U+1F3FF).</p>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar una pareja de mujeres cogidas de la mano, ambas de tez morena, se debe escribir la secuencia pareja de mujeres + FP Tipo 5 (U+1F46D U+1F3FE ):</p>
+
+          <p class="ejemplo-secuencia">&#x1F46D; + &#x1F3FE; = &#x1F46D;&#x1F3FE;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F46D U+1F3FE </p>
+              <p class="si">
+                <span class="ss">&#x1F46D;&#x1F3FE;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f46d-1f3fe.svg">&#x1F46D;&#x1F3FE;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f46d;&amp;#x1f3fe;</strong><br>decimal: <strong>&amp;#128109;&amp;#127998;</strong></p>
+              <p class="no">women holding hands: medium-dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li>Si cada uno de los miembros de la pareja tiene un color de piel distinto, entonces sí que se utiliza una secuencia ZWJ, como en el caso de las parejas neutras. Se combinan dos caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y U+1F469 (mujer <span class="grande">&#x1f469;</span>), seguidos por los modificadores Fitzpatrick correspondientes, intercalados con el caracter U+1F91D (apretón de manos <span class="grande">&#x1f91d;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
+          <ul>
+            <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+            <li>un modificador Fitzpatrick</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter Apretón de manos</li>
+            <li>un carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) o U+1F469 (mujer <span class="grande">&#x1f469;</span>)</li>
+            <li>un modificador Fitzpatrick</li>
+          </ul>
+
+          <p><strong>Nota</strong>: En el caso de la pareja hombre-mujer, debe escribirse la mujer en primera posición y el hombre en segunda posición.</p>
+
+          <hr class="corta">
+
+          <p>Por ejemplo, para mostrar una pareja de mujeres cogidas de la mano, una de tez clara y otro de tez oscura, se debe escribir la secuencia Mujer + FP Tipo 3 + ZWJ + Apretón de manos + ZWJ + Mujer + FP Tipo 6 (U+1F469 U+1F3FC U+200D U+1F91D U+200D U+1F469 U+1F3FF):</p>
+
+          <p class="ejemplo-secuencia">&#x1F469; + &#x1F3FB; + ZWJ + &#x1F91D; + ZWJ + &#x1F469; + &#x1F3FF; = &#x1F469;&#x1F3FB; + ZWJ + &#x1F91D; + ZWJ + &#x1F469;&#x1F3FF; = &#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F469 U+1F3FF </p>
+              <p class="si">
+                <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f469-1f3ff.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127999;</strong></p>
+              <p class="no">women holding hands: light skin tone, dark skin tone</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="banderas">
+      <h3>Banderas</h3>
+
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#banderas">apartado Banderas de la lección Secuencias: Banderas y otras</a> representan las banderas de los países del mundo y se obtienen escribiendo el código de dos letras <a href="https://es.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> correspondiente al país. Las letras que se deben utilizar son los caracteres Unicode denominados letras para símbolos de indicadores regionales, que se extienden del carácter U+1F1E6 (letra A) a U+1F1FF (letra Z).</p>
+
+      <p><strong>Nota</strong>: Actualmente (junio 2020), Windows 10 no muestra las secuencias de banderas.</p>
+
+      <hr class="corta">
+
+      <p>Por ejemplo, para mostrar la bandera de España se deben escribir (sin espacios entre ellos) los caracteres de indicadores regionales E (U+1F1EA) y S (U+1F1F8):</p>
+
+      <p class="ejemplo-secuencia">&#x1F1EA; + &#x1F1F8; = &#x1F1EA;&#x1F1F8;</p>
+
+      <div class="u-l">
+        <div class="u">
+          <p class="uc">U+1F1EA U+1F1F8 </p>
+          <p class="si">
+            <span class="ss">&#x1F1EA;&#x1F1F8;</span>
+            <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f1ea-1f1f8.svg">&#x1F1EA;&#x1F1F8;</a></span>
+          </p>
+          <p class="en">hexadecimal: <strong>&amp;#x1f1ea;&amp;#x1f1f8;</strong><br>decimal: <strong>&amp;#127466;&amp;#127480;</strong></p>
+          <p class="no">ES: Spain</p>
         </div>
-      </li>
-      <li>Si cada uno de los miembros de la pareja tiene un color de piel distinto, entonces sí que se utiliza una secuencia ZWJ, como en el caso de las parejas neutras. Se combinan dos caracteres U+1F468 (hombre <span class="grande">&#x1f468;</span>) y U+1F469 (mujer <span class="grande">&#x1f469;</span>), seguidos por los modificadores Fitzpatrick correspondientes, intercalados con el caracter U+1F91D (apretón de manos <span class="grande">&#x1f91d;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
+      </div>
 
-        <p><strong>Nota</strong>: En el caso de la pareja hombre-mujer, debe escribirse la mujer en primera posición y el hombre en segunda posición.</p>
+      <p>El ejemplo siguiente muestra cómo se incluiría en una página web la secuencia que representa la bandera de España:</p>
 
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F469; &#x1F3FB; + &#x1F91D; + &#x1F469; &#x1F3FF; = &#x1F469;&#x1F3FB; + &#x1F91D; + &#x1F469;&#x1F3FF; = &#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F469 U+1F3FB U+200D U+1F91D U+200D U+1F469 U+1F3FF </p>
-            <p class="si">
-              <span class="ss">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-1f3fb-200d-1f91d-200d-1f469-1f3ff.svg">&#x1F469;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F469;&#x1F3FF;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f469;&amp;#x1f3ff;</strong><br>decimal: <strong>&amp;#128105;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128105;&amp;#127999;</strong></p>
-            <p class="no">women holding hands: light skin tone, dark skin tone</p>
-          </div>
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">
+  &lt;p style="font-size: 3rem;"&gt;&amp;#x1F1EA; + &amp;#x1F1F8; = <span class="codigo-resaltado">&amp;#x1F1EA;&amp;#x1F1F8;</span>&lt;/p&gt;
+</code>
+</pre>
         </div>
-      </li>
-    </ul>
-  </section>
-
-  <section id="generos">
-    <h2>Géneros</h2>
-
-    <p>Los emojis correspondientes a profesiones o actividades con personajes masculinos o femeninos se obtienen de varias maneras distintas.</p>
-
-    <ul>
-      <li>En el caso de algunos emojis, se debe escribir el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) junto con el emoji de un objeto relacionado con la profesión, uniéndolos con un carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
-
-        <p>Por ejemplo, para mostrar un hombre o una mujer cocineros se debe escribir la secuencia Hombre/Mujer + Sartén (U+1F468/U+1F469 U+200D U+1F373):</p>
-
-        <p style="font-size: 4rem; margin: 3rem 0 4rem">&#x1F469; + &#x1F373; = &#x1F469;&#x200D;&#x1F373;</p>
-
-        <p style="font-size: 4rem; margin: 3rem 0 3rem">&#x1F468; + &#x1F373; = &#x1F468;&#x200D;&#x1F373;</p>
-
-        <div class="u-l2">
-          <div class="u">
-            <p class="uc">U+1F468 U+200D U+1F373 </p>
-            <p class="si">
-              <span class="ss">&#x1F468;&#x200D;&#x1F373;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-1f373.svg">&#x1F468;&#x200D;&#x1F373;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f373;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#127859;</strong></p>
-            <p class="no">man cook</p>
-          </div>
-
-          <div class="u">
-            <p class="uc">U+1F469 U+200D U+1F373 </p>
-            <p class="si">
-              <span class="ss">&#x1F469;&#x200D;&#x1F373;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-1f373.svg">&#x1F469;&#x200D;&#x1F373;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f373;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#127859;</strong></p>
-            <p class="no">woman cook</p>
-          </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/texto/entidades-banderas.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
-      </li>
-      <li>Si el carácter Unicode del objeto se puede dibujar en modo texto (en blanco y negro) o en modo emoji (en color), tras el objeto se debe escribir el selector de variación 16 U+FE0F para indicar que se quiere un emoji. Como en el caso anterior, se debe escribir el carácter U+1F468 (hombre <span class="grande">&#x1f468;</span>) y/o U+1F469 (mujer <span class="grande">&#x1f469;</span>) junto con un emoji de un objeto relacionados con la profesión, uniéndolos con un carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
-
-        <p>Por ejemplo, para mostrar un hombre o una mujer médicos se debe escribir la secuencia Hombre/Mujer + Vara de Esculapio VS16 (U+1F468/U+1F469 U+200D U+2695 U+FE0F). En este caso el carácter U+2695, la vara de esculapio, tiene dos versiones:</p>
-        <ul>
-          <li>como texto <span class="muy-grande">&#x2695;</span>, que se obtiene escribiendo únicamente el carácter U+2695</li>
-          <li>como emoji <span class="grande">&#x2695;&#xfe0f;</span>, que se obtiene escribiendo la secuencia U+2695 U+EF0F</li>
-        </ul>
-
-        <p style="font-size: 4rem; margin: 3rem 0 4rem">&#x1F468; + &#x2695;&#xFE0F; = &#x1F468;&#x200D;&#x2695;&#xFE0F;</p>
-
-        <p style="font-size: 4rem; margin: 3rem 0 3rem">&#x1F469; + &#x2695;&#xFE0F; = &#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
-
-        <div class="u-l2">
-          <div class="u">
-            <p class="uc">U+1F468 U+200D U+2695 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F468;&#x200D;&#x2695;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f468-200d-2695-fe0f.svg">&#x1F468;&#x200D;&#x2695;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f468;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128104;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
-            <p class="no">man health worker</p>
-          </div>
-
-          <div class="u">
-            <p class="uc">U+1F469 U+200D U+2695 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F469;&#x200D;&#x2695;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f469-200d-2695-fe0f.svg">&#x1F469;&#x200D;&#x2695;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f469;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128105;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
-            <p class="no">woman health worker</p>
-          </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/texto/entidades-banderas.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
+      </div>
+    </section>
 
-        <p><strong>Nota</strong>: En Windows 10 el emoji se muestra aunque se omita el selector de variación 16 U+FE0F, pero no sé si es correcto omitirlo.</p>
-      </li>
-      <li>Algunos emojis son personajes humanos y Unicode permite que podamos personalizar su género (masculino o femenino), añadiendo al emoji neutro el carácter Unicode U+2640 (signo femenino <span class="grande">&#x2640;</span>) o U+2642 (signo masculino <span class="grande">&#x2642;</span>), uniéndolos con un carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Además como los caracteres U+2640 y U+2642 existen en modo texto o modo emoji, se debe añadir al final el selector de variación 16 U+FE0F.
+    <section id="banderas-subdivisiones">
+      <h3>Banderas (subdivisiones regionales)</h3>
 
-        <p>Por ejemplo, para mostrar un hombre o una mujer caminando se debe escribir la secuencia Peatón + Masculino/Femenino VS16 (U+1F6B6 U+200D U+2640/U+2642 U+FE0F). En este caso los caracteres U+2640 y U+2641, los signos femeninos y masculinos, tiene dos versiones:</p>
-        <ul>
-          <li>como texto <span class="muy-grande">&#x2640;</span> y <span class="muy-grande">&#x2642;</span>, que se obtiene escribiendo únicamente los caracteres U+2640 y U+2642</li>
-          <li>como emoji <span class="muy-grande">&#x2640;&#xfe0f;</span> y <span class="muy-grande">&#x2642;&#xfe0f;</span>, que se obtienen escribiendo las secuencias U+2640 U+EF0F y U+2642 U+EF0F</li>
-        </ul>
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#banderas-2">apartado Banderas (subdivisiones regionales) de la lección Secuencias: Banderas y otras</a> representan banderas regionales. Unicode define secuencias para muchas banderas regionales, pero únicamente se recomienda el uso como emojis de tres de ellas: las banderas de los tres países que forman parte del Reino Unido (Inglaterra, Escocia y Gales). Estas secuencias se forman mediante el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>), el código de cinco letras <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en estos casos) y finalmente el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado).</p>
 
-        <p style="font-size: 4rem; margin: 3rem 0 4rem">&#x1F6B6; + &#x2640;&#xfe0f; = &#x1F6B6;&#x200D;&#x2640;&#xFE0F;</p>
+      <p><strong>Nota</strong>: Actualmente (junio 2020), Windows 10 no muestra las secuencias de las banderas regionales.</p>
 
-        <p style="font-size: 4rem; margin: 3rem 0 3rem">&#x1F6B6; + &#x2642;&#xfe0f; = &#x1F6B6;&#x200D;&#x2642;&#xFE0F;</p>
+      <ul>
+        <li>Bandera regional de Inglaterra (GB-ENG):
+          <p class="ejemplo-secuencia">&#x1F3F4; + &#x0067; + &#x0062; + &#x0065; + &#x006E; + &#x0067; + &#x2b1a; = &#x1F3F4;&#xe0067;&#xe0062;&#xe0065;&#xe006E;&#xe0067;&#xe007F;</p>
 
-        <div class="u-l2">
-          <div class="u">
-            <p class="uc">U+1F6B6 U+200D U+2640 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2640-fe0f.svg">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128694;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
-            <p class="no">woman walking</p>
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F </p>
+              <p class="si">
+                <span class="ss">&#x1F3F4;&#xe0067;&#xe0062;&#xe0065;&#xe006E;&#xe0067;&#xe007F;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0065;&amp;#xe006e;&amp;#xe0067;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917605;&amp;#917614;&amp;#917607;&amp;#917631;</strong></p>
+              <p class="no">England</p>
+            </div>
+          </div>
+        </li>
+
+        <li>Bandera regional de Escocia (GB-SCT):
+
+          <p class="ejemplo-secuencia">&#x1F3F4; + &#x0067; + &#x0062; + &#x0073; + &#x0063; + &#x0074; + &#x2b1a; = &#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F </p>
+              <p class="si">
+                <span class="ss">&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0073;&amp;#xe0063;&amp;#xe0074;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917619;&amp;#917603;&amp;#917620;&amp;#917631;</strong></p>
+              <p class="no">Scotland</p>
+            </div>
+          </div>
+        </li>
+
+        <li>Bandera regional de Gales (GB-WAL):
+          <p class="ejemplo-secuencia">&#x1F3F4; + &#x0067; + &#x0062; + &#x0077; + &#x006C; + &#x0073; + &#x2b1a; = &#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F </p>
+              <p class="si">
+                <span class="ss">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0077-e006c-e0073-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0077;&amp;#xe006c;&amp;#xe0073;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917623;&amp;#917612;&amp;#917619;&amp;#917631;</strong></p>
+              <p class="no">Wales</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="otras">
+      <h3>Otras secuencias</h3>
+
+      <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#otras">apartado Otras de la lección Secuencias: Banderas y otras</a> agrupa las secuencias que no pertenecen a ninguno de los grupos anteriores. Por ejemplo, estas secuencias definen tres banderas especiales:</p>
+
+      <ul>
+        <li>El emoji correspondiente a la bandera pirata se obtiene combinando los caracteres U+1F3F4 (bandera negra <span class="grande">&#x1f3f4</span>) y U+2620 con selector de variación 16 (calavera y dos tibias cruzadas <span class="grande">&#x2620;</span> en la representación gráfica como emoji <span class="grande">&#x2620;&#xFE0F;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
+
+          <p class="ejemplo-secuencia">&#x1F3F4; + ZWJ + &#x2620; + VS16 = &#x1F3F4; + ZWJ + &#x2620;&#xFE0F; = &#x1F3F4;&#xFE0F;&#x200D;&#x2620;&#xFE0F;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F4 U+200D U+2620 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-200d-2620-fe0f.svg">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#x200d;&amp;#x2620;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#127988;&amp;#8205;&amp;#9760;&amp;#65039;</strong></p>
+              <p class="no">pirate flag</p>
+            </div>
+          </div>
+        </li>
+        <li>El emoji correspondiente a la bandera LGTB se obtiene combinando los caracteres U+1F3FE con selector de variación 16 (bandera blanca <span class="grande">&#x1f3f3;</span> en la representación gráfica como emoji <span class="grande">&#x1f3f3;&#xfe0f;</span>), y U+1F308 (arco iris <span class="grande">&#x1f308;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
+
+          <p class="ejemplo-secuencia">&#x1F3F3; + VS16 + ZWJ + &#x1F308; = &#x1F3F3;&#xFE0F; + ZWJ + &#x1F308; = &#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F3 U+FE0F U+200D U+1F308 </p>
+              <p class="si">
+                <span class="ss">&#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f3-fe0f-200d-1f308.svg">&#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f3;&amp;#xfe0f;&amp;#x200d;&amp;#x1f308;</strong><br>decimal: <strong>&amp;#127987;&amp;#65039;&amp;#8205;&amp;#127752;</strong></p>
+              <p class="no">rainbow flag</p>
+            </div>
+          </div>
+        </li>
+        <li>El emoji correspondiente a la bandera transgénero se obtiene combinando los caracteres U+1F3FE y selector de variación 16 (bandera blanca <span class="grande">&#x1f3f3;</span> en la representación gráfica como emoji <span class="grande">&#x1f3f3;&#xfe0f;</span>), y U+26A7 y selector de variación 16 (símbolo transgénero <span class="grande">&#x26A7;</span> en la representación gráfica como emoji <span class="grande">&#x26A7;&#xFE0F;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
+
+          <p class="ejemplo-secuencia">&#x1F3F3; + VS16 + ZWJ + &#x26A7; + VS16 = &#x1F3F3;&#xFE0F; + &#x26A7;&#xFE0F; = &#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</p>
+
+          <div class="u-l">
+            <div class="u">
+              <p class="uc">U+1F3F3 U+FE0F U+200D U+26A7 U+FE0F </p>
+              <p class="si">
+                <span class="ss">&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</span>
+                <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f3-fe0f-200d-26a7-fe0f.svg">&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</a></span>
+              </p>
+              <p class="en">hexadecimal: <strong>&amp;#x1f3f3;&amp;#xfe0f;&amp;#x200d;&amp;#x26a7;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#127987;&amp;#65039;&amp;#8205;&amp;#9895;&amp;#65039;</strong></p>
+              <p class="no">transgender flag</p>
+            </div>
           </div>
 
-          <div class="u">
-            <p class="uc">U+1F6B6 U+200D U+2642 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2642-fe0f.svg">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#128694;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
-            <p class="no">man walking</p>
-          </div>
-        </div>
-
-        <p><strong>Nota</strong>: Actualmente (noviembre de 2019), Windows 10 no distingue entre las versiones texto y emoji de los caracteres U+2640 y U+2642.</p>
-      </li>
-      <li>Si el carácter Unicode de los personajes humanos se puede dibujar en modo texto (en blanco y negro) o en modo emoji (en color), tras el personaje humano se debe escribir el selector de variación 16 U+FE0F para indicar que se quiere un emoji. Como en el caso anterior, podemos personalizar su género (masculino o femenino), añadiendo al emoji neutro el carácter Unicode U+2640 (signo femenino <span class="grande">&#x2640;</span>) o U+2642 (signo masculino <span class="grande">&#x2642;</span>), uniéndolos con un carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Además como los caracteres U+2640 y U+2642 existen en modo texto o modo emoji, se debe añadir al final el selector de variación 16 U+FE0F.
-
-        <p>Por ejemplo, para mostrar un hombre o una mujer botando una pelota se debe escribir la secuencia Individuo con pelota VS16 + Masculino/Femenino VS16 (U+26F9 U+FE0F U+200D U+2640/U+2642 U+FE0F). En este caso el carácter U+26F9, Individuo con pelota, tiene dos versiones:</p>
-        <ul>
-          <li>como texto <span class="muy-grande">&#x26f9;</span>, que se obtiene escribiendo únicamente el carácter U+26F9</li>
-          <li>como emoji <span class="muy-grande">&#x26f9;&#xfe0f;</span>, que se obtiene escribiendo únicamente la secuencia U+26F9 U+EF0F</li>
-        </ul>
-
-        <p style="font-size: 4rem; margin: 3rem 0 4rem">&#x26f9;&#xf30f; + &#x2640;&#xfe0f; = &#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;;</p>
-
-        <p style="font-size: 4rem; margin: 3rem 0 3rem">&#x26f9;&#xf30f; + &#x2642;&#xfe0f; = &#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</p>
-
-        <div class="u-l2">
-          <div class="u">
-            <p class="uc">U+26F9 U+FE0F U+200D U+2640 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2640-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
-            <p class="no">woman bouncing ball</p>
-          </div>
-
-          <div class="u">
-            <p class="uc">U+26F9 U+FE0F U+200D U+2642 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/26f9-fe0f-200d-2642-fe0f.svg">&#x26F9;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x26f9;&amp;#xfe0f;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#9977;&amp;#65039;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
-            <p class="no">man bouncing ball</p>
-          </div>
-        </div>
-
-        <p><strong>Nota</strong>: Actualmente (noviembre de 2019), Windows 10 no distingue entre las versiones texto y emoji de los caracteres que aparecen en este tipo de combinaciones (U+26F9, U+1F3CB, U+1F3CC, etc.).</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="banderas-subdivisiones">
-    <h2>Banderas (subdivisiones)</h2>
-
-    <p>Unicode define seis emojis que representan seis casos especiales de banderas: tres corresponden a los tres países que forman parte del Reino Unido (Inglaterra, Escocia y Gales) y las otras tres son la <a href="https://es.wikipedia.org/wiki/Bandera_pirata">bandera pirata</a>, la <a href="https://es.wikipedia.org/wiki/Bandera_LGBT">bandera arcoiris</a> (símbolo del movimiento LGBT) y la <a href="https://es.wikipedia.org/wiki/Banderas_del_orgullo_trans">bandera transgénero</a> (símbolo de la comunidad transgénero).</p>
-
-    <hr class="corta">
-
-    <ul>
-      <li>Los emojis correspondientes a las tres banderas de los países que forman parte del Reino Unido se obtienen combinando el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>), el código de cinco letras <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en este caso) y finalmente el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado).
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F4; &#x0067; &#x0062; &#x0065; &#x006E; &#x0067; &#x2b1a; = <span class="twe">&#x1F3F4;&#xe0067;&#xe0062;&#xe0065;&#xe006E;&#xe0067;&#xe007F;</span></p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F </p>
-            <p class="si">
-              <span class="ss">&#x1F3F4;&#xe0067;&#xe0062;&#xe0065;&#xe006E;&#xe0067;&#xe007F;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0065;&amp;#xe006e;&amp;#xe0067;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917605;&amp;#917614;&amp;#917607;&amp;#917631;</strong></p>
-            <p class="no">England</p>
-          </div>
-        </div>
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F4; &#x0067; &#x0062; &#x0073; &#x0063; &#x0074; &#x2b1a; = <span class="twe">&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</span></p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F </p>
-            <p class="si">
-              <span class="ss">&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0073;&#xE0063;&#xE0074;&#xE007F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0073;&amp;#xe0063;&amp;#xe0074;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917619;&amp;#917603;&amp;#917620;&amp;#917631;</strong></p>
-            <p class="no">Scotland</p>
-          </div>
-        </div>
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F4; &#x0067; &#x0062; &#x0077; &#x006C; &#x0073; &#x2b1a; = <span class="twe">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</span></p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F </p>
-            <p class="si">
-              <span class="ss">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-e0067-e0062-e0077-e006c-e0073-e007f.svg">&#x1F3F4;&#xE0067;&#xE0062;&#xE0077;&#xE006C;&#xE0073;&#xE007F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#xe0067;&amp;#xe0062;&amp;#xe0077;&amp;#xe006c;&amp;#xe0073;&amp;#xe007f;</strong><br>decimal: <strong>&amp;#127988;&amp;#917607;&amp;#917602;&amp;#917623;&amp;#917612;&amp;#917619;&amp;#917631;</strong></p>
-            <p class="no">Wales</p>
-          </div>
-        </div>
-      </li>
-      <li>El emoji correspondiente a la bandera pirata se obtiene combinando los caracteres U+1F3F4 (bandera negra <span class="grande">&#x1f3f4</span>) y U+2620 con selector de variación 16 (calavera y dos tibias cruzadas <span class="grande">&#x2620;</span> en la representación gráfica como emoji <span class="grande">&#x2620;&#xFE0F;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F4;&#xFE0F; + &#x2620;&#xFE0F; = &#x1F3F4;&#xFE0F;&#x200D;&#x2620;&#xFE0F;</p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F4 U+200D U+2620 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f4-200d-2620-fe0f.svg">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f4;&amp;#x200d;&amp;#x2620;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#127988;&amp;#8205;&amp;#9760;&amp;#65039;</strong></p>
-            <p class="no">pirate flag</p>
-          </div>
-        </div>
-      </li>
-      <li>El emoji correspondiente a la bandera LGTB se obtiene combinando los caracteres U+1F3FE con selector de variación 16 (bandera blanca <span class="grande">&#x1f3f3;</span> en la representación gráfica como emoji <span class="grande">&#x1f3f3;&#xfe0f;</span>), y U+1F308 (arco iris <span class="grande">&#x1f308;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F3;&#xFE0F; + &#x1F308; = &#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F3 U+FE0F U+200D U+1F308 </p>
-            <p class="si">
-              <span class="ss">&#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</span>
-              <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f3-fe0f-200d-1f308.svg">&#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f3;&amp;#xfe0f;&amp;#x200d;&amp;#x1f308;</strong><br>decimal: <strong>&amp;#127987;&amp;#65039;&amp;#8205;&amp;#127752;</strong></p>
-            <p class="no">rainbow flag</p>
-          </div>
-        </div>
-      </li>
-      <li>El emoji correspondiente a la bandera transgénero se obtiene combinando los caracteres U+1F3FE y selector de variación 16 (bandera blanca <span class="grande">&#x1f3f3;</span> en la representación gráfica como emoji <span class="grande">&#x1f3f3;&#xfe0f;</span>), y U+26A7 y selector de variación 16 (símbolo transgénero <span class="grande">&#x26A7;</span> en la representación gráfica como emoji <span class="grande">&#x26A7;&#xFE0F;</span>), uniéndolos con el carácter ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.
-
-        <p style="font-size: 4rem; line-height: 4rem;">&#x1F3F3;&#xFE0F; + &#x26A7;&#xFE0F; = <span class="twe">&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</span></p>
-
-        <div class="u-l">
-          <div class="u">
-            <p class="uc">U+1F3F3 U+FE0F U+200D U+26A7 U+FE0F </p>
-            <p class="si">
-              <span class="ss">&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</span>
-              <span class="twe"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f3f3-fe0f-200d-26a7-fe0f.svg">&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</a></span>
-            </p>
-            <p class="en">hexadecimal: <strong>&amp;#x1f3f3;&amp;#xfe0f;&amp;#x200d;&amp;#x26a7;&amp;#xfe0f;</strong><br>decimal: <strong>&amp;#127987;&amp;#65039;&amp;#8205;&amp;#9895;&amp;#65039;</strong></p>
-            <p class="no">transgender flag</p>
-          </div>
-        </div>
-      </li>
-    </ul>
+          <p><strong>Nota</strong>: Actualmente (junio 2020), Windows 10 no muestra esta secuencia Unicode.</p>
+        </li>
+      </ul>
+    </section>
   </section>
 
   <script>
@@ -930,7 +1334,7 @@
   </script>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de junio de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 29 de junio de 2020</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
