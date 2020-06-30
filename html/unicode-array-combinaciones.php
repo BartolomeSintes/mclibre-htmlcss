@@ -1216,7 +1216,7 @@ $problematicas_piel_2 = array(
   array(array("1F469", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "woman feeding baby"),
   array(array("1F9D1", "0200D", "1F33E"), "13", "SC", "WC", "F", "T", "TW", "farmer"),
   array(array("1F9D1", "0200D", "1F373"), "13", "SC", "WC", "F", "T", "TW", "cook"),
-  array(array("1F9D1", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "personfeeding baby"),
+  array(array("1F9D1", "0200D", "1F37C"), "13", "", "", "", "T", "TW", "person feeding baby"),
   array(array("1F9D1", "0200D", "1F384"), "13", "SC", "WC", "F", "T", "TW", "mx claus"),
   array(array("1F9D1", "0200D", "1F393"), "13", "SC", "WC", "F", "T", "TW", "student"),
   array(array("1F9D1", "0200D", "1F3A4"), "13", "SC", "WC", "F", "T", "TW", "singer"),
