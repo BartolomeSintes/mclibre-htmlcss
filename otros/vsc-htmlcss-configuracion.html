@@ -26,7 +26,7 @@
 
       <ul>
         <li><a href="#temas">Temas de color</a></li>
-        <li><a href="#area-trabajo">Área de trabajo</a></li>
+        <li><a href="#espacio-trabajo">Área de trabajo</a></li>
         <li><a href="#preferencias">Preferencias</a></li>
         <li><a href="#extensiones">Extensiones</a></li>
         <li><a href="#tareas">Tareas</a></li>
@@ -45,47 +45,53 @@
 
     <p>El tema de color es un aspecto muy personal por lo que se deja a elección del alumno el tema de color empleado.</p>
 
-    <p>En las capturas de los apuntes se empleará el Tema Light+ (default light).</p>
+    <p>En las capturas de los apuntes se empleará el Tema predeterminado Dark+ (Default dark, Oscuro+).</p>
 
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-tema-light.png" alt="VSC. Tema Light+ predeterminado" width="1024" height="576">
+      <img src="../img/vscode/vsc-tema-dark.png" alt="VSC. Tema Dark+ predeterminado" width="1024" height="576">
     </p>
   </section>
 
-  <section id="area-trabajo">
+  <section id="espacio-trabajo">
     <h2>Área de trabajo</h2>
 
     <p>Esta es el área de trabajo recomendada para seguir el curso <a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="https://www.mclibre.org/">mclibre.org</a>.</p>
 
     <ol>
-      <li>Cree la carpeta Documentos &gt; LMSGI &gt; HTML:
+      <li>Cree la carpeta <strong>Documentos &gt; LMSGI &gt; HTMLCSS</strong> (el nombre de esta carpeta puede contener mayúsculas):
 
         <p class="mcl-captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="170">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-1.png" alt="VSC. Área de trabajo" width="1024" height="180">
         </p>
       </li>
 
-      <li>Cree las carpeta Documentos &gt; LMSGI &gt; HTML &gt; ejercicios y Documentos &gt; LMSGI &gt; HTML &gt; pruebas:
+      <li>Cree las carpetas <strong>Documentos &gt; LMSGI &gt; HTMLCSS &gt; ejercicios</strong> y <strong>Documentos &gt; LMSGI &gt; HTMLCSS &gt; pruebas</strong> (se recomienda que los nombres de estas carpetas no contengan mayúsculas):
         <p class="mcl-captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-2.png" alt="VSC. Área de trabajo" width="1024" height="200">
         </p>
       </li>
 
       <li>Elija la opción de menú <span class="soft-menu">Archivo &gt; Abrir carpeta ...</span>:
         <p class="mcl-captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="200">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-3.png" alt="VSC. Área de trabajo" width="1024" height="220">
         </p>
       </li>
 
-      <li>Elija la carpeta Documentos &gt; LMSGI &gt; HTML:
+      <li>Elija la carpeta <strong>Documentos &gt; LMSGI &gt; HTMLCSS</strong>:
         <p class="mcl-captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="576">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-4.png" alt="VSC. Área de trabajo" width="1024" height="380">
         </p>
       </li>
 
-      <li>Haga clic en el icono Explorador en la barra de actividades para ver el contenido de la carpeta elegida:
+      <li>Desde la versión 1.57 (mayo 2021) Visual Studio Code incluye un administrador de confianza (<a href="https://code.visualstudio.com/docs/editor/workspace-trust">Workspace Trust</a>). Visual Studio Code sólo ejecutará archivos cuando se haya indicado que se confía en ellos. La primera vez que se abre una carpeta, Visual Studio Code pregunta si se confía en el contenido de esa carpeta. Haga clic en "Sí, confío en los autores":
         <p class="mcl-captura">
-          <img src="../img/vscode/vsc-htmlcss-area-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="210">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-5.png" alt="VSC. Área de trabajo" width="1024" height="576">
+        </p>
+      </li>
+
+      <li>Haga clic en el icono Explorador en la barra de actividades para ver el contenido de la carpeta elegida. El nombre de la carpeta se mostará en la parte superior derecha de la barra de actividades:
+        <p class="mcl-captura">
+          <img src="../img/vscode/vsc-htmlcss-espacio-trabajo-6.png" alt="VSC. Área de trabajo" width="1024" height="170">
         </p>
       </li>
     </ol>
@@ -116,6 +122,10 @@
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
   "editor.insertSpaces": true,
+  //
+  // Editor: Linked Editing
+  // Controla si el editor tiene habilitada la edición vinculada. Dependiendo del lenguaje, los símbolos relacionados (por ejemplo, las etiquetas HTML) se actualizan durante la edición.
+  "editor.linkedEditing": true,
   //
   // Editor: Minimap enabled
   // Controla si se muestra el minimapa.
@@ -257,32 +267,19 @@
 }</code>
 </pre>
       </div>
-
-      <h3>Preferencias de área de trabajo o carpeta (Área de trabajo)</h3>
-      <div class="codigo">
-        <pre>
-<code class="copy-language-json">{
-  // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
-  //
-  // Workbench: Color Theme
-  // Tema de color
-  "workbench.colorTheme": "Default Light+",
-  //
-  //
-}</code>
-</pre>
-      </div>
     </section>
 
-    <hr class="corta">
-
-    <p>Esta es la justificación de la elección de estas preferencias de configuración:</p>
+    <p>Estos son los motivos de la elección de estas preferencias de configuración:</p>
     <ul>
       <li>"css.lint.idSelector": "warning",
         <p>CSS Lint recomienda que los selectores no contengan identificadores (<span class="html-atri">id</span>) porque estas reglas están estrechamente ligadas a HTML.</p>
       </li>
       <li>"editor.insertSpaces": true,
         <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
+      </li>
+
+      <li>"editor.linkedEditing": true,
+        <p>Esta preferencia hace que al cambiar una etiqueta HTML (de apertura o de cierre) VSC cambie la etiqueta emparejada (de cierre o de apertura).</p>
       </li>
 
       <li>"editor.minimap.enabled": false
@@ -727,7 +724,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de enero de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 31 de agosto de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
