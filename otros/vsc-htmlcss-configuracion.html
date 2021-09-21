@@ -115,10 +115,6 @@
 <code class="copy-language-json">{
   // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
-  // CSS Lint: idSelector
-  // Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.
-  "css.lint.idSelector": "warning",
-  //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
   "editor.insertSpaces": true,
@@ -168,15 +164,21 @@
   "html.format.wrapLineLength": 0,
   //
   // HTML
-  // Establece los valores de configuración específicos para el lenguaje HTML
+  // Establece los valores de configuración que se reemplazarán para el lenguaje HTML
   "[html]": {
     "editor.tabSize": 2,
   },
   //
   // CSS
-  // Establece los valores de configuración específicos para el lenguaje CSS
+  // Establece los valores de configuración que se reemplazarán para el lenguaje CSS
   "[css]": {
     "editor.tabSize": 4,
+  },
+  // PHP
+  // Establece los valores de configuración que se reemplazarán para el lenguaje PHP
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "junstyle.php-cs-fixer",
   },
   //
   //
@@ -184,7 +186,7 @@
   //
   // Extension Close HTML/XML Tag
   //
-  // CloseTag: IgnoreTags
+  // Ignore Tags : CloseTag : IgnoreTags
   // Específica las etiquetas que serán ignoradas y no serán cerradas.
   "closeTag.ignoreTags": "html",
   //
@@ -195,7 +197,9 @@
   // Opciones de configuración de HTMLHint
   "htmlhint.options": {
     // Opciones predeterminadas
-    "attr-lowercase": ["allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"],
+    "attr-lowercase": [
+      "allowReorder", "attributeName", "attributeType", "autoReverse", "baseFrequency", "baseProfile", "calcMode", "clipPathUnits", "contentScriptType", "contentStyleType", "diffuseConstant", "edgeMode", "externalResourcesRequired", "filterRes", "filterUnits", "glyphRef", "gradientTransform", "gradientUnits", "kernelMatrix", "kernelUnitLength", "keyPoints", "keySplines", "keyTimes", "lengthAdjust", "limitingConeAngle", "markerHeight", "markerUnits", "markerWidth", "maskContentUnits", "maskUnits", "numOctaves", "pathLength", "patternContentUnits", "patternTransform", "patternUnits", "pointsAtX", "pointsAtY", "pointsAtZ", "preserveAlpha", "preserveAspectRatio", "primitiveUnits", "refX", "refY", "repeatCount", "repeatDur", "requiredExtensions", "requiredFeatures", "specularConstant", "specularExponent", "spreadMethod", "startOffset", "stdDeviation", "stitchTiles", "surfaceScale", "systemLanguage", "tableValues", "targetX", "targetY", "textLength", "viewBox", "viewTarget", "xChannelSelector", "yChannelSelector", "zoomAndPan"
+    ],
     "attr-no-duplication": true,
     "attr-value-double-quotes": true,
     "doctype-first": true,
@@ -205,7 +209,6 @@
     "tag-pair": true,
     "tagname-lowercase": true,
     "title-require": true,
-
     // Opciones adicionales
     "alt-require": true,
     "doctype-html5": true,
@@ -215,51 +218,49 @@
   //
   // Extensión CSScomb
   //
-  // CSScomb: Preset
+  // CSScomb : Preset
   // Opciones de configuración de CSScomb
   "csscomb.preset": {
-    "always-semicolon": true,               // Escribe punto y coma (;) tras las propiedades
-    "block-indent": "    ",                 // Utiliza sangrado de cuatro espacios
-    "color-case": "lower",                  // Escribe los códigos de color en minúsculas
-    "color-shorthand": false,               // Escribe los códigos de color hexadecimales con seis caracteres
-    "element-case": "lower",                // Escribe los selectores en minúsculas
-    "eof-newline": true,                    // Escribe una línea en blanco  al final del archivo
-    "leading-zero": true,                   // Escribe un cero antes de un punto decimal
-    "lines-between-rulesets": 1,            // Escribe una línea entre sentencias consecutivas
-    "quotes": "double",                     // Escribe comillas dobles
-    "remove-empty-rulesets": false,         // No elimina las sentencias sin propiedades
-    "space-after-colon": 1,                 // Escribe un espacio en blanco después de los dos puntos (:)
-    "space-after-combinator": " ",          // Escribe un espacio en blanco después de un combinador de selectores
-    "space-after-opening-brace": "\n",      // Escribe un salto de línea después de la llave de apertura ({)
-    "space-after-selector-delimiter": " ",  // Escribe un espacio en blanco después de las comas (,) en los selectores
-    "space-before-closing-brace": "\n",     // Escribe un salto de línea antes de la llave de cierre (})
-    "space-before-colon": 0,                // No escribe espacios en blanco antes de una coma (,)
-    "space-before-combinator": " ",         // Escribe un espacio en blanco antes de un combinador de selectores
-    "space-before-opening-brace": " ",      // Escribe un espacio en blanco entre el selector y la llave de apertura ({)
-    "space-before-selector-delimiter": "",  // No escribe espacios en blanco antes de las comas (,) en los selectores
-    "space-between-declarations": "\n",     // Escribe un salto de línea entre propiedades
-    "strip-spaces": true,                   // No escribe espacios en blanco al final de las líneas
-    "tab-size": 4,                          // Escribe cuatro espacios en blanco en vez de un tabulador
-    "unitless-zero": true,                  // No escribe unidades en los valores nulos (0)
-    "vendor-prefix-align": true,            // Alinea las propiedades específicas de cada navegador para facilitar la lectura
-    "sort-order-fallback": "abc",           // Las propiedades no mencionadas en sort-order se ordenan alfabéticamente
-    "sort-order": [                         // Orden de las propiedades
-      [
-        // Posicionamiento clásico
-        "position", "z-index", "top", "right", "bottom", "left",
-        // Visibilidad y flexbox
-        "display", "visibility", "float", "clear", "overflow", "overflow-x", "overflow-y", "clip", "zoom", "align-content", "align-items", "align-self", "flex", "flex-flow", "flex-basis", "flex-direction", "flex-grow", "flex-shrink", "flex-wrap", "justify-content", "order",
-        // Modelo de caja: tamaño
-         "box-sizing", "width", "min-width", "max-width", "height", "min-height", "max-height", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
-        // Modelo de caja: borde, outline, fondos
-        "opacity", "color", "border", "border-color", "border-width", "border-style", "border-top", "border-top-color", "border-top-width", "border-top-style", "border-right", "border-right-color", "border-right-width", "border-right-style", "border-bottom", "border-bottom-color", "border-bottom-width", "border-bottom-style", "border-left", "border-left-color", "border-left-width", "border-left-style", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius", "border-image", "border-image-source", "border-image-slice", "border-image-width", "border-image-outset", "border-image-repeat", "outline", "outline-color", "outline-width", "outline-style", "outline-offset", "background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y", "background-clip", "background-origin", "background-size", "box-decoration-break", "box-shadow", "text-shadow",
-        // Tablas y listas
-        "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse", "list-style", "list-style-position", "list-style-type", "list-style-image", "content", "counter-increment", "counter-reset",
-        // Texto
-        "cursor", "font", "font-family", "src", "font-size", "font-style", "font-variant", "font-weight", "letter-spacing", "line-height", "quotes", "resize", "text-align", "text-align-last", "text-decoration", "text-indent", "text-justify", "text-outline", "text-transform", "vertical-align", "white-space", "word-spacing",
-        // Animaciones y transformaciones
-        "animation", "animation-delay", "animation-direction", "animation-duration", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "transform", "transform-origin", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function",
-      ],
+    "always-semicolon": true, //              Escribe punto y coma (;) tras las propiedades
+    "block-indent": "    ", //                Utiliza sangrado de cuatro espacios
+    "color-case": "lower", //                 Escribe los códigos de color en minúsculas
+    "color-shorthand": false, //              Escribe los códigos de color hexadecimales con seis caracteres
+    "element-case": "lower", //               Escribe los selectores en minúsculas
+    "eof-newline": true, //                   Escribe una línea en blanco  al final del archivo
+    "leading-zero": true, //                  Escribe un cero antes de un punto decimal
+    "lines-between-rulesets": 1, //           Escribe una línea entre sentencias consecutivas
+    "quotes": "double", //                    Escribe comillas dobles
+    "remove-empty-rulesets": false, //        No elimina las sentencias sin propiedades
+    "space-after-colon": 1, //                Escribe un espacio en blanco después de los dos puntos (:)
+    "space-after-combinator": " ", //         Escribe un espacio en blanco después de un combinador de selectores
+    "space-after-opening-brace": "\n", //     Escribe un salto de línea después de la llave de apertura ({)
+    "space-after-selector-delimiter": " ", // Escribe un espacio en blanco después de las comas (,) en los selectores
+    "space-before-closing-brace": "\n", //    Escribe un salto de línea después de la llave de cierre (})
+    "space-before-colon": 0, //               No escribe espacios en blanco antes de una coma (,)
+    "space-before-combinator": " ", //        Escribe un espacio en blanco antes de un combinador de selectores
+    "space-before-opening-brace": " ", //     Escribe un espacio en blanco entre el selector y la llave de apertura ({)
+    "space-before-selector-delimiter": "", // No escribe espacios en blanco después de las comas (,) en los selectores
+    "space-between-declarations": "\n", //    Escribe un salto de línea entre propiedades
+    "strip-spaces": true, //                  No escribe espacios en blanco al final de las líneas
+    "tab-size": 4, //                         Escribe cuatro espacios en blanco en vez de un tabulador
+    "unitless-zero": true, //                 No escribe unidades en los valores nulos (0)
+    "vendor-prefix-align": true, //           Alinea las propiedades específicas de cada navegador para facilitar la lectura
+    "sort-order-fallback": "abc", //          Las propiedades no ordenadas se ordenan alfabéticamente
+    "sort-order": [ //                        Orden de las propiedades
+      // Posicionamiento clásico
+      "position", "z-index", "top", "right", "bottom", "left",
+      // Visibilidad y flexbox
+      "display", "visibility", "float", "clear", "overflow", "overflow-x", "overflow-y", "clip", "zoom", "align-content", "align-items", "align-self", "flex", "flex-flow", "flex-basis", "flex-direction", "flex-grow", "flex-shrink", "flex-wrap", "justify-content", "order",
+      // Modelo de caja: tamaño
+      "box-sizing", "width", "min-width", "max-width", "height", "min-height", "max-height", "margin", "margin-top", "margin-right", "margin-bottom", "margin-left", "padding", "padding-top", "padding-right", "padding-bottom", "padding-left",
+      // Modelo de caja: borde, outline, fondos
+      "opacity", "border", "border-color", "border-width", "border-style", "border-top", "border-top-color", "border-top-width", "border-top-style", "border-right", "border-right-color", "border-right-width", "border-right-style", "border-bottom", "border-bottom-color", "border-bottom-width", "border-bottom-style", "border-left", "border-left-color", "border-left-width", "border-left-style", "border-radius", "border-top-left-radius", "border-top-right-radius", "border-bottom-right-radius", "border-bottom-left-radius", "border-image", "border-image-source", "border-image-slice", "border-image-width", "border-image-outset", "border-image-repeat", "outline", "outline-color", "outline-width", "outline-style", "outline-offset", "background", "background-color", "background-image", "background-repeat", "background-attachment", "background-position", "background-position-x", "background-position-y", "background-clip", "background-origin", "background-size", "box-decoration-break", "box-shadow", "text-shadow",
+      // Texto
+      "color", "cursor", "font", "font-family", "src", "font-size", "font-style", "font-variant", "font-weight", "letter-spacing", "line-height", "quotes", "resize", "text-align", "text-align-last", "text-decoration", "text-indent", "text-justify", "text-outline", "text-transform", "vertical-align", "white-space", "word-spacing",
+      // Tablas y listas
+      "table-layout", "empty-cells", "caption-side", "border-spacing", "border-collapse", "list-style", "list-style-position", "list-style-type", "list-style-image", "content", "counter-increment", "counter-reset",
+      // Animaciones y transformaciones
+      "animation", "animation-delay", "animation-direction", "animation-duration", "animation-iteration-count", "animation-name", "animation-play-state", "animation-timing-function", "transform", "transform-origin", "transition", "transition-delay", "transition-duration", "transition-property", "transition-timing-function",
     ],
   },
   //
@@ -271,9 +272,6 @@
 
     <p>Estos son los motivos de la elección de estas preferencias de configuración:</p>
     <ul>
-      <li>"css.lint.idSelector": "warning",
-        <p>CSS Lint recomienda que los selectores no contengan identificadores (<span class="html-atri">id</span>) porque estas reglas están estrechamente ligadas a HTML.</p>
-      </li>
       <li>"editor.insertSpaces": true,
         <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
       </li>
@@ -335,11 +333,6 @@
       <li>"editor.tabSize": 2 / 4
         <p>Como en una página web suele haber bastante anidamiento, en los ficheros .html se recomienda un sangrado de sólo 2 espacios. Pero una hoja de estilo no suele haber más que uno o dos niveles de anidamiento, por lo que el sangrado puede ser de 4 espacios.</p>
       </li>
-
-      <li>"workbench.colorTheme": "Default Light+"
-
-        <p>Esta preferencia selecciona el tema de color. En estos apuntes del curso de HTML y CSS se recomienda guardarla en las preferencias del espacio de trabajo porque los apuntes de los cursos de Python y PHP se recomienda otro tema de color.</p>
-      </li>
     </ul>
   </section>
 
@@ -363,8 +356,29 @@
 
       <hr class="corta">
 
-      <p>Esta extensión instala de forma conjunta las seis extensiones que se comentan a continuación, pero no las configura. La configuración de las extensiones que necesitan ser configuradas se debe realizar manualmente.</p>
+      <p>Esta extensión instala de forma conjunta las seis extensiones que se comentan a continuación, pero no las configura. La configuración de las extensiones que necesitan ser configuradas se debe realizar manualmente. Las configuraciones que se recomiendan para cada extensión están ya incluidas en las configuraciones recomendadas.</p>
     </section>
+
+    <section id="livre-preview">
+      <h3>Live Preview: Vista previa</h3>
+
+      <p><img src="../img/vscode/vsc-extension-live-preview-logo.png" alt="Logotipo de Live Preview" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: Microsoft</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server">Live Preview</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/microsoft/vscode-livepreview">Live Preview</a></p>
+
+      <hr class="corta">
+
+      <p>Esta extensión permite ver en un navegador la página web que se está editando, actualizándose al mismo tiempo que se edita.</p>
+
+      <p>Para abrir la Vista previa, haga clic derecho en la página y elija la opción "Live Preview: Show Preview". la pantalla se dividirá, mostrando la página en la parte derecha.</p>
+
+      <p>Uno de los <a href="#atajos-teclado">atajos de teclado recomendados</a> permite abrir esa vista previa con el atajo de teclado <kbd>Ctrl + Alt + p</kbd>.</p>
+    </section>
+
 
     <section id="close-html-xml-tag">
       <h3>Close HTML/XML tag: Cierre de etiquetas</h3>
@@ -418,7 +432,7 @@
 
       <hr class="corta">
 
-      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-image-preview">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle y capturas de pantalla el uso de esta extensión</p>
+      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-image-preview">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle el uso de esta extensión</p>
 
       <p>Al situar el cursor sobre la ruta de una imagen, se muestra un cuadro con una miniatura de la imagen y el tamaño de la imagen. Además, haciendo
         <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.</p>
@@ -439,7 +453,7 @@
 
       <hr class="corta">
 
-      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-tag-inserter">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle y capturas de pantalla el uso de esta extensión</p>
+      <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-tag-inserter">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle el uso de esta extensión</p>
 
       <p>Para añadir una etiqueta alrededor de un texto:</p>
       <ul>
@@ -449,7 +463,7 @@
         <li>escriba en ella la etiqueta deseada (puede incluir atributos) y pulse <kbd>Intro</kbd></li>
       </ul>
 
-      <p>En este curso utilizaremos esta extensión para realizar los ejercicios, en los que se proporciona el texto de la página web sin etiquetas.</p>
+      <p>En este curso utilizaremos esta extensión para realizar los ejercicios, ya que en la mayoría de ellos las plantillas incluyen texto de la página web sin etiquetas.</p>
     </section>
 
     <section id="htmlhint">
@@ -649,8 +663,9 @@
 
     <p>Estos son los atajos de teclado que se aconseja definir para seguir el curso de <a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="https://www.mclibre.org/">mclibre.org</a>.</p>
     <ul>
-      <li>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
-      <li>El tercer atajo ejecuta CSScomb, extensión que formatea hojas de estilo CSS. este atajo sólo funciona cuando se está editando un archivo .css.</li>
+      <li>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
+      <li>El tercer atajo muestra la vista previa de la página que se esté editando mediante la extensión Live Preview.</li>
+      <li>El cuarto atajo ejecuta CSScomb, extensión que formatea hojas de estilo CSS. este atajo sólo funciona cuando se está editando un archivo .css.</li>
       <li>Los siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet).</li>
     </ul>
 
@@ -671,6 +686,11 @@
         "key": "ctrl+alt+c",
         "command": "workbench.action.tasks.runTask",
         "args": "Abrir en Chrome"
+    },
+    {
+        // Extensión Live Preview: Ejecutar en navegador interno
+        "key": "ctrl+alt+p",
+        "command": "livePreview.start.internalPreview.atFile"
     },
     {
         // Extensión CSScomb: Ejecutar
@@ -724,7 +744,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 31 de agosto de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 20 de septiembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
