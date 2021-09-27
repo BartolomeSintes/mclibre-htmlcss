@@ -25,135 +25,206 @@
 
       <ul>
         <li><a href="#definir">Definir</a></li>
-        <li><a href="#uso-en-navegadores">Uso en navegadores</a>
-          <ul>
-            <li><a href="#uso-en-ff">Firefox</a></li>
-            <li><a href="#uso-en-gc">Chrome</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
   </nav>
 
-  <p>Una página web puede tener enlazadas varias hojas de estilo distintas para que el usuario elija cuál se aplica.</p>
+  <p>Una página web puede tener enlazadas varias hojas de estilo distintas para que el usuario elija cuál se aplica. Esta posibilidad se incoporó en HTML 4.0 (1997) y forma parte de la norma actual HTML. Sin embargo, las hojas de estilo alternativas apenas se utilizan, entre otros motivos porque el navegador más utilizado, Google Chrome, no admite las hojas de estilo alternativas y se ha negado siempre a hacerlo (véase <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=62434">Chromium issue 62434</a>).</p>
+
+  <p>Firefox sí que permite elegir entre las hojas de estilo alternativas mediante el menú <span class="soft-menu">Ver &gt; Estilo de página</span>. El menú se muestra pulsando la tecla <span class="soft-atajo-teclado">Alt</span>. Las opciones de este menú dependen de los atributos de las hojas de estilo enlazadas.</p>
+
+  <p class="mcl-captura">
+    <img src="../img/firefox/ff-ver-estilo-1.png" alt="Firefox - Ver &gt; Estilo de página" title="Firefox - Ver &gt; Estilo de página" width="500" height="200">
+  </p>
 
   <section id="definir">
-    <h2>Definir hojas de estilo alternativas</h2>
+    <h2 class="con-aside">Hojas de estilo alternativas: <span class="html-eti">link</span> <span class="html-atri">rel</span>="<span class="html-atri-valor">alternate</span>"</h2>
 
-    <p>En una página web, la etiqueta <span class="html-eti">&lt;link&gt;</span> situada en la cabecera (<span class="html-eti">&lt;head&gt;</span>) indica la ubicación y nombre de la hoja de estilo enlazada mediante el atributo <span class="html-atri">href</span>:</p>
+    <aside class="enlace-norma">
+      <p>
+        <span class="html-eti">link</span> <span class="html-atri">rel</span>="<span class="html-atri-valor">alternate</span>"<br>
+        <a href="https://html.spec.whatwg.org/multipage/links.html#rel-alternate">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Alternative_style_sheets">
+          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+        </a>
+      </p>
+    </aside>
 
-    <div class="codigo">
-      <pre><code class="language-html">&lt;link rel="stylesheet" href="nombre_del_archivo.css"&gt;</code></pre>
+    <p>En una página web, las hojas de estilo se enlazan en la cabecera <span class="html-eti">&lt;head&gt;</span> mediante una etiqueta <span class="html-eti">&lt;link&gt;</span>. El atributo <span class="html-atri">rel</span> con el valor <span class="html-atri-valor">stylesheet</span> indica que se trata de un enlace a una hoja de estilo y el atributo <span class="html-atri">href</span> indica la ubicación y nombre de la hoja de estilo enlazada.</p>
+
+    <p>El siguiente ejemplo muestra una página web que enlaza una hoja de estilo, sin hojas de estilo alternativas.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;link rel="stylesheet" href="estilo-1.css"&gt;</code></pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-1.css */
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/css-alternativas/css-alternativas-1.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/css-alternativas/css-alternativas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
 
-    <p>Se pueden enlazar dos o más hojas de estilo, con lo que el código fuente contendrá tantas etiquetas <span class="html-eti">&lt;link&gt;</span> como hojas enlazadas:</p>
+    <p>Para que sean hojas de estilo alternativas, es decir, para que el usuario pueda elegir en el navegador qué hoja de estilo quiere aplicar, es suficiente con que los enlaces a las hojas de estilo alternativas tengan el atributo <span class="html-atri">title</span>.</p>
 
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="nombre_de_archivo_1.css"&gt;
-&lt;link rel="stylesheet" href="nombre_de_archivo_2.css"&gt;</code>
+    <p>En el ejemplo siguiente, la página web enlaza tres hojas de estilo:</p>
+    <ul>
+      <li>La primera hoja de estilo enlazada (estilo-1.css) no tiene atributo <span class="html-atri">title</span>, por lo que se aplica siempre.</li>
+      <li>La segunda y tercera hojas de estilo enlazadas sí que tiene el atributo <span class="html-atri">title</span>, por lo que se puede elegir cuál de ellas aplicar.</li>
+      <li>La primera hoja de estilo con atributo <span class="html-atri">title</span> (es decir, estilo-2.css) se aplica de forma predeterminada.</li>
+      <li>Es decir, el navegador aplica o bien las dos hojas de estilo estilo-1.css y estilo-2.css, o bien las dos hojas de estilo estilo-1.css y estilo-3.css.</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;link rel="stylesheet" href="estilo-1.css"&gt;
+&lt;link rel="stylesheet" href="estilo-2.css" title="Estilo 2"&gt;
+&lt;link rel="stylesheet" href="estilo-3.css" title="Estilo 3"&gt;</code>
 </pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-1.css */
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-2.css */
+body {
+    background-color: lightcoral;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-3.css */
+body {
+    background-color: lightslategray;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/css-alternativas/css-alternativas-2.html" style="width: 100%; height: 25em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/css-alternativas/css-alternativas-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
 
-    <p>En este caso, el navegador aplica simultáneamente las dos hojas de estilo a la página web. Si un elemento está definido en las dos hojas, el navegador hará lo que diga la última hoja de estilo de la lista.</p>
+    <p>En caso de que todas las hojas de estilo tengan atributo <span class="html-atri">title</span>, la primera hoja de estilo enlazada es la que se aplica de forma predeterminada y el resto son hojas de estilo alternativas. Es decir, el navegador aplica o bien la hoja de estilo estilo-1.css, o bien la hoja de estilo estilo-2.css, o bien la hoja de estilo estilo-3.css.</p>
 
-    <hr class="corta">
-
-    <p>Para que sean hojas de estilo alternativas, es decir, para que el usuario pueda elegir en el navegador qué hoja de estilo quiere aplicar, es suficiente con que los enlaces a las hojas de estilo tengan el atributo <span class="html-atri">title</span>:</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="nombre_de_archivo_1.css" title="Hoja 1"&gt;
-&lt;link rel="stylesheet" href="nombre_de_archivo_2.css" title="Hoja 2"&gt;</code>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;link rel="stylesheet" href="estilo-1.css" title="Estilo 1"&gt;
+&lt;link rel="stylesheet" href="estilo-2.css" title="Estilo 2"&gt;
+&lt;link rel="stylesheet" href="estilo-3.css" title="Estilo 3"&gt;</code>
 </pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-1.css */
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-2.css */
+body {
+    background-color: lightcoral;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-3.css */
+body {
+    background-color: lightslategray;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/css-alternativas/css-alternativas-3.html" style="width: 100%; height: 25em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/css-alternativas/css-alternativas-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
 
-    <p>En este caso la primera hoja de estilo enlazada es la que se aplica de forma predeterminada y el resto son hojas de estilo alternativas.</p>
+    <p>Si se quiere indicar explícitamente la hoja de estilo predeterminada, en el enlace a la hoja de estilo predeterminada el atributo <span class="html-atri">rel</span> debe tener el valor <span class="html-atri-valor">"stylesheet"</span> y en el resto de enlaces los atributos <span class="html-atri">rel</span> deben tener el valor <span class="html-atri-valor">"alternate stylesheet"</span>. Así, el orden de los enlaces no es importante. En el ejemplo siguiente la hoja de estilo predeterminada es la segunda hoja de estilo:</p>
 
-    <hr class="corta">
-
-    <p>Si se quiere indicar explícitamente la hoja de estilo predeterminada, también se puede establecer en el enlace a la hoja de estilo predeterminada el atributo <span class="html-atri">rel</span> con el valor <span class="html-atri-valor">"stylesheet"</span> y establecer en el resto de enlaces el atributo <span class="html-atri">rel</span> con el valor <span class="html-atri-valor">"alternate stylesheet"</span>. En este caso, el orden de los enlaces no es importante.</p>
-
-    <div class="codigo">
-      <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="nombre_de_archivo_1.css" title="Hoja 1"&gt;
-
-&lt;link rel="alternate stylesheet" href="nombre_de_archivo_2.css" title="Hoja 2"&gt;</code>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;link rel="alternate stylesheet" href="estilo-1.css" title="Estilo 1"&gt;
+&lt;link rel="stylesheet" href="estilo-2.css" title="Estilo 2"&gt;
+&lt;link rel="alternate stylesheet" href="estilo-3.css" title="Estilo 3"&gt;</code>
 </pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-1.css */
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-2.css */
+body {
+    background-color: lightcoral;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-3.css */
+body {
+    background-color: lightslategray;
+}</code>
+</pre>
+        </div>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/css-alternativas/css-alternativas-4.html" style="width: 100%; height: 25em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/css-alternativas/css-alternativas-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
     </div>
-  </section>
-
-  <section id="uso-en-navegadores">
-    <h2>Hojas de estilo alternativas en los navegadores</h2>
-
-    <section id="uso-en-ff">
-      <h3>Hojas de estilo alternativas en Firefox</h3>
-
-      <p>La selección de hojas de estilo se realiza en Firefox mediante el menú <span class="soft-menu">Ver &gt; Estilo de página</span>. El menú se muestra pulsando la tecla <span class="soft-atajo-teclado">Alt</span>. Las opciones de este menú dependen de los atributos de las hojas de estilo enlazadas.</p>
-
-      <ul>
-        <li>si la hoja (u hojas) de estilo enlazada tiene el atributo <span class="html-atri">rel=</span><span class="html-atri-valor">"stylesheet"</span>, pero no tiene el atributo <span class="html-atri">title</span>, el menú muestra las opciones: "Sin estilo" y "Estilo de página básico". Si se elige "Sin estilo", Firefox muestra la página sin aplicar la hoja de estilo. Si se quiere volver a aplicar la hoja de estilo, hay que elegir "Estilo de página básico".
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="estilo.css"&gt;</code>
-</pre>
-            </div>
-            <div class="resultado-captura nogrow">
-              <p><img src="../img/firefox/ff-ver-estilo-1.png" alt="Firefox - Ver &gt; Estilo de página" title="Firefox - Ver &gt; Estilo de página" width="500" height="200"></p>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/alternativas/css-alternativas-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-            </div>
-          </div>
-        </li>
-        <li>si hay una sola hoja de estilo enlazada y tiene el atributo <span class="html-atri">title</span>, el menú muestra las opciones: "Sin estilo" y el título de la hoja de estilo. Si se elige "Sin estilo", Firefox muestra la página sin aplicar la hoja de estilo. Si se quiere volver a aplicar la hoja de estilo, hay que elegir la otra opción.
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="estilo_color.css" title="Color"&gt;</code>
-</pre>
-            </div>
-            <div class="resultado-captura nogrow">
-              <p><img src="../img/firefox/ff-ver-estilo-2.png" alt="Firefox - Ver &gt; Estilo de página" title="Firefox - Ver &gt; Estilo de página" width="500" height="200"></p>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/alternativas/css-alternativas-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-            </div>
-          </div>
-        </li>
-        <li>si hay varias hojas de estilo enlazadas y todas tienen el atributo <span class="html-atri">title</span>, el menú muestra las opciones: "Sin estilo" y todos los títulos de las hojas de estilo. Si se elige "Sin estilo", Firefox muestra la página sin aplicar la hoja de estilo. Si se quiere aplicar cualquier hoja de estilo, hay que elegir la opción correspondiente.
-
-          <div class="filaflex">
-            <div class="codigo">
-              <pre>
-<code class="language-html">&lt;link rel="stylesheet" href="estilo_color.css" title="Color"&gt;
-
-&lt;link rel="stylesheet" href="estilo_bn.css" title="Blanco y negro"&gt;</code>
-</pre>
-            </div>
-            <div class="resultado-captura nogrow">
-              <p><img src="../img/firefox/ff-ver-estilo-3.png" alt="Firefox - Ver &gt; Estilo de página" title="Firefox - Ver &gt; Estilo de página" width="500" height="200"></p>
-            </div>
-            <div class="icono-enlace">
-              <a href="ejemplos/alternativas/css-alternativas-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="uso-en-gc">
-      <h3>Hojas de estilo alternativas en Google Chrome</h3>
-
-      <p>Google Chrome no permite elegir hojas de estilo alternativas, aunque se pueden instalar extensiones como <a href="https://chrome.google.com/webstore/detail/alt-css/deaodobjfcolfhkecnnghdclnlmfjdje?hl=en">AltCSS</a> para añadir esta funcionalidad.</p>
-    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de junio de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 27 de septiembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
