@@ -8,7 +8,7 @@ include "generador_biblioteca.php";
   <title>Generador de ejercicios. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../varios/htmlcss.css" title="Color">
-  <link rel="icon" href="../../varios/favicon.ico">
+  <link rel="icon" href="../../varios/favicon.svg">
 </head>
 
 <body<?php if (isset($_SESSION["ejercicio"])) print " onload=\"seleccion('$_SESSION[ejercicio]')\""?>>

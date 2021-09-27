@@ -12,7 +12,7 @@
     <title>Genera fichas Pictogramas. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../varios/htmlcss.css" title="Color">
-    <link rel="icon" href="../varios/favicon.ico">
+    <link rel="icon" href="../varios/favicon.svg">
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <style>
         @font-face {
