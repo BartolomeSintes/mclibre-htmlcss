@@ -25,7 +25,7 @@
 
       <ul>
         <li><a href="#outline-html4">Esquema en HTML 4</a></li>
-        <li><a href="#outline-html5">Esquema en HTML 5</a></li>
+        <li><a href="#outline-html5">Esquema en HTML</a></li>
         <li><a href="#outline-hn">Secciones y títulos</a></li>
         <li><a href="#uso-hn">Cómo usar los títulos</a></li>
         <li><a href="#saber-mas">Para saber más</a></li>
@@ -33,14 +33,17 @@
     </div>
   </nav>
 
-  <p>El esquema (<i>outline</i>) de una página web es un índice de los apartados de una página web que muestra la relación de jerarquía entre los diferentes apartados y subapartados. El concepto de esquema se formalizó en HTML 5 con más precisión que en HTML 4 / XHTML 1 y explica explica algunas características y formas de utilización de las etiquetas de secciones y bloques de contenido.</p>
+  <p>El esquema (<i>outline</i>) de una página web es una representación de la página web que muestra la relación de jerarquía entre los diferentes apartados y subapartados. El concepto de esquema se formalizó en HTML 5 con más precisión que en HTML 4 / XHTML 1 y explica algunas características y formas de utilización de las etiquetas de secciones y bloques de contenido.</p>
 
-  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Actualmente (octubre de 2019) ningún navegador incluye algoritmos para analizar el esquema (outline) de una página web, aunque el validador del W3C sí que lo hace. Por ello, las recomendaciones HTML 5.1 (publicada en noviembre de 2016) y HTML 5.2 (publicada en diciembre de 2017) ya aconsejaban a los autores de páginas web seguir indicando la estructura de la página mediante las etiquetas de título <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> (véase el <a href="https://www.w3.org/TR/2017/REC-html52-20171214/sections.html#creating-an-outline">aviso en la recomendación HTML 5.2</a>).</p>
+  <p>Aunque actualmente (septiembre de 2021) el esquema <i>outline</i> se mantiene en la norma HTML, la verdad es que ningún navegador ni ninguna herramienta de accesibilidad ha incluido nunca algoritmos para analizar el esquema (outline) de una página web. De hecho, el WHATWG está valorando incluso eliminar totalmente la idea de esquema o sustituir la redacción actual por otro sistema más factible.</p>
+
+  <p>Por todo ello, en estos apuntes se recomienda utilizar las <a href="html-secciones.html">etiquetas de secciones</a> introducidas en HTML 5, porque permiten organizar mejor el contenido de las páginas, pero mantener la <a href="html-secciones.html#etiqueta-hn">jerarquía de títulos clásica del HTML 4</a>.</p>
 
   <p><strong>Notas</strong>:</p>
 
   <ul>
     <li>No se debe confundir el esquema (en inglés, outline) con <a href="../css/css-interface.html">la propiedad CSS <span class="css-prop">outline</span></a>.</li>
+    <li>El validador <a href="https://validator.w3.org/nu/?showoutline=yes">Nu Html Checker del W3C</a> analiza el esquema de la página de una forma experimental.</li>
     <li>Se puede consultar <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines">más información sobre secciones y esquemas en MDN</a>.</li>
   </ul>
 
@@ -338,7 +341,7 @@
       </svg>
     </p>
 
-    <p>Actualmente (octubre de 2019), los navegadores no han implementado el algoritmo para calcular el esquema de una página y aplican simplemente en la hoja de estilo por defecto una regla para que un elemento <span class="html-eti">&lt;h1&gt;</span> dentro de <span class="html-eti">&lt;article&gt;</span> se vea como un elemento <span class="html-eti">&lt;h2&gt;</span> situado fuera de <span class="html-eti">&lt;article&gt;</span> (y el resto de <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se ven igual que siempre), como se ve en el ejemplo siguiente:</p>
+    <p>Actualmente (septiembre de 2021), los navegadores no han implementado el algoritmo para calcular el esquema de una página y aplican simplemente en la hoja de estilo por defecto una regla para que un elemento <span class="html-eti">&lt;h1&gt;</span> dentro de <span class="html-eti">&lt;article&gt;</span> se vea como un elemento <span class="html-eti">&lt;h2&gt;</span> situado fuera de <span class="html-eti">&lt;article&gt;</span> (y el resto de <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se ven igual que siempre), como se ve en el ejemplo siguiente:</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
@@ -383,38 +386,38 @@
   <section id="uso-hn">
     <h2>Cómo usar los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span></h2>
 
-    <p>Así como en HTML 4 / XHTML 1 el esquema de una página web se deducía inmediatamente de los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>, en HTML 5 es necesario tener en cuenta las secciones para interpretar correctamente el nivel de los títulos. A cambio, se ha mejorado enormemente la reutilización de contenidos, ya que no se necesita cambiar ningún título al combinar elementos de distintas páginas.</p>
+    <p>Así como en HTML 4 / XHTML 1 el esquema de una página web se deducía inmediatamente de los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>, en HTML es teóricamente necesario tener en cuenta las secciones para interpretar correctamente el nivel de los títulos. A cambio, se ha mejorado enormemente la reutilización de contenidos, ya que no se necesita cambiar ningún título al combinar elementos de distintas páginas.</p>
 
-    <p>Puesto que ahora se tienen dos mecanismos para definir el esquema de una página web (implícitamente con los títulos y explícitamente con las secciones), tenemos la opción de elegir cuál de ellos utilizamos:</p>
+    <p>Teóricamente, al disponer de dos mecanismos para definir el esquema de una página web (implícitamente con los títulos y explícitamente con las secciones), tendríamos la opción de elegir cuál de ellos utilizamos:</p>
 
     <ul>
       <li>no utilizar etiquetas de secciones y seguir definiendo las secciones mediante títulos</li>
-      <li>utilizar únicamente la etiqueta <span class="html-eti">&lt;h1&gt;</span> y crear explícitamente etiquetas para las secciones definidas implícitamente por los títulos</li>
+      <li>utilizar únicamente la etiqueta <span class="html-eti">&lt;h1&gt;</span> en las secciones definidas implícitamente por los títulos</li>
     </ul>
 
-    <p>En estos apuntes se propone una solución intermedia que facilite la reutilización de contenidos sin obligar a crear muchas secciones:</p>
+    <p>Pero como actualmente (septiembre de 2021) los navegadores ni ninguna herramienta de accesibilidad no analizan el esquema de la página ni lo utilizan en su ánalisis, la realidad es que la presencia de secciones no altera el significado jerárquico de los títulos. Por ello, en estos apuntes se recomienda utilizar las <a href="html-secciones.html">etiquetas de secciones</a> introducidas en HTML 5, porque permiten organizar mejor el contenido de las páginas, pero mantener la <a href="html-secciones.html#etiqueta-hn">jerarquía de títulos clásica del HTML 4</a>.</p>
 
-    <ul>
-      <li>utilizar los elementos que definen secciones (<span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span>) para agrupar las partes de la página que vayamos a reutilizar o mostrar en otras páginas.</li>
-      <li>en esas secciones, utilizar los títulos a partir de <span class="html-eti">&lt;h1&gt;</span></li>
-    </ul>
-
-    <p><strong>Nota</strong>: Si el sitio web va a recombinar mucho el contenido de las páginas, la forma más sencilla de preparar la hoja de estilo CSS es utilizar el menor número posible de niveles de títulos.</p>
+    <p><strong>Nota</strong>: Si un sitio web va a recombinar mucho el contenido de las páginas, no le quedará más remedio que modificar por software la jerarquía de los títulos.</p>
   </section>
 
   <section id="saber-mas">
     <h2>Para saber más</h2>
     <ul>
-      <li><a href="https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824">The Truth About Multiple H1 Tags in the HTML5 Era</a></li>
-      <li><a href="http://html5doctor.com/computer-says-no-to-html5-document-outline/">Computer says NO to HTML5 document outline</a></li>
+      <li><a href="https://developer.paciellogroup.com/blog/2013/10/html5-document-outline/">The HTML5 Document Outline is a dangerous fiction</a> (octubre 2013)</li>
+      <li><a href="https://webdesign.tutsplus.com/articles/the-truth-about-multiple-h1-tags-in-the-html5-era--webdesign-16824">The Truth About Multiple H1 Tags in the HTML5 Era</a> (diciembre 2013)</li>
+      <li><a href="http://html5doctor.com/computer-says-no-to-html5-document-outline/">Computer says NO to HTML5 document outline</a> (junio 2016)</li>
+      <li><a href="https://html5accessibility.com/stuff/2021/03/21/a-decade-a-year-of-heading-backwards/">A decade + a year of heading backwards</a> (marzo 2021)</li>
       <li><a href="https://gsnedders.html5.org/outliner/">HTML 5 Outliner</a></li>
-      <li><a href="https://developer.paciellogroup.com/blog/2013/10/html5-document-outline/">The HTML5 Document Outline is a dangerous fiction</a></li>
-      <li><a href="https://github.com/w3c/html/issues/774">Propuesta al W3C: Add &lt;h&gt; element</a></li>
+      <li><a href="https://github.com/whatwg/html/issues/83">HTML issue 83: Suggest adding a warning about outline algorithm</a> (septiembre 2015)</li>
+      <li><a href="https://github.com/w3c/html/issues/774">W3C HTML issue 774: Add &lt;h&gt; element</a> (enero 2017, obsoleta, repositorio archivado)</li>
+      <li><a href="https://github.com/whatwg/html/pull/3499">HTML pull 3499: Add heading-focused outlines and :heading</a> (febrero 2018)</li>
+      <li><a href="https://github.com/whatwg/html/pull/6462">HTML pull 6462: Obsolete &lt;hgroup&gt;</a> (marzo 2021)</li>
+      <li><a href="https://github.com/mdn/content/pull/4977">MDN pull 4977: Replace deprecation with warning in hgroup</a> (mayo 2021)</li>
     </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 28 de septiembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
