@@ -1,19 +1,19 @@
 /* PRISM.CSS                                */
 /* Bartolome Sintes Marco                   */
-/* https://www.mclibre.org                   */
+/* https://www.mclibre.org                  */
 /*                                          */
 /* Hoja de estilo para prism.js             */
 /*                                          */
-/* 12 de octubre de 2019                    */
+/* 30 de septiembre de 2021                 */
 /*                                          */
 
 /* AVISO: Cuando las clases están divididas en dos grupos
   es porque el primer bloque está comprobado,
   pero el segundo no (suelen ser clases de highlight.js que
-  no sé si son tablén clases de prism).
+  no sé si son también clases de prism).
 */
 
-div.codigo { background-color: white; color: black; }
+div.codigo { background-color: #1e1e1e; color: white; }
 
 div.codigo.idle { background-color: white; color: black; }
 
@@ -27,47 +27,85 @@ div.codigo-nocolor pre code.language-html *[class] { color: black; }
 
 .command-line-prompt > span:before { color: white; }
 
+/* Estilo para HTML imitando a Visual Studio Code con tema Dark+ */
+pre code.language-html .attr-name      { color: #9cdcfe; }          /* attribute name            */
+pre code.language-html .attr-value     { color: #ce9178; }          /* attribute value           */
+pre code.language-html .comment        { color: #6a9955; }          /* comment                   */
+pre code.language-html .doctype-tag    { color: #569cd6; }          /* doctype tag               */
+pre code.language-html .entity         { color: #569cd6; }          /* entity                    */
+pre code.language-html .name           { color: #9cdcfe; }          /* name                      */
+pre code.language-html .punctuation    { color: #808080; }          /* punctuation               */
+pre code.language-html .attr-equals    { color: #d4d4d4; }          /* = en atributos            */
+pre code.language-html .tag            { color: #569cd6; }          /* Tags, attributes, configs */
+
+/* pre code.language-html .cdata          { }                            /* cdata                     */
+/* pre code.language-html .namespace      { }                            /* namespace                 */
+/* pre code.language-html .prolog         { }                            /* prolog                    */
+
 /* Estilo para HTML imitando a Visual Studio Code con tema Light+ */
 
-pre code.language-html .attr-name      { color: #ff0000; }          /* attribute name            */
-pre code.language-html .attr-value     { color: #0000ff; }          /* attribute value           */
-pre code.language-html .comment        { color: #008000; }          /* comment                   */
-pre code.language-html .doctype        { color: #800000; }          /* doctype                   */
-pre code.language-html .entity         { color: #0000ff; }          /* entity                    */
-pre code.language-html .punctuation    { color: #800000; }          /* punctuation               */
-pre code.language-html .tag            { color: #800000; }          /* Tags, attributes, configs */
+/* pre code.language-html .attr-name      { color: #ff0000; }          /* attribute name            */
+/* pre code.language-html .attr-value     { color: #0000ff; }          /* attribute value           */
+/* pre code.language-html .comment        { color: #008000; }          /* comment                   */
+/* pre code.language-html .doctype        { color: #800000; }          /* doctype                   */
+/* pre code.language-html .entity         { color: #0000ff; }          /* entity                    */
+/* pre code.language-html .punctuation    { color: #800000; }          /* punctuation               */
+/* pre code.language-html .tag            { color: #800000; }          Tags, attributes, configs    */
 
-pre code.language-html .cdata          { }                            /* cdata                     */
-pre code.language-html .namespace      { }                            /* namespace                 */
-pre code.language-html .prolog         { }                            /* prolog                    */
+/* pre code.language-html .cdata          { }                            /* cdata                     */
+/* pre code.language-html .namespace      { }                            /* namespace                 */
+/* pre code.language-html .prolog         { }                            /* prolog                    */
 
 /* Estilo para código fuente HTML imitando a Firefox */
 
 div.resultado-codigo pre code.language-html .attr-name      { color: #000000; font-weight: bold; }  /* attribute name            */
-div.resultado-codigo pre code.language-html .attr-value     { color: #0000ff; }  /* attribute value           */
-div.resultado-codigo pre code.language-html .comment        { color: #008000; }  /* comment                   */
-div.resultado-codigo pre code.language-html .doctype        { color: #4682b4; }  /* doctype                   */
-div.resultado-codigo pre code.language-html .entity         { color: #ff4500; }  /* entity                    */
-div.resultado-codigo pre code.language-html .punctuation    { color: #000000; }  /* punctuation               */
+div.resultado-codigo pre code.language-html .attr-value     { color: #0000ff; }                     /* attribute value           */
+div.resultado-codigo pre code.language-html .comment        { color: #008000; }                     /* comment                   */
+div.resultado-codigo pre code.language-html .doctype        { color: #4682b4; }                     /* doctype                   */
+div.resultado-codigo pre code.language-html .entity         { color: #ff4500; }                     /* entity                    */
+div.resultado-codigo pre code.language-html .operator       { color: #000000; }                     /* operators                 */
+div.resultado-codigo pre code.language-html .punctuation    { color: #000000; }                     /* punctuation               */
 div.resultado-codigo pre code.language-html .tag            { color: #800080; font-weight: bold; }  /* Tags, attributes, configs */
+
+/* Estilo para CSS imitando a Visual Studio Code con tema Dark+ */
+pre code.language-css                 { color: #ce9178; }          /* color por defecto                  */
+pre code.language-css .atrule         { color: #c586c0; }          /* at-rule lo que no es @rule         */
+pre code.language-css .attribute      { color: #9cdcfe; }          /* atributo                           */
+pre code.language-css .attr-value     { color: #ce9178; }          /* valor de atributo                  */
+pre code.language-css .color          { color: #ce9178; }          /* color                              */
+pre code.language-css .comment        { color: #6a9955; }          /* comment                            */
+pre code.language-css .function       { color: #dcdcaa; }          /* CSS function within a value        */
+pre code.language-css .important      { color: #569cd6; }          /* "!important" symbol                */
+pre code.language-css .number         { color: #b5cea8; }          /* number                             */
+pre code.language-css .operator       { color: #d4d4d4; }          /* operator                           */
+pre code.language-css .property       { color: #9cdcfe; }          /* property name inside a rule        */
+pre code.language-css .pseudo-element { color: #d7ba7d; }          /* pseudo-element, pseudo-class       */
+pre code.language-css .punctuation    { color: #d4d4d4; }          /* punctuation                        */
+pre code.language-css .rule           { color: #ce9178; }          /* @-rule till first "{" or ";"       */
+pre code.language-css .selector       { color: #d7ba7d; }          /* tag in selectors                   */
+pre code.language-css .string         { color: #ce9178; }          /* NO SE DETECTA                      */
+pre code.language-css .string.url     { text-decoration: underline; text-decoration-skip-ink: none; } /* url */
+pre code.language-css .unit           { color: #b5cea8; }          /* unit                               */
+pre code.language-css .variable       { color: #9cdcfe; }          /* variable                           */
+/* pre code.language-css .constant       { color: #ce9178; }          /* constant (añadida por mí)          */
 
 /* Estilo para CSS imitando a Visual Studio Code con tema Light+ */
 
-pre code.language-css .atrule         { color: #0451a5; }          /* at-rule lo que no es @rule         */
-pre code.language-css .attribute      { color: #ff0000; }          /* atributo                           */
-pre code.language-css .color          { color: #0451a5; }          /* color                              */
-pre code.language-css .comment        { color: #008000; }          /* comment                            */
-pre code.language-css .function       { color: #795e26; }          /* CSS function within a value        */
-pre code.language-css .important      { color: #0000ff; }          /* "!important" symbol                */
-pre code.language-css .number         { color: #09885a; }          /* number                             */
-pre code.language-css .property       { color: #ff0000; }          /* property name inside a rule        */
-pre code.language-css .pseudo-element { color: #800000; }          /* pseudo-element, pseudo-class       */
-pre code.language-css .punctuation    { color: #000000; }          /* punctuation                        */
-pre code.language-css .rule           { color: #af00db; }          /* @-rule till first "{" or ";"       */
-pre code.language-css .selector       { color: #800000; }          /* tag in selectors                   */
-pre code.language-css .string         { color: #ce9178; }          /* NO SE DETECTA                      */
-pre code.language-css .unit           { color: #09885a; }          /* unit                               */
-pre code.language-css .variable       { color: #ff0000; }          /* variable                           */
+/* pre code.language-css .atrule         { color: #0451a5; }          /* at-rule lo que no es @rule         */
+/* pre code.language-css .attribute      { color: #ff0000; }          /* atributo                           */
+/* pre code.language-css .color          { color: #0451a5; }          /* color                              */
+/* pre code.language-css .comment        { color: #008000; }          /* comment                            */
+/* pre code.language-css .function       { color: #795e26; }          /* CSS function within a value        */
+/* pre code.language-css .important      { color: #0000ff; }          /* "!important" symbol                */
+/* pre code.language-css .number         { color: #09885a; }          /* number                             */
+/* pre code.language-css .property       { color: #ff0000; }          /* property name inside a rule        */
+/* pre code.language-css .pseudo-element { color: #800000; }          /* pseudo-element, pseudo-class       */
+/* pre code.language-css .punctuation    { color: #000000; }          /* punctuation                        */
+/* pre code.language-css .rule           { color: #af00db; }          /* @-rule till first "{" or ";"       */
+/* pre code.language-css .selector       { color: #800000; }          /* tag in selectors                   */
+/* pre code.language-css .string         { color: #ce9178; }          /* NO SE DETECTA                      */
+/* pre code.language-css .unit           { color: #09885a; }          /* unit                               */
+/* pre code.language-css .variable       { color: #ff0000; }          /* variable                           */
 
 /* Estilo para Python imitando a Visual Studio Code con tema Dark+ */
 
@@ -132,20 +170,28 @@ pre code.language-php .doctype        { color: #569cd6; }          /* doctype   
 pre code.language-php .punctuation    { color: #808080; }          /* punctuation               */
 pre code.language-php .tag            { color: #569cd6; }          /* Tags, attributes, configs */
 
-pre code.language-php .cdata          { }                            /* cdata                     */
-pre code.language-php .entity         { }                            /* entity                    */
-pre code.language-php .namespace      { }                            /* namespace                 */
-pre code.language-php .prolog         { }                            /* prolog                    */
+/* pre code.language-php .cdata          { }                            /* cdata                     */
+/* pre code.language-php .entity         { }                            /* entity                    */
+/* pre code.language-php .namespace      { }                            /* namespace                 */
+/* pre code.language-php .prolog         { }                            /* prolog                    */
+
+/* Estilo para JSON imitando a Visual Studio Code con tema Dark+ */
+
+pre code.language-json .boolean       { color: #569cd6; }          /* valor (booleano)          */
+pre code.language-json .comment       { color: #6a9955; }          /* comentario                */
+pre code.language-json .number        { color: #b5cea8; }          /* valor (número)            */
+pre code.language-json .property      { color: #9cdcfe; }          /* clave                     */
+pre code.language-json .punctuation   { color: #d4d4d4; }          /* puntuación, llaves, etc   */
+pre code.language-json .string        { color: #ce9178; }          /* valor (cadena)            */
 
 /* Estilo para JSON imitando a Visual Studio Code con tema Light+ */
 
-pre code[class*=language-json] .boolean       { color: #0000ff; }          /* valor (booleano)          */
-pre code[class*=language-json] .comment       { color: #008000; }          /* comentario                */
-pre code[class*=language-json] .number        { color: #09885a; }          /* valor (número)            */
-pre code[class*=language-json] .property      { color: #0451a5; }          /* clave                     */
-pre code[class*=language-json] .punctuation   { color: #000000; }          /* puntuación, llaves, etc   */
-pre code[class*=language-json] .string        { color: #a31515; }          /* valor (cadena)            */
-
+/* pre code.language-json .boolean       { color: #0000ff; }          /* valor (booleano)          */
+/* pre code.language-json .comment       { color: #008000; }          /* comentario                */
+/* pre code.language-json .number        { color: #09885a; }          /* valor (número)            */
+/* pre code.language-json .property      { color: #0451a5; }          /* clave                     */
+/* pre code.language-json .punctuation   { color: #000000; }          /* puntuación, llaves, etc   */
+/* pre code.language-json .string        { color: #a31515; }          /* valor (cadena)            */
 
 /* CSS para plugin Line Numbers de Prism */
 
@@ -245,46 +291,44 @@ div.code-toolbar:hover > .toolbar {
 
 /* Separate line b/c rules are thrown out if selector is invalid.
    IE11 and old Edge versions don't support :focus-within. */
+
 div.code-toolbar:focus-within > .toolbar {
-  opacity: 1;
+    opacity: 1;
 }
 
-div.code-toolbar > .toolbar .toolbar-item {
-  display: inline-block;
+div.code-toolbar > .toolbar > .toolbar-item {
+    display: inline-block;
 }
 
-div.code-toolbar > .toolbar a {
-  cursor: pointer;
+div.code-toolbar > .toolbar > .toolbar-item > a {
+    cursor: pointer;
 }
 
-div.code-toolbar > .toolbar button {
-  background: none;
-  border: 0;
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none; /* for button */
-  -moz-user-select: none;
-  -ms-user-select: none;
+div.code-toolbar > .toolbar > .toolbar-item > button {
+    background: none;
+    border: 0;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
 }
 
-div.code-toolbar > .toolbar a,
-div.code-toolbar > .toolbar button,
-div.code-toolbar > .toolbar span {
-  color: white;
-  font-size: 1.2em;
-  padding: .2em .5em;
-  background: black;
-  box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-  border-radius: .5em;
+div.code-toolbar > .toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar > .toolbar-item > button,
+div.code-toolbar > .toolbar > .toolbar-item > span {
+    color: black;
+    font-size: 1.2em;
+    padding: 0 .5em;
+    background:white;
+    box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+    border-radius: .5em;
 }
 
-div.code-toolbar > .toolbar a:hover,
-div.code-toolbar > .toolbar a:focus,
-div.code-toolbar > .toolbar button:hover,
-div.code-toolbar > .toolbar button:focus,
-div.code-toolbar > .toolbar span:hover,
-div.code-toolbar > .toolbar span:focus {
-  text-decoration: none;
+div.code-toolbar > .toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar > .toolbar-item > button:focus,
+div.code-toolbar > .toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+    text-decoration: none;
 }
