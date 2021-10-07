@@ -21,11 +21,13 @@ div.codigo-nocolor { background-color: white; color:black; }
 
 div.codigo-nocolor pre code.language-html *[class] { color: black; }
 
-.line-numbers-rows > span:before { color: black; }
+pre code { line-height: 140%; }
+
+.line-numbers-rows > span::before { color: black; }
 
 .command-line-prompt {border-right: 1px solid #999; }
 
-.command-line-prompt > span:before { color: white; }
+.command-line-prompt > span::before { color: white; }
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Dark+ */
 pre code.language-html .attr-name      { color: #9cdcfe; }          /* attribute name            */
@@ -227,7 +229,7 @@ pre.line-numbers > code {
   counter-increment: linenumber;
 }
 
-.line-numbers-rows > span:before {
+.line-numbers-rows > span::before {
   content: counter(linenumber);
   color: white;
   display: block;
@@ -252,22 +254,22 @@ pre.line-numbers > code {
   user-select: none;
 }
 
-.command-line-prompt > span:before {
+.command-line-prompt > span::before {
   color: white;
   content: ' ';
   display: block;
   padding-right: 0.8em;
 }
 
-.command-line-prompt > span[data-user]:before {
+.command-line-prompt > span[data-user]::before {
   content: "[" attr(data-user) "@" attr(data-host) "] $";
 }
 
-.command-line-prompt > span[data-user="root"]:before {
+.command-line-prompt > span[data-user="root"]::before {
   content: "[" attr(data-user) "@" attr(data-host) "] #";
 }
 
-.command-line-prompt > span[data-prompt]:before {
+.command-line-prompt > span[data-prompt]::before {
   content: attr(data-prompt);
 }
 
