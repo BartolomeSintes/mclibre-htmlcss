@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Lint. Visual Studio Code. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>CSS Lint. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
   <link rel="stylesheet" href="../varios/prism.css">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>Visual Studio Code. CSS Lint</h1>
+  <h1>CSS Lint</h1>
 
   <nav>
     <p>
@@ -20,7 +20,7 @@
     </p>
 
     <div class="toc">
-      <h2>VSC: CSS Lint</h2>
+      <h2>CSS Lint</h2>
 
       <ul>
         <li><a href="#que-es">Qué es CSS Lint</a></li>
@@ -30,25 +30,27 @@
     </div>
   </nav>
 
+  <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <a href="http://csslint.net/">CSS Lint</a> es un sitio web que ofrece un validador de hojas de estilo y que Visual Studio Code incorpora parcialmente. Pero actualmente (octubre de 2021) el proyecto puede considerarse abandonado, ya que aunque la página web sigue funcionando, el <a href="https://github.com/CSSLint/csslint">repositorio GitHub de CSS Lint</a> no se ha modificado desde febrero de 2019, y CSS Lint no ha sacado nuevas versiones desde septiembre de 2016.</p>
+
   <section id="que-es">
     <h2>Qué es CSS Lint</h2>
 
     <p><strong>lint</strong> fue el nombre de un programa creado a finales de los 70 para analizar programas escritos en C en busca de expresiones sintácticamente correctas pero que pudieran dar lugar a errores en los programas. Actualmente, <strong>lint</strong> se utiliza para referirse a las heramientas que analizan programas o documentos en busca de errores sintácticos, de posibles fuentes de errores, o incluso programas que no siguen reglas de estilo.</p>
 
-    <p><a href="http://csslint.net/">CSS Lint</a> es un validador de hojas de estilo que nos da dos tipos de avisos:</p>
+    <p><a href="http://csslint.net/">CSS Lint</a> es un sitio web que ofrece un validador de hojas de estilo que nos da dos tipos de avisos:</p>
 
     <ul>
-      <li>Errores: CSS Lint identifica los errores que no permiten interpretar correctamente la hoja de estilo.</li>
+      <li>Errores de sintaxis: CSS Lint identifica los errores que no permiten interpretar correctamente la hoja de estilo.</li>
       <li>Consejos: CSS Lint considera que algunos usos de las hojas de estilo no son recomendables, por diferentes razones.</li>
     </ul>
 
-    <p>Los errores deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga errores. Pero los consejos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos.</p>
+    <p>Los errores de sintaxis deben corregirse necesariamente, porque la hoja de estilo no puede interpretarse correctamente mientras contenga errores de sintaxis. Pero los consejos deben tomarse como lo que son: consejos, que en unos casos es conveniente seguir, pero en otros casos no, ya que puede haber <a href="https://2002-2012.mattwilcox.net/archive/entry/id/1054/">motivos para estar en desacuerdo</a> con ellos.</p>
 
     <p>Visual Studio Code incorpora una parte de los avisos de CSS Lint, como se comenta en la lección <a href="vsc-htmlcss-validacion.html#validacion-css">Validación de HTML y CSS</a>.</p>
   </section>
 
   <section id="csslint-errores">
-    <h2>Errores detectados por CSS Lint</h2>
+    <h2>Errores de sintaxis detectados por CSS Lint</h2>
 
     <p>CSS Lint indica varios tipos de errores, que debemos corregir necesariamente:</p>
 
@@ -105,13 +107,14 @@
 
     <p>CSS Lint proporciona una serie de consejos para evitar problemas en diferentes ámbitos. Estos avisos no tiene por qué corregirse, ya que no son errores, pero en general conviene tenerlos en cuenta. En la web de CSS Lint se puede consultar la <a href="http://csslint.net/about.html">lista comentada de consejos de CSS Lint</a> y la <a href="https://github.com/CSSLint/csslint/wiki/Rules">lista resumida de consejos</a>.</p>
 
-    <p>Actualmente (octubre de 2019), los consejos son los siguientes:</p>
+    <p><strong>Nota</strong>: Visual Studio Code incorpora algunos de los consejos de CSSLint, aunque la mayoría están desactivados. Los consejos que muestra VSCode se indican en el listado siguiente con el logotipo de VSCode (<img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">). La configuración predeterminada de Visual Studio Code se indica con los logotipos:</p>
+    <ul>
+      <li><img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32"> El consejo está desactivado, no se muestra ningún aviso</li>
+      <li><img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32"> El consejo se muestra como aviso</li>
+      <li><img src="../varios/iconos/icono-vsc-error.svg" alt="Visual Studio Code Error" width="32" height="32"> El consejo se muestra como error</li>
+    </ul>
 
-    <p><strong>Nota</strong>: Los consejos que muestra VSCode se indican con el logotipo de VSCode (<img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">). El tipo de mensaje se indica con los logotipos
-      <img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32"> (no se muestra ningún aviso),
-      <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32"> (se muestra como aviso) y
-      <img src="../varios/iconos/icono-vsc-error.svg" alt="Visual Studio Code Error" width="32" height="32"> (se muestra como error),
-    </p>
+    <p>Actualmente (octubre de 2021), los consejos son los siguientes:</p>
 
     <ul>
       <li>Posibles errores:
@@ -123,8 +126,6 @@
             box-model: <a href="https://github.com/CSSLint/csslint/wiki/Beware-of-box-model-size">Beware of box model size</a>
           </li>
           <li>
-            <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
-            <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
             display-property-grouping: <a href="https://github.com/CSSLint/csslint/wiki/Require-properties-appropriate-for-display">Require properties appropriate for display</a>
           </li>
           <li>
@@ -135,11 +136,13 @@
           <li>
             <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
             <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
-            empty-rules: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-empty-rules">Disallow empty rules</a></li>
+            empty-rules: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-empty-rules">Disallow empty rules</a>
+          </li>
           <li>
             <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
             <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
-            known-properties: <a href="https://github.com/CSSLint/csslint/wiki/Require-use-of-known-properties">Require use of known properties</a></li>
+            known-properties: <a href="https://github.com/CSSLint/csslint/wiki/Require-use-of-known-properties">Require use of known properties</a>
+          </li>
         </ul>
       </li>
 
@@ -223,10 +226,7 @@
           <li>fallback-colors: <a href="https://github.com/CSSLint/csslint/wiki/Require-fallback-colors">Require fallback colors</a></li>
           <li>star-property-hack: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-star-hack">Disallow star hack</a></li>
           <li>underscore-property-hack: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-underscore-hack">Disallow underscore hack</a></li>
-          <li>
-            <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
-            <img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32">
-            bulletproof-font-face: <a href="https://github.com/CSSLint/csslint/wiki/Bulletproof-font-face">Bulletproof font-face</a> (new in v0.9.10)
+          <li>bulletproof-font-face: <a href="https://github.com/CSSLint/csslint/wiki/Bulletproof-font-face">Bulletproof font-face</a> (new in v0.9.10)
 
             <p>En los ejercicios propuestos en estos apuntes, se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que provoca un aviso de CSS Lint:</p>
 
@@ -296,9 +296,9 @@
                 <pre>
 <code class="language-html">&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ribeye+Marrow"&gt;
 &lt;style&gt;
-h1 {
-    font-family: "RibEye Marrow", cursive;
-}
+  h1 {
+      font-family: "RibEye Marrow", cursive;
+  }
 &lt;/style&gt;</code>
 </pre>
               </div>
@@ -317,10 +317,10 @@ h1 {
             <div class="filaflex">
               <div class="codigo">
                 <pre>
-        <code class="language-css">[class^="icon-"], [class*="icon-"] {
-          ...
-        }</code>
-        </pre>
+<code class="language-css">[class^="icon-"], [class*="icon-"] {
+  ...
+}</code>
+</pre>
               </div>
               <div class="resultado-html">
                 <p>Disallow selectors that look like regexs - Attribute selectors with ^= are slow!</p>
@@ -329,7 +329,7 @@ h1 {
               </div>
             </div>
 
-            <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+            <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo.</p>
           </li>
           <li>
             <img src="../varios/iconos/icono-vscode.svg" alt="Visual Studio Code" width="32" height="32">
@@ -464,7 +464,10 @@ p.ejemplo {
           <li>outline-none: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-outline%3Anone">Disallow outline:none</a></li>
         </ul>
       </li>
+
       <li>CSS orientadas a objetos
+        <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
+
         <p>Estas reglas están basadas en los principios de las <a href="https://github.com/stubbornella/oocss/wiki">CSS orientadas a objetos (OOCSS)</a>:</p>
         <ul>
           <li>qualified-headings: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-qualified-headings">Disallow qualified headings</a></li>
@@ -503,13 +506,12 @@ h2.aviso  {
           </div>
         </div>
 
-        <p>En los ejercicios propuestos en estos apuntes no se hace caso de estos consejos.</p>
       </li>
     </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 20 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
