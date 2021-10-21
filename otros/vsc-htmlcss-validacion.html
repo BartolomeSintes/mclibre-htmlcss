@@ -26,6 +26,7 @@
         <li><a href="#interfaz">Interfaz de validación</a></li>
         <li><a href="#validacion-html">Validación HTML</a></li>
         <li><a href="#validacion-css">Validación CSS</a></li>
+        <li><a href="#referencias">Referencias</a></li>
       </ul>
     </div>
   </nav>
@@ -35,37 +36,37 @@
   <section id="interfaz">
     <h2>Interfaz de validación en Visual Studio Code</h2>
 
-    <p>En la barra lateral se muestran dos iconos acompañados de dos números que corresponden al número de errores y avisos detectados por Visual Studio Code en los archivos abiertos. Si no se ha detectado ningún error ni problema, se muestran ceros. Visual Studio Code detecta por él mismo algunos tipos de errores y avisos detectados, pero se pueden instalar extensiones que detectan errores y avisos adicionales, como se explica más adelante en esta lección.</p>
+    <p>En la barra lateral se muestran dos iconos <img src="../varios/iconos/icono-vsc-error-2.svg" alt="Visual Studio Code Error" width="32" height="32"> y <img src="../varios/iconos/icono-vsc-warning-2.svg" alt="Visual Studio Code Warning" width="32" height="32"> acompañados de dos números que corresponden al número de problemas detectados por Visual Studio Code en los archivos abiertos. Visual Studio Code distingue entre errores y advertencias (en inglés, <i>warnings</i>), según la gravedad del problema detectado. El número de errores se muestra junto al icono <img src="../varios/iconos/icono-vsc-error-2.svg" alt="Visual Studio Code Error" width="32" height="32">. El número de advertencias se muestra junto al icono <img src="../varios/iconos/icono-vsc-warning-2.svg" alt="Visual Studio Code Warning" width="32" height="32">. También se pueden instalar extensiones que detectan más tipos de problemas, como se explica más adelante en esta lección.</p>
 
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-1.png" alt="Visual Studio Code. Validación" width="1024" height="375">
+      <img src="../img/vscode/vsc-validacion-1.png" alt="Visual Studio Code. Validación" width="1024" height="413">
     </p>
 
-    <p>Si Visual Studio Code detecta un error, se muestra el valor distinto de cero.</p>
+    <p>Si Visual Studio Code detecta un problema (errores o advertencias), se muestra un valor distinto de cero.</p>
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-2.png" alt="Visual Studio Code. Validación" width="1024" height="375">
+      <img src="../img/vscode/vsc-validacion-2.png" alt="Visual Studio Code. Validación" width="1024" height="413">
     </p>
 
     <p>Haga clic en los iconos para abrir el panel, que mostrará los errores detectados, ordenados por ficheros.</p>
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-3.png" alt="Visual Studio Code. Validación" width="1024" height="387">
+      <img src="../img/vscode/vsc-validacion-3.png" alt="Visual Studio Code. Validación" width="1024" height="434">
     </p>
 
     <p>Haga clic en el error para mostrar en el editor el documento correspondiente y la línea en la que se ha identificado el problema. Tenga en cuenta que Visual Studio Code muestra la línea en la que ha identificado el problema, pero el origen del problema puede estar en esa línea o en una línea anterior.</p>
 
-    <p>El icono de la derecha (triángulo con exclamación) corresponde a avisos de todo tipo, que en general se aconseja corregir, pero que a menudo no impiden que el documento se muestre correctamente. Por ejemplo, la captura siguiente muestra un aviso (regla vacía) que corresponde más a una buena práctica y no provoca ningún problema real.(</p>
+    <p>Las advertencias <img src="../varios/iconos/icono-vsc-warning-2.svg" alt="Visual Studio Code Warning" width="32" height="32"> corresponden a avisos de todo tipo, que en general se aconseja corregir, pero que a menudo no impiden que el documento se muestre correctamente. Por ejemplo, la captura siguiente muestra un aviso que corresponde a una mala práctica (en este caso, el dejar reglas vacías en la hoja de estilo), pero que no provoca ningún problema real.</p>
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-4.png" alt="Visual Studio Code. Validación" width="1024" height="375">
+      <img src="../img/vscode/vsc-validacion-4.png" alt="Visual Studio Code. Validación" width="1024" height="413">
     </p>
 
-    <p>El icono de la izquierda (círculo con cruz) corresponde a los errores de sintaxis que deben corregirse para que el documento sea válido y se pueda mostrar correctamente. A veces un error provoca que Visual Studio Code detecte más errores que realmente no existen. Por eso se aconseja resolver los problemas en orden, para que al corregir uno, desaparezcan los siguientes errores que provocaba el anterior.</p>
+    <p>Los errores <img src="../varios/iconos/icono-vsc-error-2.svg" alt="Visual Studio Code Error" width="32" height="32"> corresponden generalmente a errores de sintaxis que deben corregirse para que el documento sea válido y se pueda mostrar correctamente. A veces un error provoca que Visual Studio Code detecte más errores de los que realmente existen, por eso se aconseja resolver los problemas en orden, para que al corregir uno, desaparezcan los siguientes errores provocados por el anterior.</p>
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-5.png" alt="Visual Studio Code. Validación" width="1024" height="375">
+      <img src="../img/vscode/vsc-validacion-5.png" alt="Visual Studio Code. Validación" width="1024" height="413">
     </p>
 
     <p>Cuando se corrigen los errores y avisos, la pestaña Problemas del panel indica que no hay problemas en los archivos abiertos. Puede cerrar el panel haciendo clic en los iconos de la barra lateral o en el icono en forma de cruz situado en la parte superior derecha del panel.</p>
     <p class="mcl-captura">
-      <img src="../img/vscode/vsc-validacion-6.png" alt="Visual Studio Code. Validación" width="1024" height="375">
+      <img src="../img/vscode/vsc-validacion-6.png" alt="Visual Studio Code. Validación" width="1024" height="413">
     </p>
   </section>
 
@@ -155,9 +156,13 @@
   <section id="validacion-css">
     <h2>Validación de CSS en Visual Studio Code</h2>
 
+    <h3>Errores de sintaxis</h3>
+
     <p>Visual Studio Code detecta los errores de sintaxis en las hojas de estilo. Estos errores deben corregirse puesto que impiden que la hoja de estilo se interprete correctamente.</p>
 
-    <p>Además, Visual Studio Code también incluye un validador de hojas de estilo basado en <a href="vsc-csslint.html">CSS Lint</a> que proporciona consejos que ayudan a mejorar las hojas de estilo.</p>
+    <h3>Consejos</h3>
+
+    <p>Además, Visual Studio Code también incluye un validador de hojas de estilo basado parcialmente en <a href="vsc-csslint.html">CSS Lint</a> que proporciona consejos que ayudan a mejorar las hojas de estilo.</p>
 
     <p>En el archivo de <a href="https://www.mclibre.org/consultar/informatica/lecciones/vsc-personalizacion.html#configuracion">Preferencias de configuración</a>, Visual Studio Code permite especificar el tipo de mensaje mostrado al usuario para cada una de las reglas de validación disponibles:</p>
     <ul>
@@ -166,42 +171,158 @@
       <li>Ignorar (ignore). Se ignora la regla y no se muestra ningún mensaje al usuario.</li>
     </ul>
 
-    <p>La configuración recomendada para seguir el curso <a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="https://www.mclibre.org/">mclibre.org</a> se encuentra en la lección <a href="vsc-htmlcss-configuracion.html#preferencias">Configuración recomendada para HTML y CSS</a>.</p>
-
     <hr class="corta">
 
     <p>La configuración predeterminada de Visual Studio Code es la siguiente:</p>
     <ul>
-      <li>Errores ("error"):
+      <li><img src="../varios/iconos/icono-vsc-error.svg" alt="Visual Studio Code Error" width="32" height="32"> Errores ("error"):
+        <p>Actualmente (octubre de 2021), los dos consejos que están configurados como errores no parecen funcionar correctamente, ya que parecen no generar nunca mensajes de error.</p>
         <ul>
-          <li>"css.lint.argumentsInColorFunction": Número de parámetros no válido.</li>
-          <li>"css.lint.hexColorLength": Los colores hexadecimales deben estar formados por tres o seis números hexadecimales.</li>
+          <li>
+            "css.lint.argumentsInColorFunction": Arguments in Color Function: Número de parámetros incorrecto
+            <p>No sé cómo se puede provocar este error y no he encontrado información sobre él. El 21/10/2021 panteé una pregunta en StackOverflow: <a href="https://stackoverflow.com/questions/69651379/visual-studio-code-does-css-lint-argumentsincolorfunction-configuration-work">StackOverflow Question 69651379</a></p>
+          </li>
+          <li>
+            "css.lint.hexColorLength": Hex Color Length: Los colores hexadecimales deben estar formados por tres o seis números hexadecimales.
+            <p>Parece que este aviso no funciona, como se comenta en <a href="https://github.com/microsoft/vscode/issues/81808">VSCode issue 81808</a>.</p>
+          </li>
         </ul>
       </li>
-      <li>Avisos ("warning")
+      <li><img src="../varios/iconos/icono-vsc-warning.svg" alt="Visual Studio Code Warning" width="32" height="32"> Avisos ("warning")
         <ul>
-          <li>"css.lint.emptyRules": No use conjuntos de reglas vacíos.</li>
-          <li>"css.lint.fontFaceProperties": La regla @font-face debe definir las propiedades "src" y "font-family".</li>
-          <li>"css.lint.propertyIgnoredDueToDisplay": La propiedad se ignora a causa de la pantalla. Por ejemplo, con "display: inline", las propiedades "width", "height", "margin-top", "margin-bottom" y "float" no tienen ningún efecto.</li>
-          <li>"css.lint.unknownAtRules: Regla At desconocida.</li>
-          <li>"css.lint.unknownProperties": Propiedad desconocida.</li>
-          <li>"css.lint.validProperties": [], // Lista de propiedades que no se validan con la regla"unknownProperties",</li>
-          <li>"css.lint.vendorPrefix": Cuando use un prefijo específico del proveedor, incluya también la propiedad estándar.</li>
+          <li>
+            "css.lint.emptyRules": Empty Rules: No use conjuntos de reglas vacíos.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-empty-rules">Disallow empty rules</a></p>
+          </li>
+          <li>
+            "css.lint.fontFaceProperties": Font Face Properties: La regla "@font-face" debe definir las propiedades "src" y "font-family".
+
+            <p>En los ejercicios de fuentes web propuestos en estos apuntes se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que cumple esta regla, por lo que Visual Studio Code no debería mostrar el aviso:</p>
+
+              <div class="codigo">
+                <pre>
+<code class="language-css">@font-face {
+  font-family: "MyFontFamily";
+  src: url("myfont.woff")
+}</code>
+</pre>
+              </div>
+          </li>
+          <li>
+            "css.lint.propertyIgnoredDueToDisplay": Property Ignored Due To Display: La propiedad se ignora a causa de la pantalla. Por ejemplo, con "display: inline", las propiedades "width", "height", "margin-top", "margin-bottom" y "float" no tienen ningún efecto.
+            <p>En septiembre de 2020 se eliminó el código que implementaba esta regla [<a href="https://github.com/microsoft/vscode/issues/56907">Issue 56907</a>], por lo que el aviso no se muestra, independientemente de la configuración establecida. El 20/10/2021 abrí una <a href="https://github.com/microsoft/vscode/issues/135493">VSCode Issue 135493</a> preguntando si no deberian eliminar la configuración css.lint.propertyIgnoredDueToDisplay.</p>
+          </li>
+          <li>
+            "css.lint.unknownAtRules": Unknown At Rules: Regla At desconocida.
+          </li>
+          <li>
+            "css.lint.unknownProperties": Unknown Properties: Propiedad desconocida.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Require-use-of-known-properties">Require use of known properties</a></p>
+          </li>
+          <li>
+            "css.lint.validProperties": []: Valid Properties: Lista de propiedades que no se validan con la regla "unknownProperties".
+            <p>Esta configuración permite ampliar la lista de propiedades reconocidas como válidas por Visual Studio Code.</p>
+          </li>
+          <li>Cuando use un prefijo específico del proveedor, incluya también la propiedad estándar.</li>
+          <li>
+            "css.lint.vendorPrefix": Vendor Prefix: Cuando use un prefijo específico del proveedor, incluya también la propiedad estándar.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Require-standard-property-with-vendor-prefix">Require standard property with vendor prefix</a></p>
+          </li>
         </ul>
       </li>
-      <li>Validaciones desactivadas ("ignore")
+      <li><img src="../varios/iconos/icono-vsc-ignore.svg" alt="Visual Studio Code Ignore" width="32" height="32"> Validaciones desactivadas ("ignore")
         <ul>
-          <li>"css.lint.boxModel": No use "width" o "height" al usar "padding" o "border".</li>
-          <li>"css.lint.compatibleVendorPrefixes": Cuando use un prefijo específico del proveedor, compruebe que también haya incluido el resto de propiedades específicas del proveedor.</li>
-          <li>"css.lint.duplicateProperties": No use definiciones de estilo duplicadas.</li>
-          <li>"css.lint.float": Le recomendamos no usar 'float'. Los floats producen CSS frágiles que pueden dañarse fácilmente si cambia cualquier aspecto del diseño.</li>
-          <li>"css.lint.idSelector": Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.</li>
-          <li>"css.lint.ieHack": Las modificaciones de IE solo son necesarias cuando se admite IE7 y anteriores.</li>
-          <li>"css.lint.important": Evite usar !important. Es una indicación que la especificidad de todo el CSS está fuera de control y debe ser refactorizarse. </li>
-          <li>"css.lint.importStatement": Las instrucciones Import no se cargan en paralelo.</li>
-          <li>"css.lint.universalSelector": Se sabe que el selector universal ("*"") es lento.</li>
-          <li>"css.lint.unknownVendorSpecificProperties": Propiedad específica del proveedor desconocida.</li>
-          <li>"css.lint.zeroUnits": No se necesita una unidad para cero.</li>
+          <li>
+            "css.lint.boxModel": box-model: No use "width" o "height" al usar "padding" o "border".
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Beware-of-box-model-size">Beware of box model size</a></p>
+          </li>
+          <li>
+            "css.lint.compatibleVendorPrefixes": Compatible Vendor Prefixes: Cuando use un prefijo específico del proveedor, compruebe que también haya incluido el resto de propiedades específicas del proveedor.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Require-compatible-vendor-prefixes">Require compatible vendor prefixes</a></p>
+          </li>
+          <li>
+            "css.lint.duplicateProperties": Duplicate Properties: No use definiciones de estilo duplicadas.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-duplicate-properties">Disallow duplicate properties</a></p>
+          </li>
+          <li>
+            "css.lint.float": Float: Le recomendamos no usar "float". Los valores float producen CSS frágiles que pueden dañarse fácilmente si cambia cualquier aspecto del diseño.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-too-many-floats">Disallow too many floats</a></p>
+          </li>
+          <li>
+            "css.lint.idSelector": ID Selector: Los selectores no deben contener identificadores porque estas reglas están estrechamente ligadas a HTML.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-IDs-in-selectors">IDs in selectors</a></p>
+
+            <p>CSS Lint desaconseja el uso de ids en los selectores porque no se pueden reutilizar en una misma página web y aconseja utilizar clases en su lugar.</p>
+
+            <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo ya que los ejercicios lo que pretenden es ilustrar el uso del selector de IDs.</p>
+
+            <div class="filaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-css">div#intro {
+  background-color: #E56F60;
+}</code>
+</pre>
+              </div>
+              <div class="resultado-html">
+                <p>Disallow IDs in selectors - Don't use IDs in selectors.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            "css.lint.ieHack": IE Hack: Las modificaciones de IE solo son necesarias cuando se admite IE7 y versiones anteriores.
+          </li>
+          <li>
+            "css.lint.important": Important: Evite usar !important. Es una indicación que la especificidad de todo el CSS se ha salido de control y debe ser refactorizada.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-%21important">Disallow !important</a></p>
+          </li>
+          <li>
+            "css.lint.importStatement": Import Statement: Las instrucciones Import no se cargan en paralelo.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-%40import">Disallow @import</a></p>
+
+            <p>Si en la hoja de estilo se utilizan reglas-arroba @import, CSS Lint genera un aviso "Disallow @import".</p>
+
+            <div class="filaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-css">@import url("http://fonts.googleapis.com/css?family=Ribeye+Marrow");</code>
+</pre>
+              </div>
+              <div class="resultado-html">
+                <p>Disallow @import - @import prevents parallel downloads, use &lt;link&gt; instead. (import)</p>
+              </div>
+            </div>
+
+            <p>Cuando se utiliza una regla-arroba @import, el navegador descarga el archivo al que se hace referencia y se espera a que termine la descarga para continuar leyendo la hoja de estilo. Eso ralentiza la carga de la página completa, por lo que CSS Lint aconseja utilizar en su lugar un enlace <span class="html-eti">&lt;link&gt;</span> en la página web (en la hoja de estilo no haría falta escribir nada), ya que la descarga de varios ficheros sí que se gestiona en paralelo. Pero entonces la asignación de la fuente a los elementos se debe hacer también en la página web.</p>
+
+            <div class="filaflex">
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ribeye+Marrow"&gt;
+&lt;style&gt;
+  h1 {
+    font-family: "RibEye Marrow", cursive;
+  }
+&lt;/style&gt;</code>
+</pre>
+              </div>
+              <div class="resultado-html">
+              </div>
+            </div>
+
+            <p>En los ejercicios propuestos en estos apuntes no se hace caso de este consejo y las fuentes de Google Fonts se llaman desde la hoja de estilo.</p>
+          </li>
+          <li>
+            "css.lint.universalSelector": Universal Selector: Se sabe que el selector universal ("*") es lento.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-universal-selector">Disallow universal selector</a></p>
+          </li>
+          <li>
+            "css.lint.unknownVendorSpecificProperties": Unknown Vendor Specific Properties: Propiedad específica del proveedor desconocida.
+          </li>
+          <li>
+            "css.lint.zeroUnits": Zero Units: No se necesita una unidad para cero.
+            <p>Corresponde a la regla de CSSLint: <a href="https://github.com/CSSLint/csslint/wiki/Disallow-units-for-zero-values">Disallow units for zero values</a></p>
+          </li>
         </ul>
       </li>
       <li>Otras:
@@ -212,8 +333,16 @@
     </ul>
   </section>
 
+  <section id="referencias">
+    <h2>Referencias</h2>
+    <ul>
+      <li><a href="https://github.com/microsoft/vscode/issues/135493">VSCode Issue 135493</a>: El 20/10/2021 abrí esta <i>issue</i> porque la configuración css.lint.propertyIgnoredDueToDisplay aparece en el fichero de configuración pero no hace nada. En la <a href)="https://github.com/microsoft/vscode/issues/56907">issue 56907</a> dice que en septiembre de 2020 eliminaron la comprobación, así que les pregunté si no deberian eliminar la configuración css.lint.propertyIgnoredDueToDisplay.</li>
+      <li><a href="https://stackoverflow.com/questions/69651379/visual-studio-code-does-css-lint-argumentsincolorfunction-configuration-work">StackOverflow Question 69651379</a>: El 20/10/2021 abrí esta pregunta en StackOverflow preguntado si alguien sabe cómo generar el error "css.lint.argumentsInColorFunction": "error".</li>
+    </ul>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 14 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 21 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
