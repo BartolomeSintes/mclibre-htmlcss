@@ -79,6 +79,8 @@
 
       <ul>
         <li><a href="#convertidor">Convertidor</a></li>
+        <li><a href="#color">Color de texto: <span class="css-prop">color</span></a></li>
+        <li><a href="#opacidad">Opacidad: <span class="css-prop">opacity</span></a></li>
         <li><a href="#rgb">Códigos RGB</a></li>
         <li><a href="#rgba">Códigos RGBA</a></li>
         <li><a href="#hsl">Códigos HSL</a></li>
@@ -86,7 +88,6 @@
         <li><a href="#html32">Nombres HTML 3.2</a></li>
         <li><a href="#svg">Nombres X11 / SVG</a></li>
         <li><a href="#sistema">Nombres del sistema</a></li>
-        <li><a href="#opacidad">Opacidad: <span class="css-prop">opacity</span></a></li>
       </ul>
     </div>
   </nav>
@@ -503,6 +504,80 @@
       coco_hsl_3_3.addEventListener("change", desde_hsl);
       coco_svg_4.addEventListener("change", desde_svg);
     </script>
+  </section>
+
+  <section id="color">
+    <h2 class="con-aside">Color del texto: <span class="css-prop">color</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">color</span><br>
+        <a href="https://www.w3.org/TR/css-color-3/#foreground"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">color</span> permite establecer el color del texto. Las formas de expresar colores se comentan en la lección <a href="css-color.html">CSS: Colores</a>.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">h1 {
+  color: magenta;
+}
+
+p {
+  color: blue;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/texto/color-1.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/texto/color-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="opacidad">
+    <h2 class="con-aside">Opacidad (transparencia): <span class="css-prop">opacity</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">opacity</span><br>
+        <a href="https://www.w3.org/TR/css-color-3/#transparency"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La propiedad <span class="css-prop">opacity</span> permite hacer que un elemento sea parcialmente transparente. El valor de esta propiedad debe ser un valor decimal entre 0 y 1 (el valor 0 hace que el elemento sea completamente transparente y el valor 1 hace que el elemento sea completamente opaco).</p>
+
+    <p>Si un elemento parcialmente transparente se superpone a otro elemento de otro color, el navegador mezcla los colores de los elementos, como muestra el siguiente ejemplo:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p.p1 {
+  background-color: yellow;
+}
+
+p.p2 {
+  background-color: red;
+  color: white;
+  opacity: 0.5;
+}
+
+/* En el ejemplo también se utilizan propiedades
+de posicionamiento que no aparecen aquí. */</code></pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-opacity.html" style="width: 100%; height: 12em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-opacity.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <section id="rgb">
@@ -2152,46 +2227,6 @@
     <p>El problema es que la propiedad <span class="css-prop">appearance</span> no está incluida en ninguna recomendación ya aprobada. Esta propiedad se encuentra definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (octubre de 2021) en elaboración, pero parece que esta propiedad tiene serios problemas de incompatibilidad entre navegadores.</p>
 
     <p>Mientras los navegadores los admitan, los nombres de colores de sistema se pueden utilizar, pero nada garantizada que los navegadores dejen de aceptarlos en un futuro.</p>
-  </section>
-
-  <section id="opacidad">
-    <h2 class="con-aside">Opacidad (transparencia): <span class="css-prop">opacity</span></h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="css-prop">opacity</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#transparency"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-      </p>
-    </aside>
-
-    <p>La propiedad <span class="css-prop">opacity</span> permite hacer que un elemento sea parcialmente transparente. El valor de esta propiedad debe ser un valor decimal entre 0 y 1 (el valor 0 hace que el elemento sea completamente transparente y el valor 1 hace que el elemento sea completamente opaco).</p>
-
-    <p>Si un elemento parcialmente transparente se superpone a otro elemento de otro color, el navegador mezcla los colores de los elementos, como muestra el siguiente ejemplo:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-css">p.p1 {
-  background-color: yellow;
-}
-
-p.p2 {
-  background-color: red;
-  color: white;
-  opacity: 0.5;
-}
-
-/* En el ejemplo también se utilizan propiedades
-de posicionamiento que no aparecen aquí. */</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/color/color-opacity.html" style="width: 100%; height: 12em">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/color/color-opacity.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
   </section>
 
   <footer>
