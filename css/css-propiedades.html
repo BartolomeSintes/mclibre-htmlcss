@@ -11,6 +11,20 @@
   <style>
     html { zoom: 61%;}
   </style>-->
+  <script>
+    function oculta() {
+      var elementos = document.getElementsByClassName("no-clase");
+      for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'none';
+      }
+    }
+    function muestra() {
+      var elementos = document.getElementsByClassName("no-clase");
+      for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'revert';
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -29,7 +43,9 @@
         <li><a href="#css-tipos">Tipos</a></li>
         <li><a href="#css-arroba">Reglas arroba</a></li>
         <li><a href="#css-tipo-letra">Tipo de letra</a></li>
+        <li><a href="#css-color">Color</a></li>
         <li><a href="#css-texto">Texto</a></li>
+        <li class="no-clase"><a href="#css-modos-escritura">Modos de escritura</a></li>
         <li><a href="#css-bordes">Bordes</a></li>
         <li><a href="#css-margen-exterior">Margen exterior</a></li>
         <li><a href="#css-margen-interior">Margen interior</a></li>
@@ -53,7 +69,12 @@
     <li>Se incluyen las propiedades CSS 2, excepto las propiedades relacionadas con las hojas de estilo auditivas (aural).</li>
     <li>Las propiedades que han sido eliminadas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se listan al final.</li>
     <li>Los valores de las propiedades añadidos o eliminados en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a> se indican con los símbolos <sup>(+)</sup> o <sup>(-)</sup>.</li>
-    <li>Las propiedades o los valores de las propiedades definidas en recomendaciones CSS 3 en elaboración que los navegadores actuales admiten correctamente se indican con el símbolo <sup>(3)</sup>.</li>
+  </ul>
+
+  <p>Mostrar:</p>
+  <ul>
+    <li><label><input type="radio" name="selector" value="0" onclick="oculta()">Mostrar únicamente las propiedades trabajadas en clase</label></li>
+    <li><label><input type="radio" name="selector" value="1" checked onclick="muestra()">Mostrar todas las propiedades</label></li>
   </ul>
 
   <section id="css-propiedades">
@@ -61,6 +82,7 @@
       <col class="propiedad">
       <col class="descripcion">
       <col>
+
       <tbody id="css-tipos">
         <tr class="titulo">
           <td colspan="3">Tipos</td>
@@ -111,8 +133,8 @@
           <td>Descriptores / Características</td>
         </tr>
         <tr>
-          <td><a href="css-fuentes-web.html#font-face">@import</a></td>
-          <td>Importar recurso</td>
+          <td>@import</td>
+          <td>Importar CSS</td>
           <td><span class="css-feature">url(...)</span></td>
         </tr>
         <tr>
@@ -126,6 +148,7 @@
           <td><span class="css-feature">width</span> | <span class="css-feature">height</span> | <span class="css-feature">orientation</span> | <span class="css-feature">aspect-ratio</span> | <span class="css-feature">resolution</span> | etc. </td>
         </tr>
       </tbody>
+
       <tbody id="css-tipo-letra">
         <tr class="titulo">
           <td colspan="3">Tipo de letra (fuente)</td>
@@ -162,64 +185,65 @@
           <td><span class="css-valor">normal</span> | <span class="css-valor">italic</span> | <span class="css-valor">oblique</span></td>
         </tr>
         <tr>
-          <td><a href="css-fuente.html#font-variant">font-variant</a><sup>(3)</sup></td>
+          <td><a href="css-fuente.html#font-variant">font-variant</a></td>
           <td>variantes tipográficas</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span></td>
         </tr>
         <tr>
-          <td><a href="css-fuente.html#font-variant-caps">font-variant-caps</a><sup>(3)</sup></td>
+          <td><a href="css-fuente.html#font-variant-caps">font-variant-caps</a></td>
           <td>versalitas</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-kerning">font-kerning</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-kerning">font-kerning</a></td>
           <td>kerning</td>
           <td><span class="css-valor">auto</span> | <span class="css-valor">normal</span> | <span class="css-valor">none</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-variant-ligatures">font-variant-ligatures</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-variant-ligatures">font-variant-ligatures</a></td>
           <td>ligaduras</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">none</span> | <span class="css-valor">common-ligatures</span> | <span class="css-valor">no-common-ligatures</span> | <span class="css-valor">discretionary-ligatures</span> | <span class="css-valor">no-discretionary-ligatures</span> | <span class="css-valor">historical-ligatures</span> | <span class="css-valor">no-historical-ligatures</span> | <span class="css-valor">contextual</span> | <span class="css-valor">no-contextual</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-variant-numeric">font-variant-numeric</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-variant-numeric">font-variant-numeric</a></td>
           <td>versalitas</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">lining-nums</span> | <span class="css-valor">oldstyle-nums</span> | <span class="css-valor">proportional-nums</span> | <span class="css-valor">tabular-nums</span> | <span class="css-valor">diagonal-fractions</span> | <span class="css-valor">stacked-fractions</span> | <span class="css-valor">ordinal</span> | <span class="css-valor">slashed-zeros</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-variant-position">font-variant-position</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-variant-position">font-variant-position</a></td>
           <td>posición</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">sub</span> | <span class="css-valor">super</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-variant-east-asian">font-variant-east-asian</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-variant-east-asian">font-variant-east-asian</a></td>
           <td>lenguas asiáticas</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">jis78</span> | <span class="css-valor">jis83</span> | <span class="css-valor">jis90</span> | <span class="css-valor">jis04</span> | <span class="css-valor">simplified</span> | <span class="css-valor">traditional</span> | <span class="css-valor">full-width</span> | <span class="css-valor">proportional-width</span> | <span class="css-valor">ruby</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-feature-settings">font-feature-settings</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-feature-settings">font-feature-settings</a></td>
           <td>características OpenType</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">características OpenType</span></td>
         </tr>
-        <tr>
-          <td><a href="css-fuente.html#font-synthesis">font-synthesis</a><sup>(3)</sup></td>
+        <tr class="no-clase">
+          <td><a href="css-fuente.html#font-synthesis">font-synthesis</a></td>
           <td>síntesis</td>
           <td><span class="css-valor">none</span> | <span class="css-valor">weight</span> | <span class="css-valor">style</span></td>
         </tr>
         <tr>
-          <td><a href="css-fuente.html#font-size-adjust">font-size-adjust</a><sup>(3)</sup></td>
+          <td><a href="css-fuente.html#font-size-adjust">font-size-adjust</a></td>
           <td>ajuste del tamaño</td>
           <td>número</td>
         </tr>
         <tr>
-          <td><a href="css-fuente.html#font-stretch">font-stretch</a><sup>(3)</sup></td>
+          <td><a href="css-fuente.html#font-stretch">font-stretch</a></td>
           <td>anchura</td>
           <td><span class="css-valor">ultra-condensed</span>, <span class="css-valor">extra-condensed</span>, <span class="css-valor">condensed</span>, <span class="css-valor">semi-condensed</span>, <span class="css-valor">normal</span>, <span class="css-valor">semi-expanded</span>, <span class="css-valor">expanded</span>, <span class="css-valor">extra-expanded</span>, <span class="css-valor">ultra-expanded</span></td>
         </tr>
       </tbody>
-      <tbody id="css-texto">
+
+      <tbody id="css-color">
         <tr class="titulo">
-          <td colspan="3">Texto</td>
+          <td colspan="3">Color</td>
         </tr>
         <tr class="cabecera">
           <td>Propiedad</td>
@@ -232,9 +256,20 @@
           <td>color</td>
         </tr>
         <tr>
-          <td><a href="css-texto.html#direction">direction</a></td>
-          <td>dirección del texto</td>
-          <td><span class="css-valor">ltr</span> | <span class="css-valor">rtl</span></td>
+          <td><a href="css-color.html#opacidad">opacity</a></td>
+          <td>opacidad / transparencia</td>
+          <td>valor numérico | porcentaje</td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-texto">
+        <tr class="titulo">
+          <td colspan="3">Texto</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
         </tr>
         <tr>
           <td><a href="css-texto.html#letter-spacing">letter-spacing</a></td>
@@ -267,14 +302,9 @@
           <td><span class="css-valor">none</span> | <span class="css-valor">capitalize</span> | <span class="css-valor">lowercase</span> | <span class="css-valor">uppercase</span></td>
         </tr>
         <tr>
-          <td><a href="css-texto.html#text-shadow">text-shadow</a><sup>(3)</sup></td>
+          <td><a href="css-texto.html#text-shadow">text-shadow</a></td>
           <td>sombreado</td>
           <td>desplazamiento horizontal, desplazamiento vertical, tamaño desenfoque, color</td>
-        </tr>
-        <tr>
-          <td><a href="css-texto.html#unicode-bidi">unicode-bidi</a></td>
-          <td>dirección del texto</td>
-          <td><span class="css-valor">normal</span> | <span class="css-valor">embed</span> | <span class="css-valor">bidi-override</span></td>
         </tr>
         <tr>
           <td><a href="css-texto.html#vertical-align">vertical-align</a></td>
@@ -292,6 +322,48 @@
           <td><span class="css-valor">normal</span> | distancia</td>
         </tr>
       </tbody>
+
+      <tbody id="css-modos-escritura" class="no-clase">
+        <tr class="titulo">
+          <td colspan="3">Modos de escritura</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="css-modos-escritura.html#direction">direction</a></td>
+          <td>dirección del texto</td>
+          <td><span class="css-valor">ltr</span> | <span class="css-valor">rtl</span></td>
+        </tr>
+        <tr>
+          <td><a href="css-modos-escritura.html#unicode-bidi">unicode-bidi</a></td>
+          <td>dirección del texto</td>
+          <td><span class="css-valor">normal</span> | <span class="css-valor">embed</span> | <span class="css-valor">isolate</span> | <span class="css-valor">bidi-override</span> | <span class="css-valor">isolate-override</span> | <span class="css-valor">plaintext</span></td>
+        </tr>
+        <tr>
+          <td>writing-mode</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>text-orientation</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>glyph-orientation-vertical</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>text-combine-upright</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+
       <tbody id="css-bordes">
         <tr class="titulo">
           <td colspan="3">Bordes</td>
@@ -327,27 +399,27 @@
           <td>border-color || border-width || border-style</td>
         </tr>
         <tr>
-          <td><a href="css-bordes.html#border-radius">border-radius</a><sup>(3)</sup></td>
+          <td><a href="css-bordes.html#border-radius">border-radius</a></td>
           <td>esquinas redondeadas</td>
           <td>[ distancia | porcentaje ] {1, 4}</td>
         </tr>
         <tr>
-          <td><a href="css-bordes.html#border-radius">border-top-right-radius</a><sup>(3)</sup></td>
+          <td><a href="css-bordes.html#border-radius">border-top-right-radius</a></td>
           <td>esquina superior derecha redondeada</td>
           <td>distancia | porcentaje</td>
         </tr>
         <tr>
-          <td><a href="css-bordes.html#border-radius">border-bottom-right-radius</a><sup>(3)</sup></td>
+          <td><a href="css-bordes.html#border-radius">border-bottom-right-radius</a></td>
           <td>esquina inferior derecha redondeada</td>
           <td>distancia | porcentaje</td>
         </tr>
         <tr>
-          <td><a href="css-bordes.html#border-radius">border-bottom-left-radius</a><sup>(3)</sup></td>
+          <td><a href="css-bordes.html#border-radius">border-bottom-left-radius</a></td>
           <td>esquina inferior izquierda redondeada</td>
           <td>distancia | porcentaje</td>
         </tr>
         <tr>
-          <td><a href="css-bordes.html#border-radius">border-top-left-radius</a><sup>(3)</sup></td>
+          <td><a href="css-bordes.html#border-radius">border-top-left-radius</a></td>
           <td>esquina superior izquierda redondeada</td>
           <td>distancia | porcentaje</td>
         </tr>
@@ -427,6 +499,7 @@
           <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
         </tr>
       </tbody>
+
       <tbody id="css-margen-exterior">
         <tr class="titulo">
           <td colspan="3">Margen exterior</td>
@@ -462,6 +535,7 @@
           <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
         </tr>
       </tbody>
+
       <tbody id="css-margen-interior">
         <tr class="titulo">
           <td colspan="3">Margen interior</td>
@@ -497,6 +571,7 @@
           <td>distancia | porcentaje</td>
         </tr>
       </tbody>
+
       <tbody id="css-fondos">
         <tr class="titulo">
           <td colspan="3">Fondos</td>
@@ -512,7 +587,7 @@
           <td>background-attachment || background-color || background-image || background-position || background-repeat </td>
         </tr>
         <tr>
-          <td><a href="css-fondos.html#fondos-multiples">background</a><sup>(3)</sup></td>
+          <td><a href="css-fondos.html#fondos-multiples">background</a></td>
           <td>fondos múltiples</td>
           <td>separados por comas</td>
         </tr>
@@ -539,24 +614,25 @@
         <tr>
           <td><a href="css-fondos.html#background-repeat">background-repeat</a></td>
           <td>repetición de la imagen de fondo</td>
-          <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span><sup>(3)</sup> | <span class="css-valor">round</span><sup>(3)</sup></td>
+          <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span> | <span class="css-valor">round</span></td>
         </tr>
         <tr>
-          <td><a href="css-fondos.html#background-clip">background-clip</a><sup>(3)</sup></td>
+          <td><a href="css-fondos.html#background-clip">background-clip</a></td>
           <td>límite de la imagen de fondo</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
         </tr>
         <tr>
-          <td><a href="css-fondos.html#background-size">background-size</a><sup>(3)</sup></td>
+          <td><a href="css-fondos.html#background-size">background-size</a></td>
           <td>tamaño de la imagen de fondo</td>
           <td><span class="css-valor">auto</span> | [ distancia | porcentaje ] {2} | <span class="css-valor">contain</span> | <span class="css-valor">cover</span></td>
         </tr>
         <tr>
-          <td><a href="css-fondos.html#background-origin">background-origin</a><sup>(3)</sup></td>
+          <td><a href="css-fondos.html#background-origin">background-origin</a></td>
           <td>origen de la imagen de fondo</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
         </tr>
       </tbody>
+
       <tbody id="css-listas">
         <tr class="titulo">
           <td colspan="3">Listas</td>
@@ -587,6 +663,7 @@
           <td><span class="css-valor">none</span> | <span class="css-valor">circle</span> | <span class="css-valor">disc</span> | <span class="css-valor">square</span> | <span class="css-valor">decimal</span> | <span class="css-valor">decimal-leading-zero</span> | <span class="css-valor">lower-alpha</span> | <span class="css-valor">upper-alpha</span> | <span class="css-valor">lower-greek</span> | <span class="css-valor">lower-latin</span> | <span class="css-valor">upper-latin</span> | <span class="css-valor">lower-roman</span> | <span class="css-valor">upper-roman</span> | <span class="css-valor">armenian</span> | <span class="css-valor">georgian</span> | <span class="css-valor">hebrew</span><sup>(-)</sup> | <span class="css-valor">cjk-ideographic</span><sup>(-)</sup> | <span class="css-valor">hiragana</span><sup>(-)</sup> | <span class="css-valor">katakana</span><sup>(-)</sup> | <span class="css-valor">hiragana-iroha</span><sup>(-)</sup> | <span class="css-valor">katakana-iroha</span><sup>(-)</sup></td>
         </tr>
       </tbody>
+
       <tbody id="css-tablas">
         <tr class="titulo">
           <td colspan="3">Tablas</td>
@@ -622,6 +699,7 @@
           <td><span class="css-valor">auto</span> | <span class="css-valor">fixed</span></td>
         </tr>
       </tbody>
+
       <tbody id="css-tamano">
         <tr class="titulo">
           <td colspan="3">Modelo de caja / Tamaño</td>
@@ -634,10 +712,10 @@
         <tr>
           <td><a href="css-modelo-caja.html#display">display</a></td>
           <td>tipo de caja</td>
-          <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">compact</span><sup>(-)</sup> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span><sup>(+)</sup> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">marker</span><sup>(-)</sup> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span> | <span class="css-valor">flex</span><sup>(3)</sup> | <span class="css-valor">inline-flex</span><sup>(3)</sup></td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">compact</span><sup>(-)</sup> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span><sup>(+)</sup> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">marker</span><sup>(-)</sup> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span> | <span class="css-valor">flex</span> | <span class="css-valor">inline-flex</span></td>
         </tr>
         <tr>
-          <td><a href="css-modelo-caja.html#box-sizing">box-sizing</a><sup>(3)</sup></td>
+          <td><a href="css-modelo-caja.html#box-sizing">box-sizing</a></td>
           <td>posición del borde y márgenes</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">content-box</span></td>
         </tr>
@@ -677,6 +755,7 @@
           <td><span class="css-valor">auto</span> | <span class="css-valor">hidden</span> | <span class="css-valor">scroll</span> | <span class="css-valor">visible</span></td>
         </tr>
       </tbody>
+
       <tbody id="css-posicionamiento">
         <tr class="titulo">
           <td colspan="3">Posicionamiento</td>
@@ -736,7 +815,13 @@
           <td>apilamiento</td>
           <td><span class="css-valor">auto</span> | número-entero</td>
         </tr>
+        <tr>
+          <td>contain</td>
+          <td>independencia</td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">strict</span> | <span class="css-valor">content</span> | <span class="css-valor">size</span> | <span class="css-valor">layout</span> | <span class="css-valor">paint</span></td>
+        </tr>
       </tbody>
+
       <tbody id="css-flexbox">
         <tr class="titulo">
           <td colspan="3">Cajas flexibles</td>
@@ -749,69 +834,70 @@
         <tr>
           <td><a href="css-flexbox.html#display">display</a></td>
           <td>tipo de caja</td>
-          <td><span class="css-valor">flex</span><sup>(3)</sup> || <span class="css-valor">inline-flex</span><sup>(3)</sup></td>
+          <td><span class="css-valor">flex</span> || <span class="css-valor">inline-flex</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-flow">flex-flow</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-flow">flex-flow</a></td>
           <td>propiedad compuesta</td>
           <td>flex-direction || flex-wrap</td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-direction">flex-direction</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-direction">flex-direction</a></td>
           <td>dirección</td>
           <td><span class="css-valor">row</span> || <span class="css-valor">row-reverse</span> || <span class="css-valor">column</span> || <span class="css-valor">column-reverse</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-wrap">flex-wrap</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-wrap">flex-wrap</a></td>
           <td>ajuste de línea</td>
           <td><span class="css-valor">wrap</span> || <span class="css-valor">no-wrap</span> || <span class="css-valor">wrap-reverse</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#order">order</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#order">order</a></td>
           <td>número de orden</td>
           <td>número</td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex">flex</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex">flex</a></td>
           <td>propiedad compuesta</td>
           <td>[ flex-grow || flex-shrink || flex-basis ] || <span class="css-valor">initial</span> || <span class="css-valor">auto</span> || <span class="css-valor">none</span> || número </td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-grow">flex-grow</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-grow">flex-grow</a></td>
           <td>factor de expansión</td>
           <td>número</td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-shrink">flex-shrink</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-shrink">flex-shrink</a></td>
           <td>factor de compresión</td>
           <td>número</td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#flex-basis">flex-basis</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#flex-basis">flex-basis</a></td>
           <td>tamaño inicial</td>
           <td>distancia || <span class="css-valor">auto</span> || <span class="css-valor">content</span> || <span class="css-valor">width</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#justify-content">justify-content</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#justify-content">justify-content</a></td>
           <td>alineación en la dirección principal</td>
           <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">space-between</span> || <span class="css-valor">space-around</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#align-items">align-items</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#align-items">align-items</a></td>
           <td>alineación en la dirección secundaria (una línea)</td>
           <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">baseline</span> || <span class="css-valor">stretch</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#align-self">align-self</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#align-self">align-self</a></td>
           <td>alineación individual en la dirección secundaria</td>
           <td><span class="css-valor">auto</span> || <span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">baseline</span> || <span class="css-valor">stretch</span></td>
         </tr>
         <tr>
-          <td><a href="css-flexbox.html#align-content">align-content</a><sup>(3)</sup></td>
+          <td><a href="css-flexbox.html#align-content">align-content</a></td>
           <td>alineación en la dirección secundaria (varias líneas)</td>
           <td><span class="css-valor">flex-start</span> || <span class="css-valor">flex-end</span> || <span class="css-valor">center</span> || <span class="css-valor">space-between</span> || <span class="css-valor">space-around</span> || <span class="css-valor">stretch</span></td>
         </tr>
       </tbody>
+
       <tbody id="css-impresora">
         <tr class="titulo">
           <td colspan="3">Impresora</td>
@@ -847,6 +933,7 @@
           <td>número-entero</td>
         </tr>
       </tbody>
+
       <tbody id="css-interface">
         <tr class="titulo">
           <td colspan="3">Interface de usuario</td>
@@ -882,6 +969,7 @@
           <td>border-style</td>
         </tr>
       </tbody>
+
       <tbody id="css-pseudo-elementos">
         <tr class="titulo">
           <td colspan="3">Pseudo-elementos</td>
@@ -932,6 +1020,7 @@
           <td><span class="css-valor">none</span> | [ texto-apertura texto-cierre ]+</td>
         </tr>
       </tbody>
+
       <tbody id="css-pseudo-clases">
         <tr class="titulo">
           <td colspan="3">Pseudo-clases</td>
@@ -977,6 +1066,7 @@
           <td></td>
         </tr>
       </tbody>
+
       <tbody id="css-eliminadas">
         <tr class="titulo">
           <td colspan="3">Propiedades obsoletas</td>
@@ -996,7 +1086,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de agosto de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 22 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
