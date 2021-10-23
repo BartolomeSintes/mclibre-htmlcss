@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Interface de usuario. CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Interface de usuario. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>CSS 3: Interface de usuario</h1>
+  <h1>CSS: Interface de usuario</h1>
 
   <nav>
     <p>
@@ -20,7 +20,7 @@
     </p>
 
     <div class="toc">
-      <h2>CSS 3: Interface de usuario</h2>
+      <h2>CSS: Interface de usuario</h2>
 
       <ul>
         <li><a href="#box-sizing">Modelo de caja: <span class="css-prop">box-sizing</span></a></li>
@@ -29,13 +29,14 @@
           <ul>
             <li><a href="#outline"><span class="css-prop">outline</span></a></li>
             <li><a href="#outline-color-width-style"><span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span>, <span class="css-prop">outline-style</span></a></li>
+            <li><a href="#outline-offset"><span class="css-prop">outline-offset</span></a></li>
           </ul>
         </li>
       </ul>
     </div>
   </nav>
 
-  <p>La recomendación <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a>, editada por Tantek Çelik y por Florian Rivoal, se publicó en junio de 2018.</p>
+  <p>En esta lección se comentan las propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a>, publicada en junio de 2018.</p>
 
   <section id="box-sizing">
     <h2 class="con-aside">Cambio del modelo de caja: <span class="css-prop">box-sizing</span></h2>
@@ -1081,7 +1082,7 @@ p {
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a></p>
       </aside>
 
-      <p>Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo de los cuatro contornos de un elemento y se utilizan de la misma manera que las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span>.</p>
+      <p>Las propiedades <span class="css-prop">outline-color</span>, <span class="css-prop">outline-width</span> y <span class="css-prop">outline-style</span> permiten establecer, respectivamente, el color, el grosor y el estilo del contorno de un elemento. A diferencia de las propiedades <span class="css-prop">border-color</span>, <span class="css-prop">border-width</span> y <span class="css-prop">border-style</span>, las propiedades del contorno sólo admiten un valor, es decir, los cuatro lados del contorno son siempre iguales.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -1130,10 +1131,54 @@ p {
 
       <p>Curiosamente, en este caso Firefox y Chrome sí que muestran el contorno, lo que no hacen con la propiedad compuesta <span class="css-prop">outline</span>.</p>
     </section>
+
+    <section id="outline-offset">
+      <h3 class="con-aside">La propiedad <span class="css-prop">outline-offset</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="css-prop">outline-offset</span><br>
+          <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/#outline-offset"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        </p>
+      </aside>
+
+      <p>La propiedad <span class="css-prop">outline-offset</span> permite modificar el tamaño del contorno de un elemento, ampliándolo o reduciéndolo con respecto a su tamaño inicial. El valor debe ser una distancia. Si el valor es positivo, el contorno aumentará. Si el valor es negativo, el contorno se reducirá.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">p {
+  margin: 20px;
+}
+
+p.con-outline {
+  outline: black 1px solid;
+}
+
+p.con-outline-offset-positivo {
+  outline: black 1px solid;
+  outline-offset: 10px;
+}
+
+p.con-outline-offset-negativo {
+  outline: black 1px solid;
+  outline-offset: -5px;
+}</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/interface/outline-offset-1.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/interface/outline-offset-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de septiembre de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
