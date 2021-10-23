@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Consultas de medios (media queries). CSS 3. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Consultas de medios (media queries). CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>CSS 3: Consultas de medios (media queries)</h1>
+  <h1>CSS: Consultas de medios (media queries)</h1>
 
   <nav>
     <p>
@@ -20,11 +20,10 @@
     </p>
 
     <div class="toc">
-      <h2>Media queries</h2>
+      <h2>CSS: Media queries</h2>
 
       <ul>
         <li><a href="#diseno-adaptativo">Diseño adaptativo</a></li>
-        <li><a href="#recomendaciones">Recomendaciones</a></li>
         <li><a href="#meta-viewport"><span class="html-eti">meta</span> <span class="html-atri">viewport</span></a></li>
         <li><a href="#css-especificas"><span class="html-eti">link</span> <span class="html-atri">media</span></a></li>
         <li><a href="#media-queries">media queries</a>
@@ -37,7 +36,9 @@
     </div>
   </nav>
 
-  <p>Las consultas de medios permiten detectar características del dispositivo que está utilizando el usuario y optimizar la hoja de estilo.</p>
+  <p>En esta lección se comentan las propiedades CSS definidas en la recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, publicada en junio de 2012.</p>
+
+  <p>Estas propiedades permiten obtener detalles sobre las características del dispositivo del usuario y adaptar y optimizar la hoja de estilo a ellas.</p>
 
   <section id="diseno-adaptativo">
     <h2>Diseño adaptativo (responsive design)</h2>
@@ -59,26 +60,12 @@
 
     <p>Herramientas:</p>
     <ul>
-      <li>Chrome &gt; Más herramientas &gt; Herramientas para desarrolladores &gt; Device mode (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>, o icono móvil)</li>
-      <li>Firefox &gt; Herramientas &gt; Desarrollador web &gt; Vista de diseño adaptable (<span class="soft-atajo-teclado">Ctrl+Shift+M</span>). Puede consultar más información en la lección <a href="https://www.mclibre.org/consultar/informatica/lecciones/ff-desarrollador-web.html#ff-responsive-mode">Firefox. Herramientas para Desarrollador Web</a> de los apuntes de Informática general.</li>
+      <li>Chrome &gt; Más herramientas &gt; Herramientas para desarrolladores &gt; Device mode (<span class="soft-atajo-teclado">Ctrl+Mayús++M</span>, o icono móvil)</li>
+      <li>Firefox &gt; Herramientas &gt; Desarrollador web &gt; Vista de diseño adaptable (<span class="soft-atajo-teclado">Ctrl+Mayús++M</span>). Puede consultar más información en la lección <a href="https://www.mclibre.org/consultar/informatica/lecciones/ff-desarrollador-web.html#ff-responsive-mode">Firefox. Herramientas para Desarrollador Web</a> de los apuntes de Informática general.</li>
       <li>Extensión Web Developer de Firefox &gt; Resize &gt; View Responsive Layouts</li>
       <li><a href="https://search.google.com/test/mobile-friendly">Prueba de optimización para móviles de Google</a></li>
       <li><a href="http://www.responsinator.com/">Responsinator</a></li>
       <li><a href="http://responsivecss.net/responsive-design-checker-tools/">Responsive design testing tools</a></li>
-    </ul>
-  </section>
-
-  <section id="recomendaciones">
-    <h2>Recomendaciones</h2>
-
-    <p>Las recomendaciones HTML 4.01 y CSS 2 ya incluían etiquetas y propiedades que permitían adaptar la página web a los tipos de medios, pero de manera muy básica.</p>
-
-    <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, editada por Florian Rivoal, se aprobó el 19 de junio de 2012. Esta recomendación ampliaba las posibilidades de adaptación al permitir obtener detalles sobre las características de los dispositivos.</p>
-
-    <p>Actualmente (octubre de 2019), el W3C está elaborando dos recomendaciones relacionadas:</p>
-    <ul>
-      <li>la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a>, que desarrolla la recomendación CSS 3: media queries.</li>
-      <li>la recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Modules Level 1</a>, dedicada específicamente a las características de las pantallas.</li>
     </ul>
   </section>
 
@@ -93,7 +80,7 @@
       </p>
     </aside>
 
-    <p>El atributo <span class="html-atri">viewport</span> de la etiqueta <span class="html-eti">meta</span> no forma parte de ninguna recomendación ya aprobada, pero formará parte de la futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2019, en elaboración) y es admitido por los navegadores.</p>
+    <p>El atributo <span class="html-atri">viewport</span> de la etiqueta <span class="html-eti">meta</span> no forma parte de ninguna recomendación ya aprobada, pero formará parte de la futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2021, en elaboración) y es admitido por los navegadores.</p>
 
     <p>La densidad de píxeles de una pantalla es el número de píxeles por unidad de distancia (aunque no sea lo mismo, también se utiliza con el mismo significado la expresión de puntos por unidad de distancia. Las unidades más utilizadas son <a href="https://en.wikipedia.org/wiki/Pixel_density">PPI</a> (píxeles por pulgada) y <a href="https://en.wikipedia.org/wiki/Dots_per_inch">DPI</a> (puntos por pulgada).</p>
 
@@ -115,23 +102,6 @@
     <p>Esta etiqueta hace que en dispositivos con pantallas de alta densidad el navegador aplique automáticamente un zoom que facilite la lectura.</p>
 
     <p>Esta etiqueta fue creada por Apple en 2007 (véase <a href="#origen-viewport">referencia</a>), aunque rápidamente fue adoptada por todos los navegadores de los móviles. Por ello, se recomienda incluir esta etiqueta en todas las páginas web. En estos apuntes se ha incluido en la <a href="../html/html-plantilla.html">plantilla de página web básica</a>.</p>
-
-    <h3 class="con-aside">La regla arroba <span class="css-arroba">@viewport</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="css-arroba">@viewport</span><br>
-        <a href="https://www.w3.org/TR/css-device-adapt-1/#atviewport-rule"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        <a href="https://caniuse.com/#feat=css-deviceadaptation"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
-      </p>
-    </aside>
-
-    <p>La futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2019, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que está inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero está pensada tanto para navegadores de móviles como de escritorio.</p>
-
-    <p>El borrador declara la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. Si la regla arroba <span class="css-arroba">@viewport</span> llega a implementarse en los navegadores, se podrá sustituir la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> de todas las páginas por la regla arroba <span class="css-arroba">@viewport</span> en la hoja de estilo, pero parece que los navegadores se niegan a implementarla por diversas razones..</p>
-
-    <hr class="corta">
 
     <p>Referencias:</p>
     <ul>
@@ -207,12 +177,25 @@ h1 { text-decoration: underline; }</code>
 
     <p>La idea de definir tipos de dispositivos no ha dado buen resultado, ya que las características de los dispositivos del mismo tipo a veces son muy diferentes y distintos tipos de dispositivos tienen características comunes. Por eso, en las recomendaciones posteriores se ha reducido el número de dispositivos y creado nuevas propiedades relacionadas con las características de los dispositivos (tamaños, resoluciones, número de colores, etc.).</p>
 
-    <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, publicada en 2012, no definía los tipos de dispositivos, ya que estaban definidos en la recomendación HTML 4.01. Las recomendaciones HTML 5 y posteriores ya no incluían una lista de tipos de dispositivos, que se encuentra ahora en la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a> (actualmente, octubre de 2019, en elaboración). En ella, ya sólo se consideran los tipos <span class="css-valor">all</span> (pantallas), <span class="css-valor">print</span>, <span class="css-valor">screen</span> (pantallas) y <span class="css-valor">speech</span>.</p>
-
+    <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a>, publicada en 2012, no definía los tipos de dispositivos, ya que estaban definidos en la recomendación HTML 4.01. Las recomendaciones HTML 5 y posteriores ya no incluían una lista de tipos de dispositivos, que se encuentra ahora en la recomendación <a href="https://www.w3.org/TR/mediaqueries-4/">Media Queries Level 4</a> (actualmente, octubre de 2021, en elaboración). En ella, ya sólo se consideran los tipos <span class="css-valor">all</span> (pantallas), <span class="css-valor">print</span>, <span class="css-valor">screen</span> (pantallas) y <span class="css-valor">speech</span>.</p>
   </section>
 
   <section id="media-queries">
-    <h2>Características del dispositivo: media queries</h2>
+    <h2 class="con-aside">Características del dispositivo: media queries</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-arroba">@media</span><br>
+        <a href="https://www.w3.org/TR/css-conditional-3/#at-media"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+
+      <p>
+        media features<br>
+        <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/#media1"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
 
     <p>La recomendación <a href="https://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619/">CSS 3: Media queries</a> define toda una serie de <strong>características de medios</strong> (<i>media features</i>) que corresponden a características del dispositivo. Las más importantes son:</p>
 
@@ -364,7 +347,7 @@ h1 { text-decoration: underline; }</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de enero de 2018</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

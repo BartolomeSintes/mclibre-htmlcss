@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Propiedades obsoletas. CSS 2. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Propiedades obsoletas. CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>CSS 2.1: Propiedades obsoletas</h1>
+  <h1>CSS: Propiedades obsoletas</h1>
 
   <nav>
     <p>
@@ -20,9 +20,10 @@
     </p>
 
     <div class="toc">
-      <h2>CSS 2 obsoletas</h2>
+      <h2>CSS: obsoletas</h2>
 
       <ul>
+        <li><a href="#arroba-viewport"><span class="css-arroba">@viewport</span></a></li>
         <li><a href="#estilo-enlaces">Dar estilo a enlaces</a></li>
         <li><a href="#marker-offset"><span class="css-prop">marker-offset</span></a></li>
         <li><a href="#colores-sistema">Colores del sistema</a></li>
@@ -30,13 +31,26 @@
     </div>
   </nav>
 
-  <p>En esta página se comentan:</p>
-  <ul>
-    <li>propiedades que estaban incluidas en la recomendación <a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS 2</a> pero que no están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>.</li>
-    <li>propiedades que están incluidas en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, pero que se consideran obsoletas y cuyo uso no se recomienda.</li>
-  </ul>
+  <p>En esta página se comentan propiedades que estaban incluidas en recomendaciones CSS anteriores (<a href="https://www.w3.org/TR/2008/REC-CSS2-20080411/">CSS 2</a>, <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, recomendaciones o borradores CSS 3), pero que se consideran obsoletas y cuyo uso no se recomienda.</p>
 
   <p>No se comentan las propiedades que se consideraban obsoletas en CSS 2 pero que se han recuperado en CSS 3.</p>
+
+  <section id="arroba-viewport">
+    <h3 class="con-aside">La regla arroba <span class="css-arroba">@viewport</span></h3>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-arroba">@viewport</span><br>
+        <a href="https://www.w3.org/TR/css-device-adapt-1/#atviewport-rule"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@viewport"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <a href="https://caniuse.com/#feat=css-deviceadaptation"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
+      </p>
+    </aside>
+
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-device-adapt-1/">CSS Device Adaptation Module Level 1</a> (actualmente, octubre de 2021, en elaboración) define la regla arroba <span class="css-arroba">@viewport</span>, que estaba inspirada por la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> pero estaba pensada tanto para navegadores de móviles como de escritorio.</p>
+
+    <p>El borrador declara la etiqueta <span class="html-eti">meta</span> <span class="html-atri">viewport</span> equivalente a un caso particular de la regla arroba <span class="css-arroba">@viewport</span>. Sin embargo los fabricantes de navegadores <span class="css-arroba">@viewport</span> no tienen intención de implementarla y en febrero de 2020 <a href="https://www.w3.org/blog/CSS/2020/02/13/minutes-2020-02-12/">decidieron eliminar esta regla arroba</a>, aunque actualmente (octubre de 2021) todavía no se ha modificado el borrador.</p>
+  </section>
 
   <section id="estilo-enlaces">
     <h2>Dar estilo a enlaces</h2>
@@ -69,7 +83,7 @@
 
     <p>La propiedad <span class="css-prop">marker-offset</span> y el valor <span class="css-valor">marker</span> de la propiedad <span class="css-prop">display</span> se introdujeron en la recomendación CSS 2 <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/generate.html#markers">(<span class="css-prop">marker-offset</span>)</a> y <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/visuren.html#display-prop">(<span class="css-valor">marker</span>)</a>, pero no están incluidos en la recomendación <a href="https://www.w3.org/TR/2011/REC-CSS2-20110607/">CSS 2.1</a>, por lo que se pueden considerar obsoletos en CSS 2.</p>
 
-    <p>La propiedad <span class="css-prop">marker-offset</span> tampoco está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (octubre de 2019) en elaboración, aunque esta recomendación introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
+    <p>La propiedad <span class="css-prop">marker-offset</span> tampoco está incluida en la futura recomendación <a href="https://www.w3.org/TR/css-lists-3/">CSS 3: Listas</a>, actualmente (octubre de 2021) en elaboración, aunque esta recomendación introduce el pseudo-elemento <span class="css-pseudo">::marker</span> para establecer el estilo del marcador.</p>
 
     <p>La propiedad <span class="css-prop">marker-offset</span> debería establecer la distancia del marcador al elemento de la lista. Esta propiedad afectaría a los marcadores creados con los pseudo-elementos <span class="css-pseudo">::before</span> y <span class="css-pseudo">::after</span>.</p>
 
@@ -130,7 +144,7 @@ li::before {
   <section id="colores-sistema">
     <h2>Colores del sistema</h2>
 
-    <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a>, pero desde la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interface de usuario básico</a>, actualmente (octubre de 2019) en elaboración.</p>
+    <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a>, pero desde la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (octubre de 2021) en elaboración.</p>
 
     <table>
       <thead>
@@ -315,7 +329,7 @@ li::before {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
