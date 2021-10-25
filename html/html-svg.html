@@ -31,7 +31,8 @@
           <ul>
             <li><a href="#atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
             <li><a href="#atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
-            <li><a href="#atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span></a></li>
+            <li><a href="#atributos-width-height-viewbox"><span class="html-atri">width</span> y <span class="html-atri">height</span> con <span class="html-atri">viewBox</span></a></li>
+            <li><a href="#atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span> sin <span class="html-atri">viewBox</span></a></li>
           </ul>
         </li>
         <li><a href="#elementos-superpuestos">Elementos superpuestos</a></li>
@@ -347,8 +348,8 @@
       </ul>
     </section>
 
-    <section id="atributos-width-height">
-      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span></h3>
+    <section id="atributos-width-height-viewbox">
+      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> con <span class="html-atri">viewBox</span></h3>
 
       <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen, mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
 
@@ -409,27 +410,52 @@
           </div>
         </li>
       </ul>
+    </section>
 
-      <hr class="corta">
+    <section id="atributos-width-height">
+      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> sin <span class="html-atri">viewBox</span></h3>
 
-      <p>Si no hay atributo <span class="html-atri">viewBox</span>, la zona visible empieza en el origen (0, 0) y el tamaño definido por <span class="html-atri">width</span> y <span class="html-atri">height</span> es el tamaño de la zona visible.</p>
+      <p>Si no se incluye el atributo <span class="html-atri">viewBox</span>, los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen tanto la porción del plano SVG que se muestra en la imagen como el ancho y el alto de la imagen en la página web. La porción de plano empieza en el origen del plano SVG (0, 0) y su tamaño son los valores de <span class="html-atri">width</span> y <span class="html-atri">height</span>. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
 
-      <div class="filaflex">
-        <div class="resultado-html-sin-borde nogrow">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
-            <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-          </svg>
-        </div>
-        <div class="codigo">
-          <pre>
+      <p>Así, estas dos imágenes SVG son equivalentes:</p>
+      <ul>
+        <li>con <span class="html-atri">viewBox</span>:
+          <div class="filaflex">
+            <div class="resultado-html-sin-borde nogrow">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" style="background-color: lightgray">
+                <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+              </svg>
+            </div>
+            <div class="codigo">
+              <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>"
+     width="100" height="100" <span class="codigo-resaltado">viewBox="0 0 100 100"</span>
      style="background-color: lightgray"&gt;
-  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-        </div>
-      </div>
+            </div>
+          </div>
+        </li>
+        <li>sin <span class="html-atri">viewBox</span>:
+          <div class="filaflex">
+            <div class="resultado-html-sin-borde nogrow">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
+                <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+              </svg>
+            </div>
+            <div class="codigo">
+              <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="100" height="100"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+            </div>
+          </div>
+        </li>
+      </ul>
     </section>
   </section>
 
@@ -615,7 +641,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de abril de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
