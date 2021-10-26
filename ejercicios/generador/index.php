@@ -16,7 +16,7 @@ include "generador_biblioteca.php";
 
   <nav>
     <p>
-      <a href="../../index.html"><img src="../../varios/iconos/icono-html5.svg" alt="Índice de HTML/CSS" title="Índice de HTML/CSS" height="48" width="42"></a>
+      <a href="../../index.html"><img src="../../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" height="48" width="42"></a>
       <a href="#"><img src="../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" height="36" width="36"></a>
       <a href="../index.html"><img src="../../varios/iconos/icono-ejercicios.svg" alt="Índice de ejercicios" title="Índice de ejercicios" width="36" height="36"></a>
     </p>
