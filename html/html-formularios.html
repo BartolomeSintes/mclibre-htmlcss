@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Formularios. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <title>Formularios (1). HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>Formularios</h1>
+  <h1>Formularios (1)</h1>
 
   <nav>
     <p>
@@ -20,48 +20,37 @@
     </p>
 
     <div class="toc">
-      <h2>Formularios</h2>
+      <h2>Formularios (1)</h2>
 
       <ul>
         <li><a href="#formulario-form"><span class="html-eti">&lt;form&gt;</span></a></li>
         <li><a href="#atributos-comunes">Atributos comunes</a></li>
         <li><a href="#controles">Controles</a>
           <ul>
-            <li><a href="#control-botones">Botones</a>
-              <ul>
-                <li><a href="#control-input-button-submit"><span class="html-atri-valor">submit</span></a></li>
-                <li><a href="#control-input-button-reset"><span class="html-atri-valor">reset</span></a></li>
-                <li><a href="#control-input-button-button"><span class="html-atri-valor">button</span></a></li>
-              </ul>
-            </li>
+            <li><a href="#control-botones">Botones</a></li>
+            <li><a href="#control-input-button-submit">Botones <span class="html-atri-valor">submit</span></a></li>
+            <li><a href="#control-input-button-reset">Botones <span class="html-atri-valor">reset</span></a></li>
             <li><a href="#control-input-text">Texto</a></li>
             <li><a href="#control-input-password">Contraseña</a></li>
             <li><a href="#control-input-number">Número</a></li>
-            <li><a href="#control-input-search">Búsqueda</a></li>
-            <li><a href="#control-input-tel">Teléfono</a></li>
-            <li><a href="#control-input-url">URL</a></li>
-            <li><a href="#control-input-email">Correo</a></li>
             <li><a href="#control-input-date">Fecha</a></li>
-            <li><a href="#control-input-month">Mes</a></li>
-            <li><a href="#control-input-week">Semana</a></li>
             <li><a href="#control-input-time">Hora</a></li>
-            <li><a href="#control-input-datetime-local">Fecha y hora</a></li>
             <li><a href="#control-input-checkbox">Casilla de verificación</a></li>
             <li><a href="#control-input-radio">Botón radio</a></li>
             <li><a href="#control-input-color">Color</a></li>
             <li><a href="#control-input-range">Rango</a></li>
-            <li><a href="#control-input-file">Archivo</a></li>
-            <li><a href="#control-input-image">Imagen</a></li>
             <li><a href="#control-input-hidden">Oculto</a></li>
             <li><a href="#control-textarea">Área de texto</a></li>
             <li><a href="#control-select">Menú</a></li>
           </ul>
         </li>
-        <li><a href="#fieldset">Grupos</a></li>
-        <li><a href="#label">Accesibilidad</a></li>
       </ul>
     </div>
   </nav>
+
+  <p>En esta lección y en la lección <a href="html-formularios-2.html">Formularios (2)</a> se comentan las etiquetas relacionadas con los formularios</p>
+
+  <p>En esta lección se comentan las etiquetas y atributos más básicos.</p>
 
   <section id="formulario-form">
     <h2 class="con-aside">El formulario: <span class="html-eti">&lt;form&gt;</span></h2>
@@ -130,18 +119,36 @@
 
     <p>Algunos atributos se pueden utilizar en varios tipos de controles.</p>
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos atributos como <span class="html-atri">autocomplete</span>, <span class="html-atri">height</span>, <span class="html-atri">list</span>, <span class="html-atri">pattern</span>, <span class="html-atri">title</span>, <span class="html-atri">width</span>.</p>
-
     <section id="atributo-type">
       <h3>El atributo <span class="html-atri">type</span></h3>
 
       <p>El atributo <span class="html-atri">type</span> de la etiqueta <span class="html-eti">&lt;input&gt;</span> indica el tipo de control de que se trata.</p>
 
-      <p>En HTML 4.01, los tipos de <span class="html-eti">&lt;input&gt;</span> eran: botón para enviar <a href="#control-input-button-submit"><span class="html-atri-valor">submit</span></a>, botón para reiniciar <a href="#control-input-button-reset"><span class="html-atri-valor">reset</span></a>, texto <a href="#control-input-text"><span class="html-atri-valor">text</span></a>, contraseña <a href="#control-input-password"><span class="html-atri-valor">password</span></a>, archivo <a href="#control-input-file"><span class="html-atri-valor">file</span></a>, imagen <a href="#control-input-image"><span class="html-atri-valor">image</span></a> y oculto <a href="#control-input-hidden"><span class="html-atri-valor">hidden</span></a>.</p>
+      <p>En HTML 4.01 los tipos de <span class="html-eti">&lt;input&gt;</span> eran:
+        botón para enviar <a href="#control-input-button-submit"><span class="html-atri-valor">submit</span></a>,
+        botón para reiniciar <a href="#control-input-button-reset"><span class="html-atri-valor">reset</span></a>,
+        texto <a href="#control-input-text"><span class="html-atri-valor">text</span></a>,
+        contraseña <a href="#control-input-password"><span class="html-atri-valor">password</span></a>,
+        archivo <a href="formularios-2.html#control-input-file"><span class="html-atri-valor">file</span></a>,
+        imagen <a href="formularios-2.html#control-input-image"><span class="html-atri-valor">image</span></a> y
+        oculto <a href="#control-input-hidden"><span class="html-atri-valor">hidden</span></a>.</p>
 
-      <p>En HTML 5 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>: botón <span class="html-atri-valor">button</span>, número <a href="#control-input-number"><span class="html-atri-valor">number</span></a>, búsqueda <a href="#control-input-search"><span class="html-atri-valor">search</span></a>, teléfono <a href="#control-input-tel"><span class="html-atri-valor">tel</span></a>, dirección web <a href="#control-input-url"><span class="html-atri-valor">url</span></a>, dirección de correo <a href="#control-input-email"><span class="html-atri-valor">email</span></a>, fecha <a href="#control-input-date"><span class="html-atri-valor">date</span></a>, hora <a href="#control-input-time"><span class="html-atri-valor">time</span></a>, color <a href="#control-input-color"><span class="html-atri-valor">color</span></a> y rango <a href="#control-input-range"><span class="html-atri-valor">range</span></a>.</p>
+      <p>En HTML 5 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
+        botón <span class="html-atri-valor">button</span>,
+        número <a href="#control-input-number"><span class="html-atri-valor">number</span></a>,
+        búsqueda <a href="html-formularios-2.html#control-input-search"><span class="html-atri-valor">search</span></a>,
+        teléfono <a href="html-formularios-2.html#control-input-tel"><span class="html-atri-valor">tel</span></a>,
+        dirección web <a href="html-formularios-2.html#control-input-url"><span class="html-atri-valor">url</span></a>,
+        dirección de correo <a href="html-formularios-2.html#control-input-email"><span class="html-atri-valor">email</span></a>,
+        fecha <a href="#control-input-date"><span class="html-atri-valor">date</span></a>,
+        hora <a href="#control-input-time"><span class="html-atri-valor">time</span></a>,
+        color <a href="#control-input-color"><span class="html-atri-valor">color</span></a> y
+        rango <a href="#control-input-range"><span class="html-atri-valor">range</span></a>.</p>
 
-      <p>En HTML 5.1 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>: mes <span class="html-atri-valor">month</span>, semana <span class="html-atri-valor">week</span> y fecha y hora local <span class="html-atri-valor">datetime-local</span>.</p>
+      <p>En HTML 5.1 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
+        mes <a href="html-formularios-2.html#control-input-date"><span class="html-atri-valor">month</span></a>,
+        semana <span class="html-atri-valor">week</span> y
+        fecha y hora local <span class="html-atri-valor">datetime-local</span>.</p>
     </section>
 
     <section id="atributo-name">
@@ -290,245 +297,6 @@
 
       <p><strong>Nota</strong>: En estos apuntes (lecciones y ejercicios) no se utiliza este atributo porque como en las páginas se incluyen varios formularios en distintas posiciones de la página, el desplazamiento automático a un elemento con atributo <span class="html-atri">autofocus</span> puede confundir al lector.</p>
     </section>
-
-    <section id="atributo-disabled">
-      <h3>El atributo <span class="html-atri">disabled</span></h3>
-
-      <p>El atributo <span class="html-atri">disabled</span> permite deshabilitar el control. Una vez deshabilitado, el control ni siquiera puede coger el foco.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="submit" value="Enviar" disabled&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/disabled-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/disabled-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto" disabled&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/disabled-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/disabled-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="atributo-readonly">
-      <h3>El atributo <span class="html-atri">readonly</span></h3>
-
-      <p>El atributo <span class="html-atri">readonly</span> hace que el control no sea modificable, aunque el control puede coger el foco.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto" value="¡A que no me cambias!" readonly&gt;
-
-&lt;input type="text" name="texto" placeholder="¡A que no me cambias!" readonly&gt;
-</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/readonly.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/readonly.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="atributo-tabindex">
-      <h3>El atributo <span class="html-atri">tabindex</span></h3>
-
-      <p>El atributo <span class="html-atri">tabindex</span> permite controlar el orden en que el foco pasa de un elemento a otro mediante el tabulador (<kbd>Tab</kbd> para avanzar y <kbd>Shift+Tab</kbd> para retroceder). Los valores de <span class="html-atri">tabindex</span> pueden ser números naturales (incluido el cero), no necesariamente consecutivos. Si no está presente, los controles se visitan en el orden en que aparecen en el texto. Si está presente, los controles se visitan de menor a mayor.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Texto 1"&gt;
-&lt;input type="text" name="texto2" placeholder="Texto 2"&gt;
-&lt;input type="text" name="texto3" placeholder="Texto 3"&gt;
-&lt;input type="text" name="texto4" placeholder="Texto 4"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/tabindex-1.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/tabindex-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Texto 1" tabindex="5"&gt;
-&lt;input type="text" name="texto2" placeholder="Texto 2" tabindex="8"&gt;
-&lt;input type="text" name="texto3" placeholder="Texto 3" tabindex="7"&gt;
-&lt;input type="text" name="texto4" placeholder="Texto 4" tabindex="6"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/tabindex-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/tabindex-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="atributo-accesskey">
-      <h3>El atributo <span class="html-atri">accesskey</span></h3>
-
-      <p>El atributo <span class="html-atri">accesskey</span> establece la tecla que coloca el foco en un elemento de un formulario, pero los navegadores Google Chrome y Firefox no utilizan los mismos atajos de teclado, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-accesskey">lección de diferencias entre navegadores</a>.</p>
-
-      <ul>
-        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Google Chrome utilizan normalmente la combinación <kbd>Alt+tecla</kbd>, pero cuando esa combinación ya está asociada a alguna acción usa la combinación <kbd>Alt+Shift+tecla</kbd></li>
-      </ul>
-
-      <p>En el ejemplo siguiente Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd> para situar el cursor en las cajas de texto, mientras que Google Chrome utiliza la combinación <kbd>Alt+tecla</kbd>:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con a" accesskey="a"&gt;
-&lt;input type="text" name="texto2" placeholder="Acceso con i" accesskey="i"&gt;
-&lt;input type="text" name="texto3" placeholder="Acceso con o" accesskey="o"&gt;
-&lt;input type="text" name="texto4" placeholder="Acceso con u" accesskey="u"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-1.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <p>Chrome utiliza la combinación <kbd>Alt+tecla</kbd>, que tiene el inconveniente que entra en conflicto con combinaciones de teclas ya definidas por el navegador o el sistema operativo. Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd>, más incómoda de utilizar, pero que no interfiere con las combinaciones ya definidas por el navegador o el sistema operativo.</p>
-
-      <p>En el ejemplo siguiente, Chrome no puede acceder a la caja de texto con la combinación <kbd>Alt+d</kbd>, ya que esta combinación traslada el foco a la barra de dirección, pero pueden hacerlo con la combinación <kbd>Alt+Shift+d</kbd>:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con d" accesskey="d"&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <p>En el ejemplo siguiente, Chrome no puede acceder a la caja de texto con la combinación <kbd>Alt+e</kbd>, ya que esta combinación abre el menú de herramientas, pero puede hacerlo con la combinación <kbd>Alt+Shift+e</kbd>:</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="text" name="texto2" placeholder="Acceso con e" accesskey="e"&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-3.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <p>En el caso de las teclas de acceso que no son las letras del alfabeto (los acentos no pueden ser teclas de acceso):</p>
-      <ul>
-        <li>Firefox utiliza la combinación <kbd>Alt+Shift+tecla</kbd></li>
-        <li>Chrome utiliza la combinación <kbd>Alt+tecla</kbd></li>
-      </ul>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con 1" accesskey="1"&gt;
-&lt;input type="text" name="texto2" placeholder="Acceso con 2" accesskey="2"&gt;
-&lt;input type="text" name="texto3" placeholder="Acceso con 3" accesskey="3"&gt;
-&lt;input type="text" name="texto4" placeholder="Acceso con 4" accesskey="4"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-4.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con ," accesskey=","&gt;
-&lt;input type="text" name="texto2" placeholder="Acceso con ." accesskey="."&gt;
-&lt;input type="text" name="texto3" placeholder="Acceso con +" accesskey="+"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-5.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <hr class="corta">
-
-      <p>Si hay varios elementos con la misma tecla de acceso, o si hay varios elementos con la misma tecla de acceso en mayúsculas y minúsculas:</p>
-
-      <ul>
-        <li>Google Chrome no avanza de uno a otro</li>
-        <li>Firefox avanza de uno a otro con la combinación <kbd>Alt+Shift+tecla</kbd></li>
-      </ul>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con z" accesskey="z"&gt;
-&lt;input type="text" name="texto2" placeholder="Acceso con z" accesskey="z"&gt;
-&lt;input type="text" name="texto3" placeholder="Acceso con z" accesskey="z"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-6.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-6.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="text" name="texto1" placeholder="Acceso con w" accesskey="w"&gt;
-&lt;input type="text" name="texto2" placeholder="Acceso con W" accesskey="W"&gt;
-&lt;input type="text" name="texto3" placeholder="Acceso con W" accesskey="W"&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/accesskey-7.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/accesskey-7.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          <a href="../otros/diferencias-listado.html#formularios-accesskey"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-        </div>
-      </div>
-    </section>
   </section>
 
   <section id="controles">
@@ -544,22 +312,22 @@
       botón <a href="#control-botones"><span class="html-eti">&lt;button&gt;</span></a>,
       texto <a href="#control-input-text"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"text"</span>&gt;</span></a>,
       contraseña <a href="#control-input-password"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"password"</span>&gt;</span></a>,
-      archivo <a href="#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a>,
-      imagen <a href="#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a>,
+      archivo <a href="formularios-2.html#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a>,
+      imagen <a href="formularios-2.html#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a>,
       oculto <a href="#control-input-hidden"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"hidden"</span>&gt;</span></a>,
       área de texto <a href="#control-textarea"><span class="html-eti">&lt;textarea&gt;</span></a> y
       menú <a href="#control-select"><span class="html-eti">&lt;select&gt;</span></a>.
     </p>
 
     <p>En HTML 5 se añadieron los controles:
-      botón general <a href="#control-input-button-button"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span></a>,
+      botón general <a href="html-formularios.html#control-input-button-button"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span></a>,
       número <a href="#control-input-number"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></a>,
-      búsqueda <a href="#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a>,
-      teléfono <a href="#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a>,
-      dirección web <a href="#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a>,
-      dirección de correo <a href="#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a>,
+      búsqueda <a href="html-formularios-2.html#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a>,
+      teléfono <a href="html-formularios-2.html#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a>,
+      dirección web <a href="html-formularios-2.html#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a>,
+      dirección de correo <a href="html-formularios-2.html#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a>,
       fecha <a href="#control-input-date"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></a>,
-      hora <a href="#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a>,
+      hora <a href="html-formularios-2.html#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a>,
       color <a href="#control-input-color"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"color"</span>&gt;</span></a>,
       rango <a href="#control-input-range"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"range"</span>&gt;</span></a>,
       opciones <span class="html-eti">&lt;option&gt;</span> (para <span class="html-eti">&lt;datalist&gt;</span>),
@@ -570,45 +338,26 @@
     </p>
 
     <p>En HTML 5.1 se añadieron los controles:
-      mes <a href="#control-input-month"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></a>,
-      semana <a href="#control-input-week"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></a> y
-      fecha y hora local <a href="#control-input-datetime-local"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></a>.
-    </p>
-
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos controles HTML 5 como
-      <span class="html-eti">&lt;datalist&gt;</span>,
-      <span class="html-eti">&lt;meter&gt;</span>,
-      <span class="html-eti">&lt;output&gt;</span> y
-      <span class="html-eti">&lt;progress&gt;</span>.
+      mes <a href="html-formularios-2.html#control-input-month"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></a>,
+      semana <a href="html-formularios-2.html#control-input-week"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></a> y
+      fecha y hora local <a href="html-formularios-2.html#control-input-datetime-local"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></a>.
     </p>
 
     <section id="control-botones">
-      <h3 class="con-aside">Botones: <span class="html-eti">&lt;input&gt;</span> y <span class="html-eti">&lt;button&gt;</span></h3>
+      <h3>Botones: <span class="html-eti">&lt;input&gt;</span> y <span class="html-eti">&lt;button&gt;</span></h3>
+
+      <p>Los botones se crean mediante la etiqueta <span class="html-eti">&lt;input&gt;</span> o mediante la etiqueta <span class="html-eti">&lt;button&gt;</span>. La diferencia entre ellos es que <span class="html-eti">&lt;input&gt;</span> sólo puede contener texto, mientras que <span class="html-eti">&lt;button&gt;</span> permite incluir elementos html como imágenes. El contenido del botón <span class="html-eti">&lt;input&gt;</span> se define mediante el atributo <span class="html-atri">value</span>, por lo que sólo puede contener texto. El contenido del botón <span class="html-eti">&lt;button&gt;</span> se escribe dentro del elemento, por lo que puede incluir texto e imágenes.</p>
+
+      <p>Normalmente los botones no suelen llevar atributo <span class="html-atri">name</span>, pero se puede poner si se quiere (tendría sentido si un formulario contuviera dos botones de envío y quisiéramos saber en cuál de ellos ha hecho clic el usuario, pero esto no es muy habitual).</p>
+    </section>
+
+    <section id="control-input-button-submit">
+      <h4 class="con-aside">Botones Submit mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h4>
 
       <aside class="enlace-norma">
         <p>
           <span class="html-eti">&lt;input <span class="html-atri-valor">submit</span>&gt;</span><br>
           <a href="https://html.spec.whatwg.org/multipage/input.html#submit-button-state-(type=submit)">
-            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-          </a>
-        </p>
-
-        <p>
-          <span class="html-eti">&lt;input <span class="html-atri-valor">reset</span>&gt;</span><br>
-          <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">
-            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-          </a>
-        </p>
-
-        <p>
-          <span class="html-eti">&lt;input <span class="html-atri-valor">button</span>&gt;</span><br>
-          <a href="https://html.spec.whatwg.org/multipage/input.html#button-state-(type=button)">
             <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
           </a>
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
@@ -626,50 +375,6 @@
           </a>
         </p>
       </aside>
-
-      <p>Los botones se crean mediante la etiqueta <span class="html-eti">&lt;input&gt;</span> o mediante la etiqueta <span class="html-eti">&lt;button&gt;</span>. La diferencia entre ellos es que <span class="html-eti">&lt;input&gt;</span> sólo puede contener texto, mientras que <span class="html-eti">&lt;button&gt;</span> permite incluir elementos html como imágenes.</p>
-
-      <p>El contenido del botón <span class="html-eti">&lt;input&gt;</span> se define mediante el atributo <span class="html-atri">value</span>, por lo que sólo puede contener texto.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="button" value="Este botón no hace nada"&gt;</code></pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/input-button-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/input-button-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>El contenido del botón <span class="html-eti">&lt;button&gt;</span> se escribe dentro del elemento, por lo que puede incluir texto e imágenes.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;button type="button"&gt;
-  &lt;img src="cdlibre.png" alt="cdlibre.org" width="32" height="32" style="vertical-align: middle"&gt;
-  Este botón no hace nada
-&lt;/button&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/button-button-1.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/button-button-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <hr class="corta">
-
-      <p>Normalmente los botones no suelen llevar atributo <span class="html-atri">name</span>, pero se puede poner si se quiere (tendría sentido si un formulario contuviera dos botones de envío y quisiéramos saber en cuál de ellos ha hecho clic el usuario, pero esto no es muy habitual).</p>
-
-    </section>
-
-    <section id="control-input-button-submit">
-      <h4>Botones Submit mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h4>
 
       <p>El botón Submit es el que permite al usuario remitir los datos al servidor. Se crea mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">submit</span>.</p>
 
@@ -723,7 +428,29 @@
     </section>
 
     <section id="control-input-button-reset">
-      <h4>Botones Reset mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h4>
+      <h4 class="con-aside">Botones Reset mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h4>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;input <span class="html-atri-valor">reset</span>&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/input.html#reset-button-state-(type=reset)">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+
+        <p>
+          <span class="html-eti">&lt;button&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+      </aside>
 
       <p>El botón Reset restablece los valores iniciales del formulario. Se crea mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">reset</span>.</p>
 
@@ -787,55 +514,6 @@
         </div>
         <div class="icono-enlace">
           <a href="ejemplos/formularios/reset-input-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="control-input-button-button">
-      <h4>Botón general mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h4>
-
-      <p>Un botón de tipo general se suele asociar a un script para hacer algo. Se crea mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">button</span>.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;input type="button" onclick="mensaje('Ha pulsado el botón')" value="Botón"&gt;
-
-&lt;script&gt;
-  function mensaje(texto) {
-    alert(texto);
-  }
-&lt;/script&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/button-input-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/button-input-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;button type="button" onclick="mensaje('Ha pulsado el botón')"&gt;
-  &lt;img src="info.svg" alt="imagen" width="32" height="32" style="vertical-align: middle"&gt;
-  Botón
-&lt;/button&gt;
-
-&lt;script&gt;
-  function mensaje(texto) {
-    alert(texto);
-  }
-&lt;/script&gt;</code>
-</pre>
-        </div>
-        <div class="resultado-object">
-          <object type="text/html" data="ejemplos/formularios/button-button-2.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-        </div>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/button-button-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </section>
@@ -1053,155 +731,6 @@
     </div>
   </section>
 
-  <section id="control-input-search">
-    <h3 class="con-aside">Búsqueda: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">search</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>búsquedas</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">search</span>.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-unknown.svg" alt="Por determinar en Chrome" title="Por determinar en Chrome" width="53" height="32">
-        <img src="../varios/iconos/icono-ff-unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32">
-      </div>
-      <div class="codigo">
-        <pre>
-<code class="language-html">Búsqueda: &lt;input type="search" name="busqueda" size="40"&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-search-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-search-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>La recomendación HTML 5 aclara que la diferencia entre <span class="html-atri-valor">text</span> y <span class="html-atri-valor">search</span> es únicamente de estilo y que el cuadro de búsqueda debería tener el estilo de los cuadros de búsqueda del sistema utilizado.</p>
-  </section>
-
-  <section id="control-input-tel">
-    <h3 class="con-aside">Teléfono: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">tel</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#telephone-state-(type=tel)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>números de teléfonos</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">tel</span>.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">Teléfono: &lt;input type="tel" name="telefono"&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-tel-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-tel-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>La recomendación HTML 5 aclara que los formatos de números de teléfono siguen formatos tan variados que este control no obliga a utilizar ninguna sintaxis en particular.</p>
-
-    <p>En los teléfonos móviles, al escribir en una caja de texto de tipo <span class="html-atri-valor">tel</span> se muestra un teclado numérico.</p>
-  </section>
-
-  <section id="control-input-url">
-    <h3 class="con-aside">URL: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">url</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#url-state-(type=url)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>direcciones web (URL)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">url</span>.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
-      <div class="codigo">
-        <pre>
-<code class="language-html">URL: &lt;input type="url" name="direccion" size="40"&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-url-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-url-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>Actualmente (octubre de 2019), los navegadores sólo comprueban que el texto escrito empiece por http: o https:, pero no obligan a que las URL sean sintácticamente válidas.</p>
-
-    <p>En los teléfonos móviles, al escribir en una caja de texto de tipo <span class="html-atri-valor">url</span> se adapta ligeramente el teclado de texto, mostrándose el carácter /.</p>
-  </section>
-
-  <section id="control-input-email">
-    <h3 class="con-aside">Dirección de correo electrónico: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">email</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#e-mail-state-(type=email)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>direcciones de correo electrónico</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">email</span>.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">Correo: &lt;input type="email" name="correo" size="40"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-email-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-email-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>Actualmente (octubre de 2019), los navegadores sólo comprueban que el texto escrito contenga una arroba @ y no contengan caracteres no permitidos, pero no obliga a que las direcciones sean válidas.</p>
-
-    <p>En los teléfonos móviles, al escribir en una caja de texto de tipo <span class="html-atri-valor">email</span> se adapta ligeramente el teclado de texto, mostrándose el carácter @.</p>
-  </section>
-
   <section id="control-input-date">
     <h3 class="con-aside">Fecha: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></h3>
 
@@ -1234,88 +763,6 @@
     </div>
   </section>
 
-  <section id="control-input-month">
-    <h3 class="con-aside">Mes: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">month</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#month-state-(type=month)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-        <a href="https://caniuse.com/#feat=input-datetime">
-          <img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>meses (y años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">month</span>. El dato se envía con el formato AAAA-MM donde AAAA es el número de año y MM el número de mes.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
-      <div class="codigo">
-        <pre><code class="language-html">Mes: &lt;input type="month" name="mes"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-month-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-month-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        <a href="../otros/diferencias-listado.html#formularios-input-month"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-      </div>
-    </div>
-
-    <p><strong>Nota</strong>: Firefox no muestra no muestra un control específico para seleccionar el mes y el año, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-month">lección de diferencias entre navegadores</a>.</p>
-  </section>
-
-  <section id="control-input-week">
-    <h3 class="con-aside">Semana: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">week</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#week-state-(type=week)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-        <a href="https://caniuse.com/#feat=input-datetime">
-          <img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>semanas (y años)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">week</span>. El dato se envía con el formato AAAA-WSS donde AAAA es el número de año y SS el número de semana.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
-      <div class="codigo">
-        <pre>
-<code class="language-html">Semana: &lt;input type="week" name="semana"&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-week-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-week-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        <a href="../otros/diferencias-listado.html#formularios-input-week"><img src="../varios/iconos/icono-diferencias.svg" alt="Diferencias entre navegadores" title="Diferencias entre navegadores" width="32" height="32"></a>
-      </div>
-    </div>
-
-    <p><strong>Nota</strong>: Firefox no muestra no muestra un control específico para seleccionar la semana y el año, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-week">lección de diferencias entre navegadores</a>.</p>
-  </section>
-
   <section id="control-input-time">
     <h3 class="con-aside">Hora: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></h3>
 
@@ -1344,36 +791,6 @@
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/formularios-time-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="control-input-datetime-local">
-    <h3 class="con-aside">Fecha y hora: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">datetime-local</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#local-date-and-time-state-(type=datetime-local)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>Las cajas de texto de una sola línea específicas para <strong>fechas (días, meses, años, horas y minutos)</strong> se crean mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">datetime-local</span>. El dato se envía con el formato AAAA-MM-DDTHH-MM donde AAAA es el número de año, MM el número de mes, DD el número de día, HH son las horas y MM los minutos.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">Fecha y hora: &lt;input type="datetime-local" name="fechaHora"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-datetime-local-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-datetime-local-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
   </section>
@@ -1574,14 +991,14 @@
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/radio-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/formularios/radio-3.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/radio-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
 
-    <p>El inconveniente del botón Reset es que reinicia todos los controles del formulario. Este problema no tiene una solución sencilla. Algunos recomiendan incluir en los botones radio una opción neutra, de manera que el usuario pueda cambiar su respuesta sin tener que reiniciar todo el formulario. El problema es que el usuario puede interpretar esa opción como una opción más y elegirla a propósito, por lo que se recomienda valorar en cada caso la mejor solución. Quizás en formularios con pocos controles no merezca la pena incluir esa opción neutra, y hacerlo sólo en formularios con muchos controles en los que el usuario tendría que volver a completar todo el formulario si utiliza el botón Reset</p>
+    <p>El inconveniente del botón Reset es que reinicia todos los controles del formulario. Este problema no tiene una solución sencilla. Algunos recomiendan incluir en los botones radio una opción neutra, de manera que el usuario pueda cambiar su respuesta sin tener que reiniciar todo el formulario. El problema es que el usuario puede malinterpretar esa opción como una opción más y elegirla a propósito, por lo que se recomienda valorar en cada caso la mejor solución. Quizás en formularios con pocos controles no merezca la pena incluir esa opción neutra, y hacerlo sólo en formularios con muchos controles en los que el usuario tendría que volver a completar todo el formulario si utiliza el botón Reset</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -1626,7 +1043,7 @@
         <pre><code class="language-html">&lt;input type="color" name="colorElegido"&gt;</code></pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-color-1.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/formularios/formularios-color-1.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/formularios-color-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -1642,7 +1059,7 @@
         <pre><code class="language-html">&lt;input type="color" name="colorElegido" value="#ff0000"&gt;</code></pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-color-2.html" style="width: 100%; height: 6em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/formularios/formularios-color-2.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/formularios-color-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -1713,7 +1130,7 @@
       </div>
     </div>
 
-    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (octubre de 2019) ningún navegador lo hace.</p>
+    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (noviembre de 2021) ningún navegador lo hace.</p>
 
     <div class="filaflex">
       <div class="icono-navegadores">
@@ -1737,102 +1154,6 @@
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/formularios-range-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="control-input-file">
-    <h3 class="con-aside">Selector de archivo: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">file</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>El selector de archivo se crea mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">file</span>.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="file" name="archivo"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/file-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/file-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p>Tradicionalmente, los navegadores no han admitido el atributo <span class="html-atri">value</span> en el selector de archivo por motivos de seguridad, ya que podría utilizarse para "robar" ficheros al usuario sin su autorización. La recomendación HTML 5 indica que el atributo <span class="html-atri">value</span> se puede utilizar para seleccionar selectores de archivos distintos al general, pero los navegadores no parecen utilizar este atributo.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="file" name="archivo" value="image/*"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/file-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/file-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="control-input-image">
-    <h3 class="con-aside">Imagen: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></h3>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;input <span class="html-atri-valor">image</span>&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/input.html#image-button-state-(type=image)">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>El control de tipo imagen inserta una imagen que funciona como un botón (aunque los navegadores no le dan relieve como a los botones). Al hacer clic en un punto de la imagen se envía el formulario (como si se hubiera pulsado un botón <span class="html-atri-valor">submit</span>) y se envían las coordenadas del punto en el que se ha hecho clic (junto con los valores de los otros controles del formulario).</p>
-
-    <p>Este control debe incluir siempre el atributo <span class="html-atri">alt</span> (con un valor no vacío), para indicar el texto que deben mostrar los navegadores si la imagen no está disponible. Es importante recordar que esta obligatoriedad no existe en el caso de la etiqueta de imagen <span class="html-eti">&lt;img&gt;</span>, en la que este atributo está aconsejado, pero no es obligatorio.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="image" name="diana" src="diana.svg" alt="Diana"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-image-3.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-image-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>El ejemplo siguiente es un pequeño juego en el que se utilizan las coordenadas recibidas para calcular si el usuario ha hecho clic en el punto negro del dibujo.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="image" name="punto" src="punto.svg" alt="Punto"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-image-1.php" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-image-1.php"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
   </section>
@@ -2178,248 +1499,8 @@
     </div>
   </section>
 
-  <section id="fieldset">
-    <h2 class="con-aside">Grupos de controles: <span class="html-eti">&lt;fieldset&gt;</span></h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;fieldset&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-
-      <p>
-        <span class="html-eti">&lt;legend&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>La etiqueta <span class="html-eti">&lt;fieldset&gt;</span> permite agrupar un conjunto de controles. Los navegadores muestran una caja alrededor de cada grupo de controles.</p>
-
-    <p>La etiqueta <span class="html-eti">&lt;legend&gt;</span> permite añadir una leyenda al <span class="html-eti">&lt;fieldset&gt;</span>. Los navegadores muestran la leyenda sobre el borde que rodea el grupo de controles.</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;fieldset&gt;
-  &lt;legend&gt;Datos personales&lt;/legend&gt;
-  &lt;p&gt;Nombre: &lt;input type="text" name="nombre" size="30"&gt;&lt;/p&gt;
-  &lt;p&gt;Edad: &lt;input type="number" name="edad"&gt;&lt;/p&gt;
-&lt;/fieldset&gt;
-
-&lt;fieldset&gt;
-  &lt;legend&gt;Cultura general&lt;/legend&gt;
-  &lt;p&gt;Capital de Noruega:
-    &lt;input type="radio" name="p1" value="1"&gt; Copenhague
-    &lt;input type="radio" name="p1" value="2"&gt; Helsinki
-    &lt;input type="radio" name="p1" value="3"&gt; Oslo
-  &lt;/p&gt;
-  &lt;p&gt;Fecha de la Revolución francesa:
-    &lt;input type="radio" name="p2" value="1"&gt; 1492
-    &lt;input type="radio" name="p2" value="2"&gt; 1789
-    &lt;input type="radio" name="p2" value="3"&gt; 1917
-  &lt;/p&gt;
-&lt;/fieldset&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/formularios-fieldset-1.html" style="width: 100%; height: 22em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-fieldset-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>Sólo puede haber una etiqueta <span class="html-eti">&lt;legend&gt;</span>.</p>
-
-    <p>Nota:</p>
-    <ul>
-      <li><a href="https://blog.whatwg.org/the-state-of-fieldset-interoperability">The state of fieldset interoperability</a>, 19/09/2018, WHATWG blog.</li>
-    </ul>
-  </section>
-
-  <section id="label">
-    <h2 class="con-aside">Accesibilidad: <span class="html-eti">&lt;label&gt;</span></h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="html-eti">&lt;label&gt;</span><br>
-        <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">
-          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-        </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">
-          <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-        </a>
-      </p>
-    </aside>
-
-    <p>La etiqueta <span class="html-eti">&lt;label&gt;</span> permite asociar un control con un texto, de manera que mejore la accesibilidad de los formularios.</p>
-
-    <p>La asociación entre el control y la etiqueta <span class="html-eti">&lt;label&gt;</span> puede ser implícita o explícita.</p>
-
-    <h3>Relación implícita</h3>
-
-    <p>Se dice que la relación es implícita cuando el control se encuentra en el interior de la etiqueta.</p>
-
-    <p>Por ejemplo, en el caso de una casilla de verificación, la etiqueta <span class="html-eti">&lt;label&gt;</span> permite que la casilla se marque o desmarque haciendo clic en el texto, como se muestra en los ejemplos siguientes:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="checkbox" name="casilla"&gt;Casilla 1</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;label&gt;&lt;input type="checkbox" name="casilla"&gt;Casilla 1&lt;/label&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>En el caso de la cajas de texto <span class="html-eti">&lt;input type="text"&gt;</span>, la etiqueta <span class="html-eti">&lt;label&gt;</span> permite que el cursor se sitúe en la caja de texto haciendo clic en el texto, como se muestra en los ejemplos siguientes:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">Nombre: &lt;input type="text" name="casilla"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-3.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;label&gt;Nombre: &lt;input type="text" name="casilla"&gt;&lt;/label&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-4.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <h3>Relación explícita: el atributo <span class="html-atri">for</span></h3>
-
-    <p>Se dice que la relación es explícita cuando la etiqueta <span class="html-eti">&lt;label&gt;</span> contiene el atributo <span class="html-atri">for</span>, que indica el control afectado (el control tiene entonces que tener establecido el atributo <span class="html-atri">id</span>).</p>
-
-    <p>Por ejemplo, en el caso de una casilla de verificación, la etiqueta <span class="html-eti">&lt;label&gt;</span> permite que la casilla se marque o desmarque haciendo clic en el texto, como se muestra en los ejemplos siguientes:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">&lt;input type="checkbox" name="casilla"&gt;Casilla 1</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;input type="checkbox" name="casilla" id="casilla1"&gt;
-&lt;label for="casilla1"&gt;Casilla 1&lt;/label&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-for-1.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-for-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <p>En el caso de la cajas de texto <span class="html-eti">&lt;input type="text"&gt;</span>, la etiqueta <span class="html-eti">&lt;label&gt;</span> permite que el cursor se sitúe en la caja de texto haciendo clic en el texto, como se muestra en los ejemplos siguientes:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre><code class="language-html">Nombre: &lt;input type="text" name="casilla"&gt;</code></pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-3.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;label for="text1"&gt;Nombre:&lt;/label&gt;
-&lt;input type="text" name="casilla" id="text1"&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-for-2.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-for-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p>La forma explícita se necesita cuando el control y el texto asociado se encuentran en elementos distintos (por ejemplo en una tabla) y la etiqueta <span class="html-eti">&lt;label&gt;</span> no puede incluir ambos, como muestra el ejemplo siguiente:</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Sexo&lt;/th&gt;
-      &lt;th&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;input type="radio" name="hm" value="h" id="h"&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;label for="h"&gt;Hombre&lt;/label&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;input type="radio" name="hm" value="m" id="m"&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;label for="m"&gt;Mujer&lt;/label&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code>
-</pre>
-      </div>
-      <div class="resultado-object">
-        <object type="text/html" data="ejemplos/formularios/label-for-3.html" style="width: 100%; height: 7em;">ERROR (no puede mostrarse el objeto)</object>
-      </div>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/label-for-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-  </section>
-
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 2 de noviembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
