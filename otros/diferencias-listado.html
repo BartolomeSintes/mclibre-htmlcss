@@ -62,6 +62,168 @@
   <section id="html">
     <h2>HTML</h2>
 
+    <section id="unicode">
+      <h3>Unicode</h3>
+
+      <section id="unicode-texto-emoji">
+        <h4>Presentacion texto/emoji</h4>
+
+        <p>Algunos caracteres Unicode tienen tanto presentación texto como presentación emoji. Una de las dos es la predeterminada y la otra se selecciona añadiendo los selectores de variación VS15 (&amp;#xfe0e;) o VS16 (&amp;#xfe0f;)</p>
+
+        <p>En algunos casos, tanto Firefox como Chrome muestran correctamente todos los caracteres. En la primera línea del ejemplo siguiente se muestra un carácter que tiene presentación predeterminada emoji. En la segunda línea se muestran un carácter que tienen presentación predeterminada texto.</p>
+
+        <div class="filaflex">
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x231a; &lt;span style="font-size: 300%"&gt;&amp;#x231a;&lt;/span&gt;
+  &amp;#x231a;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x231a;&#xfe0e;&lt;/span&gt;
+  &amp;#x231a;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x231a;&#xfe0f;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  &amp;#x2639; &lt;span style="font-size: 300%"&gt;&amp;#x2639;&lt;/span&gt;
+  &amp;#x2639;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x2639;&amp;#xfe0e;&lt;/span&gt;
+  &amp;#x2639;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x2639;&#xfe0f;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-1.html" style="width: 100%; height: 11em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En otros casos, Google Chrome no muestra correctamente la forma de presentación predeterminada (texto o emoji) correcta. En el ejemplo siguiente se muestran un carácter que tienen presentación predeterminada texto, pero Chrome lo muestra como emoji.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x261d; &lt;span style="font-size: 300%"&gt;&amp;#x261d;&lt;/span&gt;
+  &amp;#x261d;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x261d;&amp;#xfe0e;&lt;/span&gt;
+  &amp;#x261d;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x261d;&amp;#xfe0f;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-2.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En otros casos, Firefox muestra una representación en modo texto al añadir el selector de variación VS15 (&amp;#xfe0e;), aunque ese emoji no tenga representación en modo texto.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x1f600; &lt;span style="font-size: 300%"&gt;&amp;#x1f600;&lt;/span&gt;
+  &amp;#x1f600;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x1f600;&amp;#xfe0e;&lt;/span&gt;
+  &amp;#x1f600;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x1f600;&amp;#xfe0f;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-3.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En otros casos, Google Chrome no muestra la representación en modo texto al añadir el selector de variación VS15 (&amp;#xfe0e;), aunque ese emoji sí tenga representación en modo texto.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x1f610; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&lt;/span&gt;
+  &amp;#x1f610;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&amp;#xfe0e;&lt;/span&gt;
+  &amp;#x1f610;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&amp;#xfe0f;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-4.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="unicode-fitzpatrick">
+        <h4>Modificadores Fitzpatrick en caracteres con presentación texto/emoji</h4>
+
+        <p>Los tonos de piel Fitzpatrick se pueden aplicar a los caracteres Unicode que tienen presentación texto y presentación emoji. En el caso de la presentación texto, el tono de piel se muestra con una trama de puntos más o menos densa..</p>
+
+        <p>El primer ejemplo siguiente muestra un carácter con presentación predeterminada en modo texto y le aplica un modificador Fitzpatrick. El primer ejemplo siguiente muestra un carácter con presentación predeterminada en modo emoji y le aplica un modificador Fitzpatrick..</p>
+
+        <ul>
+          <li>Firefox muestra la presentación en modo emoji cuando se añade un modificador Fitzpatrick sin añadir selectores de variación, aunque la presentación predeterminada sea el modo texto.</li>
+          <li>Google Chrome, además de no siempre mostrar el modo predeterminado cuando es texto, no muestra el modificador Fitzpatrick si se incluye el selector de variación VS16.</li>
+        </ul>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x261d;: &lt;span style="font-size: 300%"&gt;&amp;#x261d;&lt;/span&gt;
+  &amp;#x261d;&amp;#x1f3ff;: &lt;span style="font-size: 300%"&gt;&amp;#x261d;&amp;#x1f3ff;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-fitzpatrick-1.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-fitzpatrick-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-unknown.svg" alt="Por determinar en Firefox" title="Por determinar en Firefox" width="53" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;
+  &amp;#x261d;&amp;#xfe0f;: &lt;span style="font-size: 300%"&gt;&amp;#x261d;&amp;#xfe0f;&lt;/span&gt;
+  &amp;#x261d;&amp;#xfe0f;&amp;#x1f3ff;: &lt;span style="font-size: 300%"&gt;&amp;#x261d;&#xfe0f;&amp;#x1f3ff;&lt;/span&gt;
+&lt;/p&gt;</code>
+</pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="../html/ejemplos/unicode/emoji-texto-fitzpatrick-2.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/unicode/emoji-texto-fitzpatrick-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </section>
+    </section>
+
     <section id="formularios">
       <h3>Formularios</h3>
 
