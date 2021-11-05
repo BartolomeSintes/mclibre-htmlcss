@@ -24,6 +24,15 @@
         elementos[i].style.display = 'revert';
       }
     }
+    function eleccion() {
+      if (document.getElementById("selector0").checked) {
+        oculta();
+      }
+      if (document.getElementById("selector1").checked) {
+        muestra();
+      }
+    }
+    window.onload = eleccion;
   </script>
 </head>
 
@@ -66,9 +75,9 @@
 
   <p>La tabla siguiente resume las propiedades de Hojas de Estilo en Cascada (CSS) incluidas en la definición oficial de CSS de acuerdo con <a href="https://www.w3.org/TR/2020/NOTE-css-2020-20201222/">CSS Snapshot 2020</a>.</p>
 
-  <ul>
-    <li><label><input type="radio" name="selector" value="0" onclick="oculta()">Mostrar únicamente las propiedades trabajadas en clase en el cuso 2021/22</label></li>
-    <li><label><input type="radio" name="selector" value="1" checked onclick="muestra()">Mostrar todas las propiedades</label></li>
+  <ul style="list-style-type: none">
+    <li><label><input type="radio" name="selector" id="selector0" value="0" onclick="oculta()">Mostrar únicamente las propiedades trabajadas en clase en el cuso 2021/22</label></li>
+    <li><label><input type="radio" name="selector" id="selector1" value="1" checked onclick="muestra()">Mostrar todas las propiedades</label></li>
   </ul>
 
   <section id="css-propiedades">
@@ -106,7 +115,7 @@
           <td>Descripción</td>
           <td>Valores</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>contador</td>
           <td>Contador</td>
           <td>counter(nombre, estilo) </td>
@@ -116,17 +125,17 @@
           <td>Familia genérica de fuente</td>
           <td><span class="css-valor">cursive</span> | <span class="css-valor">fantasy</span> | <span class="css-valor">monospace</span> | <span class="css-valor">serif</span> | <span class="css-valor">sans-serif</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>forma</td>
           <td>Forma</td>
           <td>rect(top, right, bottom, left)</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente.html#tamano-absoluto">tamaño-absoluto</a></td>
           <td>Tamaño absoluto de fuente</td>
           <td><span class="css-valor">xx-small</span> | <span class="css-valor">x-small</span> | <span class="css-valor">medium</span> | <span class="css-valor">large</span> | <span class="css-valor">x-large</span> | <span class="css-valor">xx-large</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente.html#tamano-relativo">tamaño-relativo</a></td>
           <td>Tamaño relativo de fuente</td>
           <td><span class="css-valor">larger</span> | <span class="css-valor">smaller</span></td>
@@ -147,7 +156,7 @@
           <td>Descripción</td>
           <td>Descriptores / Características</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>@import</td>
           <td>Importar CSS</td>
           <td><span class="css-feature">url(...)</span></td>
@@ -157,7 +166,7 @@
           <td>Fuente web</td>
           <td><span class="css-feature">font-family</span>, <span class="css-feature">src</span>, <span class="css-feature">font-style</span>, <span class="css-feature">font-weight</span>, <span class="css-feature">font-stretch</span>, <span class="css-feature">unicode-range</span>, <span class="css-feature">font-variant</span>, <span class="css-feature">font-feature-settings</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-media-queries.html#media-queries">@media</a></td>
           <td>Características del dispositivo</td>
           <td><span class="css-feature">width</span> | <span class="css-feature">height</span> | <span class="css-feature">orientation</span> | <span class="css-feature">aspect-ratio</span> | <span class="css-feature">resolution</span> | etc. </td>
@@ -173,7 +182,7 @@
           <td>Descripción</td>
           <td>Valores</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente.html#font">font</a></td>
           <td>propiedad compuesta</td>
           <td>[ [ font-style || font-variant || font-weight ]? font-size [ / line-height ]? font-family ] | <span class="css-valor">caption</span> | <span class="css-valor">icon</span> | <span class="css-valor">menu</span> | <span class="css-valor">message-box</span> | <span class="css-valor">small-caption</span> | <span class="css-valor">status-bar</span></td>
@@ -204,10 +213,10 @@
           <td>variantes tipográficas</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente-2.html#font-variant-caps">font-variant-caps</a></td>
           <td>versalitas</td>
-          <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span></td>
+          <td><span class="css-valor">normal</span> | <span class="css-valor">small-caps</span> | <span class="css-valor">all-small-caps</span> | <span class="css-valor">petite-caps</span> | <span class="css-valor">all-petite-caps</span> | <span class="css-valor">unicase</span> | <span class="css-valor">titling-caps</span></td>
         </tr>
         <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente-2.html#font-kerning">font-kerning</a></td>
@@ -244,12 +253,12 @@
           <td>síntesis</td>
           <td><span class="css-valor">none</span> | <span class="css-valor">weight</span> | <span class="css-valor">style</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente-2.html#font-size-adjust">font-size-adjust</a></td>
           <td>ajuste del tamaño</td>
           <td>número</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fuente-2.html#font-stretch">font-stretch</a></td>
           <td>anchura</td>
           <td><span class="css-valor">ultra-condensed</span>, <span class="css-valor">extra-condensed</span>, <span class="css-valor">condensed</span>, <span class="css-valor">semi-condensed</span>, <span class="css-valor">normal</span>, <span class="css-valor">semi-expanded</span>, <span class="css-valor">expanded</span>, <span class="css-valor">extra-expanded</span>, <span class="css-valor">ultra-expanded</span></td>
@@ -270,7 +279,7 @@
           <td>color del texto</td>
           <td>color</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-color.html#opacidad">opacity</a></td>
           <td>opacidad / transparencia</td>
           <td>valor numérico | porcentaje</td>
@@ -326,7 +335,7 @@
           <td>alineación vertical</td>
           <td><span class="css-valor">baseline</span> | <span class="css-valor">bottom</span> | <span class="css-valor">middle</span> | <span class="css-valor">sub</span> | <span class="css-valor">super</span> | <span class="css-valor">text-bottom</span> | <span class="css-valor">text-top</span> | <span class="css-valor">top</span> | distancia | porcentaje</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-texto.html#white-space">white-space</a></td>
           <td>espacios en blanco, saltos de línea y wrap</td>
           <td><span class="css-valor">normal</span> | <span class="css-valor">nowrap</span> | <span class="css-valor">pre</span> | <span class="css-valor">pre-line</span> | <span class="css-valor">pre-wrap</span></td>
@@ -657,7 +666,7 @@
           <td>repetición de la imagen de fondo</td>
           <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span> | <span class="css-valor">round</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fondos.html#background-clip">background-clip</a></td>
           <td>límite de la imagen de fondo</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
@@ -667,7 +676,7 @@
           <td>tamaño de la imagen de fondo</td>
           <td><span class="css-valor">auto</span> | [ distancia | porcentaje ] {2} | <span class="css-valor">contain</span> | <span class="css-valor">cover</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-fondos.html#background-origin">background-origin</a></td>
           <td>origen de la imagen de fondo</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">padding-box</span> | <span class="css-valor">content-box</span></td>
@@ -688,7 +697,7 @@
           <td>tipo de caja</td>
           <td><span class="css-valor">none</span> | <span class="css-valor">block</span> | <span class="css-valor">inline</span> | <span class="css-valor">inline-block</span> | <span class="css-valor">inline-table</span> | <span class="css-valor">list-item</span> | <span class="css-valor">run-in</span> | <span class="css-valor">table</span> | <span class="css-valor">table-caption</span> | <span class="css-valor">table-cell</span> | <span class="css-valor">table-column</span> | <span class="css-valor">table-column-group</span> | <span class="css-valor">table-footer-group</span> | <span class="css-valor">table-header-group</span> | <span class="css-valor">table-row</span> | <span class="css-valor">table-row-group</span> | <span class="css-valor">flex</span> | <span class="css-valor">inline-flex</span></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-modelo-caja.html#box-sizing">box-sizing</a></td>
           <td>posición del borde y márgenes</td>
           <td><span class="css-valor">border-box</span> | <span class="css-valor">content-box</span></td>
@@ -774,12 +783,12 @@
           <td>posición del borde izquierdo del elemento</td>
           <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>clip</td>
           <td>recorta el elemento</td>
           <td><span class="css-valor">auto</span> | forma</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>visibility</td>
           <td>visibilidad</td>
           <td><span class="css-valor">hidden</span> | <span class="css-valor">collapse</span> | <span class="css-valor">visible</span></td>
@@ -789,7 +798,7 @@
           <td>apilamiento</td>
           <td><span class="css-valor">auto</span> | número-entero</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td>contain</td>
           <td>independencia</td>
           <td><span class="css-valor">none</span> | <span class="css-valor">strict</span> | <span class="css-valor">content</span> | <span class="css-valor">size</span> | <span class="css-valor">layout</span> | <span class="css-valor">paint</span></td>
@@ -1137,7 +1146,7 @@
           <td>Descripción</td>
           <td>Valores</td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-pseudoclases.html#pseudo-clase-dinamicas">:active</a></td>
           <td>cuando se hace clic sobre el elemento</td>
           <td></td>
@@ -1147,7 +1156,7 @@
           <td>primer elemento hijo</td>
           <td></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-pseudoclases.html#pseudo-clase-dinamicas">:focus</a></td>
           <td>cuando el elemento tiene el foco</td>
           <td></td>
@@ -1157,7 +1166,7 @@
           <td>cuando el ratón pasa sobre el elemento</td>
           <td></td>
         </tr>
-        <tr>
+        <tr class="no-impartidas-en-clase">
           <td><a href="css-pseudoclases.html#pseudo-clase-lang">:lang</a></td>
           <td>idioma</td>
           <td>:lang(en) | :lang(es) | :lang(fr) etc.</td>
@@ -1174,7 +1183,7 @@
         </tr>
       </tbody>
 
-      <tbody id="css-otras">
+      <tbody id="css-otras" class="no-impartidas-en-clase">
         <tr class="titulo">
           <td colspan="3">Otras</td>
         </tr>
@@ -1193,7 +1202,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 25 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 5 de noviembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
