@@ -328,7 +328,7 @@
       <p>El atributo <span class="html-atri">target</span> permite especificar el contexto en el que se resuelve el enlace. Los valores posibles son:</p>
       <ul>
         <li><span class="html-atri-valor">_blank</span>: el enlace se abre en una nueva pestaña</li>
-        <li><span class="html-atri-valor">_self</span>: el enlace se abre en el mismo elemento que contiene el enlace (puede ser la ventana completa o un elemento contenedor como <span class="html-eti">&lt;object&gt;</span> o <span class="html-eti">&lt;iframe&gt;</span>)</li>
+        <li><span class="html-atri-valor">_self</span>: el enlace se abre en el mismo elemento que contiene el enlace (puede ser la ventana completa o un elemento contenedor como <span class="html-eti">&lt;object&gt;</span> o <span class="html-eti">&lt;iframe&gt;</span>). Por motivos de seguridad, si el elemento incrustado pertenece a un dominio distinto, sólo se mostrará si el servidor de dicho dominio lo autoriza (<a href="https://support.mozilla.org/en-US/kb/xframe-neterror-page">aclaración en ayuda de Firefox</a>)</li>
         <li><span class="html-atri-valor">_parent</span>: el enlace se abre en el elemento de nivel inmediatamente superior al que contiene el enlace</li>
         <li><span class="html-atri-valor">_top</span>: el enlace se abre en el elemento del nivel más alto (es decir, la ventana del navegador)</li>
       </ul>
@@ -336,7 +336,7 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/" <span class="codigo-resaltado">target="_blank"</span>&gt;enlace a example.com&lt;/a&gt; que se abre en una nueva pestaña.&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_blank"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en una nueva pestaña.&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
@@ -350,11 +350,12 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a example.com&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://w3.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
+&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="ejemplos/enlaces/target-2.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="ejemplos/enlaces/target-2.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
           <a href="ejemplos/enlaces/target-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -364,28 +365,60 @@
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/" <span class="codigo-resaltado">target="_parent"</span>&gt;enlace a example.com&lt;/a&gt; que se abre en el elemento que contiene el elemento que contiene esta página.&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
+  &lt;p&gt;Como se trata del mismo dominio, aunque el sitio web mclibre.org NO está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="ejemplos/enlaces/target-3.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="ejemplos/enlaces/target-2-b.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-2-b.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/" <span class="codigo-resaltado">target="_top"</span>&gt;enlace a example.com&lt;/a&gt; que se abre en el elemento de nivel superior que contiene el elemento que contiene esta página.&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://cdlibre.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a cdlibre.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
+  &lt;p&gt;Como se trata de otro dominio y el sitio web cdlibre.org NO está configurado para poderse abrir en este tipo de elementos, la página web NO se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
         <div class="resultado-object">
-          <object type="text/html" data="ejemplos/enlaces/target-4.html" style="width: 100%; height: 9em;">ERROR (no puede mostrarse el objeto)</object>
+          <object type="text/html" data="ejemplos/enlaces/target-2-c.html" style="width: 100%; height: 15em;">ERROR (no puede mostrarse el objeto)</object>
         </div>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-2-c.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://w3.org/" <span class="codigo-resaltado">target="_parent"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento que contiene el elemento que contiene esta página.&lt;/p&gt;
+&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/enlaces/target-3-b.html" style="width: 100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-3-b.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://w3.org/" <span class="codigo-resaltado">target="_top"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento de nivel más alto al elemento que contiene esta página.&lt;/p&gt;
+&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/enlaces/target-4-b.html" style="width: 100%; height: 20em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-4-b.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </section>
@@ -399,7 +432,7 @@
 </pre>
       </div>
       <div class="resultado-object">
-        <object type="text/html" data="ejemplos/enlaces/target-5.html" style="width: 100%; height: 8em;">ERROR (no puede mostrarse el objeto)</object>
+        <object type="text/html" data="ejemplos/enlaces/target-5.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/enlaces/target-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
@@ -408,15 +441,9 @@
 
     <hr class="corta">
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">El atributo <span class="html-atri">target</span> con el valor <span class="html-atri-valor">_blank</span> provoca que el navegador abra el enlace en una nueva pestaña. Por desgracia, desde esa nueva pestaña se puede cambiar la página que muestra la pestaña inicial, lo que permite engañar al usuario (como explica <a href="https://mathiasbynens.github.io/rel-noopener/">Mathias Bynens</a>). Esta posibilidad se puede controlar mediante el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>", que impide que la nueva pestaña pueda manejar la primera. Por ese motivo, para proteger a nuestros visitantes, se recomienda añadir siempre este atributo a cualquier enlace a una página externa que se abra en una nueva pestaña.</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">El atributo <span class="html-atri">target</span> con el valor <span class="html-atri-valor">_blank</span> provoca que el navegador abra el enlace en una nueva pestaña. Por desgracia, desde esa nueva pestaña se puede cambiar la página que muestra la pestaña inicial, lo que permite engañar al usuario (como explica <a href="https://mathiasbynens.github.io/rel-noopener/">Mathias Bynens</a>). Esta posibilidad se puede controlar mediante el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>", que impide que la nueva pestaña pueda manejar la primera. Por ese motivo, para proteger a nuestros visitantes, se recomendaba añadir siempre este atributo a cualquier enlace a una página externa que se abriera en una nueva pestaña.</p>
 
-    <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque. Desde octubre de 2018 Safari aplica automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Firefox tenía previsto hacerlo en Firefox 65 (que se publicó en enero de 2019), pero actualmente (octubre de 2019) todavía no lo ha implementado.</p>
-
-    <p>Referencia:</p>
-    <ul>
-      <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1522083">Mozilla bug  1522083: Make target=_blank on a/area elements imply rel=noopener by default</a></li>
-      <li><a href="https://www.ghacks.net/2018/11/30/firefox-security-relnoopener-for-target_blank/">Firefox security: rel=noopener for target=_blank</a> (noviembre de 2018)</li>
-    </ul>
+    <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque, aplicando automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Safari lo hace <a href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#Security-and-Privacy">desde Safari 12.1</a> (octubre de 2018). Firefox lo <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/79#html">hace desde Firefox 79</a> (julio de 2020). Google Chrome lo hace <a href="https://developer.chrome.com/blog/new-in-chrome-88/#more">desde Chrome 88</a> (enero de 2021).</p>
   </section>
 
   <section id="intentos-censura">
@@ -429,7 +456,7 @@
     <section id="censura-fiscalia">
       <h3>Fiscalía General del Estado (España)</h3>
 
-      <p>La <a href="https://www.fiscal.es/">Fiscalía General del Estado de España</a>, en su "Aviso legal" dice que no permite que se enlacen páginas de su web.</p>
+      <p>Hasta 2021, la <a href="https://www.fiscal.es/">Fiscalía General del Estado de España</a>, en su "<a href="https://www.fiscal.es/web/fiscal/aviso-legal">Aviso legal</a>" decía que no permitía que se enlazaran páginas de su web. Actualmente, (noviembre de 2021) el aviso legal ha eliminado esos términos absurdos.</p>
 
       <p>En febrero de 2007, ese aviso legal decía:</p>
 
@@ -447,7 +474,7 @@
         <p>En cualquier momento, La Fiscalía General del Estado podrá retirar la autorización mencionada en el párrafo anterior, sin necesidad de alegar causa alguna. En tal caso, la página que haya realizado el enlace deberá proceder a su inmediata supresión, tan pronto como reciba la notificación de la revocación de la autorización por parte de la Fiscalía General del Estado.</p>
       </blockquote>
 
-      <p>El texto puede <a href="http://web.archive.org/web/20070208202711/www.fiscal.es/fiscal/public/!ut/p/_s.7_0_A/7_0_9J?cID=6_2_6A&amp;nID=7_0_9E&amp;WPS_Param=AvisoLegal&amp;cs_strutsAction=actionManager.do">consultarse en archive.org</a>. Esa copia se realizó el 8 de febrero de 2007, pero actualmente (octubre de 2019) el aviso legal sigue redactado en los mismos términos.</p>
+      <p>El texto puede <a href="http://web.archive.org/web/20070208202711/www.fiscal.es/fiscal/public/!ut/p/_s.7_0_A/7_0_9J?cID=6_2_6A&amp;nID=7_0_9E&amp;WPS_Param=AvisoLegal&amp;cs_strutsAction=actionManager.do">consultarse en archive.org</a> (copia de febrero de 2007). En enero de 2021 todavía se encontraba redactada en los mismos términos (<a href="http://web.archive.org/web/20210126130106/https://www.fiscal.es/web/fiscal/aviso-legal">copia en archive.org enero de 2021</a>), aunque con un diseño más moderno..</p>
     </section>
 
     <section id="censura-biblioteca">
@@ -533,7 +560,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 29 de noviembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
