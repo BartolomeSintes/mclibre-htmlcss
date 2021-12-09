@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Otras. Secuencias Unicode. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <style>
+    div.u-l {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+    }
+
+    div.u,
+    div.u2 {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 210px;
+      margin: 5px;
+      border: black 1px solid;
+      text-align: center;
+    }
+
+    div.u2 {
+      flex: 0 1 280px;
+    }
+
+    div.u p:nth-child(odd),
+    div.u2 p:nth-child(odd) {
+      background-color: #eee;
+    }
+
+    div.u p,
+    div.u2 p {
+      margin: 0;
+      padding: 5px 10px;
+    }
+
+    div.u p.uc,
+    div.u2 p.uc {
+      font-weight: bold;
+    }
+
+    div.u p.si,
+    div.u2 p.si {
+      font-family: sans-serif;
+      font-size: 80px;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    div.u span.ss,
+    div.u2 span.ss {
+      font-family: sans-serif;
+      padding-right: 20px;
+    }
+
+    p.si span:not(:last-child) {
+      border-right: 2px solid black;
+    }
+
+    div.u .twe,
+    div.u2 .twe {
+      height: 90px;
+      vertical-align: text-bottom;
+    }
+
+    div.u p.no,
+    div.u2 p.no {
+      flex: 1 0 auto;
+      text-transform: uppercase;
+    }
+
+    div.u p.co,
+    div.u2 p.co {
+      font-size: 90%;
+    }
+
+    div.u a,
+    div.u2 a {
+      border: none;
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Secuencias Unicode: Otras</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Otras Secuencias</h2>
+      <ul>
+        <li><a href="#gr-keycap-1">Teclas (modo texto)</a></li>
+        <li><a href="#gr-keycap-2">Teclas (modo <i>emoji</i>)</a></li>
+        <li><a href="#gr-restos">Otras secuencias</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Esta página muestra las secuencias Unicode no incluidas en el resto de páginas de secuencias.</p>
+
+  <p>Para entender esta página se recomienda leer las lecciones:</p>
+  <ul>
+    <li><a href="html-utf8.html">El juego de caracteres UTF-8</a>, que explica qué es un juego de caracteres informático y, concretamente, qué es el juego de caracteres UTF-8.</li>
+    <li><a href="html-entidades-caracter.html">Entidades de carácter y entidades numéricas</a>, que explica cómo incluir caracteres Unicode en una página web</li>
+    <li><a href="html-unicode-secuencias.html">Secuencias</a>, que muestra cómo se definen las secuencias de caracteres Unicode que corresponden a dibujos (banderas, emojis, etc.)</li>
+  </ul>
+
+  <p>Esta página es la séptima de un grupo de páginas que muestran diferentes símbolos Unicode agrupados por temas:</p>
+  <ul>
+    <li><a href="html-unicode-simbolos.html">Símbolos gráficos</a>, que muestra los caracteres Unicode que corresponden a símbolos gráficos (incluye tanto los símbolos en blanco y negro como los emojis que tiene versión en modo texto)</li>
+    <li><a href="html-unicode-dibujos.html">Emojis</a>, que muestra únicamente los caracteres Unicode que corresponden a los emojis (en color)</li>
+    <li><a href="html-unicode-secuencias-generos.html">Géneros</a>, que muestra las secuencias Unicode que corresponden a personas con un género (masculino o femenino) determinado</li>
+    <li><a href="html-unicode-secuencias-colores.html">Colores de piel</a>, que muestra las secuencias Unicode que corresponden a personas con un color de piel determinado</li>
+    <li><a href="html-unicode-secuencias-parejas.html">Parejas</a>, que muestra las secuencias Unicode que corresponden a parejas y familias</li>
+    <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
+    <li><a href="html-unicode-secuencias-otras.html">Otras</a>, que muestra las secuencias Unicode no incluidas en las páginas anteriores</li>
+    <li><a href="html-unicode-twemoji.html">Twemoji</a>, que muestra los dibujos de <i>emojis</i> creados por el proyecto <a href="https://twemoji.twitter.com/">Twemoji</a> con licencia libre <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> (es un fichero grande que puede tardar un poco en cargarse)</li>
+  </ul>
+
+
+  <section id="info">
+    <h2>Información contenida en las fichas</h2>
+
+    <p>Las fichas siguientes muestran los dibujos de las secuencias de Unicode no incluidas en el resto de páginas de secuencias. Para cada secuencia se muestra:</p>
+
+    <ul>
+      <li>la secuencia de códigos Unicode hexadecimal (el formato es U+HHHH, donde HHHH es un número hexadecimal)</li>
+      <li>el carácter en la fuente que utilice el sistema operativo o el navegador para mostrar los dibujos. Si no hay un dibujo disponible, el navegador muestra un rectángulo de borde negro que contiene el código Unicode con un tamaño minúsculo.</li>
+      <li>las entidades numéricas de la secuencia de caracteres (en formato hexadecimal y decimal)</li>
+      <li>el nombre de la secuencia (en inglés)</li>
+      <li>en su caso, información adicional sobre el carácter o la secuencia</li>
+    </ul>
+
+    <hr class="corta">
+
+    <p>Cuando el sistema operativo no puede mostrar la secuencia Unicode, lo que suele hacer es mostrar cada uno de los caracteres de la secuencia por separado. Por eso se pueden ver dos o tres dibujos en vez del dibujo correcto.</p>
+  </section>
+
+  <section id="gr-keycap-1">
+    <h2>Caracteres enmarcados (teclas), modo texto</h2>
+
+    <p>En este apartado se muestran las secuencias Unicode ZWJ que corresponden a teclas de un teclado de ordenador, en modo texto. Estas secuencias se forman con dos caracteres, combinando algunos caracteres con el componente de borde de tecla, como se comenta en el <a href="html-unicode-secuencias.html#gr-keycap-1">apartado Caracteres enmarcados (teclas), modo texto, de la lección Secuencias Unicode</a>.</p>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+23 U+20E3 </p>
+        <p class="si">&#x23;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x23;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#35;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: #</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2A U+20E3 </p>
+        <p class="si">&#x2A;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2a;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#42;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: *</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+30 U+20E3 </p>
+        <p class="si">&#x30;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x30;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#48;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 0</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+31 U+20E3 </p>
+        <p class="si">&#x31;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x31;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#49;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 1</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+32 U+20E3 </p>
+        <p class="si">&#x32;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x32;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#50;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 2</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+33 U+20E3 </p>
+        <p class="si">&#x33;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x33;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#51;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 3</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+34 U+20E3 </p>
+        <p class="si">&#x34;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x34;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#52;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 4</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+35 U+20E3 </p>
+        <p class="si">&#x35;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x35;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#53;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 5</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+36 U+20E3 </p>
+        <p class="si">&#x36;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x36;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#54;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 6</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+37 U+20E3 </p>
+        <p class="si">&#x37;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x37;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#55;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 7</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+38 U+20E3 </p>
+        <p class="si">&#x38;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x38;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#56;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 8</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+39 U+20E3 </p>
+        <p class="si">&#x39;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x39;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#57;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 9</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gr-keycap-2">
+    <h2>Caracteres enmarcados (teclas), modo <i>emoji</i></h2>
+
+    <p>En este apartado se muestran las secuencias Unicode ZWJ que corresponden a teclas de un teclado de ordenador, en modo <i>emoji</i>. Estas secuencias se forman con tres caracteres, combinando algunos caracteres con el componente de borde de tecla, como se comenta en el <a href="html-unicode-secuencias.html#gr-keycap-1">apartado Caracteres enmarcados (teclas), modo <i>emoji</i>, de la lección Secuencias Unicode</a>.</p>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+23 U+FE0F U+20E3 </p>
+        <p class="si">&#x23;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x23;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#35;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: #</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2A U+FE0F U+20E3 </p>
+        <p class="si">&#x2A;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2a;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#42;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: *</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+30 U+FE0F U+20E3 </p>
+        <p class="si">&#x30;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x30;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#48;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 0</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+31 U+FE0F U+20E3 </p>
+        <p class="si">&#x31;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x31;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#49;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 1</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+32 U+FE0F U+20E3 </p>
+        <p class="si">&#x32;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x32;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#50;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 2</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+33 U+FE0F U+20E3 </p>
+        <p class="si">&#x33;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x33;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#51;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 3</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+34 U+FE0F U+20E3 </p>
+        <p class="si">&#x34;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x34;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#52;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 4</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+35 U+FE0F U+20E3 </p>
+        <p class="si">&#x35;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x35;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#53;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 5</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+36 U+FE0F U+20E3 </p>
+        <p class="si">&#x36;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x36;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#54;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 6</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+37 U+FE0F U+20E3 </p>
+        <p class="si">&#x37;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x37;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#55;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 7</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+38 U+FE0F U+20E3 </p>
+        <p class="si">&#x38;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x38;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#56;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 8</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+39 U+FE0F U+20E3 </p>
+        <p class="si">&#x39;&#xFE0F;&#x20E3;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x39;&amp;#xfe0f;&amp;#x20e3;</strong><br>
+          Dec:&nbsp;<strong>&amp;#57;&amp;#65039;&amp;#8419;</strong>
+        </p>
+        <p class="no">keycap: 9</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gr-restos">
+    <h2>Otras secuencias</h2>
+
+    <p>En este apartado se muestran las secuencias Unicode ZWJ que no corresponden a ninguna de las agrupaciones comentadas en esta página o en el las otras páginas dedicadas a secuencias Unicode. Estas secuencias se forman combinando varios caracteres, como se comenta en el <a href="html-unicode-secuencias.html#gr-restos">apartado Otras secuencias, de la lección Secuencias Unicode</a>.</p>
+
+    <div class="u-l">
+      <div class="u">
+        <p class="uc">U+1F408 U+200D U+2B1B </p>
+        <p class="si">&#x1F408;&#x200D;&#x2B1B;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f408;&amp;#x200d;&amp;#x2b1b;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128008;&amp;#8205;&amp;#11035;</strong>
+        </p>
+        <p class="no">black cat</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F415 U+200D U+1F9BA </p>
+        <p class="si">&#x1F415;&#x200D;&#x1F9BA;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f415;&amp;#x200d;&amp;#x1f9ba;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128021;&amp;#8205;&amp;#129466;</strong>
+        </p>
+        <p class="no">service dog</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F43B U+200D U+2744 </p>
+        <p class="si">&#x1F43B;&#x200D;&#x2744;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f43b;&amp;#x200d;&amp;#x2744;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128059;&amp;#8205;&amp;#10052;</strong>
+        </p>
+        <p class="no">polar bear</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F43B U+200D U+2744 U+FE0F </p>
+        <p class="si">&#x1F43B;&#x200D;&#x2744;&#xFE0F;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f43b;&amp;#x200d;&amp;#x2744;&amp;#xfe0f;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128059;&amp;#8205;&amp;#10052;&amp;#65039;</strong>
+        </p>
+        <p class="no">polar bear</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F441 U+200D U+1F5E8 </p>
+        <p class="si">&#x1F441;&#x200D;&#x1F5E8;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f441;&amp;#x200d;&amp;#x1f5e8;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128065;&amp;#8205;&amp;#128488;</strong>
+        </p>
+        <p class="no">eye in speech bubble</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F441 U+200D U+1F5E8 U+FE0F </p>
+        <p class="si">&#x1F441;&#x200D;&#x1F5E8;&#xFE0F;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f441;&amp;#x200d;&amp;#x1f5e8;&amp;#xfe0f;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128065;&amp;#8205;&amp;#128488;&amp;#65039;</strong>
+        </p>
+        <p class="no">eye in speech bubble</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F441 U+FE0F U+200D U+1F5E8 </p>
+        <p class="si">&#x1F441;&#xFE0F;&#x200D;&#x1F5E8;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f441;&amp;#xfe0f;&amp;#x200d;&amp;#x1f5e8;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128065;&amp;#65039;&amp;#8205;&amp;#128488;</strong>
+        </p>
+        <p class="no">eye in speech bubble</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F441 U+FE0F U+200D U+1F5E8 U+FE0F </p>
+        <p class="si">&#x1F441;&#xFE0F;&#x200D;&#x1F5E8;&#xFE0F;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f441;&amp;#xfe0f;&amp;#x200d;&amp;#x1f5e8;&amp;#xfe0f;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128065;&amp;#65039;&amp;#8205;&amp;#128488;&amp;#65039;</strong>
+        </p>
+        <p class="no">eye in speech bubble</p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F62E U+200D U+1F4A8 </p>
+        <p class="si">&#x1F62E;&#x200D;&#x1F4A8;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f62e;&amp;#x200d;&amp;#x1f4a8;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128558;&amp;#8205;&amp;#128168;</strong>
+        </p>
+        <p class="no">face exhaling</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F635 U+200D U+1F4AB </p>
+        <p class="si">&#x1F635;&#x200D;&#x1F4AB;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f635;&amp;#x200d;&amp;#x1f4ab;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128565;&amp;#8205;&amp;#128171;</strong>
+        </p>
+        <p class="no">face with spiral eyes</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F636 U+200D U+1F32B </p>
+        <p class="si">&#x1F636;&#x200D;&#x1F32B;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f636;&amp;#x200d;&amp;#x1f32b;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128566;&amp;#8205;&amp;#127787;</strong>
+        </p>
+        <p class="no">face in clouds</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+1F636 U+200D U+1F32B U+FE0F </p>
+        <p class="si">&#x1F636;&#x200D;&#x1F32B;&#xFE0F;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x1f636;&amp;#x200d;&amp;#x1f32b;&amp;#xfe0f;</strong><br>
+          Dec:&nbsp;<strong>&amp;#128566;&amp;#8205;&amp;#127787;&amp;#65039;</strong>
+        </p>
+        <p class="no">face in clouds</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2764 U+200D U+1F525 </p>
+        <p class="si">&#x2764;&#x200D;&#x1F525;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2764;&amp;#x200d;&amp;#x1f525;</strong><br>
+          Dec:&nbsp;<strong>&amp;#10084;&amp;#8205;&amp;#128293;</strong>
+        </p>
+        <p class="no">heart on fire</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2764 U+200D U+1FA79 </p>
+        <p class="si">&#x2764;&#x200D;&#x1FA79;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2764;&amp;#x200d;&amp;#x1fa79;</strong><br>
+          Dec:&nbsp;<strong>&amp;#10084;&amp;#8205;&amp;#129657;</strong>
+        </p>
+        <p class="no">mending heart</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2764 U+FE0F U+200D U+1F525 </p>
+        <p class="si">&#x2764;&#xFE0F;&#x200D;&#x1F525;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f525;</strong><br>
+          Dec:&nbsp;<strong>&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128293;</strong>
+        </p>
+        <p class="no">heart on fire</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+      <div class="u">
+        <p class="uc">U+2764 U+FE0F U+200D U+1FA79 </p>
+        <p class="si">&#x2764;&#xFE0F;&#x200D;&#x1FA79;</p>
+        <p class="en">
+          Hex:&nbsp;<strong>&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1fa79;</strong><br>
+          Dec:&nbsp;<strong>&amp;#10084;&amp;#65039;&amp;#8205;&amp;#129657;</strong>
+        </p>
+        <p class="no">mending heart</p>
+        <p class="co">
+         No disponible en Windows 10
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2021</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
