@@ -42,7 +42,9 @@
     <section id="css-utf">
       <h3>Archivos CSS en UTF-8</h3>
 
-      <p>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8.</p>
+      <p>Ni Firefox ni Chrome muestran correctamente los caracteres no ingleses en los archivos CSS guardados en el juego de caracteres UTF-8, si no reciben el juego de caracteres en la cabecera Content-Type. La línea inicial @charset "utf-8" permitida en el borrador de la recomendación <a href="https://www.w3.org/TR/css-syntax-3/#input-byte-stream">CSS Syntax Module Level 3</a> tampoco parece funcionar ni en Firefox ni Chrome.</p>
+
+      <p><a href="ejemplos/diferencias/utf-8.css">Enlace a hoja de estilo con caracteres no ingleses</a></p>
     </section>
 
     <section id="uso-zoom">
@@ -56,6 +58,28 @@
       </ul>
 
       <p>En Firefox los dos tipos de zoom funcionan mediante el menú <span class="soft-menu">Ver &gt; Tamaño</span>, con las combinaciones de teclas <kbd>Ctrl++</kbd> y <kbd>Ctrl+-</kbd> o con la combinación <kbd>Ctrl+rueda del ratón</kbd>. La opción del menú <span class="soft-menu">Ver &gt; Tamaño &gt;Sólo ampliar texto</span> permite elegir el tipo de zoom a aplicar.</p>
+    </section>
+
+    <section id="formulario-f5">
+      <h3>Recarga de formularios con F5</h3>
+
+      <p>Al recargar una página web (con la tecla <kbd class="soft-atajo-teclado">F5</kbd>):</p>
+      <ul>
+        <li>Firefox mantiene el estado de los controles de los formularios</li>
+        <li>Google Chrome reinicia los controles de los formularios</li>
+      </ul>
+
+      <p>Si se recarga la página con el atajo de teclado <kbd class="soft-atajo-teclado">Ctrl+F5</kbd>, Firefox sí que reinicia los controles de formulario.</p>
+
+      <p>Para comprobarlo, abra el ejemplo siguiente haciendo clic en el icono situado en la parte derecha del ejemplo y compruebe el funcionamiento en Firefox o Chrome:</p>
+      <div class="filaflex">
+        <div class="resultado-object">
+          <object type="text/html" data="ejemplos/diferencias/formulario-recarga.html" style="width: 100%; height: 10em;">ERROR (no puede mostrarse el objeto)</object>
+        </div>
+        <div class="icono-enlace">
+          <a href="ejemplos/diferencias/formulario-recarga.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
     </section>
   </section>
 
@@ -1142,7 +1166,7 @@ p.oblique {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 25 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 5 de noviembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

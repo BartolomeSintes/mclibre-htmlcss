@@ -68,15 +68,13 @@
 
     <p><strong>Notas</strong>:</p>
     <ul>
-      <li>Hasta julio de 2019 el borrador de la recomendación CSS Syntax Module Level 3 recomendaba que las hojas de estilo comenzaran con la regla-arroba:
+      <li>El borrador de la recomendación <a href="https://www.w3.org/TR/css-syntax-3/#input-byte-stream">CSS Syntax Module Level 3</a> describe cómo deben reconocer los navegadores el juego de caracteres de una hoja de estilo. El primer criterio es recibir en la cabecera Content-Type el valor del juego de caracteres charset=UTF-8. El segundo criterio es que la hoja de estilo empiece con la línea (@charset no se considera regla-arroba):
 
         <div class="codigo">
           <pre><code class="language-css">@charset "utf-8";</code></pre>
         </div>
-
-        <p>Pero desde julio de 2019 este borrador desaconseja su uso.</p>
+        <p>Pero ni Firefox ni Google Chrome atienden a esa línea, auqnue sí a la cabecera Content-Type, como se comenta en la <a href="../otros/diferencias-listado.html#css-utf">lección de diferencias entre navegadores</a>.</p>
       </li>
-      <li>Firefox no muestra correctamente los archivos CSS guardados en el juego de caracteres UTF-8, como se comenta en la <a href="../otros/diferencias-listado.html#css-utf">lección de diferencias entre navegadores</a>.</li>
     </ul>
   </section>
 
@@ -288,7 +286,7 @@ p.clase-2 {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de julio de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 5 de noviembre de 2021</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
