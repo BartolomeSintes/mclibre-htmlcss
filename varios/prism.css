@@ -198,97 +198,97 @@ pre code.language-json .string        { color: #ce9178; }          /* valor (cad
 /* CSS para plugin Line Numbers de Prism */
 
 pre.line-numbers {
-  position: relative;
-  padding-left: 2.8em;
-  counter-reset: linenumber;
+    position: relative;
+    padding-left: 2.8em;
+    counter-reset: linenumber;
 }
 
 pre.line-numbers > code {
-  position: relative;
+    position: relative;
 }
 
 .line-numbers .line-numbers-rows {
-  position: absolute;
-  pointer-events: none;
-  top: -2px;            /* para ajustar la posición de los números */
-  font-size: 100%;
-  left: -2.8em;
-  width: 2em; /* works for line-numbers below 1000 lines */
-  letter-spacing: -1px;
-  border-right: 1px solid #999;
+    position: absolute;
+    pointer-events: none;
+    top: -2px;            /* para ajustar la posición de los números */
+    font-size: 100%;
+    left: -2.8em;
+    width: 2em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .line-numbers-rows > span {
-  pointer-events: none;
-  display: block;
-  counter-increment: linenumber;
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
 }
 
 .line-numbers-rows > span::before {
-  content: counter(linenumber);
-  color: white;
-  display: block;
-  padding-right: 0.8em;
-  text-align: right;
+    content: counter(linenumber);
+    color: white;
+    display: block;
+    padding-right: 0.8em;
+    text-align: right;
 }
 
 /* CSS para plugin Command Line de Prism */
 
 .command-line-prompt {
-  border-right: 1px solid #999;
-  display: block;
-  float: left;
-  font-size: 100%;
-  letter-spacing: -1px;
-  margin-right: 1em;
-  pointer-events: none;
+    border-right: 1px solid #999;
+    display: block;
+    float: left;
+    font-size: 100%;
+    letter-spacing: -1px;
+    margin-right: 1em;
+    pointer-events: none;
 
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .command-line-prompt > span::before {
-  color: white;
-  content: ' ';
-  display: block;
-  padding-right: 0.8em;
+    color: white;
+    content: ' ';
+    display: block;
+    padding-right: 0.8em;
 }
 
 .command-line-prompt > span[data-user]::before {
-  content: "[" attr(data-user) "@" attr(data-host) "] $";
+    content: "[" attr(data-user) "@" attr(data-host) "] $";
 }
 
 .command-line-prompt > span[data-user="root"]::before {
-  content: "[" attr(data-user) "@" attr(data-host) "] #";
+    content: "[" attr(data-user) "@" attr(data-host) "] #";
 }
 
 .command-line-prompt > span[data-prompt]::before {
-  content: attr(data-prompt);
+    content: attr(data-prompt);
 }
 
 /* CSS para plugin Toolbar (utilizado por plugin Copy to Clipboard)  */
 
 div.code-toolbar {
-  position: relative;
+    position: relative;
 }
 
 div.code-toolbar > .toolbar {
-  position: absolute;
-  top: .3em;
-  right: .2em;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
+    position: absolute;
+    top: .3em;
+    right: .2em;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
 }
 
 div.code-toolbar:hover > .toolbar {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* Separate line b/c rules are thrown out if selector is invalid.
