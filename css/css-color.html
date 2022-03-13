@@ -58,14 +58,10 @@
       width: 500px;
     }
 
-    input[type=range]::-ms-track {
-      width: 500px;
-    }
-
   </style>
 </head>
 
-<body onload="desde_rgb_decimal(); desde_rgb_hexadecimal(); desde_hsl(); desde_svg(); rgbaLeeColor(); leecolor(); leecolorHsl();">
+<body onload="desde_rgb_decimal(); desde_rgb_hexadecimal(); desde_hsl(); desde_svg(); rgbaLeeColor(); leecolor(); leecolorHsl(); leecolorHwb();">
   <h1>CSS: Colores</h1>
 
   <nav>
@@ -85,6 +81,8 @@
         <li><a href="#rgba">Códigos RGBA</a></li>
         <li><a href="#hsl">Códigos HSL</a></li>
         <li><a href="#hsla">Códigos HSLA</a></li>
+        <li><a href="#hwb">Códigos HWB</a></li>
+        <li><a href="#hwba">Códigos HWBA</a></li>
         <li><a href="#html32">Nombres HTML 3.2</a></li>
         <li><a href="#svg">Nombres X11 / SVG</a></li>
         <li><a href="#sistema">Nombres del sistema</a></li>
@@ -727,8 +725,8 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <p>Los códigos RGBA se pueden expresar de distintas formas:</p>
     <ul>
-      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255 y transparencia un número decimal entre 0 y 1.</li>
-      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100% y transparencia un número decimal entre 0 y 1.</li>
+      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255 y transparencia un número decimal entre 0 y 1 (o un porcentaje).</li>
+      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100% y transparencia un número decimal entre 0 y 1 (o un porcentaje).</li>
     </ul>
 
     <hr class="corta">
@@ -870,79 +868,18 @@ de posicionamiento que no aparecen aquí. */</code></pre>
             <line x1="710" y1="3" x2="719" y2="-5" stroke="black" stroke-width="2" />
             <line x1="710" y1="-12" x2="719" y2="-5" stroke="black" stroke-width="2" />
             <text x="390" y="0" text-anchor="middle">Hue (Matiz)</text>
-            <rect x="10" y="10" width="10" height="50" stroke="none" fill="hsl(0, 100%, 50%)" />
-            <rect x="20" y="10" width="10" height="50" stroke="none" fill="hsl(5, 100%, 50%)" />
-            <rect x="30" y="10" width="10" height="50" stroke="none" fill="hsl(10, 100%, 50%)" />
-            <rect x="40" y="10" width="10" height="50" stroke="none" fill="hsl(15, 100%, 50%)" />
-            <rect x="50" y="10" width="10" height="50" stroke="none" fill="hsl(20, 100%, 50%)" />
-            <rect x="60" y="10" width="10" height="50" stroke="none" fill="hsl(25, 100%, 50%)" />
-            <rect x="70" y="10" width="10" height="50" stroke="none" fill="hsl(30, 100%, 50%)" />
-            <rect x="80" y="10" width="10" height="50" stroke="none" fill="hsl(35, 100%, 50%)" />
-            <rect x="90" y="10" width="10" height="50" stroke="none" fill="hsl(40, 100%, 50%)" />
-            <rect x="100" y="10" width="10" height="50" stroke="none" fill="hsl(45, 100%, 50%)" />
-            <rect x="110" y="10" width="10" height="50" stroke="none" fill="hsl(50, 100%, 50%)" />
-            <rect x="120" y="10" width="10" height="50" stroke="none" fill="hsl(55, 100%, 50%)" />
-            <rect x="130" y="10" width="10" height="50" stroke="none" fill="hsl(60, 100%, 50%)" />
-            <rect x="140" y="10" width="10" height="50" stroke="none" fill="hsl(65, 100%, 50%)" />
-            <rect x="150" y="10" width="10" height="50" stroke="none" fill="hsl(70, 100%, 50%)" />
-            <rect x="160" y="10" width="10" height="50" stroke="none" fill="hsl(75, 100%, 50%)" />
-            <rect x="170" y="10" width="10" height="50" stroke="none" fill="hsl(80, 100%, 50%)" />
-            <rect x="180" y="10" width="10" height="50" stroke="none" fill="hsl(85, 100%, 50%)" />
-            <rect x="190" y="10" width="10" height="50" stroke="none" fill="hsl(90, 100%, 50%)" />
-            <rect x="200" y="10" width="10" height="50" stroke="none" fill="hsl(95, 100%, 50%)" />
-            <rect x="210" y="10" width="10" height="50" stroke="none" fill="hsl(100, 100%, 50%)" />
-            <rect x="220" y="10" width="10" height="50" stroke="none" fill="hsl(105, 100%, 50%)" />
-            <rect x="230" y="10" width="10" height="50" stroke="none" fill="hsl(110, 100%, 50%)" />
-            <rect x="240" y="10" width="10" height="50" stroke="none" fill="hsl(115, 100%, 50%)" />
-            <rect x="250" y="10" width="10" height="50" stroke="none" fill="hsl(120, 100%, 50%)" />
-            <rect x="260" y="10" width="10" height="50" stroke="none" fill="hsl(125, 100%, 50%)" />
-            <rect x="270" y="10" width="10" height="50" stroke="none" fill="hsl(130, 100%, 50%)" />
-            <rect x="280" y="10" width="10" height="50" stroke="none" fill="hsl(135, 100%, 50%)" />
-            <rect x="290" y="10" width="10" height="50" stroke="none" fill="hsl(140, 100%, 50%)" />
-            <rect x="300" y="10" width="10" height="50" stroke="none" fill="hsl(145, 100%, 50%)" />
-            <rect x="310" y="10" width="10" height="50" stroke="none" fill="hsl(150, 100%, 50%)" />
-            <rect x="320" y="10" width="10" height="50" stroke="none" fill="hsl(155, 100%, 50%)" />
-            <rect x="330" y="10" width="10" height="50" stroke="none" fill="hsl(160, 100%, 50%)" />
-            <rect x="340" y="10" width="10" height="50" stroke="none" fill="hsl(165, 100%, 50%)" />
-            <rect x="350" y="10" width="10" height="50" stroke="none" fill="hsl(170, 100%, 50%)" />
-            <rect x="360" y="10" width="10" height="50" stroke="none" fill="hsl(175, 100%, 50%)" />
-            <rect x="370" y="10" width="10" height="50" stroke="none" fill="hsl(180, 100%, 50%)" />
-            <rect x="380" y="10" width="10" height="50" stroke="none" fill="hsl(185, 100%, 50%)" />
-            <rect x="390" y="10" width="10" height="50" stroke="none" fill="hsl(190, 100%, 50%)" />
-            <rect x="400" y="10" width="10" height="50" stroke="none" fill="hsl(195, 100%, 50%)" />
-            <rect x="410" y="10" width="10" height="50" stroke="none" fill="hsl(200, 100%, 50%)" />
-            <rect x="420" y="10" width="10" height="50" stroke="none" fill="hsl(205, 100%, 50%)" />
-            <rect x="430" y="10" width="10" height="50" stroke="none" fill="hsl(210, 100%, 50%)" />
-            <rect x="440" y="10" width="10" height="50" stroke="none" fill="hsl(215, 100%, 50%)" />
-            <rect x="450" y="10" width="10" height="50" stroke="none" fill="hsl(220, 100%, 50%)" />
-            <rect x="460" y="10" width="10" height="50" stroke="none" fill="hsl(225, 100%, 50%)" />
-            <rect x="470" y="10" width="10" height="50" stroke="none" fill="hsl(230, 100%, 50%)" />
-            <rect x="480" y="10" width="10" height="50" stroke="none" fill="hsl(235, 100%, 50%)" />
-            <rect x="490" y="10" width="10" height="50" stroke="none" fill="hsl(240, 100%, 50%)" />
-            <rect x="500" y="10" width="10" height="50" stroke="none" fill="hsl(245, 100%, 50%)" />
-            <rect x="510" y="10" width="10" height="50" stroke="none" fill="hsl(250, 100%, 50%)" />
-            <rect x="520" y="10" width="10" height="50" stroke="none" fill="hsl(255, 100%, 50%)" />
-            <rect x="530" y="10" width="10" height="50" stroke="none" fill="hsl(260, 100%, 50%)" />
-            <rect x="540" y="10" width="10" height="50" stroke="none" fill="hsl(265, 100%, 50%)" />
-            <rect x="550" y="10" width="10" height="50" stroke="none" fill="hsl(270, 100%, 50%)" />
-            <rect x="560" y="10" width="10" height="50" stroke="none" fill="hsl(275, 100%, 50%)" />
-            <rect x="570" y="10" width="10" height="50" stroke="none" fill="hsl(280, 100%, 50%)" />
-            <rect x="580" y="10" width="10" height="50" stroke="none" fill="hsl(285, 100%, 50%)" />
-            <rect x="590" y="10" width="10" height="50" stroke="none" fill="hsl(290, 100%, 50%)" />
-            <rect x="600" y="10" width="10" height="50" stroke="none" fill="hsl(295, 100%, 50%)" />
-            <rect x="610" y="10" width="10" height="50" stroke="none" fill="hsl(300, 100%, 50%)" />
-            <rect x="620" y="10" width="10" height="50" stroke="none" fill="hsl(305, 100%, 50%)" />
-            <rect x="630" y="10" width="10" height="50" stroke="none" fill="hsl(310, 100%, 50%)" />
-            <rect x="640" y="10" width="10" height="50" stroke="none" fill="hsl(315, 100%, 50%)" />
-            <rect x="650" y="10" width="10" height="50" stroke="none" fill="hsl(320, 100%, 50%)" />
-            <rect x="660" y="10" width="10" height="50" stroke="none" fill="hsl(325, 100%, 50%)" />
-            <rect x="670" y="10" width="10" height="50" stroke="none" fill="hsl(330, 100%, 50%)" />
-            <rect x="680" y="10" width="10" height="50" stroke="none" fill="hsl(335, 100%, 50%)" />
-            <rect x="690" y="10" width="10" height="50" stroke="none" fill="hsl(340, 100%, 50%)" />
-            <rect x="700" y="10" width="10" height="50" stroke="none" fill="hsl(345, 100%, 50%)" />
-            <rect x="710" y="10" width="10" height="50" stroke="none" fill="hsl(350, 100%, 50%)" />
-            <rect x="720" y="10" width="10" height="50" stroke="none" fill="hsl(355, 100%, 50%)" />
-            <rect x="730" y="10" width="10" height="50" stroke="none" fill="hsl(360, 100%, 50%)" />
+            <rect x="10" y="10" width="730" height="50" fill="url(#hslGradient)" />
+            <defs>
+              <linearGradient id="hslGradient">
+                <stop offset="0%" stop-color="hsl(  0, 100%, 50%)" />
+                <stop offset="16%" stop-color="hsl( 60, 100%, 50%)" />
+                <stop offset="33%" stop-color="hsl(120, 100%, 50%)" />
+                <stop offset="50%" stop-color="hsl(180, 100%, 50%)" />
+                <stop offset="66%" stop-color="hsl(240, 100%, 50%)" />
+                <stop offset="83%" stop-color="hsl(300, 100%, 50%)" />
+                <stop offset="100%" stop-color="hsl(360, 100%, 50%)" />
+              </linearGradient>
+            </defs>
           </svg>
         </p>
       </li>
@@ -966,7 +903,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       </div>
     </div>
 
-    <p>El modelo HSL es más intuitivo que el modelo RGB y su uso probablemente se generalice en el futuro.</p>
+    <p>El modelo HSL es más intuitivo que el modelo RGB y su uso se ha ido extendiendo en los últimos años.</p>
 
     <hr class="corta">
 
@@ -1040,7 +977,148 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <p>Los códigos de colores HSLA se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a>.</p>
 
-    <p>Estos códigos incorporan la transparencia alpha a los <a href="#hsl">códigos HSL</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco.</p>
+    <p>Estos códigos incorporan la transparencia alpha a los <a href="#hsl">códigos HSL</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco, o con un porcentaje entre 0% y 100%.</p>
+  </section>
+
+  <section id="hwb">
+    <h2 class="con-aside">Códigos de colores HWB</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">colores HWB</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#the-hwb-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hwb()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>Los códigos de colores HWB se definen en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (marzo de 2022) en elaboración.</p>
+
+    <p>En el <a href="https://en.wikipedia.org/wiki/HWB_color_model">modelo de color HWB</a> el color se define mediante tres valores:</p>
+
+    <ul>
+      <li>Hue (Matiz) es un entero entre 0 y 360 y recorre todos los colores
+        <p class="mcl-svg-figura">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="760" height="100" viewBox="0 -30 760 100">
+            <title>Colores correspondientes a valores de Hue (Matiz) entre 0 y 360</title>
+            <text x="10" y="0" text-anchor="middle">0</text>
+            <text x="740" y="0" text-anchor="middle">360</text>
+            <line x1="20" y1="-5" x2="330" y2="-5" stroke="black" stroke-width="2" />
+            <line x1="30" y1="3" x2="21" y2="-5" stroke="black" stroke-width="2" />
+            <line x1="30" y1="-12" x2="21" y2="-5" stroke="black" stroke-width="2" />
+            <line x1="440" y1="-5" x2="720" y2="-5" stroke="black" stroke-width="2" />
+            <line x1="710" y1="3" x2="719" y2="-5" stroke="black" stroke-width="2" />
+            <line x1="710" y1="-12" x2="719" y2="-5" stroke="black" stroke-width="2" />
+            <text x="390" y="0" text-anchor="middle">Hue (Matiz)</text>
+            <rect x="10" y="10" width="730" height="50" fill="url(#hslGradient)" />
+          </svg>
+        </p>
+      </li>
+      <li>Whiteness (Blancura) es un porcentaje que indica la cantidad de blanco que se añade al color</li>
+      <li>Blackness (Negrura) es un porcentaje que indica la cantidad de negro que se añade al color</li>
+    </ul>
+
+    <p>Los códigos HWB se expresan:</p>
+    <ul>
+      <li><strong>hwb(matiz blancura negrura)</strong>, donde matiz es un número entero entre 0 y 360 y blancura y negrura son porcentajes enteros entre 0% y 100%, sin comas entre ellos.</li>
+    </ul>
+
+    <div class="filaflex">
+      <div class="icono-navegadores">
+        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+        <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  background-color: hwb(240 80% 0%);
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-hwb.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-hwb.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p><strong>Nota</strong>: Safari admite el formato HWB desde la versión 15 (septiembre de 2021), Firefox desde la versión 98 (marzo de 2022) y Chrome <a href="https://chromestatus.com/feature/5637256860663808">lo admitirá</a> desde la versión 101 (abril de 2022).</p>
+
+    <p>El modelo HWB es más intuitivo que el modelo HSL y su uso probablemente se generalice en el futuro.</p>
+
+    <hr class="corta">
+
+    <p>El cuadro siguiente permite generar colores HWB moviendo los deslizadores:</p>
+
+    <table class="mcl-centrado" style="border: black 2px solid; padding: 10px">
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Valor</td>
+        </tr>
+        <tr>
+          <td>Matiz:</td>
+          <td><input type="range" name="points" min="0" max="360" id="matiz2" value="180"></td>
+          <td class="mcl-centrado"><span id="nMatiz2"></span></td>
+        </tr>
+        <tr>
+          <td>Blancura:</td>
+          <td><input type="range" name="points" min="0" max="100" id="blancura" value="0"></td>
+          <td class="mcl-centrado"><span id="nBlancura"></span></td>
+        </tr>
+        <tr>
+          <td>Negrura:</td>
+          <td><input type="range" name="points" min="0" max="100" id="negrura" value="0"></td>
+          <td class="mcl-centrado"><span id="nNegrura"></span></td>
+        </tr>
+        <tr>
+          <td colspan="3" class="mcl-centrado">
+            <p>Código HWB: <strong id="colorHwb"></strong></p>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+              <rect x="10" y="10" width="380" height="80" stroke="black" fill="hwb(180 0% 0%)" id="rectanguloHwb" />
+            </svg>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      var matiz2 = document.getElementById("matiz2");
+      var blancura = document.getElementById("blancura");
+      var negrura = document.getElementById("negrura");
+      var nMatiz2 = document.getElementById("nMatiz2");
+      var nBlancura = document.getElementById("nBlancura");
+      var nNegrura = document.getElementById("nNegrura");
+      var colorHwb = document.getElementById("colorHwb");
+      var rectanguloHwb = document.getElementById("rectanguloHwb");
+      function leecolorHwb(e) {
+        nMatiz2.textContent = matiz2.value;
+        nBlancura.textContent = blancura.value + "%";
+        nNegrura.textContent = negrura.value + "%";
+        colorHwb.textContent = "hwb(" + matiz2.value + " " + blancura.value + "% " + negrura.value + "%)";
+        rectanguloHwb.setAttribute("fill", "hwb(" + matiz2.value + " " + blancura.value + "% " + negrura.value + "%)");
+      }
+      matiz2.addEventListener("change", leecolorHwb, false);
+      blancura.addEventListener("change", leecolorHwb, false);
+      negrura.addEventListener("change", leecolorHwb, false);
+    </script>
+  </section>
+
+  <section id="hwba">
+    <h2 class="con-aside">Códigos de colores HWBA</h2>
+
+    <aside class="enlace-norma">
+      <p>
+        <span class="css-prop">colores HWBA</span><br>
+        <a href="https://www.w3.org/TR/css-color-3/#hsla-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>Los códigos de colores HWBA se definen en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (marzo de 2022) en elaboración.</p>
+
+    <p>Estos códigos incorporan la transparencia alpha a los <a href="#hwb">códigos HWB</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco, o con un porcentaje entre 0% y 100%.</p>
   </section>
 
   <section id="html32">
@@ -2230,7 +2308,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de enero de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 13 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
