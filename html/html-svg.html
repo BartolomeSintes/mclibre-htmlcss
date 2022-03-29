@@ -10,7 +10,7 @@
   <script src="../varios/prism.js"></script>
 </head>
 
-<body onload="cambia();">
+<body onload="cambia(); cambia_2();">
   <h1>SVG (1)</h1>
 
   <nav>
@@ -235,143 +235,317 @@
 
       <hr class="corta">
 
-      <p>El ejemplo siguiente permite modificar los valores de los atributos que intervienen en el dibujo y ver cómo influyen en el resultado.</p>
+      <p>Los ejemplos siguientes permiten modificar los valores de los atributos que intervienen en cada dibujo y ver cómo influyen en el resultado. En los apartados que se encuentran a continuación de estos dos ejemplos se explican estos atributos en detalle.</p>
 
-      <table>
-        <tr>
-          <td><input type="button" value="Reiniciar" onclick="reinicia()"></td>
-          <td>width:</td>
-          <td><input type="number" id="svg-width" min="0" max="400" size="7" value="200" step="10"></td>
-          <td>height:</td>
-          <td><input type="number" id="svg-height" min="0" max="400" size="7" value="200" step="10"></td>
-          <td>viewbox:</td>
-          <td><input type="number" id="svg-vbx" min="-400" max="400" size="7" value="-100" step="10"></td>
-          <td><input type="number" id="svg-vby" min="-400" max="400" size="7" value="-100" step="10"></td>
-          <td><input type="number" id="svg-vbw" min="0" max="800" size="7" value="200" step="10"></td>
-          <td><input type="number" id="svg-vbh" min="0" max="800" size="7" value="200" step="10"></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td style="text-align: right">cx:</td>
-          <td><input type="number" id="svg-cx" min="-400" max="400" size="7" value="0" step="10"></td>
-          <td style="text-align: right">cy:</td>
-          <td><input type="number" id="svg-cy" min="-400" max="400" size="7" value="0" step="10"></td>
-          <td style="text-align: right">r:</td>
-          <td><input type="number" id="svg-r" min="0" max="400" size="7" value="75" step="10"></td>
-          <td>stroke-width:</td>
-          <td><input type="number" id="svg-stroke" min="0" max="100" size="7" value="5" step="1"></td>
-          <td></td>
-        </tr>
-      </table>
+      <ul>
+        <li>En este primer ejemplo, al modificar el tamaño horizontal o vertical del dibujo (<span class="html-atri">width</span> y <span class="html-atri">height</span>) automáticamente se modifica la otra dimensión para conservar la proporción del dibujo. De la misma manera, al modificar el tamaño horizontal o vertical de la porción de plano SVG (tercer y cuarto valor de <span class="html-atri">viewBox</span>) automáticamente se modifica el tamaño del dibujo para conservar la proporción del dibujo.
 
-      <div class="filaflex">
-        <div class="resultado-html-sin-borde nogrow">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray" id="svg-1-svg">
-            <circle cx="0" cy="0" r="75" fill="none" stroke="red" stroke-width="5" id="svg-1-circle" />
-          </svg>
-        </div>
-        <div class="codigo">
-          <pre>
+          <table>
+            <tr>
+              <td><input type="button" value="Reiniciar" onclick="reinicia()"></td>
+              <td>width:</td>
+              <td><input type="number" id="svg-width" min="10" max="400" size="7" value="200" step="10"></td>
+              <td>height:</td>
+              <td><input type="number" id="svg-height" min="10" max="400" size="7" value="200" step="10"></td>
+              <td>viewbox:</td>
+              <td><input type="number" id="svg-vbx" min="-400" max="400" size="7" value="-100" step="10"></td>
+              <td><input type="number" id="svg-vby" min="-400" max="400" size="7" value="-100" step="10"></td>
+              <td><input type="number" id="svg-vbw" min="10" max="800" size="7" value="200" step="10"></td>
+              <td><input type="number" id="svg-vbh" min="10" max="800" size="7" value="200" step="10"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align: right">cx:</td>
+              <td><input type="number" id="svg-cx" min="-400" max="400" size="7" value="0" step="10"></td>
+              <td style="text-align: right">cy:</td>
+              <td><input type="number" id="svg-cy" min="-400" max="400" size="7" value="0" step="10"></td>
+              <td style="text-align: right">r:</td>
+              <td><input type="number" id="svg-r" min="0" max="400" size="7" value="75" step="10"></td>
+              <td>stroke-width:</td>
+              <td><input type="number" id="svg-stroke" min="0" max="100" size="7" value="5" step="1"></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <div class="filaflex">
+            <div class="resultado-html-sin-borde nogrow">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray" id="svg-1-svg">
+                <circle cx="0" cy="0" r="75" fill="none" stroke="red" stroke-width="5" id="svg-1-circle" />
+              </svg>
+            </div>
+            <div class="codigo">
+              <pre>
 <code id="svg-1-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
   width="<span id="html-width">200</span>" height="<span id="html-height">200</span>" viewBox="<span id="html-vbx">-100</span> <span id="html-vby">-100</span> <span id="html-vbw">200</span> <span id="html-vbh">200</span>"
   style="background-color: lightgray"&gt;
 &lt;circle cx="<span id="html-cx">0</span>" cy="<span id="html-cy">0</span>" r="<span id="html-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-stroke">5</span>" /&gt;
 &lt;/svg&gt;</code>
 </pre>
-        </div>
-      </div>
+            </div>
+          </div>
 
-      <script>
-        ///////////////////////
-        // Funciones comunes //
-        ///////////////////////
+          <script>
+            ///////////////////////
+            // Funciones comunes //
+            ///////////////////////
 
-        var svg_width = document.getElementById("svg-width");
-        var html_width = document.getElementById("html-width");
-        var svg_height = document.getElementById("svg-height");
-        var html_height = document.getElementById("html-height");
-        var svg_vbx = document.getElementById("svg-vbx");
-        var html_vbx = document.getElementById("html-vbx");
-        var svg_vby = document.getElementById("svg-vby");
-        var html_vby = document.getElementById("html-vby");
-        var svg_vbw = document.getElementById("svg-vbw");
-        var html_vbw = document.getElementById("html-vbw");
-        var svg_vbh = document.getElementById("svg-vbh");
-        var html_vbh = document.getElementById("html-vbh");
-        var svg_cx = document.getElementById("svg-cx");
-        var html_cx = document.getElementById("html-cx");
-        var svg_cy = document.getElementById("svg-cy");
-        var html_cy = document.getElementById("html-cy");
-        var svg_r = document.getElementById("svg-r");
-        var html_r = document.getElementById("html-r");
-        var svg_stroke = document.getElementById("svg-stroke");
-        var html_stroke = document.getElementById("html-stroke");
+            var svg_width = document.getElementById("svg-width");
+            var html_width = document.getElementById("html-width");
+            var svg_height = document.getElementById("svg-height");
+            var html_height = document.getElementById("html-height");
+            var svg_vbx = document.getElementById("svg-vbx");
+            var html_vbx = document.getElementById("html-vbx");
+            var svg_vby = document.getElementById("svg-vby");
+            var html_vby = document.getElementById("html-vby");
+            var svg_vbw = document.getElementById("svg-vbw");
+            var html_vbw = document.getElementById("html-vbw");
+            var svg_vbh = document.getElementById("svg-vbh");
+            var html_vbh = document.getElementById("html-vbh");
+            var svg_cx = document.getElementById("svg-cx");
+            var html_cx = document.getElementById("html-cx");
+            var svg_cy = document.getElementById("svg-cy");
+            var html_cy = document.getElementById("html-cy");
+            var svg_r = document.getElementById("svg-r");
+            var html_r = document.getElementById("html-r");
+            var svg_stroke = document.getElementById("svg-stroke");
+            var html_stroke = document.getElementById("html-stroke");
 
-        var svg_svg = document.getElementById("svg-1-svg");
-        var svg_circle = document.getElementById("svg-1-circle");
+            var svg_svg = document.getElementById("svg-1-svg");
+            var svg_circle = document.getElementById("svg-1-circle");
 
-        function cambia(e) {
-          svg_svg.setAttribute("width", svg_width.value);
-          html_width.textContent = svg_width.value;
-          svg_svg.setAttribute("height", svg_height.value);
-          html_height.textContent = svg_height.value;
-          svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
-          html_vbx.textContent = svg_vbx.value;
-          html_vby.textContent = svg_vby.value;
-          html_vbw.textContent = svg_vbw.value;
-          html_vbh.textContent = svg_vbh.value;
-          svg_circle.setAttribute("cx", svg_cx.value);
-          html_cx.textContent = svg_cx.value;
-          svg_circle.setAttribute("cy", svg_cy.value);
-          html_cy.textContent = svg_cy.value;
-          svg_circle.setAttribute("r", svg_r.value);
-          html_r.textContent = svg_r.value;
-          svg_circle.setAttribute("stroke-width", svg_stroke.value);
-          html_stroke.textContent = svg_stroke.value;
-        }
+            function cambia(e) {
+              svg_svg.setAttribute("width", svg_width.value);
+              html_width.textContent = svg_width.value;
+              svg_svg.setAttribute("height", svg_height.value);
+              html_height.textContent = svg_height.value;
+              svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+              html_vbx.textContent = svg_vbx.value;
+              html_vby.textContent = svg_vby.value;
+              html_vbw.textContent = svg_vbw.value;
+              html_vbh.textContent = svg_vbh.value;
+              svg_circle.setAttribute("cx", svg_cx.value);
+              html_cx.textContent = svg_cx.value;
+              svg_circle.setAttribute("cy", svg_cy.value);
+              html_cy.textContent = svg_cy.value;
+              svg_circle.setAttribute("r", svg_r.value);
+              html_r.textContent = svg_r.value;
+              svg_circle.setAttribute("stroke-width", svg_stroke.value);
+              html_stroke.textContent = svg_stroke.value;
+            }
 
-        function reinicia(e) {
-          svg_width.value = 200;
-          svg_svg.setAttribute("width", 200);
-          html_width.textContent = 200;
-          svg_height.value = 200;
-          svg_svg.setAttribute("height", 200);
-          html_height.textContent = 200;
-          svg_svg.setAttribute("viewBox", "-100 -100 200 200");
-          svg_vbx.value = -100;
-          html_vbx.textContent = -100;
-          svg_vby.value = -100;
-          html_vby.textContent = -100;
-          svg_vbw.value = 200;
-          html_vbw.textContent = 200;
-          svg_vbh.value = 200;
-          html_vbh.textContent = 200;
-          svg_cx.value = 0;
-          svg_circle.setAttribute("cx", 0);
-          html_cx.textContent = 0;
-          svg_cy.value = 0;
-          svg_circle.setAttribute("cy", 0);
-          html_cy.textContent = 0;
-          svg_r.value = 75;
-          svg_circle.setAttribute("r", 75);
-          html_r.textContent = 75;
-          svg_stroke.value = 5;
-          svg_circle.setAttribute("stroke-width", 5);
-          html_stroke.textContent = 5;
-        }
+            function cambia_w(e) {
+              html_width.textContent = svg_width.value;
+              svg_height.value = Math.round(svg_width.value * svg_vbh.value / svg_vbw.value).toString();
+              html_height.textContent = svg_height.value;
+              svg_svg.setAttribute("width", svg_width.value);
+              svg_svg.setAttribute("height", svg_height.value);
+              svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+            }
 
-        svg_width.addEventListener("change", cambia);
-        svg_height.addEventListener("change", cambia);
-        svg_vbx.addEventListener("change", cambia);
-        svg_vby.addEventListener("change", cambia);
-        svg_vbw.addEventListener("change", cambia);
-        svg_vbh.addEventListener("change", cambia);
-        svg_cx.addEventListener("change", cambia);
-        svg_cy.addEventListener("change", cambia);
-        svg_r.addEventListener("change", cambia);
-        svg_stroke.addEventListener("change", cambia);
-      </script>
+            function cambia_h(e) {
+              html_height.textContent = svg_height.value;
+              svg_width.value = Math.round(svg_height.value * svg_vbw.value / svg_vbh.value).toString();
+              html_width.textContent = svg_width.value;
+              svg_svg.setAttribute("width", svg_width.value);
+              svg_svg.setAttribute("height", svg_height.value);
+              svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+            }
 
+            function cambia_vbw(e) {
+              html_vbw.textContent = svg_vbw.value;
+              svg_width.value = Math.round(svg_height.value * svg_vbw.value / svg_vbh.value).toString();
+              html_width.textContent = svg_width.value;
+              svg_svg.setAttribute("width", svg_width.value);
+              svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+            }
+
+            function cambia_vbh(e) {
+              html_vbh.textContent = svg_vbh.value;
+              svg_height.value = Math.round(svg_width.value * svg_vbh.value / svg_vbw.value).toString();
+              html_height.textContent = svg_height.value;
+              svg_svg.setAttribute("height", svg_height.value);
+              svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+            }
+
+            function reinicia(e) {
+              svg_width.value = 200;
+              svg_svg.setAttribute("width", 200);
+              html_width.textContent = 200;
+              svg_height.value = 200;
+              svg_svg.setAttribute("height", 200);
+              html_height.textContent = 200;
+              svg_svg.setAttribute("viewBox", "-100 -100 200 200");
+              svg_vbx.value = -100;
+              html_vbx.textContent = -100;
+              svg_vby.value = -100;
+              html_vby.textContent = -100;
+              svg_vbw.value = 200;
+              html_vbw.textContent = 200;
+              svg_vbh.value = 200;
+              html_vbh.textContent = 200;
+              svg_cx.value = 0;
+              svg_circle.setAttribute("cx", 0);
+              html_cx.textContent = 0;
+              svg_cy.value = 0;
+              svg_circle.setAttribute("cy", 0);
+              html_cy.textContent = 0;
+              svg_r.value = 75;
+              svg_circle.setAttribute("r", 75);
+              html_r.textContent = 75;
+              svg_stroke.value = 5;
+              svg_circle.setAttribute("stroke-width", 5);
+              html_stroke.textContent = 5;
+            }
+
+            svg_width.addEventListener("change", cambia_w);
+            svg_height.addEventListener("change", cambia_h);
+            svg_vbx.addEventListener("change", cambia);
+            svg_vby.addEventListener("change", cambia);
+            svg_vbw.addEventListener("change", cambia_vbw);
+            svg_vbh.addEventListener("change", cambia_vbh);
+            svg_cx.addEventListener("change", cambia);
+            svg_cy.addEventListener("change", cambia);
+            svg_r.addEventListener("change", cambia);
+            svg_stroke.addEventListener("change", cambia);
+          </script>
+        </li>
+        <li>En este segundo ejemplo, al modificar cualquier parámetro no se modifica ningún parámetro automáticamente. Al modificar la proporcionalidad entre el tamaño del dibujo y el tamaño de la zona visible del plano SVG, el resultado es un poco más difícil de interpretar, como se explica más adelante en el apartado <a href="#atributos-viewbox-width-height-no-proporcionales">Atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> no proporcionales a <span class="html-atri">viewBox</span></a>.
+          <table>
+            <tr>
+              <td><input type="button" value="Reiniciar" onclick="reinicia_2()"></td>
+              <td>width:</td>
+              <td><input type="number" id="svg-2-width" min="0" max="400" size="7" value="200" step="10"></td>
+              <td>height:</td>
+              <td><input type="number" id="svg-2-height" min="0" max="400" size="7" value="200" step="10"></td>
+              <td>viewbox:</td>
+              <td><input type="number" id="svg-2-vbx" min="-400" max="400" size="7" value="-100" step="10"></td>
+              <td><input type="number" id="svg-2-vby" min="-400" max="400" size="7" value="-100" step="10"></td>
+              <td><input type="number" id="svg-2-vbw" min="0" max="800" size="7" value="200" step="10"></td>
+              <td><input type="number" id="svg-2-vbh" min="0" max="800" size="7" value="200" step="10"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align: right">cx:</td>
+              <td><input type="number" id="svg-2-cx" min="-400" max="400" size="7" value="0" step="10"></td>
+              <td style="text-align: right">cy:</td>
+              <td><input type="number" id="svg-2-cy" min="-400" max="400" size="7" value="0" step="10"></td>
+              <td style="text-align: right">r:</td>
+              <td><input type="number" id="svg-2-r" min="0" max="400" size="7" value="75" step="10"></td>
+              <td>stroke-width:</td>
+              <td><input type="number" id="svg-2-stroke" min="0" max="100" size="7" value="5" step="1"></td>
+              <td></td>
+            </tr>
+          </table>
+
+          <div class="filaflex">
+            <div class="resultado-html-sin-borde nogrow">
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray" id="svg-2-svg">
+                <circle cx="0" cy="0" r="75" fill="none" stroke="red" stroke-width="5" id="svg-2-circle" />
+              </svg>
+            </div>
+            <div class="codigo">
+              <pre>
+<code id="svg-2-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+width="<span id="html-2-width">200</span>" height="<span id="html-2-height">200</span>" viewBox="<span id="html-2-vbx">-100</span> <span id="html-2-vby">-100</span> <span id="html-2-vbw">200</span> <span id="html-2-vbh">200</span>"
+style="background-color: lightgray"&gt;
+&lt;circle cx="<span id="html-2-cx">0</span>" cy="<span id="html-2-cy">0</span>" r="<span id="html-2-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-2-stroke">5</span>" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+            </div>
+          </div>
+
+          <script>
+            ///////////////////////
+            // Funciones comunes //
+            ///////////////////////
+
+            var svg_2_width = document.getElementById("svg-2-width");
+            var html_2_width = document.getElementById("html-2-width");
+            var svg_2_height = document.getElementById("svg-2-height");
+            var html_2_height = document.getElementById("html-2-height");
+            var svg_2_vbx = document.getElementById("svg-2-vbx");
+            var html_2_vbx = document.getElementById("html-2-vbx");
+            var svg_2_vby = document.getElementById("svg-2-vby");
+            var html_2_vby = document.getElementById("html-2-vby");
+            var svg_2_vbw = document.getElementById("svg-2-vbw");
+            var html_2_vbw = document.getElementById("html-2-vbw");
+            var svg_2_vbh = document.getElementById("svg-2-vbh");
+            var html_2_vbh = document.getElementById("html-2-vbh");
+            var svg_2_cx = document.getElementById("svg-2-cx");
+            var html_2_cx = document.getElementById("html-2-cx");
+            var svg_2_cy = document.getElementById("svg-2-cy");
+            var html_2_cy = document.getElementById("html-2-cy");
+            var svg_2_r = document.getElementById("svg-2-r");
+            var html_2_r = document.getElementById("html-2-r");
+            var svg_2_stroke = document.getElementById("svg-2-stroke");
+            var html_2_stroke = document.getElementById("html-2-stroke");
+
+            var svg_2_svg = document.getElementById("svg-2-svg");
+            var svg_2_circle = document.getElementById("svg-2-circle");
+
+            function cambia_2(e) {
+              svg_2_svg.setAttribute("width", svg_2_width.value);
+              html_2_width.textContent = svg_2_width.value;
+              svg_2_svg.setAttribute("height", svg_2_height.value);
+              html_2_height.textContent = svg_2_height.value;
+              svg_2_svg.setAttribute("viewBox", svg_2_vbx.value + " " + svg_2_vby.value + " " + svg_2_vbw.value + " " + svg_2_vbh.value);
+              html_2_vbx.textContent = svg_2_vbx.value;
+              html_2_vby.textContent = svg_2_vby.value;
+              html_2_vbw.textContent = svg_2_vbw.value;
+              html_2_vbh.textContent = svg_2_vbh.value;
+              svg_2_circle.setAttribute("cx", svg_2_cx.value);
+              html_2_cx.textContent = svg_2_cx.value;
+              svg_2_circle.setAttribute("cy", svg_2_cy.value);
+              html_2_cy.textContent = svg_2_cy.value;
+              svg_2_circle.setAttribute("r", svg_2_r.value);
+              html_2_r.textContent = svg_2_r.value;
+              svg_2_circle.setAttribute("stroke-width", svg_2_stroke.value);
+              html_2_stroke.textContent = svg_2_stroke.value;
+            }
+
+            function reinicia_2(e) {
+              svg_2_width.value = 200;
+              svg_2_svg.setAttribute("width", 200);
+              html_2_width.textContent = 200;
+              svg_2_height.value = 200;
+              svg_2_svg.setAttribute("height", 200);
+              html_2_height.textContent = 200;
+              svg_2_svg.setAttribute("viewBox", "-100 -100 200 200");
+              svg_2_vbx.value = -100;
+              html_2_vbx.textContent = -100;
+              svg_2_vby.value = -100;
+              html_2_vby.textContent = -100;
+              svg_2_vbw.value = 200;
+              html_2_vbw.textContent = 200;
+              svg_2_vbh.value = 200;
+              html_2_vbh.textContent = 200;
+              svg_2_cx.value = 0;
+              svg_2_circle.setAttribute("cx", 0);
+              html_2_cx.textContent = 0;
+              svg_2_cy.value = 0;
+              svg_2_circle.setAttribute("cy", 0);
+              html_2_cy.textContent = 0;
+              svg_2_r.value = 75;
+              svg_2_circle.setAttribute("r", 75);
+              html_2_r.textContent = 75;
+              svg_2_stroke.value = 5;
+              svg_2_circle.setAttribute("stroke-width", 5);
+              html_2_stroke.textContent = 5;
+            }
+
+            svg_2_width.addEventListener("change", cambia_2);
+            svg_2_height.addEventListener("change", cambia_2);
+            svg_2_vbx.addEventListener("change", cambia_2);
+            svg_2_vby.addEventListener("change", cambia_2);
+            svg_2_vbw.addEventListener("change", cambia_2);
+            svg_2_vbh.addEventListener("change", cambia_2);
+            svg_2_cx.addEventListener("change", cambia_2);
+            svg_2_cy.addEventListener("change", cambia_2);
+            svg_2_r.addEventListener("change", cambia_2);
+            svg_2_stroke.addEventListener("change", cambia_2);
+          </script>
+        </li>
+      </ul>
       <section id="atributo-viewBox">
         <h4>El atributo <span class="html-atri">viewBox</span></h4>
 
@@ -1234,7 +1408,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
