@@ -10,7 +10,7 @@
   <script src="../varios/prism.js"></script>
 </head>
 
-<body>
+<body onload="cambia();">
   <h1>SVG (1)</h1>
 
   <nav>
@@ -30,9 +30,14 @@
         <li><a href="#svg">Etiqueta <span class="html-eti">&lt;svg&gt;</span></a>
           <ul>
             <li><a href="#atributos-version-xmlns"><span class="html-atri">version</span> y <span class="html-atri">xmlns</span></a></li>
-            <li><a href="#atributos-viewBox"><span class="html-atri">viewBox</span></a></li>
-            <li><a href="#atributos-width-height-viewbox"><span class="html-atri">width</span> y <span class="html-atri">height</span> con <span class="html-atri">viewBox</span></a></li>
-            <li><a href="#atributos-width-height"><span class="html-atri">width</span> y <span class="html-atri">height</span> sin <span class="html-atri">viewBox</span></a></li>
+            <li><a href="#atributos-viewbox-width-height"><span class="html-atri">viewBox</span>, <span class="html-atri">width</span> y <span class="html-atri">height</span></a>
+              <ul>
+                <li><a href="#atributo-viewBox"><span class="html-atri">viewBox</span></a></li>
+                <li><a href="#atributos-width-height-con-viewbox"><span class="html-atri">width</span> y <span class="html-atri">height</span> con <span class="html-atri">viewBox</span></a></li>
+                <li><a href="#atributos-width-height-sin-viewbox"><span class="html-atri">width</span> y <span class="html-atri">height</span> sin <span class="html-atri">viewBox</span></a></li>
+                <li><a href="#atributos-viewbox-width-height-no-proporcionales">No proporcionales</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li><a href="#elementos-superpuestos">Elementos superpuestos</a></li>
@@ -62,7 +67,7 @@
 
     <p>Un gráfico SVG puede incluirse en una página web de dos maneras, como objeto interno o como objeto externo.</p>
 
-    <p>Desgraciadamente, el uso de SVG se vio frenado porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9 y de forma deficiente. Actualmente (abril de 2020), los principales obstáculos al uso generalizado de SVG siguen siendo que las implementaciones en los navegadores todavía son incompletas y los potenciales riesgos de seguridad (debido a que las imágenes SVG pueden contener código Javascript, se recomienda no incorporar imágenes SVG sin haber comprobado antes su contenido).</p>
+    <p>Desgraciadamente, el uso de SVG se vio frenado porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9 y de forma deficiente. Actualmente (marzo de 2022), los principales obstáculos al uso generalizado de SVG siguen siendo que las implementaciones en los navegadores todavía son incompletas y los potenciales riesgos de seguridad (debido a que las imágenes SVG pueden contener código Javascript, se recomienda no incorporar imágenes SVG sin haber comprobado antes su contenido).</p>
 
     <p>De todas formas, SVG se ha ido imponiendo poco a poco como formato estándar de gráficos vectoriales frente a otros formatos propietarios y numerosos programas de edición de gráficos son capaces de importar y exportar en formato SVG.</p>
 
@@ -77,7 +82,7 @@
           <li><a href="https://jakearchibald.github.io/svgomg/">SVGOMG</a>, aplicación web que simplifica el el código fuente de imágenes SVG.</li>
         </ul>
       </li>
-      <li>: Repositorio de imágenes SVG libres
+      <li>Repositorio de imágenes SVG libres
         <ul>
           <li><a href="https://openclipart.org/">Open Clip Art</a></li>
           <li><a href="https://publicdomainvectors.org/es/">publicdomainvectors.org</a></li>
@@ -89,7 +94,6 @@
           <li>Información sobre SVG en <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">Mozilla Development Network</a></li>
           <li><a href="https://www.w3.org/Graphics/SVG/">Grupo de trabajo SVG en el W3C</a>, </li>
           <li><a href="https://www.mclibre.org/consultar/informatica/lecciones/inkscape.html">Lección en apuntes de Informática general sobre Inkscape</a></li>
-          <li>Webs que hace tiempo que no se actualizan: <a href="http://www.codedread.com/svg-support.php">codedread de Jeff Schiller</a> (soporte de SVG en diferentes navegadores) - <a href="http://svg-whiz.com/">SVG-Whiz</a></li>
           <li><a href="https://wiki.mozilla.org/SVG:Language:Regrets#Mixed_case_element_and_attribute_names">SVG:Language:Regrets</a></li>
         </ul>
       </li>
@@ -99,7 +103,7 @@
   <section id="sintaxis">
     <h2>Sintaxis de SVG</h2>
 
-    <p>SVG es un lenguaje XML, por lo que su sintaxis sigue las reglas del XML. SVG 2.0 (actualmente, abril de 2020, en elaboración) permitirá que el SVG incluido en un documento HTML5 siga la sintaxis HTML, pero por el momento las etiquetas SVG incluidas en páginas web deben seguir la sintaxis XML.</p>
+    <p>SVG es un lenguaje XML, por lo que su sintaxis sigue las reglas del XML. SVG 2.0 (actualmente, marzo de 2022, en elaboración, aunque su desarrollo está estancado desde el 2018) permitirá que el SVG incluido en un documento HTML5 siga la sintaxis HTML, pero por el momento las etiquetas SVG incluidas en páginas web deben seguir la sintaxis XML.</p>
 
     <p>En la lección <a href="html-xhtml-diferencias.html">Diferencias entre HTML y XHTML</a> se comentan las diferencias de sintaxis entre HTML y XHTML (que son las mismas que entre HTML y SVG, ya que tanto XHTML como SVG son lenguajes basados en XML). Las más llamativas son las siguientes:</p>
     <ul>
@@ -176,7 +180,9 @@
   <section id="plano">
     <h2>El plano SVG</h2>
 
-    <p>Los dibujos SVG se definen en un plano infinito en el que el eje Y está orientado hacia abajo, como muestra el dibujo siguiente en el que se muestran los ejes de coordenadas, cuatro puntos en rojo y sus coordenadas.</p>
+    <p>Los dibujos SVG se definen en un plano infinito en el que el eje X está orientado de izquierda a derecha, como es habitual en Matemáticas, pero en el que el eje Y está orientado hacia abajo, al contrario de lo que es habitual en Matemáticas pero como suele ser habitual en Informática. El dibujo siguiente muestra los ejes de coordenadas, cuatro puntos en rojo y sus coordenadas.</p>
+
+    <p>Los valores de las coordenadas SVG no tienen unidades (aunque si el ordenador necesita interpretarlas con unidades, se suelen interpretar como píxeles) y los valores pueden ser tanto enteros como decimales.</p>
 
     <p class="mcl-svg-figura">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
@@ -197,6 +203,8 @@
         <text x="-105" y="120" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, 100)</text>
       </svg>
     </p>
+
+    <p><strong>Nota</strong>: El plano SVG posee ejes de coordenadas, pero son invisibles. En el dibujo anterior se ven unos ejes de coordenadas porque se han dibujado explícitamente.</p>
   </section>
 
   <section id="svg">
@@ -220,72 +228,218 @@
       <p>Referencias: <a href="https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed">Pregunta en stackoverflow sobre la obligatoriedad de los atributos version y xmlns</a></p>
     </section>
 
-    <section id="atributos-viewBox">
-      <h3>El atributo <span class="html-atri">viewBox</span></h3>
+    <section id="atributos-viewbox-width-height">
+      <h3>Los atributos <span class="html-atri">viewBox</span>, <span class="html-atri">width</span> y <span class="html-atri">height</span></h3>
 
-      <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que muestra la imagen. Este atributo se establece con cuatro valores:</p>
+      <p>Los atributos <span class="html-atri">viewBox</span>, <span class="html-atri">width</span> y <span class="html-atri">height</span> determinan la porción del plano SVG que se va a mostrar en el dibujo y el tamaño que va a tener ese dibujo en la pantalla. Aunque cada uno se encarga de un aspecto, los tres atributos están muy relacionados y en algunas situaciones el cambio de uno de ellos afecta a los otros.</p>
 
-      <ul>
-        <li>primer valor: abcisa (X) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
-        <li>segundo valor: ordenada (Y) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
-        <li>tercer valor: ancho de la porción del plano que muestra la imagen</li>
-        <li>cuarto valor: alto de la porción del plano que muestra la imagen</li>
-      </ul>
+      <hr class="corta">
 
-      <p>El ejemplo siguiente muestra con una línea roja a trazos la porción del plano SVG que se mostraría con unos valores determinados en el atributo <span class="html-atri">viewbox</span>.</p>
+      <p>El ejemplo siguiente permite modificar los valores de los atributos que intervienen en el dibujo y ver cómo influyen en el resultado.</p>
 
-      <p class="mcl-svg-figura">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
-          <defs>
-            <marker id="markerArrow" markerWidth="48" markerHeight="48" refX="0" refY="6" orient="auto">
-              <path d="M0,4 L0,8 L6,6" style="fill: red;" />
-            </marker>
-          </defs>
-          <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-          <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-          <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
-          <polyline points="-5,190 0,200 5,190" fill="none" stroke-width="1" stroke="black" />
-          <text x="180" y="-10" font-family="sans-serif" font-size="20" fill="black">X</text>
-          <polyline points="190,5 200,0 190,-5" fill="none" stroke-width="1" stroke="black" />
+      <table>
+        <tr>
+          <td><input type="button" value="Reiniciar" onclick="reinicia()"></td>
+          <td>width:</td>
+          <td><input type="number" id="svg-width" min="0" max="400" size="7" value="200" step="10"></td>
+          <td>height:</td>
+          <td><input type="number" id="svg-height" min="0" max="400" size="7" value="200" step="10"></td>
+          <td>viewbox:</td>
+          <td><input type="number" id="svg-vbx" min="-400" max="400" size="7" value="-100" step="10"></td>
+          <td><input type="number" id="svg-vby" min="-400" max="400" size="7" value="-100" step="10"></td>
+          <td><input type="number" id="svg-vbw" min="0" max="800" size="7" value="200" step="10"></td>
+          <td><input type="number" id="svg-vbh" min="0" max="800" size="7" value="200" step="10"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td style="text-align: right">cx:</td>
+          <td><input type="number" id="svg-cx" min="-400" max="400" size="7" value="0" step="10"></td>
+          <td style="text-align: right">cy:</td>
+          <td><input type="number" id="svg-cy" min="-400" max="400" size="7" value="0" step="10"></td>
+          <td style="text-align: right">r:</td>
+          <td><input type="number" id="svg-r" min="0" max="400" size="7" value="75" step="10"></td>
+          <td>stroke-width:</td>
+          <td><input type="number" id="svg-stroke" min="0" max="100" size="7" value="5" step="1"></td>
+          <td></td>
+        </tr>
+      </table>
 
-          <text x="-168" y="-170" font-family="sans-serif" font-size="20" fill="black">viewBox="-100 -50 200 150"</text>
+      <div class="filaflex">
+        <div class="resultado-html-sin-borde nogrow">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray" id="svg-1-svg">
+            <circle cx="0" cy="0" r="75" fill="none" stroke="red" stroke-width="5" id="svg-1-circle" />
+          </svg>
+        </div>
+        <div class="codigo">
+          <pre>
+<code id="svg-1-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  width="<span id="html-width">200</span>" height="<span id="html-height">200</span>" viewBox="<span id="html-vbx">-100</span> <span id="html-vby">-100</span> <span id="html-vbw">200</span> <span id="html-vbh">200</span>"
+  style="background-color: lightgray"&gt;
+&lt;circle cx="<span id="html-cx">0</span>" cy="<span id="html-cy">0</span>" r="<span id="html-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-stroke">5</span>" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
 
-          <circle cx="-100" cy="-50" r="3" fill="red" />
-          <polygon points="-100,-50 100,-50 100,100, -100,100" fill="none" stroke-width="2" stroke="red" stroke-dasharray="5,5" />
-          <text x="-105" y="-55" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, -50)</text>
-          <text x="105" y="120" font-family="sans-serif" font-size="18" fill="black">(100, 100)</text>
+      <script>
+        ///////////////////////
+        // Funciones comunes //
+        ///////////////////////
 
-          <path fill="none" stroke="red" stroke-width="2" d="M -80,-165 A 50 30, 0, 0, 0, 0,-165" />
-          <line x1="-40" y1="-153" x2="-91" y2="-66" stroke-width="2" stroke="red" style="marker-end: url(#markerArrow)" />
+        var svg_width = document.getElementById("svg-width");
+        var html_width = document.getElementById("html-width");
+        var svg_height = document.getElementById("svg-height");
+        var html_height = document.getElementById("html-height");
+        var svg_vbx = document.getElementById("svg-vbx");
+        var html_vbx = document.getElementById("html-vbx");
+        var svg_vby = document.getElementById("svg-vby");
+        var html_vby = document.getElementById("html-vby");
+        var svg_vbw = document.getElementById("svg-vbw");
+        var html_vbw = document.getElementById("html-vbw");
+        var svg_vbh = document.getElementById("svg-vbh");
+        var html_vbh = document.getElementById("html-vbh");
+        var svg_cx = document.getElementById("svg-cx");
+        var html_cx = document.getElementById("html-cx");
+        var svg_cy = document.getElementById("svg-cy");
+        var html_cy = document.getElementById("html-cy");
+        var svg_r = document.getElementById("svg-r");
+        var html_r = document.getElementById("html-r");
+        var svg_stroke = document.getElementById("svg-stroke");
+        var html_stroke = document.getElementById("html-stroke");
 
-          <path fill="none" stroke="red" stroke-width="2" d="M 5,-165 A 50 90, 0, 0, 0, 40,-165" />
-          <line x1="23" y1="-160" x2="10" y2="-75" stroke-width="2" stroke="red" />
-          <path fill="none" stroke="red" stroke-width="2" d="M -100,-50 A 100 30, 0, 0, 1, 87,-58" style="marker-end: url(#markerArrow)" />
+        var svg_svg = document.getElementById("svg-1-svg");
+        var svg_circle = document.getElementById("svg-1-circle");
 
-          <path fill="none" stroke="red" stroke-width="2" d="M 45,-165 A 50 90, 0, 0, 0, 80,-165" />
-          <path fill="none" stroke="red" stroke-width="2" d="M 97,-47 A 80 100, 0, 0, 0, 90,85" style="marker-end: url(#markerArrow)" />
-          <line x1="62" y1="-160" x2="78" y2="-10" stroke-width="2" stroke="red" />
-          <circle cx="100" cy="100" r="3" fill="red" />
-        </svg>
-      </p>
+        function cambia(e) {
+          svg_svg.setAttribute("width", svg_width.value);
+          html_width.textContent = svg_width.value;
+          svg_svg.setAttribute("height", svg_height.value);
+          html_height.textContent = svg_height.value;
+          svg_svg.setAttribute("viewBox", svg_vbx.value + " " + svg_vby.value + " " + svg_vbw.value + " " + svg_vbh.value);
+          html_vbx.textContent = svg_vbx.value;
+          html_vby.textContent = svg_vby.value;
+          html_vbw.textContent = svg_vbw.value;
+          html_vbh.textContent = svg_vbh.value;
+          svg_circle.setAttribute("cx", svg_cx.value);
+          html_cx.textContent = svg_cx.value;
+          svg_circle.setAttribute("cy", svg_cy.value);
+          html_cy.textContent = svg_cy.value;
+          svg_circle.setAttribute("r", svg_r.value);
+          html_r.textContent = svg_r.value;
+          svg_circle.setAttribute("stroke-width", svg_stroke.value);
+          html_stroke.textContent = svg_stroke.value;
+        }
 
-      <p>La zona visible es independiente de los elementos dibujados, es decir, sólo se mostrarán los elementos (o la parte de los elementos) que se encuentren en la zona visible definida por el atributo <span class="html-atri">viewbox</span>.</p>
+        function reinicia(e) {
+          svg_width.value = 200;
+          svg_svg.setAttribute("width", 200);
+          html_width.textContent = 200;
+          svg_height.value = 200;
+          svg_svg.setAttribute("height", 200);
+          html_height.textContent = 200;
+          svg_svg.setAttribute("viewBox", "-100 -100 200 200");
+          svg_vbx.value = -100;
+          html_vbx.textContent = -100;
+          svg_vby.value = -100;
+          html_vby.textContent = -100;
+          svg_vbw.value = 200;
+          html_vbw.textContent = 200;
+          svg_vbh.value = 200;
+          html_vbh.textContent = 200;
+          svg_cx.value = 0;
+          svg_circle.setAttribute("cx", 0);
+          html_cx.textContent = 0;
+          svg_cy.value = 0;
+          svg_circle.setAttribute("cy", 0);
+          html_cy.textContent = 0;
+          svg_r.value = 75;
+          svg_circle.setAttribute("r", 75);
+          html_r.textContent = 75;
+          svg_stroke.value = 5;
+          svg_circle.setAttribute("stroke-width", 5);
+          html_stroke.textContent = 5;
+        }
 
-      <p>Los ejemplos siguientes muestran tres dibujos con los mismos elementos SVG: los ejes de coordenadas y un círculo de radio 100 centrado en el origen, pero con diferentes atributos <span class="html-atri">viewbox</span></p>
-      <ul>
-        <li>
-          <p>En el primer ejemplo, se ve todo el círculo porque la zona visible definida por <span class="html-atri">viewBox</span> empieza arriba a la izquierda en el punto (-100, -100) y tiene un tamaño de 200 x 200. El tamaño de la imagen es también de 200 x 200.</p>
+        svg_width.addEventListener("change", cambia);
+        svg_height.addEventListener("change", cambia);
+        svg_vbx.addEventListener("change", cambia);
+        svg_vby.addEventListener("change", cambia);
+        svg_vbw.addEventListener("change", cambia);
+        svg_vbh.addEventListener("change", cambia);
+        svg_cx.addEventListener("change", cambia);
+        svg_cy.addEventListener("change", cambia);
+        svg_r.addEventListener("change", cambia);
+        svg_stroke.addEventListener("change", cambia);
+      </script>
 
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+      <section id="atributo-viewBox">
+        <h4>El atributo <span class="html-atri">viewBox</span></h4>
+
+        <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que muestra la imagen. Este atributo se establece con cuatro valores:</p>
+
+        <ul>
+          <li>primer valor: abcisa (X) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
+          <li>segundo valor: ordenada (Y) de la esquina superior izquierda de la porción del plano que muestra la imagen</li>
+          <li>tercer valor: ancho de la porción del plano que muestra la imagen</li>
+          <li>cuarto valor: alto de la porción del plano que muestra la imagen</li>
+        </ul>
+
+        <p>El ejemplo siguiente muestra con una línea roja a trazos la porción del plano SVG que se mostraría con unos valores determinados en el atributo <span class="html-atri">viewbox</span>.</p>
+
+        <p class="mcl-svg-figura">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="-200 -200 400 400" style="background-color: #eeeeee">
+            <defs>
+              <marker id="markerArrow" markerWidth="48" markerHeight="48" refX="0" refY="6" orient="auto">
+                <path d="M0,4 L0,8 L6,6" style="fill: red;" />
+              </marker>
+            </defs>
+            <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+            <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+            <text x="10" y="190" font-family="sans-serif" font-size="20" fill="black">Y</text>
+            <polyline points="-5,190 0,200 5,190" fill="none" stroke-width="1" stroke="black" />
+            <text x="180" y="-10" font-family="sans-serif" font-size="20" fill="black">X</text>
+            <polyline points="190,5 200,0 190,-5" fill="none" stroke-width="1" stroke="black" />
+
+            <text x="-168" y="-170" font-family="sans-serif" font-size="20" fill="black">viewBox="-100 -50 200 150"</text>
+
+            <circle cx="-100" cy="-50" r="3" fill="red" />
+            <polygon points="-100,-50 100,-50 100,100, -100,100" fill="none" stroke-width="2" stroke="red" stroke-dasharray="5,5" />
+            <text x="-105" y="-55" font-family="sans-serif" font-size="18" fill="black" text-anchor="end">(-100, -50)</text>
+            <text x="105" y="120" font-family="sans-serif" font-size="18" fill="black">(100, 100)</text>
+
+            <path fill="none" stroke="red" stroke-width="2" d="M -80,-165 A 50 30, 0, 0, 0, 0,-165" />
+            <line x1="-40" y1="-153" x2="-91" y2="-66" stroke-width="2" stroke="red" style="marker-end: url(#markerArrow)" />
+
+            <path fill="none" stroke="red" stroke-width="2" d="M 5,-165 A 50 90, 0, 0, 0, 40,-165" />
+            <line x1="23" y1="-160" x2="10" y2="-75" stroke-width="2" stroke="red" />
+            <path fill="none" stroke="red" stroke-width="2" d="M -100,-50 A 100 30, 0, 0, 1, 87,-58" style="marker-end: url(#markerArrow)" />
+
+            <path fill="none" stroke="red" stroke-width="2" d="M 45,-165 A 50 90, 0, 0, 0, 80,-165" />
+            <path fill="none" stroke="red" stroke-width="2" d="M 97,-47 A 80 100, 0, 0, 0, 90,85" style="marker-end: url(#markerArrow)" />
+            <line x1="62" y1="-160" x2="78" y2="-10" stroke-width="2" stroke="red" />
+            <circle cx="100" cy="100" r="3" fill="red" />
+          </svg>
+        </p>
+
+        <p>La zona visible es independiente de los elementos dibujados, es decir, sólo se mostrarán los elementos (o la parte de los elementos) que se encuentren en la zona visible definida por el atributo <span class="html-atri">viewbox</span>.</p>
+
+        <hr class="corta">
+
+        <p>Los ejemplos siguientes muestran tres dibujos con los mismos elementos SVG: los ejes de coordenadas y un círculo de radio 100 centrado en el origen, pero con diferentes atributos <span class="html-atri">viewbox</span></p>
+        <ul>
+          <li>
+            <p>En el primer ejemplo, se ve todo el círculo porque la zona visible definida por <span class="html-atri">viewBox</span> empieza arriba a la izquierda en el punto (-100, -100) y tiene un tamaño de 200 x 200. El tamaño de la imagen es también de 200 x 200.</p>
+
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-100 -100 200 200" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
      style="background-color: lightgray"&gt;
@@ -294,22 +448,22 @@
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <p>Si en ese mismo dibujo la zona visible definida por <span class="html-atri">viewBox</span> empieza en el punto (-5, -5) y tiene un tamaño de 105 x 105 sólo se verá el primer cuadrante (valores X e Y positivos). El tamaño de la imagen es también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
+          </li>
+          <li>
+            <p>Si en ese mismo dibujo la zona visible definida por <span class="html-atri">viewBox</span> empieza en el punto (-5, -5) y tiene un tamaño de 105 x 105 sólo se verá el cuadrante inferior derecho (valores X e Y positivos). El tamaño de la imagen es también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-5 -5 105 105" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-5 -5 105 105</span>"
      style="background-color: lightgray"&gt;
@@ -318,22 +472,22 @@
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <p>Si quisiéramos mostrar el tercer cuadrante (valores X e Y negativos, la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105. El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
+          </li>
+          <li>
+            <p>Si quisiéramos mostrar el cuadrante superior izquierdo (valores X e Y negativos), la zona visible podría empezar en el punto (-100, -100) y tener un tamaño de 105 x 105. El tamaño de la imagen sería también de 105 x 105 para que coincida con el tamaño de la zona visible.</p>
 
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
-                <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
-                <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="105" height="105" viewBox="-100 -100 105 105" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="1" />
+                  <line x1="-200" y1="0" x2="200" y2="0" stroke="black" stroke-width="1" />
+                  <line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">105</span>" height="<span class="codigo-resaltado">105</span>" viewBox="<span class="codigo-resaltado">-100 -100 105 105</span>"
      style="background-color: lightgray"&gt;
@@ -342,120 +496,559 @@
   &lt;line x1="0" y1="-200" x2="0" y2="200" stroke="black" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </section>
+          </li>
+        </ul>
+      </section>
 
-    <section id="atributos-width-height-viewbox">
-      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> con <span class="html-atri">viewBox</span></h3>
+      <section id="atributos-width-height-con-viewbox">
+        <h4>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> con <span class="html-atri">viewBox</span></h4>
 
-      <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen, mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
+        <p>El atributo <span class="html-atri">viewBox</span> establece la porción del plano SVG que se muestra en la imagen, mientras que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen el ancho y el alto de la imagen en la página web. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
 
-      <p>Así, una misma imagen en el plano SVG se puede ver en la página web más o menos grande, como muestran los ejemplos siguientes:</p>
-      <ul>
-        <li>En este primer ejemplo, el tamaño de la imagen coincide con el tamaño de la zona visible
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+        <p>Así, una misma imagen en el plano SVG se puede ver en la página web más o menos grande, como muestran los ejemplos siguientes:</p>
+        <ul>
+          <li>En este primer ejemplo, el tamaño de la imagen en la página web coincide con el tamaño de la zona visible del plano SVG.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
      style="background-color: lightgray"&gt;
-  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>En este segundo ejemplo, el tamaño de la imagen es el cuádruple (el doble en horizontal y el doble en vertical) de la zona visible.
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+          </li>
+          <li>En este segundo ejemplo, la zona visible del plano SVG es la misma que antes, pero la imagen en la página web es cuatro veces más grande (el doble en horizontal y el doble en vertical). Al ampliar el dibujo, lógicamente el trazo de la circunferencia se ve más grueso que antes.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">200</span>" height="<span class="codigo-resaltado">200</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
      style="background-color: lightgray"&gt;
-  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>En este tercer ejemplo, el tamaño de la imagen es la cuarta parte (la mitad en horizontal y la mitad en vertical) de la zona visible.
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
-                <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+          </li>
+          <li>En este tercer ejemplo, la zona visible del plano SVG es la misma que antes, pero la imagen en la página web es cuatro veces más pequeña que en el primer ejemplo (la mitad en horizontal y la mitad en vertical). Al haber reducido el dibujo, lógicamente el trazo de la circunferencia se ve más fino que antes.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="<span class="codigo-resaltado">50</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
      style="background-color: lightgray"&gt;
-  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+  &lt;circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
-    </section>
+          </li>
+        </ul>
 
-    <section id="atributos-width-height">
-      <h3>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> sin <span class="html-atri">viewBox</span></h3>
-
-      <p>Si no se incluye el atributo <span class="html-atri">viewBox</span>, los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen tanto la porción del plano SVG que se muestra en la imagen como el ancho y el alto de la imagen en la página web. La porción de plano empieza en el origen del plano SVG (0, 0) y su tamaño son los valores de <span class="html-atri">width</span> y <span class="html-atri">height</span>. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
-
-      <p>Así, estas dos imágenes SVG son equivalentes:</p>
-      <ul>
-        <li>con <span class="html-atri">viewBox</span>:
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" style="background-color: lightgray">
-                <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
-              </svg>
+        <p>El tamaño de la imagen en la página web depende únicamente de los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span>, independientemente del tamaño que tenga el dibujo en el plano SVG:</p>
+        <ul>
+          <li>En este primer ejemplo, el tamaño de la imagen coincide con el tamaño de la zona visible del plano SVG:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-50 -50 100 100" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="50" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -50 100 100</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="<span class="codigo-resaltado">50</span>" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
             </div>
-            <div class="codigo">
-              <pre>
+          </li>
+          <li>En este segundo ejemplo, la imagen se ve del mismo tamaño que en el ejemplo anterior, aunque el dibujo en el plano SVG sea cuatro veces más grande (el doble en horizontal y en vertical). La circunferencia se ve más fina porque al reducir los valores de <span class="html-atri">width</span> y <span class="html-atri">height</span> es como si hiciéramos zoom alejándonos del dibujo y lógicamente la circunferencia se ve más fina.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-100 -100 200 200" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="<span class="codigo-resaltado">100</span>" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Para que el trazo de la circunferencia se viera del mismo grosor que en el primer ejemplo, deberíamos aumentar el grosor del trazo en la misma proporción que hemos aumentado el tamaño del dibujo en el plano SVG.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-100 -100 200 200" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="100" fill="none" stroke="red" stroke-width="4" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-100 -100 200 200</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="<span class="codigo-resaltado">100</span>" fill="none" stroke="red" stroke-width="<span class="codigo-resaltado">4</span>" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>En este tercer ejemplo, el círculo se ve del mismo tamaño que en el primer ejemplo, aunque el dibujo en el plano SVG sea cuatro veces más pequeño que el del primer ejemplo (la mitad en horizontal y en vertical). La circunferencia se ve más gruesa porque al aumentar los valores de <span class="html-atri">width</span> y <span class="html-atri">height</span> es como si hiciéramos zoom acercándonos al dibujo y lógicamente la circunferencia se ve más gruesa.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-25 -25 50 50" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-25 -25 50 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="<span class="codigo-resaltado">25</span>" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Para que el trazo de la circunferencia se viera del mismo grosor que en el primer ejemplo, deberíamos reducir el grosor del trazo en la misma proporción que el tamaño del dibujo en el plano SVG.
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-25 -25 50 50" style="background-color: lightgray">
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-25 -25 50 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="<span class="codigo-resaltado">25</span>" fill="none" stroke="red" stroke-width="<span class="codigo-resaltado">1</span>" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="atributos-width-height-sin-viewbox">
+        <h4>Los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> de <span class="html-eti">&lt;svg&gt;</span> sin <span class="html-atri">viewBox</span></h4>
+
+        <p>Por precaución se recomienda escribir siempre el atributo <span class="html-atri">viewBox</span>, pero no es un atributo obligatorio. Si no se incluye el atributo <span class="html-atri">viewBox</span>, los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> establecen tanto la porción del plano SVG que se muestra en la imagen como el ancho y el alto de la imagen en la página web. La porción de plano empieza en el origen del plano SVG (0, 0) y su tamaño son los valores de <span class="html-atri">width</span> y <span class="html-atri">height</span>. Si no se indican unidades, los valores se interpretan en <span class="html-atri-valor">px</span>.</p>
+
+        <p>Si los elementos del dibujo se encuentran en esa zona, el dibujo se podría ver correctamente, aunque no haya atributo <span class="html-atri">viewBox</span>:</p>
+        <ul>
+          <li>con <span class="html-atri">viewBox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" style="background-color: lightgray">
+                  <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="100" height="100" <span class="codigo-resaltado">viewBox="0 0 100 100"</span>
      style="background-color: lightgray"&gt;
   &lt;circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>sin <span class="html-atri">viewBox</span>:
-          <div class="filaflex">
-            <div class="resultado-html-sin-borde nogrow">
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
-                <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
-              </svg>
-            </div>
-            <div class="codigo">
-              <pre>
+          </li>
+          <li>sin <span class="html-atri">viewBox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
+                  <circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="100" height="100"
      style="background-color: lightgray"&gt;
   &lt;circle cx="50" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
 &lt;/svg&gt;</code>
 </pre>
+              </div>
             </div>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+
+        <p>Pero si los elementos del dibujo no se encuentran en esa zona, el dibujo no se vería correctamente, como muestra el ejemplo siguiente.</p>
+
+        <ul>
+          <li>En el ejemplo siguiente, el círculo se encuentra más a la derecha en el plano SVG que en los ejemplos anteriores, pero como el <span class="html-atri">viewBox</span> también está desplazado a la derecha, el círculo se ve en el centro del dibujo:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="50 0 100 100" style="background-color: lightgray">
+                  <circle cx="100" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="100" height="100" <span class="codigo-resaltado">viewBox="50 0 100 100"</span>
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="<span class="codigo-resaltado">100</span>" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Si en el ejemplo anterior se elimina el atributo <span class="html-atri">viewBox</span>, el navegador muestra la zona cuadrada desde el origen, por lo que el dibujo sólo incluye la mita del círculo:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" style="background-color: lightgray">
+                  <circle cx="100" cy="50" r="50" fill="none" stroke="red" stroke-width="1" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="100" height="100"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="<span class="codigo-resaltado">100</span>" cy="50" r="50" fill="none" stroke="red" stroke-width="1" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="atributos-viewbox-width-height-no-proporcionales">
+        <h4>Atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> no proporcionales a <span class="html-atri">viewBox</span></h4>
+
+        <p>Lo lógico es que las proporciones de la imagen sean las mismas que las proporciones de la porción del plano SVG que se muestra, es decir, que la proporción entre el atributo <span class="html-atri">width</span> y el tercer valor del atributo <span class="html-atri">viewBox</span> sea la misma que entre el atributo <span class="html-atri">height</span> y el cuarto valor del atributo <span class="html-atri">viewBox</span>.</p>
+
+        <p>Es una situación parecida a lo que ocurre al mostrar imágenes mediante la etiqueta <span class="html-eti">img</span>, en el que los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> deben tener la misma proporción que la imagen que se está mostrando. Pero así como en el caso de la etiqueta <span class="html-eti">img</span> si los valores no tienen la misma proporción la imagen se deforma, en el caso de la etiqueta <span class="html-eti">svg</span> la imagen no se deforma, sino que se modifica la zona mostrada.</p>
+
+        <p>El criterio que siguen los navegadores es dibujar una zona del plano SVG con la proporción de los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> que incluya la zona definida por el atributo <span class="html-atri">viewBox</span>.</p>
+
+        <ul>
+          <li>Consideremos la siguiente imagen:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="-75 -75 150 150" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">150</span>" height="<span class="codigo-resaltado">150</span>" viewBox="<span class="codigo-resaltado">-75 -75 150 150</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Vamos a mostrar una parte de esta imagen (sobre esta imagen modificaremos los atributos en los ejemplos siguientes):
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Si ampliamos solamente el ancho <span class="html-atri">width</span> de la imagen, podemos comprobar como el navegador aumenta la zona mostrada aunque no hayamos modificado el atributo <span class="html-atri">viewbox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">150</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Si ampliamos solamente el alto <span class="html-atri">height</span> de la imagen, podemos comprobar como el navegador aumenta la zona mostrada aunque no hayamos modificado el atributo <span class="html-atri">viewbox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Si reducimos solamente el ancho <span class="html-atri">width</span> de la imagen, podemos comprobar como el navegador aumenta la zona mostrada de manera que tenga la proporción de la imagen (1:1, cuadrada) aunque no hayamos modificado el atributo <span class="html-atri">viewbox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">50</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Si reducimos solamente el alto <span class="html-atri">height</span> de la imagen, podemos comprobar como el navegador aumenta la zona mostrada de manera que tenga la proporción de la imagen (4:1) aunque no hayamos modificado el atributo <span class="html-atri">viewbox</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="25" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">25</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <hr class="corta">
+
+        <p>Para evitar problemas cuando queremos mostrar únicamente la porción del plano SVG definida por el atributo <span class="html-atri">viewBox</span> pero a un tamaño distinto, la mejor solución es indicar únicamente uno de los atributos <span class="html-atri">width</span> o <span class="html-atri">height</span>, ya que en ese caso el navegador ajusta el atributo faltante de acuerdo con la proporción definida por el atributo <span class="html-atri">viewBox</span>.</p>
+
+        <ul>
+          <li>Consideremos la misma imagen del ejemplo anterior:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+   width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+   style="background-color: lightgray"&gt;
+&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Podemos ampliarla o reducirla escribiendo únicamente el atributo <span class="html-atri">width</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="150" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+   width="<span class="codigo-resaltado">150</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+   style="background-color: lightgray"&gt;
+&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+   width="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+   style="background-color: lightgray"&gt;
+&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+          <li>Podemos ampliarla o reducirla escribiendo únicamente el atributo <span class="html-atri">height</span>:
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+   style="background-color: lightgray"&gt;
+&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+            <div class="filaflex">
+              <div class="resultado-html-sin-borde nogrow">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="25" viewBox="-50 -25 100 50" style="background-color: lightgray">
+                  <circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" />
+                  <circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" />
+                  <circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" />
+                </svg>
+              </div>
+              <div class="codigo">
+                <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+  height="<span class="codigo-resaltado">25</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+   style="background-color: lightgray"&gt;
+&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </section>
     </section>
   </section>
 
@@ -611,7 +1204,7 @@
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="100" height="100"   viewBox="<span class="codigo-resaltado">0 0 100 100</span>"&gt;
+   width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>"   viewBox="<span class="codigo-resaltado">0 0 100 100</span>"&gt;
    &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
    &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
 &lt;/svg&gt;</code>
@@ -631,7 +1224,7 @@
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="120" height="120"   viewBox="<span class="codigo-resaltado">-10 -10 120 120</span>"&gt;
+   width="<span class="codigo-resaltado">120</span>" height="<span class="codigo-resaltado">120</span>"   viewBox="<span class="codigo-resaltado">-10 -10 120 120</span>"&gt;
    &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
    &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
 &lt;/svg&gt;</code>
@@ -641,7 +1234,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 28 de marzo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
