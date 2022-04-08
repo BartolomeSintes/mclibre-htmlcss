@@ -49,7 +49,7 @@
     <li><a href="html-unicode-secuencias-parejas.html">Parejas</a>, que muestra las secuencias Unicode que corresponden a parejas y familias</li>
     <li><a href="html-unicode-secuencias-banderas.html">Banderas</a>, que muestra las secuencias Unicode que corresponden a banderas</li>
     <li><a href="html-unicode-secuencias-otras.html">Otras</a>, que muestra las secuencias Unicode no incluidas en las páginas anteriores</li>
-    <li><a href="html-unicode-twemoji.html">Twemoji</a>, que muestra los dibujos de <i>emojis</i> creados por el proyecto <a href="https://twemoji.twitter.com/">Twemoji</a> con licencia libre <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> (es un fichero grande que puede tardar un poco en cargarse)</li>
+    <li><a href="html-unicode-twemoji.html">Twemoji</a>, que muestra los dibujos de emojis creados por el proyecto <a href="https://twemoji.twitter.com/">Twemoji</a> con licencia libre <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a> (es un fichero grande que puede tardar un poco en cargarse)</li>
   </ul>
 
   <section id="que-son">
@@ -183,13 +183,13 @@
 
     <p>Los navegadores sólo pueden representar un carácter Unicode si tiene instalado una fuente que contenga ese carácter. Por eso hay que tener cuidado al incluir caracteres Unicode, porque los visitantes pueden no ver esos caracteres.</p>
 
-    <p>En el caso de Windows, Microsoft distribuye gratuitamente la fuente <a href="https://en.wikipedia.org/wiki/Segoe">Segoe UI Emoji</a>, que contiene muchos caracteres Unicode. Pero por desgracia, la fuente Segoe UI Emoji de Windows 7 contiene muchos menos caracteres que la fuente Segoe UI Emoji de Windows 10.</p>
+    <p>En el caso de Windows, para mostrar emojis, Microsoft distribuye gratuitamente la fuente <a href="https://en.wikipedia.org/wiki/Segoe">Segoe UI Emoji</a>, que contiene muchos caracteres Unicode. Pero Microsoft, por desgracia, ya no actualiza la fuente Segoe UI Emoji en Windows 10 una vez se ha publicado Windows 11. Windows 10 usa <a href="https://docs.microsoft.com/es-mx/typography/fonts/windows_10_font_list">la versión 1.29</a> de la fuente y Windows 11 usa actualmente (abril de 2022) <a href="https://docs.microsoft.com/es-mx/typography/fonts/windows_11_font_list">la versión 1.33</a>, que contiene más caracteres y con un estilo diferente.</p>
 
-    <p>Desde Firefox 61 (junio de 2018), Firefox utiliza la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, creada por Twitter, para mostrar los caracteres no disponibles en la fuente del sistema (Segoe UI Emoji en Windows). Anteriormente, desde Firefox 50 (noviembre de 2016) hasta Firefox 60 (mayo de 2018) Firefox utilizó la versión libre de la fuente EmojiOne.</p>
+    <p>Desde Firefox 61 (junio de 2018), Firefox utiliza la fuente <a href="https://github.com/mozilla/twemoji-colr">Twemoji-colr</a>, una versión en formato COLR de la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, creada por Twitter, para mostrar los emojis no disponibles en la fuente del sistema (Segoe UI Emoji en Windows). Anteriormente, desde Firefox 50 (noviembre de 2016) hasta Firefox 60 (mayo de 2018) Firefox utilizó la versión libre de la fuente EmojiOne. Aunque Twemoji contiene actualmente (abril de 2022) todos los emojis de Unicode 14, Twemoji-colr todavía no se ha actualizado desde Unicode 13.1.</p>
 
     <hr class="corta">
 
-    <p>El ejemplo siguiente contiene unos caracteres Unicode (concretamente <i>emojis</i>) para que usted mismo compruebe cómo se ven en su navegador y sistema operativo:</p>
+    <p>El ejemplo siguiente contiene unos caracteres Unicode (concretamente emojis) para que usted mismo compruebe cómo se ven en su navegador y sistema operativo:</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -203,16 +203,21 @@
       </div>
     </div>
 
-    <p>Las capturas siguientes muestran cómo se ve actualmente (noviembre de 2021) el ejemplo anterior dependiendo del sistema operativo o del navegador:</p>
+    <p>Las capturas siguientes muestran cómo se ve actualmente (abril de 2022) el ejemplo anterior dependiendo del sistema operativo o del navegador:</p>
     <ul>
+      <li>Navegadores en Windows 11:
+        <p>
+          <img src="unicode/entidades-win11.png" alt="Entidades numéricas en Windows 11" width="910" height="85" class="vmedio">
+        </p>
+      </li>
       <li>Navegadores en Windows 10:
         <p>
           <img src="unicode/entidades-win10.png" alt="Entidades numéricas en Windows 10" width="900" height="85" class="vmedio">
         </p>
       </li>
-      <li>Navegadores en Android 9/10:
+      <li>Navegadores en Android 10:
         <p>
-          <img src="unicode/entidades-android-9.png" alt="Entidades numéricas en Android" width="900" height="83" class="vmedio">
+          <img src="unicode/entidades-android-10.png" alt="Entidades numéricas en Android 10" width="836" height="85" class="vmedio">
         </p>
       </li>
       <li>Safari en iOS 13/14/15:
@@ -2561,7 +2566,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de noviembre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 7 de abril de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
