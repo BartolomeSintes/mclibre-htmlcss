@@ -338,7 +338,7 @@
     </section>
 
     <section id="http">
-      <h3><a href="https://www.w3.org/Protocols/">HTTP</a> (HyperText Transfer Protocol = Protocolo de Transferencia de HiperTexto)</h3>
+      <h3><a href="https://www.w3.org/Protocols/">HTTP</a> (HyperText Transfer Protocol = Protocolo de Transferencia de HiperTexto) y HTTPS (HyperText Transfer Protocol Secure = Protocolo de Transferencia de HiperTexto Seguro)</h3>
 
       <p class="mcl-svg-diagrama-temporal">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1090" viewBox="-20 -60 1090 120">
@@ -390,6 +390,62 @@
       <p>La versión HTTP 2 se <a href="https://queue.acm.org/detail.cfm?id=2716278">criticó bastante</a>, sobre todo la precipitación con la que se redactó y aprobó, pero quizás era la única manera de evitar que otros implantaran protocolos alternativos (como <a href="https://www.chromium.org/spdy/">SPDY</a>, desarrollado por Google en 2012 para reducir la latencia del tráfico web, pero que tras la publicación de HTTP 2 <a href="https://blog.chromium.org/2015/02/hello-http2-goodbye-spdy.html">Google dejó de usar en 2016</a>). [Reportaje de Linux Week News sobre el <a href="https://lwn.net/Articles/590156/">estado de desarrollo de HTTP 2.0 de marzo de 2014</a>]</p>
 
       <p>A finales de 2018 se empezó a hablar de una nueva versión de HTTP (que se llamaría HTTP/3), que estaría basada en UDP y no en conexiones TCP. Actualmente (diciembre de 2021), la IETF está desarrollando la norma <a href="https://datatracker.ietf.org/doc/draft-ietf-quic-http/">HTTP/3</a> [<a href="https://daniel.haxx.se/blog/2018/11/11/http-3/">ref</a>], que una vez aprobada se publicará como RFC. Se basa en el protocolo <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, propuesto por Google en 2013 y normalizado en mayo de 2021 por la IETF con la norma <a href="https://datatracker.ietf.org/doc/html/rfc9000">RFC 9000</a> (complementada por las normas <a href="https://datatracker.ietf.org/doc/html/rfc8999">RFC 8999</a>, <a href="https://datatracker.ietf.org/doc/html/rfc9001">RFC 90001</a> y <a href="https://datatracker.ietf.org/doc/html/rfc9002">RFC 9002</a>).</p>
+
+      <hr class="corta">
+
+      <p class="mcl-svg-diagrama-temporal">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1090" viewBox="-20 -60 1090 120">
+          <title>Fechas de publicación RFC versiones HTTPS</title>
+          <line x1="-50" y1="0" x2="1070" y2="0" stroke-width="3" stroke="red" />
+          <line x1="0" y1="-30" x2="0" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="0" y="-40" text-anchor="middle">1990</text>
+          <line x1="150" y1="-30" x2="150" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="150" y="-40" text-anchor="middle">1995</text>
+          <line x1="300" y1="-30" x2="300" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="300" y="-40" text-anchor="middle">2000</text>
+          <line x1="450" y1="-30" x2="450" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="450" y="-40" text-anchor="middle">2005</text>
+          <line x1="600" y1="-30" x2="600" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="600" y="-40" text-anchor="middle">2010</text>
+          <line x1="750" y1="-30" x2="750" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="750" y="-40" text-anchor="middle">2015</text>
+          <line x1="900" y1="-30" x2="900" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="900" y="-40" text-anchor="middle">2020</text>
+          <line x1="1050" y1="-30" x2="1050" y2="30" stroke-width="2" stroke-dasharray="5,5" stroke="black" />
+          <text x="1050" y="-40" text-anchor="middle">2025</text>
+          <circle cx="149" cy="0" r="7" fill="red" />
+          <text x="115" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">SSL 1.0</text>
+          <circle cx="154" cy="0" r="7" fill="red" />
+          <text x="184" y="25" text-anchor="middle" fill="red" style="font-weight: bold">SSL 2.0</text>
+          <circle cx="206" cy="0" r="7" fill="red" />
+          <text x="206" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">SSL 3.0</text>
+          <circle cx="271" cy="0" r="7" fill="red" />
+          <text x="268" y="25" text-anchor="middle" fill="red" style="font-weight: bold">TLS 1.0</text>
+          <circle cx="489" cy="0" r="7" fill="red" />
+          <text x="489" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">TLS 1.1</text>
+          <circle cx="559" cy="0" r="7" fill="red" />
+          <text x="559" y="25" text-anchor="middle" fill="red" style="font-weight: bold">TLS 1.2</text>
+          <circle cx="859" cy="0" r="7" fill="red" />
+          <text x="859" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">TLS 1.3</text>
+        </svg>
+      </p>
+
+      <p>Para garantizar la seguridad de las comunicaciones entre el servidor y el navegador, existe una variante de HTTP llamada HTTPS (HyperText Transfer Protocol Secure). El primer navegador en incorporar este protocolo fue Netscape Navigator en 1994. La empresa Netscape desarrolló las primeras versiones del protocolo SSL (Secure Sockets Layer). La primera versión pública fue SSL 2.0, publicada en febrero de 1995, y SSL 3.0, publicada en noviembre de 1996. A partir de entonces, el desarrollo de este protocolo pasó a la IETF, que lo rebautizó como TLS (Transport Layer Security).</p>
+
+      <p>A medida que ha ido creciendo la preocupación por la privacidad de las comunicaciones y que iniciativas como <a href="https://letsencrypt.org/es/">Let's encrypt</a> han abaratado la adquisición de certificados, los sitios web están pasando a usar siempre HTTPS, aunque no se intercambie información personal. Algunas <a href="https://w3techs.com/technologies/details/ce-httpsdefault">estadísticas</a> indican que actualmente (abril de 2022), cai el 80% de los sitios web utilizan HTTPS de forma predeterminada.</p>
+
+      <p>Las normas de este protocolo son elaboradas por el <a href="https://tlswg.org/">IETF TLS Working Group</a> y son publicadas por la IETF en forma de RFC:</p>
+      <ul>
+        <li>noviembre de 1998: <a href="https://datatracker.ietf.org/doc/html/rfc6101">RFC 6101</a>, escrita por A. Freiser y P. Karlton, que define SSL 3.0. Este RFC se publicó en agosto 2011 por su interés histórico.</li>
+        <li>enero de 1999: <a href="https://datatracker.ietf.org/doc/html/rfc2246">RFC 2246</a>, escrita por T. Dierks y C. Allen, que define TLS 1.0.</li>
+        <li>mayo de 2000: <a href="https://datatracker.ietf.org/doc/html/rfc2817">RFC 2817</a>, escrita por R. Khare y S. Lawrence, que define cómo realizar conexiones seguras y no seguras a través del mismo puerto.</li>
+        <li>mayo de 2000: <a href="https://datatracker.ietf.org/doc/html/rfc2818">RFC 2818</a>, escrita por E. Rescorla, que define HTTPS como HTTP sobre TSL.</li>
+        <li>abril de 2006: <a href="https://datatracker.ietf.org/doc/html/rfc4346">RFC 4346</a>, escrita por T. Dierks y E. Rescorla, que define TLS 1.1.</li>
+        <li>agosto de 2008: <a href="https://datatracker.ietf.org/doc/html/rfc5246">RFC 5246</a>, escrita por T. Dierks y E. Rescorla, que define TLS 1.2.</li>
+        <li>marzo de 2011: <a href="https://datatracker.ietf.org/doc/html/rfc6176">RFC 6176</a>, escrita por S. Turner y T. Polk, que prohibe el uso de SSL 2.0 por su falta de seguridad.</li>
+        <li>junio de 2015: <a href="https://datatracker.ietf.org/doc/html/rfc7568">RFC 7568</a>, escrita por R. Barnes y otros, que prohibe el uso de SSL 3.0 por su falta de seguridad.</li>
+        <li>agosto de 2018: <a href="https://datatracker.ietf.org/doc/html/rfc8446">RFC 8446</a>, escrita por E. Rescorla, que define TLS 1.3.</li>
+      </ul>
     </section>
 
     <section id="html">
@@ -1577,7 +1633,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de abril de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 10 de abril de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
