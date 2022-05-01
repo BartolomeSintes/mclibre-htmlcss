@@ -78,11 +78,9 @@
         <li><a href="#color">Color de texto: <span class="css-prop">color</span></a></li>
         <li><a href="#opacidad">Opacidad: <span class="css-prop">opacity</span></a></li>
         <li><a href="#rgb">Códigos RGB</a></li>
-        <li><a href="#rgba">Códigos RGBA</a></li>
         <li><a href="#hsl">Códigos HSL</a></li>
-        <li><a href="#hsla">Códigos HSLA</a></li>
         <li><a href="#hwb">Códigos HWB</a></li>
-        <li><a href="#hwba">Códigos HWBA</a></li>
+        <li><a href="#transparencia-alfa">Transparencia alfa</a></li>
         <li><a href="#html32">Nombres HTML 3.2</a></li>
         <li><a href="#svg">Nombres X11 / SVG</a></li>
         <li><a href="#sistema">Nombres del sistema</a></li>
@@ -216,153 +214,153 @@
       var coco_color_5 = document.getElementById("coco-color-5");
 
       var coloresSvg = [
-        ["AliceBlue", "#F0F8FF", "rgb(240, 248, 255)", "hsl(208, 100%, 97.1%)", "hwb(208 94.2% 0%)"],
-        ["AntiqueWhite", "#FAEBD7", "rgb(250, 235, 215)", "hsl(34, 77.8%, 91.2%)", "hwb(34 84.4% 2%)"],
-        ["Aqua", "#00FFFF", "rgb(0, 255, 255)", "hsl(180, 100%, 50%)", "hwb(180 0% 0%)"],
-        ["Aquamarine", "#7FFFD4", "rgb(127, 255, 212)", "hsl(160, 100%, 74.9%)", "hwb(160 49.8% 0%)"],
-        ["Azure", "#F0FFFF", "rgb(240, 255, 255)", "hsl(180, 100%, 97.1%)", "hwb(180 94.2% 0%)"],
-        ["Beige", "#F5F5DC", "rgb(245, 245, 220)", "hsl(60, 55.6%, 91.2%)", "hwb(60 86.3% 3.9%)"],
-        ["Bisque", "#FFE4C4", "rgb(255, 228, 196)", "hsl(32, 100%, 88.4%)", "hwb(32 76.8% 0%)"],
-        ["Black", "#000000", "rgb(0, 0, 0)", "hsl(0, 0%, 0%)", "hwb(0 0% 100%)"],
-        ["BlanchedAlmond", "#FFEBCD", "rgb(255, 235, 205)", "hsl(36, 100%, 90.2%)", "hwb(36 80.4% 0%)"],
-        ["Blue", "#0000FF", "rgb(0, 0, 255)", "hsl(240, 100%, 50%)", "hwb(240 0% 0%)"],
-        ["BlueViolet", "#8A2BE2", "rgb(138, 43, 226)", "hsl(271, 75.9%, 52.7%)", "hwb(271 16.8% 11.4%)"],
-        ["Brown", "#A52A2A", "rgb(165, 42, 42)", "hsl(0, 59.4%, 40.6%)", "hwb(0 16.5% 35.3%)"],
-        ["BurlyWood", "#DEB887", "rgb(222, 184, 135)", "hsl(34, 56.9%, 70%)", "hwb(34 52.9% 12.9%)"],
-        ["CadetBlue", "#5F9EA0", "rgb(95, 158, 160)", "hsl(182, 25.5%, 50%)", "hwb(182 37.2% 37.2%)"],
-        ["Chartreuse", "#7FFF00", "rgb(127, 255, 0)", "hsl(90, 100%, 50%)", "hwb(90 0% 0%)"],
-        ["Chocolate", "#D2691E", "rgb(210, 105, 30)", "hsl(25, 75%, 47.1%)", "hwb(25 11.8% 17.6%)"],
-        ["Coral", "#FF7F50", "rgb(255, 127, 80)", "hsl(16, 100%, 65.7%)", "hwb(16 31.4% 0%)"],
-        ["CornflowerBlue", "#6495ED", "rgb(100, 149, 237)", "hsl(218, 79.2%, 66.1%)", "hwb(218 39.3% 7.1%)"],
-        ["Cornsilk", "#FFF8DC", "rgb(255, 248, 220)", "hsl(48, 100%, 93.1%)", "hwb(48 86.2% 0%)"],
-        ["Crimson", "#DC143C", "rgb(220, 20, 60)", "hsl(348, 83.3%, 47.1%)", "hwb(348 7.9% 13.7%)"],
-        ["Cyan", "#00FFFF", "rgb(0, 255, 255)", "hsl(180, 100%, 50%)", "hwb(180 0% 0%)"],
-        ["DarkBlue", "#00008B", "rgb(0, 0, 139)", "hsl(240, 100%, 27.3%)", "hwb(240 0% 45.4%)"],
-        ["DarkCyan", "#008B8B", "rgb(0, 139, 139)", "hsl(180, 100%, 27.3%)", "hwb(180 0% 45.4%)"],
-        ["DarkGoldenrod", "#B8860B", "rgb(184, 134, 11)", "hsl(43, 88.7%, 38.2%)", "hwb(43 4.3% 27.9%)"],
-        ["DarkGray", "#A9A9A9", "rgb(169, 169, 169)", "hsl(0, 0%, 66.3%)", "hwb(0 66.3% 33.7%)"],
-        ["DarkGreen", "#006400", "rgb(0, 100, 0)", "hsl(120, 100%, 19.6%)", "hwb(120 0% 60.8%)"],
-        ["DarkGrey", "#A9A9A9", "rgb(169, 169, 169)", "hsl(0, 0%, 66.3%)", "hwb(0 66.3% 33.7%)"],
-        ["DarkKhaki", "#BDB76B", "rgb(189, 183, 107)", "hsl(56, 38.3%, 58%)", "hwb(56 41.9% 25.9%)"],
-        ["DarkMagenta", "#8B008B", "rgb(139, 0, 139)", "hsl(300, 100%, 27.3%)", "hwb(300 0% 45.4%)"],
-        ["DarkOliveGreen", "#556B2F", "rgb(85, 107, 47)", "hsl(82, 39%, 30.2%)", "hwb(82 18.4% 58%)"],
-        ["DarkOrange", "#FF8C00", "rgb(255, 140, 0)", "hsl(33, 100%, 50%)", "hwb(33 0% 0%)"],
-        ["DarkOrchid", "#9932CC", "rgb(153, 50, 204)", "hsl(280, 60.6%, 49.8%)", "hwb(280 19.6% 20%)"],
-        ["DarkRed", "#8B0000", "rgb(139, 0, 0)", "hsl(0, 100%, 27.3%)", "hwb(0 0% 45.4%)"],
-        ["DarkSalmon", "#E9967A", "rgb(233, 150, 122)", "hsl(15, 71.6%, 69.6%)", "hwb(15 47.8% 8.6%)"],
-        ["DarkSeaGreen", "#8FBC8F", "rgb(143, 188, 143)", "hsl(120, 25.1%, 64.9%)", "hwb(120 56.1% 26.3%)"],
-        ["DarkSlateBlue", "#483D8B", "rgb(72, 61, 139)", "hsl(248, 39%, 39.2%)", "hwb(248 23.9% 45.5%)"],
-        ["DarkSlateGray", "#2F4F4F", "rgb(47, 79, 79)", "hsl(180, 25.4%, 24.7%)", "hwb(180 18.4% 69%)"],
-        ["DarkSlateGrey", "#2F4F4F", "rgb(47, 79, 79)", "hsl(180, 25.4%, 24.7%)", "hwb(180 18.4% 69%)"],
-        ["DarkTurquoise", "#00CED1", "rgb(0, 206, 209)", "hsl(181, 100%, 41%)", "hwb(181 0% 18%)"],
-        ["DarkViolet", "#9400D3", "rgb(148, 0, 211)", "hsl(282, 100%, 41.4%)", "hwb(282 0% 17.2%)"],
-        ["DeepPink", "#FF1493", "rgb(255, 20, 147)", "hsl(328, 100%, 53.9%)", "hwb(328 7.8% 0%)"],
-        ["DeepSkyBlue", "#00BFFF", "rgb(0, 191, 255)", "hsl(195, 100%, 50%)", "hwb(195 0% 0%)"],
-        ["DimGray", "#696969", "rgb(105, 105, 105)", "hsl(0, 0%, 41.2%)", "hwb(0 41.2% 58.8%)"],
-        ["DimGrey", "#696969", "rgb(105, 105, 105)", "hsl(0, 0%, 41.2%)", "hwb(0 41.2% 58.8%)"],
-        ["DodgerBlue", "#1E90FF", "rgb(30, 144, 255)", "hsl(210, 100%, 55.9%)", "hwb(210 11.8% 0%)"],
-        ["FireBrick", "#B22222", "rgb(178, 34, 34)", "hsl(0, 67.9%, 41.6%)", "hwb(0 13.4% 30.2%)"],
-        ["FloralWhite", "#FFFAF0", "rgb(255, 250, 240)", "hsl(40, 100%, 97.1%)", "hwb(40 94.2% 0%)"],
-        ["ForestGreen", "#228B22", "rgb(34, 139, 34)", "hsl(120, 60.7%, 33.9%)", "hwb(120 13.3% 45.5%)"],
-        ["Fuchsia", "#FF00FF", "rgb(255, 0, 255)", "hsl(300, 100%, 50%)", "hwb(300 0% 0%)"],
-        ["Gainsboro", "#DCDCDC", "rgb(220, 220, 220)", "hsl(0, 0%, 86.3%)", "hwb(0 86.3% 13.7%)"],
-        ["GhostWhite", "#F8F8FF", "rgb(248, 248, 255)", "hsl(240, 100%, 98.6%)", "hwb(240 97.2% 0%)"],
-        ["Gold", "#FFD700", "rgb(255, 215, 0)", "hsl(51, 100%, 50%)", "hwb(51 0% 0%)"],
-        ["Goldenrod", "#DAA520", "rgb(218, 165, 32)", "hsl(43, 74.4%, 49%)", "hwb(43 12.5% 14.5%)"],
-        ["Gray", "#808080", "rgb(128, 128, 128)", "hsl(0, 0%, 50.2%)", "hwb(0 50.2% 49.8%)"],
-        ["Green", "#008000", "rgb(0, 128, 0)", "hsl(120, 100%, 25.1%)", "hwb(120 0% 49.8%)"],
-        ["GreenYellow", "#ADFF2F", "rgb(173, 255, 47)", "hsl(84, 100%, 59.2%)", "hwb(84 18.4% 0%)"],
-        ["Grey", "#808080", "rgb(128, 128, 128)", "hsl(0, 0%, 50.2%)", "hwb(0 50.2% 49.8%)"],
-        ["Honeydew", "#F0FFF0", "rgb(240, 255, 240)", "hsl(120, 100%, 97.1%)", "hwb(120 94.2% 0%)"],
-        ["HotPink", "#FF69B4", "rgb(255, 105, 180)", "hsl(330, 100%, 70.6%)", "hwb(330 41.2% 0%)"],
-        ["IndianRed", "#CD5C5C", "rgb(205, 92, 92)", "hsl(0, 53.1%, 58.2%)", "hwb(0 36% 19.6%)"],
-        ["Indigo", "#4B0082", "rgb(75, 0, 130)", "hsl(275, 100%, 25.5%)", "hwb(275 0% 49%)"],
-        ["Ivory", "#FFFFF0", "rgb(255, 255, 240)", "hsl(60, 100%, 97.1%)", "hwb(60 94.2% 0%)"],
-        ["Khaki", "#F0E68C", "rgb(240, 230, 140)", "hsl(54, 76.9%, 74.5%)", "hwb(54 54.9% 5.9%)"],
-        ["Lavender", "#E6E6FA", "rgb(230, 230, 250)", "hsl(240, 66.7%, 94.1%)", "hwb(240 90.2% 2%)"],
-        ["LavenderBlush", "#FFF0F5", "rgb(255, 240, 245)", "hsl(340, 100%, 97.1%)", "hwb(340 94.2% 0%)"],
-        ["LawnGreen", "#7CFC00", "rgb(124, 252, 0)", "hsl(90, 100%, 49.4%)", "hwb(90 0% 1.2%)"],
-        ["LemonChiffon", "#FFFACD", "rgb(255, 250, 205)", "hsl(54, 100%, 90.2%)", "hwb(54 80.4% 0%)"],
-        ["LightBlue", "#ADD8E6", "rgb(173, 216, 230)", "hsl(195, 53.3%, 79%)", "hwb(195 67.8% 9.8%)"],
-        ["LightCoral", "#F08080", "rgb(240, 128, 128)", "hsl(0, 78.9%, 72.2%)", "hwb(0 50.3% 5.9%)"],
-        ["LightCyan", "#E0FFFF", "rgb(224, 255, 255)", "hsl(180, 100%, 93.9%)", "hwb(180 87.8% 0%)"],
-        ["LightGoldenrodYellow", "#FAFAD2", "rgb(250, 250, 210)", "hsl(60, 80%, 90.2%)", "hwb(60 82.4% 2%)"],
-        ["LightGray", "#D3D3D3", "rgb(211, 211, 211)", "hsl(0, 0%, 82.7%)", "hwb(0 82.7% 17.3%)"],
-        ["LightGreen", "#90EE90", "rgb(144, 238, 144)", "hsl(120, 73.4%, 74.9%)", "hwb(120 56.5% 6.7%)"],
-        ["LightGrey", "#D3D3D3", "rgb(211, 211, 211)", "hsl(0, 0%, 82.7%)", "hwb(0 82.7% 17.3%)"],
-        ["LightPink", "#FFB6C1", "rgb(255, 182, 193)", "hsl(351, 100%, 85.7%)", "hwb(351 71.4% 0%)"],
-        ["LightSalmon", "#FFA07A", "rgb(255, 160, 122)", "hsl(17, 100%, 73.9%)", "hwb(17 47.8% 0%)"],
-        ["LightSeaGreen", "#20B2AA", "rgb(32, 178, 170)", "hsl(177, 69.5%, 41.2%)", "hwb(177 12.6% 30.2%)"],
-        ["LightSkyBlue", "#87CEFA", "rgb(135, 206, 250)", "hsl(203, 92%, 75.5%)", "hwb(203 53% 2%)"],
-        ["LightSlateGray", "#778899", "rgb(119, 136, 153)", "hsl(210, 14.3%, 53.3%)", "hwb(210 46.6% 40%)"],
-        ["LightSlateGrey", "#778899", "rgb(119, 136, 153)", "hsl(210, 14.3%, 53.3%)", "hwb(210 46.6% 40%)"],
-        ["LightSteelBlue", "#B0C4DE", "rgb(176, 196, 222)", "hsl(214, 41.1%, 78%)", "hwb(214 69% 13%)"],
-        ["LightYellow", "#FFFFE0", "rgb(255, 255, 224)", "hsl(60, 100%, 93.9%)", "hwb(60 87.8% 0%)"],
-        ["Lime", "#00FF00", "rgb(0, 255, 0)", "hsl(120, 100%, 50%)", "hwb(120 0% 0%)"],
-        ["LimeGreen", "#32CD32", "rgb(50, 205, 50)", "hsl(120, 60.8%, 50%)", "hwb(120 19.6% 19.6%)"],
-        ["Linen", "#FAF0E6", "rgb(250, 240, 230)", "hsl(30, 66.7%, 94.1%)", "hwb(30 90.2% 2%)"],
-        ["Magenta", "#FF00FF", "rgb(255, 0, 255)", "hsl(300, 100%, 50%)", "hwb(300 0% 0%)"],
-        ["Maroon", "#800000", "rgb(128, 0, 0)", "hsl(0, 100%, 25.1%)", "hwb(0 0% 49.8%)"],
-        ["MediumAquamarine", "#66CDAA", "rgb(102, 205, 170)", "hsl(160, 50.7%, 60.2%)", "hwb(160 40% 19.6%)"],
-        ["MediumBlue", "#0000CD", "rgb(0, 0, 205)", "hsl(240, 100%, 40.2%)", "hwb(240 0% 19.6%)"],
-        ["MediumOrchid", "#BA55D3", "rgb(186, 85, 211)", "hsl(288, 58.9%, 58%)", "hwb(288 33.3% 17.3%)"],
-        ["MediumPurple", "#9370DB", "rgb(147, 112, 219)", "hsl(260, 59.8%, 64.9%)", "hwb(260 43.9% 14.1%)"],
-        ["MediumSeaGreen", "#3CB371", "rgb(60, 179, 113)", "hsl(147, 49.8%, 46.9%)", "hwb(147 23.5% 29.7%)"],
-        ["MediumSlateBlue", "#7B68EE", "rgb(123, 104, 238)", "hsl(248, 79.8%, 67.1%)", "hwb(248 40.8% 6.6%)"],
-        ["MediumSpringGreen", "#00FA9A", "rgb(0, 250, 154)", "hsl(157, 100%, 49%)", "hwb(157 0% 2%)"],
-        ["MediumTurquoise", "#48D1CC", "rgb(72, 209, 204)", "hsl(178, 59.8%, 55.1%)", "hwb(178 28.2% 18%)"],
-        ["MediumVioletRed", "#C71585", "rgb(199, 21, 133)", "hsl(322, 80.9%, 43.1%)", "hwb(322 8.2% 22%)"],
-        ["MidnightBlue", "#191970", "rgb(25, 25, 112)", "hsl(240, 63.5%, 26.9%)", "hwb(240 9.8% 56%)"],
-        ["MintCream", "#F5FFFA", "rgb(245, 255, 250)", "hsl(150, 100%, 98%)", "hwb(150 96% 0%)"],
-        ["MistyRose", "#FFE4E1", "rgb(255, 228, 225)", "hsl(6, 100%, 94.1%)", "hwb(6 88.2% 0%)"],
-        ["Moccasin", "#FFE4B5", "rgb(255, 228, 181)", "hsl(38, 100%, 85.5%)", "hwb(38 71% 0%)"],
-        ["NavajoWhite", "#FFDEAD", "rgb(255, 222, 173)", "hsl(36, 100%, 83.9%)", "hwb(36 67.8% 0%)"],
-        ["Navy", "#000080", "rgb(0, 0, 128)", "hsl(240, 100%, 25.1%)", "hwb(240 0% 49.8%)"],
-        ["OldLace", "#FDF5E6", "rgb(253, 245, 230)", "hsl(39, 85.2%, 94.7%)", "hwb(39 90.2% 0.8%)"],
-        ["Olive", "#808000", "rgb(128, 128, 0)", "hsl(60, 100%, 25.1%)", "hwb(60 0% 49.8%)"],
-        ["OliveDrab", "#6B8E23", "rgb(107, 142, 35)", "hsl(80, 60.5%, 34.7%)", "hwb(80 13.7% 44.3%)"],
-        ["Orange", "#FFA500", "rgb(255, 165, 0)", "hsl(39, 100%, 50%)", "hwb(39 0% 0%)"],
-        ["OrangeRed", "#FF4500", "rgb(255, 69, 0)", "hsl(16, 100%, 50%)", "hwb(16 0% 0%)"],
-        ["Orchid", "#DA70D6", "rgb(218, 112, 214)", "hsl(302, 58.9%, 64.7%)", "hwb(302 43.9% 14.5%)"],
-        ["PaleGoldenrod", "#EEE8AA", "rgb(238, 232, 170)", "hsl(55, 66.7%, 80%)", "hwb(55 66.7% 6.7%)"],
-        ["PaleGreen", "#98FB98", "rgb(152, 251, 152)", "hsl(120, 92.5%, 79%)", "hwb(120 59.6% 1.6%)"],
-        ["PaleTurquoise", "#AFEEEE", "rgb(175, 238, 238)", "hsl(180, 64.9%, 81%)", "hwb(180 68.7% 6.7%)"],
-        ["PaleVioletRed", "#DB7093", "rgb(219, 112, 147)", "hsl(340, 59.8%, 64.9%)", "hwb(340 43.9% 14.1%)"],
-        ["PapayaWhip", "#FFEFD5", "rgb(255, 239, 213)", "hsl(37, 100%, 91.8%)", "hwb(37 83.6% 0%)"],
-        ["PeachPuff", "#FFDAB9", "rgb(255, 218, 185)", "hsl(28, 100%, 86.3%)", "hwb(28 72.6% 0%)"],
-        ["Peru", "#CD853F", "rgb(205, 133, 63)", "hsl(30, 58.7%, 52.5%)", "hwb(30 24.6% 19.6%)"],
-        ["Pink", "#FFC0CB", "rgb(255, 192, 203)", "hsl(350, 100%, 87.6%)", "hwb(350 75.2% 0%)"],
-        ["Plum", "#DDA0DD", "rgb(221, 160, 221)", "hsl(300, 47.3%, 74.7%)", "hwb(300 62.7% 13.3%)"],
-        ["PowderBlue", "#B0E0E6", "rgb(176, 224, 230)", "hsl(187, 51.9%, 79.6%)", "hwb(187 69% 9.8%)"],
-        ["Purple", "#800080", "rgb(128, 0, 128)", "hsl(300, 100%, 25.1%)", "hwb(300 0% 49.8%)"],
-        ["Red", "#FF0000", "rgb(255, 0, 0)", "hsl(0, 100%, 50%)", "hwb(0 0% 0%)"],
-        ["RosyBrown", "#BC8F8F", "rgb(188, 143, 143)", "hsl(0, 25.1%, 64.9%)", "hwb(0 56.1% 26.3%)"],
-        ["RoyalBlue", "#4169E1", "rgb(65, 105, 225)", "hsl(225, 72.7%, 56.9%)", "hwb(225 25.6% 11.8%)"],
-        ["SaddleBrown", "#8B4513", "rgb(139, 69, 19)", "hsl(25, 75.9%, 31%)", "hwb(25 7.5% 45.5%)"],
-        ["Salmon", "#FA8072", "rgb(250, 128, 114)", "hsl(6, 93.2%, 71.4%)", "hwb(6 44.7% 1.9%)"],
-        ["SandyBrown", "#F4A460", "rgb(244, 164, 96)", "hsl(28, 87.1%, 66.7%)", "hwb(28 37.7% 4.3%)"],
-        ["SeaGreen", "#2E8B57", "rgb(46, 139, 87)", "hsl(146, 50.3%, 36.3%)", "hwb(146 18% 45.4%)"],
-        ["Seashell", "#FFF5EE", "rgb(255, 245, 238)", "hsl(25, 100%, 96.7%)", "hwb(25 93.4% 0%)"],
-        ["Sienna", "#A0522D", "rgb(160, 82, 45)", "hsl(19, 56.1%, 40.2%)", "hwb(19 17.6% 37.2%)"],
-        ["Silver", "#C0C0C0", "rgb(192, 192, 192)", "hsl(0, 0%, 75.3%)", "hwb(0 75.3% 24.7%)"],
-        ["SkyBlue", "#87CEEB", "rgb(135, 206, 235)", "hsl(197, 71.4%, 72.5%)", "hwb(197 52.9% 7.9%)"],
-        ["SlateBlue", "#6A5ACD", "rgb(106, 90, 205)", "hsl(248, 53.5%, 57.8%)", "hwb(248 35.2% 19.6%)"],
-        ["SlateGray", "#708090", "rgb(112, 128, 144)", "hsl(210, 12.6%, 50.2%)", "hwb(210 43.9% 43.5%)"],
-        ["SlateGrey", "#708090", "rgb(112, 128, 144)", "hsl(210, 12.6%, 50.2%)", "hwb(210 43.9% 43.5%)"],
-        ["Snow", "#FFFAFA", "rgb(255, 250, 250)", "hsl(0, 100%, 99%)", "hwb(0 98% 0%)"],
-        ["SpringGreen", "#00FF7F", "rgb(0, 255, 127)", "hsl(150, 100%, 50%)", "hwb(150 0% 0%)"],
-        ["SteelBlue", "#4682B4", "rgb(70, 130, 180)", "hsl(207, 44%, 49%)", "hwb(207 27.4% 29.4%)"],
-        ["Tan", "#D2B48C", "rgb(210, 180, 140)", "hsl(34, 43.7%, 68.6%)", "hwb(34 54.9% 17.7%)"],
-        ["Teal", "#008080", "rgb(0, 128, 128)", "hsl(180, 100%, 25.1%)", "hwb(180 0% 49.8%)"],
-        ["Thistle", "#D8BFD8", "rgb(216, 191, 216)", "hsl(300, 24.3%, 79.8%)", "hwb(300 74.9% 15.3%)"],
-        ["Tomato", "#FF6347", "rgb(255, 99, 71)", "hsl(9, 100%, 63.9%)", "hwb(9 27.8% 0%)"],
-        ["Turquoise", "#40E0D0", "rgb(64, 224, 208)", "hsl(174, 72.1%, 56.5%)", "hwb(174 25.1% 12.1%)"],
-        ["Violet", "#EE82EE", "rgb(238, 130, 238)", "hsl(300, 76.1%, 72.2%)", "hwb(300 51% 6.6%)"],
-        ["Wheat", "#F5DEB3", "rgb(245, 222, 179)", "hsl(39, 76.7%, 83.1%)", "hwb(39 70.1% 3.9%)"],
-        ["White", "#FFFFFF", "rgb(255, 255, 255)", "hsl(0, 0%, 100%)", "hwb(0 100% 0%)"],
-        ["WhiteSmoke", "#F5F5F5", "rgb(245, 245, 245)", "hsl(0, 0%, 96.1%)", "hwb(0 96.1% 3.9%)"],
-        ["Yellow", "#FFFF00", "rgb(255, 255, 0)", "hsl(60, 100%, 50%)", "hwb(60 0% 0%)"],
-        ["YellowGreen", "#9ACD32", "rgb(154, 205, 50)", "hsl(80, 60.8%, 50%)", "hwb(80 19.6% 19.6%)"]
+        ["AliceBlue", "#F0F8FF", "rgb(240 248 255)", "hsl(208 100% 97.1%)", "hwb(208 94.2% 0%)"],
+        ["AntiqueWhite", "#FAEBD7", "rgb(250 235 215)", "hsl(34 77.8% 91.2%)", "hwb(34 84.4% 2%)"],
+        ["Aqua", "#00FFFF", "rgb(0 255 255)", "hsl(180 100% 50%)", "hwb(180 0% 0%)"],
+        ["Aquamarine", "#7FFFD4", "rgb(127 255 212)", "hsl(160 100% 74.9%)", "hwb(160 49.8% 0%)"],
+        ["Azure", "#F0FFFF", "rgb(240 255 255)", "hsl(180 100% 97.1%)", "hwb(180 94.2% 0%)"],
+        ["Beige", "#F5F5DC", "rgb(245 245 220)", "hsl(60 55.6% 91.2%)", "hwb(60 86.3% 3.9%)"],
+        ["Bisque", "#FFE4C4", "rgb(255 228 196)", "hsl(32 100% 88.4%)", "hwb(32 76.8% 0%)"],
+        ["Black", "#000000", "rgb(0 0 0)", "hsl(0 0% 0%)", "hwb(0 0% 100%)"],
+        ["BlanchedAlmond", "#FFEBCD", "rgb(255 235 205)", "hsl(36 100% 90.2%)", "hwb(36 80.4% 0%)"],
+        ["Blue", "#0000FF", "rgb(0 0 255)", "hsl(240 100% 50%)", "hwb(240 0% 0%)"],
+        ["BlueViolet", "#8A2BE2", "rgb(138 43 226)", "hsl(271 75.9% 52.7%)", "hwb(271 16.8% 11.4%)"],
+        ["Brown", "#A52A2A", "rgb(165 42 42)", "hsl(0 59.4% 40.6%)", "hwb(0 16.5% 35.3%)"],
+        ["BurlyWood", "#DEB887", "rgb(222 184 135)", "hsl(34 56.9% 70%)", "hwb(34 52.9% 12.9%)"],
+        ["CadetBlue", "#5F9EA0", "rgb(95 158 160)", "hsl(182 25.5% 50%)", "hwb(182 37.2% 37.2%)"],
+        ["Chartreuse", "#7FFF00", "rgb(127 255 0)", "hsl(90 100% 50%)", "hwb(90 0% 0%)"],
+        ["Chocolate", "#D2691E", "rgb(210 105 30)", "hsl(25 75% 47.1%)", "hwb(25 11.8% 17.6%)"],
+        ["Coral", "#FF7F50", "rgb(255 127 80)", "hsl(16 100% 65.7%)", "hwb(16 31.4% 0%)"],
+        ["CornflowerBlue", "#6495ED", "rgb(100 149 237)", "hsl(218 79.2% 66.1%)", "hwb(218 39.3% 7.1%)"],
+        ["Cornsilk", "#FFF8DC", "rgb(255 248 220)", "hsl(48 100% 93.1%)", "hwb(48 86.2% 0%)"],
+        ["Crimson", "#DC143C", "rgb(220 20 60)", "hsl(348 83.3% 47.1%)", "hwb(348 7.9% 13.7%)"],
+        ["Cyan", "#00FFFF", "rgb(0 255 255)", "hsl(180 100% 50%)", "hwb(180 0% 0%)"],
+        ["DarkBlue", "#00008B", "rgb(0 0 139)", "hsl(240 100% 27.3%)", "hwb(240 0% 45.4%)"],
+        ["DarkCyan", "#008B8B", "rgb(0 139 139)", "hsl(180 100% 27.3%)", "hwb(180 0% 45.4%)"],
+        ["DarkGoldenrod", "#B8860B", "rgb(184 134 11)", "hsl(43 88.7% 38.2%)", "hwb(43 4.3% 27.9%)"],
+        ["DarkGray", "#A9A9A9", "rgb(169 169 169)", "hsl(0 0% 66.3%)", "hwb(0 66.3% 33.7%)"],
+        ["DarkGreen", "#006400", "rgb(0 100 0)", "hsl(120 100% 19.6%)", "hwb(120 0% 60.8%)"],
+        ["DarkGrey", "#A9A9A9", "rgb(169 169 169)", "hsl(0 0% 66.3%)", "hwb(0 66.3% 33.7%)"],
+        ["DarkKhaki", "#BDB76B", "rgb(189 183 107)", "hsl(56 38.3% 58%)", "hwb(56 41.9% 25.9%)"],
+        ["DarkMagenta", "#8B008B", "rgb(139 0 139)", "hsl(300 100% 27.3%)", "hwb(300 0% 45.4%)"],
+        ["DarkOliveGreen", "#556B2F", "rgb(85 107 47)", "hsl(82 39% 30.2%)", "hwb(82 18.4% 58%)"],
+        ["DarkOrange", "#FF8C00", "rgb(255 140 0)", "hsl(33 100% 50%)", "hwb(33 0% 0%)"],
+        ["DarkOrchid", "#9932CC", "rgb(153 50 204)", "hsl(280 60.6% 49.8%)", "hwb(280 19.6% 20%)"],
+        ["DarkRed", "#8B0000", "rgb(139 0 0)", "hsl(0 100% 27.3%)", "hwb(0 0% 45.4%)"],
+        ["DarkSalmon", "#E9967A", "rgb(233 150 122)", "hsl(15 71.6% 69.6%)", "hwb(15 47.8% 8.6%)"],
+        ["DarkSeaGreen", "#8FBC8F", "rgb(143 188 143)", "hsl(120 25.1% 64.9%)", "hwb(120 56.1% 26.3%)"],
+        ["DarkSlateBlue", "#483D8B", "rgb(72 61 139)", "hsl(248 39% 39.2%)", "hwb(248 23.9% 45.5%)"],
+        ["DarkSlateGray", "#2F4F4F", "rgb(47 79 79)", "hsl(180 25.4% 24.7%)", "hwb(180 18.4% 69%)"],
+        ["DarkSlateGrey", "#2F4F4F", "rgb(47 79 79)", "hsl(180 25.4% 24.7%)", "hwb(180 18.4% 69%)"],
+        ["DarkTurquoise", "#00CED1", "rgb(0 206 209)", "hsl(181 100% 41%)", "hwb(181 0% 18%)"],
+        ["DarkViolet", "#9400D3", "rgb(148 0 211)", "hsl(282 100% 41.4%)", "hwb(282 0% 17.2%)"],
+        ["DeepPink", "#FF1493", "rgb(255 20 147)", "hsl(328 100% 53.9%)", "hwb(328 7.8% 0%)"],
+        ["DeepSkyBlue", "#00BFFF", "rgb(0 191 255)", "hsl(195 100% 50%)", "hwb(195 0% 0%)"],
+        ["DimGray", "#696969", "rgb(105 105 105)", "hsl(0 0% 41.2%)", "hwb(0 41.2% 58.8%)"],
+        ["DimGrey", "#696969", "rgb(105 105 105)", "hsl(0 0% 41.2%)", "hwb(0 41.2% 58.8%)"],
+        ["DodgerBlue", "#1E90FF", "rgb(30 144 255)", "hsl(210 100% 55.9%)", "hwb(210 11.8% 0%)"],
+        ["FireBrick", "#B22222", "rgb(178 34 34)", "hsl(0 67.9% 41.6%)", "hwb(0 13.4% 30.2%)"],
+        ["FloralWhite", "#FFFAF0", "rgb(255 250 240)", "hsl(40 100% 97.1%)", "hwb(40 94.2% 0%)"],
+        ["ForestGreen", "#228B22", "rgb(34 139 34)", "hsl(120 60.7% 33.9%)", "hwb(120 13.3% 45.5%)"],
+        ["Fuchsia", "#FF00FF", "rgb(255 0 255)", "hsl(300 100% 50%)", "hwb(300 0% 0%)"],
+        ["Gainsboro", "#DCDCDC", "rgb(220 220 220)", "hsl(0 0% 86.3%)", "hwb(0 86.3% 13.7%)"],
+        ["GhostWhite", "#F8F8FF", "rgb(248 248 255)", "hsl(240 100% 98.6%)", "hwb(240 97.2% 0%)"],
+        ["Gold", "#FFD700", "rgb(255 215 0)", "hsl(51 100% 50%)", "hwb(51 0% 0%)"],
+        ["Goldenrod", "#DAA520", "rgb(218 165 32)", "hsl(43 74.4% 49%)", "hwb(43 12.5% 14.5%)"],
+        ["Gray", "#808080", "rgb(128 128 128)", "hsl(0 0% 50.2%)", "hwb(0 50.2% 49.8%)"],
+        ["Green", "#008000", "rgb(0 128 0)", "hsl(120 100% 25.1%)", "hwb(120 0% 49.8%)"],
+        ["GreenYellow", "#ADFF2F", "rgb(173 255 47)", "hsl(84 100% 59.2%)", "hwb(84 18.4% 0%)"],
+        ["Grey", "#808080", "rgb(128 128 128)", "hsl(0 0% 50.2%)", "hwb(0 50.2% 49.8%)"],
+        ["Honeydew", "#F0FFF0", "rgb(240 255 240)", "hsl(120 100% 97.1%)", "hwb(120 94.2% 0%)"],
+        ["HotPink", "#FF69B4", "rgb(255 105 180)", "hsl(330 100% 70.6%)", "hwb(330 41.2% 0%)"],
+        ["IndianRed", "#CD5C5C", "rgb(205 92 92)", "hsl(0 53.1% 58.2%)", "hwb(0 36% 19.6%)"],
+        ["Indigo", "#4B0082", "rgb(75 0 130)", "hsl(275 100% 25.5%)", "hwb(275 0% 49%)"],
+        ["Ivory", "#FFFFF0", "rgb(255 255 240)", "hsl(60 100% 97.1%)", "hwb(60 94.2% 0%)"],
+        ["Khaki", "#F0E68C", "rgb(240 230 140)", "hsl(54 76.9% 74.5%)", "hwb(54 54.9% 5.9%)"],
+        ["Lavender", "#E6E6FA", "rgb(230 230 250)", "hsl(240 66.7% 94.1%)", "hwb(240 90.2% 2%)"],
+        ["LavenderBlush", "#FFF0F5", "rgb(255 240 245)", "hsl(340 100% 97.1%)", "hwb(340 94.2% 0%)"],
+        ["LawnGreen", "#7CFC00", "rgb(124 252 0)", "hsl(90 100% 49.4%)", "hwb(90 0% 1.2%)"],
+        ["LemonChiffon", "#FFFACD", "rgb(255 250 205)", "hsl(54 100% 90.2%)", "hwb(54 80.4% 0%)"],
+        ["LightBlue", "#ADD8E6", "rgb(173 216 230)", "hsl(195 53.3% 79%)", "hwb(195 67.8% 9.8%)"],
+        ["LightCoral", "#F08080", "rgb(240 128 128)", "hsl(0 78.9% 72.2%)", "hwb(0 50.3% 5.9%)"],
+        ["LightCyan", "#E0FFFF", "rgb(224 255 255)", "hsl(180 100% 93.9%)", "hwb(180 87.8% 0%)"],
+        ["LightGoldenrodYellow", "#FAFAD2", "rgb(250 250 210)", "hsl(60 80% 90.2%)", "hwb(60 82.4% 2%)"],
+        ["LightGray", "#D3D3D3", "rgb(211 211 211)", "hsl(0 0% 82.7%)", "hwb(0 82.7% 17.3%)"],
+        ["LightGreen", "#90EE90", "rgb(144 238 144)", "hsl(120 73.4% 74.9%)", "hwb(120 56.5% 6.7%)"],
+        ["LightGrey", "#D3D3D3", "rgb(211 211 211)", "hsl(0 0% 82.7%)", "hwb(0 82.7% 17.3%)"],
+        ["LightPink", "#FFB6C1", "rgb(255 182 193)", "hsl(351 100% 85.7%)", "hwb(351 71.4% 0%)"],
+        ["LightSalmon", "#FFA07A", "rgb(255 160 122)", "hsl(17 100% 73.9%)", "hwb(17 47.8% 0%)"],
+        ["LightSeaGreen", "#20B2AA", "rgb(32 178 170)", "hsl(177 69.5% 41.2%)", "hwb(177 12.6% 30.2%)"],
+        ["LightSkyBlue", "#87CEFA", "rgb(135 206 250)", "hsl(203 92% 75.5%)", "hwb(203 53% 2%)"],
+        ["LightSlateGray", "#778899", "rgb(119 136 153)", "hsl(210 14.3% 53.3%)", "hwb(210 46.6% 40%)"],
+        ["LightSlateGrey", "#778899", "rgb(119 136 153)", "hsl(210 14.3% 53.3%)", "hwb(210 46.6% 40%)"],
+        ["LightSteelBlue", "#B0C4DE", "rgb(176 196 222)", "hsl(214 41.1% 78%)", "hwb(214 69% 13%)"],
+        ["LightYellow", "#FFFFE0", "rgb(255 255 224)", "hsl(60 100% 93.9%)", "hwb(60 87.8% 0%)"],
+        ["Lime", "#00FF00", "rgb(0 255 0)", "hsl(120 100% 50%)", "hwb(120 0% 0%)"],
+        ["LimeGreen", "#32CD32", "rgb(50 205 50)", "hsl(120 60.8% 50%)", "hwb(120 19.6% 19.6%)"],
+        ["Linen", "#FAF0E6", "rgb(250 240 230)", "hsl(30 66.7% 94.1%)", "hwb(30 90.2% 2%)"],
+        ["Magenta", "#FF00FF", "rgb(255 0 255)", "hsl(300 100% 50%)", "hwb(300 0% 0%)"],
+        ["Maroon", "#800000", "rgb(128 0 0)", "hsl(0 100% 25.1%)", "hwb(0 0% 49.8%)"],
+        ["MediumAquamarine", "#66CDAA", "rgb(102 205 170)", "hsl(160 50.7% 60.2%)", "hwb(160 40% 19.6%)"],
+        ["MediumBlue", "#0000CD", "rgb(0 0 205)", "hsl(240 100% 40.2%)", "hwb(240 0% 19.6%)"],
+        ["MediumOrchid", "#BA55D3", "rgb(186 85 211)", "hsl(288 58.9% 58%)", "hwb(288 33.3% 17.3%)"],
+        ["MediumPurple", "#9370DB", "rgb(147 112 219)", "hsl(260 59.8% 64.9%)", "hwb(260 43.9% 14.1%)"],
+        ["MediumSeaGreen", "#3CB371", "rgb(60 179 113)", "hsl(147 49.8% 46.9%)", "hwb(147 23.5% 29.7%)"],
+        ["MediumSlateBlue", "#7B68EE", "rgb(123 104 238)", "hsl(248 79.8% 67.1%)", "hwb(248 40.8% 6.6%)"],
+        ["MediumSpringGreen", "#00FA9A", "rgb(0 250 154)", "hsl(157 100% 49%)", "hwb(157 0% 2%)"],
+        ["MediumTurquoise", "#48D1CC", "rgb(72 209 204)", "hsl(178 59.8% 55.1%)", "hwb(178 28.2% 18%)"],
+        ["MediumVioletRed", "#C71585", "rgb(199 21 133)", "hsl(322 80.9% 43.1%)", "hwb(322 8.2% 22%)"],
+        ["MidnightBlue", "#191970", "rgb(25 25 112)", "hsl(240 63.5% 26.9%)", "hwb(240 9.8% 56%)"],
+        ["MintCream", "#F5FFFA", "rgb(245 255 250)", "hsl(150 100% 98%)", "hwb(150 96% 0%)"],
+        ["MistyRose", "#FFE4E1", "rgb(255 228 225)", "hsl(6 100% 94.1%)", "hwb(6 88.2% 0%)"],
+        ["Moccasin", "#FFE4B5", "rgb(255 228 181)", "hsl(38 100% 85.5%)", "hwb(38 71% 0%)"],
+        ["NavajoWhite", "#FFDEAD", "rgb(255 222 173)", "hsl(36 100% 83.9%)", "hwb(36 67.8% 0%)"],
+        ["Navy", "#000080", "rgb(0 0 128)", "hsl(240 100% 25.1%)", "hwb(240 0% 49.8%)"],
+        ["OldLace", "#FDF5E6", "rgb(253 245 230)", "hsl(39 85.2% 94.7%)", "hwb(39 90.2% 0.8%)"],
+        ["Olive", "#808000", "rgb(128 128 0)", "hsl(60 100% 25.1%)", "hwb(60 0% 49.8%)"],
+        ["OliveDrab", "#6B8E23", "rgb(107 142 35)", "hsl(80 60.5% 34.7%)", "hwb(80 13.7% 44.3%)"],
+        ["Orange", "#FFA500", "rgb(255 165 0)", "hsl(39 100% 50%)", "hwb(39 0% 0%)"],
+        ["OrangeRed", "#FF4500", "rgb(255 69 0)", "hsl(16 100% 50%)", "hwb(16 0% 0%)"],
+        ["Orchid", "#DA70D6", "rgb(218 112 214)", "hsl(302 58.9% 64.7%)", "hwb(302 43.9% 14.5%)"],
+        ["PaleGoldenrod", "#EEE8AA", "rgb(238 232 170)", "hsl(55 66.7% 80%)", "hwb(55 66.7% 6.7%)"],
+        ["PaleGreen", "#98FB98", "rgb(152 251 152)", "hsl(120 92.5% 79%)", "hwb(120 59.6% 1.6%)"],
+        ["PaleTurquoise", "#AFEEEE", "rgb(175 238 238)", "hsl(180 64.9% 81%)", "hwb(180 68.7% 6.7%)"],
+        ["PaleVioletRed", "#DB7093", "rgb(219 112 147)", "hsl(340 59.8% 64.9%)", "hwb(340 43.9% 14.1%)"],
+        ["PapayaWhip", "#FFEFD5", "rgb(255 239 213)", "hsl(37 100% 91.8%)", "hwb(37 83.6% 0%)"],
+        ["PeachPuff", "#FFDAB9", "rgb(255 218 185)", "hsl(28 100% 86.3%)", "hwb(28 72.6% 0%)"],
+        ["Peru", "#CD853F", "rgb(205 133 63)", "hsl(30 58.7% 52.5%)", "hwb(30 24.6% 19.6%)"],
+        ["Pink", "#FFC0CB", "rgb(255 192 203)", "hsl(350 100% 87.6%)", "hwb(350 75.2% 0%)"],
+        ["Plum", "#DDA0DD", "rgb(221 160 221)", "hsl(300 47.3% 74.7%)", "hwb(300 62.7% 13.3%)"],
+        ["PowderBlue", "#B0E0E6", "rgb(176 224 230)", "hsl(187 51.9% 79.6%)", "hwb(187 69% 9.8%)"],
+        ["Purple", "#800080", "rgb(128 0 128)", "hsl(300 100% 25.1%)", "hwb(300 0% 49.8%)"],
+        ["Red", "#FF0000", "rgb(255 0 0)", "hsl(0 100% 50%)", "hwb(0 0% 0%)"],
+        ["RosyBrown", "#BC8F8F", "rgb(188 143 143)", "hsl(0 25.1% 64.9%)", "hwb(0 56.1% 26.3%)"],
+        ["RoyalBlue", "#4169E1", "rgb(65 105 225)", "hsl(225 72.7% 56.9%)", "hwb(225 25.6% 11.8%)"],
+        ["SaddleBrown", "#8B4513", "rgb(139 69 19)", "hsl(25 75.9% 31%)", "hwb(25 7.5% 45.5%)"],
+        ["Salmon", "#FA8072", "rgb(250 128 114)", "hsl(6 93.2% 71.4%)", "hwb(6 44.7% 1.9%)"],
+        ["SandyBrown", "#F4A460", "rgb(244 164 96)", "hsl(28 87.1% 66.7%)", "hwb(28 37.7% 4.3%)"],
+        ["SeaGreen", "#2E8B57", "rgb(46 139 87)", "hsl(146 50.3% 36.3%)", "hwb(146 18% 45.4%)"],
+        ["Seashell", "#FFF5EE", "rgb(255 245 238)", "hsl(25 100% 96.7%)", "hwb(25 93.4% 0%)"],
+        ["Sienna", "#A0522D", "rgb(160 82 45)", "hsl(19 56.1% 40.2%)", "hwb(19 17.6% 37.2%)"],
+        ["Silver", "#C0C0C0", "rgb(192 192 192)", "hsl(0 0% 75.3%)", "hwb(0 75.3% 24.7%)"],
+        ["SkyBlue", "#87CEEB", "rgb(135 206 235)", "hsl(197 71.4% 72.5%)", "hwb(197 52.9% 7.9%)"],
+        ["SlateBlue", "#6A5ACD", "rgb(106 90 205)", "hsl(248 53.5% 57.8%)", "hwb(248 35.2% 19.6%)"],
+        ["SlateGray", "#708090", "rgb(112 128 144)", "hsl(210 12.6% 50.2%)", "hwb(210 43.9% 43.5%)"],
+        ["SlateGrey", "#708090", "rgb(112 128 144)", "hsl(210 12.6% 50.2%)", "hwb(210 43.9% 43.5%)"],
+        ["Snow", "#FFFAFA", "rgb(255 250 250)", "hsl(0 100% 99%)", "hwb(0 98% 0%)"],
+        ["SpringGreen", "#00FF7F", "rgb(0 255 127)", "hsl(150 100% 50%)", "hwb(150 0% 0%)"],
+        ["SteelBlue", "#4682B4", "rgb(70 130 180)", "hsl(207 44% 49%)", "hwb(207 27.4% 29.4%)"],
+        ["Tan", "#D2B48C", "rgb(210 180 140)", "hsl(34 43.7% 68.6%)", "hwb(34 54.9% 17.7%)"],
+        ["Teal", "#008080", "rgb(0 128 128)", "hsl(180 100% 25.1%)", "hwb(180 0% 49.8%)"],
+        ["Thistle", "#D8BFD8", "rgb(216 191 216)", "hsl(300 24.3% 79.8%)", "hwb(300 74.9% 15.3%)"],
+        ["Tomato", "#FF6347", "rgb(255 99 71)", "hsl(9 100% 63.9%)", "hwb(9 27.8% 0%)"],
+        ["Turquoise", "#40E0D0", "rgb(64 224 208)", "hsl(174 72.1% 56.5%)", "hwb(174 25.1% 12.1%)"],
+        ["Violet", "#EE82EE", "rgb(238 130 238)", "hsl(300 76.1% 72.2%)", "hwb(300 51% 6.6%)"],
+        ["Wheat", "#F5DEB3", "rgb(245 222 179)", "hsl(39 76.7% 83.1%)", "hwb(39 70.1% 3.9%)"],
+        ["White", "#FFFFFF", "rgb(255 255 255)", "hsl(0 0% 100%)", "hwb(0 100% 0%)"],
+        ["WhiteSmoke", "#F5F5F5", "rgb(245 245 245)", "hsl(0 0% 96.1%)", "hwb(0 96.1% 3.9%)"],
+        ["Yellow", "#FFFF00", "rgb(255 255 0)", "hsl(60 100% 50%)", "hwb(60 0% 0%)"],
+        ["YellowGreen", "#9ACD32", "rgb(154 205 50)", "hsl(80 60.8% 50%)", "hwb(80 19.6% 19.6%)"]
       ];
 
       for (var i = 0; i < coloresSvg.length; i++) {
@@ -476,7 +474,7 @@
         if (coco_rgb_1_1.value != "" && coco_rgb_1_2.value != "" && coco_rgb_1_3.value != "") {
           coco_rgb_1.textContent = ("#" + Number(coco_rgb_1_1.value).toString(16).padStart(2, "0") + Number(coco_rgb_1_2.value).toString(16).padStart(2, "0") + Number(coco_rgb_1_3.value).toString(16).padStart(2, "0")).toUpperCase();
           hsl = rgb_a_hsl(coco_rgb_1_1.value, coco_rgb_1_2.value, coco_rgb_1_3.value);
-          coco_hsl_1.textContent = "hsl(" + hsl[0] + ", " + Math.round(hsl[1] * 1000) / 10 + "%, " + Math.round(hsl[2] * 1000) / 10 + "%)";
+          coco_hsl_1.textContent = "hsl(" + hsl[0] + " " + Math.round(hsl[1] * 1000) / 10 + "% " + Math.round(hsl[2] * 1000) / 10 + "%)";
           var hwb = hsl_a_hwb(hsl[0], hsl[1], hsl[2]);
           coco_hwb_1.textContent = "hwb(" + hwb[0] + " " + Math.round(hwb[1] * 1000) / 10 + "% " + Math.round(hwb[2] * 1000) / 10 + "%)";
           coco_svg_1.textContent = "-----";
@@ -503,9 +501,9 @@
           var r2 = rgb_tmp.substring(1, 3);
           var g2 = rgb_tmp.substring(3, 5);
           var b2 = rgb_tmp.substring(5, 7);
-          coco_rgb_2.textContent = "rgb(" + parseInt(r2, 16) + ", " + parseInt(g2, 16) + ", " + parseInt(b2, 16) + ")";
+          coco_rgb_2.textContent = "rgb(" + parseInt(r2, 16) + " " + parseInt(g2, 16) + " " + parseInt(b2, 16) + ")";
           var hsl = rgb_a_hsl(parseInt(r2, 16), parseInt(g2, 16), parseInt(b2, 16));
-          coco_hsl_2.textContent = "hsl(" + hsl[0] + ", " + Math.round(hsl[1] * 1000) / 10 + "%, " + Math.round(hsl[2] * 1000) / 10 + "%)";
+          coco_hsl_2.textContent = "hsl(" + hsl[0] + " " + Math.round(hsl[1] * 1000) / 10 + "% " + Math.round(hsl[2] * 1000) / 10 + "%)";
           var hwb = hsl_a_hwb(hsl[0], hsl[1], hsl[2]);
           coco_hwb_2.textContent = "hwb(" + hwb[0] + " " + Math.round(hwb[1] * 1000) / 10 + "% " + Math.round(hwb[2] * 1000) / 10 + "%)";
           coco_svg_2.textContent = "-----";
@@ -527,7 +525,7 @@
         if (coco_hsl_3_1.value != "" && coco_hsl_3_2.value != "" && coco_hsl_3_3.value != "") {
           // coco_rgb_1.textContent = "#" + Number(coco_rgb_1_1.value).toString(16).padStart(2, "0") + Number(coco_rgb_1_2.value).toString(16).padStart(2, "0") + Number(coco_rgb_1_3.value).toString(16).padStart(2, "0");
           var rgb = hsl_a_rgb(coco_hsl_3_1.value, coco_hsl_3_2.value / 100, coco_hsl_3_3.value / 100);
-          coco_rgb_3_1.textContent = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+          coco_rgb_3_1.textContent = "rgb(" + rgb[0] + " " + rgb[1] + " " + rgb[2] + ")";
           coco_rgb_3_2.textContent = ("#" + rgb[0].toString(16).padStart(2, "0") + rgb[1].toString(16).padStart(2, "0") + rgb[2].toString(16).padStart(2, "0")).toUpperCase();
           var hwb = hsl_a_hwb(coco_hsl_3_1.value, coco_hsl_3_2.value / 100, coco_hsl_3_3.value / 100);
           coco_hwb_3.textContent = "hwb(" + hwb[0] + " " + Math.round(hwb[1] * 1000) / 10 + "% " + Math.round(hwb[2] * 1000) / 10 + "%)";
@@ -555,9 +553,9 @@
         comprueba_valores();
         if (coco_hwb_5_1.value != "" && coco_hwb_5_2.value != "" && coco_hwb_5_3.value != "") {
           var hsl = hwb_a_hsl(coco_hwb_5_1.value, coco_hwb_5_2.value / 100, coco_hwb_5_3.value / 100);
-          coco_hsl_5.textContent = "hsl(" + hsl[0] + ", " + Math.round(hsl[1] * 1000) / 10 + "%, " + Math.round(hsl[2] * 1000) / 10 + "%)";
+          coco_hsl_5.textContent = "hsl(" + hsl[0] + " " + Math.round(hsl[1] * 1000) / 10 + "% " + Math.round(hsl[2] * 1000) / 10 + "%)";
           var rgb = hsl_a_rgb(hsl[0], hsl[1], hsl[2]);
-          coco_rgb_5_1.textContent = "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
+          coco_rgb_5_1.textContent = "rgb(" + rgb[0] + " " + rgb[1] + " " + rgb[2] + ")";
           coco_rgb_5_2.textContent = ("#" + rgb[0].toString(16).padStart(2, "0") + rgb[1].toString(16).padStart(2, "0") + rgb[2].toString(16).padStart(2, "0")).toUpperCase();
           coco_svg_5.textContent = "-----";
           for (var i = 0; i < coloresSvg.length; i++) {
@@ -686,9 +684,9 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores RGB</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#rgb-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <span class="css-valor">colores RGB</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#rgb-functions"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
@@ -698,8 +696,8 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <p>Los códigos RGB se pueden expresar de distintas formas:</p>
     <ul>
-      <li><strong>rgb(rojo, verde, azul)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255.</li>
-      <li><strong>rgb(rojo, verde, azul)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100%.</li>
+      <li><strong>rgb(rojo verde azul)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255.</li>
+      <li><strong>rgb(rojo verde azul)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100%.</li>
       <li><strong>#RRGGBB</strong>, donde RR, GG y BB son números hexadecimales desde 00 hasta FF.</li>
       <li><strong>#RGB</strong>, donde R, G y B son números hexadecimales desde 0 hasta F (el navegador transforma esos números en números de dos cifras repitiendo el valor, es decir, F se convierte en FF, 6 en 66, etc.</li>
     </ul>
@@ -722,9 +720,9 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       </div>
     </div>
 
-    <p>El color negro se consigue con la ausencia de cualquier color, así que su código RGB es rgb(0, 0, 0), rgb(0%, 0%, 0%), #000000 o #000.</p>
+    <p>El color negro se consigue con la ausencia de cualquier color, así que su código RGB es rgb(0 0 0), rgb(0% 0% 0%), #000000 o #000.</p>
 
-    <p>El color blanco se consigue mezclando los tres colores con la máxima intensidad, así que su código RGB es rgb(255, 255, 255), rgb(100%, 100%, 100%), #FFFFFF o #FFF.</p>
+    <p>El color blanco se consigue mezclando los tres colores con la máxima intensidad, así que su código RGB es rgb(255 255 255), rgb(100% 100% 100%), #FFFFFF o #FFF.</p>
 
     <p class="mcl-svg-figura">
       <img src="../img/css/css-cuadros-colores-rgb-1.svg" alt="Cuadros de colores RGB" title="Cuadros de colores RGB" width="150" height="165">
@@ -802,7 +800,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
         nVerdeH.textContent = ("00" + (+verde.value).toString(16)).slice(-2).toUpperCase();
         nAzulD.textContent = azul.value;
         nAzulH.textContent = ("00" + (+azul.value).toString(16)).slice(-2).toUpperCase();
-        colorH.textContent = ("#" + ("00" + (+rojo.value).toString(16)).slice(-2) + ("00" + (+verde.value).toString(16)).slice(-2) + ("00" + (+azul.value).toString(16)).slice(-2)).toUpperCase() + " - rgb(" + rojo.value + ", " + verde.value + ", " + azul.value + ")";
+        colorH.textContent = ("#" + ("00" + (+rojo.value).toString(16)).slice(-2) + ("00" + (+verde.value).toString(16)).slice(-2) + ("00" + (+azul.value).toString(16)).slice(-2)).toUpperCase() + " - rgb(" + rojo.value + " " + verde.value + " " + azul.value + ")";
         rectangulo.style.fill = ("#" + ("00" + (+rojo.value).toString(16)).slice(-2) + ("00" + (+verde.value).toString(16)).slice(-2) + ("00" + (+azul.value).toString(16)).slice(-2)).toUpperCase();
       }
       rojo.addEventListener("change", leecolor, false);
@@ -811,145 +809,14 @@ de posicionamiento que no aparecen aquí. */</code></pre>
     </script>
   </section>
 
-  <section id="rgba">
-    <h2 class="con-aside">Códigos de colores RGBA</h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="css-prop">colores RGBA</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#rgba-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-      </p>
-    </aside>
-
-    <p>Los códigos de colores RGBA se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a>.</p>
-
-    <p>Estos códigos incorporan la transparencia alpha a los <a href="#rgb">códigos RGB</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco.</p>
-
-    <p>Los códigos RGBA se pueden expresar de distintas formas:</p>
-    <ul>
-      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son números enteros desde 0 a 255 y transparencia un número decimal entre 0 y 1 (o un porcentaje).</li>
-      <li><strong>rgba(rojo, verde, azul, transparencia)</strong>, donde rojo, verde y azul son porcentajes desde 0% hasta 100% y transparencia un número decimal entre 0 y 1 (o un porcentaje).</li>
-    </ul>
-
-    <hr class="corta">
-
-    <p>El cuadro siguiente permite generar colores RGBA moviendo los deslizadores. Para poder apreciar el funcionamiento de la transparencia, el cuadro muestra dos rectángulos de color, en el que el color del rectángulo situado por delante permite transparencia:</p>
-
-    <table class="mcl-centrado" style="border: black 2px solid; padding: 10px">
-      <caption>Generador de códigos RGBA</caption>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>Decimal</td>
-        </tr>
-        <tr>
-          <th colspan="3">Color trasero</th>
-        </tr>
-        <tr>
-          <td>Rojo:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaRT"></td>
-          <td class="mcl-centrado"><span id="nRgbaRT"></span></td>
-        </tr>
-        <tr>
-          <td>Verde:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaGT"></td>
-          <td class="mcl-centrado"><span id="nRgbaGT"></span></td>
-        </tr>
-        <tr>
-          <td>Azul:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaBT"></td>
-          <td class="mcl-centrado"><span id="nRgbaBT"></span></td>
-        </tr>
-        <tr>
-          <th colspan="3">Color delantero</th>
-        </tr>
-        <tr>
-          <td>Rojo:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaR"></td>
-          <td class="mcl-centrado"><span id="nRgbaR"></span></td>
-        </tr>
-        <tr>
-          <td>Verde:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaG"></td>
-          <td class="mcl-centrado"><span id="nRgbaG"></span></td>
-        </tr>
-        <tr>
-          <td>Azul:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaB"></td>
-          <td class="mcl-centrado"><span id="nRgbaB"></span></td>
-        </tr>
-        <tr>
-          <td>Transparencia:</td>
-          <td><input type="range" name="points" min="0" max="100" id="rgbaA"></td>
-          <td class="mcl-centrado"><span id="nRgbaA"></span></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="mcl-centrado">
-            <p>Código RGBA: <strong id="rgbaTexto"></strong></p>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="420" height="110" viewBox="-20 -20 420 110">
-              <rect x="-10" y="-10" width="400" height="100" stroke="black" fill="white" id="rgbaMuestraT" />
-              <rect x="5" y="5" width="365" height="65" stroke="black" fill="white" id="rgbaMuestra" />
-            </svg>
-          </td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <script>
-      var rgbaRT = document.getElementById("rgbaRT");
-      var rgbaGT = document.getElementById("rgbaGT");
-      var rgbaBT = document.getElementById("rgbaBT");
-      var nRgbaRT = document.getElementById("nRgbaRT");
-      var nRgbaGT = document.getElementById("nRgbaGT");
-      var nRgbaBT = document.getElementById("nRgbaBT");
-      var rgbaMuestraT = document.getElementById("rgbaMuestraT");
-
-      var rgbaR = document.getElementById("rgbaR");
-      var rgbaG = document.getElementById("rgbaG");
-      var rgbaB = document.getElementById("rgbaB");
-      var rgbaA = document.getElementById("rgbaA");
-      var nRgbaR = document.getElementById("nRgbaR");
-      var nRgbaG = document.getElementById("nRgbaG");
-      var nRgbaB = document.getElementById("nRgbaB");
-      var nRgbaA = document.getElementById("nRgbaA");
-      var rgbaTexto = document.getElementById("rgbaTexto");
-      var rgbaMuestra = document.getElementById("rgbaMuestra");
-
-      function rgbaLeeColor(e) {
-        nRgbaRT.textContent = rgbaRT.value;
-        nRgbaGT.textContent = rgbaGT.value;
-        nRgbaBT.textContent = rgbaBT.value;
-        rgbaMuestraT.style.fill = "rgb(" + rgbaRT.value + ", " + rgbaGT.value + ", " + rgbaBT.value + ")";
-
-        nRgbaR.textContent = rgbaR.value;
-        nRgbaG.textContent = rgbaG.value;
-        nRgbaB.textContent = rgbaB.value;
-        nRgbaA.textContent = rgbaA.value / 100;
-        rgbaTexto.textContent = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
-        rgbaMuestra.style.fill = "rgba(" + rgbaR.value + ", " + rgbaG.value + ", " + rgbaB.value + ", " + (rgbaA.value / 100) + ")";
-      }
-      rgbaRT.addEventListener("change", rgbaLeeColor, false);
-      rgbaGT.addEventListener("change", rgbaLeeColor, false);
-      rgbaBT.addEventListener("change", rgbaLeeColor, false);
-      rgbaR.addEventListener("change", rgbaLeeColor, false);
-      rgbaG.addEventListener("change", rgbaLeeColor, false);
-      rgbaB.addEventListener("change", rgbaLeeColor, false);
-      rgbaA.addEventListener("change", rgbaLeeColor, false);
-    </script>
-  </section>
-
   <section id="hsl">
     <h2 class="con-aside">Códigos de colores HSL</h2>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores HSL</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#hsl-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <span class="css-valor">colores HSL</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#the-hsl-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
@@ -994,7 +861,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       <div class="codigo">
         <pre>
 <code class="language-css">p {
-  background-color: hsl(153, 80%, 40%);
+  background-color: hsl(153 80% 40%);
 }</code>
 </pre>
       </div>
@@ -1058,8 +925,8 @@ de posicionamiento que no aparecen aquí. */</code></pre>
         nMatiz.textContent = matiz.value;
         nSaturacion.textContent = saturacion.value + "%";
         nLuminosidad.textContent = luminosidad.value + "%";
-        colorHs.textContent = "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)";
-        rectanguloHs.setAttribute("fill", "hsl(" + matiz.value + ", " + saturacion.value + "%, " + luminosidad.value + "%)");
+        colorHs.textContent = "hsl(" + matiz.value + " " + saturacion.value + "% " + luminosidad.value + "%)";
+        rectanguloHs.setAttribute("fill", "hsl(" + matiz.value + " " + saturacion.value + "% " + luminosidad.value + "%)");
       }
       matiz.addEventListener("change", leecolorHsl, false);
       saturacion.addEventListener("change", leecolorHsl, false);
@@ -1067,30 +934,14 @@ de posicionamiento que no aparecen aquí. */</code></pre>
     </script>
   </section>
 
-  <section id="hsla">
-    <h2 class="con-aside">Códigos de colores HSLA</h2>
-
-    <aside class="enlace-norma">
-      <p>
-        <span class="css-prop">colores HSLA</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#hsla-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-      </p>
-    </aside>
-
-    <p>Los códigos de colores HSLA se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a>.</p>
-
-    <p>Estos códigos incorporan la transparencia alpha a los <a href="#hsl">códigos HSL</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco, o con un porcentaje entre 0% y 100%.</p>
-  </section>
-
   <section id="hwb">
     <h2 class="con-aside">Códigos de colores HWB</h2>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores HWB</span><br>
+        <span class="css-valor">colores HWB</span><br>
         <a href="https://www.w3.org/TR/css-color-4/#the-hwb-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-us/docs/web/css/color_value/hwb"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hwb_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
@@ -1204,20 +1055,178 @@ de posicionamiento que no aparecen aquí. */</code></pre>
     </script>
   </section>
 
-  <section id="hwba">
-    <h2 class="con-aside">Códigos de colores HWBA</h2>
+  <section id="transparencia-alfa">
+    <h2 class="con-aside">Transparencia alfa</h2>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores HWBA</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#hsla-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl()_and_hsla()"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+        <span class="css-valor">RGB alfa</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#rgb-functions"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+      <p>
+        <span class="css-valor">HSL alfa</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#the-hsl-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hsl_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+      <p>
+        <span class="css-valor">HWB alfa</span><br>
+        <a href="https://www.w3.org/TR/css-color-4/#the-hwb-notation"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#hwb_color_model"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
-    <p>Los códigos de colores HWBA se definen en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (marzo de 2022) en elaboración.</p>
+    <p>El canal alfa es un valor numérico que se puede añadir a los colores para expresar que el color tiene cierto grado de transparencia y que se puede ver lo que hay detrás de él. El canal alfa se escribe como porcentaje o como valor decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco.</p>
 
-    <p>Estos códigos incorporan la transparencia alpha a los <a href="#hwb">códigos HWB</a> mediante un cuarto valor que indica la transparencia del elemento. La transparencia se expresa como en el caso de los códigos RGBA con un número decimal entre 0 y 1, en el que el 0 significa completamente transparente y el 1 completamente opaco, o con un porcentaje entre 0% y 100%.</p>
+    <p>El canal alfa se añade como un cuarto valor separado con una barra de los tres componentes del color rgb(), hsl() o hwb().</p>
+
+    <p>El siguiente ejemplo muestra texto con diferentes grados de transparencia. Cuando la transparencia es 0, el texto es invisible porque tiene el mismo color que el fondo, aunque puede verse al seleccionarlo con el ratón.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  background-color: rgb(255 255 0);
+  color: rgb(255 0 0);
+}
+
+p.a000 { color: rgb(255 0 0 / 0%); }
+
+p.a025 { color: rgb(255 0 0 / 25%); }
+
+p.a050 { color: rgb(255 0 0 / 50%); }
+
+p.a075 { color: rgb(255 0 0 / 75%); }
+
+p.a100 { color: rgb(255 0 0 / 100%); }</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-alpha-rgb-1.html" style="width: 100%; height: 19em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-alpha-rgb-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <hr class="corta">
+
+    <p>El cuadro siguiente permite generar colores RGB con transparencia moviendo los deslizadores. Para poder apreciar el funcionamiento de la transparencia, el cuadro muestra tanto dos rectángulos de color superpuestos como un texto en color y con color de fondo:</p>
+
+    <table class="mcl-centrado" style="border: black 2px solid; padding: 10px">
+      <caption>Generador de códigos RGB con transparencia alfa</caption>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>Decimal</td>
+        </tr>
+        <tr>
+          <th colspan="3">Color trasero / Color de fondo</th>
+        </tr>
+        <tr>
+          <td>Rojo:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaRT"></td>
+          <td class="mcl-centrado"><span id="nRgbaRT"></span></td>
+        </tr>
+        <tr>
+          <td>Verde:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaGT"></td>
+          <td class="mcl-centrado"><span id="nRgbaGT"></span></td>
+        </tr>
+        <tr>
+          <td>Azul:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaBT"></td>
+          <td class="mcl-centrado"><span id="nRgbaBT"></span></td>
+        </tr>
+        <tr>
+          <th colspan="3">Color delantero / Color de texto</th>
+        </tr>
+        <tr>
+          <td>Rojo:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaR"></td>
+          <td class="mcl-centrado"><span id="nRgbaR"></span></td>
+        </tr>
+        <tr>
+          <td>Verde:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaG"></td>
+          <td class="mcl-centrado"><span id="nRgbaG"></span></td>
+        </tr>
+        <tr>
+          <td>Azul:</td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaB"></td>
+          <td class="mcl-centrado"><span id="nRgbaB"></span></td>
+        </tr>
+        <tr>
+          <td>Transparencia:</td>
+          <td><input type="range" name="points" min="0" max="100" id="rgbaA"></td>
+          <td class="mcl-centrado"><span id="nRgbaA"></span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="mcl-centrado">
+            <p>Códigos RGB: <strong id="rgbaTexto"></strong></p>
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="420" height="110" viewBox="-20 -20 420 110">
+              <rect x="-10" y="-10" width="400" height="100" stroke="black" fill="white" id="rgbaMuestraT" />
+              <rect x="5" y="5" width="365" height="65" stroke="black" fill="white" id="rgbaMuestra" />
+            </svg>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="mcl-centrado">
+            <p style="font-size: 200%; font-family: sans-serif; font-weight: bold; padding: 25px 0;" id="rgbaMuestra3"></p>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      var rgbaRT = document.getElementById("rgbaRT");
+      var rgbaGT = document.getElementById("rgbaGT");
+      var rgbaBT = document.getElementById("rgbaBT");
+      var nRgbaRT = document.getElementById("nRgbaRT");
+      var nRgbaGT = document.getElementById("nRgbaGT");
+      var nRgbaBT = document.getElementById("nRgbaBT");
+      var rgbaMuestra3 = document.getElementById("rgbaMuestra3");
+
+      var rgbaR = document.getElementById("rgbaR");
+      var rgbaG = document.getElementById("rgbaG");
+      var rgbaB = document.getElementById("rgbaB");
+      var rgbaA = document.getElementById("rgbaA");
+      var nRgbaR = document.getElementById("nRgbaR");
+      var nRgbaG = document.getElementById("nRgbaG");
+      var nRgbaB = document.getElementById("nRgbaB");
+      var nRgbaA = document.getElementById("nRgbaA");
+      var rgbaTexto = document.getElementById("rgbaTexto");
+      var rgbaMuestra = document.getElementById("rgbaMuestra");
+
+      function rgbaLeeColor(e) {
+        nRgbaRT.textContent = rgbaRT.value;
+        nRgbaGT.textContent = rgbaGT.value;
+        nRgbaBT.textContent = rgbaBT.value;
+        rgbaMuestraT.style.fill = "rgb(" + rgbaRT.value + " " + rgbaGT.value + " " + rgbaBT.value + ")";
+
+        nRgbaR.textContent = rgbaR.value;
+        nRgbaG.textContent = rgbaG.value;
+        nRgbaB.textContent = rgbaB.value;
+        nRgbaA.textContent = rgbaA.value / 100;
+        rgbaTexto.textContent = "rgb(" + rgbaRT.value + " " + rgbaGT.value + " " + rgbaBT.value + ") - " + "rgba(" + rgbaR.value + " " + rgbaG.value + " " + rgbaB.value + " / " + (rgbaA.value / 100) + ")";
+        rgbaMuestra.style.fill = "rgba(" + rgbaR.value + " " + rgbaG.value + " " + rgbaB.value + " / " + (rgbaA.value / 100) + ")";
+        rgbaMuestra3.textContent = "CON CANAL ALFA " + rgbaA.value + "%";
+        rgbaMuestra3.style.backgroundColor = "rgb(" + rgbaRT.value + " " + rgbaGT.value + " " + rgbaBT.value + ")";
+        rgbaMuestra3.style.color = "rgb(" + rgbaR.value + " " + rgbaG.value + " " + rgbaB.value + " / " + (rgbaA.value / 100) + ")";
+      }
+      rgbaRT.addEventListener("change", rgbaLeeColor, false);
+      rgbaGT.addEventListener("change", rgbaLeeColor, false);
+      rgbaBT.addEventListener("change", rgbaLeeColor, false);
+      rgbaR.addEventListener("change", rgbaLeeColor, false);
+      rgbaG.addEventListener("change", rgbaLeeColor, false);
+      rgbaB.addEventListener("change", rgbaLeeColor, false);
+      rgbaA.addEventListener("change", rgbaLeeColor, false);
+    </script>
   </section>
 
   <section id="html32">
@@ -1225,7 +1234,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores HTML 3.2</span><br>
+        <span class="css-valor">colores HTML 3.2</span><br>
         <a href="https://www.w3.org/TR/css-color-3/#html4"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
@@ -1348,7 +1357,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <aside class="enlace-norma">
       <p>
-        <span class="css-prop">colores SVG / X11</span><br>
+        <span class="css-valor">colores SVG / X11</span><br>
         <a href="https://www.w3.org/TR/css-color-3/#svg-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
@@ -1363,1198 +1372,1335 @@ de posicionamiento que no aparecen aquí. */</code></pre>
     </ul>
 
     <div class="c-l">
-      <div class="c" style="background-color: hsl(208, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(208 100% 97.1%)">
         <p class="c-n">AliceBlue</p>
         <p>#F0F8FF</p>
-        <p>rgb(240, 248, 255)</p>
-        <p>hsl(208, 100%, 97.1%)</p>
+        <p>rgb(240 248 255)</p>
+        <p>hsl(208 100% 97.1%)</p>
         <p>hwb(208 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(34, 77.8%, 91.2%)">
+      <div class="c" style="background-color: hsl(34 77.8% 91.2%)">
         <p class="c-n">AntiqueWhite</p>
         <p>#FAEBD7</p>
-        <p>rgb(250, 235, 215)</p>
-        <p>hsl(34, 77.8%, 91.2%)</p>
+        <p>rgb(250 235 215)</p>
+        <p>hsl(34 77.8% 91.2%)</p>
         <p>hwb(34 84.4% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 50%)">
+      <div class="c" style="background-color: hsl(180 100% 50%)">
         <p class="c-n">Aqua</p>
         <p>#00FFFF</p>
-        <p>rgb(0, 255, 255)</p>
-        <p>hsl(180, 100%, 50%)</p>
+        <p>rgb(0 255 255)</p>
+        <p>hsl(180 100% 50%)</p>
         <p>hwb(180 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(160, 100%, 74.9%)">
+      <div class="c" style="background-color: hsl(160 100% 74.9%)">
         <p class="c-n">Aquamarine</p>
         <p>#7FFFD4</p>
-        <p>rgb(127, 255, 212)</p>
-        <p>hsl(160, 100%, 74.9%)</p>
+        <p>rgb(127 255 212)</p>
+        <p>hsl(160 100% 74.9%)</p>
         <p>hwb(160 49.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(180 100% 97.1%)">
         <p class="c-n">Azure</p>
         <p>#F0FFFF</p>
-        <p>rgb(240, 255, 255)</p>
-        <p>hsl(180, 100%, 97.1%)</p>
+        <p>rgb(240 255 255)</p>
+        <p>hsl(180 100% 97.1%)</p>
         <p>hwb(180 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 55.6%, 91.2%)">
+      <div class="c" style="background-color: hsl(60 55.6% 91.2%)">
         <p class="c-n">Beige</p>
         <p>#F5F5DC</p>
-        <p>rgb(245, 245, 220)</p>
-        <p>hsl(60, 55.6%, 91.2%)</p>
+        <p>rgb(245 245 220)</p>
+        <p>hsl(60 55.6% 91.2%)</p>
         <p>hwb(60 86.3% 3.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(32, 100%, 88.4%)">
+      <div class="c" style="background-color: hsl(32 100% 88.4%)">
         <p class="c-n">Bisque</p>
         <p>#FFE4C4</p>
-        <p>rgb(255, 228, 196)</p>
-        <p>hsl(32, 100%, 88.4%)</p>
+        <p>rgb(255 228 196)</p>
+        <p>hsl(32 100% 88.4%)</p>
         <p>hwb(32 76.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 0%)">
+      <div class="c" style="background-color: hsl(0 0% 0%)">
         <p class="c-n">Black</p>
         <p>#000000</p>
-        <p>rgb(0, 0, 0)</p>
-        <p>hsl(0, 0%, 0%)</p>
+        <p>rgb(0 0 0)</p>
+        <p>hsl(0 0% 0%)</p>
         <p>hwb(0 0% 100%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(36, 100%, 90.2%)">
+      <div class="c" style="background-color: hsl(36 100% 90.2%)">
         <p class="c-n">BlanchedAlmond</p>
         <p>#FFEBCD</p>
-        <p>rgb(255, 235, 205)</p>
-        <p>hsl(36, 100%, 90.2%)</p>
+        <p>rgb(255 235 205)</p>
+        <p>hsl(36 100% 90.2%)</p>
         <p>hwb(36 80.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 100%, 50%)">
+      <div class="c" style="background-color: hsl(240 100% 50%)">
         <p class="c-n">Blue</p>
         <p>#0000FF</p>
-        <p>rgb(0, 0, 255)</p>
-        <p>hsl(240, 100%, 50%)</p>
+        <p>rgb(0 0 255)</p>
+        <p>hsl(240 100% 50%)</p>
         <p>hwb(240 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(271, 75.9%, 52.7%)">
+      <div class="c" style="background-color: hsl(271 75.9% 52.7%)">
         <p class="c-n">BlueViolet</p>
         <p>#8A2BE2</p>
-        <p>rgb(138, 43, 226)</p>
-        <p>hsl(271, 75.9%, 52.7%)</p>
+        <p>rgb(138 43 226)</p>
+        <p>hsl(271 75.9% 52.7%)</p>
         <p>hwb(271 16.8% 11.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 59.4%, 40.6%)">
+      <div class="c" style="background-color: hsl(0 59.4% 40.6%)">
         <p class="c-n">Brown</p>
         <p>#A52A2A</p>
-        <p>rgb(165, 42, 42)</p>
-        <p>hsl(0, 59.4%, 40.6%)</p>
+        <p>rgb(165 42 42)</p>
+        <p>hsl(0 59.4% 40.6%)</p>
         <p>hwb(0 16.5% 35.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(34, 56.9%, 70%)">
+      <div class="c" style="background-color: hsl(34 56.9% 70%)">
         <p class="c-n">BurlyWood</p>
         <p>#DEB887</p>
-        <p>rgb(222, 184, 135)</p>
-        <p>hsl(34, 56.9%, 70%)</p>
+        <p>rgb(222 184 135)</p>
+        <p>hsl(34 56.9% 70%)</p>
         <p>hwb(34 52.9% 12.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(182, 25.5%, 50%)">
+      <div class="c" style="background-color: hsl(182 25.5% 50%)">
         <p class="c-n">CadetBlue</p>
         <p>#5F9EA0</p>
-        <p>rgb(95, 158, 160)</p>
-        <p>hsl(182, 25.5%, 50%)</p>
+        <p>rgb(95 158 160)</p>
+        <p>hsl(182 25.5% 50%)</p>
         <p>hwb(182 37.2% 37.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(90, 100%, 50%)">
+      <div class="c" style="background-color: hsl(90 100% 50%)">
         <p class="c-n">Chartreuse</p>
         <p>#7FFF00</p>
-        <p>rgb(127, 255, 0)</p>
-        <p>hsl(90, 100%, 50%)</p>
+        <p>rgb(127 255 0)</p>
+        <p>hsl(90 100% 50%)</p>
         <p>hwb(90 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(25, 75%, 47.1%)">
+      <div class="c" style="background-color: hsl(25 75% 47.1%)">
         <p class="c-n">Chocolate</p>
         <p>#D2691E</p>
-        <p>rgb(210, 105, 30)</p>
-        <p>hsl(25, 75%, 47.1%)</p>
+        <p>rgb(210 105 30)</p>
+        <p>hsl(25 75% 47.1%)</p>
         <p>hwb(25 11.8% 17.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(16, 100%, 65.7%)">
+      <div class="c" style="background-color: hsl(16 100% 65.7%)">
         <p class="c-n">Coral</p>
         <p>#FF7F50</p>
-        <p>rgb(255, 127, 80)</p>
-        <p>hsl(16, 100%, 65.7%)</p>
+        <p>rgb(255 127 80)</p>
+        <p>hsl(16 100% 65.7%)</p>
         <p>hwb(16 31.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(218, 79.2%, 66.1%)">
+      <div class="c" style="background-color: hsl(218 79.2% 66.1%)">
         <p class="c-n">CornflowerBlue</p>
         <p>#6495ED</p>
-        <p>rgb(100, 149, 237)</p>
-        <p>hsl(218, 79.2%, 66.1%)</p>
+        <p>rgb(100 149 237)</p>
+        <p>hsl(218 79.2% 66.1%)</p>
         <p>hwb(218 39.3% 7.1%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(48, 100%, 93.1%)">
+      <div class="c" style="background-color: hsl(48 100% 93.1%)">
         <p class="c-n">Cornsilk</p>
         <p>#FFF8DC</p>
-        <p>rgb(255, 248, 220)</p>
-        <p>hsl(48, 100%, 93.1%)</p>
+        <p>rgb(255 248 220)</p>
+        <p>hsl(48 100% 93.1%)</p>
         <p>hwb(48 86.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(348, 83.3%, 47.1%)">
+      <div class="c" style="background-color: hsl(348 83.3% 47.1%)">
         <p class="c-n">Crimson</p>
         <p>#DC143C</p>
-        <p>rgb(220, 20, 60)</p>
-        <p>hsl(348, 83.3%, 47.1%)</p>
+        <p>rgb(220 20 60)</p>
+        <p>hsl(348 83.3% 47.1%)</p>
         <p>hwb(348 7.9% 13.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 50%)">
+      <div class="c" style="background-color: hsl(180 100% 50%)">
         <p class="c-n">Cyan</p>
         <p>#00FFFF</p>
-        <p>rgb(0, 255, 255)</p>
-        <p>hsl(180, 100%, 50%)</p>
+        <p>rgb(0 255 255)</p>
+        <p>hsl(180 100% 50%)</p>
         <p>hwb(180 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 100%, 27.3%)">
+      <div class="c" style="background-color: hsl(240 100% 27.3%)">
         <p class="c-n">DarkBlue</p>
         <p>#00008B</p>
-        <p>rgb(0, 0, 139)</p>
-        <p>hsl(240, 100%, 27.3%)</p>
+        <p>rgb(0 0 139)</p>
+        <p>hsl(240 100% 27.3%)</p>
         <p>hwb(240 0% 45.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 27.3%)">
+      <div class="c" style="background-color: hsl(180 100% 27.3%)">
         <p class="c-n">DarkCyan</p>
         <p>#008B8B</p>
-        <p>rgb(0, 139, 139)</p>
-        <p>hsl(180, 100%, 27.3%)</p>
+        <p>rgb(0 139 139)</p>
+        <p>hsl(180 100% 27.3%)</p>
         <p>hwb(180 0% 45.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(43, 88.7%, 38.2%)">
+      <div class="c" style="background-color: hsl(43 88.7% 38.2%)">
         <p class="c-n">DarkGoldenrod</p>
         <p>#B8860B</p>
-        <p>rgb(184, 134, 11)</p>
-        <p>hsl(43, 88.7%, 38.2%)</p>
+        <p>rgb(184 134 11)</p>
+        <p>hsl(43 88.7% 38.2%)</p>
         <p>hwb(43 4.3% 27.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 66.3%)">
+      <div class="c" style="background-color: hsl(0 0% 66.3%)">
         <p class="c-n">DarkGray</p>
         <p>#A9A9A9</p>
-        <p>rgb(169, 169, 169)</p>
-        <p>hsl(0, 0%, 66.3%)</p>
+        <p>rgb(169 169 169)</p>
+        <p>hsl(0 0% 66.3%)</p>
         <p>hwb(0 66.3% 33.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 100%, 19.6%)">
+      <div class="c" style="background-color: hsl(120 100% 19.6%)">
         <p class="c-n">DarkGreen</p>
         <p>#006400</p>
-        <p>rgb(0, 100, 0)</p>
-        <p>hsl(120, 100%, 19.6%)</p>
+        <p>rgb(0 100 0)</p>
+        <p>hsl(120 100% 19.6%)</p>
         <p>hwb(120 0% 60.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 66.3%)">
+      <div class="c" style="background-color: hsl(0 0% 66.3%)">
         <p class="c-n">DarkGrey</p>
         <p>#A9A9A9</p>
-        <p>rgb(169, 169, 169)</p>
-        <p>hsl(0, 0%, 66.3%)</p>
+        <p>rgb(169 169 169)</p>
+        <p>hsl(0 0% 66.3%)</p>
         <p>hwb(0 66.3% 33.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(56, 38.3%, 58%)">
+      <div class="c" style="background-color: hsl(56 38.3% 58%)">
         <p class="c-n">DarkKhaki</p>
         <p>#BDB76B</p>
-        <p>rgb(189, 183, 107)</p>
-        <p>hsl(56, 38.3%, 58%)</p>
+        <p>rgb(189 183 107)</p>
+        <p>hsl(56 38.3% 58%)</p>
         <p>hwb(56 41.9% 25.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 100%, 27.3%)">
+      <div class="c" style="background-color: hsl(300 100% 27.3%)">
         <p class="c-n">DarkMagenta</p>
         <p>#8B008B</p>
-        <p>rgb(139, 0, 139)</p>
-        <p>hsl(300, 100%, 27.3%)</p>
+        <p>rgb(139 0 139)</p>
+        <p>hsl(300 100% 27.3%)</p>
         <p>hwb(300 0% 45.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(82, 39%, 30.2%)">
+      <div class="c" style="background-color: hsl(82 39% 30.2%)">
         <p class="c-n">DarkOliveGreen</p>
         <p>#556B2F</p>
-        <p>rgb(85, 107, 47)</p>
-        <p>hsl(82, 39%, 30.2%)</p>
+        <p>rgb(85 107 47)</p>
+        <p>hsl(82 39% 30.2%)</p>
         <p>hwb(82 18.4% 58%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(33, 100%, 50%)">
+      <div class="c" style="background-color: hsl(33 100% 50%)">
         <p class="c-n">DarkOrange</p>
         <p>#FF8C00</p>
-        <p>rgb(255, 140, 0)</p>
-        <p>hsl(33, 100%, 50%)</p>
+        <p>rgb(255 140 0)</p>
+        <p>hsl(33 100% 50%)</p>
         <p>hwb(33 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(280, 60.6%, 49.8%)">
+      <div class="c" style="background-color: hsl(280 60.6% 49.8%)">
         <p class="c-n">DarkOrchid</p>
         <p>#9932CC</p>
-        <p>rgb(153, 50, 204)</p>
-        <p>hsl(280, 60.6%, 49.8%)</p>
+        <p>rgb(153 50 204)</p>
+        <p>hsl(280 60.6% 49.8%)</p>
         <p>hwb(280 19.6% 20%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 100%, 27.3%)">
+      <div class="c" style="background-color: hsl(0 100% 27.3%)">
         <p class="c-n">DarkRed</p>
         <p>#8B0000</p>
-        <p>rgb(139, 0, 0)</p>
-        <p>hsl(0, 100%, 27.3%)</p>
+        <p>rgb(139 0 0)</p>
+        <p>hsl(0 100% 27.3%)</p>
         <p>hwb(0 0% 45.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(15, 71.6%, 69.6%)">
+      <div class="c" style="background-color: hsl(15 71.6% 69.6%)">
         <p class="c-n">DarkSalmon</p>
         <p>#E9967A</p>
-        <p>rgb(233, 150, 122)</p>
-        <p>hsl(15, 71.6%, 69.6%)</p>
+        <p>rgb(233 150 122)</p>
+        <p>hsl(15 71.6% 69.6%)</p>
         <p>hwb(15 47.8% 8.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 25.1%, 64.9%)">
+      <div class="c" style="background-color: hsl(120 25.1% 64.9%)">
         <p class="c-n">DarkSeaGreen</p>
         <p>#8FBC8F</p>
-        <p>rgb(143, 188, 143)</p>
-        <p>hsl(120, 25.1%, 64.9%)</p>
+        <p>rgb(143 188 143)</p>
+        <p>hsl(120 25.1% 64.9%)</p>
         <p>hwb(120 56.1% 26.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(248, 39%, 39.2%)">
+      <div class="c" style="background-color: hsl(248 39% 39.2%)">
         <p class="c-n">DarkSlateBlue</p>
         <p>#483D8B</p>
-        <p>rgb(72, 61, 139)</p>
-        <p>hsl(248, 39%, 39.2%)</p>
+        <p>rgb(72 61 139)</p>
+        <p>hsl(248 39% 39.2%)</p>
         <p>hwb(248 23.9% 45.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 25.4%, 24.7%)">
+      <div class="c" style="background-color: hsl(180 25.4% 24.7%)">
         <p class="c-n">DarkSlateGray</p>
         <p>#2F4F4F</p>
-        <p>rgb(47, 79, 79)</p>
-        <p>hsl(180, 25.4%, 24.7%)</p>
+        <p>rgb(47 79 79)</p>
+        <p>hsl(180 25.4% 24.7%)</p>
         <p>hwb(180 18.4% 69%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 25.4%, 24.7%)">
+      <div class="c" style="background-color: hsl(180 25.4% 24.7%)">
         <p class="c-n">DarkSlateGrey</p>
         <p>#2F4F4F</p>
-        <p>rgb(47, 79, 79)</p>
-        <p>hsl(180, 25.4%, 24.7%)</p>
+        <p>rgb(47 79 79)</p>
+        <p>hsl(180 25.4% 24.7%)</p>
         <p>hwb(180 18.4% 69%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(181, 100%, 41%)">
+      <div class="c" style="background-color: hsl(181 100% 41%)">
         <p class="c-n">DarkTurquoise</p>
         <p>#00CED1</p>
-        <p>rgb(0, 206, 209)</p>
-        <p>hsl(181, 100%, 41%)</p>
+        <p>rgb(0 206 209)</p>
+        <p>hsl(181 100% 41%)</p>
         <p>hwb(181 0% 18%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(282, 100%, 41.4%)">
+      <div class="c" style="background-color: hsl(282 100% 41.4%)">
         <p class="c-n">DarkViolet</p>
         <p>#9400D3</p>
-        <p>rgb(148, 0, 211)</p>
-        <p>hsl(282, 100%, 41.4%)</p>
+        <p>rgb(148 0 211)</p>
+        <p>hsl(282 100% 41.4%)</p>
         <p>hwb(282 0% 17.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(328, 100%, 53.9%)">
+      <div class="c" style="background-color: hsl(328 100% 53.9%)">
         <p class="c-n">DeepPink</p>
         <p>#FF1493</p>
-        <p>rgb(255, 20, 147)</p>
-        <p>hsl(328, 100%, 53.9%)</p>
+        <p>rgb(255 20 147)</p>
+        <p>hsl(328 100% 53.9%)</p>
         <p>hwb(328 7.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(195, 100%, 50%)">
+      <div class="c" style="background-color: hsl(195 100% 50%)">
         <p class="c-n">DeepSkyBlue</p>
         <p>#00BFFF</p>
-        <p>rgb(0, 191, 255)</p>
-        <p>hsl(195, 100%, 50%)</p>
+        <p>rgb(0 191 255)</p>
+        <p>hsl(195 100% 50%)</p>
         <p>hwb(195 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 41.2%)">
+      <div class="c" style="background-color: hsl(0 0% 41.2%)">
         <p class="c-n">DimGray</p>
         <p>#696969</p>
-        <p>rgb(105, 105, 105)</p>
-        <p>hsl(0, 0%, 41.2%)</p>
+        <p>rgb(105 105 105)</p>
+        <p>hsl(0 0% 41.2%)</p>
         <p>hwb(0 41.2% 58.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 41.2%)">
+      <div class="c" style="background-color: hsl(0 0% 41.2%)">
         <p class="c-n">DimGrey</p>
         <p>#696969</p>
-        <p>rgb(105, 105, 105)</p>
-        <p>hsl(0, 0%, 41.2%)</p>
+        <p>rgb(105 105 105)</p>
+        <p>hsl(0 0% 41.2%)</p>
         <p>hwb(0 41.2% 58.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(210, 100%, 55.9%)">
+      <div class="c" style="background-color: hsl(210 100% 55.9%)">
         <p class="c-n">DodgerBlue</p>
         <p>#1E90FF</p>
-        <p>rgb(30, 144, 255)</p>
-        <p>hsl(210, 100%, 55.9%)</p>
+        <p>rgb(30 144 255)</p>
+        <p>hsl(210 100% 55.9%)</p>
         <p>hwb(210 11.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 67.9%, 41.6%)">
+      <div class="c" style="background-color: hsl(0 67.9% 41.6%)">
         <p class="c-n">FireBrick</p>
         <p>#B22222</p>
-        <p>rgb(178, 34, 34)</p>
-        <p>hsl(0, 67.9%, 41.6%)</p>
+        <p>rgb(178 34 34)</p>
+        <p>hsl(0 67.9% 41.6%)</p>
         <p>hwb(0 13.4% 30.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(40, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(40 100% 97.1%)">
         <p class="c-n">FloralWhite</p>
         <p>#FFFAF0</p>
-        <p>rgb(255, 250, 240)</p>
-        <p>hsl(40, 100%, 97.1%)</p>
+        <p>rgb(255 250 240)</p>
+        <p>hsl(40 100% 97.1%)</p>
         <p>hwb(40 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 60.7%, 33.9%)">
+      <div class="c" style="background-color: hsl(120 60.7% 33.9%)">
         <p class="c-n">ForestGreen</p>
         <p>#228B22</p>
-        <p>rgb(34, 139, 34)</p>
-        <p>hsl(120, 60.7%, 33.9%)</p>
+        <p>rgb(34 139 34)</p>
+        <p>hsl(120 60.7% 33.9%)</p>
         <p>hwb(120 13.3% 45.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 100%, 50%)">
+      <div class="c" style="background-color: hsl(300 100% 50%)">
         <p class="c-n">Fuchsia</p>
         <p>#FF00FF</p>
-        <p>rgb(255, 0, 255)</p>
-        <p>hsl(300, 100%, 50%)</p>
+        <p>rgb(255 0 255)</p>
+        <p>hsl(300 100% 50%)</p>
         <p>hwb(300 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 86.3%)">
+      <div class="c" style="background-color: hsl(0 0% 86.3%)">
         <p class="c-n">Gainsboro</p>
         <p>#DCDCDC</p>
-        <p>rgb(220, 220, 220)</p>
-        <p>hsl(0, 0%, 86.3%)</p>
+        <p>rgb(220 220 220)</p>
+        <p>hsl(0 0% 86.3%)</p>
         <p>hwb(0 86.3% 13.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 100%, 98.6%)">
+      <div class="c" style="background-color: hsl(240 100% 98.6%)">
         <p class="c-n">GhostWhite</p>
         <p>#F8F8FF</p>
-        <p>rgb(248, 248, 255)</p>
-        <p>hsl(240, 100%, 98.6%)</p>
+        <p>rgb(248 248 255)</p>
+        <p>hsl(240 100% 98.6%)</p>
         <p>hwb(240 97.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(51, 100%, 50%)">
+      <div class="c" style="background-color: hsl(51 100% 50%)">
         <p class="c-n">Gold</p>
         <p>#FFD700</p>
-        <p>rgb(255, 215, 0)</p>
-        <p>hsl(51, 100%, 50%)</p>
+        <p>rgb(255 215 0)</p>
+        <p>hsl(51 100% 50%)</p>
         <p>hwb(51 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(43, 74.4%, 49%)">
+      <div class="c" style="background-color: hsl(43 74.4% 49%)">
         <p class="c-n">Goldenrod</p>
         <p>#DAA520</p>
-        <p>rgb(218, 165, 32)</p>
-        <p>hsl(43, 74.4%, 49%)</p>
+        <p>rgb(218 165 32)</p>
+        <p>hsl(43 74.4% 49%)</p>
         <p>hwb(43 12.5% 14.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 50.2%)">
+      <div class="c" style="background-color: hsl(0 0% 50.2%)">
         <p class="c-n">Gray</p>
         <p>#808080</p>
-        <p>rgb(128, 128, 128)</p>
-        <p>hsl(0, 0%, 50.2%)</p>
+        <p>rgb(128 128 128)</p>
+        <p>hsl(0 0% 50.2%)</p>
         <p>hwb(0 50.2% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(120 100% 25.1%)">
         <p class="c-n">Green</p>
         <p>#008000</p>
-        <p>rgb(0, 128, 0)</p>
-        <p>hsl(120, 100%, 25.1%)</p>
+        <p>rgb(0 128 0)</p>
+        <p>hsl(120 100% 25.1%)</p>
         <p>hwb(120 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(84, 100%, 59.2%)">
+      <div class="c" style="background-color: hsl(84 100% 59.2%)">
         <p class="c-n">GreenYellow</p>
         <p>#ADFF2F</p>
-        <p>rgb(173, 255, 47)</p>
-        <p>hsl(84, 100%, 59.2%)</p>
+        <p>rgb(173 255 47)</p>
+        <p>hsl(84 100% 59.2%)</p>
         <p>hwb(84 18.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 50.2%)">
+      <div class="c" style="background-color: hsl(0 0% 50.2%)">
         <p class="c-n">Grey</p>
         <p>#808080</p>
-        <p>rgb(128, 128, 128)</p>
-        <p>hsl(0, 0%, 50.2%)</p>
+        <p>rgb(128 128 128)</p>
+        <p>hsl(0 0% 50.2%)</p>
         <p>hwb(0 50.2% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(120 100% 97.1%)">
         <p class="c-n">Honeydew</p>
         <p>#F0FFF0</p>
-        <p>rgb(240, 255, 240)</p>
-        <p>hsl(120, 100%, 97.1%)</p>
+        <p>rgb(240 255 240)</p>
+        <p>hsl(120 100% 97.1%)</p>
         <p>hwb(120 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(330, 100%, 70.6%)">
+      <div class="c" style="background-color: hsl(330 100% 70.6%)">
         <p class="c-n">HotPink</p>
         <p>#FF69B4</p>
-        <p>rgb(255, 105, 180)</p>
-        <p>hsl(330, 100%, 70.6%)</p>
+        <p>rgb(255 105 180)</p>
+        <p>hsl(330 100% 70.6%)</p>
         <p>hwb(330 41.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 53.1%, 58.2%)">
+      <div class="c" style="background-color: hsl(0 53.1% 58.2%)">
         <p class="c-n">IndianRed</p>
         <p>#CD5C5C</p>
-        <p>rgb(205, 92, 92)</p>
-        <p>hsl(0, 53.1%, 58.2%)</p>
+        <p>rgb(205 92 92)</p>
+        <p>hsl(0 53.1% 58.2%)</p>
         <p>hwb(0 36% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(275, 100%, 25.5%)">
+      <div class="c" style="background-color: hsl(275 100% 25.5%)">
         <p class="c-n">Indigo</p>
         <p>#4B0082</p>
-        <p>rgb(75, 0, 130)</p>
-        <p>hsl(275, 100%, 25.5%)</p>
+        <p>rgb(75 0 130)</p>
+        <p>hsl(275 100% 25.5%)</p>
         <p>hwb(275 0% 49%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(60 100% 97.1%)">
         <p class="c-n">Ivory</p>
         <p>#FFFFF0</p>
-        <p>rgb(255, 255, 240)</p>
-        <p>hsl(60, 100%, 97.1%)</p>
+        <p>rgb(255 255 240)</p>
+        <p>hsl(60 100% 97.1%)</p>
         <p>hwb(60 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(54, 76.9%, 74.5%)">
+      <div class="c" style="background-color: hsl(54 76.9% 74.5%)">
         <p class="c-n">Khaki</p>
         <p>#F0E68C</p>
-        <p>rgb(240, 230, 140)</p>
-        <p>hsl(54, 76.9%, 74.5%)</p>
+        <p>rgb(240 230 140)</p>
+        <p>hsl(54 76.9% 74.5%)</p>
         <p>hwb(54 54.9% 5.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 66.7%, 94.1%)">
+      <div class="c" style="background-color: hsl(240 66.7% 94.1%)">
         <p class="c-n">Lavender</p>
         <p>#E6E6FA</p>
-        <p>rgb(230, 230, 250)</p>
-        <p>hsl(240, 66.7%, 94.1%)</p>
+        <p>rgb(230 230 250)</p>
+        <p>hsl(240 66.7% 94.1%)</p>
         <p>hwb(240 90.2% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(340, 100%, 97.1%)">
+      <div class="c" style="background-color: hsl(340 100% 97.1%)">
         <p class="c-n">LavenderBlush</p>
         <p>#FFF0F5</p>
-        <p>rgb(255, 240, 245)</p>
-        <p>hsl(340, 100%, 97.1%)</p>
+        <p>rgb(255 240 245)</p>
+        <p>hsl(340 100% 97.1%)</p>
         <p>hwb(340 94.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(90, 100%, 49.4%)">
+      <div class="c" style="background-color: hsl(90 100% 49.4%)">
         <p class="c-n">LawnGreen</p>
         <p>#7CFC00</p>
-        <p>rgb(124, 252, 0)</p>
-        <p>hsl(90, 100%, 49.4%)</p>
+        <p>rgb(124 252 0)</p>
+        <p>hsl(90 100% 49.4%)</p>
         <p>hwb(90 0% 1.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(54, 100%, 90.2%)">
+      <div class="c" style="background-color: hsl(54 100% 90.2%)">
         <p class="c-n">LemonChiffon</p>
         <p>#FFFACD</p>
-        <p>rgb(255, 250, 205)</p>
-        <p>hsl(54, 100%, 90.2%)</p>
+        <p>rgb(255 250 205)</p>
+        <p>hsl(54 100% 90.2%)</p>
         <p>hwb(54 80.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(195, 53.3%, 79%)">
+      <div class="c" style="background-color: hsl(195 53.3% 79%)">
         <p class="c-n">LightBlue</p>
         <p>#ADD8E6</p>
-        <p>rgb(173, 216, 230)</p>
-        <p>hsl(195, 53.3%, 79%)</p>
+        <p>rgb(173 216 230)</p>
+        <p>hsl(195 53.3% 79%)</p>
         <p>hwb(195 67.8% 9.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 78.9%, 72.2%)">
+      <div class="c" style="background-color: hsl(0 78.9% 72.2%)">
         <p class="c-n">LightCoral</p>
         <p>#F08080</p>
-        <p>rgb(240, 128, 128)</p>
-        <p>hsl(0, 78.9%, 72.2%)</p>
+        <p>rgb(240 128 128)</p>
+        <p>hsl(0 78.9% 72.2%)</p>
         <p>hwb(0 50.3% 5.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 93.9%)">
+      <div class="c" style="background-color: hsl(180 100% 93.9%)">
         <p class="c-n">LightCyan</p>
         <p>#E0FFFF</p>
-        <p>rgb(224, 255, 255)</p>
-        <p>hsl(180, 100%, 93.9%)</p>
+        <p>rgb(224 255 255)</p>
+        <p>hsl(180 100% 93.9%)</p>
         <p>hwb(180 87.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 80%, 90.2%)">
+      <div class="c" style="background-color: hsl(60 80% 90.2%)">
         <p class="c-n">LightGoldenrodYellow</p>
         <p>#FAFAD2</p>
-        <p>rgb(250, 250, 210)</p>
-        <p>hsl(60, 80%, 90.2%)</p>
+        <p>rgb(250 250 210)</p>
+        <p>hsl(60 80% 90.2%)</p>
         <p>hwb(60 82.4% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 82.7%)">
+      <div class="c" style="background-color: hsl(0 0% 82.7%)">
         <p class="c-n">LightGray</p>
         <p>#D3D3D3</p>
-        <p>rgb(211, 211, 211)</p>
-        <p>hsl(0, 0%, 82.7%)</p>
+        <p>rgb(211 211 211)</p>
+        <p>hsl(0 0% 82.7%)</p>
         <p>hwb(0 82.7% 17.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 73.4%, 74.9%)">
+      <div class="c" style="background-color: hsl(120 73.4% 74.9%)">
         <p class="c-n">LightGreen</p>
         <p>#90EE90</p>
-        <p>rgb(144, 238, 144)</p>
-        <p>hsl(120, 73.4%, 74.9%)</p>
+        <p>rgb(144 238 144)</p>
+        <p>hsl(120 73.4% 74.9%)</p>
         <p>hwb(120 56.5% 6.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 82.7%)">
+      <div class="c" style="background-color: hsl(0 0% 82.7%)">
         <p class="c-n">LightGrey</p>
         <p>#D3D3D3</p>
-        <p>rgb(211, 211, 211)</p>
-        <p>hsl(0, 0%, 82.7%)</p>
+        <p>rgb(211 211 211)</p>
+        <p>hsl(0 0% 82.7%)</p>
         <p>hwb(0 82.7% 17.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(351, 100%, 85.7%)">
+      <div class="c" style="background-color: hsl(351 100% 85.7%)">
         <p class="c-n">LightPink</p>
         <p>#FFB6C1</p>
-        <p>rgb(255, 182, 193)</p>
-        <p>hsl(351, 100%, 85.7%)</p>
+        <p>rgb(255 182 193)</p>
+        <p>hsl(351 100% 85.7%)</p>
         <p>hwb(351 71.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(17, 100%, 73.9%)">
+      <div class="c" style="background-color: hsl(17 100% 73.9%)">
         <p class="c-n">LightSalmon</p>
         <p>#FFA07A</p>
-        <p>rgb(255, 160, 122)</p>
-        <p>hsl(17, 100%, 73.9%)</p>
+        <p>rgb(255 160 122)</p>
+        <p>hsl(17 100% 73.9%)</p>
         <p>hwb(17 47.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(177, 69.5%, 41.2%)">
+      <div class="c" style="background-color: hsl(177 69.5% 41.2%)">
         <p class="c-n">LightSeaGreen</p>
         <p>#20B2AA</p>
-        <p>rgb(32, 178, 170)</p>
-        <p>hsl(177, 69.5%, 41.2%)</p>
+        <p>rgb(32 178 170)</p>
+        <p>hsl(177 69.5% 41.2%)</p>
         <p>hwb(177 12.6% 30.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(203, 92%, 75.5%)">
+      <div class="c" style="background-color: hsl(203 92% 75.5%)">
         <p class="c-n">LightSkyBlue</p>
         <p>#87CEFA</p>
-        <p>rgb(135, 206, 250)</p>
-        <p>hsl(203, 92%, 75.5%)</p>
+        <p>rgb(135 206 250)</p>
+        <p>hsl(203 92% 75.5%)</p>
         <p>hwb(203 53% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(210, 14.3%, 53.3%)">
+      <div class="c" style="background-color: hsl(210 14.3% 53.3%)">
         <p class="c-n">LightSlateGray</p>
         <p>#778899</p>
-        <p>rgb(119, 136, 153)</p>
-        <p>hsl(210, 14.3%, 53.3%)</p>
+        <p>rgb(119 136 153)</p>
+        <p>hsl(210 14.3% 53.3%)</p>
         <p>hwb(210 46.6% 40%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(210, 14.3%, 53.3%)">
+      <div class="c" style="background-color: hsl(210 14.3% 53.3%)">
         <p class="c-n">LightSlateGrey</p>
         <p>#778899</p>
-        <p>rgb(119, 136, 153)</p>
-        <p>hsl(210, 14.3%, 53.3%)</p>
+        <p>rgb(119 136 153)</p>
+        <p>hsl(210 14.3% 53.3%)</p>
         <p>hwb(210 46.6% 40%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(214, 41.1%, 78%)">
+      <div class="c" style="background-color: hsl(214 41.1% 78%)">
         <p class="c-n">LightSteelBlue</p>
         <p>#B0C4DE</p>
-        <p>rgb(176, 196, 222)</p>
-        <p>hsl(214, 41.1%, 78%)</p>
+        <p>rgb(176 196 222)</p>
+        <p>hsl(214 41.1% 78%)</p>
         <p>hwb(214 69% 13%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 100%, 93.9%)">
+      <div class="c" style="background-color: hsl(60 100% 93.9%)">
         <p class="c-n">LightYellow</p>
         <p>#FFFFE0</p>
-        <p>rgb(255, 255, 224)</p>
-        <p>hsl(60, 100%, 93.9%)</p>
+        <p>rgb(255 255 224)</p>
+        <p>hsl(60 100% 93.9%)</p>
         <p>hwb(60 87.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 100%, 50%)">
+      <div class="c" style="background-color: hsl(120 100% 50%)">
         <p class="c-n">Lime</p>
         <p>#00FF00</p>
-        <p>rgb(0, 255, 0)</p>
-        <p>hsl(120, 100%, 50%)</p>
+        <p>rgb(0 255 0)</p>
+        <p>hsl(120 100% 50%)</p>
         <p>hwb(120 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 60.8%, 50%)">
+      <div class="c" style="background-color: hsl(120 60.8% 50%)">
         <p class="c-n">LimeGreen</p>
         <p>#32CD32</p>
-        <p>rgb(50, 205, 50)</p>
-        <p>hsl(120, 60.8%, 50%)</p>
+        <p>rgb(50 205 50)</p>
+        <p>hsl(120 60.8% 50%)</p>
         <p>hwb(120 19.6% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(30, 66.7%, 94.1%)">
+      <div class="c" style="background-color: hsl(30 66.7% 94.1%)">
         <p class="c-n">Linen</p>
         <p>#FAF0E6</p>
-        <p>rgb(250, 240, 230)</p>
-        <p>hsl(30, 66.7%, 94.1%)</p>
+        <p>rgb(250 240 230)</p>
+        <p>hsl(30 66.7% 94.1%)</p>
         <p>hwb(30 90.2% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 100%, 50%)">
+      <div class="c" style="background-color: hsl(300 100% 50%)">
         <p class="c-n">Magenta</p>
         <p>#FF00FF</p>
-        <p>rgb(255, 0, 255)</p>
-        <p>hsl(300, 100%, 50%)</p>
+        <p>rgb(255 0 255)</p>
+        <p>hsl(300 100% 50%)</p>
         <p>hwb(300 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(0 100% 25.1%)">
         <p class="c-n">Maroon</p>
         <p>#800000</p>
-        <p>rgb(128, 0, 0)</p>
-        <p>hsl(0, 100%, 25.1%)</p>
+        <p>rgb(128 0 0)</p>
+        <p>hsl(0 100% 25.1%)</p>
         <p>hwb(0 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(160, 50.7%, 60.2%)">
+      <div class="c" style="background-color: hsl(160 50.7% 60.2%)">
         <p class="c-n">MediumAquamarine</p>
         <p>#66CDAA</p>
-        <p>rgb(102, 205, 170)</p>
-        <p>hsl(160, 50.7%, 60.2%)</p>
+        <p>rgb(102 205 170)</p>
+        <p>hsl(160 50.7% 60.2%)</p>
         <p>hwb(160 40% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 100%, 40.2%)">
+      <div class="c" style="background-color: hsl(240 100% 40.2%)">
         <p class="c-n">MediumBlue</p>
         <p>#0000CD</p>
-        <p>rgb(0, 0, 205)</p>
-        <p>hsl(240, 100%, 40.2%)</p>
+        <p>rgb(0 0 205)</p>
+        <p>hsl(240 100% 40.2%)</p>
         <p>hwb(240 0% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(288, 58.9%, 58%)">
+      <div class="c" style="background-color: hsl(288 58.9% 58%)">
         <p class="c-n">MediumOrchid</p>
         <p>#BA55D3</p>
-        <p>rgb(186, 85, 211)</p>
-        <p>hsl(288, 58.9%, 58%)</p>
+        <p>rgb(186 85 211)</p>
+        <p>hsl(288 58.9% 58%)</p>
         <p>hwb(288 33.3% 17.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(260, 59.8%, 64.9%)">
+      <div class="c" style="background-color: hsl(260 59.8% 64.9%)">
         <p class="c-n">MediumPurple</p>
         <p>#9370DB</p>
-        <p>rgb(147, 112, 219)</p>
-        <p>hsl(260, 59.8%, 64.9%)</p>
+        <p>rgb(147 112 219)</p>
+        <p>hsl(260 59.8% 64.9%)</p>
         <p>hwb(260 43.9% 14.1%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(147, 49.8%, 46.9%)">
+      <div class="c" style="background-color: hsl(147 49.8% 46.9%)">
         <p class="c-n">MediumSeaGreen</p>
         <p>#3CB371</p>
-        <p>rgb(60, 179, 113)</p>
-        <p>hsl(147, 49.8%, 46.9%)</p>
+        <p>rgb(60 179 113)</p>
+        <p>hsl(147 49.8% 46.9%)</p>
         <p>hwb(147 23.5% 29.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(248, 79.8%, 67.1%)">
+      <div class="c" style="background-color: hsl(248 79.8% 67.1%)">
         <p class="c-n">MediumSlateBlue</p>
         <p>#7B68EE</p>
-        <p>rgb(123, 104, 238)</p>
-        <p>hsl(248, 79.8%, 67.1%)</p>
+        <p>rgb(123 104 238)</p>
+        <p>hsl(248 79.8% 67.1%)</p>
         <p>hwb(248 40.8% 6.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(157, 100%, 49%)">
+      <div class="c" style="background-color: hsl(157 100% 49%)">
         <p class="c-n">MediumSpringGreen</p>
         <p>#00FA9A</p>
-        <p>rgb(0, 250, 154)</p>
-        <p>hsl(157, 100%, 49%)</p>
+        <p>rgb(0 250 154)</p>
+        <p>hsl(157 100% 49%)</p>
         <p>hwb(157 0% 2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(178, 59.8%, 55.1%)">
+      <div class="c" style="background-color: hsl(178 59.8% 55.1%)">
         <p class="c-n">MediumTurquoise</p>
         <p>#48D1CC</p>
-        <p>rgb(72, 209, 204)</p>
-        <p>hsl(178, 59.8%, 55.1%)</p>
+        <p>rgb(72 209 204)</p>
+        <p>hsl(178 59.8% 55.1%)</p>
         <p>hwb(178 28.2% 18%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(322, 80.9%, 43.1%)">
+      <div class="c" style="background-color: hsl(322 80.9% 43.1%)">
         <p class="c-n">MediumVioletRed</p>
         <p>#C71585</p>
-        <p>rgb(199, 21, 133)</p>
-        <p>hsl(322, 80.9%, 43.1%)</p>
+        <p>rgb(199 21 133)</p>
+        <p>hsl(322 80.9% 43.1%)</p>
         <p>hwb(322 8.2% 22%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 63.5%, 26.9%)">
+      <div class="c" style="background-color: hsl(240 63.5% 26.9%)">
         <p class="c-n">MidnightBlue</p>
         <p>#191970</p>
-        <p>rgb(25, 25, 112)</p>
-        <p>hsl(240, 63.5%, 26.9%)</p>
+        <p>rgb(25 25 112)</p>
+        <p>hsl(240 63.5% 26.9%)</p>
         <p>hwb(240 9.8% 56%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(150, 100%, 98%)">
+      <div class="c" style="background-color: hsl(150 100% 98%)">
         <p class="c-n">MintCream</p>
         <p>#F5FFFA</p>
-        <p>rgb(245, 255, 250)</p>
-        <p>hsl(150, 100%, 98%)</p>
+        <p>rgb(245 255 250)</p>
+        <p>hsl(150 100% 98%)</p>
         <p>hwb(150 96% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(6, 100%, 94.1%)">
+      <div class="c" style="background-color: hsl(6 100% 94.1%)">
         <p class="c-n">MistyRose</p>
         <p>#FFE4E1</p>
-        <p>rgb(255, 228, 225)</p>
-        <p>hsl(6, 100%, 94.1%)</p>
+        <p>rgb(255 228 225)</p>
+        <p>hsl(6 100% 94.1%)</p>
         <p>hwb(6 88.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(38, 100%, 85.5%)">
+      <div class="c" style="background-color: hsl(38 100% 85.5%)">
         <p class="c-n">Moccasin</p>
         <p>#FFE4B5</p>
-        <p>rgb(255, 228, 181)</p>
-        <p>hsl(38, 100%, 85.5%)</p>
+        <p>rgb(255 228 181)</p>
+        <p>hsl(38 100% 85.5%)</p>
         <p>hwb(38 71% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(36, 100%, 83.9%)">
+      <div class="c" style="background-color: hsl(36 100% 83.9%)">
         <p class="c-n">NavajoWhite</p>
         <p>#FFDEAD</p>
-        <p>rgb(255, 222, 173)</p>
-        <p>hsl(36, 100%, 83.9%)</p>
+        <p>rgb(255 222 173)</p>
+        <p>hsl(36 100% 83.9%)</p>
         <p>hwb(36 67.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(240, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(240 100% 25.1%)">
         <p class="c-n">Navy</p>
         <p>#000080</p>
-        <p>rgb(0, 0, 128)</p>
-        <p>hsl(240, 100%, 25.1%)</p>
+        <p>rgb(0 0 128)</p>
+        <p>hsl(240 100% 25.1%)</p>
         <p>hwb(240 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(39, 85.2%, 94.7%)">
+      <div class="c" style="background-color: hsl(39 85.2% 94.7%)">
         <p class="c-n">OldLace</p>
         <p>#FDF5E6</p>
-        <p>rgb(253, 245, 230)</p>
-        <p>hsl(39, 85.2%, 94.7%)</p>
+        <p>rgb(253 245 230)</p>
+        <p>hsl(39 85.2% 94.7%)</p>
         <p>hwb(39 90.2% 0.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(60 100% 25.1%)">
         <p class="c-n">Olive</p>
         <p>#808000</p>
-        <p>rgb(128, 128, 0)</p>
-        <p>hsl(60, 100%, 25.1%)</p>
+        <p>rgb(128 128 0)</p>
+        <p>hsl(60 100% 25.1%)</p>
         <p>hwb(60 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(80, 60.5%, 34.7%)">
+      <div class="c" style="background-color: hsl(80 60.5% 34.7%)">
         <p class="c-n">OliveDrab</p>
         <p>#6B8E23</p>
-        <p>rgb(107, 142, 35)</p>
-        <p>hsl(80, 60.5%, 34.7%)</p>
+        <p>rgb(107 142 35)</p>
+        <p>hsl(80 60.5% 34.7%)</p>
         <p>hwb(80 13.7% 44.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(39, 100%, 50%)">
+      <div class="c" style="background-color: hsl(39 100% 50%)">
         <p class="c-n">Orange</p>
         <p>#FFA500</p>
-        <p>rgb(255, 165, 0)</p>
-        <p>hsl(39, 100%, 50%)</p>
+        <p>rgb(255 165 0)</p>
+        <p>hsl(39 100% 50%)</p>
         <p>hwb(39 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(16, 100%, 50%)">
+      <div class="c" style="background-color: hsl(16 100% 50%)">
         <p class="c-n">OrangeRed</p>
         <p>#FF4500</p>
-        <p>rgb(255, 69, 0)</p>
-        <p>hsl(16, 100%, 50%)</p>
+        <p>rgb(255 69 0)</p>
+        <p>hsl(16 100% 50%)</p>
         <p>hwb(16 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(302, 58.9%, 64.7%)">
+      <div class="c" style="background-color: hsl(302 58.9% 64.7%)">
         <p class="c-n">Orchid</p>
         <p>#DA70D6</p>
-        <p>rgb(218, 112, 214)</p>
-        <p>hsl(302, 58.9%, 64.7%)</p>
+        <p>rgb(218 112 214)</p>
+        <p>hsl(302 58.9% 64.7%)</p>
         <p>hwb(302 43.9% 14.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(55, 66.7%, 80%)">
+      <div class="c" style="background-color: hsl(55 66.7% 80%)">
         <p class="c-n">PaleGoldenrod</p>
         <p>#EEE8AA</p>
-        <p>rgb(238, 232, 170)</p>
-        <p>hsl(55, 66.7%, 80%)</p>
+        <p>rgb(238 232 170)</p>
+        <p>hsl(55 66.7% 80%)</p>
         <p>hwb(55 66.7% 6.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(120, 92.5%, 79%)">
+      <div class="c" style="background-color: hsl(120 92.5% 79%)">
         <p class="c-n">PaleGreen</p>
         <p>#98FB98</p>
-        <p>rgb(152, 251, 152)</p>
-        <p>hsl(120, 92.5%, 79%)</p>
+        <p>rgb(152 251 152)</p>
+        <p>hsl(120 92.5% 79%)</p>
         <p>hwb(120 59.6% 1.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 64.9%, 81%)">
+      <div class="c" style="background-color: hsl(180 64.9% 81%)">
         <p class="c-n">PaleTurquoise</p>
         <p>#AFEEEE</p>
-        <p>rgb(175, 238, 238)</p>
-        <p>hsl(180, 64.9%, 81%)</p>
+        <p>rgb(175 238 238)</p>
+        <p>hsl(180 64.9% 81%)</p>
         <p>hwb(180 68.7% 6.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(340, 59.8%, 64.9%)">
+      <div class="c" style="background-color: hsl(340 59.8% 64.9%)">
         <p class="c-n">PaleVioletRed</p>
         <p>#DB7093</p>
-        <p>rgb(219, 112, 147)</p>
-        <p>hsl(340, 59.8%, 64.9%)</p>
+        <p>rgb(219 112 147)</p>
+        <p>hsl(340 59.8% 64.9%)</p>
         <p>hwb(340 43.9% 14.1%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(37, 100%, 91.8%)">
+      <div class="c" style="background-color: hsl(37 100% 91.8%)">
         <p class="c-n">PapayaWhip</p>
         <p>#FFEFD5</p>
-        <p>rgb(255, 239, 213)</p>
-        <p>hsl(37, 100%, 91.8%)</p>
+        <p>rgb(255 239 213)</p>
+        <p>hsl(37 100% 91.8%)</p>
         <p>hwb(37 83.6% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(28, 100%, 86.3%)">
+      <div class="c" style="background-color: hsl(28 100% 86.3%)">
         <p class="c-n">PeachPuff</p>
         <p>#FFDAB9</p>
-        <p>rgb(255, 218, 185)</p>
-        <p>hsl(28, 100%, 86.3%)</p>
+        <p>rgb(255 218 185)</p>
+        <p>hsl(28 100% 86.3%)</p>
         <p>hwb(28 72.6% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(30, 58.7%, 52.5%)">
+      <div class="c" style="background-color: hsl(30 58.7% 52.5%)">
         <p class="c-n">Peru</p>
         <p>#CD853F</p>
-        <p>rgb(205, 133, 63)</p>
-        <p>hsl(30, 58.7%, 52.5%)</p>
+        <p>rgb(205 133 63)</p>
+        <p>hsl(30 58.7% 52.5%)</p>
         <p>hwb(30 24.6% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(350, 100%, 87.6%)">
+      <div class="c" style="background-color: hsl(350 100% 87.6%)">
         <p class="c-n">Pink</p>
         <p>#FFC0CB</p>
-        <p>rgb(255, 192, 203)</p>
-        <p>hsl(350, 100%, 87.6%)</p>
+        <p>rgb(255 192 203)</p>
+        <p>hsl(350 100% 87.6%)</p>
         <p>hwb(350 75.2% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 47.3%, 74.7%)">
+      <div class="c" style="background-color: hsl(300 47.3% 74.7%)">
         <p class="c-n">Plum</p>
         <p>#DDA0DD</p>
-        <p>rgb(221, 160, 221)</p>
-        <p>hsl(300, 47.3%, 74.7%)</p>
+        <p>rgb(221 160 221)</p>
+        <p>hsl(300 47.3% 74.7%)</p>
         <p>hwb(300 62.7% 13.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(187, 51.9%, 79.6%)">
+      <div class="c" style="background-color: hsl(187 51.9% 79.6%)">
         <p class="c-n">PowderBlue</p>
         <p>#B0E0E6</p>
-        <p>rgb(176, 224, 230)</p>
-        <p>hsl(187, 51.9%, 79.6%)</p>
+        <p>rgb(176 224 230)</p>
+        <p>hsl(187 51.9% 79.6%)</p>
         <p>hwb(187 69% 9.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(300 100% 25.1%)">
         <p class="c-n">Purple</p>
         <p>#800080</p>
-        <p>rgb(128, 0, 128)</p>
-        <p>hsl(300, 100%, 25.1%)</p>
+        <p>rgb(128 0 128)</p>
+        <p>hsl(300 100% 25.1%)</p>
         <p>hwb(300 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 100%, 50%)">
+      <div class="c" style="background-color: hsl(0 100% 50%)">
         <p class="c-n">Red</p>
         <p>#FF0000</p>
-        <p>rgb(255, 0, 0)</p>
-        <p>hsl(0, 100%, 50%)</p>
+        <p>rgb(255 0 0)</p>
+        <p>hsl(0 100% 50%)</p>
         <p>hwb(0 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 25.1%, 64.9%)">
+      <div class="c" style="background-color: hsl(0 25.1% 64.9%)">
         <p class="c-n">RosyBrown</p>
         <p>#BC8F8F</p>
-        <p>rgb(188, 143, 143)</p>
-        <p>hsl(0, 25.1%, 64.9%)</p>
+        <p>rgb(188 143 143)</p>
+        <p>hsl(0 25.1% 64.9%)</p>
         <p>hwb(0 56.1% 26.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(225, 72.7%, 56.9%)">
+      <div class="c" style="background-color: hsl(225 72.7% 56.9%)">
         <p class="c-n">RoyalBlue</p>
         <p>#4169E1</p>
-        <p>rgb(65, 105, 225)</p>
-        <p>hsl(225, 72.7%, 56.9%)</p>
+        <p>rgb(65 105 225)</p>
+        <p>hsl(225 72.7% 56.9%)</p>
         <p>hwb(225 25.6% 11.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(25, 75.9%, 31%)">
+      <div class="c" style="background-color: hsl(25 75.9% 31%)">
         <p class="c-n">SaddleBrown</p>
         <p>#8B4513</p>
-        <p>rgb(139, 69, 19)</p>
-        <p>hsl(25, 75.9%, 31%)</p>
+        <p>rgb(139 69 19)</p>
+        <p>hsl(25 75.9% 31%)</p>
         <p>hwb(25 7.5% 45.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(6, 93.2%, 71.4%)">
+      <div class="c" style="background-color: hsl(6 93.2% 71.4%)">
         <p class="c-n">Salmon</p>
         <p>#FA8072</p>
-        <p>rgb(250, 128, 114)</p>
-        <p>hsl(6, 93.2%, 71.4%)</p>
+        <p>rgb(250 128 114)</p>
+        <p>hsl(6 93.2% 71.4%)</p>
         <p>hwb(6 44.7% 1.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(28, 87.1%, 66.7%)">
+      <div class="c" style="background-color: hsl(28 87.1% 66.7%)">
         <p class="c-n">SandyBrown</p>
         <p>#F4A460</p>
-        <p>rgb(244, 164, 96)</p>
-        <p>hsl(28, 87.1%, 66.7%)</p>
+        <p>rgb(244 164 96)</p>
+        <p>hsl(28 87.1% 66.7%)</p>
         <p>hwb(28 37.7% 4.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(146, 50.3%, 36.3%)">
+      <div class="c" style="background-color: hsl(146 50.3% 36.3%)">
         <p class="c-n">SeaGreen</p>
         <p>#2E8B57</p>
-        <p>rgb(46, 139, 87)</p>
-        <p>hsl(146, 50.3%, 36.3%)</p>
+        <p>rgb(46 139 87)</p>
+        <p>hsl(146 50.3% 36.3%)</p>
         <p>hwb(146 18% 45.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(25, 100%, 96.7%)">
+      <div class="c" style="background-color: hsl(25 100% 96.7%)">
         <p class="c-n">Seashell</p>
         <p>#FFF5EE</p>
-        <p>rgb(255, 245, 238)</p>
-        <p>hsl(25, 100%, 96.7%)</p>
+        <p>rgb(255 245 238)</p>
+        <p>hsl(25 100% 96.7%)</p>
         <p>hwb(25 93.4% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(19, 56.1%, 40.2%)">
+      <div class="c" style="background-color: hsl(19 56.1% 40.2%)">
         <p class="c-n">Sienna</p>
         <p>#A0522D</p>
-        <p>rgb(160, 82, 45)</p>
-        <p>hsl(19, 56.1%, 40.2%)</p>
+        <p>rgb(160 82 45)</p>
+        <p>hsl(19 56.1% 40.2%)</p>
         <p>hwb(19 17.6% 37.2%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 75.3%)">
+      <div class="c" style="background-color: hsl(0 0% 75.3%)">
         <p class="c-n">Silver</p>
         <p>#C0C0C0</p>
-        <p>rgb(192, 192, 192)</p>
-        <p>hsl(0, 0%, 75.3%)</p>
+        <p>rgb(192 192 192)</p>
+        <p>hsl(0 0% 75.3%)</p>
         <p>hwb(0 75.3% 24.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(197, 71.4%, 72.5%)">
+      <div class="c" style="background-color: hsl(197 71.4% 72.5%)">
         <p class="c-n">SkyBlue</p>
         <p>#87CEEB</p>
-        <p>rgb(135, 206, 235)</p>
-        <p>hsl(197, 71.4%, 72.5%)</p>
+        <p>rgb(135 206 235)</p>
+        <p>hsl(197 71.4% 72.5%)</p>
         <p>hwb(197 52.9% 7.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(248, 53.5%, 57.8%)">
+      <div class="c" style="background-color: hsl(248 53.5% 57.8%)">
         <p class="c-n">SlateBlue</p>
         <p>#6A5ACD</p>
-        <p>rgb(106, 90, 205)</p>
-        <p>hsl(248, 53.5%, 57.8%)</p>
+        <p>rgb(106 90 205)</p>
+        <p>hsl(248 53.5% 57.8%)</p>
         <p>hwb(248 35.2% 19.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(210, 12.6%, 50.2%)">
+      <div class="c" style="background-color: hsl(210 12.6% 50.2%)">
         <p class="c-n">SlateGray</p>
         <p>#708090</p>
-        <p>rgb(112, 128, 144)</p>
-        <p>hsl(210, 12.6%, 50.2%)</p>
+        <p>rgb(112 128 144)</p>
+        <p>hsl(210 12.6% 50.2%)</p>
         <p>hwb(210 43.9% 43.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(210, 12.6%, 50.2%)">
+      <div class="c" style="background-color: hsl(210 12.6% 50.2%)">
         <p class="c-n">SlateGrey</p>
         <p>#708090</p>
-        <p>rgb(112, 128, 144)</p>
-        <p>hsl(210, 12.6%, 50.2%)</p>
+        <p>rgb(112 128 144)</p>
+        <p>hsl(210 12.6% 50.2%)</p>
         <p>hwb(210 43.9% 43.5%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 100%, 99%)">
+      <div class="c" style="background-color: hsl(0 100% 99%)">
         <p class="c-n">Snow</p>
         <p>#FFFAFA</p>
-        <p>rgb(255, 250, 250)</p>
-        <p>hsl(0, 100%, 99%)</p>
+        <p>rgb(255 250 250)</p>
+        <p>hsl(0 100% 99%)</p>
         <p>hwb(0 98% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(150, 100%, 50%)">
+      <div class="c" style="background-color: hsl(150 100% 50%)">
         <p class="c-n">SpringGreen</p>
         <p>#00FF7F</p>
-        <p>rgb(0, 255, 127)</p>
-        <p>hsl(150, 100%, 50%)</p>
+        <p>rgb(0 255 127)</p>
+        <p>hsl(150 100% 50%)</p>
         <p>hwb(150 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(207, 44%, 49%)">
+      <div class="c" style="background-color: hsl(207 44% 49%)">
         <p class="c-n">SteelBlue</p>
         <p>#4682B4</p>
-        <p>rgb(70, 130, 180)</p>
-        <p>hsl(207, 44%, 49%)</p>
+        <p>rgb(70 130 180)</p>
+        <p>hsl(207 44% 49%)</p>
         <p>hwb(207 27.4% 29.4%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(34, 43.7%, 68.6%)">
+      <div class="c" style="background-color: hsl(34 43.7% 68.6%)">
         <p class="c-n">Tan</p>
         <p>#D2B48C</p>
-        <p>rgb(210, 180, 140)</p>
-        <p>hsl(34, 43.7%, 68.6%)</p>
+        <p>rgb(210 180 140)</p>
+        <p>hsl(34 43.7% 68.6%)</p>
         <p>hwb(34 54.9% 17.7%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(180, 100%, 25.1%)">
+      <div class="c" style="background-color: hsl(180 100% 25.1%)">
         <p class="c-n">Teal</p>
         <p>#008080</p>
-        <p>rgb(0, 128, 128)</p>
-        <p>hsl(180, 100%, 25.1%)</p>
+        <p>rgb(0 128 128)</p>
+        <p>hsl(180 100% 25.1%)</p>
         <p>hwb(180 0% 49.8%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 24.3%, 79.8%)">
+      <div class="c" style="background-color: hsl(300 24.3% 79.8%)">
         <p class="c-n">Thistle</p>
         <p>#D8BFD8</p>
-        <p>rgb(216, 191, 216)</p>
-        <p>hsl(300, 24.3%, 79.8%)</p>
+        <p>rgb(216 191 216)</p>
+        <p>hsl(300 24.3% 79.8%)</p>
         <p>hwb(300 74.9% 15.3%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(9, 100%, 63.9%)">
+      <div class="c" style="background-color: hsl(9 100% 63.9%)">
         <p class="c-n">Tomato</p>
         <p>#FF6347</p>
-        <p>rgb(255, 99, 71)</p>
-        <p>hsl(9, 100%, 63.9%)</p>
+        <p>rgb(255 99 71)</p>
+        <p>hsl(9 100% 63.9%)</p>
         <p>hwb(9 27.8% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(174, 72.1%, 56.5%)">
+      <div class="c" style="background-color: hsl(174 72.1% 56.5%)">
         <p class="c-n">Turquoise</p>
         <p>#40E0D0</p>
-        <p>rgb(64, 224, 208)</p>
-        <p>hsl(174, 72.1%, 56.5%)</p>
+        <p>rgb(64 224 208)</p>
+        <p>hsl(174 72.1% 56.5%)</p>
         <p>hwb(174 25.1% 12.1%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(300, 76.1%, 72.2%)">
+      <div class="c" style="background-color: hsl(300 76.1% 72.2%)">
         <p class="c-n">Violet</p>
         <p>#EE82EE</p>
-        <p>rgb(238, 130, 238)</p>
-        <p>hsl(300, 76.1%, 72.2%)</p>
+        <p>rgb(238 130 238)</p>
+        <p>hsl(300 76.1% 72.2%)</p>
         <p>hwb(300 51% 6.6%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(39, 76.7%, 83.1%)">
+      <div class="c" style="background-color: hsl(39 76.7% 83.1%)">
         <p class="c-n">Wheat</p>
         <p>#F5DEB3</p>
-        <p>rgb(245, 222, 179)</p>
-        <p>hsl(39, 76.7%, 83.1%)</p>
+        <p>rgb(245 222 179)</p>
+        <p>hsl(39 76.7% 83.1%)</p>
         <p>hwb(39 70.1% 3.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 100%)">
+      <div class="c" style="background-color: hsl(0 0% 100%)">
         <p class="c-n">White</p>
         <p>#FFFFFF</p>
-        <p>rgb(255, 255, 255)</p>
-        <p>hsl(0, 0%, 100%)</p>
+        <p>rgb(255 255 255)</p>
+        <p>hsl(0 0% 100%)</p>
         <p>hwb(0 100% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(0, 0%, 96.1%)">
+      <div class="c" style="background-color: hsl(0 0% 96.1%)">
         <p class="c-n">WhiteSmoke</p>
         <p>#F5F5F5</p>
-        <p>rgb(245, 245, 245)</p>
-        <p>hsl(0, 0%, 96.1%)</p>
+        <p>rgb(245 245 245)</p>
+        <p>hsl(0 0% 96.1%)</p>
         <p>hwb(0 96.1% 3.9%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(60, 100%, 50%)">
+      <div class="c" style="background-color: hsl(60 100% 50%)">
         <p class="c-n">Yellow</p>
         <p>#FFFF00</p>
-        <p>rgb(255, 255, 0)</p>
-        <p>hsl(60, 100%, 50%)</p>
+        <p>rgb(255 255 0)</p>
+        <p>hsl(60 100% 50%)</p>
         <p>hwb(60 0% 0%)</p>
       </div>
 
-      <div class="c" style="background-color: hsl(80, 60.8%, 50%)">
+      <div class="c" style="background-color: hsl(80 60.8% 50%)">
         <p class="c-n">YellowGreen</p>
         <p>#9ACD32</p>
-        <p>rgb(154, 205, 50)</p>
-        <p>hsl(80, 60.8%, 50%)</p>
+        <p>rgb(154 205 50)</p>
+        <p>hsl(80 60.8% 50%)</p>
         <p>hwb(80 19.6% 19.6%)</p>
       </div>
     </div>
   </section>
 
   <section id="sistema">
-    <h2>Nombres de colores del sistema</h2>
+    <h2 class="con-aside">Nombres de colores del sistema</h2>
 
-    <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a> y hacen referencia a los colores utilizados por el interfaz del sistema operativo.</p>
+    <aside class="enlace-norma">
+      <p>
+        Colores de sistema<br>
+        <a href="https://www.w3.org/TR/css-color-4/#css-system-colors"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS4" title="Recomendación CSS4" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
 
-    <p>Los navegadores interpretaban e interpretan correctamente estos nombres de colores, pero en estos apuntes estos colores ya no se comentan en esta lección, sino en la <a href="css-obsoletas.html#colores-sistema">lección de elementos obsoletos</a>, porque en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a> estos nombres pasaron a considerarse obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>.</p>
+    <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a> y hacían referencia a los colores utilizados en los elementos del interfaz del sistema operativo. En la primera edición de la recomendación <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#css-system">CSS 3 Color (junio 2011)</a> todos estos nombres <a href="css-obsoletas.html#colores-sistema">pasaron a considerarse obsoletos</a>, en favor de la propiedad <span class="css-prop">appearance</span> definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (mayo de 2022) en elaboración.</p>
 
-    <p>El problema es que la propiedad <span class="css-prop">appearance</span> no está incluida en ninguna recomendación ya aprobada. Esta propiedad se encuentra definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (octubre de 2021) en elaboración, pero parece que esta propiedad tiene serios problemas de incompatibilidad entre navegadores.</p>
+    <p>Desde noviembre de 2019, la futura recomendación <a href="https://www.w3.org/TR/css-color-4/#css-system-colors">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración, incluye una lista distinta de colores de sistema, que hacen referencia a los colores predeterminados de elementos de las páginas web y a los que afecta el esquema de colores (claro u oscuro) del sistema operativo. La lista de colores de sistema es la siguiente:</p>
 
-    <p>Mientras los navegadores los admitan, los nombres de colores de sistema se pueden utilizar, pero nada garantizada que los navegadores dejen de aceptarlos en un futuro.</p>
+    <table>
+      <thead>
+        <tr>
+          <td style="border-bottom: 2px black solid">Color (en modo claro)</td>
+          <td style="border-bottom: 2px black solid">Color (en modo oscuro)</td>
+          <td style="border-bottom: 2px black solid">Nombre</td>
+          <td style="border-bottom: 2px black solid">Concepto</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="color-scheme: light; background-color: Canvas"></td>
+          <td style="color-scheme: dark; background-color: Canvas"></td>
+          <td>Canvas</td>
+          <td>Fondo de la aplicación o de los documentos</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: CanvasText"></td>
+          <td style="color-scheme: dark; background-color: CanvasText"></td>
+          <td>CanvasText</td>
+          <td>Texto de la aplicación o de los documentos</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: LinkText"></td>
+          <td style="color-scheme: dark; background-color: LinkText"></td>
+          <td>LinkText</td>
+          <td>Texto de los enlaces todavía no visitados</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: VisitedText"></td>
+          <td style="color-scheme: dark; background-color: VisitedText"></td>
+          <td>VisitedText</td>
+          <td>Texto de los enlaces ya visitados</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: ActiveText"></td>
+          <td style="color-scheme: dark; background-color: ActiveText"></td>
+          <td>ActiveText</td>
+          <td>Texto de los enlaces activos</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: ButtonFace"></td>
+          <td style="color-scheme: dark; background-color: ButtonFace"></td>
+          <td>ButtonFace</td>
+          <td>Fondo de los botones</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: ButtonText"></td>
+          <td style="color-scheme: dark; background-color: ButtonText"></td>
+          <td>ButtonText</td>
+          <td>Texto de los botones</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: ButtonBorder"></td>
+          <td style="color-scheme: dark; background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
+          <td>Borde de los botones</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: Field"></td>
+          <td style="color-scheme: dark; background-color: Field"></td>
+          <td>Field</td>
+          <td>Fondo de los campos de texto de formularios</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: FieldText"></td>
+          <td style="color-scheme: dark; background-color: FieldText"></td>
+          <td>FieldText</td>
+          <td>Texto de los campos de texto de formularios</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: Highlight"></td>
+          <td style="color-scheme: dark; background-color: Highlight"></td>
+          <td>Highlight</td>
+          <td>Fondo del texto seleccionado</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: HighlightText"></td>
+          <td style="color-scheme: dark; background-color: HighlightText"></td>
+          <td>HighlightText</td>
+          <td>Texto seleccionado</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: SelectedItem"></td>
+          <td style="color-scheme: dark; background-color: SelectedItem"></td>
+          <td>SelectedItem</td>
+          <td>Fondo de los elementos seleccionados (por ejmplo una casilla de verificación de un formulario)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: SelectedItemText"></td>
+          <td style="color-scheme: dark; background-color: SelectedItemText"></td>
+          <td>SelectedItemText</td>
+          <td>Texto de los elementos seleccionados</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: Mark"></td>
+          <td style="color-scheme: dark; background-color: Mark"></td>
+          <td>Mark</td>
+          <td>Fondo de un texto marcado de forma especial</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: MarkText"></td>
+          <td style="color-scheme: dark; background-color: MarkText"></td>
+          <td>MarkText</td>
+          <td>Texto marcado de forma especial</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td style="color-scheme: light; background-color: GrayText"></td>
+          <td style="color-scheme: dark; background-color: GrayText"></td>
+          <td>GrayText</td>
+          <td>Texto deshabilitado</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
