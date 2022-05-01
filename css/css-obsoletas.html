@@ -143,16 +143,32 @@ li::before {
   </section>
 
   <section id="colores-sistema">
-    <h2>Colores del sistema</h2>
+    <h2 class="con-aside">Colores del sistema obsoletos</h2>
 
-    <p>Los colores del sistema hacen referencia a los colores utilizados por el interfaz del sistema operativo. Formaban parte de la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a>, pero desde la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a> se consideran obsoletos, en favor de la propiedad <span class="css-prop">appearance</span>, definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (octubre de 2021) en elaboración.</p>
+    <aside class="enlace-norma">
+      <p>
+        Colores obsoletos<br>
+        <a href="https://www.w3.org/TR/css-color-3/#css-system"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://www.w3.org/TR/css-color-4/#deprecated-system-colors"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS4" title="Recomendación CSS4" width="28" height="32"></a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/system_color_keywords#deprecated_system_color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
+      </p>
+    </aside>
+
+    <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a> y hacían referencia a los colores utilizados en los elementos del interfaz del sistema operativo. En la primera edición de la recomendación <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#css-system">CSS 3 Color (junio 2011)</a> todos estos nombres pasaron a considerarse obsoletos, en favor de la propiedad <span class="css-prop">appearance</span> definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (mayo de 2022) en elaboración. La futura recomendación <a href="https://www.w3.org/TR/css-color-4/#deprecated-system-colors">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración, ha vuelto a incluir una lista de <a href="css-color.html#sistema">colores de sistema válidos</a> más reducida y sigue considerando obsoletos la mayoría de los antiguos colores de sistema. Además, exige que los navegadores conviertan automáticamente los valores obsoletos en alguno de los nuevos valores.</p>
 
     <table>
       <thead>
         <tr>
+          <td colspan="2" style="text-align: center;">Valores obsoletos</td>
+          <td></td>
+          <td colspan="2">Convertidos automáticamente en ...</td>
+        </tr>
+        <tr>
           <td style="border-bottom: 2px black solid">Color</td>
           <td style="border-bottom: 2px black solid">Nombre</td>
           <td style="border-bottom: 2px black solid">Concepto</td>
+          <td style="border-bottom: 2px black solid">Color</td>
+          <td style="border-bottom: 2px black solid">Nombre</td>
           <td></td>
         </tr>
       </thead>
@@ -161,168 +177,184 @@ li::before {
           <td style="background-color: ActiveBorder"></td>
           <td>ActiveBorder</td>
           <td>Borde de la ventana activa</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ActiveCaption"></td>
           <td>ActiveCaption</td>
           <td>Título de la ventana activa</td>
+          <td style="background-color: CanvasText"></td>
+          <td>CanvasText</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: AppWorkspace"></td>
           <td>AppWorkspace</td>
           <td>Color de fondo del interfaz de múltiples documentos</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: Background"></td>
           <td>Background</td>
           <td>Color de fondo del escritorio</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="background-color: ButtonFace"></td>
-          <td>ButtonFace</td>
-          <td>Color frontal de los elementos 3D</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ButtonHighlight"></td>
           <td>ButtonHighlight</td>
-          <td>Sombra oscura de los elementos 3D (bordes opuestos a la fuente de luz)</td>
+          <td>Color del borde iluminado de los elementos 3D (bordes que da a la fuente de luz)</td>
+          <td style="background-color: ButtonFace"></td>
+          <td>ButtonFace</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ButtonShadow"></td>
           <td>ButtonShadow</td>
-          <td>Sombra de los elementos 3D</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="background-color: ButtonText"></td>
-          <td>ButtonText</td>
-          <td>Texto de los botones</td>
+          <td>Color del borde opuesto de los elementos 3D (bordes opuesto a la fuente de luz)</td>
+          <td style="background-color: ButtonFace"></td>
+          <td>ButtonFace</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: CaptionText"></td>
           <td>CaptionText</td>
           <td>Texto en título, caja de tamaño y caja de flecha de desplazamiento</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="background-color: GrayText"></td>
-          <td>GrayText</td>
-          <td>Texto en gris (desactivado). Este color es #000000 si no se puede mostrar un color gris sólido</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="background-color: Highlight"></td>
-          <td>Highlight</td>
-          <td>Elemento(s) seleccionado(s) en un control</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style="background-color: HighlightText"></td>
-          <td>HighlightText</td>
-          <td>Texto de (de los) elemento(s) seleccionado(s) en un control</td>
+          <td style="background-color: CanvasText"></td>
+          <td>CanvasText</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: InactiveBorder"></td>
           <td>InactiveBorder</td>
           <td>Borde de la ventana inactiva</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: InactiveCaption"></td>
           <td>InactiveCaption</td>
           <td>Título de la ventana inactiva</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: InactiveCaptionText"></td>
           <td>InactiveCaptionText</td>
           <td>Texto de un título inactivo</td>
+          <td style="background-color: GrayText"></td>
+          <td>GrayText</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: InfoBackground"></td>
           <td>InfoBackground</td>
           <td>Color de fondo de los tooltips</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: InfoText"></td>
           <td>InfoText</td>
           <td>Texto de los tooltips</td>
+          <td style="background-color: CanvasText"></td>
+          <td>CanvasText</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: Menu"></td>
           <td>Menu</td>
           <td>Fondo de los menús</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: MenuText"></td>
           <td>MenuText</td>
           <td>Texto de los menús</td>
+          <td style="background-color: CanvasText"></td>
+          <td>CanvasText</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: Scrollbar"></td>
           <td>Scrollbar</td>
           <td>Área gris de la barra de desplazamiento</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ThreeDDarkShadow"></td>
           <td>ThreeDDarkShadow</td>
           <td>Sombra oscura de los elementos 3D</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ThreeDFace"></td>
           <td>ThreeDFace</td>
           <td>Color frontal de los elementos 3D</td>
+          <td style="background-color: ButtonFace"></td>
+          <td>ButtonFace</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ThreeDHighlight"></td>
           <td>ThreeDHighlight</td>
           <td>Color brillante de los elementos 3D</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ThreeDLightShadow"></td>
           <td>ThreeDLightShadow</td>
           <td>Color claro de los elementos 3D (bordes frente a la fuente de luz)</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: ThreeDShadow"></td>
           <td>ThreeDShadow</td>
           <td>Sombra oscura de los elementos 3D</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: Window"></td>
           <td>Window</td>
           <td>Fondo de la ventana</td>
+          <td style="background-color: Canvas"></td>
+          <td>Canvas</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: WindowFrame"></td>
           <td>WindowFrame</td>
           <td>Marco de la ventana</td>
+          <td style="background-color: ButtonBorder"></td>
+          <td>ButtonBorder</td>
           <td></td>
         </tr>
         <tr>
           <td style="background-color: WindowText"></td>
           <td>WindowText</td>
           <td>Texto en las ventanas</td>
+          <td style="background-color: Canvastext"></td>
+          <td>Canvastext</td>
           <td></td>
         </tr>
       </tbody>
@@ -339,7 +371,7 @@ li::before {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 24 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
