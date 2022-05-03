@@ -84,15 +84,16 @@
         <li><a href="#html32">Nombres HTML 3.2</a></li>
         <li><a href="#svg">Nombres X11 / SVG</a></li>
         <li><a href="#sistema">Nombres del sistema</a></li>
+        <li><a href="#notacion-clasica">Notación clásica</a></li>
       </ul>
     </div>
   </nav>
 
-  <p>En esta lección se comentan las propiedades CSS y los códigos de colores definidos en la recomendación <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/">CSS 3 Color</a>, publicada en enero de 2022, y en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (marzo de 2022) en elaboración.</p>
+  <p>En esta lección se comentan las propiedades CSS y los códigos de colores definidos en la recomendación <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/">CSS Color Module Level 3</a>, publicada en enero de 2022, y en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración.</p>
 
-  <p>Estas propiedades permiten establecer el color del texto y la opacidad/transparencia de un elemento.</p>
+  <p>Estas propiedades permiten establecer el color y transparencia del texto o del fondo del elemento.</p>
 
-  <p>En esta lección se explica cómo expresar colores mediante códigos numéricos (RGB, RGBA, HSL y HSLA) o mediante nombres de colores (básicos o extendidos). En la lección <a href="css-color-esquemas.html">Esquemas de colores</a> se explican alguna de las formas de obtener combinaciones de colores visualmente atractivas.</p>
+  <p>En esta lección se explica cómo expresar colores mediante códigos numéricos (RGB, HSL o HWB, utilizando la notación funcional, sin comas) o mediante nombres de colores (básicos, extendidos o de sistema). En la lección <a href="css-color-esquemas.html">Esquemas de colores</a> se explican alguna de las formas de obtener combinaciones de colores visualmente atractivas.</p>
 
   <section id="convertidor">
     <h2>Convertidor de código de colores</h2>
@@ -333,6 +334,7 @@
         ["Plum", "#DDA0DD", "rgb(221 160 221)", "hsl(300 47.3% 74.7%)", "hwb(300 62.7% 13.3%)"],
         ["PowderBlue", "#B0E0E6", "rgb(176 224 230)", "hsl(187 51.9% 79.6%)", "hwb(187 69% 9.8%)"],
         ["Purple", "#800080", "rgb(128 0 128)", "hsl(300 100% 25.1%)", "hwb(300 0% 49.8%)"],
+        ["RebeccaPurple", "#663399", "rgb(102 51 153)", "hsl(270 50% 40%)", "hwb(270 20% 40%)"],
         ["Red", "#FF0000", "rgb(255 0 0)", "hsl(0 100% 50%)", "hwb(0 0% 0%)"],
         ["RosyBrown", "#BC8F8F", "rgb(188 143 143)", "hsl(0 25.1% 64.9%)", "hwb(0 56.1% 26.3%)"],
         ["RoyalBlue", "#4169E1", "rgb(65 105 225)", "hsl(225 72.7% 56.9%)", "hwb(225 25.6% 11.8%)"],
@@ -611,7 +613,7 @@
     <aside class="enlace-norma">
       <p>
         <span class="css-prop">color</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#foreground"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/#foreground"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
@@ -645,7 +647,7 @@ p {
     <aside class="enlace-norma">
       <p>
         <span class="css-prop">opacity</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#transparency"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/#transparency"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
@@ -820,7 +822,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       </p>
     </aside>
 
-    <p>Los códigos de colores HSL se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a>.</p>
+    <p>Los códigos de colores HSL se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a>.</p>
 
     <p>En el <a href="https://es.wikipedia.org/wiki/Modelo_de_color_HSL">modelo de color HSL</a> el color se define mediante tres valores:</p>
 
@@ -945,7 +947,7 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       </p>
     </aside>
 
-    <p>Los códigos de colores HWB se definen en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (marzo de 2022) en elaboración.</p>
+    <p>Los códigos de colores HWB se definen en la recomendación <a href="https://www.w3.org/TR/css-color-4/">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración.</p>
 
     <p>En el <a href="https://en.wikipedia.org/wiki/HWB_color_model">modelo de color HWB</a> el color se define mediante tres valores:</p>
 
@@ -1126,17 +1128,17 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
         </tr>
         <tr>
           <td>Rojo:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaRT"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaRT" value="255"></td>
           <td class="mcl-centrado"><span id="nRgbaRT"></span></td>
         </tr>
         <tr>
           <td>Verde:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaGT"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaGT" value="255"></td>
           <td class="mcl-centrado"><span id="nRgbaGT"></span></td>
         </tr>
         <tr>
           <td>Azul:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaBT"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaBT" value="0"></td>
           <td class="mcl-centrado"><span id="nRgbaBT"></span></td>
         </tr>
         <tr>
@@ -1144,22 +1146,22 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
         </tr>
         <tr>
           <td>Rojo:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaR"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaR" value="255"></td>
           <td class="mcl-centrado"><span id="nRgbaR"></span></td>
         </tr>
         <tr>
           <td>Verde:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaG"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaG" value="0"></td>
           <td class="mcl-centrado"><span id="nRgbaG"></span></td>
         </tr>
         <tr>
           <td>Azul:</td>
-          <td><input type="range" name="points" min="0" max="255" id="rgbaB"></td>
+          <td><input type="range" name="points" min="0" max="255" id="rgbaB" value="0"></td>
           <td class="mcl-centrado"><span id="nRgbaB"></span></td>
         </tr>
         <tr>
           <td>Transparencia:</td>
-          <td><input type="range" name="points" min="0" max="100" id="rgbaA"></td>
+          <td><input type="range" name="points" min="0" max="100" id="rgbaA" value="50"></td>
           <td class="mcl-centrado"><span id="nRgbaA"></span></td>
         </tr>
         <tr>
@@ -1235,7 +1237,7 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
     <aside class="enlace-norma">
       <p>
         <span class="css-valor">colores HTML 3.2</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#html4"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/#html4"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
@@ -1358,17 +1360,18 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
     <aside class="enlace-norma">
       <p>
         <span class="css-valor">colores SVG / X11</span><br>
-        <a href="https://www.w3.org/TR/css-color-3/#svg-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
+        <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/#svg-color"><img src="../varios/iconos/icono-css3.svg" alt="Recomendación CSS3" title="Recomendación CSS3" width="28" height="32"></a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
       </p>
     </aside>
 
-    <p>Los códigos de colores SVG (o X11) se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS 3 Color</a>, aunque los navegadores los aceptaban desde mucho antes. Se muestran a continuación los 147 colores, sus nombres y códigos RGB, HSL y HWB.</p>
+    <p>Los códigos de colores SVG (o X11) se incorporaron a CSS en la primera edición (junio de 2011) de la recomendación <a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a>, aunque los navegadores los aceptaban desde mucho antes. Se muestran a continuación los 148 colores, sus nombres y códigos RGB, HSL y HWB.</p>
 
     <p><strong>Notas</strong>:</p>
     <ul>
-      <li>Los colores Fuchsia y Magenta son el mismo color y los colores Aqua y Cyan son también el mismo color, por lo que la tabla contiene en realidad 138 colores distintos.</li>
-      <li>También están duplicados los nombres de los colores grises, que pueden incluir los términos "gray" o "grey" (DarkGrey/DarkGray, etc). En X11 sólo era válida una de las dos variantes, pero en la recomendación SVG 1.0 ya se admitían ambas variantes.</li>
+      <li>Los nombres de los colores grises están duplicados, incluyendo los términos "gray" o "grey" (DarkGrey/DarkGray, etc). En X11 sólo era válida una de las dos variantes, pero en la recomendación SVG 1.0 ya se admitían ambas variantes.</li>
+      <li>Los colores Fuchsia y Magenta son el mismo color y los colores Aqua y Cyan son también el mismo color, por lo que la tabla contiene en realidad 139 colores distintos.</li>
+      <li>El color RebeccaPurple se añadió en junio de 2014 en homenaje a la hija de <a href="https://meyerweb.com/eric/">Eric Meyer</a> [<a href="https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416">ref</a>].</li>
     </ul>
 
     <div class="c-l">
@@ -2324,6 +2327,14 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
         <p>hwb(300 0% 49.8%)</p>
       </div>
 
+      <div class="c" style="background-color: hsl(270 50% 40%)">
+        <p class="c-n">RebeccaPurple</p>
+        <p>#663399</p>
+        <p>rgb(102 51 153)</p>
+        <p>hsl(270 50% 40%)</p>
+        <p>hwb(270 20% 40%)</p>
+      </div>
+
       <div class="c" style="background-color: hsl(0 100% 50%)">
         <p class="c-n">Red</p>
         <p>#FF0000</p>
@@ -2561,7 +2572,7 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
       </p>
     </aside>
 
-    <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a> y hacían referencia a los colores utilizados en los elementos del interfaz del sistema operativo. En la primera edición de la recomendación <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#css-system">CSS 3 Color (junio 2011)</a> todos estos nombres <a href="css-obsoletas.html#colores-sistema">pasaron a considerarse obsoletos</a>, en favor de la propiedad <span class="css-prop">appearance</span> definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (mayo de 2022) en elaboración.</p>
+    <p>Los colores del sistema se introdujeron en la recomendación <a href="https://www.w3.org/TR/CSS2/ui.html#system-colors">CSS 2</a> y hacían referencia a los colores utilizados en los elementos del interfaz del sistema operativo. En la primera edición de la recomendación <a href="https://www.w3.org/TR/2011/REC-css3-color-20110607/#css-system">CSS Color Module Level 3 (junio 2011)</a> todos estos nombres <a href="css-obsoletas.html#colores-sistema">pasaron a considerarse obsoletos</a>, en favor de la propiedad <span class="css-prop">appearance</span> definida únicamente para elementos de formularios en la futura recomendación <a href="https://www.w3.org/TR/css-ui-4/#appearance-switching">CSS 4: Interfaz de usuario básico</a>, actualmente (mayo de 2022) en elaboración.</p>
 
     <p>Desde noviembre de 2019, la futura recomendación <a href="https://www.w3.org/TR/css-color-4/#css-system-colors">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración, incluye una lista distinta de colores de sistema, que hacen referencia a los colores predeterminados de elementos de las páginas web y a los que afecta el esquema de colores (claro u oscuro) del sistema operativo. La lista de colores de sistema es la siguiente:</p>
 
@@ -2699,8 +2710,73 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
     </table>
   </section>
 
+  <section id="notacion-clasica">
+    <h2>Notación clásica</h2>
+
+    <p>La futura recomendación <a href="https://www.w3.org/TR/css-color-4/#css-system-colors">CSS Color Module Level 4</a>, actualmente (mayo de 2022) en elaboración, ha adoptado la notación funcional (sin comas) para expresar los colores, notación que se utiliza en los apartados anteriores de esta lección. Firefox admite la notación funcional desde la versión 52 (marzo de 2017), Chrome desde la versión 65 (marzo de 2018) y Safari desde la versión 12.1 (marzo de 2019).</p>
+
+    <p>En las recomendaciones <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/syndata.html#color-units">CSS 2</a> y <a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a> los tres componentes de los códigos de color expresados mediante las funciones rgb() y hsl() se separaban mediante comas. Esta notación se puede seguir utilizando, como muestra el siguiente ejemplo:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  background-color: rgb(20, 183, 110);
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-notacion-clasica-1.html" style="width: 100%; height: 4em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-notacion-clasica-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En las recomendaciones <a href="https://www.w3.org/TR/1998/REC-CSS2-19980512/syndata.html#color-units">CSS 2</a> y <a href="https://www.w3.org/TR/css-color-3/">CSS Color Module Level 3</a> los colores con transparencia se expresaban mediante las funciones rgba() y hsla(), en la que los cuatro valores se separaban mediante comas. Estas funciones se pueden seguir utilziando, como muestra el siguiente ejemplo:</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  background-color: rgb(255, 255, 0);
+  color: rgba(255, 0, 0, 50%);
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-notacion-clasica-2.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-notacion-clasica-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Pero las nuevas funciones (como <span class="css-funcion">hwb()</span>) sólo admiten la notación funcional, como muestra el siguiente ejemplo:</p>
+
+    <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+      </div>
+      <div class="codigo">
+        <pre>
+<code class="language-css">p {
+  background-color: hwb(60, 0%, 0%);
+  color: hwb(0, 0%, 0%, 50%);
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/color/color-notacion-clasica-3.html" style="width: 100%; height: 5em">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/color/color-notacion-clasica-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 3 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
