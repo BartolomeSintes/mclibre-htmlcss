@@ -139,7 +139,7 @@
       </svg>
     </p>
 
-    <p>Otras recomendaciones (por ejemplo, MathML), han definido más entidades de carácter que los navegadores también reconocen. La recomendación <a href="https://www.w3.org/TR/2014/REC-xml-entity-names-20140410/">XML Entity Definitions for Characters (2ª edición, publicada en abril de 2014)</a> recopiló las entidades de carácter más empleadas en páginas web. En la web del W3C se puede consultar un lista de entidades de carácter visualmente atractiva en <a href="https://dev.w3.org/html5/html-author/charref">https://dev.w3.org/html5/html-author/charref</a>, pero no sé si está actualizada.</p>
+    <p>Otras recomendaciones (por ejemplo, MathML), han definido más entidades de carácter que los navegadores también reconocen. La recomendación <a href="https://www.w3.org/TR/2014/REC-xml-entity-names-20140410/">XML Entity Definitions for Characters (2ª edición, publicada en abril de 2014)</a> recopiló las entidades de carácter más empleadas en páginas web. En la web del W3C se puede consultar una <a href="https://dev.w3.org/html5/html-author/charref">lista de entidades de carácter</a>, pero no sé si está actualizada.</p>
 
     <p>En HTML 5 la lista de entidades de carácter se amplió a más 2200. En la página <a href="html-entidades-nombres-lista.html">Entidades de carácter HTML</a> se muestra la lista completa.</p>
 
@@ -181,11 +181,13 @@
 
     <hr class="corta">
 
-    <p>Los navegadores sólo pueden representar un carácter Unicode si tiene instalado una fuente que contenga ese carácter. Por eso hay que tener cuidado al incluir caracteres Unicode, porque los visitantes pueden no ver esos caracteres.</p>
+    <p>Las fuentes no suelen incluir todos los caracteres Unicode existentes, por lo que los navegadores suelen recurrir a distintas fuentes dependiendo de los caracteres a mostrar. Estas fuentes pueden ser alguna de las disponibles en el sistema operativo o estar incluidas en el navegador. Por eso hay que tener cuidado al incluir caracteres Unicode, sobre todo los incluidos en las versiones más recientes de Unicode, porque los visitantes pueden no ver esos caracteres.</p>
 
     <p>En el caso de Windows, para mostrar emojis, Microsoft distribuye gratuitamente la fuente <a href="https://en.wikipedia.org/wiki/Segoe">Segoe UI Emoji</a>, que contiene muchos caracteres Unicode. Pero Microsoft, por desgracia, ya no actualiza la fuente Segoe UI Emoji en Windows 10 una vez se ha publicado Windows 11. Windows 10 usa <a href="https://docs.microsoft.com/es-mx/typography/fonts/windows_10_font_list">la versión 1.29</a> de la fuente y Windows 11 usa actualmente (abril de 2022) <a href="https://docs.microsoft.com/es-mx/typography/fonts/windows_11_font_list">la versión 1.33</a>, que contiene más caracteres y con un estilo diferente.</p>
 
-    <p>Desde Firefox 61 (junio de 2018), Firefox utiliza la fuente <a href="https://github.com/mozilla/twemoji-colr">Twemoji-colr</a>, una versión en formato COLR de la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, creada por Twitter, para mostrar los emojis no disponibles en la fuente del sistema (Segoe UI Emoji en Windows). Anteriormente, desde Firefox 50 (noviembre de 2016) hasta Firefox 60 (mayo de 2018) Firefox utilizó la versión libre de la fuente EmojiOne. Aunque Twemoji contiene actualmente (abril de 2022) todos los emojis de Unicode 14, Twemoji-colr todavía no se ha actualizado desde Unicode 13.1.</p>
+    <p>En el caso de las distribuciones Linux, la tendencia es a incluir las <a href="https://fonts.google.com/noto">fuentes Noto</a>, una familia de fuentes libres creada por Google. Para mostrar emojis, están disponibles las fuentes <a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>.</p>
+
+    <p>Desde Firefox 61 (junio de 2018), Firefox utiliza la fuente <a href="https://github.com/mozilla/twemoji-colr">Twemoji-colr</a>, una versión en formato COLR de la fuente <a href="https://github.com/twitter/twemoji">Twemoji</a>, creada por Twitter, para mostrar los emojis no disponibles en la fuente del sistema. Anteriormente, desde Firefox 50 (noviembre de 2016) hasta Firefox 60 (mayo de 2018) Firefox utilizó la versión libre de la fuente EmojiOne. Aunque Twemoji contiene actualmente (abril de 2022) todos los emojis de Unicode 14, Twemoji-colr todavía no se ha actualizado desde Unicode 13.1.</p>
 
     <hr class="corta">
 
@@ -203,26 +205,36 @@
       </div>
     </div>
 
-    <p>Las capturas siguientes muestran cómo se ve actualmente (abril de 2022) el ejemplo anterior dependiendo del sistema operativo o del navegador:</p>
+    <p>Las capturas siguientes muestran cómo se ve actualmente (abril de 2022) el ejemplo anterior dependiendo de la fuente empleada (lo que a su vez depende del navegador y el sistema operativo):</p>
     <ul>
-      <li>Navegadores en Windows 11:
+      <li>Fuente Segoe UI Emoji (Windows 11):
         <p>
-          <img src="unicode/entidades-win11.png" alt="Entidades numéricas en Windows 11" width="910" height="85" class="vmedio">
+          <img src="unicode/entidades-win11.png" alt="Emojis en fuente Segoe UI Emoji (Windows 11)" width="910" height="85" class="vmedio">
         </p>
       </li>
-      <li>Navegadores en Windows 10:
+      <li>Fuente Segoe UI Emoji (Windows 10):
         <p>
-          <img src="unicode/entidades-win10.png" alt="Entidades numéricas en Windows 10" width="900" height="85" class="vmedio">
+          <img src="unicode/entidades-win10.png" alt="Emojis en fuente Segoe UI Emoji (Windows 10)" width="900" height="85" class="vmedio">
         </p>
       </li>
-      <li>Navegadores en Android 10:
+      <li>Fuente Noto Color Emoji (Android):
         <p>
-          <img src="unicode/entidades-android-10.png" alt="Entidades numéricas en Android 10" width="836" height="85" class="vmedio">
+          <img src="unicode/entidades-android-10.png" alt="Emojis en fuente Noto Color Emoji (Android)" width="836" height="85" class="vmedio">
         </p>
       </li>
-      <li>Safari en iOS 13/14/15:
+      <li>Fuente Noto Color Emoji (Linux):
         <p>
-          <img src="unicode/entidades-safari-13.png" alt="Entidades numéricas en iOS" width="718" height="85">
+          <img src="unicode/entidades-noto-2.png" alt="Emojis en fuente Noto Color Emoji (Linux)" width="900" height="85" class="vmedio">
+        </p>
+      </li>
+      <li>Fuente Apple Color Emoj (iOS, macOS):
+        <p>
+          <img src="unicode/entidades-safari-13.png" alt="Emojis en fuente Apple Color Emoji (iOS, macOS)" width="718" height="85">
+        </p>
+      </li>
+      <li>Fuente Twemoji (Firefox):
+        <p>
+          <img src="unicode/entidades-twemoji.png" alt="Emojis en fuente Twemoji (Firefox)" width="836" height="85" class="vmedio">
         </p>
       </li>
     </ul>
@@ -238,7 +250,7 @@
   <section id="caracteres-especiales">
     <h2>Los caracteres especiales de HTML</h2>
 
-    <p>En HTML hay cinco caracteres que tienen un significado especial. Si se quiere mostrar esos caracteres en una página web, escribirlos directamente puede hacer que la página no sea válida o puede hacer que el navegador no muestre el resultado esperado. En lugar de escribirlos directamente, se deben utilizar las entidades de carácter o las entidades numéricas correspondientes, que se muestran en la tabla siguiente.</p>
+    <p>En HTML hay cinco caracteres que tienen un significado especial. Si se quieren mostrar esos caracteres en una página web, escribirlos directamente puede hacer que la página no sea válida o puede hacer que el navegador no muestre el resultado esperado. En lugar de escribirlos directamente, se deben utilizar las entidades de carácter o las entidades numéricas correspondientes, que se muestran en la tabla siguiente. En el caso de los dos primeros (ampersand y menor que) siempre hay que escribirlos como entidad, en el caso del tercero (mayor que) es aconsejable, en el caso de los dos últimos (comillas dobles o simples) hay que escribirlas como entidad si queremos escribirlas en el valor de un atributo (lo que no es muy habitual).</p>
 
     <table class="mcl-listado mcl-franjas">
       <thead>
@@ -252,6 +264,14 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td style="text-align: center; font-size: 150%">&amp;</td>
+          <td>amp</td>
+          <td>&amp;amp;</td>
+          <td>&amp;#x26;</td>
+          <td>HTML 2.0</td>
+          <td>et (en inglés, ampersand)</td>
+        </tr>
         <tr>
           <td style="text-align: center; font-size: 150%">&lt;</td>
           <td>lt</td>
@@ -267,14 +287,6 @@
           <td>&amp;#x3E;</td>
           <td>HTML 2.0</td>
           <td>mayor</td>
-        </tr>
-        <tr>
-          <td style="text-align: center; font-size: 150%">&amp;</td>
-          <td>amp</td>
-          <td>&amp;amp;</td>
-          <td>&amp;#x26;</td>
-          <td>HTML 2.0</td>
-          <td>et (en inglés, ampersand)</td>
         </tr>
         <tr>
           <td style="text-align: center; font-size: 150%">&quot;</td>
@@ -300,6 +312,74 @@
     <p>Estos son los problemas que provoca utilizar los caracteres en vez de las entidades de carácter:</p>
 
     <ul>
+      <li>El carácter <i>ampersand</i> (&amp;) es el carácter inicial de las entidades de carácter o de las entidades numéricas. En HTML se puede escribir el carácter &amp; directamente y la página será válida, salvo si el texto que sigue al &amp; se puede interpretar como una entidad de carácter. En ese caso, además, el navegador puede mostrar un resultado no esperado. Por ello se aconseja utilizar siempre la entidad de carácter <strong>&amp;amp;</strong> cuando se quiera mostrar el carácter &amp;, para no tener que pensar en cada caso si el navegador va a mostrar el resultado esperado.
+
+        <p>En el ejemplo siguiente el navegador muestra el resultado esperado puesto que el texto que sigue al carácter &amp; no corresponde a ninguna entidad de carácter o numérica. La página es válida.</p>
+
+        <p><strong>Nota</strong>: El ejemplo se ha marcado con un aspa amarilla porque, aunque es correcto, se desaconseja no utilizar la entidad de carácter.</p>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;p&gt;Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-07.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/entidades/caracteres-especiales-07.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;p&gt;Calvin &amp;amp; Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-08.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/entidades/caracteres-especiales-08.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p>En el ejemplo siguiente el navegador no muestra el resultado esperado porque las entidades de carácter más antiguas (las incluidas en HTML 3.2 y anteriores) se pueden escribir sin el punto y coma final. Los navegadores no muestran la palabra Microsoft porque <strong>&amp;micro</strong> es la entidad de carácter del carácter <strong>&micro;</strong>. La página, además, no es válida por el mismo motivo (el validador requiere que la entidad de carácter termine por punto y coma).</p>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;microsoft.&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-09.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/entidades/caracteres-especiales-09.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-ok">
+            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;amp;microsoft.&lt;/p&gt;</code></pre>
+          </div>
+          <div class="resultado-object">
+            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-10.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
+          </div>
+          <div class="icono-enlace">
+            <a href="ejemplos/entidades/caracteres-especiales-10.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
       <li>El carácter "menor que" (&lt;) en HTML indica que se abre una etiqueta, por lo que no se debe escribir en una página web si no es por ese motivo. Aunque los navegadores sean capaces de mostrar el resultado esperado, la página no es válida. Para que la página sea correcta, se debe escribir la entidad de carácter <strong>&amp;lt;</strong>.
 
         <p>En el ejemplo siguiente, los navegadores consiguen mostrar el resultado esperado, pero la página no es válida:</p>
@@ -398,75 +478,6 @@
             <a href="ejemplos/entidades/caracteres-especiales-06.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
           </div>
         </div>
-      </li>
-      <li>El carácter <i>ampersand</i> (&amp;) es el carácter inicial de las entidades de carácter o de las entidades numéricas. En HTML se puede escribir el carácter &amp; directamente y la página será válida, salvo si el texto que sigue al &amp; se puede interpretar como una entidad de carácter. En ese caso, además, el navegador puede mostrar un resultado no esperado. Por ello se aconseja utilizar siempre la entidad de carácter <strong>&amp;amp;</strong> cuando se quiera mostrar el carácter &amp;, para no tener que pensar en cada caso si el navegador va a mostrar el resultado esperado.
-
-        <p>En el ejemplo siguiente el navegador muestra el resultado esperado puesto que el texto que sigue al carácter &amp; no corresponde a ninguna entidad de carácter o numérica. La página es válida.</p>
-
-        <p><strong>Nota</strong>: El ejemplo se ha marcado con un aspa amarilla porque, aunque es correcto, se desaconseja no utilizar la entidad de carácter.</p>
-
-        <div class="filaflex">
-          <div class="icono-ok">
-            <img src="../varios/iconos/icono-oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40">
-          </div>
-          <div class="codigo">
-            <pre><code class="language-html">&lt;p&gt;Calvin & Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-07.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/entidades/caracteres-especiales-07.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="icono-ok">
-            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
-          </div>
-          <div class="codigo">
-            <pre><code class="language-html">&lt;p&gt;Calvin &amp;amp; Hobbes es una de las grandes tiras cómicas del siglo XX.&lt;/p&gt;</code></pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-08.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/entidades/caracteres-especiales-08.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          </div>
-        </div>
-
-        <p>En el ejemplo siguiente el navegador no muestra el resultado esperado porque las entidades de carácter más antiguas (las incluidas en HTML 3.2 y anteriores) se pueden escribir sin el punto y coma final. Los navegadores no muestran la palabra Microsoft porque <strong>&amp;micro</strong> es la entidad de carácter del carácter <strong>&micro;</strong>. La página, además, no es válida por el mismo motivo (el validador requiere que la entidad de carácter termine por punto y coma).</p>
-
-        <div class="filaflex">
-          <div class="icono-ok">
-            <img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40">
-          </div>
-          <div class="codigo">
-            <pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;microsoft.&lt;/p&gt;</code></pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-09.html" style="width: 100%; height: 4em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/entidades/caracteres-especiales-09.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          </div>
-        </div>
-
-        <div class="filaflex">
-          <div class="icono-ok">
-            <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
-          </div>
-          <div class="codigo">
-            <pre><code class="language-html">&lt;p&gt;Durante años la informática personal ha estado dominada por intel&amp;amp;microsoft.&lt;/p&gt;</code></pre>
-          </div>
-          <div class="resultado-object">
-            <object type="text/html" data="ejemplos/entidades/caracteres-especiales-10.html" style="width: 100%; height: 5em;">ERROR (no puede mostrarse el objeto)</object>
-          </div>
-          <div class="icono-enlace">
-            <a href="ejemplos/entidades/caracteres-especiales-10.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-          </div>
-        </div>
-
       </li>
       <li>Los caracteres comillas dobles (") y simples (') en HTML indica el principio y final de los valores de los atributos, por tanto no se pueden escribir en un atributo y en su lugar se deben escribir las entidades de carácter <strong>&amp;quot;</strong> o <strong>&amp;apos;</strong>.
 
