@@ -24,6 +24,7 @@
 
       <ul>
         <li><a href="#que-es">Qué es una hoja de estilo</a></li>
+        <li><a href="#enlace-a-css">Enlaces a la hoja de estilo</a></li>
         <li><a href="#sintaxis">Sintaxis CSS</a>
           <ul>
             <li><a href="#estilos-cascada">Estilos en cascada</a></li>
@@ -451,6 +452,106 @@ p {
         </div>
       </div>
     </section>
+  </section>
+
+  <section id="enlace-a-css">
+    <h2>Enlaces a la hoja de estilo</h2>
+
+    <p>Los enlaces a las hojas de estilo que se escriben en el atributo <span class="html-atri">href</span> pueden ser caminos absolutos (http://... si están en otro servidor público o /... si están en el mismo servidor), pero normalmente son caminos relativos, desde el directorio que contiene la página web hasta el fichero CSS.</p>
+
+    <p>La imagen siguiente muestra cuatro ejemplos de enlaces a hojas de estilo, dependiendo de la estructura de directorios del sitio web.</p>
+
+    <p class="mcl-svg-figura">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="930" height="600" viewBox="-20 -20 930 600" style="border: black 1px solid">
+        <svg x="0" y="0">
+          <text x="0" y="30" font-size="24">
+            <tspan style="font-size: 150%">&#x2460;</tspan> HTML y CSS en el mismo directorio
+          </text>
+          <text x="35" y="80" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> directorio
+          </text>
+          <polyline points="55,80 55,110 85,110" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="120" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> pagina.html
+          </text>
+          <polyline points="55,110 55,150 85,150" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="160" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> estilo.css
+          </text>
+          <text x="40" y="200" font-size="24">href="estilo.css"</text>
+        </svg>
+
+        <svg x="440" y="0">
+          <text x="0" y="30" font-size="24">
+            <tspan style="font-size: 150%">&#x2461;</tspan> CSS en subdirectorio
+          </text>
+          <text x="35" y="80" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> directorio
+          </text>
+          <polyline points="55,80 55,110 85,110" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="120" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> subdirectorio
+          </text>
+          <polyline points="110,120 110,150 145,150" fill="none" stroke="black" stroke-width="2" />
+          <text x="150" y="160" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> estilo.css
+          </text>
+          <polyline points="55,110 55,190 85,190" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="200" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> pagina.html
+          </text>
+          <text x="40" y="240" font-size="24">href="subdirectorio/estilo.css"</text>
+        </svg>
+
+        <svg x="0" y="280">
+          <text x="0" y="30" font-size="24">
+            <tspan style="font-size: 150%">&#x2462;</tspan> HTML en subdirectorio
+          </text>
+          <text x="35" y="80" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> directorio
+          </text>
+          <polyline points="55,80 55,110 85,110" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="120" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> subdirectorio
+          </text>
+          <polyline points="110,120 110,150 145,150" fill="none" stroke="black" stroke-width="2" />
+          <text x="150" y="160" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> pagina.html
+          </text>
+          <polyline points="55,110 55,190 85,190" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="200" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> estilo.css
+          </text>
+          <text x="40" y="240" font-size="24">href="../estilo.css"</text>
+        </svg>
+
+        <svg x="440" y="280">
+          <text x="0" y="30" font-size="24">
+            <tspan style="font-size: 150%">&#x2463;</tspan> HTML y CSS en subdirectorios distintos
+          </text>
+          <text x="35" y="80" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> directorio
+          </text>
+          <polyline points="55,80 55,110 85,110" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="120" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> subdirectorio-1
+          </text>
+          <polyline points="110,120 110,150 145,150" fill="none" stroke="black" stroke-width="2" />
+          <text x="150" y="160" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> pagina.html
+          </text>
+          <polyline points="55,80 55,190 85,190" fill="none" stroke="black" stroke-width="2" />
+          <text x="90" y="200" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5c0;</tspan> subdirectorio-2
+          </text>
+          <polyline points="110,200 110,230 145,230" fill="none" stroke="black" stroke-width="2" />
+          <text x="150" y="240" font-size="24">
+            <tspan style="font-size: 150%">&#x1f5ce;</tspan> estilo.css
+          </text>
+          <text x="40" y="280" font-size="24">href="../subdirectorio-2/estilo.css"</text>
+        </svg>
+      </svg>
+    </p>
   </section>
 
   <section id="comentarios">
