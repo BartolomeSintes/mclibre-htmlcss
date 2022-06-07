@@ -123,6 +123,7 @@
         <a href="https://www.w3.org/2020/10/w3c-highlights/Overview.html">octubre 2020</a> -
         <a href="https://www.w3.org/2021/04/w3c-highlights/Overview.html">abril 2021</a> -
         <a href="https://www.w3.org/2021/10/w3c-highlights/Overview.html">octubre 2021</a> -
+        <a href="https://www.w3.org/2022/04/w3c-highlights/Overview.html">abril 2022</a> -
         <a href="https://www.w3.org/Consortium/highlights/">última versión</a>.
       </li>
       <li>W3C Fact sheet:
@@ -334,7 +335,7 @@
         <li>El segundo y más importante es que un timador puede registrar un dominio internacionalizado similar a uno legítimo y atraer incautos a su web que no se han dado cuenta de que la dirección no es la misma (este procedimiento es una variedad de <a href="https://es.wikipedia.org/wiki/Spoofing">spoofing</a>).</li>
       </ul>
 
-      <p>Firefox 1.5, Internet Explorer 7 y Google Chrome desde su primera versión ya admitían nombres de dominio internacionalizados (Internet Explorer 6 no los admitía). Para evitar suplantaciones, cada navegador utiliza una estrategia distinta. Internet Explorer muestra las direcciones como punycode si algún carácter es de un idioma no incluido en la lista de idiomas del navegador, Firefox muestra únicamente los dominios que consideran lícitos (porque han sido registrados por un registrador fiable) y Chrome muestra las direcciones como punnycode si algún carácter no es del idioma del navegador.</p>
+      <p>Firefox 1.5, Internet Explorer 7 y Google Chrome desde su primera versión ya admitían nombres de dominio internacionalizados (Internet Explorer 6 no los admitía). Para evitar suplantaciones, los navegadores muestran las direcciones como <i>punnycode</i> si algún carácter no es del idioma del navegador. Por ejemplo la url <a href="https://&#x20bf;.org" rel="nofollow">https://&#x20bf;.org</a> (en el que se utiliza el carácter unicode del bitcoin <span style="font-size: 130%">&#x20bf;</span>) se mostraría como <a href="https://xn--4zg.org/" rel="nofollow">https://xn--4zg.org/</a>.</p>
     </section>
 
     <section id="http">
@@ -371,6 +372,8 @@
           <text x="734" y="25" text-anchor="middle" fill="red" style="font-weight: bold">HTTP 1.1 rev</text>
           <circle cx="762" cy="0" r="7" fill="red" />
           <text x="762" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">HTTP 2</text>
+          <circle cx="943" cy="0" r="7" fill="red" />
+          <text x="943" y="-15" text-anchor="middle" fill="red" style="font-weight: bold">HTTP 3</text>
         </svg>
       </p>
 
@@ -385,11 +388,12 @@
         <li>junio de 2014: <a href="https://datatracker.ietf.org/doc/html/rfc7230">RFC 7230</a> y <a href="https://datatracker.ietf.org/doc/html/rfc7231">RFC 7231</a>, escritas por R. Fielding y J. Reschke, que actualizan de nuevo el protocolo HTTP 1.1.</li>
         <li>mayo de 2015: <a href="https://datatracker.ietf.org/doc/html/rfc7540">RFC 7540</a>, escrita por M. Belshe y otros, que define la versión HTTP 2.</li>
         <li>mayo de 2015: <a href="https://datatracker.ietf.org/doc/html/rfc7541">RFC 7541</a>, escrita por R. Peon y otros, que define la compresión de cabeceras HTTP.</li>
+        <li>junio de 2022: <a href="https://datatracker.ietf.org/doc/html/rfc9114">RFC 9114</a>, escrita por M. Bishop, que define la versión HTTP 3, portocolo que pasa a trabajar sobre QUIC, basado a su vez en UDP, en vez de trabajar sobre TCP.</li>
       </ul>
 
       <p>La versión HTTP 2 se <a href="https://queue.acm.org/detail.cfm?id=2716278">criticó bastante</a>, sobre todo la precipitación con la que se redactó y aprobó, pero quizás era la única manera de evitar que otros implantaran protocolos alternativos (como <a href="https://www.chromium.org/spdy/">SPDY</a>, desarrollado por Google en 2012 para reducir la latencia del tráfico web, pero que tras la publicación de HTTP 2 <a href="https://blog.chromium.org/2015/02/hello-http2-goodbye-spdy.html">Google dejó de usar en 2016</a>). [Reportaje de Linux Week News sobre el <a href="https://lwn.net/Articles/590156/">estado de desarrollo de HTTP 2.0 de marzo de 2014</a>]</p>
 
-      <p>A finales de 2018 se empezó a hablar de una nueva versión de HTTP (que se llamaría HTTP/3), que estaría basada en UDP y no en conexiones TCP. Actualmente (diciembre de 2021), la IETF está desarrollando la norma <a href="https://datatracker.ietf.org/doc/draft-ietf-quic-http/">HTTP/3</a> [<a href="https://daniel.haxx.se/blog/2018/11/11/http-3/">ref</a>], que una vez aprobada se publicará como RFC. Se basa en el protocolo <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, propuesto por Google en 2013 y normalizado en mayo de 2021 por la IETF con la norma <a href="https://datatracker.ietf.org/doc/html/rfc9000">RFC 9000</a> (complementada por las normas <a href="https://datatracker.ietf.org/doc/html/rfc8999">RFC 8999</a>, <a href="https://datatracker.ietf.org/doc/html/rfc9001">RFC 90001</a> y <a href="https://datatracker.ietf.org/doc/html/rfc9002">RFC 9002</a>).</p>
+      <p>A finales de 2018 se empezó a trabajar en una nueva versión de HTTP (HTTP/3 [<a href="https://daniel.haxx.se/blog/2018/11/11/http-3/">ref</a>]), basada en UDP y no en conexiones TCP. En junio de 2022, la IETF ha publicado la norma <a href="https://datatracker.ietf.org/doc/html/rfc9114">RFC 9114</a>. Se basa en el protocolo <a href="https://en.wikipedia.org/wiki/QUIC">QUIC</a>, propuesto por Google en 2013 y normalizado en mayo de 2021 por la IETF con la norma <a href="https://datatracker.ietf.org/doc/html/rfc9000">RFC 9000</a> (complementada por las normas <a href="https://datatracker.ietf.org/doc/html/rfc8999">RFC 8999</a>, <a href="https://datatracker.ietf.org/doc/html/rfc9001">RFC 90001</a> y <a href="https://datatracker.ietf.org/doc/html/rfc9002">RFC 9002</a>).</p>
 
       <hr class="corta">
 
@@ -549,7 +553,7 @@
 
       <p>A finales de 2006, Tim Berners-Lee anunció la creación de un nuevo grupo de trabajo sobre HTML dentro del W3C y la reestructuración de los grupos existentes para reintregar el trabajo del WHATWG.</p>
 
-      <p>En marzo de 2007 se creó el <a href="https://www.w3.org/html/wg/">grupo de trabajo HTML</a> con la misión de retomar el desarrollo del HTML y con participación de todos los implicados (incluso de Microsoft, que se mantiene al margen del WHATWG, pero que forma parte del grupo de trabajo HTML del W3C desde el verano de 2009). Este grupo adoptó los borradores del WHATWG y desde 2008 publica regularmente borradores de HTML 5 (en un principio idénticos a los borradores del WHATWG).</p>
+      <p>En marzo de 2007 se creó el <a href="https://www.w3.org/html/wg/">grupo de trabajo HTML</a> con la misión de retomar el desarrollo del HTML y con participación de todos los implicados (incluso de Microsoft, que se mantiene al margen del WHATWG, pero que forma parte del grupo de trabajo HTML del W3C desde el verano de 2009). Este grupo adoptó los borradores del WHATWG y desde 2008 publicó regularmente borradores de HTML 5 (en un principio idénticos a los borradores del WHATWG).</p>
 
       <p>En marzo de 2007 también se creó el <a href="https://www.w3.org/MarkUp/">grupo de trabajo XHTML2</a> con la misión de continuar el desarrollo del XHTML, pero ese grupo se cerró en diciembre de 2009 sin llegar a publicar la recomendación del XHTML 2.0. <a href="https://www.w3.org/TR/2010/NOTE-xhtml2-20101216/">XHTML 2.0</a> se acabó publicando finalmente en 2010 como nota del grupo de trabajo, es decir, como trabajo abandonado.</p>
 
@@ -674,7 +678,7 @@
         <li>diciembre de 2020: <a href="https://www.w3.org/TR/2020/REC-css-contain-1-20201222/">CSS Containment Module Level 1 (2ª ed)</a>, editada por Tab Atkins y Florian Rivoal.</li>
         <li>febrero de 2021: <a href="https://www.w3.org/TR/2021/REC-css-cascade-3-20210211/">CSS Cascading and Inheritance Level 3</a>, editada por Elika J. Etemad y Tab Atkins</li>
         <li>enero de 2022: <a href="https://www.w3.org/TR/2022/REC-css-color-3-20220118/">CSS Color Module Level 3 (4ª ed)</a>, editada por Tantek Çelik y otros.</li>
-        <li>abril de 2022: <a href="https://www.w3.org/TR/2022/REC-mediaqueries-3-20220405">Media Queries Level 3</a>, editada por Florian Rivoal.</li>
+        <li>abril de 2022: <a href="https://www.w3.org/TR/2022/REC-mediaqueries-3-20220405">Media Queries Level 3 (2ª ed)</a>, editada por Florian Rivoal.</li>
       </ul>
 
       <p>Paralelamente, desde 2015 se han ido publicando CSS Snapshots, notas del grupo de trabajo que resumen el estado de las distintas recomendaciones CSS. La última versión disponible se publicó en diciembre de 2021, <a href="https://www.w3.org/TR/2021/NOTE-css-2021-20211231/">CSS Snapshot 2021</a>, editada por Tab Atkins Jr. y otros.</p>
@@ -1634,7 +1638,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 7 de junio de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
