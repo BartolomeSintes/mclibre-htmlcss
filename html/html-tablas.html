@@ -82,6 +82,8 @@
     </div>
   </nav>
 
+<p><strong>Nota</strong>: Como se comenta en la lección <a href="html-tablas-atributos.html">Atributos de tablas</a>, los bordes de los elementos de una tabla se establecen mediante propiedades de estilo. En los ejemplos de código de esta página no se muestran esas propiedades.</p>
+
   <section id="tablas-estructura">
     <h2 class="con-aside">Estructura de una tabla (<span class="html-eti">&lt;table&gt;</span>)</h2>
 
@@ -283,12 +285,14 @@
       </tbody>
     </table>
 
+    <p>Las celdas de la tabla suelen ser elementos <span class="html-eti">&lt;td&gt;</span>, aunque también pueden ser elemento <span class="html-eti">&lt;th&gt;</span> para indicar que la celda es una cabecera de la fila o columna correspondiente.</p>
+
     <p>El código fuente de una tabla sencilla (con un único <span class="html-eti">&lt;tbody&gt;</span>) sería el siguiente:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-html">&lt;table border="1"&gt;
+<code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
@@ -334,15 +338,15 @@
       </p>
     </aside>
 
-    <p>La leyenda (<span class="html-eti">&lt;caption&gt;</span>) es texto explicativo opcional que se muestra fuera de la tabla (normalmente, arriba). La leyenda no puede incluir párrafos ni otros elementos de bloque, aunque sí etiquetas en línea (<span class="html-eti">&lt;strong&gt;</span>, imágenes, etc).</p>
+    <p>La leyenda (<span class="html-eti">&lt;caption&gt;</span>) es un texto explicativo opcional que se muestra fuera de la tabla (normalmente, arriba). La leyenda no puede incluir párrafos ni otros elementos de bloque, aunque sí etiquetas en línea (<span class="html-eti">&lt;strong&gt;</span>, imágenes, etc).</p>
 
     <p>Los navegadores dan a la leyenda el mismo ancho que a la tabla, por lo que si una leyenda es larga y la tabla estrecha, la leyenda ocupará varias líneas, como muestra el ejemplo siguiente:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-html">&lt;table border="1"&gt;
-  &lt;caption&gt;Liga de &lt;strong&gt;Fútbol&lt;/strong&gt; española - Resultados de la primera división&lt;/caption&gt;
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Liga de &lt;strong&gt;Fútbol&lt;/strong&gt; española - Resultados de la Copa del Rey&lt;/caption&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
 ...</code>
@@ -398,6 +402,8 @@
 
     <p>Si una tabla contiene <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>, también debe contener <span class="html-eti">&lt;tbody&gt;</span>.</p>
 
+    <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
+
     <div class="filaflex">
       <div class="codigo">
         <pre>
@@ -444,8 +450,6 @@
         <a href="ejemplos/tablas/thead-tbody-tfoot.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
-
-    <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
   </section>
 
   <section id="tablas-filas">
@@ -468,7 +472,7 @@
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-html">&lt;table border="1"&gt;
+<code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
@@ -529,23 +533,23 @@
     <div class="filaflex">
       <div class="codigo">
         <pre>
-<code class="language-html">&lt;table border="1"&gt;
-  &lt;caption&gt;Fútbol 1º división&lt;/caption&gt;
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Fútbol Copa del Rey&lt;/caption&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;/td&gt;
-      &lt;th&gt;2003/2004&lt;/th&gt;
-      &lt;th&gt;2004/2005&lt;/th&gt;
+      &lt;th&gt;2020/2021&lt;/th&gt;
+      &lt;th&gt;2021/2022&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;Campeón&lt;/th&gt;
-      &lt;td&gt;Valencia C.F.&lt;/td&gt;
       &lt;td&gt;F.C. Barcelona&lt;/td&gt;
+      &lt;td&gt;Real Betis Balompié&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;th&gt;Subcampeón&lt;/th&gt;
-      &lt;td&gt;F.C. Barcelona&lt;/td&gt;
-      &lt;td&gt;R. Madrid&lt;/td&gt;
+      &lt;td&gt;Athletic Club&lt;/td&gt;
+      &lt;td&gt;Valencia C.F.&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code>
@@ -595,7 +599,7 @@
 
     <div class="codigo">
       <pre>
-<code class="language-html">&lt;table border="1" &gt;
+<code class="language-html">&lt;table &gt;
   &lt;caption&gt;Leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
   &lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
@@ -618,7 +622,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
