@@ -497,7 +497,7 @@ p {
       <li><span class="css-valor">auto</span>: el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, se conserva el tamaño original de la imagen.</li>
       <li>valores numéricos (porcentajes o distancias): el primer valor corresponde al tamaño horizontal y el segundo al tamaño vertical, la imagen se deforma para ajustarse a esos valores.</li>
       <li><span class="css-valor">contain</span>: la imagen se aumenta o disminuye de manera que pueda verse completa en una de las dimensiones (horizontal o vertical) y se repita en la otra dimensión.</li>
-      <li><span class="css-valor">cover</span>: la imagen se aumenta o disminuye de manera que ocupe todo el espacio disponible en una dimensión (horizontal o vertical) y se corta en la otra dimensión.</li>
+      <li><span class="css-valor">cover</span>: la imagen se aumenta o disminuye de manera que ocupe todo el espacio disponible en una dimensión (horizontal o vertical, dependiendo de la cantidad de contenido y el tamaño de la ventana) y se corta en la otra dimensión.</li>
     </ul>
 
     <p>Si la imagen de fondo es una imagen de mapa de bits (jpg, png, etc.) y se aumenta, la calidad de la imagen se resiente. Sin embargo, si se utilizan imágenes en formato vectorial (SVG), la imagen se verá con la misma calidad independientemente del tamaño:</p>
@@ -550,6 +550,23 @@ p {
       </div>
       <div class="icono-enlace">
         <a href="ejemplos/fondos/background-size-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-css">html {
+  background-image: url("circulo.svg");
+  background-size: contain;
+}</code>
+</pre>
+      </div>
+      <div class="resultado-object">
+        <object type="text/html" data="ejemplos/fondos/background-size-8.html" style="width: 100%; height: 12em;">ERROR (no puede mostrarse el objeto)</object>
+      </div>
+      <div class="icono-enlace">
+        <a href="ejemplos/fondos/background-size-8.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
 
