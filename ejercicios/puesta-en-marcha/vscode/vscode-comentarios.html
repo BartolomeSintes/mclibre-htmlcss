@@ -26,13 +26,15 @@
       <h2>VS Code</h2>
 
       <ul>
-        <li><a href="#ejercicio-1">1 - Abrir páginas</a></li>
+        <li><a href="#ejercicio-1-a">1A - Abrir páginas</a></li>
+        <li><a href="#ejercicio-1-b">1B - Live Preview</a></li>
         <li><a href="#ejercicio-2">2 - HTMLHint</a></li>
         <li><a href="#ejercicio-3">3 - CSS Lint</a></li>
         <li><a href="#ejercicio-4">4 - Close Tag</a></li>
         <li><a href="#ejercicio-5">5 - Tag Inserter</a></li>
         <li><a href="#ejercicio-6">6 - Image Preview</a></li>
         <li><a href="#ejercicio-7">7 - CSScomb</a></li>
+        <li><a href="#ejercicio-8">8 - Lorem Ipsum</a></li>
       </ul>
     </div>
   </nav>
@@ -41,16 +43,15 @@
 
   <p>Para facilitar la realización de los ejercicios, se proporcionan unas <a href="pm-vscode-plantillas.zip">plantillas de los ejercicios Visual Studio Code. Puesta en marcha</a>.</p>
 
-  <section id="ejercicio-1">
-    <h2>VS Code 1 - Abrir páginas en el navegador</h2>
+  <section id="ejercicio-1-a">
+    <h2>VS Code 1 A - Abrir páginas en el navegador</h2>
 
     <ol>
-      <li>Descargue y descomprima las plantillas.</li>
       <li>Abra en Visual Studio Code la página <strong>vscode-1.html</strong>.</li>
       <li>Abra la página <strong>vscode-1.html</strong> en Firefox y Chrome con los atajos de teclado <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c</span>.
         <p>Si no se abre el navegador correspondiente, revise los atajos de teclado creados en Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#atajos-teclado">Configuración de Visual Studio Code</a>.</p>
       </li>
-      <li>Compruebe que la dirección de la página es <strong>file:///C://Users/NombreDeUsuario/Documents/LMSGI/HTML/ejercicios/puesta-en-marcha/vscode-1.html</strong>, donde NombreDeUsuario es el nombre del usuario de Windows.
+      <li>Compruebe que la dirección de la página es <strong>file:///C://Users/NombreDeUsuario/Documents/HTML/ejercicios/puesta-en-marcha/vscode-1.html</strong>, donde NombreDeUsuario es el nombre del usuario de Windows.
       </li>
       <li>El resultado en el navegador debe ser el siguiente:
         <div class="filaflex">
@@ -63,42 +64,75 @@
     </ol>
   </section>
 
+  <section id="ejercicio-1-b">
+    <h2>VS Code 1 B - Abrir páginas con Live Preview</h2>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>vscode-1.html</strong>.</li>
+      <li>Abra la página <strong>vscode-1.html</strong> en Live Preview con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+p</span>.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-live-preview-1.png" alt="VSC. Extensión Live Preview" width="1024" height="300">
+        </p>
+        <p>Si no se abre el servidor correspondiente ni se muestra la página en Visual Studio Code, revise los atajos de teclado creados en Visual Studio Code, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#atajos-teclado">Configuración de Visual Studio Code</a>.</p>
+      </li>
+      <li>Compruebe que la dirección de la página es <strong>http://127.0.0.1:3000/ejercicios/pm-vscode/vscode-1.html</strong> o similar.</li>
+      <li>Añada algo de texto a la página web y compruebe que aunque no guarde el fichero, en el navegador la vista se actualiza continuamente.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-live-preview-2.png" alt="VSC. Extensión Live Preview" width="1024" height="576">
+        </p>
+        <p>Lógicamente, Visual Studio Code mostrará un aviso de error hasta que escribamos la etiqueta de cierre <span class="html-eti">&lt;/p&gt;</span>.</p>
+      </li>
+      <li>Cierre la vista previa haciendo clic en el icono del servidor en la barra de estado y eligiendo el comando "Live Preview: Stop Server" en el panel de comandos.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-live-preview-3.png" alt="VSC. Extensión Live Preview" width="1024" height="576">
+        </p>
+      </li>
+      <li>Abra de nuevo la página <strong>vscode-1.html</strong> en Live Preview con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+p</span>.</li>
+      <li>Cierre la vista previa con el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Alt+p</span>.</li>
+    </ol>
+  </section>
+
   <section id="ejercicio-2">
     <h2>VS Code 2 - Extensión HTMLHint</h2>
 
     <ol>
-      <li>Cree en Visual Studio Code la página <strong>vscode-2.html</strong>.</li>
+      <li>Cree en Visual Studio Code la página <strong>vscode-2.html</strong> en la carpeta <strong>pm-vscode</strong>.</li>
+      <li>Compruebe que el fichero creado aparece en su posición correcta:
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-1.png" alt="VSC. Errores HTMLHint" width="1024" height="420">
+        </p>
+      </li>
       <li>Copie y pegue el siguiente código HTML en la página <strong>vscode-2.html</strong>:
         <div class="codigo">
           <pre>
-<code class="copy-language-html">&lt;html LANG="es"&gt;
+<code class="copy-language-html">&lt;html&gt;
 &lt;!DOCTYPE html+css&gt;
 &lt;head&gt;
-  &lt;meta charset="utf-8" charset="utf-8"&gt;
-  &lt;link rel="stylesheet" href=""&gt;
+  &lt;meta charset=" utf-8 " charset="utf-8"&gt;
+  &lt;link REL="stylesheet" href=""&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
-  &lt;P id="a"&gt;Esta página web NO es una página HTML válida.
+  &lt;P id = "a"&gt;Esta página web NO es una página HTML válida.
 
   &lt;p id='a'&gt; 5 &gt; 4&lt;/p&gt;
 
-  &lt;p&gt;&lt;img src="a.png"&gt;&lt;/p&gt;
+  &lt;p id="ad"&gt;&lt;img src="a.png" /&gt;&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code>
 </pre>
         </div>
       </li>
-      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 13 avisos. Haga clic en él para ver los errores detectados.
+      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 17 avisos. Haga clic en él para ver los errores detectados.
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-1.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-2.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
         </p>
-        <p>Si no se muestran los 12 avisos, compruebe que la extensión HTMLHint está instalada y revise la configuración de la extensión HTMLHint, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
+        <p>Si no se muestran los 17 avisos, compruebe que la extensión HTMLHint está instalada y revise la configuración de la extensión HTMLHint, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
       </li>
       <li>Corrija algunos de los errores y compruebe que van desapareciendo de la lista a medida que se van corrigiendo:
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-2.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-htmlhint-3.png" alt="VSC. Errores HTMLHint" width="1024" height="576">
         </p>
       </li>
     </ol>
@@ -124,10 +158,11 @@ p {
 a { }
 
 #ab { color red}</code>
-</pre>
+  </pre>
         </div>
       </li>
-      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 avisos. Haga clic en él para ver los errores detectados.
+      <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de 7 errores y avisos como mínimo. Haga clic en él para ver los errores detectados.
+        <p><strong>Nota</strong>: El número de avisos puede ser mayor si incluye también los avisos del fichero vscode-2.html del ejercicio anterior. En general, Visual Studio Code muestra los avisos correspondientes a todos los ficheros que se han ido abriendo. Si cierra toda las pestañas de documentos con errores y cierra y abre Visual Studio Code, desaparecerán los mensajes de error hasta que vuelva a abrirlos.</p>
         <p class="mcl-captura">
           <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-csslint-1.png" alt="VSC. Errores CSS Lint" width="1024" height="576">
         </p>
@@ -143,15 +178,15 @@ a { }
       <li>Borre la etiqueta de cierre <span class="html-eti">&lt;/p&gt;</span> (línea 13).</li>
       <li>Compruebe que en la barra lateral inferior el indicador de error indica la existencia de un error. Haga clic en él para ver el error detectado. Compruebe que efectivamente señala la ausencia del cierre de la etiqueta <span class="html-eti">&lt;p&gt;</span>
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-1.png" alt="VSC. Error HTMLHint" width="1024" height="300">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-1.png" alt="VSC. Error Close HTML/XML Tag" width="1024" height="300">
         </p>
         <p>Si no se muestra el error, compruebe que la extensión HTMLHint está instalada y revise la configuración de la extensión HTMLHint, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#htmlhint">Configuración de Visual Studio Code</a>.</p>
       </li>
-      <li>Corrija el error situando el cursor al final del párrafo y pulsando el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>. Compruebe que se añade el cierre de la etiqueta <span class="html-eti">&lt;/p&gt;</span>. Compruebe que el indicador de error ya no muestra ningún error.
+      <li>Corrija el error situando el cursor al final del párrafo y pulsando el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span> (punto). Compruebe que se añade el cierre de la etiqueta <span class="html-eti">&lt;/p&gt;</span>. Compruebe que el indicador de error ya no muestra ningún error.
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-2.png" alt="VSC. Error HTMLHint" width="1024" height="300">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-close-html-tag-2.png" alt="VSC. Error Close HTML/XML Tag" width="1024" height="300">
         </p>
-        <p>Si no se añade la etiqueta , compruebe que la extensión Close HTML/XML Tag está instalada y revise la configuración de la extensión Close HTML/XML Tag, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#close-html-xml-tag">Configuración de Visual Studio Code</a>.</p>
+        <p>Si no se añade la etiqueta, compruebe que la extensión Close HTML/XML Tag está instalada y revise la configuración de la extensión Close HTML/XML Tag, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#close-html-xml-tag">Configuración de Visual Studio Code</a>.</p>
       </li>
     </ol>
   </section>
@@ -161,19 +196,33 @@ a { }
 
     <ol>
       <li>Abra en Visual Studio Code la página <strong>vscode-5.html</strong>.</li>
-      <li>Compruebe que el texto de la línea 11 no está rodeado de etiquetas.</li>
-      <li>Seleccione el texto de la línea 11 (sin los espacios iniciales).</li>
-      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Alt+Mayús+i</span>. Compruebe que se abre un cuadro de texto en la parte superior, escriba <strong>h2</strong> y pulse Intro.
-        <p>Si la línea 11 no aparece rodeada de la etiqueta <span class="html-eti">&lt;h2&gt;</span>, compruebe que la extensión Tag Inserter está instalada.</p>
+      <li>Compruebe que el texto de la línea 11 no está rodeado de etiquetas (sin contar las etiquetas &lt;<span class="html-eti">html</span>&gt; o &lt;<span class="html-eti">body</span>&gt;).
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-tag-inserter-1.png" alt="VSC. Extensión Tag Inserter" width="1024" height="380">
+        </p>
+      </li>
+      <li>Seleccione el texto de la línea 11 (únicamente el texto, sin los espacios iniciales de la línea ni el salto de línea final).</li>
+      <li>Pulse el atajo de teclado <span class="soft-atajo-teclado">Alt+Mayús+i</span>. Compruebe que se abre un cuadro de texto en la parte superior, escriba únicamente el nombre de la etiqueta, por ejemplo <strong>h2</strong>, y pulse Intro.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-tag-inserter-2.png" alt="VSC. Error Tag Inserter" width="1024" height="380">
+        </p>
+      </li>
+      <li>Si la línea 11 no aparece rodeada de la etiqueta <span class="html-eti">&lt;h2&gt;</span>, compruebe que la extensión Tag Inserter está instalada.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-tag-inserter-3.png" alt="VSC. Error Tag Inserter" width="1024" height="380">
+        </p>
       </li>
       <li>Sitúe el cursor en la etiqueta <span class="html-eti">&lt;h2&gt;</span>. Compruebe que aparece un segundo cursor en la etiqueta de cierre. Borre el nombre de la etiqueta (sin borrar las desigualdades &lt; &gt;) y corríjalo por <span class="html-eti">&lt;h1&gt;</span>. Compruebe que se cambia simultáneamente la etiqueta de cierre <span class="html-eti">&lt;/h1&gt;</span>.
-      <p>Compruebe que también puede modificar ambas etiquetas editando la etiqueta de cierre.</p>
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-tag-inserter-4.png" alt="VSC. Error Tag Inserter" width="1024" height="380">
+        </p>
+        <p>Compruebe que también puede modificar ambas etiquetas editando la etiqueta de cierre.</p>
       </li>
     </ol>
   </section>
 
   <section id="ejercicio-6">
-    <h2>VS Code 6 - Extensión Image Preview</h2>
+    <h2>VS Code 6 - Extensión Image Preview / Emmet</h2>
 
     <ol>
       <li>Abra en Visual Studio Code la página <strong>vscode-6.html</strong>.</li>
@@ -186,13 +235,23 @@ a { }
           </div>
         </div>
       </li>
+      <li>Compruebe que la etiqueta &lt;<span class="html-eti">img</span>&gt; no contiene los atributos <span class="html-atri">width</span> ni <span class="html-atri">height</span>:
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-image-preview-emmet-1.png" alt="VSC. Atributos width y height en imagen" width="1024" height="200">
+        </p>
+      </li>
       <li>Sitúe el cursor encima del nombre de la imagen y observe como se muestra una ventana que contiene una miniatura de la imagen y su tamaño.
         <p>Si no se muestra la ventana, compruebe que la extensión Image Preview está instalada.</p>
+        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"><strong>Nota</strong>: Por desgracias, la extensión Image Preview tiene a veces un comportamiento algo errático y deja de funcionar correctamente (por ejemplo puede no verse la miniatura de la imagen), pero pasadas unas horas o al día siguiente puede volver a funcionar correctamente.</p>
       </li>
-      <li>Pulse el atajo <span class="soft-atajo-teclado">Ctrl+Alt+e Ctrl+Alt+t</span> y compruebe que se añaden los atributos <span class="html-atri">width</span> = <span class="html-atri-valor">100</span> y <span class="html-atri">height</span> = <span class="html-atri-valor">100</span>.</li>
+      <li>Haga clic en algún lugar de la etiqueta &lt;<span class="html-eti">img</span>&gt;. Pulse el atajo <span class="soft-atajo-teclado">Ctrl+Alt+e Ctrl+Alt+s</span> y compruebe que se añaden los atributos <span class="html-atri">width</span> = <span class="html-atri-valor">100</span> y <span class="html-atri">height</span> = <span class="html-atri-valor">100</span>.
+        <p class="mcl-captura">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-image-preview-emmet-2.png" alt="VSC. Atributos width y height en imagen" width="1024" height="200">
+        </p>
+      </li>
       <li>Guarde la página en Visual Studio Code y actualice la página en el navegador. Compruebe que la imagen ya se muestra al tamaño 100px x 100px.
         <p class="mcl-captura">
-          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-emmet-image-size-1.png" alt="VSC. Atributos width y height en imagen" width="1014" height="230">
+          <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-image-preview-emmet-3.png" alt="VSC. Atributos width y height en imagen" width="1014" height="230">
         </p>
       </li>
     </ol>
@@ -206,7 +265,7 @@ a { }
       <li>Abra la página en el navegador. El resultado debe ser el siguiente:
 
         <div class="filaflex">
-          <iframe src="vscode-7.html" style="height: 10em"></iframe>
+          <iframe src="vscode-7.html" style="height: 15em"></iframe>
           <div class="icono-enlace">
             <a href="vscode-7.html"><img src="../../../varios/iconos/icono-enlace.svg" alt="Enlace a ejemplo" title="Enlace a ejemplo" width="31" height="36"></a>
           </div>
@@ -224,10 +283,10 @@ a { }
 </pre>
         </div>
       </li>
-      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Mayús+c Alt+Mayús+f</span> y compruebe que se formatea más o menos correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, orden de etiquetas, punto y coma tras cada propiedad, etc).
+      <li>Pulse el atajo <span class="soft-atajo-teclado">Alt+Mayús+c Alt+Mayús+f</span> (en Windows) o <span class="soft-atajo-teclado">Ctrl+Mayús+c Ctrl+Mayús+i</span> (en LliureX) y compruebe que se formatea más o menos correctamente la hoja de estilo (una propiedad por línea, etiquetas en minúsculas, un espacio de separación, orden de etiquetas, punto y coma tras cada propiedad, etc).
         <div class="codigo">
           <pre>
-<code class="language-css">     body {
+<code class="language-css">body {
   background-color: wheat;
   font-family: sans-serif    ;
 }
@@ -240,14 +299,82 @@ h1 {
 </pre>
         </div>
         <p>Si no obtiene este resultado, compruebe que la extensión CSScomb está instalada y revise la configuración de la extensión CSScomb, como se explica en la lección <a href="../../../otros/vsc-htmlcss-configuracion.html#csscomb">Configuración de Visual Studio Code</a>.</p>
-        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <strong>Nota</strong>: CSSComb no corrige los espacios iniciales de la primera línea y añade un segundo punto y coma en la propiedad reordenada que antes no tenía punto y coma. El 16/10/2019 abrí dos <i>issues</i> (<a href="https://github.com/csscomb/csscomb.js/issues/621">csscomb#621</a> y <a href="https://github.com/csscomb/csscomb.js/issues/622">csscomb#622</a>) en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes.</p>
+
+        <p><img src="../../../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> <strong>Notas</strong>: CSSComb mejora el formato de la hoja de estilo, pero no corrige todas las situaciones:</p>
+        <ul>
+          <li>CSSComb añade un segundo punto y coma en la propiedad reordenada que antes no tenía punto y coma. El 16/10/2019 abrí la <i>issue</i> <a href="https://github.com/csscomb/csscomb.js/issues/622">csscomb#622</a> en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes. Pero hasta que el desarrollo del proyecto CSSComb no se retome, estos problemas no tendrán solución y se deberán corregir manualmente.</li>
+          <li>CSSComb mantiene separado con espacios el punto y coma de una de las propiedades.</li>
+          <li>En 2019 CSSComb no corregía los espacios iniciales de la primera línea. El 16/10/2019 abrí la <i>issue</i> <a href="https://github.com/csscomb/csscomb.js/issues/621">csscomb#621</a> en el repositorio del proyecto CSSComb para aclarar si es un problema de CSSComb o de la configuración propuesta en estos apuntes. Este problema parece resuelto.</li>
+        </ul>
       </li>
       <li>Guarde la hoja de estilo y actualice la página en el navegador. Compruebe que la página se ve exactamente igual que antes.</li>
+      <li>A partir de la versión 1.66, Visual Studio Code ha incorporado un formateador de CSS que se aplica con el atajo de teclado <span class="soft-atajo-teclado">Alt+Mayús+f</span> (en Windows) y <span class="soft-atajo-teclado">Ctrl+Mayús+i</span> (en LLiureX) . Es un formateador más elemental que CSSComb, pero se pueden combinar ambos formateadores para obtener un mejor resultado. Pruebe el resultado sobre el ejemplo anterior, apicando consecutivamente uno y otro de forma repetida hasta dejar de obtener cambios.</li>
+    </ol>
+  </section>
+
+  <section id="ejercicio-8">
+    <h2>VS Code 8 - Extensión Lorem Ipsum</h2>
+
+    <p>A veces, trabajando con procesadores de texto o editando páginas web, necesitamos fragmentos de texto para poder hacer pruebas de diseño. Lo habitual es copiar y pegar de cualqueir otro documento, pero en tipografía se ha utilizado desde hace siglos un texto en latín sin sentido real, aunque al parecer basado en un texto de Cicerón, que comienza por las palabras <i>Lorem Ipsum</i>. Así, los generadores Lorem Ipsum son las aplicaciones que generan texto (u otros elementos), en latín u otros idiomas, basados en textos o diccionarios, pero sin sentido real.</p>
+
+    <ol>
+      <li>Abra en Visual Studio Code la página <strong>vscode-8.html</strong>.</li>
+      <li>Instale la extensión Lorem Ipsum de Daniel Imms.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <p class="mcl-captura">
+            <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-1.png" alt="VSC. Atributos width y height en imagen" width="1024" height="420">
+          </p>
+        </details>
+      </li>
+      <li>Compruebe su funcionamiento
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <ul>
+            <li>Sitúe el cursor donde quiera insertar el texto:
+              <p class="mcl-captura">
+                <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-2.png" alt="VSC. Atributos width y height en imagen" width="1024" height="330">
+              </p>
+            </li>
+            <li>Pulse la tecla <span class="soft-atajo-teclado">F1</span> o el atajo de teclado <span class="soft-atajo-teclado">Ctrl+Mayús+p</span> para abrir la paleta de comandos
+              <p class="mcl-captura">
+                <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-3.png" alt="VSC. Atributos width y height en imagen" width="1024" height="330">
+              </p>
+            </li>
+            <li>Escriba el principio del comando (en este caso Lorem, por ejemplo) y se mostrarán los comandos disponibles. Haga clic en alguna de las opciones:
+              <p class="mcl-captura">
+                <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-4.png" alt="VSC. Atributos width y height en imagen" width="1024" height="330">
+              </p>
+            </li>
+            <li>Por ejemplo, pulsando el comando Lorem Ipsum: Insert a paragraph se insertaría un párrafo de texto:
+              <p class="mcl-captura">
+                <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-5.png" alt="VSC. Atributos width y height en imagen" width="1024" height="330">
+              </p>
+            </li>
+            <li>Por último, cerraríamos la etiqueta de párrafo con el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>:
+              <p class="mcl-captura">
+                <img src="../../../img/ejercicios/puesta-en-marcha/pm-vscode-lorem-ipsum-6.png" alt="VSC. Atributos width y height en imagen" width="1024" height="330">
+              </p>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>Defina atajos de teclado para esta extensión y compruebe su funcionamiento.
+        <details>
+          <summary>Ayuda (haga clic aquí si no se le ocurre cómo hacerlo)</summary>
+          <p>Puede seguir los pasos comentados en la lección de <a href="../../../otros/vsc-personalizacion.html#atajos-crear">Personalización de Visual Studio Code</a> y utilizar como atajos:</p>
+          <ul>
+            <li><span class="soft-atajo-teclado">Ctr+Alt+i Ctrl+Mayús+Alt++l</span>: Comando Lorem Ipsum: Insert a line</li>
+            <li><span class="soft-atajo-teclado">Ctr+Alt+i Ctrl+Mayús+Alt++p</span>: Comando Lorem Ipsum: Insert a paragraph</li>
+            <li><span class="soft-atajo-teclado">Ctr+Alt+i Ctrl+Mayús+Alt++m</span>: Comando Lorem Ipsum: Insert multiple paragraphs</li>
+          </ul>
+        </details>
+      </li>
     </ol>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 19 de septiembre de 2022</p>
 
     <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
       Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
