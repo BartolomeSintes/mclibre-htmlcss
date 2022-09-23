@@ -642,6 +642,9 @@
       "windows": {
         "command": "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>"
       },
+      "linux": {
+          "command": "<span class="codigo-resaltado">firefox</span>"
+      },
       "args": [
           "${file}"
       ],
@@ -655,6 +658,9 @@
       "command": "explorer",
       "windows": {
         "command": "<span class="codigo-resaltado">C:/Program Files/Google/Chrome/Application/chrome.exe</span>"
+      },
+      "linux": {
+          "command": "<span class="codigo-resaltado">google-chrome</span>"
       },
       "args": [
         "${file}"
@@ -679,8 +685,8 @@
     <p>Estos son los atajos de teclado que se aconseja definir para seguir el curso de <a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="https://www.mclibre.org/">mclibre.org</a>.</p>
     <ul>
       <li>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
-      <li>El tercer atajo muestra la vista previa de la página que se esté editando mediante la extensión Live Preview.</li>
-      <li>El cuarto atajo ejecuta CSScomb, extensión que formatea hojas de estilo CSS. este atajo sólo funciona cuando se está editando un archivo .css.</li>
+      <li>El tercer y cuarto atajo (que son el mismo atajo) muestra la vista previa de la página que se esté editando mediante la extensión Live Preview y/o cierra el servidor de vista previa.</li>
+      <li>El quinto y sexto atajo (que son el mismo atajo, para Windows o para Linux) ejecuta CSScomb, extensión que formatea hojas de estilo CSS. este atajo sólo funciona cuando se está editando un archivo .css.</li>
       <li>Los siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet).</li>
     </ul>
 
@@ -703,14 +709,28 @@
         "args": "Abrir en Chrome"
     },
     {
-        // Extensión Live Preview: Ejecutar en navegador interno
+        // Extensión Live Preview: Abrir en navegador interno
         "key": "ctrl+alt+p",
-        "command": "livePreview.start.internalPreview.atFile"
+        "command": "livePreview.start.internalPreview.atFile",
+        "when": "LivePreviewServerOn == false"
     },
     {
-        // Extensión CSScomb: Ejecutar
+        // Extensión Live Preview: Cerrar navegador/servidor interno
+        "key": "ctrl+alt+p",
+        "command": "livePreview.end",
+        "when": "LivePreviewServerOn == true"
+    },
+    {
+        // Extensión CSScomb: Ejecutar en Windows
         "key": "alt+shift+c alt+shift+f",
-        "command": "csscomb.execute"
+        "command": "csscomb.execute",
+        "when": "isWindows"
+    },
+    {
+        // Extensión CSScomb: Ejecutar en Linux
+        "key": "ctrl+shift+c ctrl+shift+i",
+        "command": "csscomb.execute",
+        "when": "isLinux"
     },
     {
         // Emmet: Borrar etiqueta
@@ -719,12 +739,12 @@
     },
     {
         // Emmet: Insertar tamaño imagen
-        "key": "ctrl+alt+e ctrl+alt+t",
+        "key": "ctrl+alt+e ctrl+alt+s",
         "command": "editor.emmet.action.updateImageSize"
     },
     {
         // Emmet: Seleccionar elemento superior
-        "key": "ctrl+alt+e ctrl+alt+s",
+        "key": "ctrl+alt+e ctrl+alt+o",
         "command": "editor.emmet.action.balanceOut"
     },
     {
@@ -759,7 +779,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 22 de septiembre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
