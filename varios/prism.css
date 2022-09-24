@@ -13,32 +13,33 @@
   no sé si son también clases de prism).
 */
 
-div.codigo { background-color: #1e1e1e; color: white; }
+div.terminal { background-color: #1e1e1e; color: white; padding-top: 5px; padding-bottom: 5px; }
+
+div.codigo { background-color: #1e1e1e; color: #ffffff; padding-top: 5px; padding-bottom: 5px; }
 
 div.codigo.idle { background-color: white; color: black; }
 
-div.codigo-nocolor { background-color: white; color:black; }
+code { line-height: 120%; /* font-weight: bold; */ }
 
-div.codigo-nocolor pre code.language-html *[class] { color: black; }
+.line-numbers-rows > span:before { color: black; }
 
-pre code { line-height: 140%; }
+.command-line-prompt { border-right: 1px solid #999; }
 
-.line-numbers-rows > span::before { color: black; }
+.command-line-prompt > span:before { color: white; }
 
-.command-line-prompt {border-right: 1px solid #999; }
-
-.command-line-prompt > span::before { color: white; }
 
 /* Estilo para HTML imitando a Visual Studio Code con tema Dark+ */
-pre code.language-html .attr-name      { color: #9cdcfe; }          /* attribute name            */
-pre code.language-html .attr-value     { color: #ce9178; }          /* attribute value           */
-pre code.language-html .comment        { color: #6a9955; }          /* comment                   */
-pre code.language-html .doctype-tag    { color: #569cd6; }          /* doctype tag               */
-pre code.language-html .entity         { color: #569cd6; }          /* entity                    */
-pre code.language-html .name           { color: #9cdcfe; }          /* name                      */
-pre code.language-html .punctuation    { color: #808080; }          /* punctuation               */
-pre code.language-html .attr-equals    { color: #d4d4d4; }          /* = en atributos            */
-pre code.language-html .tag            { color: #569cd6; }          /* Tags, attributes, configs */
+div.codigo code.language-html      { background-color: #1e1e1e; color: #9cdcfe;
+                                     padding-top: 5px; padding-bottom: 5px; }
+code.language-html .attr-name      { color: #9cdcfe; }          /* attribute name            */
+code.language-html .attr-value     { color: #ce9178; }          /* attribute value           */
+code.language-html .comment        { color: #6a9955; }          /* comment                   */
+code.language-html .doctype-tag    { color: #569cd6; }          /* doctype tag               */
+code.language-html .entity         { color: #569cd6; }          /* entity                    */
+code.language-html .name           { color: #9cdcfe; }          /* name                      */
+code.language-html .punctuation    { color: #808080; }          /* punctuation               */
+code.language-html .attr-equals    { color: #d4d4d4; }          /* = en atributos            */
+code.language-html .tag            { color: #569cd6; }          /* Tags, attributes, configs */
 
 /* pre code.language-html .cdata          { }                            /* cdata                     */
 /* pre code.language-html .namespace      { }                            /* namespace                 */
@@ -108,76 +109,6 @@ pre code.language-css .variable       { color: #9cdcfe; }          /* variable  
 /* pre code.language-css .string         { color: #ce9178; }          /* NO SE DETECTA                      */
 /* pre code.language-css .unit           { color: #09885a; }          /* unit                               */
 /* pre code.language-css .variable       { color: #ff0000; }          /* variable                           */
-
-/* Estilo para Python imitando a Visual Studio Code con tema Dark+ */
-
-code.language-python .boolean              { color: white;   } /* boolean                             */
-code.language-python .builtin              { color: #dcdcac; } /* built-in functions                  */
-code.language-python .class-name           { color: white    } /* class header class SomeName(...):   */
-code.language-python .comment              { color: #6a9955; } /* comment                             */
-code.language-python .decorator            { color: white;   } /* decorator                           */
-code.language-python .function             { color: #4ccab2; } /* function header def some_name(...): */
-code.language-python .keyword              { color: #c586c0; } /* keyword                             */
-code.language-python .number               { color: #b5cea8; } /* number                              */
-code.language-python .operator             { color: #d4d4d4; } /* operators                           */
-code.language-python .punctuation          { color: white;   } /* punctuation                         */
-code.language-python .string               { color: #ce9178; } /* string (of any type)                */
-code.language-python .string-interpolation { color: white;   } /* string-interpolation                */
-code.language-python .triple-quoted-string { color: #ce9178; } /* string (of any type)                */
-
-/* Estilo para Python imitando a IDLE */
-
-div.idle code.language-python .boolean     { color: black;   } /* boolean                             */
-code.language-python .builtin              { color: #800080; } /* built-in functions                  */
-code.language-python .class-name           { color: black;   } /* class header class SomeName(...):   */
-code.language-python .comment              { color: #FF0000; } /* comment                             */
-code.language-python .decorator            { color: black;   } /* decorator                           */
-code.language-python .function             { color: #0000FF; } /* function header def some_name(...): */
-code.language-python .keyword              { color: #FF7700; } /* keyword                             */
-code.language-python .number               { color: black;   } /* number                              */
-code.language-python .operator             { color: black;   } /* operators                           */
-code.language-python .punctuation          { color: black;   } /* punctuation                         */
-code.language-python .string               { color: #00AA00; } /* string (of any type)                */
-code.language-python .string-interpolation { color: black;   } /* string-interpolation                */
-code.language-python .triple-quoted-string { color: #00AA00; } /* string (of any type)                */
-
-/* Estilo para PHP imitando a Visual Studio Code con tema Dark+ */
-
-code.language-php .function2            { color: #dcdcaa; } /* añadido por mi a prism.js para que se vea como las funciones */
-
-code.language-php .comment              { color: #6a9955; } /* comment                             */
-code.language-php .delimiter            { color: #569cd6; } /* fragmento php                       */
-code.language-php .function             { color: #dcdcaa; } /* function header def some_name(...): */
-code.language-php .keyword              { color: #c586c0; } /* keyword                             */
-code.language-php .number               { color: #b5cea8; } /* number                              */
-code.language-php .operator             { color: #d4d4d4; } /* operators                           */
-code.language-php .punctuation          { color: #d4d4d4; } /* punctuation                         */
-code.language-php .variable             { color: #9cdcfe; } /* fragmento php                       */
-code.language-php .string               { color: #ce9178; } /* string (of any type)                */
-code.language-php .double-quoted-string { color: #ce9178; } /* string (of any type)                */
-
-code.language-php .boolean              { color: white;   } /* boolean                             */
-code.language-php .builtin              { color: #dcdcac; } /* built-in functions                  */
-code.language-php .class-name           { color: white    } /* class header class SomeName(...):   */
-code.language-php .decorator            { color: white;   } /* decorator                           */
-code.language-php .string-interpolation { color: white;   } /* string-interpolation                */
-code.language-php .triple-quoted-string { color: #ce9178; } /* string (of any type)                */
-
-/* Estilo para HTML en fichero .PHP imitando a Visual Studio Code con tema Dark+ */
-
-pre code.language-php .attr-name      { color: #9cdcfe; }          /* attribute name            */
-pre code.language-php .attr-value     { color: #ce9178; }          /* attribute value           */
-pre code.language-php .comment        { color: #6a9955; }          /* comment                   */
-pre code.language-php .doctype        { color: #569cd6; }          /* doctype                   */
-pre code.language-php .punctuation    { color: #808080; }          /* punctuation               */
-pre code.language-php .tag            { color: #569cd6; }          /* Tags, attributes, configs */
-
-/* pre code.language-php .cdata          { }                            /* cdata                     */
-/* pre code.language-php .entity         { }                            /* entity                    */
-/* pre code.language-php .namespace      { }                            /* namespace                 */
-/* pre code.language-php .prolog         { }                            /* prolog                    */
-
-/* Estilo para JSON imitando a Visual Studio Code con tema Dark+ */
 
 pre code.language-json .boolean       { color: #569cd6; }          /* valor (booleano)          */
 pre code.language-json .comment       { color: #6a9955; }          /* comentario                */
@@ -293,44 +224,52 @@ div.code-toolbar:hover > .toolbar {
 
 /* Separate line b/c rules are thrown out if selector is invalid.
    IE11 and old Edge versions don't support :focus-within. */
-
 div.code-toolbar:focus-within > .toolbar {
     opacity: 1;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item {
+div.code-toolbar > .toolbar .toolbar-item {
     display: inline-block;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > a {
+div.code-toolbar > .toolbar a {
     cursor: pointer;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > button {
+div.code-toolbar > .toolbar button {
     background: none;
     border: 0;
     font: inherit;
     line-height: normal;
     overflow: visible;
     padding: 0;
+    user-select: none; /* for button */
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > a,
-div.code-toolbar > .toolbar > .toolbar-item > button,
-div.code-toolbar > .toolbar > .toolbar-item > span {
+div.code-toolbar > .toolbar a,
+/* div.code-toolbar > .toolbar button, */
+div.code-toolbar > .toolbar span {
     color: black;
     font-size: 1.2em;
-    padding: 0 .5em;
-    background:white;
+    padding: .2em .5em;
+    background: white;
     box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
     border-radius: .5em;
 }
 
-div.code-toolbar > .toolbar > .toolbar-item > a:hover,
-div.code-toolbar > .toolbar > .toolbar-item > a:focus,
-div.code-toolbar > .toolbar > .toolbar-item > button:hover,
-div.code-toolbar > .toolbar > .toolbar-item > button:focus,
-div.code-toolbar > .toolbar > .toolbar-item > span:hover,
-div.code-toolbar > .toolbar > .toolbar-item > span:focus {
+div.code-toolbar > .toolbar a:hover,
+div.code-toolbar > .toolbar a:focus,
+div.code-toolbar > .toolbar button:hover,
+div.code-toolbar > .toolbar button:focus,
+div.code-toolbar > .toolbar span:hover,
+div.code-toolbar > .toolbar span:focus {
     text-decoration: none;
+}
+
+button.copy-to-clipboard-button {
+    display: none;
+}
+
+div.codigo.copy button.copy-to-clipboard-button {
+    display: inline
 }
