@@ -6,6 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
   <link rel="icon" href="../varios/favicon.svg">
+  <script>
+    function oculta() {
+      var elementos = document.getElementsByClassName("no-impartidas-en-clase");
+      for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'none';
+      }
+    }
+    function muestra() {
+      var elementos = document.getElementsByClassName("no-impartidas-en-clase");
+      for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'revert';
+      }
+    }
+    function eleccion() {
+      if (document.getElementById("selector0").checked) {
+        oculta();
+      }
+      if (document.getElementById("selector1").checked) {
+        muestra();
+      }
+    }
+    window.onload = eleccion;
+  </script>
 </head>
 
 <body>
@@ -39,6 +62,11 @@
   </nav>
 
   <p class="noprint">La tabla siguiente resume las etiquetas definidas en la <a href="https://html.spec.whatwg.org/multipage/">norma HTML Living Standard</a>. Los nombres de las etiquetas enlazan con la lección correspondiente de los apuntes.</p>
+
+  <ul style="list-style-type: none">
+    <li><label><input type="radio" name="selector" id="selector0" value="0" onclick="oculta()">Mostrar únicamente las etiquetas trabajadas en clase en el curso 2022/23</label></li>
+    <li><label><input type="radio" name="selector" id="selector1" value="1" checked onclick="muestra()">Mostrar todas las etiquetas</label></li>
+  </ul>
 
   <table class="mcl-listado mcl-franjas">
     <col class="propiedad">
@@ -88,7 +116,7 @@
         <td>título del documento (se muestra en la pestaña del navegador)</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-metadatos.html#etiqueta-base">base</a></td>
         <td>URI base para direcciones relativas</td>
         <td>href, target</td>
@@ -203,17 +231,17 @@
         <td>texto preformateado</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-bloques.html#etiqueta-main">main</a></td>
         <td>principal</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-bloques.html#etiqueta-figure">figure</a></td>
         <td>ilustración</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-bloques.html#etiqueta-figcaption">figcaption</a></td>
         <td>pie de ilustración</td>
         <td></td>
@@ -233,7 +261,7 @@
         <td>salto de línea</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-wbr">wbr</a></td>
         <td>posible salto de línea</td>
         <td></td>
@@ -258,108 +286,108 @@
         <td>énfasis</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-sub">sub</a></td>
         <td>subíndice</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-sup">sup</a></td>
         <td>superíndice</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-abbr">abbr</a></td>
         <td>abreviatura</td>
         <td>title</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-b">b</a></td>
         <td>atención</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-cite">cite</a></td>
         <td>obra</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-data">data</a></td>
         <td>datos</td>
         <td>value</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-dfn">dfn</a></td>
         <td>definición</td>
         <td>title</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-kbd">kbd</a></td>
         <td>teclado</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-i">i</a></td>
         <td>tecnicismo</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-mark">mark</a></td>
         <td>resaltado añadido posteriormente, no en el original</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-q">q</a></td>
         <td>cita </td>
         <td>cite</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-s">s</a></td>
         <td>incorrecto</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-small">small</a></td>
         <td>comentario</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-texto.html#etiqueta-time">time</a></td>
         <td>fecha y hora</td>
         <td>datetime</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-u">u</a></td>
         <td>sonido inarticulado</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-code">code</a></td>
         <td>código (de programa de ordenador)</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-samp">samp</a></td>
         <td>salida (de programa de ordenador)</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-var">var</a></td>
         <td>variable (de programa de ordenador)</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-bdo">bdo</a></td>
         <td>dirección de escritura</td>
         <td>dir</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-otros.html#etiqueta-bdi">bdi</a></td>
         <td>ignorar dirección de escritura</td>
         <td>dir</td>
       </tr>
     </tbody>
-    <tbody id="html-modificacion">
+    <tbody id="html-modificacion" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Modificaciones</td>
       </tr>
@@ -388,7 +416,7 @@
         <td>Descripción</td>
         <td>Atributos principales</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>picture</td>
         <td>imagen múltiple para diferentes resoluciones o densidades</td>
         <td></td>
@@ -398,59 +426,59 @@
         <td>imagen</td>
         <td>alt, src, usemap, ismap, width, height</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-objetos.html#iframe">iframe</a></td>
         <td>marco incrustado en el documento</td>
         <td>src, srcdoc, name, sandbox, width, height</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>embed</td>
         <td></td>
         <td>src, type, width, height</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-objetos.html#object-param">object</a></td>
         <td>objeto</td>
         <td>data, type, width, height</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-objetos.html#object-param">param</a></td>
         <td>parámetro para &lt;objeto&gt;</td>
         <td>name, value</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>video</td>
         <td></td>
         <td>src, poster, preload, autoplay, loop, muted, controls, width, height
         </td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>audio</td>
         <td></td>
         <td>src, preload, autoplay, loop, muted, controls</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>source</td>
         <td>origen de &lt;img&gt;, &lt;audio&gt; o &lt;video&gt;</td>
         <td>src, type</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>track</td>
         <td></td>
         <td>kind, src, srclang, label, default</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>map</td>
         <td>mapa de imagen</td>
         <td>name</td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td>area</td>
         <td>área en mapa de imagen</td>
         <td>alt, coords, href, hreflang, rel, shape, target, type</td>
       </tr>
     </tbody>
-    <tbody id="html-listas">
+    <tbody id="html-listas" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Listas (bloque de contenido)</td>
       </tr>
@@ -495,7 +523,7 @@
         <td></td>
       </tr>
     </tbody>
-    <tbody id="html-tablas">
+    <tbody id="html-tablas" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Tablas</td>
       </tr>
@@ -555,7 +583,7 @@
         <td>span</td>
       </tr>
     </tbody>
-    <tbody id="html-formularios">
+    <tbody id="html-formularios" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Formularios</td>
       </tr>
@@ -673,13 +701,13 @@
         <td>leyenda para &lt;details&gt;</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="no-impartidas-en-clase">
         <td><a href="html-interactivos.html#etiqueta-dialog">dialog</a></td>
         <td>cuadro de diálogo de una aplicación</td>
         <td>open</td>
       </tr>
     </tbody>
-    <tbody id="html-scripts">
+    <tbody id="html-scripts" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Scripts</td>
       </tr>
@@ -714,7 +742,7 @@
         <td>width, height</td>
       </tr>
     </tbody>
-    <tbody id="html-ruby">
+    <tbody id="html-ruby" class="no-impartidas-en-clase">
       <tr class="titulo">
         <td colspan="3">Notación Ruby (texto en línea)</td>
       </tr>
@@ -742,7 +770,7 @@
   </table>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 1 de octubre de 2019</p>
+    <p class="ultmod">Última modificación de esta página: 3 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
