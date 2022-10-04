@@ -81,34 +81,44 @@
 
     <p>Los tipos de errores detectados de forma predeterminada por la extensión HTMLHint son los siguientes:</p>
     <ul>
+      <li>"doctype-first": el documento debe incluir el preámbulo DOCTYPE</li>
+      <li>"doctype-html5": el preámbulo DOCTYPE debe indicar el tipo html</li>
+      <li>"html-lang-require": la etiqueta html debe incluir el atributo lang</li>
+      <li>"title-require": el documento debe incluir el elemento <span class="html-eti">&lt;title&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
       <li>"attr-lowercase": los nombres de los atributos deben escribirse en minúsculas. Se puede indicar una lista excepciones (por ejemplo, algunos atributos de las etiquetas SVG)</li>
       <li>"attr-no-duplication": los atributos no deben duplicarse</li>
+      <li>"attr-no-unnecessary-whitespace": no debe haber espacios entre los atributos y sus valores</li>
       <li>"attr-value-double-quotes": los valores de los atributos deben escribirse entre comillas dobles</li>
-      <li>"doctype-first": el documento debe incluir el preámbulo DOCTYPE</li>
+      <li>"attr-whitespace": los valores de los atributos no deben contener espacios ni al principio ni al final</li>
+      <li>"alt-require": las imágenes deben incluir el atributo <span class="html-atri">alt</span></li>
+      <li>"tag-pair": las etiquetas deben cerrarse y estar correctamente anidadas</li>
+      <li>"tagname-lowercase": las etiquetas deben escribirse en minúsculas excepto las de la lista (por ejemplo, etiquetas SVG)</li>
+      <li>"tagname-specialchars": los nombres de etiquetas deben contener únicamente letras, números o los caracteres "-", ":" o "_"</li>
+      <li>"empty-tag-not-self-closed": las etiquetas vacías no deben incluir el cierre /</li>
+      <li>"src-not-empty": los atributos que hacen referencia a un elemento externo (<span class="html-atri">src</span>, <span class="html-atri">href</span>, <span class="html-atri">data</span>) no deben ser vacíos</li>
+      <li>"id-class-ad-disabled": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> no deben contener la palabra "ad" (que bloquean los bloqueadores de publicidad)</li>
       <li>"id-unique": los atributos <span class="html-atri">id</span> no deben repetirse</li>
       <li>"spec-char-escape": los caracteres especiales deben escribirse como entidades de carácter</li>
-      <li>"src-not-empty": los atributos que hacen referencia a un elemento externo (<span class="html-atri">src</span>, <span class="html-atri">href</span>, <span class="html-atri">data</span>) no deben ser vacíos</li>
-      <li>"tag-pair": las etiquetas deben cerrarse y estar correctamente anidadas</li>
-      <li>"tagname-lowercase": los nombres de las etiquetas deben escribirse en minúsculas</li>
-      <li>"title-require": el documento debe incluir el elemento <span class="html-eti">&lt;title&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
     </ul>
 
     <p>Además, HTMLHint permite detectar otro tipos de errores (que están desactivados de forma predeterminada):</p>
 
     <ul>
-      <li>"alt-require": las imágenes deben incluir el atributo <span class="html-atri">alt</span></li>
-      <li>"attr-unsafe-chars": los atributos no deben incluir caracteres "inseguros" [referencia: <a href="https://github.com/htmlhint/HTMLHint/wiki/attr-unsafe-chars">documentación de HTMLHint</a>]</li>
-      <li>"attr-value-not-empty": los atributos deben tener establecido algún valor</li>
-      <li>"doctype-html5": el preámbulo DOCTYPE debe indicar el tipo html</li>
       <li>"head-script-disabled": no deben utilizarse etiquetas <span class="html-eti">&lt;script&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
+      <li>"style-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;style&gt;</span></li>
+      <li>"script-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;script&gt;</span></li>
+      <li>"attr-unsafe-chars": los atributos no deben incluir caracteres "inseguros" [referencia: <a href="https://github.com/htmlhint/HTMLHint/wiki/attr-unsafe-chars">documentación de HTMLHint</a>]</li>
+      <li>"attr-value-single-quotes": los valores de los atributos deben escribirse entre comillas simples</li>
+      <li>"attr-value-not-empty": los atributos deben tener establecido algún valor</li>
+      <li>"attr-sorted": los atributos deben ordenados alfabéticamente.</li>
+      <li>"input-requires-label": Todas las etiquetas <span class="html-eti">&lt;input&gt;</span> deben tener un actributo <span class="html-atri">label</span>.</li>
+      <li>"tags-check": permite establecer reglas específicas para cualquier etiqueta y validarlas</li>
+      <li>"tag-self-close": las etiquetas vacías deben incluir el carácter final /</li>
       <li>"href-abs-or-rel": las direcciones deben ser absolutas (abs) o relativas (rel)</li>
-      <li>"id-class-ad-disabled": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> no deben contener la palabra "ad" (que bloquean los bloqueadores de publicidad)</li>
       <li>"id-class-value": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> deben utilizar guiones bajos (underline), guiones (dash) o camelCase (hump)</li>
       <li>"inline-script-disabled": los atributos no deben contener scripts</li>
       <li>"inline-style-disabled": no se debe utilizar el atributo <span class="html-atri">style</span></li>
       <li>"space-tab-mixed-disabled": el sangrado debe contener únicamente espacios (space), cuatro espacios (space4) o tabuladores (tab)</li>
-      <li>"style-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;style&gt;</span></li>
-      <li>"tag-self-close": las etiquetas vacías deben incluir el carácter final /</li>
     </ul>
 
     <p>El valor de cada propiedad suele true (activada) o false (desactivada), salvo en los casos en que ofrece más posibilidades (en la explicación anterior los valores se han indicado entre paréntesis).</p>
@@ -342,7 +352,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 21 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 3 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
