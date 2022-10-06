@@ -634,6 +634,8 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <p>El color blanco se consigue mezclando los tres colores con la máxima intensidad, así que su código RGB es rgb(255 255 255), rgb(100% 100% 100%), #FFFFFF o #FFF.</p>
 
+    <p>Este modelo de color es poco intuitivo. En general, no es fácil acertar la combinación de rojo, verde y azul necesaria para obtener un color concreto, ni tampoco es fácil acertar cómo modificar las tres componentes para obtener un color relacionado con otro (un color poco más claro o más oscuro que otro, por ejemplo).</p>
+
     <p class="mcl-svg-figura">
       <img src="../img/css/css-cuadros-colores-rgb-1.svg" alt="Cuadros de colores RGB" title="Cuadros de colores RGB" width="150" height="165">
       <img src="../img/css/css-cuadros-colores-rgb-2.svg" alt="Cuadros de colores RGB" title="Cuadros de colores RGB" width="150" height="165">
@@ -751,8 +753,8 @@ de posicionamiento que no aparecen aquí. */</code></pre>
             <rect x="10" y="10" width="730" height="50" fill="url(#hslGradient)" />
             <defs>
               <linearGradient id="hslGradient">
-                <stop offset="0%" stop-color="hsl(  0, 100%, 50%)" />
-                <stop offset="16%" stop-color="hsl( 60, 100%, 50%)" />
+                <stop offset="0%" stop-color="hsl(0, 100%, 50%)" />
+                <stop offset="16%" stop-color="hsl(60, 100%, 50%)" />
                 <stop offset="33%" stop-color="hsl(120, 100%, 50%)" />
                 <stop offset="50%" stop-color="hsl(180, 100%, 50%)" />
                 <stop offset="66%" stop-color="hsl(240, 100%, 50%)" />
@@ -781,7 +783,23 @@ de posicionamiento que no aparecen aquí. */</code></pre>
       </div>
     </div>
 
-    <p>El modelo HSL es más intuitivo que el modelo RGB y su uso se ha ido extendiendo en los últimos años.</p>
+    <p>El modelo HSL es más intuitivo que el modelo RGB, ya que el color depende únicamente de la componente Matiz y las componentes Saturación y Luminancia permiten aclarar o oscurecer el color.</p>
+
+    <p class="mcl-svg-figura">
+      <img src="../img/css/css-cuadros-colores-hsl-1.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hsl-2.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hsl-3.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hsl-4.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-5.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-6.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-7.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-8.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-9.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-10.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-11.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-12.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hsl-13.svg" alt="Cuadros de colores HSL" title="Cuadros de colores HSL" width="165" height="175">
+    </p>
 
     <hr class="corta">
 
@@ -875,13 +893,13 @@ de posicionamiento que no aparecen aquí. */</code></pre>
           </svg>
         </p>
       </li>
-      <li>Whiteness (Blancura) es un porcentaje que indica la cantidad de blanco que se añade al color</li>
-      <li>Blackness (Negrura) es un porcentaje que indica la cantidad de negro que se añade al color</li>
+      <li>Whiteness (Blanco) es un porcentaje que indica la cantidad de blanco que se añade al color</li>
+      <li>Blackness (Negro) es un porcentaje que indica la cantidad de negro que se añade al color</li>
     </ul>
 
     <p>Los códigos HWB se expresan:</p>
     <ul>
-      <li><strong>hwb(matiz blancura negrura)</strong>, donde matiz es un número entero entre 0 y 360 y blancura y negrura son porcentajes enteros entre 0% y 100%, sin comas entre ellos.</li>
+      <li><strong>hwb(matiz blanco negro)</strong>, donde matiz es un número entero entre 0 y 360 y blanco y negro son porcentajes enteros entre 0% y 100%, sin comas entre ellos.</li>
     </ul>
 
     <div class="filaflex">
@@ -900,7 +918,23 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <p><strong>Nota</strong>: Safari admite el formato HWB desde la versión 15 (septiembre de 2021), Firefox desde la versión 98 (marzo de 2022) y Chrome <a href="https://chromestatus.com/feature/5637256860663808"></a> desde la versión 101 (abril de 2022).</p>
 
-    <p>El modelo HWB es más intuitivo que el modelo HSL y su uso probablemente se generalice en el futuro.</p>
+    <p>El modelo HWB es más intuitivo que el modelo HSL y su uso probablemente se generalice en el futuro. Como puede observarse en los cuadros siguientes, cuando la suma de las componentes blanco y negro suman más de 100%, el color resultante es un tono de gris.</p>
+
+    <p class="mcl-svg-figura">
+      <img src="../img/css/css-cuadros-colores-hwb-1.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hwb-2.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hwb-3.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="160" height="170">
+      <img src="../img/css/css-cuadros-colores-hwb-4.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-5.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-6.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-7.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-8.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-9.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-10.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-11.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-12.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+      <img src="../img/css/css-cuadros-colores-hwb-13.svg" alt="Cuadros de colores HWB" title="Cuadros de colores HWB" width="165" height="175">
+    </p>
 
     <hr class="corta">
 
@@ -919,14 +953,14 @@ de posicionamiento que no aparecen aquí. */</code></pre>
           <td class="mcl-centrado"><span id="nMatiz2"></span></td>
         </tr>
         <tr>
-          <td>Blancura:</td>
-          <td><input type="range" name="points" min="0" max="100" id="blancura" value="0"></td>
-          <td class="mcl-centrado"><span id="nBlancura"></span></td>
+          <td>Blanco:</td>
+          <td><input type="range" name="points" min="0" max="100" id="blanco" value="0"></td>
+          <td class="mcl-centrado"><span id="nBlanco"></span></td>
         </tr>
         <tr>
-          <td>Negrura:</td>
-          <td><input type="range" name="points" min="0" max="100" id="negrura" value="0"></td>
-          <td class="mcl-centrado"><span id="nNegrura"></span></td>
+          <td>Negro:</td>
+          <td><input type="range" name="points" min="0" max="100" id="negro" value="0"></td>
+          <td class="mcl-centrado"><span id="nNegro"></span></td>
         </tr>
         <tr>
           <td colspan="3" class="mcl-centrado">
@@ -941,23 +975,23 @@ de posicionamiento que no aparecen aquí. */</code></pre>
 
     <script>
       var matiz2 = document.getElementById("matiz2");
-      var blancura = document.getElementById("blancura");
-      var negrura = document.getElementById("negrura");
+      var blanco = document.getElementById("blanco");
+      var negro = document.getElementById("negro");
       var nMatiz2 = document.getElementById("nMatiz2");
-      var nBlancura = document.getElementById("nBlancura");
-      var nNegrura = document.getElementById("nNegrura");
+      var nBlanco = document.getElementById("nBlanco");
+      var nNegro = document.getElementById("nNegro");
       var colorHwb = document.getElementById("colorHwb");
       var rectanguloHwb = document.getElementById("rectanguloHwb");
       function leecolorHwb(e) {
         nMatiz2.textContent = matiz2.value;
-        nBlancura.textContent = blancura.value + "%";
-        nNegrura.textContent = negrura.value + "%";
-        colorHwb.textContent = "hwb(" + matiz2.value + " " + blancura.value + "% " + negrura.value + "%)";
-        rectanguloHwb.setAttribute("fill", "hwb(" + matiz2.value + " " + blancura.value + "% " + negrura.value + "%)");
+        nBlanco.textContent = blanco.value + "%";
+        nNegro.textContent = negro.value + "%";
+        colorHwb.textContent = "hwb(" + matiz2.value + " " + blanco.value + "% " + negro.value + "%)";
+        rectanguloHwb.setAttribute("fill", "hwb(" + matiz2.value + " " + blanco.value + "% " + negro.value + "%)");
       }
       matiz2.addEventListener("change", leecolorHwb, false);
-      blancura.addEventListener("change", leecolorHwb, false);
-      negrura.addEventListener("change", leecolorHwb, false);
+      blanco.addEventListener("change", leecolorHwb, false);
+      negro.addEventListener("change", leecolorHwb, false);
     </script>
   </section>
 
@@ -1246,7 +1280,7 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
           <path fill="olive" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(120 0 0)" />
           <path fill="maroon" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(180 0 0)" />
           <path fill="purple" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(240 0 0)" />
-          <path fill="navy" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0,  -15 -25.981 z" transform="rotate(300 0 0)" />
+          <path fill="navy" stroke="white" stroke-width="1" d="M0 0 l 30 0 a 30 30, 0, 0, 0, -15 -25.981 z" transform="rotate(300 0 0)" />
           <rect x="-50" y="55" width="25" height="25" fill="white" stroke="black" stroke-width="1" />
           <rect x="-25" y="55" width="25" height="25" fill="silver" stroke="black" stroke-width="1" />
           <rect x="0" y="55" width="25" height="25" fill="gray" stroke="black" stroke-width="1" />
@@ -2686,7 +2720,7 @@ p.a100 { color: rgb(255 0 0 / 100%); }</code>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 3 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
