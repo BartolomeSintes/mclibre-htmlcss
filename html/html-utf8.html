@@ -552,26 +552,20 @@
       <li><span class="incompleto">falta hacer referencia a las fuentes usadas en otros sistemas operativos</span></li>
     </ul>
 
-    <p>Existen algunos proyectos de creación de tipos de letra libres que incluyan al menos los caracteres de Unicode que corresponden a pictogramas. El problema es que las fuentes en color pueden usar hasta cuatro formatos distintos (SBIX, COLR, SVG-in-OpenType, CBDT/CBLC) cuyo soporte es bastante desigual [<a href="https://pixelambacht.nl/chromacheck/">ChromaCheck</a> permite comprobar el soporte de esos formatos en el navegador].</p>
+    <p>Existen algunos proyectos de creación de tipos de letra libres que incluyan al menos los caracteres de Unicode que corresponden a pictogramas. El problema es que las fuentes en color pueden usar hasta cinco formatos distintos (SBIX, COLRv0, COLRv1, SVG-in-OpenType, CBDT/CBLC) cuyo soporte es bastante desigual [<a href="https://pixelambacht.nl/chromacheck/">ChromaCheck</a> permite comprobar el soporte de esos formatos en el navegador].</p>
     <ul>
+      <li><a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>, un proyecto creado por Google en 2014. Es una fuente en color (la versión en blanco y negro se considera obsoleta), disponible en los formatos CBDT/CBLC o COLRv1. Actualmente (octubre de 2022) Chrome admite ambos formatos y Firefox admite únicamente el formato COLRv1 si se activa la preferencia gfx.font_rendering.colr_v1.enabled, pero en Firefox 107 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1791558">está previsto</a> que admita COLRv1 sin necesidad de activar esa preferencia.</li>
       <li><a href="https://github.com/twitter/twemoji">Twemoji</a>, un proyecto creado por Twitter en 2014. Es una fuente en color, en formato SVG-in-OpenType, que Google Chrome actualmente (noviembre de 2021) no es capaz de mostrar.</li>
       <li><a href="https://github.com/mozilla/twemoji-colr">twemoji-colr</a>, un proyecto de Mozilla que rehace la fuente Twemoji en formato COLR. Es una fuente en color, en formato COLR, que admiten tanto Firefox como Google Chrome.</li>
-      <li><a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>, un proyecto creado por Google en 2014. Es una fuente en color, en formato CBDT/CBLC, que Firefox actualmente (noviembre de 2021) no es capaz de mostrar. También incluye una fuente en blanco y negro, pero se considera obsoleta.</li>
     </ul>
 
-    <p>Debido a estas restricciones, en estos apuntes:</p>
-    <ul>
-      <li>ya no se utiliza la fuente Symbola para mostrar emojis con representación en modo texto no incluidos en Segoe UI Symbol en la página <a href="html-unicode-simbolos.html">Símbolos Unicode</a>, ya que Symbola 10.24 de enero de 2018 no incluye caracteres que no estén en Segoe.</li>
-      <li>se utiliza la fuente twemoji-colr para mostrar emojis no incluidos en Segoe UI Symbol en el resto de páginas (<a href="html-unicode-dibujos.html">Dibujos</a>, etc.).</li>
-    </ul>
+    <p>Estas fuentes se pueden emplear en una página web utilizando el mecanismo de las fuentes web, que se comenta en la <a href="../css/css-fuentes-web.html">lección CSS: Fuentes web</a></p>
 
     <p>Otros proyectos parecen prácticamente abandonados o se han convertido en proyectos comerciales:</p>
     <ul>
       <li><a href="https://www.joypixels.com/">EmojiOne</a>, un proyecto creado en 2014 que se centraba principalmente en los caracteres emoji, aunque incluía muchos otros símbolos, con un diseño bastante trabajado y a todo color. Por desgracia en abril de 2017 el proyecto se convirtió en un proyecto comercial.</li>
       <li><a href="https://github.com/EmojiTwo/emojitwo">EmojiTwo</a>, un <i>fork</i> de EmojiOne creado tras el cambio de licencia de EmojiOne, pero que no ha avanzado mucho por el momento.</li>
     </ul>
-
-    <p>Estas fuentes se pueden emplear en una página web utilizando el mecanismo de las fuentes web, que se comenta en la <a href="../css/css-fuentes-web.html">lección CSS: Fuentes web</a></p>
   </section>
 
   <section id="pictogramas">
@@ -629,7 +623,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 16 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
