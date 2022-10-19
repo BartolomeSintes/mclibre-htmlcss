@@ -135,7 +135,9 @@
       </p>
     </aside>
 
-    <p>Como se comenta en la <a href="html-esquema.html">lección sobre esquemas</a>, en HTML 4 la "jerarquía" de los apartados de una página web venía determinada por las etiquetas de título (<span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>). La recomendación HTML 5 redefinió el concepto de esquema (en inglés, <i>outline</i>) de una página web, de manera que las secciones de un documento ya no se deberían definir mediante las etiquetas de título, sino mediante las cuatro etiquetas <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span>. Pero aunque actualmente (octubre de 2021) el concepto de esquema sigue formando parte de la norma HTML, como en realidad ningún navegador lo ha implementado nunca, se recomienda no utilizar el concepto de esquema. Es decir, sí que se recomienda utilizar las etiquetas de secciones introducidas en HTML 5 comentadas en esta lección porque permiten organizar mejor el contenido de las páginas, pero se recomienda mantener la <a href="#etiqueta-hn">jerarquía de títulos clásica del HTML 4</a>.</p>
+    <p>La "jerarquía" de los apartados de una página web ha estado siempre determinada por las etiquetas de título (<span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span>). En la recomendación HTML 5 se redefinió el concepto de esquema (en inglés, <i>outline</i>) de una página web, de manera que el esquema de un documento ya no se debería deducir únicamente de las etiquetas de título empleadas, sino tener en cuenta también las cuatro etiquetas <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span>. Como este concepto de esquema, nunca fue implementado por los navegadores, finalmente <a href="https://github.com/whatwg/html/pull/7829">se eliminó de la norma HTML</a> en julio de 2022.</p>
+
+    <p>Por ello se recomienda utilizar las etiquetas de secciones comentadas en esta lección, que permiten organizar mejor el contenido de las páginas, pero manteniendo la <a href="#etiqueta-hn">jerarquía de títulos</a> independiente de las secciones utilizadas.</p>
   </section>
 
   <section id="etiqueta-body">
@@ -662,7 +664,7 @@
       <li>y así sucesivamente.</li>
     </ul>
 
-    <p>Hasta que los navegadores implementen el concepto de esquema (<i>outline</i>), los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> definen de forma implícita las secciones anidadas en el esquema (outline) de la página web, como muestra el ejemplo siguiente, en el que las secciones implícitas están marcadas con un trazo discontinuo.</p>
+    <p>Los títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> definen de forma implícita las secciones anidadas en el esquema (outline) de la página web, como muestra el ejemplo siguiente, en el que las secciones implícitas están marcadas con un trazo discontinuo.</p>
 
     <p class="mcl-svg-figura">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" height="324" viewBox="0 0 1920 1080" style="background-color: #EEEEEE">
@@ -692,50 +694,6 @@
         <text x="140" y="800" font-family="sans-serif" font-size="50">h3</text>
       </svg>
     </p>
-
-    <hr class="corta">
-
-    <p>Si algún día los navegadores implementan el concepto de esquema (<i>outline</i>), las etiquetas de secciones <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;nav&gt;</span> y <span class="html-eti">&lt;aside&gt;</span> también crearán secciones en el esquema de la página web y las etiquetas de título se interpretarán teniendo en cuenta la sección en que están incluidas. Así, el documento siguiente será equivalente al anterior.</p>
-
-    <p class="mcl-svg-figura">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="570" viewBox="0 0 1920 1240" style="background-color: #EEEEEE">
-        <rect x="20" y="20" width="1880" height="1200" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-
-        <rect x="40" y="40" width="1840" height="80" fill="white" stroke="black" stroke-width="3" />
-        <text x="60" y="100" font-family="sans-serif" font-size="50">h1</text>
-
-        <rect x="60" y="140" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
-        <text x="80" y="200" font-family="sans-serif" font-size="50">section</text>
-
-        <rect x="100" y="220" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-        <rect x="120" y="240" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
-        <text x="140" y="300" font-family="sans-serif" font-size="50">h1</text>
-
-        <rect x="120" y="340" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
-        <text x="140" y="400" font-family="sans-serif" font-size="50">section</text>
-
-        <rect x="140" y="420" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-
-        <rect x="160" y="440" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
-        <text x="180" y="500" font-family="sans-serif" font-size="50">h4</text>
-
-        <rect x="60" y="680" width="1800" height="500" fill="white" stroke="black" stroke-width="3" />
-        <text x="80" y="740" font-family="sans-serif" font-size="50">section</text>
-
-        <rect x="100" y="760" width="1740" height="390" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-        <rect x="120" y="780" width="1700" height="80" fill="white" stroke="black" stroke-width="3" />
-        <text x="140" y="840" font-family="sans-serif" font-size="50">h6</text>
-
-        <rect x="120" y="880" width="1700" height="240" fill="white" stroke="black" stroke-width="3" />
-        <text x="140" y="940" font-family="sans-serif" font-size="50">section</text>
-
-        <rect x="140" y="960" width="1660" height="130" fill="white" stroke="black" stroke-width="4" stroke-dasharray="10 10" />
-
-        <rect x="160" y="980" width="1620" height="80" fill="white" stroke="black" stroke-width="3" />
-        <text x="180" y="1040" font-family="sans-serif" font-size="50">h1</text>
-      </svg>
-    </p>
-
   </section>
 
   <section id="etiqueta-aside">
@@ -966,7 +924,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 5 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 19 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
