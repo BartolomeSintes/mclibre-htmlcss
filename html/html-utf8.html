@@ -325,7 +325,7 @@
 
     <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, </p>
 
-    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en septiembre de 2021, <a href="http://blog.unicode.org/2021/09/announcing-unicode-standard-version-140.html">Unicode 14.0</a>, contiene más de 144.000 caracteres.</p>
+    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en septiembre de 2022, <a href="http://blog.unicode.org/2022/09/announcing-unicode-standard-version-150.html">Unicode 15.0</a>, contiene casi 150.000 caracteres.</p>
 
     <p>Las primeras versiones de Unicode se publicaron más o menos cada dos años pero desde 2009 Unicode se publica anualmente. La versión 14.0 se publicó con seis meses de retraso debido a la epidemia del coronavirus Covid-19, y a partir de esta versión Unicode se publicará en el tercer trimestre de cada año (en principio, en septiembre).</p>
 
@@ -421,10 +421,10 @@
     <p><strong>Notas:</strong></p>
     <ul>
       <li>Unicode no utiliza todos los bits de cada carácter. UTF-8 de 1 byte utiliza 7 bits (incluye 128 caracteres), UTF-16 de 2 bytes utiliza 11 bits (incluye 1920 caracteres de los 2048 posibles), etc.</li>
-      <li>Existen dos variantes de UTF-16: Big Endian, en la que el byte más significativo se pone en primera posición, y Little Endian, en la que el byte más significativo se pone en segunda posición.</li>
+      <li>Existen dos variantes de UTF-16 y de UTF-32: Big Endian, en la que el byte más significativo se pone en primera posición, y Little Endian, en la que el byte más significativo se pone en segunda posición.</li>
     </ul>
 
-    <p>La tabla siguiente muestra algunos caracteres codificados en Windows-1252, UTF-8 o UTF-16:</p>
+    <p>La tabla siguiente muestra algunos caracteres codificados en Windows-1252, UTF-8, UTF-16 o UTF-32 (big y little endian):</p>
 
     <table class="tabla-con-borde" style="text-align: center;">
       <tr>
@@ -434,6 +434,7 @@
         <td>e</td>
         <td>é</td>
         <td>€</td>
+        <td>𝄞</td>
       </tr>
       <tr>
         <th>CP1252</th>
@@ -442,6 +443,7 @@
         <td>65</td>
         <td>E9</td>
         <td>80</td>
+        <td></td>
       </tr>
       <tr>
         <th>UTF-8</th>
@@ -450,6 +452,7 @@
         <td>65</td>
         <td>C3 A9</td>
         <td>E2 82 AC</td>
+        <td>F0 9D 84 9E</td>
       </tr>
       <tr>
         <th>UTF-16 (BE)</th>
@@ -458,6 +461,7 @@
         <td>00 65</td>
         <td>00 E9</td>
         <td>20 AC</td>
+        <td>D8 34 DD 1E</td>
       </tr>
       <tr>
         <th>UTF-16 (LE)</th>
@@ -466,14 +470,25 @@
         <td>65 00</td>
         <td>E9 00</td>
         <td>AC 20</td>
+        <td>34 D8 1E DD</td>
       </tr>
       <tr>
-        <th>UTF-32</th>
+        <th>UTF-32 (BE)</th>
         <td>00 00 00 61</td>
         <td>00 00 00 E1</td>
         <td>00 00 00 65</td>
         <td>00 00 00 E9</td>
         <td>00 00 20 AC</td>
+        <td>00 01 D1 1E</td>
+      </tr>
+      <tr>
+        <th>UTF-32 (LE)</th>
+        <td>61 00 00 00</td>
+        <td>E1 00 00 00</td>
+        <td>65 00 00 00</td>
+        <td>E9 00 00 00</td>
+        <td>AC 20 00 00</td>
+        <td>1E D1 01 00</td>
       </tr>
     </table>
 
