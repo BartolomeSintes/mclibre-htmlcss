@@ -127,7 +127,7 @@ body {
       </div>
     </div>
 
-    <p>En caso de que todas las hojas de estilo tengan atributo <span class="html-atri">title</span>, la primera hoja de estilo enlazada es la que se aplica de forma predeterminada y el resto son hojas de estilo alternativas. Es decir, el navegador aplica o bien la hoja de estilo estilo-1.css, o bien la hoja de estilo estilo-2.css, o bien la hoja de estilo estilo-3.css.</p>
+    <p>En caso de que todas las hojas de estilo tengan atributo <span class="html-atri">title</span>, la primera hoja de estilo enlazada es la que se aplica de forma predeterminada y el resto son hojas de estilo alternativas. Es decir, el navegador aplica de forma predeterminada la hoja de estilo estilo-1.css, pero permite elegir entre cualquiera de las tres.</p>
 
     <div class="filaflex">
       <div class="columnaflex">
@@ -212,10 +212,54 @@ body {
         <a href="ejemplos/css-alternativas/css-alternativas-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
+
+
+    <p>En caso de que varias hojas de estilo alternativas tengan el mismo atributo <span class="html-atri">title</span>, al seleccionar ese título se aplicarán todas las hojas de estilo una detrás de otra. En el ejemplo siguiente, al elegir "Estilo 1" se aplicarán las hojas estilo-1.css y estilo-2.css.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">  &lt;link rel="alternate stylesheet" href="estilo-1.css" title="Estilo 1"&gt;
+  &lt;link rel="alternate stylesheet" href="estilo-2.css" title="Estilo 1"&gt;
+  &lt;link rel="alternate stylesheet" href="estilo-3.css" title="Estilo 3"&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-1.css */
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-2.css */
+body {
+    background-color: lightcoral;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">/* estilo-3.css */
+body {
+    background-color: lightslategray;
+}</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/css-alternativas/css-alternativas-5.html" style="height: 28em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/css-alternativas/css-alternativas-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 27 de septiembre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 21 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
