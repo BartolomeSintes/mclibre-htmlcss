@@ -114,21 +114,110 @@ h2 {
 
     <p>La propiedad <span class="css-prop">vertical-align</span> permite establecer la alineación vertical de un elemento respecto al elemento que lo contiene. Los posibles valores de <span class="css-prop">vertical-align</span> son <span class="css-valor">baseline</span>, <span class="css-valor">sub</span>, <span class="css-valor">super</span>, <span class="css-valor">top</span>, <span class="css-valor">text-top</span>, <span class="css-valor">middle</span>, <span class="css-valor">bottom</span> y <span class="css-valor">text-bottom</span>.</p>
 
+    <p>La lección <a href="css-texto-vertical-align.html">CSS: La propiedad <span class="css-prop">vertical-align</span></a> contiene ejemplos que detallan el significado de cada una de estas alineaciones.</p>
+
+    <p>Esta propiedad se necesita cuando un elemento contiene fragmentos de texto o imágenes de diferentes tamaños o tipos de letra, para obtener la alineación más adecuada. La propiedad se debe aplicar a los fragmentos de texto o imágenes, no al bloque de texto que contiene los fragmentos o imágenes.</p>
+
+    <hr class="corta">
+
+    <p>Por ejemplo, si insertamos una imagen en un párrafo, la imagen se coloca como un carácter más del texto (la parte inferior de la imagen está a la misma altura que la línea base del texto).</p>
+
     <div class="filaflex">
-      <iframe src="ejemplos/texto/vertical-align-1.html" style="height: 8em;"></iframe>
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;El logotipo de la Free Software Foundation y del proyecto GNU es una cabeza de ñu, un tipo de antílope africano: &lt;img src="../gnu-head-heckert.svg" alt="Logotipo de GNU" title="Logotipo de GNU" height="75"&gt;. La versión actual del logotipo fue dibujada por Aurelio Heckert en 2003.&lt;/p&gt;</code>
+</pre>
+      </div>
+      <iframe src="ejemplos/texto/vertical-align-1.html" style="height: 9em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/texto/vertical-align-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
 
+    <p>Con <span class="css-prop">vertical-align</span> podemos cambiar esa alineación. Por ejemplo, centrando la imagen en vertical.</p>
+
     <div class="filaflex">
-      <iframe src="ejemplos/texto/vertical-align-2.html" style="height: 12em;"></iframe>
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+  <code class="language-html">&lt;p&gt;El logotipo de la Free Software Foundation y del proyecto GNU es una cabeza de ñu, un tipo de antílope africano: &lt;img src="../gnu-head-heckert.svg" alt="Logotipo de GNU" title="Logotipo de GNU" height="75" class="v-centrado"&gt;. La versión actual del logotipo fue dibujada por Aurelio Heckert en 2003.&lt;/p&gt;</code>
+  </pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">.v-centrado {
+    vertical-align: middle;
+}</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/texto/vertical-align-2.html" style="height: 13em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/texto/vertical-align-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
 
-    <p><strong>Nota</strong>: La posición relativa de los elementos es la misma en Chrome y Firefox, aunque las líneas horizontales que se han añadido a los ejemplos para facilitar la comparación no se muestran de la misma manera en estos navegadores, como se explica en el <a href="#text-decoration">apartado dedicado a la propiedad <span class="css-prop">text-decoration</span></a>.</p>
+    <hr class="corta">
+
+    <p>Por ejemplo, si insertamos un emoji en un párrafo, el tamaño del emoji es el del texto (ya que una entidad numérica se trata como un carácter). Ese tamaño a veces resulta demasiado pequeño.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;El &amp;#x1f31e; y la &amp;#x1f31b;.&lt;/p&gt;</code>
+</pre>
+      </div>
+      <iframe src="ejemplos/texto/vertical-align-3.html" style="height: 4em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/texto/vertical-align-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Podemos aumentar el tamaño del emoji añadiendo una etiqueta <span class="html-eti">span</span> con clase. Como los caracteres se alinean por su línea base, las imágenes dejan de estar centradas en vertical con respecto al texto.</p>
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;El &lt;span class="grande"&gt;&amp;#x1f31e;&lt;/span&gt; y la &lt;span class="grande"&gt;&amp;#x1f31b;&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">.grande {
+    font-size: 400%;
+}</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/texto/vertical-align-4.html" style="height: 10em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/texto/vertical-align-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Si queremos que los emojis se vean centrados verticamente con respecto al texto, podemos aplicarles la propiedad <span class="css-prop">vertical-align</span> con el valor <span class="css-valor">middle</span>.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;El &lt;span class="grande"&gt;&amp;#x1f31e;&lt;/span&gt; y la &lt;span class="grande"&gt;&amp;#x1f31b;&lt;/span&gt;.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-css">.grande {
+    font-size: 400%;
+    vertical-align: middle;
+}</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/texto/vertical-align-5.html" style="height: 11em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/texto/vertical-align-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <section id="text-indent">
@@ -935,7 +1024,7 @@ Quinta línea. Esta línea es muy larga para ver si el navegador mantiene todo e
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 25 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
