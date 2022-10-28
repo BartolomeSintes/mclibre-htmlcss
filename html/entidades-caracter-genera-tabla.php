@@ -24,18 +24,16 @@
     print "        </tr>\n";
     print "      </thead>\n";
 
-    print "      <tbody>\n";
     foreach ($entidades_caracter as $c) {
-      print "        <tr>\n";
-      print "          <td style=\"text-align: center; font-size: 150%\">$c[0]</td>\n";
-      print "          <td>$c[1]</td>\n";
-      print "          <td>$c[2]</td>\n";
-      print "          <td>$c[3]</td>\n";
-      print "          <td>$c[4]</td>\n";
-      print "          <td>$c[5]</td>\n";
-      print "        </tr>\n";
+      print "      <tr>\n";
+      print "        <td style=\"text-align: center; font-size: 150%\">$c[0]</td>\n";
+      print "        <td>$c[1]</td>\n";
+      print "        <td>$c[2]</td>\n";
+      print "        <td>$c[3]</td>\n";
+      print "        <td>$c[4]</td>\n";
+      print "        <td>$c[5]</td>\n";
+      print "      </tr>\n";
     }
-    print "      </tbody>\n";
     print "    </table>\n";
 
     ?>
