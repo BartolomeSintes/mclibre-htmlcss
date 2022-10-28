@@ -82,7 +82,7 @@
     </div>
   </nav>
 
-<p><strong>Nota</strong>: Como se comenta en la lección <a href="html-tablas-atributos.html">Atributos de tablas</a>, los bordes de los elementos de una tabla se establecen mediante propiedades de estilo. En los ejemplos de código de esta página no se muestran esas propiedades.</p>
+  <p><strong>Nota</strong>: Como se comenta en la lección <a href="html-tablas-atributos.html">Atributos de tablas</a>, los bordes de los elementos de una tabla se establecen mediante propiedades de estilo. En los ejemplos de código de esta página no se muestran esas propiedades.</p>
 
   <section id="tablas-estructura">
     <h2 class="con-aside">Estructura de una tabla (<span class="html-eti">&lt;table&gt;</span>)</h2>
@@ -267,34 +267,32 @@
 
     <p>Las celdas de la tabla suelen ser elementos <span class="html-eti">&lt;td&gt;</span>, aunque también pueden ser elemento <span class="html-eti">&lt;th&gt;</span> para indicar que la celda es una cabecera de la fila o columna correspondiente.</p>
 
-    <p>El código fuente de una tabla sencilla (con un único <span class="html-eti">&lt;tbody&gt;</span>) sería el siguiente:</p>
+    <p>El código fuente de una tabla sencilla sería el siguiente:</p>
 
     <div class="filaflex">
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;th&gt;A&lt;/th&gt;
-      &lt;th&gt;B&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;1&lt;/th&gt;
-      &lt;td&gt;A1&lt;/td&gt;
-      &lt;td&gt;B1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;2&lt;/th&gt;
-      &lt;td&gt;A2&lt;/td&gt;
-      &lt;td&gt;B2&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;th&gt;A&lt;/th&gt;
+    &lt;th&gt;B&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;1&lt;/th&gt;
+    &lt;td&gt;A1&lt;/td&gt;
+    &lt;td&gt;B1&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;2&lt;/th&gt;
+    &lt;td&gt;A2&lt;/td&gt;
+    &lt;td&gt;B2&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/tablas/tablas.html" style="height: 29em;"></iframe>
+      <iframe src="ejemplos/tablas/tablas.html" style="height: 23em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/tablas.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -325,12 +323,11 @@
         <pre>
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Liga de &lt;strong&gt;Fútbol&lt;/strong&gt; española - Resultados de la Copa del Rey&lt;/caption&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
+  &lt;tr&gt;
 ...</code>
 </pre>
       </div>
-      <iframe src="ejemplos/tablas/caption.html" style="height: 10em;"></iframe>
+      <iframe src="ejemplos/tablas/caption.html" style="height: 9em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/caption.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -376,7 +373,35 @@
 
     <p>En una tabla puede haber uno o varios <span class="html-eti">&lt;tbody&gt;</span>, pero tanto la cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>) como el pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) son opcionales y sólo puede haber uno de cada en una tabla.</p>
 
-    <p>Si una tabla contiene <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>, también debe contener <span class="html-eti">&lt;tbody&gt;</span>.</p>
+    <p>Si una tabla únicamente contiene un elemento <span class="html-eti">&lt;tbody&gt;</span>, ese elemento <span class="html-eti">&lt;tbody&gt;</span> se puede eliminar, aunque la tabla contenga elementos <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>. Pero aunque una tabla no contenga elementos <span class="html-eti">&lt;tbody&gt;</span>, los navegadores crean automáticamente un elemento <span class="html-eti">&lt;tbody&gt;</span> que agrupa todas las filas de la tabla. El ejemplo siguiente muestra como se aplica la regla de estilo de <span class="html-eti">&lt;tbody&gt;</span> aunque la tabla no contenga explícitamente el elemento <span class="html-eti">&lt;tbody&gt;</span>.</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">tbody {
+    color: red;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Reino de España&lt;/td&gt;
+    &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;td&gt;Euro&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/tablas/sin-tbody.html" style="height: 17em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/sin-tbody.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
 
     <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
 
@@ -386,29 +411,27 @@
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
   &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;País&lt;/th&gt;
-      &lt;th&gt;Capital&lt;/th&gt;
-      &lt;th&gt;Moneda&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Reino de España&lt;/td&gt;
-      &lt;td&gt;Madrid&lt;/td&gt;
-      &lt;td&gt;Euro&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Estados Unidos Mexicanos&lt;/td&gt;
-      &lt;td&gt;Ciudad de México&lt;/td&gt;
-      &lt;td&gt;Peso&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;República Argentina&lt;/td&gt;
-      &lt;td&gt;Buenos Aires&lt;/td&gt;
-      &lt;td&gt;Peso&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;th&gt;País&lt;/th&gt;
+    &lt;th&gt;Capital&lt;/th&gt;
+    &lt;th&gt;Moneda&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Reino de España&lt;/td&gt;
+    &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;td&gt;Euro&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Estados Unidos Mexicanos&lt;/td&gt;
+    &lt;td&gt;Ciudad de México&lt;/td&gt;
+    &lt;td&gt;Peso&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;República Argentina&lt;/td&gt;
+    &lt;td&gt;Buenos Aires&lt;/td&gt;
+    &lt;td&gt;Peso&lt;/td&gt;
+  &lt;/tr&gt;
   &lt;tfoot&gt;
     &lt;tr&gt;
       &lt;th&gt;País&lt;/th&gt;
@@ -419,7 +442,7 @@
 &lt;/table&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/tablas/thead-tbody-tfoot.html" style="height: 49em;"></iframe>
+      <iframe src="ejemplos/tablas/thead-tbody-tfoot.html" style="height: 40em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/thead-tbody-tfoot.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -448,27 +471,25 @@
         <pre>
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;celda A1&lt;/td&gt;
-      &lt;td&gt;celda A2&lt;/td&gt;
-      &lt;td&gt;celda A3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;celda B1&lt;/td&gt;
-      &lt;td&gt;celda B2&lt;/td&gt;
-      &lt;td&gt;celda B3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;celda C1&lt;/td&gt;
-      &lt;td&gt;celda C2&lt;/td&gt;
-      &lt;td&gt;celda C3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;celda A1&lt;/td&gt;
+    &lt;td&gt;celda A2&lt;/td&gt;
+    &lt;td&gt;celda A3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;celda B1&lt;/td&gt;
+    &lt;td&gt;celda B2&lt;/td&gt;
+    &lt;td&gt;celda B3&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;celda C1&lt;/td&gt;
+    &lt;td&gt;celda C2&lt;/td&gt;
+    &lt;td&gt;celda C3&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/tablas/tr.html" style="height: 29em;"></iframe>
+      <iframe src="ejemplos/tablas/tr.html" style="height: 23em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/tr.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -507,27 +528,25 @@
         <pre>
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Fútbol Copa del Rey&lt;/caption&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;th&gt;2020/2021&lt;/th&gt;
-      &lt;th&gt;2021/2022&lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Campeón&lt;/th&gt;
-      &lt;td&gt;F.C. Barcelona&lt;/td&gt;
-      &lt;td&gt;Real Betis Balompié&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Subcampeón&lt;/th&gt;
-      &lt;td&gt;Athletic Club&lt;/td&gt;
-      &lt;td&gt;Valencia C.F.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;th&gt;2020/2021&lt;/th&gt;
+    &lt;th&gt;2021/2022&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Campeón&lt;/th&gt;
+    &lt;td&gt;F.C. Barcelona&lt;/td&gt;
+    &lt;td&gt;Real Betis Balompié&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Subcampeón&lt;/th&gt;
+    &lt;td&gt;Athletic Club&lt;/td&gt;
+    &lt;td&gt;Valencia C.F.&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/tablas/th-td.html" style="height: 29em;"></iframe>
+      <iframe src="ejemplos/tablas/th-td.html" style="height: 23em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/th-td.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -573,13 +592,11 @@
   &lt;caption&gt;Leyenda&lt;/caption&gt;
   &lt;colgroup&gt;&lt;col&gt;&lt;col&gt;&lt;/colgroup&gt;
   &lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;2&lt;/td&gt;
-      &lt;td&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+  &lt;/tr&gt;
 &lt;/table&gt;</code>
 </pre>
     </div>
@@ -592,7 +609,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 9 de mayo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
