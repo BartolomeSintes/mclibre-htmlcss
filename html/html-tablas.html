@@ -369,39 +369,11 @@
       </p>
     </aside>
 
-    <p>Los elementos <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> y <span class="html-eti">&lt;tfoot&gt;</span> abarcan una o varias filas seguidas para formar un grupo de filas. Un grupo de filas puede ser una cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>), un pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) o formar parte del contenido de la tabla (<span class="html-eti">&lt;tbody&gt;</span>)</p>
+    <p>Los elementos <span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> y <span class="html-eti">&lt;tfoot&gt;</span> abarcan una o varias filas seguidas para indicar que varias filas forman un grupo de filas. Un grupo de filas puede ser una cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>), un pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) o formar parte del contenido de la tabla (<span class="html-eti">&lt;tbody&gt;</span>)</p>
 
-    <p>En una tabla puede haber uno o varios <span class="html-eti">&lt;tbody&gt;</span>, pero tanto la cabecera de la tabla (<span class="html-eti">&lt;thead&gt;</span>) como el pie de tabla (<span class="html-eti">&lt;tfoot&gt;</span>) son opcionales y sólo puede haber uno de cada en una tabla.</p>
+    <p>Si una tabla contiene un elemento <span class="html-eti">&lt;thead&gt;</span>, este debe aparecer al principio. Si una tabla contiene un elemento <span class="html-eti">&lt;tfoot&gt;</span>, este debe aparecer al final.</p>
 
-    <p>Si una tabla únicamente contiene un elemento <span class="html-eti">&lt;tbody&gt;</span>, ese elemento <span class="html-eti">&lt;tbody&gt;</span> se puede eliminar, aunque la tabla contenga elementos <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>. Pero aunque una tabla no contenga elementos <span class="html-eti">&lt;tbody&gt;</span>, los navegadores crean automáticamente un elemento <span class="html-eti">&lt;tbody&gt;</span> que agrupa todas las filas de la tabla. El ejemplo siguiente muestra como se aplica la regla de estilo de <span class="html-eti">&lt;tbody&gt;</span> aunque la tabla no contenga explícitamente el elemento <span class="html-eti">&lt;tbody&gt;</span>.</p>
-
-    <div class="filaflex">
-      <div class="columnaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-css">tbody {
-    color: red;
-}</code>
-</pre>
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;table&gt;
-  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Reino de España&lt;/td&gt;
-    &lt;td&gt;Madrid&lt;/td&gt;
-    &lt;td&gt;Euro&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code>
-</pre>
-        </div>
-      </div>
-      <iframe src="ejemplos/tablas/sin-tbody.html" style="height: 17em;"></iframe>
-      <div class="icono-enlace">
-        <a href="ejemplos/tablas/sin-tbody.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
+    <p>Una tabla puede contener varios <span class="html-eti">&lt;tbody&gt;</span> consecutivos.</p>
 
     <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
 
@@ -411,12 +383,12 @@
 <code class="language-html">&lt;table&gt;
   &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
   &lt;thead&gt;
-  &lt;tr&gt;
-    &lt;th&gt;País&lt;/th&gt;
-    &lt;th&gt;Capital&lt;/th&gt;
-    &lt;th&gt;Moneda&lt;/th&gt;
-  &lt;/tr&gt;
-&lt;/thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;País&lt;/th&gt;
+      &lt;th&gt;Capital&lt;/th&gt;
+      &lt;th&gt;Moneda&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
   &lt;tr&gt;
     &lt;td&gt;Reino de España&lt;/td&gt;
     &lt;td&gt;Madrid&lt;/td&gt;
@@ -445,6 +417,36 @@
       <iframe src="ejemplos/tablas/thead-tbody-tfoot.html" style="height: 40em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/thead-tbody-tfoot.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>Si una tabla contiene filas (<span class="html-eti">&lt;tr&gt;</span>) no incluidas en algún grupo (<span class="html-eti">&lt;tbody&gt;</span>, <span class="html-eti">&lt;thead&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>), los navegadores crean automáticamente elementos <span class="html-eti">&lt;tbody&gt;</span> que agrupen las filas consecutivas no incluidas en ningún grupo. En el ejemplo siguiente el contenido de la fila se ve de color rojo debido a la regla de estilo de <span class="html-eti">&lt;tbody&gt;</span>, aunque el código fuente no contiene explícitamente el elemento <span class="html-eti">&lt;tbody&gt;</span>, lo que indica que el navegador lo ha creado (de hecho, si se abre el inspector del navegador se puede ver ese elemento <span class="html-eti">&lt;tbody&gt;</span>).</p>
+
+    <div class="filaflex">
+      <div class="columnaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-css">tbody {
+    color: red;
+}</code>
+</pre>
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Reino de España&lt;/td&gt;
+    &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;td&gt;Euro&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code>
+</pre>
+        </div>
+      </div>
+      <iframe src="ejemplos/tablas/sin-tbody.html" style="height: 17em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/sin-tbody.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
   </section>
@@ -609,7 +611,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 31 de octubre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
