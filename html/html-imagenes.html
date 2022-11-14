@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <h1>Imágenes</h1>
+  <h1>HTML. Imágenes</h1>
 
   <nav>
     <p>
@@ -20,11 +20,10 @@
     </p>
 
     <div class="toc">
-      <h2>Imágenes</h2>
+      <h2>HTML Imágenes</h2>
 
       <ul>
         <li><a href="#img-introduccion">Introducción</a></li>
-        <li><a href="#img-formatos">Formatos de imágenes</a></li>
         <li><a href="#img-img">Etiqueta <span class="html-eti">&lt;img&gt;</span></a>
           <ul>
             <li><a href="#img-atributos-src"><span class="html-atri">src</span></a></li>
@@ -38,6 +37,8 @@
       </ul>
     </div>
   </nav>
+
+  <p>En esta lección se comentan las etiquetas que permiten incluir imágenes en páginas web. En la lección <a href="html-imagenes-formatos.html">Formatos de imagen</a> se comentan los formatos de imágenes más utilizados en las páginas web.</p>
 
   <section id="img-introduccion">
     <h2>Introducción: imágenes de mapa de bits e imágenes vectoriales</h2>
@@ -56,311 +57,6 @@
     </ul>
 
     <p>Las imágenes pueden convertirse fácilmente de formato a otro (salvo lógicamente de mapa de bits a vectoriales) y existen numerosas aplicaciones tanto web como nativas para realizar la conversión. Por ejemplo, Google puso en marcha en 2018 <a href="https://squoosh.app/">Squoosh</a>, un convertidor online.</p>
-  </section>
-
-  <section id="img-formatos">
-    <h2>Formatos de imágenes</h2>
-
-    <p>El formato de imágenes vectoriales más utilizado es <a href="#img-formatos-svg">SVG</a>.</p>
-
-    <p>Existen numeros formatos de mapa de bits, enfocados a diferentes tipos de imagen:</p>
-
-    <ul>
-      <li>para imágenes fotográficas (muchos colores), el formato más extendido es <a href="#img-formatos-jpg">JPEG</a></li>
-      <li>para dibujos (pocos colores, formas bien definidas) los formatos más extendidos son <a href="#img-formatos-gif">GIF</a> y <a href="#img-formatos-png">PNG</a></li>
-      <li>para dibujos con animación, el formato más extendido ha sido siempre el <a href="#img-formatos-gif">GIF animado</a>, aunque posiblemente a medio plazo vaya creciendo el uso de <a href="#img-formatos-apng">APNG</a></li>
-      <li>para dibujos sin compresión, el formato más extendido es <a href="#img-formatos-bmp">BMP</a> de Windows, pero apenas se utiliza, ni se recomienda hacerlo, ya que los archivos son muy grandes</li>
-    </ul>
-
-    <p>En los últimos años se han desarrollado otros formatos de mapa de bits que mejoran los formatos anteriores, pero que todavía no cuentan con el consenso necesario para sustituirlos. Por ejemplo, <a href="#img-formatos-webp">WebP</a> de Google, <a href="https://en.wikipedia.org/wiki/JPEG_XR">JPEG XR</a> de Microsoft, <a href="https://en.wikipedia.org/wiki/Better_Portable_Graphics">BPG</a> de Fabrice Bellard (<a href="https://lwn.net/Articles/625535/">artículo en lwn.net de diciembre de 2014</a>), etc. Posiblemente, el formato que sustituya en el futuro a estos formatos sea <a href="https://jpeg.org/jpegxl/">JPEG XL</a>.</p>
-
-    <p>En el pasado se desarrollaron otros formatos de mapa de bits que no han tenido ningún éxito, por ejemplo, <a href="#img-formatos-mng">MNG</a>.</p>
-
-    <section id="img-formatos-svg">
-      <h3 class="con-aside">SVG</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          SVG<br>
-          <a href="https://www.w3.org/TR/2011/REC-SVG11-20110816/"><img src="../varios/iconos/icono-svg.svg" alt="Recomendación SVG" title="Recomendación SVG" width="32" height="32"></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>SVG (Scalable Vector Graphics = Gráficos Vectoriales Escalables) es un lenguaje de marcas creado por el W3C y dirigido a la representación de gráficos vectoriales (dibujos y texto).</p>
-
-      <p>En la <a href="../otros/historia.html#svg">lección sobre Historia de la Web</a> se comentan las recomendaciones de SVG publicadas o en preparación por el W3C.</p>
-
-      <p>En un gráfico vectorial, los elementos de la imagen están definidos como formas elementales (líneas, rectángulos, círculos, curvas, polígonos, etc.), definidas mediante etiquetas similares a las del HTML. Por ello SVG no es un formato adecuado para fotografías, pero es idóneo para cualquier tipo de dibujo, técnico o artístico. Sus principales ventajas son el reducido tamaño (en KB) de las imágenes, la calidad obtenida (puesto que es el navegador el que dibuja la imagen), además de las posibilidades de modificación y reutilización inherentes a los formatos vectoriales.</p>
-
-      <p>SVG se impuso rápidamente como formato estándar de gráficos vectoriales en el mundo del software libre y los programas de edición de gráficos propietarios han ido adquiriendo poco a poco la capacidad de importar y exportar en formato SVG. Desgraciadamente, en la web, la implantación de SVG ha sido muy lenta. Durante su primera década de vida, el uso de SVG estaba bloqueado porque Internet Explorer no fue capaz de mostrar gráficos SVG hasta IE 9. Posteriormente, aunque su uso sigue creciendo, dos obstáculos siguen frenando su implantación definitiva: el hecho de que los navegadores no implementen totalmente la recomendación SVG y el hecho de que pueda incluirse código ejecutable en los gráficos SVG, lo que provoca inquietudes por motivos de seguridad (por ejemplo, WordPress en su configuración por defecto no permite la subida de imágenes SVG).</p>
-
-      <p>Un gráfico SVG puede incluirse en una página web de dos maneras, como objeto interno o como objeto externo.</p>
-
-      <p>En las lecciones <a href="html-svg.html">SVG</a>, <a href="svg-formas-1.html">Formas básicas SVG</a> y <a href="svg-formas-2.html">Formas avanzadas SVG</a> se comenta con más detalle el uso de SVG.</p>
-    </section>
-
-    <section id="img-formatos-jpg">
-      <h3 class="con-aside">JPG o JPEG</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          JPEG<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#jpeg_joint_photographic_experts_group_image"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El nombre oficial de este formato es JPEG, pero se le suele llamar JPG (seguramente porque la extensión de estos archivos es .jpg).</p>
-
-      <p>El <a href="https://jpeg.org/">comité JPEG</a> (Joint Photographic Experts Group = Grupo de Unión de Expertos en Fotografía) fue creado en 1982 por las tres organizaciones de normalización <a href="https://www.iso.org/home.html">ISO</a> (International Organization for Standardization = Organización Internacional de Normalización), CCITT (International Telegraph and Telephone Consultative Committee = Comité Consultivo Internacional de Telegrafía y Telefonía, este comité de la <a href="https://www.itu.int/es/pages/default.aspx">UIT</a> -Unión Internacional de las Telecomunicaciones- desapareció en 1992) e <a href="https://www.iec.ch/homepage">IEC</a> (International Electrotechnical Commission = Comisión Electrotécnica Internacional) con el objetivo de definir un algoritmo de compresión que permitiera la transmisión de imágenes reales a través de líneas RDSI. En 1994 se aprobó finalmente la norma <a href="https://www.w3.org/Graphics/JPEG/itu-t81.pdf">ISO/IEC 10918-1</a>, que definía una familia de algoritmos de compresión (en 1995, 1997 y 1999 se aprobaron respectivamente las partes 2, 3 y 4 de esta norma).</p>
-
-      <p>Por problemas entre los organismos de normalización participantes no llegó a definirse un formato de archivo, así que en la práctica se utilizan unos formatos creados bajo la coordinación de C-Cube Microsystems.</p>
-      <ul>
-        <li>El formato JFIF (JPEG File Interchange Format = Formato de Intercambio de Archivos JPEG) es el más elemental y sólo contiene la imagen. Este formato es el que suelen tener las imágenes con extensión JPG. <br> Este formato fue creado por el <a href="http://www.ijg.org/">Independent JPEG Group</a> y la última versión es la versión <a href="https://www.w3.org/Graphics/JPEG/jfif3.pdf">JPEG FIF 1.02</a>, publicada en septiembre de 1992.</li>
-        <li>El formato TIFF (Tagged Image File Format) es un formato creado para el manejo de imágenes escaneadas independientemente del escáner utilizado. Para ello, permite incluir en un único archivo varias imágenes en diferentes formatos y, mediante etiquetas,información adicional sobre las imágenes.<br> Este formato fue creado por Aldus y Microsoft, aunque ahora es propiedad de Adobe. La última versión del formato es la versión <a href="https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf">TIFF 6.0</a>, publicada en junio de 1992, con suplementos publicados en 1995 y 2002. <a href="https://en.wikipedia.org/wiki/TIFF">Información sobre TIFF en Wikipedia</a> (en inglés).</li>
-      </ul>
-
-      <p>La práctica totalidad de las fotografías (imágenes con muchos colores) que hay en Internet están en formato JPEG, por la extraordinaria compresión que consigue (como se puede ajustar el nivel de compresión, al crear el archivo se puede ajustar la relación tamaño/calidad de la imagen). Además admite también entrelazado (una imagen entrelazada se ve en el navegador desde que empieza a descargarse, primero con poca calidad, pero cada vez con más detalle a medida que va llegando). El único inconveniente es que se trata de un formato de compresión con pérdida, por lo que nunca se puede recuperar la información original, y si una imagen se edita varias veces, la calidad se va degradando cada vez más.</p>
-
-      <p>Para conocer más detalles sobre el formato JPEG, se pueden consultar estas dos FAQ: <a href="http://www.faqs.org/faqs/jpeg-faq/part1/">JPEG FAQ 1</a> y <a href="http://www.faqs.org/faqs/jpeg-faq/part2/">JPEG FAQ 2</a>.</p>
-
-      <p>En diciembre del año 2000 se aprobó la norma <a href="https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-T.800-201906-I!!PDF-E&type=items">ISO/IEC 15444-1</a>, una versión más potente del JPEG original, conocida como <a href="https://jpeg.org/jpeg2000/index.html">JPEG 2000</a>. La versión más reciente de esta norma es de 2019 . Entre 2003 y 2007 se publicaron 10 partes más, que cubren distintas aplicaciones del formato. Este formato no se utiliza todavía en la web, posiblemente debido a que algunas partes del formato JPEG 2000 están sometidas a patentes (declaradas o sin declarar, lo que empeora la situación).
-      </p>
-
-      <p>En Firefox, el <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=36351">bug 36.351</a> (abierto en abril de 2000) está dedicado al soporte de JPEG 2000, pero se cerró en 2009 con la decisión de no implementar el soporte de este formato.</p>
-
-      <p>En mayo de 2018 la organización de normalización ECMA propuso la creación de un grupo de trabajo para crear un formato de imágenes JPEG animadas [<a href="https://www.ecma-international.org/news/call-for-participation-royalty-free-animated-jpeg-standardization-proposal/">referencia</a>] que podría recibir el nombre de aJPEG. El trabajo se asignó al comité <a href="https://www.ecma-international.org/technical-committees/tc32/?tab=general">TC32 Multimedia coding and communications</a>, pero actualmente (octubre de 2022) no parecen haber publicado ninguna norma.</p>
-
-      <p>En abril de 2018, el comité JPEG <a href="https://jpeg.org/items/20180423_cfp_jpeg_xl.html">comenzó a trabajar</a> en el formato sucesor de JPEG, evitando los errores cometidos con JPEG 2000. Este nuevo formato se ha denominado JPEG XL y se empezaron a publicar partes de su norma en octubre de 2021. Este formato, que se espera sustituya a todos los formatos de imágenes actuales, se comenta en <a href="#img-formatos-jxl">un apartado aparte</a>.</p>
-    </section>
-
-    <section id="img-formatos-gif">
-      <h3 class="con-aside">GIF</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          GIF<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#gif_graphics_interchange_format"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>La <a href="https://www.w3.org/Graphics/GIF/spec-gif87.txt">especificación del formato GIF87a</a> (Graphics Interchange Format = Formato de Intercambio de Gráficos) fue publicada por <a href="https://webcenters.netscape.compuserve.com/menu/about.jsp">CompuServe</a> en junio de 1987. Una imagen GIF sólo puede tener 256 colores distintos, lo que no la hace recomendable para las fotografías, pero sí para dibujos. Además, el tamaño de los archivos es pequeño, ya que utiliza el algoritmo de compresión sin pérdida LZW. El éxito del formato GIF fue inmediato y su uso se extendió por Internet.</p>
-
-      <p>CompuServe publicó en julio de 1990 una extensión del formato GIF87a llamada <a href="https://www.w3.org/Graphics/GIF/spec-gif89a.txt">GIF89a</a>, que añadía al formato GIF la posibilidad de definir transparencia y de crear animaciones (los llamados GIF animados). Los primeros navegadores (como Mosaic en 1993) soportaban GIF, lo que facilitó su uso masivo en la web.</p>
-
-      <p>Pero el algoritmo LZW (LZW son las iniciales de sus inventores, Abraham Lempel, Jakob Ziv y Terry Welch) estaba patentado desde 1983 por la Sperry Corporation (que en 1986 se había unido a Burroughs para formar Unisys). Parece ser que CompuServe no comprobó al crear GIF si el algoritmo que iba a utilizar estaba patentado y que Unisys no se enteró hasta 1993 de que se estaba usando LZW sin su permiso. A partir de ese momento, Unisys reclamó que cualquier programa que creara imágenes en formato GIF le pagara una licencia. Muchas empresas, entre ellas CompuServe, llegaron a acuerdos con Unisys, pero inmediatamente el W3C desarrolló el <a href="#img-formatos-png">formato PNG</a>, un formato libre para sustituir a GIF.</p>
-
-      <p>Las patentes de Unisys que cubren el formato GIF vencieron en junio de 2003 en Estados Unidos y en 2004 en otros países (Canadá, Francia, Italia, Alemania, Reino Unido y Japón) y unas patentes relacionadas propiedad de IBM vencieron en julio de 2006, por lo que GIF es ahora un formato libre de patentes. En cualquier caso, se recomienda utilizar PNG en lugar de GIF.</p>
-    </section>
-
-    <section id="img-formatos-png">
-      <h3 class="con-aside">PNG</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          PNG<br>
-          <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/"><img src="../varios/iconos/icono-w3c.svg" alt="Recomendación W3C" title="Recomendación W3C" width="47" height="32"></a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#png_portable_network_graphics"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El formato <a href="http://www.libpng.org/pub/png/">PNG</a> (Portable Network Graphics = Gráficos de Red Portátiles) surgió como alternativa a la reclamación de Unisys, poseedora de una patente del algoritmo LZW, usado en el formato GIF. La primera versión preliminar fue propuesta por <a href="https://boutell.dev/">Thomas Boutell</a> en enero de 1995 y en octubre de 1996 el W3C publicó la recomendación <a href="https://www.w3.org/TR/REC-png-961001">Portable Network Graphics</a>, editada por Thomas Boutell. En noviembre de 2003 se publicó la recomendación <a href="https://www.w3.org/TR/2003/REC-PNG-20031110/">Portable Network Graphics (PNG): Functional specification (2ª edición)</a>, editada por David Duce, que se publicó también en 2004 como norma <a href="https://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=29581">ISO 15948</a>.</p>
-
-      <p>Las ventajas del formato PNG sobre el formato GIF son muchas: se trata de un formato libre, sin pérdida, que consigue mayor compresión que GIF (alrededor de un 20%), con transparencia alfa (cada pixel puede tener su propio nivel de transparencia), canal gamma (para ajustar el brillo) y entrelazado.</p>
-
-      <p>Sin embargo el formato PNG no ha conseguido desplazar al formato GIF, principalmente porque hasta finales de 2006 Internet Explorer (el navegador más utilizado) no mostraba correctamente las imágenes PNG (concretamente, las imágenes con transparencia alfa). "Casualmente", una vez vencidas las patentes del formato GIF, Microsoft publicó en octubre de 2006 Internet Explorer 7, que ya mostraba correctamente los archivos PNG.</p>
-    </section>
-
-    <section id="img-formatos-apng">
-      <h3 class="con-aside">APNG</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          APNG<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#apng_animated_portable_network_graphics"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>Como alternativa a MNG, unos desarrolladores de Mozilla crearon en 2004 el formato <a href="https://wiki.mozilla.org/APNG_Specification">APNG</a> (Animated PNG), que se puede utilizar en Firefox desde Firefox 3 (publicado en 2008), y se pudo utilizar en Opera (desde Opera 9.5, publicado en 2008, hasta Opera 14, publicado en 2013). En abril de 2007 el grupo de desarrollo del formato PNG rechazó la propuesta de formato APNG elaborada por Mozilla, lo que parecía condenar este formato al olvido. De hecho, el navegador Opera dejó de admitir el formato al pasar a usar Blink, el motor de Chrome, en 2013. Sin embargo, en los últimos años la situación ha mejorado, puesto que Safari y Chrome lo admiten desde Safari 8 (junio de 2014) y Chrome 59 (junio de 2017). En septiembre de 2021 se puso en marcha de nuevo un <a href="../otros/historia.html#png">grupo de trabajo PNG</a> en el W3C, con el objetivo de publicar una tercera versión de la recomendación PNG en 2023, que entre otros temas normalizará los PNGs animados.</p>
-
-      <p>La página del proyecto APNG, creada en 2008, temporalmente abandonada en 2014 y desparecida en 2018, ofrecía información sobre el formato [<a href="https://web.archive.org/web/20180516104244/https://animatedpngs.com/">Copia en Internet Archive de mayo de 2018</a>]. </p>
-
-      <p>Este es un ejemplo de imagen APNG. Como muestra el segundo ejemplo, entre las ventajas del formato APNG se encuentra la posibilidad de utilizar el canal de transparencia alfa, lo que permite utilizar fondos con las imágenes.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="apng-balon.png" alt="Ejemplo de imagen en formato APNG"
-    width="100" height="100"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/apng-1.html" style="height: 8em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/apng-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="apng-balon.png" alt="Ejemplo de imagen en formato APNG"
-    width="100" height="100"
-    style="background-color: lightblue"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/apng-2.html" style="height: 8em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/apng-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="img-formatos-webp">
-      <h3 class="con-aside">WebP</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          WebP<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#webp_image"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-          <a href="https://caniuse.com/webp"><img src="../varios/iconos/icono-caniuse-oksi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El formato <a href="https://developers.google.com/speed/webp">WebP</a> es un formato de imágenes de mapa de bits con compresión o sin compresión, estáticas o animadas, publicado por Google en septiembre de 2010 como alternativa a JPG, PNG y GIF. Es un formato derivado del formato de vídeo <a href="https://en.wikipedia.org/wiki/VP8">VP8</a> publicado en septiembre de 2008 por la empresa On2, comprada por Google en mayo de 2010.</p>
-
-      <p>Chrome admite imágenes WebP desde Chrome 9, publicado en enero de 2011 [<a href="https://www.chromestatus.com/feature/6471725441089536">ref</a>]. Firefox admite imágenes WebP desde Firefox 65, publicado en enero de 2019 [<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1294490">ref</a>]. Safari admite imágenes WebP desde Safari 14, publicado en septiembre de 2020 [<a href="https://developer.apple.com/documentation/safari-release-notes/safari-14-release-notes#New-Features">ref</a>].</p>
-
-      <p>Actualmente (octubre de 2022), el uso de WebP sigue siendo minoritario, posiblemente por las limitaciones del formato (profundidad de color máxima de 8 bits, sin modo progresivo, tamaño máximo limitado a 16383 x 16383, único espacio de color 4:2:0).</p>
-
-      <p>En junio de 2021, Google inició el <a href="https://chromium.googlesource.com/codecs/libwebp2/">desarrollo de WebP 2</a>, una nueva versión del formato.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="webp-flores.webp" alt="Ejemplo de imagen en formato WebP"
-    width="320" height="241"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/webp-1.html" style="height: 260px;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/webp-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="webp-balon.webp" alt="Ejemplo de imagen animada en formato WebP"
-    width="100" height="100"
-    style="background-color: lightblue"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/webp-2.html" style="height: 8em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/webp-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="img-formatos-avif">
-      <h3 class="con-aside">AVIF</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          AVIF<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#avif_image"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-          <a href="https://caniuse.com/avif"><img src="../varios/iconos/icono-caniuse-oksemi.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El formato <a href="https://en.wikipedia.org/wiki/AVIF">AVIF</a> (AV1 Image File Format) es un formato de imágenes de mapa de bits con compresión o sin compresión, estáticas o animadas, publicado por el consorcio Alliance for Open Media (<a href="https://aomedia.org/">AOMedia</a>) en febrero de 2019 como alternativa a JPG, PNG y GIF. Es un formato derivado del formato de vídeo <a href="https://en.wikipedia.org/wiki/AV1">AV1</a>, publicado por AOMedia en marzo de 2018.</p>
-
-      <p>Chrome admite imágenes AVIF desde Chrome 85, publicado en agosto de 2020 [<a href="https://chromestatus.com/feature/4905307790639104">ref</a>]. Firefox admite imágenes AVIF desde Firefox 93, publicado en octubre de 2021 [<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1682995">ref</a>]. Aunque WebKit, el motor de Safari, admite imágenes AVIF desde marzo de 2021 [<a href="https://bugs.webkit.org/show_bug.cgi?id=207750">ref</a>], Safari no admite todavía imágenes AVIF, ya que en Safari quien procesa las imágenes es el sistema operativo macOS.</p>
-
-      <p>Actualmente (octubre de 2022), el uso de AVIF sigue siendo minoritario, posiblemente por las limitaciones del formato (sin modo progresivo, computacionalmente costoso).</p>
-
-      <div class="filaflex">
-        <div class="icono-navegadores">
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="avif-flores.avif" alt="Ejemplo de imagen en formato AVIF"
-    width="320" height="240"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/avif-1.html" style="height: 260px;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/avif-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-        </div>
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;img src="alpha_video.avif" alt="Ejemplo de imagen animada en formato AVIF"
-    width="252" height="189"
-    style="background-color: peru"&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/imagenes/avif-2.html" style="height: 14em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/imagenes/avif-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p><strong>Nota</strong>: Firefox no muestra las imágenes animadas en formato AVIF, como se comenta en la <a href="../otros/diferencias-listado.html#imagenes-avif-animados">lección de diferencias entre navegadores</a>.</p>
-    </section>
-
-    <section id="img-formatos-jxl">
-      <h3 class="con-aside">JPEG XL o JXL</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          JPEG XL<br>
-          <a href="https://caniuse.com/jpegxl"><img src="../varios/iconos/icono-caniuse-okno.svg" alt="Can I use" title="Can I use" width="32" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El formato <a href="https://jpeg.org/jpegxl/">JPEG XL</a> (también llamado JPG XL o JXL) es un formato de imágenes de mapa de bits con compresión o sin compresión, estáticas o animadas, cuya norma, dividida en varias partes, se ha empezado a publicar por el <a href="https://jpeg.org/">comité JPEG</a> en octubre de 2021. Con este formato el comité JPEG ha conseguido un formato que supera a todos los formatos actualmente existentes: sin problema de patentes (licencia Apache 2.0), con/sin compresión, compresión muy alta, animaciones, canales alfa, profundidad de color hasta 16 bits, admite tamaños de imágenes gigantescos (más de 1000 millones de píxeles por lado), modo progresivo, compatible con JPEG original, gran calidad visual, permite incluir versiones de varios tamaños de la misma imagen, etc.</p>
-
-      <p>Se espera que este formato sustituya a todos los formatos de mapa de bits actuales una vez los navegadores y/o sistemas operativos admitan el formato. Actualmente -abril de 2022- Firefox y Chrome sólo admiten JXL de forma experimental en las versiones de prueba de ambos navegadores y todavía no hay anunciadas fechas de implantación en las versiones estables.</p>
-
-      <ul>
-        <li>Firefox tracking bug: Bug 1539075: <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1539075">Implement support for JPEG XL (image/jxl)</a></li>
-        <li>Firefox standards position: <a href="https://github.com/mozilla/standards-positions/issues/522">Issue 522: Request for position: JPEG XL</a></li>
-        <li>Chrome Platform Status: <a href="https://chromestatus.com/feature/5188299478007808">Feature: JPEG XL decoding support (image/jxl) in blink</a></li>
-        <li>Chrome Tracking bug: <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=1178058">Issue 1178058: JPEG XL decoding support (image/jxl) in blink (tracking bug)</a></li>
-        <li>WebKit tracking bug: <a href="https://bugs.webkit.org/show_bug.cgi?id=208235">Bug 208235: Support JPEG XL images</a></li>
-        <li><a href="https://github.com/libjxl/libjxl">Repositorio GitHub de libjxl, la implementación de referencia</a></li>
-      </ul>
-    </section>
-
-    <section id="img-formatos-bmp">
-      <h3 class="con-aside">BMP</h3>
-
-      <aside class="enlace-norma">
-        <p>
-          BMP<br>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types#bmp_bitmap_file"><img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32"></a>
-        </p>
-      </aside>
-
-      <p>El formato <a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a> (BitMaP = Mapa de Bits) es el formato de imágenes de mapa de bits que utiliza internamente el subsistema gráfico de Windows (GDI) y que también se suele utilizar para guardar imágenes en Windows. Permite varias profundidades de color (de 1 a 24 bits por píxel) y transparencia. El formato no comprime las imágenes, por lo que las imágenes tiene un tamaño muy grande.</p>
-
-      <p>Como se trata de un formato bien documentado y libre de patentes, se puede utilizar en cualquier sistema operativo y los navegadores suelen ser capaces de mostrar imágenes en formato BMP. De todas maneras, conviene no utilizar en páginas web porque las imágenes no están comprimidas y ocupan mucho espacio.</p>
-    </section>
-
-    <section id="img-formatos-mng">
-      <h3>MNG</h3>
-
-      <p>El formato <a href="http://www.libpng.org/pub/mng/">MNG</a> (Multiple-image Network Graphics = Gráficos de Red con Múltiples imágenes) permite crear animaciones a partir de imágenes PNG. Fue creado por algunos de los autores de PNG a partir de 1996. La <a href="http://www.libpng.org/pub/mng/spec/">especificación MNG 1.0</a>, escrita por Glenn Randers-Pehrson, se aprobó en enero de 2001, aunque no fue apoyada por el W3C.</p>
-
-      <p>Por motivos que desconozco, el formato MNG tuvo muy poco éxito. Aunque existen algunos programas capaces de crear y reproducir MNG, su uso no ha dejado nunca de ser marginal. Por ejemplo, en junio de 2003, Mozilla Firefox eliminó el soporte de MNG que tenía hasta ese momento (posteriormente se intentó <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=18574">restaurar el soporte</a>, sin ningún éxito).</p>
-    </section>
   </section>
 
   <section id="img-img">
@@ -680,11 +376,15 @@
   <section id="img-flotantes">
     <h2>Imágenes flotantes</h2>
 
-    <p>Las imágenes se insertan como elementos en línea, es decir, como un carácter más en un texto. Salvo que efectivamente se quiera que la imagen aparezca en mitad de una frase, lo normal es querer que la imagen esté a un lado, con el texto fluyendo en un lado de la imagen. Para ello, se debe utilizar la propiedad <span class="css-prop">float</span> en la hoja de estilo, como se comenta en el apartado dedicado al <a href="../css/css-posicionamiento-flotante.html#posicionamiento-flotante-imagenes">posicionamiento flotante de imágenes</a>.</p>
+    <p>Las imágenes se insertan como elementos en línea, es decir, como un carácter más en un texto.</p>
+    <ul>
+      <li>Si la imagen se quiere incluir en el texto, seguramente será conveniente aplicar la <a href="../css/css-texto.html#vertical-align">propiedad vertical-align</a>.</li>
+      <li>Si la imagen se quiere incluir a un lado, con el texto fluyendo en un lado de la imagen, se debe utilizar la propiedad <span class="css-prop">float</span> en la hoja de estilo, como se comenta en el apartado dedicado al <a href="../css/css-posicionamiento-flotante.html#posicionamiento-flotante-imagenes">posicionamiento flotante de imágenes</a>.</li>
+    </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 28 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 14 de noviembre de 2022</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
