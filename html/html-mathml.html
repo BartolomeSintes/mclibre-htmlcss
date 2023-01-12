@@ -47,11 +47,15 @@
 
     <p>El W3C publicó varias versiones de MathML entre 1998 y 2014. La última versión publicada, en octubre de 2014) fue <a href="https://www.w3.org/TR/2014/REC-MathML3-20140410/">MathML 3.0 (2ª edición)</a>. Véase <a href="../otros/historia.html#mathml">la lección sobre Historia de la Web</a> para más detalles.</p>
 
-    <p>En HTML 5 se pueden incluir directamente elementos MathML. Firefox y Safari admiten MathML desde hace muchos años y actualmente (octubre de 2022) Chrome tiene planeado admitirlo en la versión 109 que se publicará en enero de 2023 (<a href="https://www.chromestatus.com/features/5240822173794304">MathML Google Chrome status</a>), gracias al trabajo que está realizando la empresa gallega <a href="https://mathml.igalia.com">Igalia</a>.</p>
+    <p>Firefox y Safari admiten MathML desde hace muchos años.</p>
+
+    <p>Desde HTML 5 se pueden incluir directamente elementos MathML en una página web. Actualmente (enero de 2023), el grupo de trabajo MathML del W3C está elaborando MathML 4.0 y MathML Core, una versión reducida pensada para su implementación en los navegadores.</p>
+
+    <p>Chrome admite MathML Core desde enero de 2023 (Chrome 109), gracias al trabajo realizado por la empresa gallega <a href="https://mathml.igalia.com">Igalia</a>.</p>
 
     <p>Se puede comprobar fácilmente la capacidad de un navegador de mostrar elementos MathML visitando la página <a href="http://eyeasme.com/Joe/MathML/MathML_browser_test.html">http://eyeasme.com/Joe/MathML/MathML_browser_test.html</a>, que muestra varias fórmulas matemáticas tal y como se ven en un sistema de tipografía TeX, en Firefox con las fuentes STIX y en el navegador del usuario.</p>
 
-    <p>En los navegadores que no son capaces de mostrar elementos MathML, la solución clásica ha sido siempre mostrar las fórmulas matemáticas como imágenes, lo que impide aprovechar las posibilidades de MathML (hojas de estilos, zoom, facilidad de edición, etc.). Actualmente, la solución más habitual es utilizar alguna biblioteca JavaScript como <a href="https://www.mathjax.org/">MathJax</a> para suplir las carencias del navegador, como por ejemplo hace la <a href="https://dlmf.nist.gov/">Biblioteca Digital de Fórmulas Matemáticas</a> del <a href="https://www.nist.gov/">NIST</a>.</p>
+    <p>En los navegadores que no son capaces de mostrar elementos MathML, la solución clásica ha sido siempre mostrar las fórmulas matemáticas como imágenes, lo que impide aprovechar las posibilidades de MathML (hojas de estilos, zoom, facilidad de edición, etc.). Desdee hace unos años, la solución más habitual ha sido utilizar alguna biblioteca JavaScript como <a href="https://www.mathjax.org/">MathJax</a> para suplir las carencias del navegador, como por ejemplo hace la <a href="https://dlmf.nist.gov/">Biblioteca Digital de Fórmulas Matemáticas</a> del <a href="https://www.nist.gov/">NIST</a>. Ahora que Chrome ya admite MathML, seguramente esas soluciones se irán abandonando en favor de MathML puro.</p>
   </section>
 
   <section id="firefox">
@@ -59,7 +63,7 @@
 
     <p>Firefox es capaz de mostrar páginas con elementos MathML, aunque es necesario instalar ciertas fuentes para poder mostrar correctamente todos los caracteres matemáticos.</p>
 
-    <p>Actualmente (octubre de 2022) las fuentes recomendadas son las fuentes STIX, una fuentes de miles de caracteres creadas por el <a href="https://www.stixfonts.org/">consorcio STI Pub</a>, formado en 1995 por varias organizaciones científicas norteamericanas y la editorial Elsevier. En el año 2000 comenzó la creación de las fuentes, en mayo de 2010 se publicó la versión 1.0, en agosto de 2012 se publicó la versión 1.1 y en diciembre de 2016 se publicó la versión 2.0.</p>
+    <p>Actualmente (enero de 2023) las fuentes recomendadas son las fuentes STIX, una fuentes de miles de caracteres creadas por el <a href="https://www.stixfonts.org/">consorcio STI Pub</a>, formado en 1995 por varias organizaciones científicas norteamericanas y la editorial Elsevier. En el año 2000 comenzó la creación de las fuentes, en mayo de 2010 se publicó la versión 1.0, en agosto de 2012 se publicó la versión 1.1 y en diciembre de 2016 se publicó la versión 2.0.</p>
 
     <p>Las fuentes STIX están disponibles en formato <a href="https://en.wikipedia.org/wiki/OpenType">OpenType</a>. Actualmente (octubre de 2022), la última versión estable disponible es <a href="https://github.com/stipub/stixfonts/archive/refs/tags/v2.13b171.zip">la versión 2.13.171 (de mayo de 2021)</a>.</p>
 
@@ -71,13 +75,9 @@
   <section id="chrome">
     <h2>MathML en Chrome</h2>
 
-    <p>Actualmente (octubre de 2022) Chrome no es capaz de mostrar páginas con elementos MathML, pero se espera que la situación cambie en enero de 2023 (<a href="https://www.chromestatus.com/features/5240822173794304">MathML Google Chrome status</a>), cuando se publique Chrome 109.</p>
+    <p>Desde enero de 2023 Chrome es capaz de mostrar páginas con elementos MathML Core (<a href="https://www.chromestatus.com/features/5240822173794304">MathML Google Chrome status</a>).</p>
 
-    <p>Chrome admitió MathML en la versión 24 (enero de 2013), pero debido a problemas de incompatibilidades entre el código de MathML y el de WebKit (por entonces Chrome todavía utilizaba WebKit, aunque a partir de 2013 empezó a utilizar Blink), en la versión Chrome 25 (febrero de 2013) se deshabilitó el soporte de MathML y Google manifestó que no entraba en sus planes recuperarlo. Afortunadamente, desde 2019 la empresa gallega <a href="https://www.igalia.com/">Igalia</a>, que ya participó en la implementación de MathML en Webkit (el motor de Safari), está trabajando en la <a href="https://mathml.igalia.com">implementación de MathML en Chromium</a>.</p>
-
-    <p>La <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=6606">Issue 6606: Missing MathML implementation</a> permite hacer un seguimiento de la implementación de MathML en Chromium.</p>
-
-    <p>Existen algunas extensiones para mostrar MathML en Chrome (mediante MathJax), como <a href="https://chrome.google.com/webstore/detail/math-anywhere/gebhifiddmaaeecbaiemfpejghjdjmhc/related?hl=en">Math Anywhere</a>.</p>
+    <p>Chrome admitió MathML en la versión 24 (enero de 2013), pero debido a problemas de incompatibilidades entre el código de MathML y el de WebKit (por entonces Chrome todavía utilizaba WebKit, aunque a partir de 2013 empezó a utilizar Blink), en la versión Chrome 25 (febrero de 2013) se deshabilitó el soporte de MathML y Google manifestó que no entraba en sus planes recuperarlo. Afortunadamente, desde 2019 la empresa gallega <a href="https://www.igalia.com/">Igalia</a>, que ya participó en la implementación de MathML en Webkit (el motor de Safari), ha estado trabajando en la <a href="https://mathml.igalia.com">implementación de MathML en Chromium</a> (<a href="https://bugs.chromium.org/p/chromium/issues/detail?id=6606">Chrome issue 6606: Missing MathML implementation</a>)</p>
   </section>
 
   <section id="ejemplos">
@@ -100,7 +100,6 @@
     <h2>Edición de MathML</h2>
 
     <ul>
-      <li>La <a href="http://www.firemath.info/">extensión FireMath</a> permitía crear fórmulas MathML desde Firefox, pero parece abandonada hace tiempo y, en cualquier caso, no se puede instalar en versiones posteriores a Firefox 57.</li>
       <li>Web Equation: <a href="http://webdemo.myscript.com/#/demo/equation">http://webdemo.myscript.com/#/demo/equation</a>. Permite dibujar una ecuación y obtener el código MathML correspondiente.
       </li>
       <li>Detexify: <a href="http://detexify.kirelabs.org/classify.html">http://detexify.kirelabs.org/classify.html</a>. Permite dibujar un símbolo matemático y obtener el código en LaTeX.</li>
@@ -115,7 +114,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 12 de enero de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
