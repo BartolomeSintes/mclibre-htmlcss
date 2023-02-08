@@ -1044,15 +1044,40 @@
       </div>
     </div>
 
-    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (octubre de 2022) ningún navegador lo hace.</p>
-
-    <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
-      <div class="codigo">
-        <pre>
+    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (enero de 2023) los navegadores admiten el atributo parcialmente</p>
+    <ul>
+      <li>Si el atributo <span class="html-atri">list</span> contiene el <span class="html-atri">id</span> de un elemento <span class="html-eti">datalist</span> que contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">value</span>, el control muestra marcas en la posición correspondiente a esos valores:
+        <div class="filaflex">
+          <div class="icono-navegadores-vacio">
+            <img src="../varios/iconos/icono-transparente.svg" alt="Hueco" width="44" height="4">
+          </div>
+          <div class="codigo">
+          <pre>
+<code class="language-html">Indique su nivel (de 0 a 6):
+&lt;input type="range" name="rango"
+  min="0" max="10" list="lista-rango"&gt;
+&lt;datalist id="lista-rango"&gt;
+  &lt;option value="2"&gt;
+  &lt;option value="4"&gt;
+  &lt;option value="6"&gt;
+  &lt;option value="8"&gt;
+&lt;/datalist&gt;</code>
+</pre>
+          </div>
+          <iframe src="ejemplos/formularios/formularios-range-4.html" style="height: 12em;"></iframe>
+          <div class="icono-enlace">
+            <a href="ejemplos/formularios/formularios-range-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
+      <li>Si el elemento <span class="html-eti">datalist</span> contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">label</span>, el control debería mostrar esas etiquetas en las posiciones de las marcas, pero actualmente (enero de 2023), ni Chrome ni Firefox lo hace:
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
 <code class="language-html">Indique su nivel (Malo, Regular, Bueno):
 &lt;input type="range" name="rango"
   min="1" max="3" list="lista-rango"&gt;
@@ -1062,12 +1087,14 @@
   &lt;option value="3" label="Bueno"&gt;
 &lt;/datalist&gt;</code>
 </pre>
-      </div>
-      <iframe src="ejemplos/formularios/formularios-range-4.html" style="height: 12em;"></iframe>
-      <div class="icono-enlace">
-        <a href="ejemplos/formularios/formularios-range-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
+          </div>
+          <iframe src="ejemplos/formularios/formularios-range-5.html" style="height: 11em;"></iframe>
+          <div class="icono-enlace">
+            <a href="ejemplos/formularios/formularios-range-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <section id="control-input-hidden">
@@ -1402,7 +1429,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 9 de noviembre de 2021</p>
+    <p class="ultmod">Última modificación de esta página: 18 de enero de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
