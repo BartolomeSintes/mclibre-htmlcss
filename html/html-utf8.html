@@ -325,9 +325,9 @@
 
     <p>La llegada de Internet y el aumento consiguiente del intercambio de información entre diferentes países hizo aún más patente la necesidad de creación de un juego de caracteres universal, que abarcara las necesidades de toda la humanidad. La idea se empezó a trabajar en 1987 y en 1991 se publicó la primera versión de Unicode, </p>
 
-    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en septiembre de 2022, <a href="http://blog.unicode.org/2022/09/announcing-unicode-standard-version-150.html">Unicode 15.0</a>, contiene casi 150.000 caracteres.</p>
+    <p>La principal ventaja de Unicode es que permite que la información guardada pueda ser interpretada correctamente por cualquier sistema informático. Por esa razón, cualquier comunidad tiene interés en incluir su sistema de escritura en Unicode, no solamente las lenguas en uso actual sino también las lenguas muertas, símbolos y pictogramas. Por ello Unicode no ha dejado de crecer y la última versión publicada en septiembre de 2023, <a href="http://blog.unicode.org/2023/09/announcing-unicode-standard-version-151.html">Unicode 15.1</a>, contiene casi 150.000 caracteres.</p>
 
-    <p>Las primeras versiones de Unicode se publicaron más o menos cada dos años pero desde 2009 Unicode se publica anualmente. La versión 14.0 se publicó con seis meses de retraso debido a la epidemia del coronavirus Covid-19, y a partir de esta versión Unicode se publicará en el tercer trimestre de cada año (en principio, en septiembre).</p>
+    <p>Las primeras versiones de Unicode se publicaron más o menos cada dos años pero desde 2009 Unicode se publica anualmente. La versión 14.0 se publicó con seis meses de retraso debido a la epidemia del coronavirus Covid-19 y desde entonces Unicode se publica en el tercer trimestre de cada año (en principio, en septiembre).</p>
 
     <p class="mcl-svg-diagrama-temporal">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1200" viewBox="-120 -60 1200 120">
@@ -405,7 +405,7 @@
         <text x="952" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">14</text>
         <circle cx="982" cy="0" r="5" fill="#990000" />
         <text x="982" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">15</text>
-        <circle cx="1012" cy="0" r="5" fill="white" stroke="#990000" stroke-width="2" />
+        <circle cx="1012" cy="0" r="5" fill="#990000" />
         <text x="1012" y="30" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">15.1</text>
         <circle cx="1042" cy="0" r="5" fill="white" stroke="#990000" stroke-width="2" />
         <text x="1038" y="-15" text-anchor="middle" fill="#990000" style="font-size: 100%; font-weight: bold">16</text>
@@ -541,7 +541,8 @@
       <a href="http://blog.unicode.org/2020/03/announcing-unicode-standard-version-130.html">13.0 (2020)</a> -
       <a href="http://blog.unicode.org/2020/09/emoji-131-now-final-to-be-widely.html">13.1 (2020)</a> -
       <a href="http://blog.unicode.org/2021/09/announcing-unicode-standard-version-140.html">14.0 (2021)</a> -
-      <a href="http://blog.unicode.org/2022/09/announcing-unicode-standard-version-150.html">15.0 (2022)</a>
+      <a href="http://blog.unicode.org/2022/09/announcing-unicode-standard-version-150.html">15.0 (2022)</a> -
+      <a href="http://blog.unicode.org/2023/09/announcing-unicode-standard-version-151.html">15.1 (2023)</a>
     </p>
 
   </section>
@@ -569,11 +570,12 @@
       <li><span class="incompleto">falta hacer referencia a las fuentes usadas en otros sistemas operativos</span></li>
     </ul>
 
-    <p>Existen algunos proyectos de creación de tipos de letra libres que incluyan al menos los caracteres de Unicode que corresponden a pictogramas. El problema es que las fuentes en color pueden usar hasta cinco formatos distintos (SBIX, COLRv0, COLRv1, SVG-in-OpenType, CBDT/CBLC) cuyo soporte es bastante desigual [<a href="https://pixelambacht.nl/chromacheck/">ChromaCheck</a> permite comprobar el soporte de esos formatos en el navegador].</p>
+    <p>Existen algunos proyectos de creación de tipos de letra libres que incluyan al menos los caracteres de Unicode que corresponden a pictogramas. El problema es que las fuentes en color pueden usar hasta cinco formatos distintos (SBIX, COLRv0, COLRv1, SVG-in-OpenType, CBDT/CBLC) cuyo soporte es bastante desigual. Actualmente (noviembre de 2023), Firefox admite COLRv0, COLRv1 y SVG-in-OpenType, mientras que Chrome admite SBIX, COLRv0, COLRv1 y CBDT/CBLC [<a href="https://pixelambacht.nl/chromacheck/">ChromaCheck</a> permite comprobar el soporte de esos formatos en el navegador].</p>
     <ul>
-      <li><a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>, un proyecto creado por Google en 2014. Es una fuente en color (la versión en blanco y negro se considera obsoleta), disponible en los formatos CBDT/CBLC o COLRv1. Actualmente (noviembre de 2022) Chrome admite ambos formatos y Firefox admite únicamente el formato COLRv1 si se activa la preferencia gfx.font_rendering.colr_v1.enabled, pero en Firefox 107 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1791558">está previsto</a> que admita COLRv1 sin necesidad de activar esa preferencia.</li>
-      <li><a href="https://github.com/twitter/twemoji">Twemoji</a>, un proyecto creado por Twitter en 2014. Es una fuente en color, en formato SVG-in-OpenType, que Google Chrome actualmente (noviembre de 2022) no es capaz de mostrar. Actualmente (noviembre de 2022), Twemoji solamente incluye hasta Unicode 14 y aunque internamente tenían disponible ya Unicode 15, los despidos posteriores a la compra de Twitter por parte de Elon Munsk han paralizado su publicación.</li>
-      <li><a href="https://github.com/mozilla/twemoji-colr">twemoji-colr</a>, un proyecto de Mozilla que rehace la fuente Twemoji en formato COLR. Es una fuente en color, en formato COLR, que admiten tanto Firefox como Google Chrome. Firefox la utiliza para mostrar los emojis no incluidos en Segoe en Windows. La versión que Firefox utiliza actualmente (noviembre de 2022) es la versión 0.6, que solamente incluye hasta Unicode 13.</li>
+      <li><a href="https://github.com/googlefonts/noto-emoji">Noto Emoji</a>, un proyecto creado por Google en 2014. Es una fuente en color (la versión en blanco y negro se considera obsoleta), disponible en los formatos CBDT/CBLC y COLRv1. Actualmente (noviembre de 2023), incluye Unicode 15.</li>
+      <li><a href="https://github.com/twitter/twemoji">Twemoji</a>, un proyecto creado por Twitter en 2014. Es una fuente en color disponible en formato SVG-in-OpenType, que Google Chrome actualmente (noviembre de 2023) no es capaz de mostrar. Actualmente (noviembre de 2023), Twemoji solamente incluye hasta Unicode 14 y aunque internamente tenían disponible ya Unicode 15, los despidos posteriores a la compra de Twitter por parte de Elon Munsk paralizaron su publicación. Twitter ha seguido desarrollando la fuente, pero ya no permite su uso por parte de terceros. Un <a href="https://github.com/jdecked/twemoji"><i>fork</i> de twemoji</a> creado por una de las antiguas empleadas de Twitter está intentado seguir adelante el proyecto.</li>
+      <li><a href="https://github.com/mozilla/twemoji-colr">twemoji-colr</a>, un proyecto de Mozilla que rehace la fuente Twemoji en formato COLR, que admiten tanto Firefox como Google Chrome. Firefox la utiliza para mostrar los emojis no incluidos en Segoe en Windows. La versión que Firefox utiliza actualmente (noviembre de 2023) es la versión 0.7, que incluye hasta Unicode 14.</li>
+      <li><a href="https://openmoji.org/">OpenMoji</a>, un proyecto de la Universidad de Ciencias Aplicadas Schwä­bisch Gmünd (Alemania), que distribuye la fuente OpenMoji en todos los formatos de fuentes en color. Actualmente (noviembre de 2023), OpenMoji incluye Unicode 14.</li>
     </ul>
 
     <p>Estas fuentes se pueden emplear en una página web utilizando el mecanismo de las fuentes web, que se comenta en la <a href="../css/css-fuentes-web.html">lección CSS: Fuentes web</a></p>
@@ -593,6 +595,7 @@
     <p>Unicode contiene así miles de pictogramas, que se irán ampliando en las próximas versiones (véase <a href="http://www.unicode.org/alloc/Pipeline.html">Unicode roadmap</a>).</p>
 
     <p>Estos son, por ejemplo, los emojis añadidos en las últimas versiones de Unicode:
+      <a href="https://unicode.org/emoji/charts-15.1/emoji-released.html">15.1 (2023)</a> -
       <a href="https://unicode.org/emoji/charts-15.0/emoji-released.html">15.0 (2022)</a> -
       <a href="https://unicode.org/emoji/charts-14.0/emoji-released.html">14.0 (2021)</a> -
       <a href="https://unicode.org/emoji/charts-13.1/emoji-released.html">13.1 (2020)</a> -
@@ -640,7 +643,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 7 de noviembre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 16 de noviembre de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
