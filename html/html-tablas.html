@@ -99,7 +99,7 @@
       </p>
     </aside>
 
-    <p>Una tabla HTML (<span class="html-eti">&lt;table&gt;</span>) es un conjunto de celdas (<span class="html-eti">&lt;td&gt;</span> o <span class="html-eti">&lt;th&gt;</span>) organizadas en filas (<span class="html-eti">&lt;tr&gt;</span>) que a su vez se organizan en grupos de filas (<span class="html-eti">&lt;thead&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>). Además, la tabla puede tener una leyenda (<span class="html-eti">&lt;caption&gt;</span>) y hacer referencia a las columnas (<span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colspan&gt;</span>).</p>
+    <p>Una tabla HTML (<span class="html-eti">&lt;table&gt;</span>) es un conjunto de celdas (<span class="html-eti">&lt;td&gt;</span> o <span class="html-eti">&lt;th&gt;</span>) organizadas en filas (<span class="html-eti">&lt;tr&gt;</span>) que a su vez se pueden organizar en grupos de filas (<span class="html-eti">&lt;thead&gt;</span>, <span class="html-eti">&lt;tbody&gt;</span> o <span class="html-eti">&lt;tfoot&gt;</span>). Además, la tabla puede tener una leyenda (<span class="html-eti">&lt;caption&gt;</span>) y hacer referencia a las columnas (<span class="html-eti">&lt;col&gt;</span> y <span class="html-eti">&lt;colspan&gt;</span>).</p>
 
     <p>La leyenda y los grupos de filas se muestran en este orden:</p>
 
@@ -377,6 +377,8 @@
 
     <p>Al imprimir una tabla que ocupa varias páginas, los navegadores repiten al principio y al final de cada página las cabeceras <span class="html-eti">&lt;thead&gt;</span> y pies de tabla <span class="html-eti">&lt;tfoot&gt;</span>. Se puede comprobar, por ejemplo, con la <a href="html-entidades-caracter.html#entidades-caracter">lista de entidades de carácter de HTML 4</a>, que no cabe en una sola página.</p>
 
+    <p>En el ejemplo siguiente, la tabla contiene un encabezado <span class="html-eti">&lt;thead&gt;</span> y un pie <span class="html-eti">&lt;tfoot&gt;</span>, pero no contiene un cuerpo de tabla <span class="html-eti">&lt;tbody&gt;</span>. Si no se van a crear varios <span class="html-eti">&lt;tbody&gt;</span>, las etiquetas de ese <span class="html-eti">&lt;tbody&gt;</span> se suelen omitir, como muestra el ejemplo siguiente.</p>
+
     <div class="filaflex">
       <div class="codigo">
         <pre>
@@ -417,6 +419,46 @@
       <iframe src="ejemplos/tablas/thead-tbody-tfoot.html" style="height: 40em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/tablas/thead-tbody-tfoot.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
+
+    <p>En el ejemplo siguiente, la tabla contiene dos cuerpos de tabla <span class="html-eti">&lt;tbody&gt;</span>, agrupando las filas de países que pertenecen al mismo continente. Visualmente, el navegador no distingue estos dos <span class="html-eti">&lt;tbody&gt;</span>, salvo que lo indiquemos nosotros mediante propiedades de estilo.</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">  &lt;table&gt;
+    &lt;caption&gt;Ejemplo de tabla&lt;/caption&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Reino de España&lt;/td&gt;
+        &lt;td&gt;Madrid&lt;/td&gt;
+        &lt;td&gt;Euro&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Reino de Dinamarca&lt;/td&gt;
+        &lt;td&gt;Copenhague&lt;/td&gt;
+        &lt;td&gt;Corona danesa&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Estados Unidos Mexicanos&lt;/td&gt;
+        &lt;td&gt;Ciudad de México&lt;/td&gt;
+        &lt;td&gt;Peso&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;República Argentina&lt;/td&gt;
+        &lt;td&gt;Buenos Aires&lt;/td&gt;
+        &lt;td&gt;Peso&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;</code>
+</pre>
+      </div>
+      <iframe src="ejemplos/tablas/tbody.html" style="height: 34em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/tablas/tbody.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
 

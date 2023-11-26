@@ -360,7 +360,7 @@ div + p {
       </p>
     </aside>
 
-    <p>Si se escriben dos etiquetas seguidas separadas por un signo "tilde" (E ~ F), las propiedades afectan únicamente a los elementos con la segunda etiqueta (F) que van después de un elemento con la primera etiqueta (E), siendo ambos elementos hermanos, es decir, hijos del mismo padre. En el ejemplo siguiente, se ven de color rojo dos de los párrafos <span class="html-eti">&lt;p&gt;</span>. Dentro de la división, el segundo párrafo se muestra de color rojo aunque haya una lista entre ellos. Fuera de la división, el segundo párrafo se muestra de color rojo, mientras que el primero no porque los párrafos de dentro de la división no son sus hermanos.</p>
+    <p>Si se escriben dos etiquetas seguidas separadas por un signo "tilde" (E ~ F), las propiedades afectan únicamente a los elementos con la segunda etiqueta (F) que van después de un elemento con la primera etiqueta (E), siendo ambos elementos hermanos, es decir, hijos del mismo padre. En el ejemplo siguiente, se ven de color rojo dos de los párrafos <span class="html-eti">&lt;p&gt;</span>. Dentro de la división, el segundo párrafo se muestra de color rojo aunque haya una lista entre él y el primer párrafo. Sin embargo, el párrafo dentro de la lista no, porque no es hermano de los párrafos de fuera de la lista. Fuera de la división, el segundo párrafo se muestra de color rojo, mientras que el primero no porque los párrafos de dentro de la división no son sus hermanos.</p>
 
     <div class="filaflex">
       <div class="codigo">
@@ -371,7 +371,7 @@ div + p {
   padding: 10px;
 }
 
-div ~ p {
+p ~ p {
   color: red;
 }</code>
 </pre>

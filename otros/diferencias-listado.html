@@ -90,7 +90,7 @@
       <section id="unicode-texto-emoji">
         <h4>Presentación texto/emoji</h4>
 
-        <p>Algunos caracteres Unicode tienen tanto presentación texto como presentación emoji. Una de las dos es la predeterminada y la otra se selecciona añadiendo los selectores de variación VS15 (&amp;#xfe0e;) o VS16 (&amp;#xfe0f;)</p>
+        <p>Algunos caracteres Unicode tienen tanto presentación texto como presentación emoji. Una de las dos es la predeterminada y la otra se selecciona añadiendo los selectores de presentación texto (&amp;#xfe0e;) o emoji (&amp;#xfe0f;)</p>
 
         <p>En algunos casos, tanto Firefox como Chrome muestran correctamente todos los caracteres. En la primera línea del ejemplo siguiente se muestra un carácter que tiene presentación predeterminada emoji. En la segunda línea se muestran un carácter que tiene presentación predeterminada texto.</p>
 
@@ -137,7 +137,7 @@
           </div>
         </div>
 
-        <p>En otros casos, Firefox muestra una representación en modo texto al añadir el selector de variación VS15 (&amp;#xfe0e;), aunque ese emoji no tenga representación en modo texto.</p>
+        <p>En otros casos, Firefox muestra una representación en modo texto al añadir el selector de presentación texto (&amp;#xfe0e;), aunque ese emoji no tenga representación en modo texto.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -159,7 +159,7 @@
           </div>
         </div>
 
-        <p>En otros casos, Google Chrome no muestra la representación en modo texto al añadir el selector de variación VS15 (&amp;#xfe0e;), aunque ese emoji sí tenga representación en modo texto.</p>
+        <p>En otros casos, Google Chrome no muestra la representación en modo texto al añadir el selector de presentación texto (&amp;#xfe0e;), ni aunque ese emoji tenga representación en modo texto.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -169,9 +169,9 @@
           <div class="codigo">
             <pre>
 <code class="language-html">&lt;p&gt;
-  &amp;#x1f610; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&lt;/span&gt;
-  &amp;#x1f610;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&amp;#xfe0e;&lt;/span&gt;
-  &amp;#x1f610;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x1f610;&amp;#xfe0f;&lt;/span&gt;
+  &amp;#x263a; &lt;span style="font-size: 300%"&gt;&amp;#x263a;&lt;/span&gt;
+  &amp;#x263a;&amp;#xfe0e; &lt;span style="font-size: 300%"&gt;&amp;#x263a;&amp;#xfe0e;&lt;/span&gt;
+  &amp;#x263a;&amp;#xfe0f; &lt;span style="font-size: 300%"&gt;&amp;#x263a;&amp;#xfe0f;&lt;/span&gt;
 &lt;/p&gt;</code>
 </pre>
           </div>
@@ -190,8 +190,8 @@
         <p>El primer ejemplo siguiente muestra un carácter con presentación predeterminada en modo texto y le aplica un modificador Fitzpatrick. El primer ejemplo siguiente muestra un carácter con presentación predeterminada en modo emoji y le aplica un modificador Fitzpatrick..</p>
 
         <ul>
-          <li>Firefox muestra la presentación en modo emoji cuando se añade un modificador Fitzpatrick sin añadir selectores de variación, aunque la presentación predeterminada sea el modo texto.</li>
-          <li>Google Chrome, además de no siempre mostrar el modo predeterminado cuando es texto, no muestra el modificador Fitzpatrick si se incluye el selector de variación VS16.</li>
+          <li>Firefox muestra la presentación en modo emoji cuando se añade un modificador Fitzpatrick sin añadir selectores de presentación, aunque la presentación predeterminada sea el modo texto.</li>
+          <li>Google Chrome, además de no siempre mostrar el modo predeterminado cuando es texto, no muestra el modificador Fitzpatrick si se incluye el selector de presentación emoji.</li>
         </ul>
 
         <div class="filaflex">
@@ -968,7 +968,7 @@ p.oblique {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de noviembre de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 26 de noviembre de 2023</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
