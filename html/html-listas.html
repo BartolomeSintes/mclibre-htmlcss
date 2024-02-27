@@ -25,6 +25,18 @@
       <ul>
         <li><a href="#listas-tipos">Tipos</a></li>
         <li><a href="#listas-ordenadas-no-ordenadas"><span class="html-eti">&lt;ol&gt;</span> y <span class="html-eti">&lt;ul&gt;</span></a></li>
+        <li><a href="#atributos-ol">Atributos de <span class="html-eti">&lt;ol&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-ol-type">Atributo <span class="html-atri">type</span></a></li>
+            <li><a href="#atributo-ol-reversed">Atributo <span class="html-atri">reversed</span></a></li>
+            <li><a href="#atributo-ol-start">Atributo <span class="html-atri">start</span></a></li>
+          </ul>
+        </li>
+        <li><a href="#atributos-ol-li">Atributos de <span class="html-eti">&lt;li&gt;</span></a>
+          <ul>
+            <li><a href="#atributo-li-value">Atributo <span class="html-atri">value</span></a></li>
+          </ul>
+        </li>
         <li><a href="#listas-definicion"><span class="html-eti">&lt;dl&gt;</span>, <span class="html-eti">&lt;dt&gt;</span> y <span class="html-eti">&lt;dd&gt;</span></a></li>
         <li><a href="#listas-anidamiento">Anidamiento</a></li>
       </ul>
@@ -37,7 +49,7 @@
     <p>Existen tres tipos de listas:</p>
 
     <ul>
-      <li>listas ordenadas (<span class="html-eti">&lt;ol&gt; ...&lt;/ol&gt;</span></li>
+      <li>listas ordenadas (<span class="html-eti">&lt;ol&gt; ...&lt;/ol&gt;</span>)</li>
       <li>listas no ordenadas (<span class="html-eti">&lt;ul&gt; ...&lt;/ul&gt;</span>)</li>
       <li>listas de definición (<span class="html-eti">&lt;dl&gt; ...&lt;/dl&gt;</span>)</li>
     </ul>
@@ -122,6 +134,113 @@
     </div>
 
     <p>La diferencia entre ambos tipos de listas es que los navegadores numeran (con letras o números) los elementos de las listas ordenadas, mientras que en las listas no ordenadas se dibuja un símbolo gráfico.</p>
+  </section>
+
+  <section id="atributos-ol">
+    <h2 class="con-aside">Atributos de listas ordenadas <span class="html-eti">&lt;ol&gt;</span></h2>
+
+    <section id="atributo-ol-type">
+      <h3>Atributo <span class="html-atri">type</span> de <span class="html-eti">&lt;ol&gt;</span></h3>
+
+      <p>Aunque se recomienda utilizar la <a href="../css/css-listas.html#list-style-type">propiedad CSS <span class="css-prop">list-style-type</span></a>, la propiedad <span class="html-atri">type</span> permite establecer el tipo de numeración de la lista, . Los valores adminitidos son:</p>
+      <ul>
+        <li><span class="html-atri-valor">1</span> para listas de números enteros</li>
+        <li><span class="html-atri-valor">a</span> para listas numeradas alfabéticamente en minúsculas</li>
+        <li><span class="html-atri-valor">A</span> para listas numeradas alfabéticamente en mayúsculas</li>
+        <li><span class="html-atri-valor">i</span> para listas numeradas con número romanos en minúsculas</li>
+        <li><span class="html-atri-valor">I</span> para listas numeradas con número romanos en mayúsculas</li>
+      </ul>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;ol type="I"&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/listas/ol-type.html" style="height: 13em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/listas/ol-type.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="atributo-ol-reversed">
+      <h3>Atributo <span class="html-atri">reversed</span> de <span class="html-eti">&lt;ol&gt;</span></h3>
+
+      <p>La propiedad <span class="html-atri">reversed</span> invierte el sentido de numeración de la lista, de mayor a menor. El orden de los elementos no se invierte, únicamente lo hace la numeración.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;ol reversed&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/listas/ol-reversed.html" style="height: 13em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/listas/ol-reversed.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="atributo-ol-start">
+      <h3>Atributo <span class="html-atri">start</span> de <span class="html-eti">&lt;ol&gt;</span></h3>
+
+      <p>La propiedad <span class="html-atri">start</span> establece el valor inicial de numeración de la lista ordenada.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;ol start="100"&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/listas/ol-start.html" style="height: 13em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/listas/ol-start.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="atributos-ol-li">
+    <h2 class="con-aside">Atributos de elementos <span class="html-eti">&lt;li&gt;</span> de listas ordenadas <span class="html-eti">&lt;ol&gt;</span></h2>
+
+    <section id="atributo-li-value">
+      <h3>Atributo <span class="html-atri">value</span> de <span class="html-eti">&lt;li&gt;</span></h3>
+
+      <p>La propiedad <span class="html-atri">value</span> establece el valor de numeración de un elemento de la lista ordenada. Los elementos siguientes continúan la numeración a partir de dicho valor.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;ol&gt;
+  &lt;li&gt;La libertad de usar el programa, con cualquier propósito.&lt;/li&gt;
+  &lt;li&gt;La libertad de estudiar cómo funciona el programa y adaptarlo a tus necesidades.&lt;/li&gt;
+  &lt;li value="101"&gt;La libertad de distribuir copias del programa.&lt;/li&gt;
+  &lt;li&gt;La libertad de mejorar el programa y hacer públicas las mejoras a los demás.&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/listas/ol-li-value.html" style="height: 13em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/listas/ol-li-value.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section id="listas-definicion">
@@ -311,7 +430,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 16 de junio de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 27 de febrero de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
