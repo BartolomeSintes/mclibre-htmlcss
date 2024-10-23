@@ -89,6 +89,37 @@
         <a href="ejemplos/interactivos/details-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
+
+    <hr class="corta">
+
+    <p>El atributo <span class="html-atri">name</span> permite relacionar varios elementos <span class="html-eti">details</span> entre sí. Si varios elementos tienen el mismo valor del atributo <span class="html-atri">name</span>, al desplegar uno de ellos, el resto se pliegan. Eso permite utilizarlos por ejemplo para crear menús o páginas de preguntas y repuestas (FAQ).</p>
+
+    <div class="filaflex">
+      <div class="codigo">
+        <pre>
+<code class="language-html">&lt;p&gt;La etiqueta &lt;details&gt;:&lt;/p&gt;
+
+&lt;details name="faq"&gt;
+  &lt;summary&gt;¿Para qué sirve &lt;details&gt;?&lt;/summary&gt;
+  &lt;p&gt;Para crear un elemento desplegable&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details name="faq"&gt;
+  &lt;summary&gt;¿Para qué sirve el atributo open?&lt;/summary&gt;
+  &lt;p&gt;Para mostrar abierto inicialmente el elemento &lt;details&gt;.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details name="faq"&gt;
+  &lt;summary&gt;¿Para qué sirve el atributo name?&lt;/summary&gt;
+  &lt;p&gt;Para que al abrir un elemento &lt;details&gt;, se cierren los demás.&lt;/p&gt;
+&lt;/details&gt;</code>
+</pre>
+      </div>
+      <iframe src="ejemplos/interactivos/details-5.html" style="height: 21em;"></iframe>
+      <div class="icono-enlace">
+        <a href="ejemplos/interactivos/details-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+      </div>
+    </div>
   </section>
 
   <section id="etiqueta-summary">
@@ -164,12 +195,14 @@
   &lt;p&gt;Esto es un ejemplo de ventana de diálogo&lt;/p&gt;
 
   &lt;p&gt;
-    &lt;input type="button" value="Cerrar" onclick="document.getElementById('dialog-1').removeAttribute('open')"&gt;
+    &lt;input type="button" value="Cerrar"
+           onclick="document.getElementById('dialog-1').removeAttribute('open')"&gt;
   &lt;/p&gt;
 &lt;/dialog&gt;
 
 &lt;p&gt;
-  &lt;input type="button" value="Muestra diálogo" onclick="document.getElementById('dialog-1').setAttribute('open', 'open')"&gt;
+  &lt;input type="button" value="Muestra diálogo"
+         onclick="document.getElementById('dialog-1').setAttribute('open', 'open')"&gt;
 &lt;/p&gt;</code>
 </pre>
       </div>
@@ -181,7 +214,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 17 de junio de 2020</p>
+    <p class="ultmod">Última modificación de esta página: 23 de octubre de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
