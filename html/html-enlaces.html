@@ -311,10 +311,14 @@
       <p>El atributo <span class="html-atri">target</span> permite especificar el contexto en el que se resuelve el enlace. Los valores posibles son:</p>
       <ul>
         <li><span class="html-atri-valor">_blank</span>: el enlace se abre en una nueva pestaña</li>
-        <li><span class="html-atri-valor">_self</span>: el enlace se abre en el mismo elemento que contiene el enlace (puede ser la ventana completa o un elemento contenedor como <span class="html-eti">&lt;object&gt;</span> o <span class="html-eti">&lt;iframe&gt;</span>). Por motivos de seguridad, si el elemento incrustado pertenece a un dominio distinto, sólo se mostrará si el servidor de dicho dominio lo autoriza (<a href="https://support.mozilla.org/en-US/kb/xframe-neterror-page">aclaración en ayuda de Firefox</a>)</li>
+        <li><span class="html-atri-valor">_self</span>: el enlace se abre en el mismo elemento que contiene el enlace (puede ser la propia pestaña o un elemento contenedor como <span class="html-eti">&lt;object&gt;</span> o <span class="html-eti">&lt;iframe&gt;</span>). Por motivos de seguridad, si el elemento incrustado pertenece a un dominio distinto, sólo se mostrará si el servidor de dicho dominio lo autoriza (<a href="https://support.mozilla.org/en-US/kb/xframe-neterror-page">aclaración en ayuda de Firefox</a>)</li>
         <li><span class="html-atri-valor">_parent</span>: el enlace se abre en el elemento de nivel inmediatamente superior al que contiene el enlace</li>
-        <li><span class="html-atri-valor">_top</span>: el enlace se abre en el elemento del nivel más alto (es decir, la ventana del navegador)</li>
+        <li><span class="html-atri-valor">_top</span>: el enlace se abre en el elemento del nivel más alto (es decir, la pestaña del navegador)</li>
       </ul>
+
+      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Como la posibilidad de incrustar un sitio web dentro de otro puede facilitar que se engañe a los visitantes, cada vez más sitios web impiden que su contenido se incruste en otros sitios. Lo que sí podemos es incrustar contenido del propio sitio.</p>
+
+      <p>Los siguientes ejemplos funcionan con cualquier destino porque al hacer clic en los enlaces los destinos no se muestran incrustados, sino ocupando la pestaña completa (tanto si se trata de una nueva pestaña como de la misma pestaña).</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -322,48 +326,91 @@
 <code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_blank"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en una nueva pestaña.&lt;/p&gt;</code>
 </pre>
         </div>
-        <iframe src="ejemplos/enlaces/target-1.html" style="height: 10em;"></iframe>
+        <iframe src="ejemplos/enlaces/target-blank-1-1.html" style="height: 6em;"></iframe>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-blank-1-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_blank"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en una nueva pestaña.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/enlaces/target-blank-2-1.html" style="height: 10em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-blank-2-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.w3.org/" <span class="codigo-resaltado">target="_parent"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre que se abre en la misma pestaña en la que se muestra esta página (pero lo hace porque está incluida en un &lt;strong&gt;iframe&lt;/strong&gt;)&lt;/p&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/enlaces/target-parent-1-1.html" style="height: 8em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-parent-1-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.w3.org/" <span class="codigo-resaltado">target="_top"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en la misma pestaña en la que se muestra esta página.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/enlaces/target-top-1-1.html" style="height: 15em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-top-1-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Los siguientes ejemplos funcionan porque los destinos de los enlaces son del mismo dominio que esta página (mclibre.org) y se pueden mostrar incrustados.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
+
+&lt;p&gt;El enlace se abre porque la página que contiene esta página está en el dominio mclibre.org.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/enlaces/target-self-1-1.html" style="height: 12em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-self-1-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_parent"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en el elemento que contiene el elemento que contiene esta página.&lt;/p&gt;
+
+&lt;p&gt;El enlace se abre porque la página que contiene esta página está en el dominio mclibre.org.&lt;/p&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/enlaces/target-parent-2-1.html" style="height: 20em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/enlaces/target-parent-2-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Los siguientes ejemplos <strong>NO</strong> funcionan porque los destinos de los enlaces pertenecen a un dominio distinto al de esta página (mclibre.org) y <strong>NO</strong> se pueden mostrar incrustados.</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.w3.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
-&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/enlaces/target-2.html" style="height: 15em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
 
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://mclibre.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a mclibre.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
-  &lt;p&gt;Como se trata del mismo dominio, aunque el sitio web mclibre.org NO está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
+&lt;p&gt;Como el sitio web w3.org está configurado para NO poderse abrir en este tipo de elementos, el destino NO se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
-        <iframe src="ejemplos/enlaces/target-2-b.html" style="height: 15em;"></iframe>
+        <iframe src="ejemplos/enlaces/target-self-2-1.html" style="height: 13em;"></iframe>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-2-b.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.cdlibre.org/" <span class="codigo-resaltado">target="_self"</span>&gt;enlace a cdlibre.org&lt;/a&gt; que se abre en el elemento que contiene esta página.&lt;/p&gt;
-  &lt;p&gt;Como se trata de otro dominio y el sitio web cdlibre.org NO está configurado para poderse abrir en este tipo de elementos, la página web NO se mostrará.&lt;/p&gt;</code>
-</pre>
-        </div>
-        <iframe src="ejemplos/enlaces/target-2-c.html" style="height: 15em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-2-c.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-self-2-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
 
@@ -371,48 +418,38 @@
         <div class="codigo">
           <pre>
 <code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.w3.org/" <span class="codigo-resaltado">target="_parent"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento que contiene el elemento que contiene esta página.&lt;/p&gt;
-&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
+
+&lt;p&gt;Como el sitio web w3.org está configurado para NO poderse abrir en este tipo de elementos, el destino NO se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
-        <iframe src="ejemplos/enlaces/target-3.html" style="height: 22em;"></iframe>
+        <iframe src="ejemplos/enlaces/target-parent-3-1.html" style="height: 21em;"></iframe>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-parent-3-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+
+      <p>El comportamiento predeterminado de los navegadores es abrir los enlaces en el mismo nivel en que se encuentra el enlace (es decir, el valor <span class="html-atri-valor">_self</span>):</p>
 
       <div class="filaflex">
         <div class="codigo">
           <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="https://www.w3.org/" <span class="codigo-resaltado">target="_top"</span>&gt;enlace a w3.org&lt;/a&gt; que se abre en el elemento de nivel más alto al elemento que contiene esta página.&lt;/p&gt;
-&lt;p&gt;Como el sitio web w3.org está configurado para poderse abrir en este tipo de elementos, la página web SÍ que se mostrará.&lt;/p&gt;</code>
+<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/"&gt;enlace a example.com&lt;/a&gt; que se abre en el elemento predeterminado.&lt;/p&gt;
+
+&lt;p&gt;Como el sitio web w3.org está configurado para NO poderse abrir en este tipo de elementos, el destino NO se mostrará.&lt;/p&gt;</code>
 </pre>
         </div>
-        <iframe src="ejemplos/enlaces/target-4.html" style="height: 22em;"></iframe>
+        <iframe src="ejemplos/enlaces/target-predeterminado-1-1.html" style="height: 14em;"></iframe>
         <div class="icono-enlace">
-          <a href="ejemplos/enlaces/target-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/enlaces/target-predeterminado-1-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
+
+      <hr class="corta">
+
+      <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">El atributo <span class="html-atri">target</span> con el valor <span class="html-atri-valor">_blank</span> provoca que el navegador abra el enlace en una nueva pestaña. Por desgracia, desde esa nueva pestaña se puede cambiar la página que muestra la pestaña inicial, lo que permite engañar al usuario (como explica <a href="https://mathiasbynens.github.io/rel-noopener/">Mathias Bynens</a>). Esta posibilidad se puede controlar mediante el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>", que impide que la nueva pestaña pueda manejar la primera. Por ese motivo, para proteger a nuestros visitantes, se recomendaba añadir siempre este atributo a cualquier enlace a una página externa que se abriera en una nueva pestaña.</p>
+
+      <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque, aplicando automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Safari lo hace <a href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#Security-and-Privacy">desde Safari 12.1</a> (octubre de 2018). Firefox lo <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/79#html">hace desde Firefox 79</a> (julio de 2020). Google Chrome lo hace <a href="https://developer.chrome.com/blog/new-in-chrome-88/#more">desde Chrome 88</a> (enero de 2021).</p>
     </section>
-
-    <p>El comportamiento predeterminado de los navegadores es abrir los enlaces en el mismo nivel en que se encuentra el enlace (es decir, el valor <span class="html-atri-valor">_self</span>):</p>
-
-    <div class="filaflex">
-      <div class="codigo">
-        <pre>
-<code class="language-html">&lt;p&gt;Esta página contiene un &lt;a href="http://www.example.com/"&gt;enlace a example.com&lt;/a&gt; que se abre en el elemento predeterminado.&lt;/p&gt;</code>
-</pre>
-      </div>
-      <iframe src="ejemplos/enlaces/target-5.html" style="height: 12em;"></iframe>
-      <div class="icono-enlace">
-        <a href="ejemplos/enlaces/target-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-      </div>
-    </div>
-
-    <hr class="corta">
-
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">El atributo <span class="html-atri">target</span> con el valor <span class="html-atri-valor">_blank</span> provoca que el navegador abra el enlace en una nueva pestaña. Por desgracia, desde esa nueva pestaña se puede cambiar la página que muestra la pestaña inicial, lo que permite engañar al usuario (como explica <a href="https://mathiasbynens.github.io/rel-noopener/">Mathias Bynens</a>). Esta posibilidad se puede controlar mediante el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>", que impide que la nueva pestaña pueda manejar la primera. Por ese motivo, para proteger a nuestros visitantes, se recomendaba añadir siempre este atributo a cualquier enlace a una página externa que se abriera en una nueva pestaña.</p>
-
-    <p>En 2018 los navegadores empezaron a tratar de impedir este tipo de ataque, aplicando automáticamente el atributo <span class="html-atri">rel</span>="<span class="html-atri-valor">noopener</span>" a cualquier página que contenga <span class="html-atri">target</span>="<span class="html-atri-valor">_blank</span>". Safari lo hace <a href="https://developer.apple.com/documentation/safari-release-notes/safari-12_1-release-notes#Security-and-Privacy">desde Safari 12.1</a> (octubre de 2018). Firefox lo <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/79#html">hace desde Firefox 79</a> (julio de 2020). Google Chrome lo hace <a href="https://developer.chrome.com/blog/new-in-chrome-88/#more">desde Chrome 88</a> (enero de 2021).</p>
   </section>
 
   <section id="intentos-censura">
@@ -529,7 +566,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 27 de abril de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 25 de noviembre de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
