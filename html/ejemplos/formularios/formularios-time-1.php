@@ -23,12 +23,12 @@ function recoge($var)
     return $tmp;
 }
 
-$texto = recoge("texto");
+$hora = recoge("hora");
 
-if ($texto == "") {
+if ($hora == "") {
     print "  <p>No ha indicado ninguna hora.</p>\n";
 } else {
-    print "  <p>La hora indicada es <strong>$texto</strong>.</p>\n";
+    print "  <p>La hora indicada es <strong>$hora</strong>.</p>\n";
 }
 print "\n";
 ?>

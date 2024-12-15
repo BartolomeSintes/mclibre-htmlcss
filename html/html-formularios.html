@@ -122,17 +122,25 @@
 
       <p>El atributo <span class="html-atri">type</span> de la etiqueta <span class="html-eti">&lt;input&gt;</span> indica el tipo de control de que se trata.</p>
 
-      <p>En HTML 4.01 los tipos de <span class="html-eti">&lt;input&gt;</span> eran:
+      <p>En HTML 2 (publicado en noviembre de 1995) se crearon los tipos básicos de <span class="html-eti">&lt;input&gt;</span>:
         botón para enviar <a href="#control-input-button-submit"><span class="html-atri-valor">submit</span></a>,
         botón para reiniciar <a href="#control-input-button-reset"><span class="html-atri-valor">reset</span></a>,
         texto <a href="#control-input-text"><span class="html-atri-valor">text</span></a>,
         contraseña <a href="#control-input-password"><span class="html-atri-valor">password</span></a>,
-        archivo <a href="formularios-2.html#control-input-file"><span class="html-atri-valor">file</span></a>,
-        imagen <a href="formularios-2.html#control-input-image"><span class="html-atri-valor">image</span></a> y
+        casilla de verificación <a href="#control-input-checkbox"><span class="html-atri-valor">checkbox</span></a>,
+        botón radio <a href="#control-input-radio"><span class="html-atri-valor">radio</span></a>,
+        imagen <a href="html-formularios-2.html#control-input-image"><span class="html-atri-valor">image</span></a> y
         oculto <a href="#control-input-hidden"><span class="html-atri-valor">hidden</span></a>.</p>
 
-      <p>En HTML 5 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
-        botón <span class="html-atri-valor">button</span>,
+      <p>En HTML 3.2 (publicado en enero de 1997) se añadió el tipo
+        fichero <a href="html-formularios-2.html#control-input-file"><span class="html-atri-valor">file</span></a>
+      </p>
+
+      <p>En HTML 4.0 (publicado en diciembre de 1997) se añadió el tipo
+        botón <a href="html-formularios-2.html#control-input-button-button"><span class="html-atri-valor">button</span></a>
+      </p>
+
+      <p>En HTML 5 (publicado en octubre de 2014, aunque el WHATWG los había introducido años antes) se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
         número <a href="#control-input-number"><span class="html-atri-valor">number</span></a>,
         búsqueda <a href="html-formularios-2.html#control-input-search"><span class="html-atri-valor">search</span></a>,
         teléfono <a href="html-formularios-2.html#control-input-tel"><span class="html-atri-valor">tel</span></a>,
@@ -143,10 +151,10 @@
         color <a href="#control-input-color"><span class="html-atri-valor">color</span></a> y
         rango <a href="#control-input-range"><span class="html-atri-valor">range</span></a>.</p>
 
-      <p>En HTML 5.1 se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
-        mes <a href="html-formularios-2.html#control-input-date"><span class="html-atri-valor">month</span></a>,
-        semana <span class="html-atri-valor">week</span> y
-        fecha y hora local <span class="html-atri-valor">datetime-local</span>.</p>
+      <p>En HTML 5.1 (publicado en octubre de 2016, aunque el WHATWG los había introducido años antes) se añadieron los tipos de <span class="html-eti">&lt;input&gt;</span>:
+        mes <a href="html-formularios-2.html#control-input-month"><span class="html-atri-valor">month</span></a>,
+        semana <a href="html-formularios-2.html#control-input-week"><span class="html-atri-valor">week</span></a> y
+        fecha y hora local <a href="html-formularios-2.html#control-input-datetime-local"><span class="html-atri-valor">datetime-local</span></a>.</p>
     </section>
 
     <section id="atributo-name">
@@ -294,42 +302,59 @@
 
     <p>La mayoría de controles se obtienen mediante mediante la etiqueta vacía <span class="html-eti">&lt;input&gt;</span>.</p>
 
-    <p>En HTML 4.01, los controles disponibles eran:
-      botón para enviar <a href="#control-input-button-submit"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"submit"</span>&gt;</span></a>,
-      botón para reiniciar <a href="#control-input-button-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"reset"</span>&gt;</span></a>,
-      botón <a href="#control-botones"><span class="html-eti">&lt;button&gt;</span></a>,
-      texto <a href="#control-input-text"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"text"</span>&gt;</span></a>,
-      contraseña <a href="#control-input-password"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"password"</span>&gt;</span></a>,
-      archivo <a href="formularios-2.html#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a>,
-      imagen <a href="formularios-2.html#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a>,
-      oculto <a href="#control-input-hidden"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"hidden"</span>&gt;</span></a>,
-      área de texto <a href="#control-textarea"><span class="html-eti">&lt;textarea&gt;</span></a> y
-      menú <a href="#control-select"><span class="html-eti">&lt;select&gt;</span></a>.
-    </p>
+    <p>En HTML 2 (publicado en noviembre de 1995) se introdujeron los formularios y sus primeros controles:</p>
+    <ul>
+      <li>botón para enviar <a href="#control-input-button-submit"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"submit"</span>&gt;</span></a></li>
+      <li>botón para reiniciar <a href="#control-input-button-reset"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"reset"</span>&gt;</span></a></li>
+      <li>texto <a href="#control-input-text"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"text"</span>&gt;</span></a></li>
+      <li>contraseña <a href="#control-input-password"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"password"</span>&gt;</span></a></li>
+      <li>botón radio <a href="#control-input-radio"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"radio"</span>&gt;</span></a></li>
+      <li>casilla de verificación <a href="#control-input-checkbox"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"checkbox"</span>&gt;</span></a></li>
+      <li>imagen <a href="formularios-2.html#control-input-image"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></a></li>
+      <li>oculto <a href="#control-input-hidden"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"hidden"</span>&gt;</span></a></li>
+      <li>área de texto <a href="#control-textarea"><span class="html-eti">&lt;textarea&gt;</span></a></li>
+      <li>menú <a href="#control-select"><span class="html-eti">&lt;select&gt;</span></a> / <a href="#control-select"><span class="html-eti">&lt;option&gt;</span></a></li>
+    </ul>
 
-    <p>En HTML 5 se añadieron los controles:
-      botón general <a href="html-formularios.html#control-input-button-button"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span></a>,
-      número <a href="#control-input-number"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></a>,
-      búsqueda <a href="html-formularios-2.html#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a>,
-      teléfono <a href="html-formularios-2.html#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a>,
-      dirección web <a href="html-formularios-2.html#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a>,
-      dirección de correo <a href="html-formularios-2.html#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a>,
-      fecha <a href="#control-input-date"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></a>,
-      hora <a href="html-formularios-2.html#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a>,
-      color <a href="#control-input-color"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"color"</span>&gt;</span></a>,
-      rango <a href="#control-input-range"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"range"</span>&gt;</span></a>,
-      opciones <span class="html-eti">&lt;option&gt;</span> (para <span class="html-eti">&lt;datalist&gt;</span>),
-      lista de valores <span class="html-eti">&lt;datalist&gt;</span>,
-      salida <span class="html-eti">&lt;output&gt;</span>,
-      barra de progreso <span class="html-eti">&lt;progress&gt;</span> y
-      medidor <span class="html-eti">&lt;meter&gt;</span>.
-    </p>
+    <p>En HTML 3.2 (publicado en enero de 1997) se añadió el control:</p>
+    <ul>
+      <li>archivo <a href="formularios-2.html#control-input-file"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></a></li>
+    </ul>
 
-    <p>En HTML 5.1 se añadieron los controles:
-      mes <a href="html-formularios-2.html#control-input-month"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></a>,
-      semana <a href="html-formularios-2.html#control-input-week"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></a> y
-      fecha y hora local <a href="html-formularios-2.html#control-input-datetime-local"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></a>.
-    </p>
+    <p>En HTML 4.0 (publicado en diciembre de 1997) se añadió los controles:</p>
+    <ul>
+      <li>botón general <a href="html-formularios.html#control-input-button-button"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"button"</span>&gt;</span></a></li>
+      <li>botón <a href="#control-botones"><span class="html-eti">&lt;button&gt;</span></a></li>
+    </ul>
+    <p>y se añadió la agrupación de opciones de menús mediante:</p>
+    <ul>
+      <li>grupo de opciones <a href="#control-botones"><span class="html-eti">&lt;optgroup&gt;</span></a></li>
+    </ul>
+
+    <p>En HTML 5 (publicado en octubre de 2014, aunque el WHATWG los había introducido años antes) se añadieron los controles:</p>
+    <ul>
+      <li>número <a href="#control-input-number"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"number"</span>&gt;</span></a></li>
+      <li>búsqueda <a href="html-formularios-2.html#control-input-search"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"search"</span>&gt;</span></a></li>
+      <li>teléfono <a href="html-formularios-2.html#control-input-tel"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"tel"</span>&gt;</span></a></li>
+      <li>dirección web <a href="html-formularios-2.html#control-input-url"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"url"</span>&gt;</span></a></li>
+      <li>dirección de correo <a href="html-formularios-2.html#control-input-email"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"email"</span>&gt;</span></a></li>
+      <li>fecha <a href="#control-input-date"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"date"</span>&gt;</span></a></li>
+      <li>hora <a href="html-formularios.html#control-input-time"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"time"</span>&gt;</span></a></li>
+      <li>color <a href="#control-input-color"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"color"</span>&gt;</span></a></li>
+      <li>rango <a href="#control-input-range"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"range"</span>&gt;</span></a></li>
+      <li>opciones <span class="html-eti">&lt;option&gt;</span> (para <span class="html-eti">&lt;datalist&gt;</span>)</li>
+      <li>lista de valores <span class="html-eti">&lt;datalist&gt;</span></li>
+      <li>salida <span class="html-eti">&lt;output&gt;</span></li>
+      <li>barra de progreso <span class="html-eti">&lt;progress&gt;</span></li>
+      <li>medidor <span class="html-eti">&lt;meter&gt;</span></li>
+    </ul>
+
+    <p>En HTML 5.1 (publicado en octubre de 2016, aunque el WHATWG los había introducido años antes) se añadieron los controles:</p>
+    <ul>
+      <li>mes <a href="html-formularios-2.html#control-input-month"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"month"</span>&gt;</span></a></li>
+      <li>semana <a href="html-formularios-2.html#control-input-week"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"week"</span>&gt;</span></a></li>
+      <li>fecha y hora local <a href="html-formularios-2.html#control-input-datetime-local"><span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"datetime-local"</span>&gt;</span></a></li>
+    </ul>
 
     <section id="control-botones">
       <h3>Botones: <span class="html-eti">&lt;input&gt;</span> y <span class="html-eti">&lt;button&gt;</span></h3>
@@ -467,7 +492,7 @@
         </div>
       </div>
 
-      <p>Si una caja de texto u otro control similar tienen establecidos los atributos <span class="html-atri">value</span> o <span class="html-atri">placeholder</span>, el botón Reset restablece estos valores, pero no deja vacío el control.</p>
+      <p>Si una caja de texto u otro control similar tienen establecidos los atributos <span class="html-atri">value</span> o <span class="html-atri">placeholder</span>, el botón Reset restablece estos valores iniciales.</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -1050,7 +1075,7 @@
       </div>
     </div>
 
-    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (enero de 2023) los navegadores admiten el atributo parcialmente</p>
+    <p>El atributo <span class="html-atri">list</span> debería permitir añadir etiquetas al control, pero actualmente (diciembre de 2024) los navegadores admiten el atributo parcialmente</p>
     <ul>
       <li>Si el atributo <span class="html-atri">list</span> contiene el <span class="html-atri">id</span> de un elemento <span class="html-eti">datalist</span> que contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">value</span>, el control muestra marcas en la posición correspondiente a esos valores:
         <div class="filaflex">
@@ -1076,7 +1101,7 @@
           </div>
         </div>
       </li>
-      <li>Si el elemento <span class="html-eti">datalist</span> contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">label</span>, el control debería mostrar esas etiquetas en las posiciones de las marcas, pero actualmente (enero de 2023), ni Chrome ni Firefox lo hacen:
+      <li>Si el elemento <span class="html-eti">datalist</span> contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">label</span>, el control debería mostrar esas etiquetas en las posiciones de las marcas, pero actualmente (diciembre de 2024), ni Chrome ni Firefox lo hacen:
         <div class="filaflex">
           <div class="icono-navegadores">
             <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
@@ -1435,7 +1460,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 10 de noviembre de 2023</p>
+    <p class="ultmod">Última modificación de esta página: 13 de diciembre de 2024</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
