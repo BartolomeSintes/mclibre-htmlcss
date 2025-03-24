@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Diferencias entre HTML y XML. HTML. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../varios/favicon.svg">
+  <link rel="stylesheet" href="../varios/prism.css">
+  <script src="../varios/prism.js"></script>
+</head>
+
+<body>
+  <h1>Diferencias entre HTML y XML</h1>
+
+  <nav>
+    <p>
+      <a href="../index.html"><img src="../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="#"><img src="../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>HTML vs XML</h2>
+
+      <ul>
+        <li><a href="#generalidades">Generalidades</a></li>
+        <li><a href="#etiquetas">Etiquetas</a></li>
+        <li><a href="#atributos">Atributos</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>HTML y XML utilizan dos sintaxis diferentes: la sintaxis HTML está inspirada en la norma SGML (aunque no la cumple estrictamente), mientras que la sintaxis XML está basada en la recomendación XML (1998). para saber más sobre XML puede consultar los <a href="https://www.mclibre.org/consultar/xml/">apuntes de XML de mclibre</a>.</p>
+
+  <p>En general, la sintaxis XML es más "estricta", en el sentido de imponer restricciones en la forma de escribir etiquetas, atributos o valores, mientras que la sintaxis HTML es más "flexible".</p>
+
+  <p>Los únicos contextos en los que es necesario seguir la sintaxis XML en una página web es en el caso de las imágenes SVG y las fórmulas matemáticas MathML, que se pueden incluir en una página web pero deben seguir la sintaxis XML.</p>
+
+  <p>En esta lección se comentan algunas de las diferencias entre las sintaxis HTML y XML.</p>
+
+  <section id="generalidades">
+    <h2>Generalidades</h2>
+
+    <ul>
+      <li>En XML para que un documento se muestre en el navegador tiene que ser "bien formado", es decir, tiene que cumplir todas las reglas sintácticas. En HTML, los documentos se muestran en el navegador aunque contengan errores sintácticos (la visualización puede ser correcta o incorrecta, dependiendo del tipo de errores de la página). Eso quiere decir que si las imágenes SVG o las fórmulas matemáticas MathML incluidas en una página web tienen errores sintácticos, pueden no mostrarse  correctamente. Dependiento del tipo de error, el error puede no afectar al resultado, afectar únicamente al elemento incorrecto, a todos los elementos que siguen al elemento incorrecto o a la imagen o fórmula completa.</li>
+      <li>En XML no puede haber texto no incluido en alguna etiqueta, pero en HTML puede haberlo:
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA&lt;/p&gt;
+BBBB
+&lt;p&gt;CCCC&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML, los nombres de elementos y atributos deben escribirse en minúsculas. En HTML no es necesario.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;P&gt;AAAA&lt;/P&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p CLASS="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML, las referencias a entidades en hexadecimal deben escribirse en minúsculas. En HTML se pueden escribir en minúsculas o mayúsculas.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&amp;#x3b1; &amp;#x3b2; &amp;#x3c0;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&amp;#X3b1; &amp;#X3b2; &amp;#X3c0;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="etiquetas">
+    <h2>Elementos (etiquetas)</h2>
+
+    <ul>
+      <li>Los documentos XML tienen que tener un único elemento raíz de todo el documento, el elemento <span class="html-eti">&lt;html&gt;</span>. Los documentos HTML pueden no tenerlo.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- contenido de la página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- contenido de la página --&gt;
+&lt;/body&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     width="200" height="200" viewBox="-100 -100 200 200"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="0" cy="0" r="75" fill="none" stroke="red" stroke-width="5" /&gt;
+&lt;/svg&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML, los elementos no vacíos (los que tienen etiqueta de apertura) deben tener etiqueta de cierre. En HTML no es necesario.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA&lt;/p&gt;
+&lt;p&gt;BBBB&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;AAAA
+&lt;p&gt;BBBB&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML, la etiqueta de apertura de los elementos vacíos debe acabar en " /&gt;" o debe haber una etiqueta de cierre. En HTML el carácter / final debe ignorarse completamente y los elementos vacíos no deben tener etiqueta de cierre.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr /&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-nook.svg" alt="HTML incorrecto" title="HTML incorrecto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr&gt;&lt;/hr&gt;</code>
+</pre>
+          </div>
+        </div>
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <p>El cierre de las etiquetas vacías en XML puede tener o no un espacio delante. Hace años se recomendaba dejar un espacio delante por compatibilidad con algunos navegadores, pero seguramente hace años que esos navegadores han desaparecido del mercado.</p>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr /&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;hr/&gt;</code>
+</pre>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </section>
+
+  <section id="atributos">
+    <h2>Atributos</h2>
+
+    <ul>
+      <li>En XML, los atributos deben tener siempre valor (en el caso de atributos booleanos, el valor debe ser el propio nombre del atributo o una cadena vacía). En HTML, los atributos pueden no tener valor asignado.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed="reversed"&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed=""&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;ol reversed&gt;
+  &lt;li&gt;AAA&lt;/li&gt;
+  &lt;li&gt;BBB&lt;/li&gt;
+&lt;/ol&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML los valores de los atributos deben escribirse en minúsculas. En HTML se pueden escribir en minúsculas o mayúsculas.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&lt;input type="text" /&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p&gt;&lt;input type="TEXT" /&gt;&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+      <li>En XML, los valores de los atributos deben escribirse entre comillas (dobles o simples). En HTML no es necesario si no hay espacios en blanco.
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style="color: red"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style=color:red&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-nook.svg" alt="HTML incorrecto" title="HTML incorrecto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p style=color: red&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-ok.svg" alt="XML correcto" title="XML correcto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class="xxx"&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+
+        <div class="filaflex">
+          <div class="icono-xhtml-ok">
+            <img src="../varios/iconos/html-ok.svg" alt="HTML correcto" title="HTML correcto" width="120" height="32">
+            <img src="../varios/iconos/xml-nook.svg" alt="XML incorrecto" title="XML incorrecto" width="120" height="32">
+          </div>
+          <div class="codigo">
+            <pre>
+<code class="language-html">&lt;p class=xxx&gt;AAAA&lt;/p&gt;</code>
+</pre>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2025</p>
+
+    <p class="licencia">
+      <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
