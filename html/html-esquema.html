@@ -295,7 +295,16 @@
   </section>
 
   <section id="outline-hn">
-    <h2>Secciones y títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span></h2>
+    <h2 class="con-aside">Secciones y títulos <span class="html-eti">&lt;h1&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span></h2>
+
+    <aside class="enlace-norma">
+      <p>
+        sections and headings<br>
+        <a href="https://html.spec.whatwg.org/multipage/rendering.html#sections-and-headings">
+          <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+        </a>
+      </p>
+    </aside>
 
     <p>Como cada sección reiniciaba la jerarquía de títulos independientemente del nivel de los títulos, en el esquema correspondiente al ejemplo siguiente el elemento <span class="html-eti">&lt;h1&gt;</span> del primer <span class="html-eti">&lt;article&gt;</span> tenía el mismo nivel que el elemento <span class="html-eti">&lt;h2&gt;</span> del segundo <span class="html-eti">&lt;article&gt;</span>.</p>
 
@@ -342,44 +351,51 @@
       </svg>
     </p>
 
-    <p>Pero la verdad es que los navegadores nunca implementaron el algoritmo para calcular el esquema de una página. Prácticamente, el único aspecto en el que se aplicaba de alguna manera el concepto de esquema era en el caso de los títulos <span class="html-eti">&lt;h1&gt;</span> dentro de <span class="html-eti">&lt;article&gt;</span> o <span class="html-eti">&lt;section&gt;</span>, porque la hoja de estilo por defecto los mostraba como un elemento <span class="html-eti">&lt;h2&gt;</span> situado fuera de ellos. Pero se trataba de una excepción, porque el resto de títulos <span class="html-eti">&lt;h2&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se veían igual, estuvieran dónde estuvieran, como se ve en el ejemplo siguiente:</p>
+    <p>La verdad es que los navegadores nunca implementaron el algoritmo para calcular el esquema de una página. Prácticamente, el único aspecto en el que se aplicaba de alguna manera el concepto de esquema era en el caso de los títulos <span class="html-eti">&lt;h1&gt;</span>. Si un <span class="html-eti">&lt;h1&gt;</span> se encontraba dentro de <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;aside&gt;</span> o <span class="html-eti">&lt;nav&gt;</span> la hoja de estilo por defecto los mostraba como un elemento <span class="html-eti">&lt;h2&gt;</span> situado fuera de ellos. Si un <span class="html-eti">&lt;h1&gt;</span> se encontraba dentro de <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;aside&gt;</span> o <span class="html-eti">&lt;nav&gt;</span> dentro de otro <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;aside&gt;</span> o <span class="html-eti">&lt;nav&gt;</span> la hoja de estilo por defecto los mostraba como un elemento <span class="html-eti">&lt;h3&gt;</span> situado fuera de ellos. Y así sucesivamente, a medida que se anidan secciones. Pero se trataba de una excepción, porque el resto de títulos <span class="html-eti">&lt;h2&gt;</span>, ..., <span class="html-eti">&lt;h6&gt;</span> se veían igual, estuvieran dónde estuvieran, como se ve en el ejemplo siguiente:</p>
 
     <div class="filaflex">
-      <div class="icono-navegadores">
-        <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-        <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-      </div>
       <div class="codigo">
         <pre>
-<code class="language-html">
-&lt;h1&gt;Título h1 en body&lt;/h1&gt;
+<code class="language-html">&lt;h1&gt;Título h1 en body&lt;/h1&gt;
 
 &lt;h2&gt;Título h2 en body&lt;/h2&gt;
 
-&lt;h3&gt;Título h3 en body&lt;/h1&gt;
+&lt;hr&gt;
 
 &lt;article&gt;
   &lt;h1&gt;Título h1 en article&lt;/h1&gt;
 
   &lt;h2&gt;Título h2 en article&lt;/h2&gt;
-
-  &lt;h3&gt;Título h3 en article&lt;/h3&gt;
 &lt;/article&gt;
+
+&lt;hr&gt;
 
 &lt;section&gt;
   &lt;h1&gt;Título h1 en section&lt;/h1&gt;
 
   &lt;h2&gt;Título h2 en section&lt;/h2&gt;
+&lt;/section&gt;
 
-  &lt;h3&gt;Título h3 en section&lt;/h3&gt;
+&lt;hr&gt;
+
+&lt;article&gt;
+  &lt;section&gt;
+    &lt;h1&gt;Título h1 en section dentro de article&lt;/h1&gt;
+
+    &lt;h2&gt;Título h2 en section dentro de article&lt;/h2&gt;
+
+    &lt;h3&gt;Título h3 en section dentro de article&lt;/h3&gt;
+  &lt;/section&gt;
 &lt;/article&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/esquema/esquema-1.html" style="height: 33em;"></iframe>
+      <iframe src="ejemplos/esquema/esquema-1.html" style="height: 39em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/esquema/esquema-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
     </div>
+
+    <p>En abril de 2025 <a href="https://developer.mozilla.org/en-US/blog/h1-element-styles/">Firefox anunció</a> que iba a eliminar este comportamiento paulatinamente, con la intención de completar el cambio en Firefox 140, que se publicará en junio de 2025. Chrome 136 (publicado en abril de 2025) avisa en su herramienta de desarrollador Lighthouse que se están utilizando elementos desaconsejados cuando se escriben <span class="html-eti">&lt;h1&gt;</span> dentro de <span class="html-eti">&lt;article&gt;</span>, <span class="html-eti">&lt;section&gt;</span>, <span class="html-eti">&lt;aside&gt;</span> o <span class="html-eti">&lt;nav&gt;</span>. Actualmente (mayo de 2025), hay una <a href="https://github.com/whatwg/html/issues/7867">petición</a> para eliminar de la norma HTML la referencia a este comportamiento.</p>
   </section>
 
   <section id="uso-hn">
@@ -407,17 +423,18 @@
       <li><a href="http://html5doctor.com/computer-says-no-to-html5-document-outline/">Computer says NO to HTML5 document outline</a> (junio 2016)</li>
       <li><a href="https://html5accessibility.com/stuff/2021/03/21/a-decade-a-year-of-heading-backwards/">A decade + a year of heading backwards</a> (marzo 2021)</li>
       <li><a href="https://gsnedders.html5.org/outliner/">HTML 5 Outliner</a></li>
-      <li><a href="https://github.com/whatwg/html/issues/83">HTML issue 83: Suggest adding a warning about outline algorithm</a> (septiembre 2015)</li>
-      <li><a href="https://github.com/w3c/html/issues/774">W3C HTML issue 774: Add &lt;h&gt; element</a> (enero 2017, obsoleta, repositorio archivado)</li>
-      <li><a href="https://github.com/whatwg/html/pull/3499">HTML pull 3499: Add heading-focused outlines and :heading</a> (febrero 2018)</li>
-      <li><a href="https://github.com/whatwg/html/pull/6462">HTML pull 6462: Obsolete &lt;hgroup&gt;</a> (marzo 2021)</li>
-      <li><a href="https://github.com/mdn/content/pull/4977">MDN pull 4977: Replace deprecation with warning in hgroup</a> (mayo 2021)</li>
-      <li><a href="https://github.com/whatwg/html/pull/7829">HTML issue 7829: Replace current outline algorithm with one based on heading levels</a> (abril 2022)</li>
+      <li><s><a href="https://github.com/whatwg/html/issues/83">HTML issue 83: Suggest adding a warning about outline algorithm</a> (septiembre 2015, cerrada, rechazada)</s></li>
+      <li><s><a href="https://github.com/w3c/html/issues/774">W3C HTML issue 774: Add &lt;h&gt; element</a> (enero 2017, obsoleta, repositorio archivado)</s></li>
+      <li><s><a href="https://github.com/whatwg/html/pull/3499">HTML pull 3499: Add heading-focused outlines and :heading</a> (febrero 2018, rechazada)</s></li>
+      <li><s><a href="https://github.com/whatwg/html/pull/6462">HTML pull 6462: Obsolete &lt;hgroup&gt;</a> (marzo 2021, rechazada)</s></li>
+      <li><s><a href="https://github.com/mdn/content/pull/4977">MDN pull 4977: Replace deprecation with warning in hgroup</a> (mayo 2021, rechazada)</s></li>
+      <li><s><a href="https://github.com/whatwg/html/pull/7829">HTML issue 7829: Replace current outline algorithm with one based on heading levels</a> (abril 2022)</s></li>
+      <li><a href="https://github.com/whatwg/html/pull/7867">HTML issue 7867: Remove UA style for h1-h6 in section (et. al.) and hgroup</a> (abril 2022)</li>
     </ul>
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 19 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 2 de mayo de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
