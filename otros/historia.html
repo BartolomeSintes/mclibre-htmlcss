@@ -715,7 +715,7 @@
       <p>A medida que los navegadores fueron cumpliendo CSS nivel 2, el ritmo de trabajo se fue recuperando, y se han ido publicando algunas recomendaciones CSS 3 (en algunos casos, incluso varias versiones, en esta lista se indica únicamente la última versión publicada):</p>
       <ul>
         <li>noviembre de 2013: <a href="https://www.w3.org/TR/2013/REC-css-style-attr-20131107/">CSS Style Attributes</a>, editada por Tantek Çelik y Elika J. Etemad.</li>
-        <li>marzo de 2014: <a href="https://www.w3.org/TR/2014/REC-css-namespaces-3-20140320/">CSS Namespaces (2ª ed)</a>, editada por Elika J. Etemad.</li>
+        <li>marzo de 2014: <a href="https://www.w3.org/TR/2014/REC-css-namespaces-3-20140320/">CSS Namespaces Module Level 3 (2ª ed)</a>, editada por Elika J. Etemad.</li>
         <li>junio de 2018: <a href="https://www.w3.org/TR/2018/REC-css-ui-3-20180621/">CSS Basic User Interface Module Level 3 (CSS3 UI)</a>, editada por Tantek Çelik y Florian Rivoal.</li>
         <li>septiembre de 2018: <a href="https://www.w3.org/TR/2018/REC-css-fonts-3-20180920/">CSS Fonts Module Level 3</a>, editada por John Daggett y otros.</li>
         <li>noviembre de 2018: <a href="https://www.w3.org/TR/2018/REC-selectors-3-20181106/">Selectors Level 3 (2ª ed)</a>, editada por Tantek Çelik y otros.</li>
@@ -820,9 +820,11 @@
             <circle cx="1035" cy="0" r="7" fill="red" />
             <text x="1027" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 15</text>
             <circle cx="1050" cy="0" r="7" fill="hwb(248 32% 6%)" />
-            <text x="1050" y="40" text-anchor="middle" fill="hwb(248 32% 6%)" style="font-size: 90%; font-weight: bold">WASM 2</text>
+            <text x="1040" y="40" text-anchor="middle" fill="hwb(248 32% 6%)" style="font-size: 90%; font-weight: bold">WASM 2</text>
             <circle cx="1065" cy="0" r="7" fill="red" />
             <text x="1072" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 16</text>
+            <circle cx="1072" cy="0" r="7" fill="hwb(248 32% 6%)" />
+            <text x="1100" y="40" text-anchor="middle" fill="hwb(248 32% 6%)" style="font-size: 90%; font-weight: bold">WASM 3</text>
             <!--
             <circle cx="914" cy="0" r="7" fill="white" stroke-width="3" stroke="red" />
             <text x="925" y="-15" text-anchor="middle" fill="red" style="font-size: 90%; font-weight: bold">JS 11</text>
@@ -868,7 +870,7 @@
 
         <p>En 2013, Firefox implementó <a href="http://asmjs.org/">asm.js</a>, un subconjunto de JavaScript que puede ser optimizado por los navegadores y al que se puede traducir código escrito en otros lenguajes (sobre todo, C/C++, pero también otros como Perl, Python o Ruby). Este subconjunto se incluyó en ECMAScript 6, por lo que tanto Internet Explorer como Chrome también lo admitían.</p>
 
-        <p>En 2015 empezó a desarrollarse <a href="https://webassembly.org/">WebAssembly</a>, un formato binario gestionado por el intérprete de JavaScript del navegador, pero con una velocidad mucho mayor y que permite crear programas escritos en otros lenguajes (inicialmente, C/C++). En 2107 un primera versión de WebAssembly se incluyó en los principales navegadores: <a href="https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/">Firefox 52</a> (marzo 2017), Chrome 57 (marzo 2017), Microsoft Edge 15 (abril 2017) y Safari 11 (septiembre 2017).</p>
+        <p>En 2015 el consorcio <a href="https://webassembly.org/">WebAssembly</a>, formado por fabricantes de navegadores, empezó a desarrollar WebAssembly, un formato binario gestionado por el intérprete de JavaScript del navegador, pero con una velocidad mucho mayor y que permite crear programas escritos en otros lenguajes (inicialmente, C/C++). En 2107 un primera versión de WebAssembly se incluyó en los principales navegadores: <a href="https://hacks.mozilla.org/2017/03/firefox-52-introducing-web-assembly-css-grid-and-the-grid-inspector/">Firefox 52</a> (marzo 2017), Chrome 57 (marzo 2017), Microsoft Edge 15 (abril 2017) y Safari 11 (septiembre 2017).</p>
 
         <p>En agosto de 2017 se creó el grupo de trabajo WebAssembly en el W3C. En diciembre de 2019 el W3C aprobó las tres primeras recomendaciones relacionadas con WebAssembly:</p>
         <ul>
@@ -877,17 +879,30 @@
           <li>diciembre de 2019: <a href="https://www.w3.org/TR/2019/REC-wasm-js-api-1-20191205/">WebAssembly JavaScript Interface</a>, editada por Daniel Ehrenberg.</li>
         </ul>
 
-        <p>En diciembre de 2024 se completó la segunda versión de WebAssembly, que el grupo de trabajo decidió adaptar al modelo de recomendación continua, por lo que la recomendación se publicó en fase de candidata a recomendación (CR) en vez de aprobarla, lo que permitirá modificarla en cualquier momento que sea necesario.</p>
+        <p>De forma similar a como ocurre en el caso de HTML, la especificación de WebAssembly "real" es la preparada por el consorcio WebAssembly, pero el W3C intenta publicar recomendaciones con su sello.</p>
+
+        <p>En 2022 se completó la segunda versión de WebAssembly, pero la publicación por el W3C se retrasó hasta diciembre de 2024. Para poder sincronizar con más agilidad la versión del W3C con la versión del consorcio WebAssembly, el grupo de trabajo decidió adaptar al modelo de recomendación continua, publicando la recomendación como borrador de candidata a recomendación (CRD):</p>
+
         <ul>
-          <li>diciembre de 2024: <a href="https://www.w3.org/TR/wasm-core-2/">WebAssembly Core Specification 2.0</a>, editada por Andreas Rossberg.</li>
+          <li>diciembre de 2024: <a href="https://www.w3.org/TR/2024/CRD-wasm-core-2-20241218/">WebAssembly Core Specification 2.0</a>, editada por Andreas Rossberg.</li>
         </ul>
+
+        <p>El consorcio WebAssembly <a href="https://webassembly.org/news/2025-09-17-wasm-3.0/">anunció en septiembre de 2025</a> la publicación de WebAssembly 3.0.</p>
+
+        <p>La versión más reciente de WebAssembly es la versión del consorcio WebAssembly, <a href="https://webassembly.github.io/spec/core/">WebAssembly Specification</a>, mientras que la versión del W3C es la recomendación CRD <a href="https://www.w3.org/TR/wasm-core-2/">WebAssembly Core Specification</a>.</p>
+
+        <hr class="corta">
 
         <p>Borradores:</p>
         <ul>
           <li><a href="https://github.com/tc39/ecma262">Próxima versión de ECMAScript</a> - <a href="https://github.com/tc39/proposals">Propuestas de inclusión en ECMAScript</a></li>
-          <li><a href="https://www.w3.org/TR/wasm-core-2/">WebAssembly Core Specification 2.0</a></li>
-          <li><a href="https://www.w3.org/TR/wasm-web-api-2/">WebAssembly Web API 2.0</a></li>
-          <li><a href="https://www.w3.org/TR/wasm-js-api-2/">WebAssembly JavaScript Interface 2.0</a></li>
+          <li><a href="https://www.w3.org/TR/wasm-core-2/">WebAssembly Core Specification</a>, editada por Andreas Rossberg.</li>
+          <li><a href="https://www.w3.org/TR/wasm-web-api-2/">WebAssembly Web API</a>, editada por Ms2ger.</li>
+          <li><a href="https://www.w3.org/TR/wasm-js-api-2/">WebAssembly JavaScript Interface</a>, editada por Ms2ger.</li>
+        </ul>
+
+        <p>Otros:</p>
+        <ul>
           <li><a href="https://hacks.mozilla.org/2018/10/webassemblys-post-mvp-future/">Estado de desarrollo de WebAssembly (octubre de 2018).</a></li>
         </ul>
 
@@ -1951,7 +1966,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 6 de octubre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
