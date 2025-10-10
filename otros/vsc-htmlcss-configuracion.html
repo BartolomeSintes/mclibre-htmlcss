@@ -196,7 +196,8 @@
       <p>En la lección <a href="vsc-htmlcss-extensiones.html#extension-image-preview">Extensiones de Visual Studio Code para HTML/CSS</a> se comenta con más detalle el uso de esta extensión</p>
 
       <p>Al situar el cursor sobre la ruta de una imagen, se muestra un cuadro con una miniatura de la imagen y el tamaño de la imagen. Además, haciendo
-        <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.</p>
+        <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.
+      </p>
 
       <p><strong>Nota</strong>: En cursos anteriores recomendaba este extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente. Pero en septiembre de 2019 añadí a la lista de atajos recomendados un atajo de teclado que permite crear de forma inmediata los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>. Sitúe el cursor en el interior de la etiqueta <span class="html-eti">img</span> y escriba el atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+s</span> y automáticamente se añadirán los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> con los valores de la imagen. La extensión Image Preview sigue siendo útil para ver una miniatura de la imagen, pero ya no es necesaria para indicar los tamaños.</p>
     </section>
@@ -259,6 +260,8 @@
     "doctype-first": true,                    // La primera línea es el doctype
     "doctype-html5": true,                    // El doctype es html
     "html-lang-require": true,                // La etiqueta html incluye el atributo lang
+    "meta-charset-require": true,             // La etiqueta head incluye la etiqueta meta con atributo charset
+    "meta-viewport-require": true,            // La etiqueta head incluye la etiqueta meta con atributo viewport
     "title-require": true,                    // La etiqueta head incluye la etiqueta title
     // Attributes
     "attr-lowercase":                         // Los atributos están en minúsculas excepto los de la lista (que son atributos SVG)
@@ -266,21 +269,23 @@
     "attr-no-duplication": true,              // En una etiqueta no hay atributos repetidos
     "attr-no-unnecessary-whitespace": true,   // No hay espacios entre los atributos y sus valores
     "attr-value-double-quotes": true,         // Los valores de los atributos se escriben entre comillas dobles
+    "attr-value-no-duplication": true,        // Los valores de los atributos no se repiten en un mismo atributo
     "attr-whitespace": true,                  // Los valores de los atributos no contienen espacios ni al principio ni al final
     "alt-require": true,                      // Las etiquetas img incluyen el atributo alt
     // Tags
-    "tag-pair": true,                         // Las etiquetas no vacías incluyen la etiqueta de cierre
-    "tagname-lowercase":                      // Las etiquetas están en minúsculas excepto las de la lista (que son etiquetas SVG)
-      ["animateTransform", "linearGradient"],
-    "tagname-specialchars": true,             // Los nombres de etiquetas solo contienen letras, números o los caracteres "-", ":" o "_"
+    "button-type-require": true,              // La etiqueta button incluye el atributo type con alguno de los valores "button", "submit" o "reset"
+    "form-method-require": true,              // La etiqueta form incluye el atributo method con alguno de los valores "get", "post" o "dialog"
     "empty-tag-not-self-closed": true,        // Las etiquetas vacías no incluyen el cierre /
     "src-not-empty": true,                    // Los atributos src (o href de link) no están vacíos
+    "tag-no-obsolete": true,                  // No hay etiquetas obsoletas.
+    "tag-pair": true,                         // Las etiquetas no vacías incluyen la etiqueta de cierre
+    "tagname-lowercase": ["linearGradient"],  // Las etiquetas están en minúsculas excepto las de la lista (que son etiquetas SVG)
+    "tagname-specialchars": true,             // Los nombres de etiquetas solo contienen letras, números o los caracteres "-", ":" o "_"
     // id
     "id-class-ad-disabled": true,             // Los atributos id o class no incluyen la palabra "ad" (que puede ser bloqueada por los bloqueadores de anuncios)
-    "id-unique": true,                        // No se repite el valor de ningún atributo id en toda la página
+    "id-unique": true,                        // Los valores de los atributos id no se repiten
     // Formatting
-    "spec-char-escape": true,                 // Los caracteres especiales se escriben como entidades
-  },
+    "spec-char-escape": true,                 // Los caracteres especiales &gt; &lt; y &amp; se escriben como entidades de carácter  },
   //
   //</code>
 </pre>
@@ -388,7 +393,7 @@
       <div class="codigo copy">
         <pre>
 <code class="language-json">{
-  // Configuraciones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  // Configuraciones de VSCode recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
@@ -453,6 +458,14 @@
     "editor.tabSize": 4,
   },
   //
+  // Window: Command Center
+  // Muestra el iniciador de comandos junto con el título de la ventana. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
+  "window.commandCenter": false,
+  //
+  // Workkbench &gt; Layout Control: Enabled
+  // Controla si el control de diseño se muestra en la barra de título personalizada. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
+  "workbench.layoutControl.enabled": false,
+  //
   //
   // Configuraciones de extensiones recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
   //
@@ -472,6 +485,8 @@
     "doctype-first": true,                    // La primera línea es el doctype
     "doctype-html5": true,                    // El doctype es html
     "html-lang-require": true,                // La etiqueta html incluye el atributo lang
+    "meta-charset-require": true,             // La etiqueta head incluye la etiqueta meta con atributo charset
+    "meta-viewport-require": true,            // La etiqueta head incluye la etiqueta meta con atributo viewport
     "title-require": true,                    // La etiqueta head incluye la etiqueta title
     // Attributes
     "attr-lowercase":                         // Los atributos están en minúsculas excepto los de la lista (que son atributos SVG)
@@ -479,19 +494,23 @@
     "attr-no-duplication": true,              // En una etiqueta no hay atributos repetidos
     "attr-no-unnecessary-whitespace": true,   // No hay espacios entre los atributos y sus valores
     "attr-value-double-quotes": true,         // Los valores de los atributos se escriben entre comillas dobles
+    "attr-value-no-duplication": true,        // Los valores de los atributos no se repiten en un mismo atributo
     "attr-whitespace": true,                  // Los valores de los atributos no contienen espacios ni al principio ni al final
     "alt-require": true,                      // Las etiquetas img incluyen el atributo alt
     // Tags
+    "button-type-require": true,              // La etiqueta button incluye el atributo type con alguno de los valores "button", "submit" o "reset"
+    "form-method-require": true,              // La etiqueta form incluye el atributo method con alguno de los valores "get", "post" o "dialog"
+    "empty-tag-not-self-closed": true,        // Las etiquetas vacías no incluyen el cierre /
+    "src-not-empty": true,                    // Los atributos src (o href de link) no están vacíos
+    "tag-no-obsolete": true,                  // No hay etiquetas obsoletas.
     "tag-pair": true,                         // Las etiquetas no vacías incluyen la etiqueta de cierre
     "tagname-lowercase": ["linearGradient"],  // Las etiquetas están en minúsculas excepto las de la lista (que son etiquetas SVG)
     "tagname-specialchars": true,             // Los nombres de etiquetas solo contienen letras, números o los caracteres "-", ":" o "_"
-    "empty-tag-not-self-closed": true,        // Las etiquetas vacías no incluyen el cierre /
-    "src-not-empty": true,                    // Los atributos src (o href de link) no están vacíos
     // id
     "id-class-ad-disabled": true,             // Los atributos id o class no incluyen la palabra "ad" (que puede ser bloqueada por los bloqueadores de anuncios)
-    "id-unique": true,                        // No se repite el valor de ningún atributo id en toda la página
+    "id-unique": true,                        // Los valores de los atributos id no se repiten
     // Formatting
-    "spec-char-escape": true,                 // Los caracteres especiales se escriben como entidades
+    "spec-char-escape": true,                 // Los caracteres especiales &gt; &lt; y &amp; se escriben como entidades de carácter
   },
   //
   //
@@ -556,69 +575,62 @@
       <li>"editor.insertSpaces": true,
         <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
       </li>
-
       <li>"editor.linkedEditing": true,
         <p>Esta preferencia hace que al cambiar una etiqueta HTML (de apertura o de cierre) VSC cambie la etiqueta emparejada (de cierre o de apertura).</p>
       </li>
-
       <li>"editor.minimap.enabled": false
         <p>Esta preferencia hace que VSC oculte el minimapa.</p>
       </li>
-
       <li>"editor.renderWhitespace": "all"
         <p>Esta preferencia hace que VSC muestre un punto en cada espacio en blanco. Es una ayuda visual para poder contar fácilmente el número de espacios en blanco.</p>
       </li>
-
       <li>"editor.wordWrap": "on"
         <p>Esta preferencia hace que VSC aproveche todo el ancho de pantalla para mostrar los documentos y no añada saltos de línea al formatear el documento.</p>
       </li>
-
       <li>"files.eol": "\n"
         <p>Esta preferencia fuerza a VSC a utilizar el carácter LF para los saltos de líneas (habitual en GNU/Linux) y no los caracteres habituales en Windows (CR LF). Esta es la configuración más extendida en el ámbito del desarrollo web.</p>
 
         <p>Si se abren los documentos que utilizan el carácter LF para los saltos de línea con un programa que no entienda correctamente ese carácter, el contenido se verá todo seguido, sin saltos de línea. El Bloc de notas de Windows 7 es uno de estos programas, por lo que no se recomienda editar los documentos creados en este curso con el Bloc de notas de Windows 7.</p>
       </li>
-
       <li>"files.trimTrailingWhitespace": true
         <p>Esta preferencia hace que, al guardar un archivo, VSC borre los espacios en blanco situados al final de las líneas. Esos espacios son innecesarios y lo único que hacen es ocupar espacio.</p>
       </li>
-
       <li>"git.autofetch": true
         <p>A veces, parece que Visual Studio Code ha bloqueado los archivos (por ejemplo, si se intenta sustituir una imagen por otra). No pasa siempre, pero parece que está relacionado con una preferencia de git, que está comprobando si hay cambios y bloquea temporalmente los archivos.</p>
       </li>
-
       <li>"html.autoClosingTags": false
         <p>Cuando se crea una página web desde cero, resulta conveniente que el editor cierre automáticamente las etiquetas, para no olvidarse de hacerlo. Al escribir una etiqueta, Visual Studio Code añade automáticamente la etiqueta de cierre después del cursor, de manera que lo que se escribe a continuación queda encerrado en el interior de la etiqueta.</p>
 
-        <p>Pero para hacer los ejercicios propuestos en este curso, el cierre automático complica la realización de los ejercicios. En los ejercicios se proporciona siempre el texto de la página web, para ahorrar al alumno el trabajo de copiarlo. Hacer un ejercicio es añadir las etiquetas de apertura al principio de los fragmentos de texto y etiquetas de cierre al final. En esta situación, el cierre automático de las etiquetas es un inconveniente, ya que el cierre se crea al principio del fragmento de texto, no al final.</p>
+        <p>Pero para hacer los ejercicios propuestos en este curso el cierre automático complica la realización de los ejercicios. En los ejercicios se proporciona siempre el texto de la página web, para ahorrar al alumno el trabajo de copiarlo. Hacer un ejercicio es añadir las etiquetas de apertura al principio de los fragmentos de texto y etiquetas de cierre al final. En esta situación, el cierre automático de las etiquetas es un inconveniente, ya que el cierre se crea al principio del fragmento de texto, no al final.</p>
 
         <p>Por ello, para hacer los ejercicios de este curso, en vez del cierre automático se propone la extensión <a href="#close-html-xml-tag">Close HTML/XML tag</a> que, mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+.</span>, cierra la última etiqueta abierta.</p>
       </li>
-
       <li>"html.autoCreateQuotes": false,
-        <p>VSCode añade automáticamente unas comillas cuando escribimos unas comillas para dar valor a un atributo de una etiqueta (es decir, cierra las comillas cuando las abrimos). Esta preferencia controla la posición del cursor. Si esta preferncia tiene el valor true, el cursor se coloca tras la comilla de cierre. Si esta preferncia tiene el valor false, el cursor se coloca entre las comillas.</p>
+        <p>VSCode añade automáticamente unas comillas cuando escribimos unas comillas para dar valor a un atributo de una etiqueta (es decir, cierra las comillas cuando las abrimos). Esta preferencia controla la posición del cursor. Si esta preferencia tiene el valor true, el cursor se coloca tras la comilla de cierre. Si esta preferencia tiene el valor false, el cursor se coloca entre las comillas.</p>
 
-        <p>para hacer los ejercicios de este curso, en el que normalmente se querrá dar un valor al atributo, creo que resulta más cómodo que el cursor se coloque entre las comillas. En cualquier caso, aunque VSCode haya añadido las comillas de cierre, si tras escribir el valor del atributo escribimos unas comillas, VSCode "comprende" que no es que queramos añadir comillas y desplaza el cursor después de las comillas que ya existían.</p>
+        <p>Para hacer los ejercicios de este curso, en el que normalmente se querrá dar un valor al atributo, creo que resulta más cómodo que el cursor se coloque entre las comillas. En cualquier caso, aunque VSCode haya añadido las comillas de cierre, si tras escribir el valor del atributo escribimos unas comillas, VSCode "comprende" que no es que queramos añadir comillas y desplaza el cursor después de las comillas que ya existían.</p>
       </li>
-
       <li> "html.format.endWithNewline": true
         <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que el último carácter de un documento sea un único salto de línea (LF). Si se trata de documentos independientes (como una página web) no es algo imprescindible, pero si se trata de documentos que se pueden cargar uno detrás de otro para crear un único documento (como un programa PHP), resulta conveniente para evitar que la última línea de un documento se una a la primera del documento siguiente.</p>
 
         <p>Las normas <a href="https://es.wikipedia.org/wiki/POSIX">POSIX</a> especifican que en los ficheros de texto, todas las líneas deben terminar con el carácter salto de línea.</p>
       </li>
-
       <li>"html.format.extraLiners": "body"
         <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que delante de determinadas etiquetas haya al menos una línea en blanco. Yo tengo las costumbre de dejar siempre una línea en blanco delante de <span class="html-eti">&lt;body&gt;</span>, pero no delante de <span class="html-eti">&lt;head&gt;</span> ni de <span class="html-eti">&lt;/html&gt;</span>.</p>
       </li>
-
       <li>"html.format.wrapLineLength": 0
         <p>Esta preferencia hace que, al formatear automáticamente un documento (mediante el atajo de teclado <span class="soft-atajo-teclado">Alt+Shift+f</span>), VSC compruebe que ninguna línea exceda el número de caracteres indicado y añada saltos de línea cuando sea necesario. Yo tengo la costumbre de mantener los párrafos de texto en una sola línea, aunque sea muy larga, para que al modificar el texto no se queden unas líneas más largas que otras. Para ello, esta preferencia tiene que tener el valor 0.</p>
 
         <p>Referencia: <a href="https://code.visualstudio.com/updates/vMarch#_languages-html">Novedades VSC 1.0: Formateador HTML</a></p>
       </li>
-
       <li>"editor.tabSize": 2 / 4
         <p>Como en una página web suele haber bastante anidamiento, en los ficheros .html se recomienda un sangrado de sólo 2 espacios. Pero una hoja de estilo no suele haber más que uno o dos niveles de anidamiento, por lo que el sangrado puede ser de 4 espacios.</p>
+      </li>
+      <li>"window.commandCenter": false
+        <p>Muestra el iniciador de comandos junto con el título de la ventana</p>
+      </li>
+      <li>"workbench.layoutControl.enabled": false
+        <p>Muestra el control de diseño en la barra de título personalizada.</p>
       </li>
     </ul>
   </section>
@@ -692,11 +704,29 @@
     <h2>Atajos de teclado recomendados para el curso de HTML y CSS</h2>
 
     <p>Estos son los atajos de teclado que se aconseja definir para seguir el curso de <a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a> de <a href="https://www.mclibre.org/">mclibre.org</a>.</p>
+
     <ul>
-      <li>Los dos primeros atajos permiten abrir en los navegadores Firefox o Google Chrome las páginas web que se están editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
-      <li>El tercer y cuarto atajo (que son el mismo atajo) muestra la vista previa de la página que se esté editando mediante la extensión Live Preview y/o cierra el servidor de vista previa.</li>
-      <li>El quinto y sexto atajo (que son el mismo atajo, para Windows o para Linux) ejecuta CSScomb, extensión que formatea hojas de estilo CSS. este atajo sólo funciona cuando se está editando un archivo .css.</li>
-      <li>Los siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet).</li>
+      <li>Los cuatro primero atajos están relacionados con la navegación entre elementos del interfaz. En los cuatro intervienen teclas de operaciones aritméticas del teclado numérico (suma +, resta -, multiplicación * y división /):
+        <ul>
+          <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+/</span> permite abrir y pasar el foco al explorador de archivos (y ocultarlo si nos encontramos en el explorador de archivos).</li>
+          <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+*</span> permite abrir y pasar el foco a la pestaña de Problemas del Panel (y ocultarlo si nos encontramos en la pestaña de Problemas del Panel).</li>
+          <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+-</span> permite pasar el foco al editor.</li>
+          <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt++</span> permite abrir y pasar el foco a la pestaña de Terminal del Panel (y ocultarlo si nos encontramos en la pestaña de Terminal del Panel).
+            <p>Si no se había abierto todavía ninguna pestaña de Terminal, el atajo abre una nueva pestaña de Terminal automáticamente. La primera vez que se abre una pestaña de Terminal, la pestaña se abre en el directorio raíz del área de trabajo.</p>
+          </li>
+        </ul>
+      </li>
+      <li>Los cuatro siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet):
+        <ul>
+          <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+b</span> elimina la primera etiqueta que haya alrededor de la posición del cursor.</li>
+          <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+s</span> inserta el tamaño de una imagen (atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>)  cuando el cursor se encuentra en la etiqueta correspondiente.</li>
+          <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+o</span> selecciona la primera etiqueta que haya alrededor de la posición del cursor (o todo el texto que haya dentro de la primera etiqueta).</li>
+          <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+i</span> retrocede la selección realizada con <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+o</span> o selecciona el primer elemento o texto que haya dentro del frragmento seleccionado.</li>
+        </ul>
+      </li>
+      <li>Los dos siguientes atajos, <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c</span> permiten abrir en los navegadores Firefox o Google Chrome, respectivamente, las páginas web que se están editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
+      <li>El siguiente atajo, <span class="soft-atajo-teclado">Ctrl+Alt+p</span> muestra la vista previa de la página que se esté editando mediante la extensión Live Preview y/o cierra el servidor de vista previa.</li>
+      <li>El siguiente atajo, <span class="soft-atajo-teclado">alt+shift+c alt+shift+f</span>, ejecuta CSScomb, extensión que formatea hojas de estilo CSS. Este atajo sólo funciona cuando se está editando un archivo .css.</li>
     </ul>
 
     <p>Este es el contenido del archivo <i>keybindings.json</i>:</p>
@@ -705,6 +735,42 @@
       <pre>
 <code class="language-json">[
     // Atajos de teclado recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+    {
+        // Abrir y pasar el foco al Explorador de archivos
+        "key": "ctrl+alt+NumPad_Divide",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "!filesExplorerFocus"
+    },
+    {
+        // Cerrar el Explorador de archivos
+        "key": "ctrl+alt+NumPad_Divide",
+        "command": "workbench.action.closeSidebar",
+        "when": "filesExplorerFocus"
+    },
+    {
+        // Abrir y pasar el foco a Panel &gt; Problemas. Cerrar Panel &gt; Problemas
+        "key": "ctrl+alt+NumPad_Multiply",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        // Pasar el foco al Editor
+        "key": "ctrl+alt+NumPad_Subtract",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
+    },
+    {
+        // Abrir y pasar el foco al Panel &gt Terminal
+        "key": "ctrl+alt+NumPad_Add",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        // Cerrar el Panel y pasar el foco al Editor
+        "key": "ctrl+alt+NumPad_Add",
+        "command": "workbench.action.closePanel",
+        "when": "terminalFocus"
+    },
     {
         // Tarea: Abrir en Firefox
         "key": "ctrl+alt+f",
@@ -788,7 +854,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de septiembre de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 10 de octubre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
