@@ -105,7 +105,7 @@
 
     <p>SVG es un lenguaje XML, por lo que su sintaxis sigue las reglas del XML. SVG 2.0 (actualmente, marzo de 2022, en elaboración, aunque su desarrollo está estancado desde el 2018) permitirá que el SVG incluido en un documento HTML siga la sintaxis HTML, pero por el momento las etiquetas SVG incluidas en páginas web deben seguir la sintaxis XML.</p>
 
-    <p>En la lección <a href="html-xhtml-diferencias.html">Diferencias entre HTML y XHTML</a> se comentan las diferencias de sintaxis entre HTML y XHTML (que son las mismas que entre HTML y SVG, ya que tanto XHTML como SVG son lenguajes basados en XML). Las más llamativas son las siguientes:</p>
+    <p>En la lección <a href="html-xml-diferencias.html">Diferencias entre HTML y XML</a> se comentan las diferencias de sintaxis entre HTML y XML (que son las mismas que entre HTML y SVG, ya que SVG es un lenguaje basado en XML). Las más llamativas son las siguientes:</p>
     <ul>
       <li>Hay un elemento raíz que contiene al resto de elementos.</li>
       <li>Todas las etiquetas están cerradas (las etiquetas vacías incluyen una barra / al final de la etiqueta, <span class="html-eti">&lt;etiqueta ... /&gt;</span>).</li>
@@ -129,10 +129,10 @@
         <pre>
 <code class="language-html">&lt;p&gt;
   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-    width="170" height="165" viewBox="0 0 170 165"&gt;
+       width="170" height="165" viewBox="0 0 170 165"&gt;
     &lt;polygon fill="yellow" stroke="red" stroke-width="7"
-      points="129,150 85,119 41,150 57,104 15,66
-        68,66 85,15 102,65 156,66 113,98" /&gt;
+             points="129,150 85,119 41,150 57,104 15,66
+                     68,66 85,15 102,65 156,66 113,98" /&gt;
   &lt;/svg&gt;
 &lt;/p&gt;</code>
 </pre>
@@ -156,10 +156,10 @@
           <pre>
 <code class="language-html">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="170" height="165" viewBox="0 0 170 165"&gt;
+     width="170" height="165" viewBox="0 0 170 165"&gt;
   &lt;polygon fill="yellow" stroke="red" stroke-width="7"
-    points="129,150 85,119 41,150 57,104 15,66
-      68,66 85,15 102,65 156,66 113,98" /&gt;
+           points="129,150 85,119 41,150 57,104 15,66
+                   68,66 85,15 102,65 156,66 113,98" /&gt;
 &lt;/svg&gt;</code>
 </pre>
         </div>
@@ -272,9 +272,9 @@
             <div class="codigo">
               <pre>
 <code id="svg-1-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  width="<span id="html-width">200</span>" height="<span id="html-height">200</span>" viewBox="<span id="html-vbx">-100</span> <span id="html-vby">-100</span> <span id="html-vbw">200</span> <span id="html-vbh">200</span>"
-  style="background-color: lightgray"&gt;
-&lt;circle cx="<span id="html-cx">0</span>" cy="<span id="html-cy">0</span>" r="<span id="html-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-stroke">5</span>" /&gt;
+     width="<span id="html-width">200</span>" height="<span id="html-height">200</span>" viewBox="<span id="html-vbx">-100</span> <span id="html-vby">-100</span> <span id="html-vbw">200</span> <span id="html-vbh">200</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="<span id="html-cx">0</span>" cy="<span id="html-cy">0</span>" r="<span id="html-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-stroke">5</span>" /&gt;
 &lt;/svg&gt;</code>
 </pre>
             </div>
@@ -442,9 +442,9 @@
             <div class="codigo">
               <pre>
 <code id="svg-2-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-width="<span id="html-2-width">200</span>" height="<span id="html-2-height">200</span>" viewBox="<span id="html-2-vbx">-100</span> <span id="html-2-vby">-100</span> <span id="html-2-vbw">200</span> <span id="html-2-vbh">200</span>"
-style="background-color: lightgray"&gt;
-&lt;circle cx="<span id="html-2-cx">0</span>" cy="<span id="html-2-cy">0</span>" r="<span id="html-2-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-2-stroke">5</span>" /&gt;
+     width="<span id="html-2-width">200</span>" height="<span id="html-2-height">200</span>" viewBox="<span id="html-2-vbx">-100</span> <span id="html-2-vby">-100</span> <span id="html-2-vbw">200</span> <span id="html-2-vbh">200</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="<span id="html-2-cx">0</span>" cy="<span id="html-2-cy">0</span>" r="<span id="html-2-r">75</span>" fill="none" stroke="red" stroke-width="<span id="html-2-stroke">5</span>" /&gt;
 &lt;/svg&gt;</code>
 </pre>
             </div>
@@ -1104,13 +1104,13 @@ style="background-color: lightgray"&gt;
               <div class="codigo">
                 <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
-   style="background-color: lightgray"&gt;
-&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
               </div>
@@ -1130,13 +1130,13 @@ style="background-color: lightgray"&gt;
               <div class="codigo">
                 <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="<span class="codigo-resaltado">150</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
-   style="background-color: lightgray"&gt;
-&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+     width="<span class="codigo-resaltado">150</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
               </div>
@@ -1154,13 +1154,13 @@ style="background-color: lightgray"&gt;
               <div class="codigo">
                 <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
-   style="background-color: lightgray"&gt;
-&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+     width="<span class="codigo-resaltado">50</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
               </div>
@@ -1180,13 +1180,13 @@ style="background-color: lightgray"&gt;
               <div class="codigo">
                 <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
-   style="background-color: lightgray"&gt;
-&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+     height="<span class="codigo-resaltado">100</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
               </div>
@@ -1204,13 +1204,13 @@ style="background-color: lightgray"&gt;
               <div class="codigo">
                 <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-  height="<span class="codigo-resaltado">25</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
-   style="background-color: lightgray"&gt;
-&lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
-&lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
+     height="<span class="codigo-resaltado">25</span>" viewBox="<span class="codigo-resaltado">-50 -25 100 50</span>"
+     style="background-color: lightgray"&gt;
+  &lt;circle cx="-50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="50" cy="0" r="25" fill="none" stroke="blue" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="-50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="50" r="25" fill="none" stroke="green" stroke-width="2" /&gt;
+  &lt;circle cx="0" cy="0" r="25" fill="none" stroke="red" stroke-width="2" /&gt;
 &lt;/svg&gt;</code>
 </pre>
               </div>
@@ -1349,8 +1349,8 @@ style="background-color: lightgray"&gt;
         <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
      width="220" height="170"   viewBox="-10 -10 220 170"&gt;
-     &lt;circle cx="100" cy="75" r="50" fill="mediumseagreen" /&gt;
-     &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="none"</span> stroke="red" /&gt;
+  &lt;circle cx="100" cy="75" r="50" fill="mediumseagreen" /&gt;
+  &lt;circle cx="100" cy="75" r="75" <span class="codigo-resaltado">fill="none"</span> stroke="red" /&gt;
 &lt;/svg&gt;</code>
 </pre>
       </div>
@@ -1374,9 +1374,9 @@ style="background-color: lightgray"&gt;
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>"   viewBox="<span class="codigo-resaltado">0 0 100 100</span>"&gt;
-   &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
-   &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
+     width="<span class="codigo-resaltado">100</span>" height="<span class="codigo-resaltado">100</span>"   viewBox="<span class="codigo-resaltado">0 0 100 100</span>"&gt;
+  &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
+  &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
 &lt;/svg&gt;</code>
 </pre>
       </div>
@@ -1394,9 +1394,9 @@ style="background-color: lightgray"&gt;
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-   width="<span class="codigo-resaltado">120</span>" height="<span class="codigo-resaltado">120</span>"   viewBox="<span class="codigo-resaltado">-10 -10 120 120</span>"&gt;
-   &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
-   &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
+     width="<span class="codigo-resaltado">120</span>" height="<span class="codigo-resaltado">120</span>"   viewBox="<span class="codigo-resaltado">-10 -10 120 120</span>"&gt;
+  &lt;circle <span class="codigo-resaltado">cx="0" cy="0"</span> r="10" fill="red" /&gt;
+  &lt;circle <span class="codigo-resaltado">cx="100" cy="100"</span> r="10" fill="mediumseagreen" /&gt;
 &lt;/svg&gt;</code>
 </pre>
       </div>
@@ -1404,7 +1404,7 @@ style="background-color: lightgray"&gt;
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 29 de marzo de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 24 de marzo de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
