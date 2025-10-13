@@ -79,23 +79,29 @@
 
     <hr class="corta">
 
-    <p>Los tipos de errores detectados de forma predeterminada por la extensión HTMLHint son los siguientes:</p>
+    <p>Con la configuración recomendada, los tipos de errores detectados por la extensión HTMLHint son los siguientes:</p>
     <ul>
-      <li>"doctype-first": el documento debe incluir el preámbulo DOCTYPE</li>
+      <li>"doctype-first": el documento debe incluir el preámbulo DOCTYPE en la primera línea</li>
       <li>"doctype-html5": el preámbulo DOCTYPE debe indicar el tipo html</li>
-      <li>"html-lang-require": la etiqueta html debe incluir el atributo lang</li>
-      <li>"title-require": el documento debe incluir el elemento <span class="html-eti">&lt;title&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
+      <li>"html-lang-require": la etiqueta <span class="html-eti">html</span> debe incluir el atributo <span class="html-atri">lang</span></li>
+      <li>"meta-charset-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">meta</span> con atributo <span class="html-atri">charset</span></li>
+      <li>"meta-viewport-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">meta</span> con atributo <span class="html-atri">viewport</span></li>
+      <li>"title-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">&lt;title&gt;</span></li>
       <li>"attr-lowercase": los nombres de los atributos deben escribirse en minúsculas. Se puede indicar una lista excepciones (por ejemplo, algunos atributos de las etiquetas SVG)</li>
       <li>"attr-no-duplication": los atributos no deben duplicarse</li>
       <li>"attr-no-unnecessary-whitespace": no debe haber espacios entre los atributos y sus valores</li>
       <li>"attr-value-double-quotes": los valores de los atributos deben escribirse entre comillas dobles</li>
+      <li>"attr-value-no-duplication": los valores de los atributos no se deben repetir en un mismo atributo</li>
       <li>"attr-whitespace": los valores de los atributos no deben contener espacios ni al principio ni al final</li>
       <li>"alt-require": las imágenes deben incluir el atributo <span class="html-atri">alt</span></li>
+      <li>"button-type-require": la etiqueta <span class="html-eti">button</span> debe incluir el atributo type con alguno de los valores "<span class="html-atri-valor">button</span>", "<span class="html-atri-valor">submit</span>" o "<span class="html-atri-valor">reset</span>"</li>
+      <li>"empty-tag-not-self-closed": las etiquetas vacías no deben incluir el cierre /</li>
+      <li>"form-method-require": la etiqueta <span class="html-eti">form</span> debe incluir el atributo <span class="html-atri">method</span> con alguno de los valores "<span class="html-atri-valor">get</span>", "<span class="html-atri-valor">post</span>" o "<span class="html-atri-valor">dialog</span>"</li>
+      <li>"src-not-empty": los atributos que hacen referencia a un elemento externo (<span class="html-atri">src</span>, <span class="html-atri">href</span>, <span class="html-atri">data</span>) no deben ser vacíos</li>
+      <li>"tag-no-obsolete": no se deben utilizar etiquetas obsoletas</li>
       <li>"tag-pair": las etiquetas deben cerrarse y estar correctamente anidadas</li>
       <li>"tagname-lowercase": las etiquetas deben escribirse en minúsculas excepto las de la lista (por ejemplo, etiquetas SVG)</li>
       <li>"tagname-specialchars": los nombres de etiquetas deben contener únicamente letras, números o los caracteres "-", ":" o "_"</li>
-      <li>"empty-tag-not-self-closed": las etiquetas vacías no deben incluir el cierre /</li>
-      <li>"src-not-empty": los atributos que hacen referencia a un elemento externo (<span class="html-atri">src</span>, <span class="html-atri">href</span>, <span class="html-atri">data</span>) no deben ser vacíos</li>
       <li>"id-class-ad-disabled": los valores de los atributos <span class="html-atri">id</span> y <span class="html-atri">class</span> no deben contener la palabra "ad" (que bloquean los bloqueadores de publicidad)</li>
       <li>"id-unique": los atributos <span class="html-atri">id</span> no deben repetirse</li>
       <li>"spec-char-escape": los caracteres especiales deben escribirse como entidades de carácter</li>
@@ -105,13 +111,19 @@
 
     <ul>
       <li>"head-script-disabled": no deben utilizarse etiquetas <span class="html-eti">&lt;script&gt;</span> en <span class="html-eti">&lt;head&gt;</span></li>
-      <li>"style-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;style&gt;</span></li>
+      <li>"link-rel-canonical-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">link</span> con atributo <span class="html-atri">rel</span> y valor <span class="html-atri-valor">canonical</span></li>
+      <li>"meta-description-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">meta</span> con atributo <span class="html-atri">description</span></li>
       <li>"script-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;script&gt;</span></li>
+      <li>"style-disabled": no se deben utilizar etiquetas <span class="html-eti">&lt;style&gt;</span></li>
+      <li>"title-require": la etiqueta <span class="html-eti">head</span> debe incluir la etiqueta <span class="html-eti">title</span></li>
       <li>"attr-unsafe-chars": los atributos no deben incluir caracteres "inseguros" [referencia: <a href="https://github.com/htmlhint/HTMLHint/wiki/attr-unsafe-chars">documentación de HTMLHint</a>]</li>
       <li>"attr-value-single-quotes": los valores de los atributos deben escribirse entre comillas simples</li>
       <li>"attr-value-not-empty": los atributos deben tener establecido algún valor</li>
       <li>"attr-sorted": los atributos deben ordenados alfabéticamente.</li>
-      <li>"input-requires-label": Todas las etiquetas <span class="html-eti">&lt;input&gt;</span> deben tener un atributo <span class="html-atri">label</span>.</li>
+      <li>"input-requires-label": todas las etiquetas <span class="html-eti">&lt;input&gt;</span> deben tener un atributo <span class="html-atri">label</span>.</li>
+      <li>"frame-title-require": las etiquetas <span class="html-eti">frame</span> e <span class="html-eti">iframe</span> tienen un nombre accesible</li>
+      <li>"h1-require": hay una etiqueta <span class="html-eti">h1</span></li>
+      <li>"main-require": hay una etiqueta <span class="html-eti">h1</span></li>
       <li>"tags-check": permite establecer reglas específicas para cualquier etiqueta y validarlas</li>
       <li>"tag-self-close": las etiquetas vacías deben incluir el carácter final /</li>
       <li>"href-abs-or-rel": las direcciones deben ser absolutas (abs) o relativas (rel)</li>
@@ -209,14 +221,14 @@
 
             <p>En los ejercicios de fuentes web propuestos en estos apuntes se utiliza una versión sencilla de la propiedad <span class="css-arroba">@font-face</span> que sólo hace referencia a la fuente en formato WOFF y que cumple esta regla, por lo que Visual Studio Code no debería mostrar el aviso:</p>
 
-              <div class="codigo">
-                <pre>
+            <div class="codigo">
+              <pre>
 <code class="language-css">@font-face {
   font-family: "MyFontFamily";
   src: url("myfont.woff")
 }</code>
 </pre>
-              </div>
+            </div>
           </li>
           <li>
             "css.lint.propertyIgnoredDueToDisplay": Property Ignored Due To Display: La propiedad se ignora a causa de la pantalla. Por ejemplo, con "display: inline", las propiedades "width", "height", "margin-top", "margin-bottom" y "float" no tienen ningún efecto.
@@ -352,7 +364,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 3 de octubre de 2022</p>
+    <p class="ultmod">Última modificación de esta página: 13 de octubre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
