@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo de caracteres Unicode. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Noto+Color+Emoji");
+    /* @font-face {
+      font-family: "Noto Color Emoji";
+      src: url("https://raw.githack.com/googlefonts/noto-emoji/main/fonts/Noto-COLRv1.ttf");
+      src: url("https://github.com/googlefonts/noto-emoji/raw/main/fonts/NotoColorEmoji.ttf");
+    } */
+
+    body {
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    table {
+      border-spacing: 20px 10px;
+    }
+
+    tr.fecha {
+      font-size: 2rem;
+    }
+
+    tr.noto {
+      font-family: "Noto Color Emoji";
+    }
+
+    tr.emoji {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!--
+  <p style="font-size: 4rem; margin: 0; text-align: left;">&#x1F642;&#x1F3F9;&#x1F958;&#x1F96A;&#x1F99C;&#x1F9CA;&#x1FAA2;&#x1F6DD;&#x1FABC;&#x1FA8F;</p>
+-->
+
+  <table>
+    <tr class="fecha">
+      <td></td>
+      <td>2014</td>
+      <td>2015</td>
+      <td>2016</td>
+      <td>2017</td>
+      <td>2018</td>
+      <td>2019</td>
+      <td>2020</td>
+      <td>2021</td>
+      <td>2022</td>
+      <td>2024</td>
+      <td>2025</td>
+    </tr>
+    <tr class="emoji noto">
+      <td style="font-family: sans-serif; font-size: 1rem;">Noto</td>
+      <td>&#x1F642;</td>
+      <td>&#x1F3F9;</td>
+      <td>&#x1F958;</td>
+      <td>&#x1F96A;</td>
+      <td>&#x1F99C;</td>
+      <td>&#x1F9CA;</td>
+      <td>&#x1FAA2;</td>
+      <td>&#x1F6DD;</td>
+      <td>&#x1FABC;</td>
+      <td>&#x1FA8F;</td>
+      <td>&#x1FA8A;</td>
+    </tr>
+    <tr class="fecha">
+      <td></td>
+      <td>2014</td>
+      <td>2015</td>
+      <td>2016</td>
+      <td>2017</td>
+      <td>2018</td>
+      <td>2019</td>
+      <td>2020</td>
+      <td>2021</td>
+      <td>2022</td>
+      <td>2024</td>
+      <td>2025</td>
+    </tr>
+    <tr class="emoji twe">
+      <td style="font-family: sans-serif; font-size: 1rem;">Twemoji<br>jdecker</td>
+      <td>&#x1F642;</td>
+      <td>&#x1F3F9;</td>
+      <td>&#x1F958;</td>
+      <td>&#x1F96A;</td>
+      <td>&#x1F99C;</td>
+      <td>&#x1F9CA;</td>
+      <td>&#x1FAA2;</td>
+      <td>&#x1F6DD;</td>
+      <td>&#x1FABC;</td>
+      <td>&#x1FA8F;</td>
+      <td>&#x1FA8A;</td>
+    </tr>
+    <tr class="fecha">
+      <td></td>
+      <td>2014</td>
+      <td>2015</td>
+      <td>2016</td>
+      <td>2017</td>
+      <td>2018</td>
+      <td>2019</td>
+      <td>2020</td>
+      <td>2021</td>
+      <td>2022</td>
+      <td>2024</td>
+      <td>2025</td>
+    </tr>
+    <tr class="emoji">
+      <td style="font-family: sans-serif; font-size: 1rem;">Windows</td>
+      <td>&#x1F642;</td>
+      <td>&#x1F3F9;</td>
+      <td>&#x1F958;</td>
+      <td>&#x1F96A;</td>
+      <td>&#x1F99C;</td>
+      <td>&#x1F9CA;</td>
+      <td>&#x1FAA2;</td>
+      <td>&#x1F6DD;</td>
+      <td>&#x1FABC;</td>
+      <td>&#x1FA8F;</td>
+      <td>&#x1FA8A;</td>
+    </tr>
+  </table>
+
+  <script>
+    var twemojis = document.getElementsByClassName('twe');
+    var i;
+    for (i = 0; i < twemojis.length; i++) {
+      twemoji.parse(twemojis[i], {
+        className: "twe",
+        folder: "svg",
+        ext: ".svg"
+      });
+    }
+  </script>
+</body>
+</html>
