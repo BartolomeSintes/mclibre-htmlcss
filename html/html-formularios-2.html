@@ -36,6 +36,7 @@
             <li><a href="#control-input-datetime-local">Fecha y hora <span class="html-atri-valor">datetime-local</span></a></li>
             <li><a href="#control-input-file">Archivo <span class="html-atri-valor">file</span></a></li>
             <li><a href="#control-input-image">Imagen <span class="html-atri-valor">image</span></a></li>
+            <li><a href="#control-meter">Medidor <span class="html-atri-valor">meter</span></a></li>
           </ul>
         </li>
         <li><a href="#fieldset">Grupos <span class="html-eti">fieldset</span></a></li>
@@ -53,7 +54,7 @@
 
     <p>Algunos atributos se pueden utilizar en varios tipos de controles.</p>
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos atributos como <span class="html-atri">autocomplete</span>, <span class="html-atri">height</span>, <span class="html-atri">list</span>, <span class="html-atri">pattern</span>, <span class="html-atri">title</span>, <span class="html-atri">width</span>.</p>
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Falta comentar algunos atributos como <span class="html-atri">autocomplete</span>, <span class="html-atri">height</span>, <span class="html-atri">list</span>, <span class="html-atri">pattern</span>, <span class="html-atri">title</span>, <span class="html-atri">width</span>.</p>
 
     <section id="atributo-disabled">
       <h3>El atributo <span class="html-atri">disabled</span></h3>
@@ -278,7 +279,7 @@
 
     <p>La mayoría de controles se obtienen mediante mediante la etiqueta vacía <span class="html-eti">&lt;input&gt;</span>.</p>
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48">Falta comentar algunos controles HTML 5 como
+    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Falta comentar algunos controles HTML 5 como
       <span class="html-eti">&lt;datalist&gt;</span>,
       <span class="html-eti">&lt;meter&gt;</span>,
       <span class="html-eti">&lt;output&gt;</span> y
@@ -719,6 +720,74 @@
         </div>
       </div>
     </section>
+
+    <section id="control-meter">
+      <h3 class="con-aside">Medidor: <span class="html-eti">&lt;meter&gt;</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;meter&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meter">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+      </aside>
+
+      <p>El control de tipo medidor inserta una imagen de un indicador que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar el indicador.</p>
+
+      <p>La escala se define con los atributos <span class="html-atri">min</span> y <span class="html-atri">max</span> y el valor a representar con el atributo <span class="html-atri">value</span>. Los valores tienen que estar ordenados: <span class="html-atri">min</span> &le; <span class="html-atri">value</span> &le; <span class="html-atri">max</span>. Si solo se utilizan estos atributos, el color del indicador es siempre el mismo, independientemente del valor (normalmente, verde).</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;Medidor: &lt;meter min="0" max="100" value="10"&gt;Valor: 10 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" max="100" value="50"&gt;Valor: 50 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" max="100" value="90"&gt;Valor: 90 de 100&lt;/meter&gt;&lt;/p&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-meter-1.html" style="height: 11em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-meter-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>La escala se puede dividir en tres partes añadiendo dos valores intermedios mediante los atributos <span class="html-atri">low</span> y <span class="html-atri">high</span>. Los valores tienen que estar ordenados:  <span class="html-atri">min</span> &le; <span class="html-atri">low</span> &le; <span class="html-atri">high</span> &le; <span class="html-atri">max</span> El indicador se muestra de un color (normalmente, verde) si el valor <span class="html-atri">value</span> se encuentra en el tramo central (entre <span class="html-atri">low</span> y <span class="html-atri">high</span>) y de otro color (normalmente, amarillo) si el valor se encuentra en uno de los tramos laterales (por debajo de <span class="html-atri">low</span> o por encima de <span class="html-atri">high</span>).</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;Medidor: &lt;meter min="0" low="30" high="70" max="100" value="20"&gt;Valor: 20 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" low="30" high="70" max="100" value="50"&gt;Valor: 50 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" low="30" high="70" max="100" value="80"&gt;Valor: 80 de 100&lt;/meter&gt;&lt;/p&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-meter-2.html" style="height: 11em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-meter-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>En la escala se puede añadir el atributo <span class="html-atri">optimum</span> que puede estar en cualquiera de los tres tramos (central o laterales). En ese caso el indicador se muestra de un color (normalmente, verde) si el valor <span class="html-atri">value</span> se encuentra en el mismo tramo en el que se encuentra el valor <span class="html-atri">optimum</span>, de otro color (normalmente, amarillo) si el valor <span class="html-atri">value</span> se encuentra en el tramo contiguo y de otro color (normalmente, rojo) si el valor <span class="html-atri">value</span> se encuentra a dos tramos.</p>
+
+      <p>En el ejemplo siguiente, el valor del atributo <span class="html-atri">optimum</span> se encuentra en el primer tramo (<span class="html-atri">min</span> &le; <span class="html-atri">optimum</span> &le; <span class="html-atri">low</span>).</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;Medidor: &lt;meter min="0" optimum="10" low="20" high="80" max="100" value="15"&gt;Valor: 15 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" optimum="10" low="20" high="80" max="100" value="50"&gt;Valor: 50 de 100&lt;/meter&gt;&lt;/p&gt;
+
+&lt;p&gt;Medidor: &lt;meter min="0" optimum="10" low="20" high="80" max="100" value="90"&gt;Valor: 90 de 100&lt;/meter&gt;&lt;/p&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-meter-3.html" style="height: 11em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-meter-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section id="fieldset">
@@ -940,7 +1009,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de diciembre de 2024</p>
+    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
