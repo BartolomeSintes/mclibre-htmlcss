@@ -36,8 +36,9 @@
             <li><a href="#control-input-datetime-local">Fecha y hora <span class="html-atri-valor">datetime-local</span></a></li>
             <li><a href="#control-input-file">Archivo <span class="html-atri-valor">file</span></a></li>
             <li><a href="#control-input-image">Imagen <span class="html-atri-valor">image</span></a></li>
-            <li><a href="#control-meter">Medidor <span class="html-atri-valor">meter</span></a></li>
-            <li><a href="#control-progress">Barra <span class="html-atri-valor">progress</span></a></li>
+            <li><a href="#control-meter">Medidor <span class="html-eti">meter</span></a></li>
+            <li><a href="#control-progress">Barra <span class="html-eti">progress</span></a></li>
+            <li><a href="#control-output">Salida <span class="html-eti">output</span></a></li>
           </ul>
         </li>
         <li><a href="#fieldset">Grupos <span class="html-eti">fieldset</span></a></li>
@@ -737,7 +738,7 @@
         </p>
       </aside>
 
-      <p>El control de tipo medidor inserta una imagen de un indicador que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar el indicador.</p>
+      <p>El control de tipo medidor inserta una imagen de un indicador que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar el indicador. Aunque la etiqueta <span class="html-eti">&lt;meter&gt;</span> se incluye en las etiquetas relacionadas con formularios, este control NO se envía al enviar un formulario.</p>
 
       <p>La escala se define con los atributos <span class="html-atri">min</span> y <span class="html-atri">max</span> y el valor a representar con el atributo <span class="html-atri">value</span>. Los valores tienen que estar ordenados: <span class="html-atri">min</span> &le; <span class="html-atri">value</span> &le; <span class="html-atri">max</span>. Si solo se utilizan estos atributos, el color del indicador es siempre el mismo, independientemente del valor (normalmente, verde).</p>
 
@@ -805,7 +806,7 @@
         </p>
       </aside>
 
-      <p>El control de tipo barra de progreso inserta una imagen de una barra que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar la barra.</p>
+      <p>El control de tipo barra de progreso inserta una imagen de una barra que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar la barra. Aunque la etiqueta <span class="html-eti">&lt;progress&gt;</span> se incluye en las etiquetas relacionadas con formularios, este control NO se envía al enviar un formulario.</p>
 
       <p>Si la barra de progreso no tiene establecida ningún atributo se dice que la barra está en estado indeterminado, que normalmente se muestra con un indicador en movimiento continuo.</p>
 
@@ -835,6 +836,46 @@
         <iframe src="ejemplos/formularios/formularios-progress-2.html" style="height: 8em;"></iframe>
         <div class="icono-enlace">
           <a href="ejemplos/formularios/formularios-progress-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="control-output">
+      <h3 class="con-aside">Salida: <span class="html-eti">&lt;output&gt;</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;ouput&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/output">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+      </aside>
+
+      <p>El control de tipo salida está pensado para mostrar el resultado de un cálculo efectuado con JavaScript o por la acción del usuario. Aunque la etiqueta <span class="html-eti">&lt;output&gt;</span> se incluye en las etiquetas relacionadas con formularios, este control NO se envía al enviar un formulario.</p>
+
+      <p>El atributo <span class="html-atri">for</span> permite indicar explícitamente los controles cuyos valores intervienen en el cálculo. Este atributo no es obligatorio ni se utiliza para el cálculo.</p>
+
+      <p>El ejemplo siguiente muestra en un elemento <span class="html-eti">&lt;output&gt;</span> la suma de los valores contenidos por dos controles numéricos. El cálculo se hace mediante JavaScript que se ha incluido en el atributo <span class="html-atri">oninput</span> de la etiqueta <span class="html-eti">&lt;form&gt;</span>, que hace que el cálculo se actualice cada vez que se modifica alguno de los controles del formulario. El valor inicial del elemento <span class="html-eti">&lt;output&gt;</span> se hace mediante JavaScript que se ha incluido en el atributo <span class="html-atri">onload</span> de la etiqueta <span class="html-eti">&lt;body&gt;</span>, que hace que el cálculo se actualice al cargar la página. El formulario incluye el atributo <span class="html-atri">onsubmit</span> con el valor <span class="html-atri-valor">return false</span> para que el formulario no se envíe en ningún caso.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;body onload="o.value = a.valueAsNumber + b.valueAsNumber"&gt;
+  &lt;form onsubmit="return false" oninput="o.value = a.valueAsNumber + b.valueAsNumber" method="get"&gt;
+    &lt;p&gt;
+      &lt;input type="number" id="a" value="0"&gt; +
+      &lt;input type="number" id="b" value="0"&gt; =
+      &lt;output id="o" for="a b"&gt;&lt;/output&gt;
+    &lt;/p&gt;
+  &lt;/form&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-output-1.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-output-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </section>
