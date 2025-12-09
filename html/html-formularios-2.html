@@ -37,6 +37,7 @@
             <li><a href="#control-input-file">Archivo <span class="html-atri-valor">file</span></a></li>
             <li><a href="#control-input-image">Imagen <span class="html-atri-valor">image</span></a></li>
             <li><a href="#control-meter">Medidor <span class="html-atri-valor">meter</span></a></li>
+            <li><a href="#control-progress">Barra <span class="html-atri-valor">progress</span></a></li>
           </ul>
         </li>
         <li><a href="#fieldset">Grupos <span class="html-eti">fieldset</span></a></li>
@@ -788,6 +789,55 @@
         </div>
       </div>
     </section>
+
+    <section id="control-progress">
+      <h3 class="con-aside">Barra de progreso: <span class="html-eti">&lt;progress&gt;</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;progress&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/progress">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+      </aside>
+
+      <p>El control de tipo barra de progreso inserta una imagen de una barra que muestra gráficamente un valor en una escala. El texto que se escriba dentro de la etiqueta sólo se muestra si el navegador no puede mostrar la barra.</p>
+
+      <p>Si la barra de progreso no tiene establecida ningún atributo se dice que la barra está en estado indeterminado, que normalmente se muestra con un indicador en movimiento continuo.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Barra de progreso indeterminada:
+  &lt;progress&gt;Valor indeterminado&lt;/progress&gt;
+&lt;/p&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-progress-1.html" style="height: 6em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-progress-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>La escala se define con el atributo <span class="html-atri">max</span> y el valor a representar con el atributo <span class="html-atri">value</span>. Los valores tienen que estar ordenados: <span class="html-atri">value</span> &le; <span class="html-atri">max</span>.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;Progreso: &lt;progress max="100" value="20"&gt;Valor: 20 de 100&lt;/progress&gt;&lt;/p&gt;
+
+&lt;p&gt;Progreso: &lt;progress max="100" value="50"&gt;Valor: 50 de 100&lt;/progress&gt;&lt;/p&gt;
+
+&lt;p&gt;Progreso: &lt;progress max="100" value="80"&gt;Valor: 80 de 100&lt;/progress&gt;&lt;/p&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-progress-2.html" style="height: 8em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-progress-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
   </section>
 
   <section id="fieldset">
@@ -1009,7 +1059,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 8 de diciembre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 9 de diciembre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
