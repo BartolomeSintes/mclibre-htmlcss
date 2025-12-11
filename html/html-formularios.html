@@ -73,9 +73,16 @@
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;form action="ejemplo.php" method="get"&gt;
-  &lt;p&gt;Nombre: &lt;input type="text" name="nombre" size="40"&gt;&lt;/p&gt;
-  &lt;p&gt;Año de nacimiento: &lt;input type="number" name="nacido" min="1900"&gt;&lt;/p&gt;
-  &lt;p&gt;Sexo:
+  &lt;p&gt;
+    Nombre:
+    &lt;input type="text" name="nombre" size="40"&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    Año de nacimiento:
+    &lt;input type="number" name="nacido" min="1900"&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    Sexo:
     &lt;input type="radio" name="hm" value="h"&gt; Hombre
     &lt;input type="radio" name="hm" value="m"&gt; Mujer
   &lt;/p&gt;
@@ -86,7 +93,7 @@
 &lt;/form&gt;</code>
 </pre>
       </div>
-      <iframe src="ejemplos/formularios/formularios-form-1.html" style="height: 19em;"></iframe>
+      <iframe src="ejemplos/formularios/formularios-form-1.html" style="height: 24em;"></iframe>
       <div class="icono-enlace">
         <a href="ejemplos/formularios/formularios-form-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
       </div>
@@ -361,9 +368,46 @@
     <section id="control-botones">
       <h3>Botones: <span class="html-eti">&lt;input&gt;</span> y <span class="html-eti">&lt;button&gt;</span></h3>
 
-      <p>Los botones se crean mediante la etiqueta <span class="html-eti">&lt;input&gt;</span> o mediante la etiqueta <span class="html-eti">&lt;button&gt;</span>. La diferencia entre ellos es que <span class="html-eti">&lt;input&gt;</span> sólo puede contener texto, mientras que <span class="html-eti">&lt;button&gt;</span> permite incluir elementos html como imágenes. El contenido del botón <span class="html-eti">&lt;input&gt;</span> se define mediante el atributo <span class="html-atri">value</span>, por lo que sólo puede contener texto. El contenido del botón <span class="html-eti">&lt;button&gt;</span> se escribe dentro del elemento, por lo que puede incluir texto e imágenes.</p>
+      <p>Los botones se pueden crear mediante la etiqueta <span class="html-eti">&lt;input&gt;</span> o mediante la etiqueta <span class="html-eti">&lt;button&gt;</span>.</p>
 
-      <p>Normalmente los botones no suelen llevar atributo <span class="html-atri">name</span>, pero se puede poner si se quiere (tendría sentido si un formulario contuviera dos botones de envío y quisiéramos saber en cuál de ellos ha hecho clic el usuario, pero esto no es muy habitual).</p>
+      <p>La etiqueta <span class="html-eti">&lt;input&gt;</span> es una etiqueta vacía, por lo que el contenido que se muestra en el botón se define mediante el atributo <span class="html-atri">value</span>, por lo que sólo puede contener texto (lo que incluye los emojis), pero no etiquetas HTML.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;input type="submit" value="Enviar"&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/submit-input-1.html" style="height: 6em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/submit-input-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;input type="submit" value="&amp;#x2b50; Enviar"&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/submit-input-2.html" style="height: 6em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/submit-input-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Sin embargo, el contenido del botón <span class="html-eti">&lt;button&gt;</span> se escribe dentro del elemento, por lo que puede incluir texto e imágenes u otras etiquetas html.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre>
+<code class="language-html">&lt;button type="submit"&gt;
+  &lt;img src="send.svg" alt="imagen" width="32" height="32" style="vertical-align: middle"&gt;
+  Enviar
+&lt;/button&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/formularios/submit-button-1.html" style="height: 8em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/submit-button-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
     </section>
 
     <section id="control-input-button-submit">
@@ -397,9 +441,9 @@
         <div class="codigo">
           <pre><code class="language-html">&lt;input type="submit" value="Enviar"&gt;</code></pre>
         </div>
-        <iframe src="ejemplos/formularios/submit-input-1.html" style="height: 6em;"></iframe>
+        <iframe src="ejemplos/formularios/submit-input-3.html" style="height: 6em;"></iframe>
         <div class="icono-enlace">
-          <a href="ejemplos/formularios/submit-input-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          <a href="ejemplos/formularios/submit-input-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
 
@@ -415,6 +459,21 @@
         <iframe src="ejemplos/formularios/submit-button-1.html" style="height: 8em;"></iframe>
         <div class="icono-enlace">
           <a href="ejemplos/formularios/submit-button-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>Cuando en un formulario hay un solo botón Enviar, este no suele llevar atributo <span class="html-atri">name</span>. Si en el formulario se incluyen varios botones Enviar, como en el ejemplo siguiente, sí que se incluye el atributo para poder saber en cuál de ellos ha hecho clic el usuario.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;input type="submit" name="respuesta" value="Sí"&gt;
+&lt;input type="submit" name="respuesta" value="No"&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/submit-input-4.html" style="height: 4em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/submit-input-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
 
@@ -881,6 +940,9 @@
     <p>Los botones radio sólo se envían si se han marcado. El atributo <span class="html-atri">value</span> contiene el valor que envía el formulario si el botón radio está marcado.Si el atributo <span class="html-atri">value</span> no está establecido, el formulario envía el valor <span class="html-atri-valor">on</span>, así que para poder saber cuál ha sido la opción elegida por el usuario es necesario establecer con valores distintos los atributos <span class="html-atri">value</span> de todos los elementos de un botón radio.</p>
 
     <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksemi.svg" alt="Desaconsejado" title="Desaconsejado" width="40" height="40">
+      </div>
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;input type="radio" name="boton"&gt; Hombre&lt;br&gt;
@@ -894,6 +956,9 @@
     </div>
 
     <div class="filaflex">
+      <div class="icono-ok">
+        <img src="../varios/iconos/icono-oksi.svg" alt="Correcto" title="Correcto" width="40" height="40">
+      </div>
       <div class="codigo">
         <pre>
 <code class="language-html">&lt;input type="radio" name="boton" value="hombre"&gt; Hombre&lt;br&gt;
@@ -1446,7 +1511,7 @@
 
     <hr class="corta">
 
-    <p>Se pueden utilizar elementos <span class="html-eti">&lt;hr&gt;</span> para separar opciones.</p>
+    <p>También se pueden utilizar elementos <span class="html-eti">&lt;hr&gt;</span> para separar opciones.</p>
 
     <div class="filaflex">
       <div class="codigo">

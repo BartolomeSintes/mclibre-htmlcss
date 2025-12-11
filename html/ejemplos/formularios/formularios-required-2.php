@@ -37,7 +37,7 @@ print "\n";
 
 if ($edad == "menor") {
     print "  <p>Es usted <strong>menor de edad</strong>.</p>\n";
-} elseif ($edad == "mayor") {
+} elseif ($edad == "adulto") {
     print "  <p>Es usted <strong>mayor de edad</strong>.</p>\n";
 } else {
     print "  <p>No ha indicado su edad.</p>\n";

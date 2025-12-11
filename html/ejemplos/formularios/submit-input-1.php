@@ -7,31 +7,6 @@
 </head>
 
 <body>
-<?php
-function recoge($var)
-{
-    if (!isset($_REQUEST[$var])) {
-        $tmp = "";
-    } elseif (!is_array($_REQUEST[$var])) {
-        $tmp = trim(htmlspecialchars($_REQUEST[$var]));
-    } else {
-        $tmp = $_REQUEST[$var];
-        array_walk_recursive($tmp, function (&$valor) {
-            $valor = trim(htmlspecialchars($valor));
-        });
-    }
-    return $tmp;
-}
-
-$texto = recoge("texto");
-
-if ($texto == "") {
-    print "  <p>No ha escrito ningún texto.</p>\n";
-} else {
-    print "  <p>El texto escrito es <strong>$texto</strong>.</p>\n";
-}
-print "\n";
-?>
   <p><a href="submit-input-1.html">Volver al formulario.</a></p>
 </body>
 </html>
