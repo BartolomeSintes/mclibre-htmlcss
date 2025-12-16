@@ -417,9 +417,41 @@
           </div>
         </div>
 
-      <p class="mcl-captura">
-        <img src="ejemplos/diferencias/formularios-input-color.png" alt="Captura control color en Firefox y Chrome" width="1032" height="402">
-      </p>
+        <p class="mcl-captura">
+          <img src="ejemplos/diferencias/formularios-input-color.png" alt="Captura control color en Firefox y Chrome" width="1032" height="402">
+        </p>
+
+        <hr class="corta">
+
+        <p>Firefox admite todos los formatos de color en la lista de opciones, pero Chrome sólo admite el formato RGB. En cualquier caso, el control envía el color en formato RGB.</p>
+
+        <div class="filaflex">
+          <div class="icono-navegadores">
+            <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+            <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+          </div>
+          <div class="codigo">
+            <pre><code class="language-html">&lt;p&gt;
+  Indique su mes favorito:
+  &lt;input type="color" name="favorito" list="colores"&gt;
+&lt;/p&gt;
+&lt;datalist id="colores"&gt;
+  &lt;option value="hwb(0 0% 0%)"&gt;&lt;/option&gt;
+  &lt;option value="yellow"&gt;&lt;/option&gt;
+  &lt;option value="#00FF00"&gt;&lt;/option&gt;
+  &lt;option value="hsl(240 100% 50%)"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+          </div>
+          <iframe src="../html/ejemplos/formularios/formularios-datalist-color-2.html" style="height: 14em;"></iframe>
+          <div class="icono-enlace">
+            <a href="../html/ejemplos/formularios/formularios-datalist-color-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+          </div>
+        </div>
+
+        <p class="mcl-captura">
+          <img src="ejemplos/diferencias/formularios-input-color-datalist.png" alt="Captura control color con datalist en Firefox y Chrome" width="1074" height="400">
+        </p>
+
       </section>
 
       <section id="formularios-input-time">
@@ -457,7 +489,7 @@
           </p>
         </aside>
 
-        <p>Google Chrome muestra un control específico para seleccionar el mes y el año, pero Firefox no lo hace.</p>
+        <p>Google Chrome muestra un control específico para seleccionar el mes y el año, pero Firefox no lo hace. Además, Chrome envía el dato en el formato AAAA-MM, pero Firefox no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -487,7 +519,7 @@
           </p>
         </aside>
 
-        <p>Google Chrome muestra un control específico para seleccionar la semana y el año, pero Firefox no lo hace.</p>
+        <p>Google Chrome muestra un control específico para seleccionar la semana y el año, pero Firefox no lo hace. Además, Chrome envía el dato en el formato AAAA-WSS, pero Firefox no lo hace.</p>
 
         <div class="filaflex">
           <div class="icono-navegadores">
@@ -932,7 +964,7 @@ p.oblique {
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 11 de diciembre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 16 de diciembre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>

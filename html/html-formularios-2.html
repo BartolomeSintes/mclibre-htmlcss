@@ -26,6 +26,7 @@
         <li><a href="#atributos-comunes">Atributos comunes</a></li>
         <li><a href="#controles">Controles</a>
           <ul>
+            <li><a href="#control-datalist">Lista de opciones <span class="html-eti">datalist</span></a></li>
             <li><a href="#control-input-button-button">Botones <span class="html-atri-valor">button</span></a></li>
             <li><a href="#control-input-search">Búsqueda <span class="html-atri-valor">search</span></a></li>
             <li><a href="#control-input-tel">Teléfono <span class="html-atri-valor">tel</span></a></li>
@@ -34,8 +35,6 @@
             <li><a href="#control-input-month">Mes <span class="html-atri-valor">month</span></a></li>
             <li><a href="#control-input-week">Semana <span class="html-atri-valor">week</span></a></li>
             <li><a href="#control-input-datetime-local">Fecha y hora <span class="html-atri-valor">datetime-local</span></a></li>
-            <li><a href="#control-input-file">Archivo <span class="html-atri-valor">file</span></a></li>
-            <li><a href="#control-input-image">Imagen <span class="html-atri-valor">image</span></a></li>
             <li><a href="#control-meter">Medidor <span class="html-eti">meter</span></a></li>
             <li><a href="#control-progress">Barra <span class="html-eti">progress</span></a></li>
             <li><a href="#control-output">Salida <span class="html-eti">output</span></a></li>
@@ -279,11 +278,200 @@
 
     <p>Los controles son los elementos que permiten al usuario introducir información.</p>
 
-    <p>La mayoría de controles se obtienen mediante mediante la etiqueta vacía <span class="html-eti">&lt;input&gt;</span>.</p>
+    <p>La mayoría de controles se obtienen mediante mediante la etiqueta vacía <span class="html-eti">&lt;input&gt;</span>, pero algunos tienen su etiqueta específica.</p>
 
-    <p><img src="../varios/iconos/icono-warning.svg" alt="¡Atención!" title="¡Atención!" width="55" height="48"> Falta comentar algunos controles HTML 5 como
-      <span class="html-eti">&lt;datalist&gt;</span>.
-    </p>
+    <section id="control-datalist">
+      <h3 class="con-aside">Lista de opciones: <span class="html-eti">&lt;datalist&gt;</span></h3>
+
+      <aside class="enlace-norma">
+        <p>
+          <span class="html-eti">&lt;datalist&gt;</span><br>
+          <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">
+            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist">
+            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
+          </a>
+        </p>
+      </aside>
+
+      <p>La lista de opciones <span class="html-eti">&lt;datalist&gt;</span> es un control invisible. Su papel es suministrar a otros controles una lista de opciones predeterminadas que esos controles pueden aprovechar.</p>
+
+      <p>Cada lista se identifica con un atributo <span class="html-atri">id</span> y cada control que quiera utilizar una lista debe incluir un atributo <span class="html-atri">list</span> con el valor del atributo <span class="html-atri">id</span> correpondiente.</p>
+
+      <p>Cada opción de la lista de opciones se escribe como un elemento <span class="html-eti">&lt;option&gt;</span>. El texto que corresponde a la opción puede escribirse como contenido del elemento <span class="html-eti">&lt;option&gt;</span> o como atributo <span class="html-atri">value</span> del elemento <span class="html-eti">&lt;option&gt;</span>.</p>
+
+      <hr class="corta">
+
+      <p>En el caso de las cajas de texto, las opciones disponibles se muestran al hacer clic en la propia caja o al empezar a escribir si el texto coincid.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Escriba su color favorito:
+  &lt;input type="text" name="favorito" list="colores"&gt;
+&lt;/p&gt;
+
+&lt;datalist id="colores"&gt;
+  &lt;option value="rojo"&gt;&lt;/option&gt;
+  &lt;option value="amarillo"&gt;&lt;/option&gt;
+  &lt;option value="verde"&gt;&lt;/option&gt;
+  &lt;option value="azul"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-datalist-text-1.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-datalist-text-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Escriba su color favorito:
+  &lt;input type="text" name="favorito" list="colores"&gt;
+&lt;/p&gt;
+
+&lt;datalist id="colores"&gt;
+  &lt;option&gt;marrón&lt;/option&gt;
+  &lt;option&gt;morado&lt;/option&gt;
+  &lt;option&gt;naranja&lt;/option&gt;
+  &lt;option&gt;rosa&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-datalist-text-2.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-datalist-text-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>En el caso de las cajas de fechas, Firefox muestra las opciones del <span class="html-eti">&lt;datalist&gt;</span> porque las trata como cajas de texto, pero Chrome, que sí muestra un interfaz especial para seleccionar el mes y el año, no admite las opciones del <span class="html-eti">&lt;datalist&gt;</span>.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc.svg" alt="Correcto en Chrome" title="Correcto en Chrome" width="32" height="32">
+          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        </div>
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Indique su mes favorito:
+  &lt;input type="month" name="favorito" list="meses"&gt;
+&lt;/p&gt;
+
+&lt;datalist id="meses"&gt;
+  &lt;option value="junio"&gt;&lt;/option&gt;
+  &lt;option value="julio"&gt;&lt;/option&gt;
+  &lt;option value="agosto"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-datalist-month-1.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-datalist-month-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>En el caso del selector de color, si el color está expresado en formato RGB, tanto Firefox como Chrome muestran las opciones del <span class="html-eti">&lt;datalist&gt;</span>.</p>
+
+      <div class="filaflex">
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Indique su color favorito:
+  &lt;input type="color" name="favorito" list="colores"&gt;
+&lt;/p&gt;
+
+&lt;datalist id="colores"&gt;
+  &lt;option value="#FF0000"&gt;&lt;/option&gt;
+  &lt;option value="#FFFF00"&gt;&lt;/option&gt;
+  &lt;option value="#00FF00"&gt;&lt;/option&gt;
+  &lt;option value="#0000FF"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-datalist-color-1.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-datalist-color-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Firefox admite todos los formatos de color en la lista de opciones, pero Chrome sólo admite el formato RGB, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-color">página de diferencias entre navegadores</a>. En cualquier caso, el control envía el color en formato RGB.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+          <img src="../varios/iconos/icono-ff.svg" alt="Correcto en Firefox" title="Correcto en Firefox" width="32" height="32">
+        </div>
+        <div class="codigo">
+          <pre><code class="language-html">&lt;p&gt;
+  Indique su color favorito:
+  &lt;input type="color" name="favorito" list="colores"&gt;
+&lt;/p&gt;
+&lt;datalist id="colores"&gt;
+  &lt;option value="hwb(0 0% 0%)"&gt;&lt;/option&gt;
+  &lt;option value="yellow"&gt;&lt;/option&gt;
+  &lt;option value="#00FF00"&gt;&lt;/option&gt;
+  &lt;option value="hsl(240 100% 50%)"&gt;&lt;/option&gt;
+&lt;/datalist&gt;</code></pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-datalist-color-2.html" style="height: 14em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-datalist-color-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <hr class="corta">
+
+      <p>En el caso del selector de rango, las opciones del <span class="html-eti">datalist</span> añaden marcas al control en las posiciones correspondientes.</p>
+
+      <div class="filaflex">
+        <div class="icono-navegadores-vacio">
+          <img src="../varios/iconos/icono-transparente.svg" alt="Hueco" width="44" height="4">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">Indique su nivel (de 0 a 6):
+&lt;input type="range" name="rango"
+  min="0" max="10" list="lista-rango"&gt;
+&lt;datalist id="lista-rango"&gt;
+  &lt;option value="0"&gt;
+  &lt;option value="1"&gt;
+  &lt;option value="5"&gt;
+  &lt;option value="6"&gt;
+&lt;/datalist&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-range-4.html" style="height: 12em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-range-4.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+
+      <p>Si el elemento <span class="html-eti">datalist</span> contiene elementos <span class="html-eti">option</span> con atributos <span class="html-atri">label</span>, el control debería mostrar esas etiquetas en las posiciones de las marcas, pero actualmente (diciembre de 2025), ni Chrome ni Firefox lo hacen:</p>
+      <div class="filaflex">
+        <div class="icono-navegadores">
+          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
+          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
+        </div>
+        <div class="codigo">
+          <pre>
+<code class="language-html">Indique su nivel (Malo, Regular, Bueno):
+&lt;input type="range" name="rango"
+  min="1" max="3" list="lista-rango"&gt;
+&lt;datalist id="lista-rango"&gt;
+  &lt;option value="1" label="Malo"&gt;
+  &lt;option value="2" label="Regular"&gt;
+  &lt;option value="3" label="Bueno"&gt;
+&lt;/datalist&gt;</code>
+</pre>
+        </div>
+        <iframe src="ejemplos/formularios/formularios-range-5.html" style="height: 11em;"></iframe>
+        <div class="icono-enlace">
+          <a href="ejemplos/formularios/formularios-range-5.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
+        </div>
+      </div>
+    </section>
 
     <section id="control-input-button-button">
       <h3 class="con-aside">Botón general mediante <span class="html-eti">&lt;input&gt;</span> o <span class="html-eti">&lt;button&gt;</span></h3>
@@ -561,7 +749,7 @@
         </div>
       </div>
 
-      <p><strong>Nota</strong>: Firefox no muestra un control específico para seleccionar el mes y el año, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-month">lección de diferencias entre navegadores</a>.</p>
+      <p><strong>Nota</strong>: Firefox no muestra un control específico para seleccionar el mes y el año, ni envía el dato en el formato AAAA-MM, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-month">lección de diferencias entre navegadores</a>.</p>
     </section>
 
     <section id="control-input-week">
@@ -601,7 +789,7 @@
         </div>
       </div>
 
-      <p><strong>Nota</strong>: Firefox no muestra un control específico para seleccionar la semana y el año, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-week">lección de diferencias entre navegadores</a>.</p>
+      <p><strong>Nota</strong>: Firefox no muestra un control específico para seleccionar la semana y el año, ni envía el dato en el formato AAAA-WSS, como se comenta en la <a href="../otros/diferencias-listado.html#formularios-input-week">lección de diferencias entre navegadores</a>.</p>
     </section>
 
     <section id="control-input-datetime-local">
@@ -628,94 +816,6 @@
         <iframe src="ejemplos/formularios/formularios-datetime-local-1.html" style="height: 6em;"></iframe>
         <div class="icono-enlace">
           <a href="ejemplos/formularios/formularios-datetime-local-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="control-input-file">
-      <h3 class="con-aside">Selector de archivo: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"file"</span>&gt;</span></h3>
-
-      <aside class="enlace-norma">
-        <p>
-          <span class="html-eti">&lt;input <span class="html-atri-valor">file</span>&gt;</span><br>
-          <a href="https://html.spec.whatwg.org/multipage/input.html#file-upload-state-(type=file)">
-            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-          </a>
-        </p>
-      </aside>
-
-      <p>El selector de archivo se crea mediante una etiqueta <span class="html-eti">&lt;input&gt;</span> cuyo atributo <span class="html-atri">type</span> tiene el valor <span class="html-atri-valor">file</span>.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="file" name="archivo"&gt;</code></pre>
-        </div>
-        <iframe src="ejemplos/formularios/file-1.html" style="height: 4em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/file-1.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <hr class="corta">
-
-      <p>Tradicionalmente, los navegadores no han admitido el atributo <span class="html-atri">value</span> en el selector de archivo por motivos de seguridad, ya que podría utilizarse para "robar" ficheros al usuario sin su autorización. La recomendación HTML 5 indica que el atributo <span class="html-atri">value</span> se puede utilizar para seleccionar selectores de archivos distintos al general, pero los navegadores no parecen utilizar este atributo.</p>
-
-      <div class="filaflex">
-        <div class="icono-navegadores">
-          <img src="../varios/iconos/icono-gc-X.svg" alt="Incorrecto en Chrome" title="Incorrecto en Chrome" width="44" height="32">
-          <img src="../varios/iconos/icono-ff-X.svg" alt="Incorrecto en Firefox" title="Incorrecto en Firefox" width="44" height="32">
-        </div>
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="file" name="archivo" value="image/*"&gt;</code></pre>
-        </div>
-        <iframe src="ejemplos/formularios/file-2.html" style="height: 4em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/file-2.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="control-input-image">
-      <h3 class="con-aside">Imagen: <span class="html-eti">&lt;input <span class="html-atri">type</span>=<span class="html-atri-valor">"image"</span>&gt;</span></h3>
-
-      <aside class="enlace-norma">
-        <p>
-          <span class="html-eti">&lt;input <span class="html-atri-valor">image</span>&gt;</span><br>
-          <a href="https://html.spec.whatwg.org/multipage/input.html#image-button-state-(type=image)">
-            <img src="../varios/iconos/icono-whatwg.svg" alt="HTML Living Standard" title="HTML Living Standard" width="32" height="32">
-          </a>
-          <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">
-            <img src="../varios/iconos/icono-mdn.svg" alt="Mozilla Developer Network" title="Mozilla Developer Network" width="37" height="32">
-          </a>
-        </p>
-      </aside>
-
-      <p>El control de tipo imagen inserta una imagen que funciona como un botón (aunque los navegadores no le dan relieve como a los botones). Al hacer clic en un punto de la imagen se envía el formulario (como si se hubiera pulsado un botón <span class="html-atri-valor">submit</span>) y se envían las coordenadas del punto en el que se ha hecho clic (junto con los valores de los otros controles del formulario).</p>
-
-      <p>Este control debe incluir siempre el atributo <span class="html-atri">alt</span> (con un valor no vacío), para indicar el texto que deben mostrar los navegadores si la imagen no está disponible.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="image" name="diana" src="diana.svg" alt="Diana"&gt;</code></pre>
-        </div>
-        <iframe src="ejemplos/formularios/formularios-image-3.html" style="height: 12em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/formularios-image-3.html"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
-        </div>
-      </div>
-
-      <p>El ejemplo siguiente es un pequeño juego en el que se utilizan las coordenadas recibidas para calcular si el usuario ha hecho clic en el punto negro del dibujo.</p>
-
-      <div class="filaflex">
-        <div class="codigo">
-          <pre><code class="language-html">&lt;input type="image" name="punto" src="punto.svg" alt="Punto"&gt;</code></pre>
-        </div>
-        <iframe src="ejemplos/formularios/formularios-image-1.php" style="height: 10em;"></iframe>
-        <div class="icono-enlace">
-          <a href="ejemplos/formularios/formularios-image-1.php"><img src="../varios/iconos/icono-enlace.svg" alt="Enlace externo" title="Enlace externo" width="31" height="36"></a>
         </div>
       </div>
     </section>
@@ -753,7 +853,7 @@
         </div>
       </div>
 
-      <p>La escala se puede dividir en tres partes añadiendo dos valores intermedios mediante los atributos <span class="html-atri">low</span> y <span class="html-atri">high</span>. Los valores tienen que estar ordenados:  <span class="html-atri">min</span> &le; <span class="html-atri">low</span> &le; <span class="html-atri">high</span> &le; <span class="html-atri">max</span> El indicador se muestra de un color (normalmente, verde) si el valor <span class="html-atri">value</span> se encuentra en el tramo central (entre <span class="html-atri">low</span> y <span class="html-atri">high</span>) y de otro color (normalmente, amarillo) si el valor se encuentra en uno de los tramos laterales (por debajo de <span class="html-atri">low</span> o por encima de <span class="html-atri">high</span>).</p>
+      <p>La escala se puede dividir en tres partes añadiendo dos valores intermedios mediante los atributos <span class="html-atri">low</span> y <span class="html-atri">high</span>. Los valores tienen que estar ordenados: <span class="html-atri">min</span> &le; <span class="html-atri">low</span> &le; <span class="html-atri">high</span> &le; <span class="html-atri">max</span> El indicador se muestra de un color (normalmente, verde) si el valor <span class="html-atri">value</span> se encuentra en el tramo central (entre <span class="html-atri">low</span> y <span class="html-atri">high</span>) y de otro color (normalmente, amarillo) si el valor se encuentra en uno de los tramos laterales (por debajo de <span class="html-atri">low</span> o por encima de <span class="html-atri">high</span>).</p>
 
       <div class="filaflex">
         <div class="codigo">
@@ -1097,7 +1197,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de diciembre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 16 de diciembre de 2025</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
