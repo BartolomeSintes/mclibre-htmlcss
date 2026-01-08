@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Q07 25/26. Etiquetas HTML y propiedades CSS. Páginas web HTML y hojas de estilo CSS. Bartolomé Sintes Marco. www.mclibre.org</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../varios/htmlcss.css" title="mclibre">
+  <link rel="icon" href="../../../varios/favicon.svg">
+  <!--
+    Guardar como PDF en Firefox
+    Márgenes: superior/inferior: 0,2 in (5mm) - izquierda: 0,6 in (15mm) - derecha: 0,6 in (15 mm)
+    Escala: 82% 3 páginas, con fecha
+    Al imprimir PDF, seleccionar Tamaño real en Acrobat Reader. Fijarse en el número de páginas, para que no haya página en blanco al final.
+  -->
+  <style>
+    @media print {
+      h1 {
+        margin: 0;
+      }
+
+      h3 {
+        margin: 5px 0 0;
+        padding: 0;
+      }
+
+      table.mcl-listado tr.titulo td {
+        padding-top: 5px;
+      }
+
+      tbody,
+      tr {
+        break-inside: auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .html-eti,
+      .html-atri,
+      .html-atri-valor,
+      .css-sele,
+      .css-prop,
+      .css-feature,
+      .css-valor,
+      .css-numero,
+      .css-unidad,
+      .css-pseudo,
+      .css-arroba,
+      .css-funcion {
+        color: black;
+      }
+
+      footer,
+      footer p {
+        margin: 0;
+      }
+
+      p.licencia {
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>25/26 Q07: Etiquetas HTML y propiedades CSS</h1>
+
+  <nav>
+    <p>
+      <a href="../../../index.html"><img src="../../../varios/iconos/icono-html.svg" alt="Home" title="Ir a página de inicio" width="42" height="48"></a>
+      <a href="#"><img src="../../../varios/iconos/icono-arrow-circle-up.svg" alt="Principio de la página" title="Principio de la página" width="36" height="36"></a>
+    </p>
+
+    <div class="toc">
+      <h2>Etiquetas HTML</h2>
+
+      <ul>
+        <li><a href="#html-raiz">Elemento raíz</a></li>
+        <li><a href="#html-metadatos">Metadatos</a></li>
+        <li><a href="#html-secciones">Secciones</a></li>
+        <li><a href="#html-contenido">Bloques de contenido</a></li>
+        <li><a href="#html-texto">Texto (en línea)</a></li>
+        <li><a href="#html-incrustado">Contenido incrustado</a></li>
+        <li><a href="#html-interactivos">Interactivos</a></li>
+      </ul>
+
+      <h2>Propiedades CSS</h2>
+
+      <ul>
+        <li><a href="#css-tipos">Tipos</a></li>
+        <li><a href="#css-arroba">Reglas arroba</a></li>
+        <li><a href="#css-tipo-letra">Tipo de letra</a></li>
+        <li><a href="#css-color">Color</a></li>
+        <li><a href="#css-texto">Texto</a></li>
+        <li><a href="#css-bordes">Bordes</a></li>
+        <li><a href="#css-margenes">Márgenes</a></li>
+        <li><a href="#css-fondos">Fondos</a></li>
+        <li><a href="#css-tamano">Tamaño</a></li>
+        <li><a href="#css-posicionamiento">Posicionamiento</a></li>
+        <li><a href="#css-pseudo-elementos">Pseudo-elementos</a></li>
+        <li><a href="#css-pseudo-clases">Pseudo-clases</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <p>Etiquetas HTML y propiedades CSS trabajadas en clase en el curso 2025/26 hasta la quincena Q07.</p>
+
+  <section id="html-etiquetas">
+    <h3>Etiquetas HTML</h3>
+
+    <table class="mcl-listado mcl-franjas">
+      <col class="propiedad">
+      <col class="descripcion">
+      <col>
+      <tbody id="html-raiz">
+        <tr class="titulo">
+          <td colspan="3">Elemento raíz</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#doctype">!DOCTYPE</a></td>
+          <td>tipo de documento (versión de html empleada)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-html">html</a></td>
+          <td>engloba todo el documento</td>
+          <td>lang</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-que-es.html#html-comentarios">&lt;!-- ... --&gt;</a></td>
+          <td>comentario (sólo visible en el código fuente)</td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-metadatos">
+        <tr class="titulo">
+          <td colspan="3">Metadatos </td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-head">head</a></td>
+          <td>delimita el encabezado del documento</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-title">title</a></td>
+          <td>título del documento (se muestra en la pestaña del navegador)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-link">link</a></td>
+          <td>enlace a otros archivos (hoja de estilo, etc.)</td>
+          <td>href, rel, media, type, title</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-meta">meta</a></td>
+          <td>metainformación sobre el documento</td>
+          <td>name, content, charset</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-metadatos.html#etiqueta-style">style</a></td>
+          <td>hoja de estilo incluida en el documento</td>
+          <td>type, type, title</td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-secciones">
+        <tr class="titulo">
+          <td colspan="3">Secciones</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-body">body</a></td>
+          <td>delimita el cuerpo del documento</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-article">article</a></td>
+          <td>artículo</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-section">section</a></td>
+          <td>sección</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-nav">nav</a></td>
+          <td>navegación</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-aside">aside</a></td>
+          <td>lateral</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-hn">h1 a h6</a></td>
+          <td>encabezado (de nivel 1 a 6)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-header">header</a></td>
+          <td>cabecera</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-footer">footer</a></td>
+          <td>pie</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-secciones.html#etiqueta-address">address</a></td>
+          <td>dirección (información sobre el autor)</td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-contenido">
+        <tr class="titulo">
+          <td colspan="3">Bloques de contenido</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-bloques.html#etiqueta-p">p</a></td>
+          <td>párrafo</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-bloques.html#etiqueta-hr">hr</a></td>
+          <td>separador</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-divisiones.html">div</a></td>
+          <td>división</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-bloques.html#etiqueta-blockquote">blockquote</a></td>
+          <td>cita larga (que incluye varios párrafos)</td>
+          <td>cite</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-bloques.html#etiqueta-pre">pre</a></td>
+          <td>texto preformateado</td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-texto">
+        <tr class="titulo">
+          <td colspan="3">Texto (en línea)</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-texto.html#etiqueta-br">br</a></td>
+          <td>salto de línea</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-enlaces.html#etiqueta-a">a</a></td>
+          <td>hiperenlace</td>
+          <td>href, target, download, rel, type</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-texto.html#etiqueta-span">span</a></td>
+          <td>contenedor de texto genérico</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-texto.html#etiqueta-strong">strong</a></td>
+          <td>importante</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-texto.html#etiqueta-em">em</a></td>
+          <td>énfasis</td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-incrustado">
+        <tr class="titulo">
+          <td colspan="3">Contenido incrustado</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-imagenes.html#img-img">img</a></td>
+          <td>imagen</td>
+          <td>alt, src, width, height</td>
+        </tr>
+      </tbody>
+
+      <tbody id="html-interactivos">
+        <tr class="titulo">
+          <td colspan="3">Interactivos</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Etiqueta</td>
+          <td>Descripción</td>
+          <td>Atributos principales</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-interactivos.html#etiqueta-details">details</a></td>
+          <td>desplegable</td>
+          <td>open, name</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/html/html-interactivos.html#etiqueta-summary">summary</a></td>
+          <td>leyenda para &lt;details&gt;</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="css-propiedades">
+    <h3>Propiedades CSS</h3>
+
+    <table class="mcl-listado mcl-franjas">
+      <col class="propiedad">
+      <col class="descripcion">
+      <col>
+      <tbody id="css-tipos">
+        <tr class="titulo">
+          <td colspan="3">Tipos</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#font-family">familia-genérica</a></td>
+          <td>Familia genérica de fuente</td>
+          <td><span class="css-valor">cursive</span> | <span class="css-valor">fantasy</span> | <span class="css-valor">monospace</span> | <span class="css-valor">serif</span> | <span class="css-valor">sans-</span><span class="css-valor">serif</span></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-arroba">
+        <tr class="titulo">
+          <td colspan="3">Reglas arroba</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Descriptores / Características</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuentes-web.html#font-face">@import</a></td>
+          <td>Importar recurso</td>
+          <td><span class="css-feature">url(...)</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuentes-web.html#font-face">@font-face</a></td>
+          <td>Fuente web</td>
+          <td><span class="css-feature">font-family</span>, <span class="css-feature">src</span>, <span class="css-feature">font-style</span>, <span class="css-feature">font-weight</span>, <span class="css-feature">font-stretch</span>, <span class="css-feature">unicode-range</span>, <span class="css-feature">font-variant</span>, <span class="css-feature">font-feature-settings</span></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-tipo-letra">
+        <tr class="titulo">
+          <td colspan="3">Tipo de letra (fuente)</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#font-family">font-family</a></td>
+          <td>tipo de letra (fuente)</td>
+          <td>[ nombre-fuente | familia-genérica ] [, nombre-fuente | familia-genérica ]* </td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#font-size">font-size</a></td>
+          <td>tamaño</td>
+          <td>tamaño-absoluto | tamaño-relativo | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#font-style">font-style</a></td>
+          <td>inclinación (cursiva)</td>
+          <td><span class="css-valor">normal</span> | <span class="css-valor">italic</span> | <span class="css-valor">oblique</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#font-weight">font-weight</a></td>
+          <td>grosor del trazo (negrita)</td>
+          <td><span class="css-valor">normal</span> | <span class="css-valor">bold</span> | <span class="css-valor">bolder</span> | <span class="css-valor">lighter</span> | <span class="css-valor">100</span> | <span class="css-valor">200</span> | <span class="css-valor">300</span> | <span class="css-valor">400</span> | <span class="css-valor">500</span> | <span class="css-valor">600</span> | <span class="css-valor">700</span> | <span class="css-valor">800</span> | <span class="css-valor">900</span><br>
+          </td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-color">
+        <tr class="titulo">
+          <td colspan="3">Color</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-color.html#color">color</a></td>
+          <td>color del texto</td>
+          <td>color</td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-texto">
+        <tr class="titulo">
+          <td colspan="3">Texto</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#letter-spacing">letter-spacing</a></td>
+          <td>espacio entre caracteres</td>
+          <td><span class="css-valor">normal</span> | distancia</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fuente.html#line-height">line-height</a></td>
+          <td>espaciado entre líneas</td>
+          <td><span class="css-valor">normal</span> | número | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#text-align">text-align</a></td>
+          <td>alineación del texto</td>
+          <td><span class="css-valor">center</span> | <span class="css-valor">justify</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#text-decoration">text-decoration</a></td>
+          <td>decoración del texto</td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">blink</span> | <span class="css-valor">line-through</span> | <span class="css-valor">overline</span> | <span class="css-valor">underline</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#text-indent">text-indent</a></td>
+          <td>sangría de la primera línea</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#text-transform">text-transform</a></td>
+          <td>mayúsculas / minúsculas</td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">capitalize</span> | <span class="css-valor">lowercase</span> | <span class="css-valor">uppercase</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#text-shadow">text-shadow</a></td>
+          <td>sombreado</td>
+          <td>desplazamiento horizontal, desplazamiento vertical, tamaño desenfoque, color</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-texto.html#word-spacing">word-spacing</a></td>
+          <td>espacio entre palabras</td>
+          <td><span class="css-valor">normal</span> | distancia</td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-bordes">
+        <tr class="titulo">
+          <td colspan="3">Bordes</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border">border</a></td>
+          <td>cuatro bordes simultáneamente</td>
+          <td>border-color || border-width || border-style</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-lados">border-top</a></td>
+          <td>borde superior</td>
+          <td>border-color || border-width || border-style</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-lados">border-right</a></td>
+          <td>borde derecho</td>
+          <td>border-color || border-width || border-style</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-lados">border-bottom</a></td>
+          <td>borde inferior</td>
+          <td>border-color || border-width || border-style</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-lados">border-left</a></td>
+          <td>borde izquierdo</td>
+          <td>border-color || border-width || border-style</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-radius">border-radius</a></td>
+          <td>esquinas redondeadas</td>
+          <td>[ distancia | porcentaje ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-radius">border-top-right-radius</a></td>
+          <td>esquina superior derecha redondeada</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-radius">border-bottom-right-radius</a></td>
+          <td>esquina inferior derecha redondeada</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-radius">border-bottom-left-radius</a></td>
+          <td>esquina inferior izquierda redondeada</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-radius">border-top-left-radius</a></td>
+          <td>esquina superior izquierda redondeada</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-color-width-style">border-color</a></td>
+          <td>color de los bordes</td>
+          <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-color-width-style">border-width</a></td>
+          <td>grosor de los bordes</td>
+          <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-color-width-style">border-style</a></td>
+          <td>estilos de los bordes</td>
+          <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-top-color</a></td>
+          <td>color del borde superior</td>
+          <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-top-width</a></td>
+          <td>grosor del borde superior</td>
+          <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-top-style</a></td>
+          <td>estilo del borde superior</td>
+          <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-right-color</a></td>
+          <td>color del borde derecho</td>
+          <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-right-width</a></td>
+          <td>grosor del borde derecho</td>
+          <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-right-style</a></td>
+          <td>estilo del borde derecho</td>
+          <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-bottom-color</a></td>
+          <td>color del borde inferior</td>
+          <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-bottom-width</a></td>
+          <td>grosor del borde inferior</td>
+          <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-bottom-style</a></td>
+          <td>estilo del borde inferior</td>
+          <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-left-color</a></td>
+          <td>color del borde izquierdo</td>
+          <td>[ color | <span class="css-valor">transparent</span> ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-left-width</a></td>
+          <td>grosor del borde izquierdo</td>
+          <td>[ <span class="css-valor">medium</span> | <span class="css-valor">thick</span> | <span class="css-valor">thin</span> | distancia ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-bordes.html#border-individuales">border-left-style</a></td>
+          <td>estilo del borde izquierdo</td>
+          <td>[ <span class="css-valor">none</span> | <span class="css-valor">hidden</span> | <span class="css-valor">dashed</span> | <span class="css-valor">dotted</span> | <span class="css-valor">double</span> | <span class="css-valor">groove</span> | <span class="css-valor">inset</span> | <span class="css-valor">outset</span> | <span class="css-valor">ridge</span> | <span class="css-valor">solid</span> ] {1, 4}</td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-margenes">
+        <tr class="titulo">
+          <td colspan="3">Márgenes</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#margin">margin</a></td>
+          <td>cuatro márgenes exterior simultáneamente</td>
+          <td>[ <span class="css-valor">auto</span> | distancia | porcentaje ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#margin-lados">margin-top</a></td>
+          <td>margen exterior superior</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#margin-lados">margin-right</a></td>
+          <td>margen exterior derecho</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#margin-lados">margin-bottom</a></td>
+          <td>margen exterior inferior</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#margin-lados">margin-left</a></td>
+          <td>margen exterior izquierdo</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#padding">padding</a></td>
+          <td>cuatro márgenes interiores simultáneamente</td>
+          <td>[ distancia | porcentaje ] {1, 4}</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#padding-lados">padding-top</a></td>
+          <td>margen interior superior</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#padding-lados">padding-right</a></td>
+          <td>margen interior derecho</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#padding-lados">padding-bottom</a></td>
+          <td>margen interior inferior</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-margenes.html#padding-lados">padding-left</a></td>
+          <td>margen interior izquierdo</td>
+          <td>distancia | porcentaje</td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-fondos">
+        <tr class="titulo">
+          <td colspan="3">Fondos</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background">background</a></td>
+          <td>propiedad compuesta</td>
+          <td>background-attachment || background-color || background-image || background-position || background-repeat </td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#fondos-multiples">background</a></td>
+          <td>fondos múltiples</td>
+          <td>separados por comas</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-attachment">background-attachment</a></td>
+          <td>ligadura de la imagen</td>
+          <td><span class="css-valor">fixed</span> | <span class="css-valor">scroll</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-color">background-color</a></td>
+          <td>color de fondo</td>
+          <td><span class="css-valor">transparent</span> | color</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-image">background-image</a></td>
+          <td>imagen de fondo</td>
+          <td><span class="css-valor">none</span> | uri</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-position">background-position</a></td>
+          <td>posición de la imagen de fondo</td>
+          <td>[ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> | distancia | porcentaje] [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> | distancia | porcentaje] ]? | [ [ <span class="css-valor">left</span> | <span class="css-valor">center</span> | <span class="css-valor">right</span> ] || [ <span class="css-valor">top</span> | <span class="css-valor">center</span> | <span class="css-valor">bottom</span> ] ]</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-repeat">background-repeat</a></td>
+          <td>repetición de la imagen de fondo</td>
+          <td><span class="css-valor">no-repeat</span> | <span class="css-valor">repeat</span> | <span class="css-valor">repeat-x</span> | <span class="css-valor">repeat-y</span> | <span class="css-valor">space</span> | <span class="css-valor">round</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-fondos.html#background-size">background-size</a></td>
+          <td>tamaño de la imagen de fondo</td>
+          <td><span class="css-valor">auto</span> | [ distancia | porcentaje ] {2} | <span class="css-valor">contain</span> | <span class="css-valor">cover</span></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-tamano">
+        <tr class="titulo">
+          <td colspan="3">Modelo de caja / Tamaño</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-modelo-caja.html#box-sizing">box-sizing</a></td>
+          <td>posición del borde y márgenes</td>
+          <td><span class="css-valor">border-box</span> | <span class="css-valor">content-box</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-tamano.html#width-height">width</a></td>
+          <td>anchura</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje </td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-tamano.html#width-height">height</a></td>
+          <td>altura</td>
+          <td><span class="css-valor">auto</span> | distancia | porcentaje</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-tamano.html#overflow">overflow</a></td>
+          <td>si el contenido desborda al elemento</td>
+          <td><span class="css-valor">auto</span> | <span class="css-valor">hidden</span> | <span class="css-valor">scroll</span> | <span class="css-valor">visible</span></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-posicionamiento">
+        <tr class="titulo">
+          <td colspan="3">Posicionamiento</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Propiedad</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-posicionamiento-flotante.html">float</a></td>
+          <td>modo de posicionamiento flotante</td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-posicionamiento-flotante.html">clear</a></td>
+          <td>lado en el que no puede haber elementos flotantes</td>
+          <td><span class="css-valor">none</span> | <span class="css-valor">both</span> | <span class="css-valor">left</span> | <span class="css-valor">right</span></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-pseudo-elementos">
+        <tr class="titulo">
+          <td colspan="3">Pseudo-elementos</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Nombre</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-pseudoclases.html#pseudo-elementos-first">::first-letter</a></td>
+          <td>primera letra</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-pseudoclases.html#pseudo-elementos-first">::first-line</a></td>
+          <td>primera línea de texto</td>
+          <td></td>
+        </tr>
+      </tbody>
+
+      <tbody id="css-pseudo-clases">
+        <tr class="titulo">
+          <td colspan="3">Pseudo-clases</td>
+        </tr>
+        <tr class="cabecera">
+          <td>Nombre</td>
+          <td>Descripción</td>
+          <td>Valores</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-pseudoclases.html#pseudo-clase-enlace">:link</a></td>
+          <td>enlaces no visitados</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="https://www.mclibre.org/consultar/htmlcss/css/css-pseudoclases.html#pseudo-clase-enlace">:visited</a></td>
+          <td>enlaces ya visitados</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p class="ultmod">Última modificación de esta página: 8 de enero de 2026</p>
+
+    <p class="licencia"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../../../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
+      Esta página forma parte del curso <strong><a href="https://www.mclibre.org/consultar/htmlcss/">Páginas web HTML y hojas de estilo CSS</a></strong> por <a href="https://www.mclibre.org/" rel="author">Bartolomé Sintes Marco</a><br>
+      que se distribuye bajo una <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Licencia Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional (CC BY-SA 4.0)</a>.
+    </p>
+  </footer>
+</body>
+</html>
