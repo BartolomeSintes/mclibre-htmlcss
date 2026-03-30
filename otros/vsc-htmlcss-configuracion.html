@@ -278,7 +278,7 @@
   // Versión 2025-10-12
   //
   //
-  // Configuraciones de VSCode recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  // Configuraciones de VSCode
   //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
@@ -352,7 +352,7 @@
   "workbench.layoutControl.enabled": false,
   //
   //
-  // Configuraciones de extensiones de VSCode recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  // Configuraciones de extensiones de VSCode
   //
   // Extensión Close HTML/XML tag
   //
@@ -470,7 +470,7 @@
 
             <div class="codigo">
               <pre>
-<code class="language-json">  // Configuraciones de VSCode recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+<code class="language-json">  // Configuraciones de VSCode
   //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
@@ -774,15 +774,27 @@
       <div class="codigo copy">
         <pre>
 <code class="language-json">{
-  // Tareas de VSCode recomendadas para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
+  // Tareas de VSCode recomendadas para el curso recomendados para el curso
+  // Creación de páginas web HTML con hojas de estilo CSS
+  // https://www.mclibre.org/consultar/htmlcss/
+  //
+  // Versión 2026-03-30
   //
   "version": "2.0.0",
   "tasks": [
     {
       "label": "Abrir en Firefox",
-      "command": "explorer",
+      "type": "shell",
+      "command": "firefox",
       "windows": {
-        "command": "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>"
+        "command": "cmd",
+        "args": [
+          "/c",
+          "start",
+          "",
+          "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>",
+          "${file}"
+        ]
       },
       "linux": {
         "command": "<span class="codigo-resaltado">firefox</span>"
@@ -791,15 +803,24 @@
         "${file}"
       ],
       "presentation": {
-        "reveal": "never"
+        "reveal": "never",
+        "close": true
       },
       "problemMatcher": []
     },
     {
       "label": "Abrir en Chrome",
+      "type": "shell",
       "command": "explorer",
       "windows": {
-        "command": "<span class="codigo-resaltado">C:/Program Files/Google/Chrome/Application/chrome.exe</span>"
+        "command": "cmd",
+        "args": [
+          "/c",
+          "start",
+          "",
+          "<span class="codigo-resaltado">C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</span>",
+          "${file}"
+        ]
       },
       "linux": {
         "command": "<span class="codigo-resaltado">google-chrome</span>"
@@ -808,7 +829,8 @@
         "${file}"
       ],
       "presentation": {
-        "reveal": "never"
+        "reveal": "never",
+        "close": true
       },
       "problemMatcher": []
     }
@@ -826,14 +848,14 @@
       <p>Compruebe los campos enmarcados de las tareas recomendadas, por si necesita modificarlas:</p>
 
       <ul>
-        <li>"windows" &gt; "command": debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows 10.
+        <li>"windows" &gt; "command" &gt; "args": el tercer elemento de la lista debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows.
 
           <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes, pero las actualizaciones no cambian la ubicación del programa, por lo que si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
 
           <p>Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
         </li>
         <li>"linux" &gt; "command": debe indicar el comando de terminal necesario para abrir el navegador en su distribución Linux.</li>
-        <li>"args": VSCode enviara al navegador el camino hasta el archivo.
+        <li>"args": VSCode enviará como URL al navegador el camino hasta el archivo.
 
           <p>En general, en los valores de "args" pueden utilizarse las variables que se comentan en la página <a href="https://code.visualstudio.com/docs/editor/variables-reference">Listado de variables</a> de la documentación oficial de Visual Studio Code.</p>
         </li>
@@ -861,9 +883,6 @@
     // https://www.mclibre.org/consultar/htmlcss/
     //
     // Versión 2025-10-12
-    //
-    //
-    // Atajos de teclado de VSCode recomendados para el curso Páginas web HTML y hojas de estilo CSS de www.mclibre.org
     //
     {
         // Abrir y pasar el foco al Explorador de archivos
@@ -1013,7 +1032,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 22 de octubre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
