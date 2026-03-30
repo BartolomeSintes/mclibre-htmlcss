@@ -784,8 +784,7 @@
   "tasks": [
     {
       "label": "Abrir en Firefox",
-      "type": "shell",
-      "command": "firefox",
+      "type": "process",
       "windows": {
         "command": "cmd",
         "args": [
@@ -810,15 +809,14 @@
     },
     {
       "label": "Abrir en Chrome",
-      "type": "shell",
-      "command": "explorer",
+      "type": "process",
       "windows": {
         "command": "cmd",
         "args": [
           "/c",
           "start",
           "",
-          "<span class="codigo-resaltado">C:/Program Files (x86)/Google/Chrome/Application/chrome.exe</span>",
+          "<span class="codigo-resaltado">C:/Program Files/Google/Chrome/Application/chrome.exe</span>",
           "${file}"
         ]
       },
@@ -850,7 +848,7 @@
       <ul>
         <li>"windows" &gt; "command" &gt; "args": el tercer elemento de la lista debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows.
 
-          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes, pero las actualizaciones no cambian la ubicación del programa, por lo que si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
+          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes. Como actualizaciones no cambian la ubicación del programa, si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
 
           <p>Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
         </li>
