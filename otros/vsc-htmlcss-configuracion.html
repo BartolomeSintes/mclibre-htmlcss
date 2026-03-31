@@ -43,9 +43,9 @@
   <section id="temas">
     <h2>Tema de color recomendado para el curso de HTML y CSS</h2>
 
-    <p>El tema de color es un aspecto muy personal por lo que se deja a elección del alumno el tema de color empleado.</p>
+    <p>La elección del tema de color es un aspecto muy personal, por lo que se deja a elección del alumno el tema de color empleado.</p>
 
-    <p>En las capturas de los apuntes se empleará el Tema Dark Modern (Moderno oscuro).</p>
+    <p>Pero como en las capturas de pantalla de Visual Studio Code incluidas en estos apuntes se utiliz el tema Dark Modern (el tema oscuro predeterminado de Visual Studio Code hasta marzo de 2026), se recomienda utilizar este tema, que se ha incluido en la configuración recomendada.</p>
 
     <p class="mcl-captura">
       <img src="../img/vscode/vsc-tema-dark-modern.png" alt="VSC. Tema Dark Modern" width="1024" height="576">
@@ -275,7 +275,7 @@
   // Creación de páginas web HTML con hojas de estilo CSS
   // https://www.mclibre.org/consultar/htmlcss/
   //
-  // Versión 2025-10-12
+  // Versión 2026-03-31
   //
   //
   // Configuraciones de VSCode
@@ -343,12 +343,20 @@
     "editor.tabSize": 4,
   },
   //
+  // Workbench: colorTheme
+  // Especifica el tema de color que se usa en el área de trabajo cuando Window: Auto Detect Color Scheme no está habilitado.
+  "workbench.colorTheme": "Dark Modern",
+  //
   // Window: Command Center
-  // Muestra el iniciador de comandos junto con el título de la ventana. Esta configuración solo tiene efecto cuando Window: Custom Title Bar Visibility no se establece en never.
+  // Muestra el iniciador de comandos junto con el título de la ventana. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
   "window.commandCenter": false,
   //
+  // Workbench &gt; Editor: useModal
+  // Controla si los editores se abren en una superposición modal.
+  "workbench.editor.useModal": "off",
+  //
   // Workbench &gt; Layout Control: Enabled
-  // Controla si el control de diseño se muestra en la barra de título personalizada. Esta configuración solo tiene efecto cuando Window: Custom Title Bar Visibility no se establece en never.
+  // Controla si el control de diseño se muestra en la barra de título personalizada. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
   "workbench.layoutControl.enabled": false,
   //
   //
@@ -535,12 +543,20 @@
     "editor.tabSize": 4,
   },
   //
+  // Workbench: colorTheme
+  // Especifica el tema de color que se usa en el área de trabajo cuando Window: Auto Detect Color Scheme no está habilitado.
+  "workbench.colorTheme": "Dark Modern",
+  //
   // Window: Command Center
-  // Muestra el iniciador de comandos junto con el título de la ventana. Esta configuración solo tiene efecto cuando Window: Custom Title Bar Visibility no se establece en never.
+  // Muestra el iniciador de comandos junto con el título de la ventana. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
   "window.commandCenter": false,
   //
+  // Workbench &gt; Editor: useModal
+  // Controla si los editores se abren en una superposición modal.
+  "workbench.editor.useModal": "off",
+  //
   // Workbench &gt; Layout Control: Enabled
-  // Controla si el control de diseño se muestra en la barra de título personalizada. Esta configuración solo tiene efecto cuando Window: Custom Title Bar Visibility no se establece en never.
+  // Controla si el control de diseño se muestra en la barra de título personalizada. Esta configuración solo tiene efecto cuandoWindow: Custom Title Bar Visibility no se establece en never.
   "workbench.layoutControl.enabled": false,
   //</code>
 </pre>
@@ -605,8 +621,14 @@
               <li>"editor.tabSize": 2 / 4
                 <p>Como en una página web suele haber bastante anidamiento, en los ficheros .html se recomienda un sangrado de sólo 2 espacios. Pero una hoja de estilo no suele haber más que uno o dos niveles de anidamiento, por lo que el sangrado puede ser de 4 espacios.</p>
               </li>
+              <li>"workbench.colorTheme": "Dark Modern",
+                <p>El tema elegido es "Dark Modern".</p>
+              </li>
               <li>"window.commandCenter": false
                 <p>Muestra el iniciador de comandos junto con el título de la ventana</p>
+              </li>
+              <li>"workbench.editor.useModal": "off",
+                <p>Desactiva el uso de ventanas modales (flotantes) en las ventanas de editores.</p>
               </li>
               <li>"workbench.layoutControl.enabled": false
                 <p>Muestra el control de diseño en la barra de título personalizada.</p>
@@ -778,7 +800,7 @@
   // Creación de páginas web HTML con hojas de estilo CSS
   // https://www.mclibre.org/consultar/htmlcss/
   //
-  // Versión 2026-03-30
+  // Versión 2026-03-31
   //
   "version": "2.0.0",
   "tasks": [
@@ -796,11 +818,11 @@
         ]
       },
       "linux": {
-        "command": "<span class="codigo-resaltado">firefox</span>"
+        "command": "<span class="codigo-resaltado">firefox</span>",
+        "args": [
+          "${file}"
+        ]
       },
-      "args": [
-        "${file}"
-      ],
       "presentation": {
         "reveal": "never",
         "close": true
@@ -821,11 +843,11 @@
         ]
       },
       "linux": {
-        "command": "<span class="codigo-resaltado">google-chrome</span>"
+        "command": "<span class="codigo-resaltado">google-chrome</span>",
+        "args": [
+          "${file}"
+        ]
       },
-      "args": [
-        "${file}"
-      ],
       "presentation": {
         "reveal": "never",
         "close": true
@@ -848,7 +870,7 @@
       <ul>
         <li>"windows" &gt; "command" &gt; "args": el tercer elemento de la lista debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows.
 
-          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes. Como actualizaciones no cambian la ubicación del programa, si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
+          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes. Como las actualizaciones no cambian la ubicación del programa, si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
 
           <p>Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
         </li>
@@ -1030,7 +1052,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 30 de marzo de 2026</p>
+    <p class="ultmod">Última modificación de esta página: 31 de marzo de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
