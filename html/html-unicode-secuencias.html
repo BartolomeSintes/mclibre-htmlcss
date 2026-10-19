@@ -16,6 +16,10 @@
       margin: 1rem 0;
     }
 
+    table.ejemplo-secuencia td {
+      text-align: center;
+    }
+
     div.u-l {
       display: flex;
       flex-flow: row wrap;
@@ -112,6 +116,7 @@
             <li><a href="#selectores-presentacion">Selector Texto / Emoji</a></li>
             <li><a href="#fitzpatrick">Color de piel (Fitzpatrick)</a></li>
             <li><a href="#secuencias-zwj">Secuencias ZWJ</a></li>
+            <li><a href="#cualificacion">Cualificación de secuencias</a></li>
           </ul>
         </li>
         <li><a href="#tipos">Tipos de secuencias</a>
@@ -370,6 +375,19 @@
         </div>
       </div>
     </section>
+
+    <section id="cualificacion">
+      <h3>Cualificación de secuencias</h3>
+
+      <p>Las secuencias Unicode se pueden clasificar en:</p>
+      <ul>
+        <li><i>fully-qualified</i>, es decir, que incluyen todos los selectores de presentación texto/emoji, modificadores Fitzpatrick y caracteres ZWJ</li>
+        <li><i>unqualified</i>, es decir, que no incluyen ninguno de estos caracteres</li>
+        <li><i>minimally-qualified</i>, es decir, que incluyen parte de estos caracteres</li>
+      </ul>
+
+      <p>En muchos casos los sistemas operativos y/o navegadores son capaces de mostrar los emojis correctos aunque se omitan parte de los caracteres, pero no lo hacen siempre, por lo que en estos apuntes se ha elegido hacer referencia siempre a las secuencias completamente cualificadas.</p>
+    </section>
   </section>
 
   <section id="tipos">
@@ -412,6 +430,8 @@
             </div>
           </div>
         </li>
+        <!-- Estas secuencias no están completamente cualificadas -->
+        <!--
         <li id="gr-genero-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-2">apartado Géneros (2)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter de un personaje humano</li>
@@ -447,14 +467,13 @@
             </div>
           </div>
         </li>
-        <li id="gr-genero-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-3">apartado Géneros (3)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
+         -->
+        <li id="gr-genero-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-2">apartado Géneros (2)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto relacionado con la profesión</li>
           </ul>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar un personaje neutro cocinero se puede escribir la secuencia Adulto + ZWJ + Sartén (U+1F9D1 U+200D U+1F373):</p>
 
@@ -472,7 +491,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-genero-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-4">apartado Géneros (4)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (1), pero con cuatro caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el objeto es un emoji:
+        <li id="gr-genero-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-3">apartado Géneros (3)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -482,9 +501,43 @@
 
           <p>Por ejemplo, para mostrar un hombre o una mujer médicos se puede escribir la secuencia Hombre/Mujer + ZWJ + Vara de Esculapio + VS16 (U+1F468/U+1F469 U+200D U+2695 U+FE0F):</p>
 
-          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x2695; + VS16 = &#x1F468; + ZWJ + &#x2695;&#xFE0F; = &#x1F468;&#x200D;&#x2695;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1F468; + ZWJ + </td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1F468; + ZWJ + </td>
+              <td></td>
+              <td>&#x2695;&#xFE0F;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1F468;&#x200D;&#x2695;&#xFE0F;</td>
+            </tr>
+          </table>
 
-          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2695; + VS16 = &#x1F469; + ZWJ + &#x2695;&#xFE0F; = &#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1F469; + ZWJ + </td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1F469; + ZWJ + </td>
+              <td></td>
+              <td>&#x2695;&#xFE0F;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1F469;&#x200D;&#x2695;&#xFE0F;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -502,7 +555,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-genero-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-5">apartado Géneros (5)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (2), pero con cuatro caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el signo masculino/femenino es un emoji:
+        <li id="gr-genero-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-4">apartado Géneros (4)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter de un personaje humano</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -512,9 +565,43 @@
 
           <p>Por ejemplo, para mostrar un hombre o una mujer caminando se puede escribir la secuencia Paseante + ZWJ + Masculino/Femenino + VS16 (U+1F6B6 U+200D U+2640/U+2642 U+FE0F):</p>
 
-          <p class="ejemplo-secuencia">&#x1F6B6; + ZWJ + &#x2640; + VS16 = &#x1F6B6; + ZWJ + &#x2640;&#xfe0f; = &#x1F6B6;&#x200D;&#x2640;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1F6B6; + ZWJ + </td>
+              <td>&#x2640;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1F6B6; + ZWJ + </td>
+              <td></td>
+              <td>&#x2640;&#xFE0F;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</td>
+            </tr>
+          </table>
 
-          <p class="ejemplo-secuencia">&#x1F6B6; + ZWJ + &#x2642; + VS16 = &#x1F6B6; + ZWJ + &#x2642;&#xfe0f; = &#x1F6B6;&#x200D;&#x2642;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1F6B6; + ZWJ + </td>
+              <td>&#x2642;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1F6B6; + ZWJ + </td>
+              <td></td>
+              <td>&#x2642;&#xFE0F;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -539,6 +626,8 @@
           </div>
 
         </li>
+        <!-- Estas secuencias no están completamente cualificadas -->
+        <!--
         <li id="gr-genero-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-6">apartado Géneros (6)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (2), pero con cuatro caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el personaje humano es un emoji:
 
           <ul>
@@ -570,7 +659,8 @@
             </div>
           </div>
         </li>
-        <li id="gr-genero-7">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-7">apartado Géneros (7)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (3), pero con cuatro caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el objeto es un emoji:
+         -->
+        <li id="gr-genero-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-5">apartado Géneros (5)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -578,11 +668,26 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
-
           <p>Por ejemplo, para mostrar un personaje neutro médico se puede escribir la secuencia Adulto + ZWJ + Vara de Esculapio + VS16 (U+1F9D1 U+200D U+2695 U+FE0F):</p>
 
-          <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x2695; + VS16 = &#x1F9D1; + ZWJ + &#x2695;&#xFE0F; = &#x1F9D1;&#x200D;&#x2695;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1F9D1; + ZWJ + </td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1F9D1; + ZWJ + </td>
+              <td></td>
+              <td>&#x2695;&#xFE0F;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -596,7 +701,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-genero-8">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-8">apartado Géneros (8)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (2), pero con cinco caracteres. Los dos caracteres adicionales son dos selectores de presentación 16 U+FE0F para indicar que el personaje humano y el signo masculino/femenino son emojis:
+        <li id="gr-genero-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-6">apartado Géneros (6)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cinco caracteres, sin espacios entre ellos:
 
           <ul>
             <li>el carácter de un personaje humano</li>
@@ -608,9 +713,55 @@
 
           <p>Por ejemplo, para mostrar un hombre o una mujer levantando unas pesas se puede escribir la secuencia Levantador de pesas + VS16 + ZWJ + Masculino/Femenino (U+26F9 U+FE0F U+200D U+2640/U+2642):</p>
 
-          <p class="ejemplo-secuencia">&#x1f3cb; + VS16 + ZWJ + &#x2640; + VS16 = &#x1f3cb;&#xfe0f; + ZWJ + &#x2640;&#xfe0f; = &#x1f3cb;&#xFE0F;&#x200D;&#x2640;&#xfe0f;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1f3cb;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+ ZWJ + </td>
+              <td>&#x2640;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1f3cb;&#xfe0f;</td>
+              <td></td>
+              <td>+ ZWJ + </td>
+              <td></td>
+              <td>&#x2640;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f3cb;&#xFE0F;&#x200D;&#x2640;&#xfe0f;</td>
+            </tr>
+          </table>
 
-          <p class="ejemplo-secuencia">&#x1f3cb; + VS16 + ZWJ + &#x2642 + VS16 = &#x1f3cb;&#xfe0f; + ZWJ + &#x2642;&#xfe0f; = &#x1f3cb;&#xFE0F;&#x200D;&#x2642;&#xfe0f;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td>&#x1f3cb;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+ ZWJ + </td>
+              <td>&#x2642;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1f3cb;&#xfe0f;</td>
+              <td></td>
+              <td>+ ZWJ + </td>
+              <td></td>
+              <td>&#x2642;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f3cb;&#xFE0F;&#x200D;&#x2642;&#xfe0f;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -677,38 +828,45 @@
             <li>el carácter de un objeto relacionado con la profesión</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un cocinero hombre de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén (U+1F468 U+1F3FF U+200D U+1F373):</p>
+          <p>Por ejemplo, para mostrar un cocinero hombre de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén:</p>
 
           <table class="ejemplo-secuencia">
-            <tr>
-              <td style="text-align: center;">&#x1f468;</td>
-              <td> + ZWJ + &#x1f373;</td>
+            <tr style="font-size: 60%">
+              <td>U+1F468</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+1F373</td>
               <td>=</td>
-              <td>&#x1f468; + ZWJ + &#x1f373;</td>
-              <td>=</td>
-              <td>&#x1f468;&#x200d;&#x1f373;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1f468; + &#x1f3ff;</td>
-              <td> + ZWJ + &#x1f373;</td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
               <td>=</td>
-              <td>&#x1f468;&#x1f3ff; + ZWJ + &#x1f373;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1f468;&#x1f3ff;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
               <td>=</td>
               <td>&#x1f468;&#x1f3ff;&#x200d;&#x1f373;</td>
             </tr>
           </table>
 
           <div class="u-l2">
-            <div class="u2">
-              <p class="uc">U+1F468 U+200D U+1F373 </p>
-              <p class="si">&#x1F468;&#x200D;&#x1F373;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f373;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128104;&amp;#8205;&amp;#127859;</strong>
-              </p>
-              <p class="no">man cook</p>
-            </div>
-
             <div class="u">
               <p class="uc">U+1F468 U+1F3FF U+200D U+1F373 </p>
               <p class="si">&#x1F468;&#x1F3FF;&#x200D;&#x1F373;</p>
@@ -720,7 +878,8 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-3">apartado Colores de piel (3)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
+        <!--
+        <li id="gr-colores-piel-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-11">apartado Colores de piel (11)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter de un personaje humano</li>
             <li>el modificador Fitzpatrick</li>
@@ -771,7 +930,8 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-4">apartado Colores de piel (4)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
+         -->
+        <li id="gr-colores-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-3">apartado Colores de piel (3)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -779,40 +939,45 @@
             <li>el carácter de un objeto relacionado con la profesión</li>
           </ul>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
-
-          <p>Por ejemplo, para mostrar un cocinero neutro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén (U+1F9D1 U+200D U+1F373):</p>
+          <p>Por ejemplo, para mostrar un cocinero neutro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén:</p>
 
           <table class="ejemplo-secuencia">
-            <tr>
-              <td style="text-align: center;">&#x1F9D1;</td>
-              <td>+ ZWJ + &#x1F373</td>
+            <tr style="font-size: 60%">
+              <td>U+1F9D1</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+1F373</td>
               <td>=</td>
-              <td>&#x1F9D1; + ZWJ + &#x1F373</td>
-              <td>=</td>
-              <td>&#x1F9D1;&#x200D;&#x1F373;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x1F373;</td>
+              <td>&#x1F9D1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FF; + ZWJ + &#x1F373;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1F9D1;&#x1f3ff;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FF;&#x200D;&#x1F373;</td>
+              <td>&#x1f468;&#x1f3ff;&#x200d;&#x1f373;</td>
             </tr>
           </table>
 
           <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F9D1 U+200D U+1F373 </p>
-              <p class="si">&#x1F9D1;&#x200D;&#x1F373;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f373;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#127859;</strong>
-              </p>
-              <p class="no">cook</p>
-            </div>
-
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F373 </p>
               <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F373;</p>
@@ -824,47 +989,60 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-5">apartado Colores de piel (5)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> son similares a las del apartado Colores de piel (2), pero con cinco caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el objeto es un emoji:
+        <li id="gr-colores-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-4">apartado Colores de piel (4)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
+            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto relacionado con la profesión</li>
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una mujer médico de piel oscura se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16 (U+1F469 U+1F3FF U+200D U+2695 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar una mujer médico de piel oscura se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16:</p>
 
           <table class="ejemplo-secuencia">
-            <tr>
-              <td style="text-align: center;">&#x1F469;</td>
-              <td>+ ZWJ + &#x2695; + VS16</td>
+            <tr style="font-size: 60%">
+              <td>U+1F469</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2695</td>
+              <td>+</td>
+              <td>U+FE0F</td>
               <td>=</td>
-              <td>&#x1F469; + ZWJ + &#x2695;&#xFE0F;</td>
-              <td>=</td>
-              <td>&#x1F469;&#x200D;&#x2695;&#xFE0F;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1F469; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x2695; + VS16</td>
+              <td>&#x1F469;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
               <td>=</td>
-              <td>&#x1F469;&#x1F3FF; + ZWJ + &#x2695;&#xFE0F;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1F469;&#x1f3ff;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2695;&#xfe0f;</td>
+              <td></td>
               <td>=</td>
-              <td>&#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</td>
+              <td>&#x1F469;&#x1f3ff;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
-              </p>
-              <p class="no">woman health worker</p>
-            </div>
-
             <div class="u">
               <p class="uc">U+1F469 U+1F3FF U+200D U+2695 U+FE0F</p>
               <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</p>
@@ -876,7 +1054,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-6">apartado Colores de piel (6)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> son similares a las del apartado Colores de piel (3), pero con cinco caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el signo masculino/femenino es un emoji:
+        <li id="gr-colores-piel-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-5">apartado Colores de piel (5)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter de un personaje humano</li>
             <li>el modificador Fitzpatrick</li>
@@ -885,38 +1063,51 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una mujer corriendo de piel oscura se puede escribir la secuencia Corredor + Modificador Fitzpatrick de tipo 6 + ZWJ + Femenino + VS16 (U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar una mujer corriendo de piel oscura se puede escribir la secuencia Corredor + Modificador Fitzpatrick de tipo 6 + ZWJ + Femenino + VS16:</p>
 
           <table class="ejemplo-secuencia">
-            <tr>
-              <td style="text-align: center;">&#x1F3C3;</td>
-              <td>+ ZWJ + &#x2640; + VS16</td>
+            <tr style="font-size: 60%">
+              <td>U+1F3C3</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2640</td>
+              <td>+</td>
+              <td>U+FE0F</td>
               <td>=</td>
-              <td>&#x1F3C3; + ZWJ + &#x2640;&#xFE0F;</td>
-              <td>=</td>
-              <td>&#x1F3C3;&#x200D;&#x2640;&#xFE0F;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1F3C3; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x2640; + VS16</td>
+              <td>&#x1f3c3;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2640;</td>
+              <td>+</td>
+              <td>VS16</td>
               <td>=</td>
-              <td>&#x1F3C3;&#x1F3FF; + ZWJ + &#x2640;&#xFE0F;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1f3c3;&#x1f3ff;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2640;&#xfe0f;</td>
+              <td></td>
               <td>=</td>
-              <td>&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</td>
+              <td>&#x1f3c3;&#x1f3ff;&#x200d;&#x2640;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F3C3 U+200D U+2640 U+FE0F</p>
-              <p class="si">&#x1F3C3;&#x200D;&#x2640;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
-              </p>
-              <p class="no">woman running</p>
-            </div>
-
             <div class="u">
               <p class="uc">U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F</p>
               <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</p>
@@ -928,7 +1119,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-7">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-7">apartado Colores de piel (7)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> son similares a las del apartado Colores de piel (4), pero con cinco caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el objeto es un emoji:
+        <li id="gr-colores-piel-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-6">apartado Colores de piel (6)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> e forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -937,40 +1128,51 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
-
-          <p>Por ejemplo, para mostrar un trabajador sanitario neutro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16 (U+1F9D1 U+1F3FF U+200D U+2695 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar un trabajador sanitario neutro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16:</p>
 
           <table class="ejemplo-secuencia">
-            <tr>
-              <td style="text-align: center;">&#x1F9D1;</td>
-              <td>+ ZWJ + &#x2695 + VS16</td>
+            <tr style="font-size: 60%">
+              <td>U+1F9D1</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2695</td>
+              <td>+</td>
+              <td>U+FE0F</td>
               <td>=</td>
-              <td>&#x1F9D1; + ZWJ + &#x2695&#xFE0F;</td>
-              <td>=</td>
-              <td>&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x2695; + VS16</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FF; + ZWJ + &#x2695;&#xFE0F;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1f9d1;&#x1f3ff;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2695;&#xfe0f;</td>
+              <td></td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</td>
+              <td>&#x1f9d1;&#x1f3ff;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F9D1 U+1F3FF U+200D U+2695 </p>
-              <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x2695;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x2695;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#9877;</strong>
-              </p>
-              <p class="no">health worker</p>
-            </div>
-
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FF U+200D U+2695 U+FE0F</p>
               <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</p>
@@ -982,7 +1184,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-8">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-8">apartado Colores de piel (8)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
+        <li id="gr-colores-piel-7">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-7">apartado Colores de piel (7)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Mano abierta hacia la derecha (U+1FAF1, <span class="grande">&#x1faf1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -991,11 +1193,49 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra ninguna de estas secuencias.</p>
+          <p>Por ejemplo, para mostrar un apretón de manos con una mano clara y otra oscura se puede escribir la secuencia Mano hacia la derecha + Modificador Fitzpatrick de tipo 1-2+ ZWJ + Mano hacia la izquierda + Modificador Fitzpatrick de tipo 6:</p>
 
-          <p>Por ejemplo, para mostrar un apretón de manos con una mano clara y otra oscura se puede escribir la secuencia Mano hacia la derecha + Modificador Fitzpatrick de tipo 1-2+ ZWJ + Mano hacia la izquierda + Modificador Fitzpatrick de tipo 6 (U+1FAF1 U+1F3FB U+200D U+1FAF2 U+1F3FF):</p>
-
-          <p class="ejemplo-secuencia">&#x1FAF1; + &#x1F3FB; + ZWJ + &#x1FAF2; + &#x1F3FF; = &#x1FAF1;&#x1F3FB;&#x200D;&#x1FAF2;&#x1F3FF;</p>
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1FAF1</td>
+              <td>+</td>
+              <td>U+1F3FB</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+1FAF2</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1faf1;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1faf2;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>&#x1faf1;&#x1f3fb;</td>
+              <td></td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x1faf2;&#x1f3ff;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1faf1;&#x1f3fb;&#x200d;&#x1faf2;&#x1f3ff;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -1015,7 +1255,7 @@
     <section id="familias">
       <h3>Familias</h3>
 
-      <p>Las secuencias Unicode correspondientes a familias formadas por uno o dos padres o madres y uno o dos hijos o hijas que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-familias-1">apartado Familias</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se obtienen combinando los caracteres U+1F468 (hombre, <span class="grande">&#x1f468;</span>), U+1F469 (mujer, <span class="grande">&#x1f469;</span>), U+1F466 (niño <span class="grande">&#x1f466;</span>) y U+1F467 (niña <span class="grande">&#x1f467;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Las únicas restricciones es que los padres deben escribirse antes que los hijos, que si los padres son un hombre y una mujer, el hombre debe escribirse antes que la mujer y que si los hijos son un niño y una niña, la niña debe escribirse antes que el niño.</p>
+      <p>Las secuencias Unicode correspondientes a familias formadas por uno o dos padres o madres y uno o dos hijos o hijas que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-familias-1">apartado Familias</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se obtienen combinando los caracteres U+1F468 (hombre, <span class="grande">&#x1f468;</span>), U+1F469 (mujer, <span class="grande">&#x1f469;</span>), U+1F466 (niño <span class="grande">&#x1f466;</span>) y U+1F467 (niña <span class="grande">&#x1f467;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos. Las únicas restricciones es que los padres deben escribirse antes que los hijos, que si los padres son un hombre y una mujer, el hombre debe escribirse antes que la mujer y que si los hijos son un niño y una niña, la niña debe escribirse antes que el niño.</p>
 
       <p>Por ejemplo:</p>
 
@@ -1065,7 +1305,7 @@
 
       <hr class="corta">
 
-      <p>En Unicode 15.1 (septiembre de 2023) se introdujeron tres secuencias Unicode que definen familias genéricas formadas por uno o dos adultos y uno o dos niños (sin género) que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-familias-4">apartado Familias genéricas</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a>. Estas tres secuencias se obtienen combinando tres o cuatro caracteres U+1F9D1 (adulto, <span class="grande">&#x1f9d1;</span>) y U+1F9D2 (niño neutro <span class="grande">&#x1f9d2;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.</p>
+      <p>En Unicode 15.1 (septiembre de 2023) se introdujeron tres secuencias Unicode que definen familias genéricas formadas por uno o dos adultos y uno o dos niños (sin género) que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-familias-4">apartado Familias genéricas</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a>. Estas tres secuencias se obtienen combinando tres o cuatro caracteres U+1F9D1 (adulto, <span class="grande">&#x1f9d1;</span>) y U+1F9D2 (niño neutro <span class="grande">&#x1f9d2;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.</p>
 
       <p>Por ejemplo, para mostrar una familia genérica formada por un adulto y dos niños se debe escribir la secuencia Adulto + ZWJ + Niño + ZWJ + Niño (U+1F9D1 U+200D U+1F9D2 U+200D U+1F9D2):</p>
 
@@ -1090,10 +1330,10 @@
     <section id="parejas-mano">
       <h3>Parejas cogidas de la mano</h3>
 
-      <p>Las secuencias Unicode correspondientes a parejas cogidas de la mano con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
+      <p>Las secuencias Unicode correspondientes a parejas cogidas de la mano con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <li id="gr-parejas-mano-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-1">apartado Parejas masculinas/femeninas cogidas de la mano, con el mismo tono de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante dos caracteres:
+        <li id="gr-parejas-mano-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-1">apartado Parejas masculinas/femeninas cogidas de la mano, con el mismo tono de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante dos caracteres:
           <ul>
             <li>el carácter Hombre y mujer cogidas de la mano (U+1F46B, <span class="grande">&#x1f46b;</span>), Dos hombres cogidos de la mano (U+1F46C, <span class="grande">&#x1f46c;</span>) o Dos mujeres cogidas de la mano (U+1F46D, <span class="grande">&#x1f46d;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1119,7 +1359,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-parejas-mano-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-2">apartado Parejas masculinas/femeninas cogidas de la mano, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <li id="gr-parejas-mano-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-2">apartado Parejas masculinas/femeninas cogidas de la mano, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1148,7 +1388,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-parejas-mano-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-3">apartado Parejas neutras cogidas de la mano, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <li id="gr-parejas-mano-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-mano-piel-3">apartado Parejas neutras cogidas de la mano, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1181,10 +1421,11 @@
     <section id="enamorados">
       <h3>Parejas de rostros de enamorados</h3>
 
-      <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
+      <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <li id="gr-parejas-corazon-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-1">apartado Parejas de rostros masculinos/femeninos de enamorados (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante cinco caracteres:
+        <!--
+        <li id="gr-parejas-corazon-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-11">apartado Parejas de rostros masculinos/femeninos de enamorados (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante cinco caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -1209,8 +1450,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-corazon-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-2">apartado Parejas de rostros masculinos/femeninos de enamorados (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros masculinos/femeninos de enamorados (1), pero con seis caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+      -->
+        <li id="gr-parejas-corazon-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-1">apartado Parejas de rostros masculinos/femeninos de enamorados,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante seis caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -1251,8 +1492,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-corazon-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <!--
+        <li id="gr-parejas-corazon-piel-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-11">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1294,8 +1535,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-corazon-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-2">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel (1), pero con ocho caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+        -->
+        <li id="gr-parejas-corazon-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1342,8 +1583,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-corazon-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-3">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <!--
+        <li id="gr-parejas-corazon-piel-12">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-12">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel (12),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1353,8 +1594,6 @@
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F9D1 U+1F3FF):</p>
 
@@ -1387,8 +1626,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-corazon-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-4">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros neutros de enamorados, con dos tonos de piel (1), pero con ocho caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+        -->
+        <li id="gr-parejas-corazon-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-2">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1399,8 +1638,6 @@
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + VS16 + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F9D1 U+1F3FF):</p>
 
@@ -1443,10 +1680,11 @@
     <section id="enamorados-besandose">
       <h3>Parejas de rostros de enamorados besándose</h3>
 
-      <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados besándose con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
+      <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados besándose con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <li id="gr-parejas-beso-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-1">apartado Parejas de rostros masculinos/femeninos de enamorados besándose (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <!--
+        <li id="gr-parejas-beso-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-11">apartado Parejas de rostros masculinos/femeninos de enamorados besándose (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -1472,9 +1710,9 @@
               <p class="no">kiss: woman, man</p>
             </div>
           </div>
-        </li>
+        </li> -->
 
-        <li id="gr-parejas-beso-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-2">apartado Parejas de rostros masculinos/femeninos de enamorados besándose (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros masculinos/femeninos de enamorados besándose (1), pero con ocho caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+        <li id="gr-parejas-beso">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso">apartado Parejas de rostros masculinos/femeninos de enamorados besándose,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
@@ -1517,8 +1755,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-beso-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante nueve caracteres:
+        <!--
+        <li id="gr-parejas-beso-piel-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-11">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante nueve caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1561,9 +1799,9 @@
               <p class="no">kiss: woman, man, dark skin tone, light skin tone</p>
             </div>
           </div>
-        </li>
+        </li> -->
 
-        <li id="gr-parejas-beso-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-2">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel (1), pero con diez caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+        <li id="gr-parejas-beso-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante diez caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1612,8 +1850,8 @@
             </div>
           </div>
         </li>
-
-        <li id="gr-parejas-beso-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-3">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel (1),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante nueve caracteres:
+        <!--
+        <li id="gr-parejas-beso-piel-12">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-12">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel (12),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante nueve caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1625,8 +1863,6 @@
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados besándose, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + ZWJ + Marca de labios + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F9D1 U+1F3FF):</p>
 
@@ -1659,8 +1895,9 @@
             </div>
           </div>
         </li>
+        -->
 
-        <li id="gr-parejas-beso-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-4">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel (2),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> son similares a las del apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel (1), pero con diez caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el carácter Corazón es un emoji:
+        <li id="gr-parejas-beso-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-2">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante diez caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1673,8 +1910,6 @@
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados besándose, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F9D1 U+1F3FF):</p>
 
@@ -1717,10 +1952,10 @@
     <section id="parejas-actividades">
       <h3>Parejas realizando actividades</h3>
 
-      <p>Las secuencias Unicode correspondientes a parejas realizando actividades con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
+      <p>Las secuencias Unicode correspondientes a parejas realizando actividades con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <li id="gr-parejas-actividades-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-actividades-piel-1">apartado Parejas masculinas/femeninas realizando actividades, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <li id="gr-parejas-actividades-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-actividades-piel-1">apartado Parejas masculinas/femeninas realizando actividades, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
@@ -1732,8 +1967,6 @@
           </ul>
 
           <p>Los dos personajes deben ser hombres o mujeres, no pueden ser parejas mixtas.</p>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra correctamente estas secuencias.</p>
 
           <p>Por ejemplo, para mostrar una pareja peleando formada por dos hombres, uno de piel clara y otro de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2 (U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB):</p>
 
@@ -1751,7 +1984,7 @@
             </div>
           </div>
         </li>
-        <li id="gr-parejas-actividades-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-actividades-piel-2">apartado Parejas neutras realizando actividades, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas</a> se forman mediante siete caracteres:
+        <li id="gr-parejas-actividades-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-actividades-piel-2">apartado Parejas neutras realizando actividades, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1761,8 +1994,6 @@
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
-
-                    <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias con personajes neutros.</p>
 
           <p>Por ejemplo, para mostrar una pareja de personajes neutros, uno de piel clara y otro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Adulto + Modificador Fitzpatrick de tipo 1-2 (U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FB):</p>
 
@@ -1792,8 +2023,6 @@
         <li id="gr-banderas-paises">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-paises">apartado Banderas nacionales</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan las banderas de los países del mundo y se obtienen escribiendo el código de dos letras <a href="https://es.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> correspondiente al país. Las letras que se deben utilizar son los caracteres Unicode denominados "letras para símbolos de indicadores regionales", que se extienden desde el carácter U+1F1E6 (letra A) hasta el U+1F1FF (letra Z).</p>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias de banderas.</p>
-
           <p>Por ejemplo, para mostrar la bandera de España se puede escribir la secuencia E + S (U+1F1EA U+1F1F8):</p>
 
           <p class="ejemplo-secuencia">&#x1F1EA; + &#x1F1F8; = &#x1F1EA;&#x1F1F8;</p>
@@ -1809,9 +2038,7 @@
         </li>
 
         <li id="gr-banderas-regiones">
-          <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-regiones">apartado Banderas (subdivisiones regionales)</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan banderas regionales. Unicode define secuencias para muchas banderas regionales, pero únicamente se recomienda el uso como emojis de tres de ellas: las banderas de los tres países que forman Gran Bretaña (Inglaterra, Escocia y Gales). Estas secuencias se forman mediante el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>), el código <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> de cinco letras correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en estos casos) y finalmente el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado).</p>
-
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra las secuencias de las banderas regionales.</p>
+          <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-regiones">apartado Banderas (subdivisiones regionales)</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan banderas regionales. Unicode define secuencias para muchas banderas regionales, pero únicamente se recomienda el uso como emojis de tres de ellas: las banderas de las tres naciones que forman Gran Bretaña (Inglaterra, Escocia y Gales). Estas secuencias se forman mediante el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>), el código <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> de cinco letras correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en estos casos) y finalmente el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado).</p>
 
           <p>Por ejemplo, para mostrar la bandera regional de Inglaterra (GB-ENG) se puede escribir la secuencia Bandera negra + G + B + E + N + G + DEL (U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F):</p>
 
@@ -1849,42 +2076,26 @@
     <section id="sentido">
       <h3>Sentido</h3>
 
-      <p>En general, los emojis que representan figuras representadas de lado (sean personas, animales o cosas) suelen estar dirigidas hacia la izquierda. En Unicode 15.1 (septiembre de 2023) se ha introducido un mecanismo para definir secuencias que cambian la dirección de la figura para que esté dirigida hacia la derecha y se han definido algunas secuencias que utilizan este mecanismo.</p>
+      <p>En general, los emojis que representan figuras representadas de lado (sean personas, animales o cosas) suelen estar dirigidas hacia la izquierda. En Unicode 15.1 (septiembre de 2023) se introdujo un mecanismo para definir secuencias que cambian la dirección de la figura para que esté dirigida hacia la derecha y se definieron algunas secuencias que utilizan este mecanismo.</p>
 
-      <p>El mecanismo consiste en incluir al final de la secuencia de la figura el carácter Flecha derecha en sus variantes texto (U+27A1, <span class="grande">&#x27a1;</span>) o emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>).</p>
+      <p>El mecanismo consiste en incluir al final de la secuencia de la figura el carácter Flecha derecha en su variante emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>).</p>
 
       <ul>
-        <li id="gr-sentido-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-sentido.html#gr-sentido-1">apartado Sentido (1)</a> de la <a href="html-unicode-secuencias-sentido.html">lección Secuencias: Sentido</a> se forman combinando los emojis Persona, Hombre o Mujer (al que se puede añadir un modificador Fitzpatrick), el emoji de un objeto y el carácter texto/emoji Flecha derecha, unidos con caracteres ZWJ (U+200D, Zero-Width Joiner) entre ellos:
+        <li id="gr-sentido-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-sentido.html#gr-sentido-1">apartado Sentido (1)</a> de la <a href="html-unicode-secuencias-sentido.html">lección Secuencias: Sentido</a> se forman combinando los emojis Persona, Hombre o Mujer (al que se puede añadir un modificador Fitzpatrick), el emoji de un objeto y el carácter emoji Flecha derecha, unidos con caracteres ZWJ (U+200D, Zero-Width Joiner) entre ellos:
           <ul>
             <li>el carácter Persona (U+1F9D1, <span class="grande">&#x1f9d1;</span>), Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>opcionalmente, un modificador Fitzpatrick</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto (en Unicode 15.1 únicamente se permiten los objetos Bastón (U+1F9AF, <span class="grande">&#x1f9af;</span>), Silla de ruedas motorizada (U+1F9BC, <span class="grande">&#x1f9bc;</span>) y Silla de ruedas manual (U+1F9BD, <span class="grande">&#x1f9bd;</span>)</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Flecha derecha en sus variantes texto (U+27A1, <span class="grande">&#x27a1;</span>) o emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>)</li>
+            <li>el carácter Flecha derecha en su variante emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un hombre de piel blanca con bastón caminando hacia la derecha se puede escribir las secuencias Hombre + Fitzpatrick + ZWJ + Bastón + ZWJ + Flecha derecha texto o emoji (U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 U+FE0F):</p>
-
-          <p class="ejemplo-secuencia">&#x1F468; + &#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1; = &#x1F468;&#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF; + ZWJ + &#x27A1; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;</p>
+          <p>Por ejemplo, para mostrar un hombre de piel blanca con bastón caminando hacia la derecha se puede escribir la secuencia Hombre + Fitzpatrick + ZWJ + Bastón + ZWJ + Flecha derecha emoji (U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 U+FE0F):</p>
 
           <p class="ejemplo-secuencia">&#x1F468; + &#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;&#xFE0F;</p>
 
           <div class="u-l2">
-            <div class="u2">
-              <p class="uc">U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 </p>
-              <p class="si">&#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f9af;&amp;#x200d;&amp;#x27a1;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128104;&amp;#127995;&amp;#8205;&amp;#129455;&amp;#8205;&amp;#10145;</strong>
-              </p>
-              <p class="no">man with white cane facing right: light skin tone</p>
-              <p class="co">
-                No disponible en Windows 10<br>
-                No disponible en Windows 11
-              </p>
-            </div>
-
             <div class="u2">
               <p class="uc">U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 U+FE0F </p>
               <p class="si">&#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;&#xFE0F;</p>
@@ -1894,7 +2105,6 @@
               </p>
               <p class="no">man with white cane facing right: light skin tone</p>
               <p class="co">
-                No disponible en Windows 10<br>
                 No disponible en Windows 11
               </p>
             </div>
@@ -2022,8 +2232,6 @@
         <li id="gr-keycap-1">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-otras.html#gr-keycap-1">apartado Caracteres enmarcados (teclas) en modo texto</a> de la <a href="html-unicode-secuencias-otras.html">lección Secuencias: Otras</a> representan en modo texto (en blanco y negro) las teclas del teclado numérico de un ordenador.</p>
 
-          <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 no muestra correctamente estas secuencias.</p>
-
           <p>Por ejemplo, para mostrar el número 5 en una tecla se puede escribir la secuencia 5 + TECLA (U+35 U+20E3 ):</p>
 
           <p class="ejemplo-secuencia">&#x35; + &nbsp; &#x20E3; &nbsp; = &#x35;&#x20E3;</p>
@@ -2085,7 +2293,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 4 de noviembre de 2025</p>
+    <p class="ultmod">Última modificación de esta página: 19 de octubre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
