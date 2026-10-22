@@ -186,77 +186,124 @@
     <section id="selectores-presentacion">
       <h3>Selectores de presentación VS15 y VS16 (texto/emoji)</h3>
 
-      <p>Algunos caracteres Unicode tienen varias representaciones gráficas posibles. Para indicar la representación deseada se puede escribir a continuación del carácter Unicode uno de los dieciséis <a href="https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)">selectores de presentación</a>, sin espacios en blanco intermedios. Los selectores de presentación son los caracteres Unicode desde U+FE00 a U+FE0F, aunque existe otro grupo de 256 selectores de presentación adicionales.</p>
+      <p>Algunos caracteres Unicode tienen varias representaciones gráficas posibles. Para indicar la representación deseada se puede escribir a continuación del carácter Unicode uno de los dieciséis <a href="https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)">selectores de presentación</a>, sin espacios en blanco intermedios. Los selectores de presentación son los caracteres Unicode desde U+FE00 a U+FE0F, llamados VS1 a VS16, aunque existe otro grupo de 240 selectores de presentación adicionales, desde U+E0100 a U+E01EF, llamados VS17 a VS256.</p>
 
-      <p>Una de las posibles variaciones en las representaciones gráficas es la variación texto/emoji. Algunos caracteres se pueden representar como texto (suelen ser unos dibujos esquemáticos en blanco y negro) o como emojis (suelen ser dibujos más elaborados y en color). Puede consultar la <a href="https://unicode.org/emoji/charts/emoji-variants.html">lista completa de caracteres con representaciones texto/emoji</a>.</p>
+      <p>La más conocida de las posibles variaciones en las representaciones gráficas es la variación texto/emoji. Cuando se introdujeron los emojis en Unicode en 2010, algunos símbolos ya existían en Unicode pero en versión blanco y negro. En vez de asignar un nuevo carácter al símbolo en su versión en color, se decidió utilizar el selector de variación VS16 (U+FE0F) para indicar que se desea la representación en color. Y para algunos emojis (no todos) cuyos símbolos no existían en Unicode también se introdujo la versión en blanco y negro.</p>
 
       <p>La representación como texto se indica con el selector de presentación VS15 (carácter U+FE0E) y la representación como emoji se indica con el selector de presentación VS16 (carácter U+FE0F). Los caracteres que admiten ambas representaciones tienen una representación predeterminada, que puede ser una u otra.</p>
 
       <hr class="corta">
 
-      <p>Por ejemplo, los caracteres Unicode U+231A (reloj) y U26F9 (persona con balón) admiten las dos representaciones, pero tienen representaciones predeterminadas distintas:</p>
+      <p>Por ejemplo, los caracteres Unicode U+231A (reloj) y U26F9 (persona con balón) admiten las dos representaciones, texto y emoji, pero tienen representaciones predeterminadas distintas:</p>
 
-      <p class="ejemplo-secuencia">&#x231a; + VS15 = &#x231a;&#xfe0e;</p>
+      <ul>
+        <li>El reloj tiene como presentación predeterminada el modo emoji, así que para representarlo en modo texto se le debe añadir el selector de presentación VS15 (U+FE0E):
 
-      <div class="u-l2">
-        <div class="u">
-          <p class="uc">U+231A </p>
-          <p class="si">
-            &#x231A;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x231a;</strong><br>Dec:&nbsp;<strong>&amp;#8986;</strong></p>
-          <p class="no">watch</p>
-        </div>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+231A</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0E</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x231a;</td>
+              <td>+</td>
+              <td>VS15</td>
+              <td>=</td>
+              <td>&#x231a;&#xfe0e;</td>
+            </tr>
+          </table>
 
-        <div class="u">
-          <p class="uc">U+231A U+FE0E</p>
-          <p class="si">
-            &#x231A;&#xFE0E;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x231a;&amp;#xfe0e;</strong><br>Dec:&nbsp;<strong>&amp;#8986;&amp;#65038;</strong></p>
-          <p class="no">watch (TEXTO)</p>
-        </div>
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+231A </p>
+              <p class="si">
+                &#x231A;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x231a;</strong><br>Dec:&nbsp;<strong>&amp;#8986;</strong></p>
+              <p class="no">watch</p>
+            </div>
 
-        <div class="u">
-          <p class="uc">U+231A U+FE0F</p>
-          <p class="si">
-            &#x231A;&#xFE0F;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x231a;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#8986;&amp;#65039;</strong></p>
-          <p class="no">watch (EMOJI)</p>
-        </div>
-      </div>
+            <div class="u">
+              <p class="uc">U+231A U+FE0E</p>
+              <p class="si">
+                &#x231A;&#xfe0e;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x231a;&amp;#xfe0e;</strong><br>Dec:&nbsp;<strong>&amp;#8986;&amp;#65038;</strong></p>
+              <p class="no">watch (TEXTO)</p>
+            </div>
 
-      <p class="ejemplo-secuencia">&#x26f9; + VS16 = &#x26f9;&#xfe0f;</p>
+            <div class="u">
+              <p class="uc">U+231A U+FE0F</p>
+              <p class="si">
+                &#x231A;&#xfe0f;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x231a;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#8986;&amp;#65039;</strong></p>
+              <p class="no">watch (EMOJI)</p>
+            </div>
+          </div>
 
-      <div class="u-l2">
-        <div class="u">
-          <p class="uc">U+26F9 </p>
-          <p class="si">
-            &#x26F9;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;</strong><br>Dec:&nbsp;<strong>&amp;#9977;</strong></p>
-          <p class="no">person with ball</p>
-        </div>
+          <p><strong>Nota:</strong>: Para mostrar el emoji se puede añadir el selector de presentación VS16, pero no es necesario.</p>
+        </li>
+        <li>La persona con balón tiene como presentación predeterminada el modo texto, así que para presentarlo en modo eomji se le debe añadir el selector de presentación VS16 (U+FE0F);
 
-        <div class="u">
-          <p class="uc">U+26F9 U+FE0E</p>
-          <p class="si">
-            &#x26F9;&#xFE0E;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;&amp;#xfe0e;</strong><br>Dec:&nbsp;<strong>&amp;#9977;&amp;#65038;</strong></p>
-          <p class="no">person with ball (TEXTO)</p>
-        </div>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+26F9</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x26f9;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td>&#x26f9;&#xfe0f;</td>
+            </tr>
+          </table>
 
-        <div class="u">
-          <p class="uc">U+26F9 U+FE0F</p>
-          <p class="si">
-            &#x26F9;&#xFE0F;
-          </p>
-          <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#9977;&amp;#65039;</strong></p>
-          <p class="no">person with ball (EMOJI)</p>
-        </div>
-      </div>
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+26F9 </p>
+              <p class="si">
+                &#x26F9;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;</strong><br>Dec:&nbsp;<strong>&amp;#9977;</strong></p>
+              <p class="no">person with ball</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+26F9 U+FE0E</p>
+              <p class="si">
+                &#x26F9;&#xfe0e;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;&amp;#xfe0e;</strong><br>Dec:&nbsp;<strong>&amp;#9977;&amp;#65038;</strong></p>
+              <p class="no">person with ball (TEXTO)</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+26F9 U+FE0F</p>
+              <p class="si">
+                &#x26F9;&#xfe0f;
+              </p>
+              <p class="en">Hex:&nbsp;<strong>&amp;#x26f9;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#9977;&amp;#65039;</strong></p>
+              <p class="no">person with ball (EMOJI)</p>
+            </div>
+          </div>
+
+          <p><strong>Nota:</strong>: Para mostrar el modo texto se puede añadir el selector de presentación VS15, pero no es necesario.</p>
+        </li>
+      </ul>
+
+      <hr class="corta">
+
+      <p>Los selectores de variación texto/emoji no se pueden aplicar a cualquier carácter. Algunos caracteres sólo existen como emojis y otros sólo existen como dibujo en blanco y negro. Puede consultar la lista de caracteres con representaciones tecto/emoji como <a href="https://unicode.org/emoji/charts/emoji-variants.html">lista gráfica</a> o como <a href="https://www.unicode.org/Public/18.0.0/ucd/emoji/emoji-variation-sequences.txt">lista de texto</a>.</p>
+
+      <p>La implementación de los selectores texto/emoji no es perfecta. En algunos casos los navegadores pueden no presentar correctamente la forma predeterminada (mostrar la forma emoji en vez de la blanca y negra, o al revés). O pueden aceptar los selectores texto/emoji en caracteres que no deberían aceptarlos, como se muestra en la lección <a href="../otros/diferencias-listado.html#unicode-texto-emoji">diferencias entre navegadores</a>.</p>
     </section>
 
     <section id="fitzpatrick">
@@ -264,10 +311,12 @@
 
       <p>Los modificadores <a href="https://es.wikipedia.org/wiki/Fototipo">Fitzpatrick</a> son cinco caracteres Unicode consecutivos, desde U+1F3FB hasta U+1F3FF, que representan cinco tonalidades de piel, de la más clara a la más oscura.</p>
 
+      <p><strong>Nota</strong>: Chrome muestra los modificadores Fitzpatrick en blanco y negro, no como emojis en color, o incluso no los muestra si se escriben junto con más texto.</p>
+
       <div class="u-l">
         <div class="u2">
           <p class="uc">U+1F3FB</p>
-          <p class="si">&#x1F3FB;</p>
+          <p class="si">&#x1f3fb;</p>
           <p class="en">Hex:&nbsp;<strong>&amp;#x1f3fb;</strong><br>Dec:&nbsp;<strong>&amp;#127995;</strong></p>
           <p class="no">emoji modifier Fitzpatrick type-1-2</p>
         </div>
@@ -295,19 +344,34 @@
 
         <div class="u2">
           <p class="uc">U+1F3FF</p>
-          <p class="si">&#x1F3FF;</p>
+          <p class="si">&#x1f3ff;</p>
           <p class="en">Hex:&nbsp;<strong>&amp;#x1f3ff;</strong><br>Dec:&nbsp;<strong>&amp;#127999;</strong></p>
           <p class="no">emoji modifier Fitzpatrick type-6</p>
         </div>
       </div>
 
-      <p>Cuando estos caracteres se escriben a continuación de algunos emojis que representan individuos, los emojis se muestran con el color de piel correspondiente.</p>
+      <p>Cuando estos caracteres se escriben a continuación de algunos emojis que representan individuos o partes del cuerpo, los emojis se muestran con el color de piel correspondiente.</p>
 
       <hr class="corta">
 
       <p>Por ejemplo, para mostrar el emoji de una niña con la piel oscura se pueden escribir el carácter correspondiente a una niña (U+1F467) y el modificador Fitzpatrick de tipo 6 (U+1F3FF):</p>
 
-      <p class="ejemplo-secuencia">&#x1f467; + <span class="twe">&#x1f3ff;</span> = &#x1f467;&#x1f3ff;</p>
+      <table class="ejemplo-secuencia">
+        <tr>
+          <td style="font-size: 60%">U+1F467</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F3FF</td>
+          <td>=</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&#x1f467;</td>
+          <td>+</td>
+          <td>&#x1f3ff;</td>
+          <td>=</td>
+          <td>&#x1f467;&#x1f3ff;</td>
+        </tr>
+      </table>
 
       <div class="u-l2">
         <div class="u">
@@ -319,7 +383,7 @@
 
         <div class="u">
           <p class="uc">U+1F467 U+1F3FF</p>
-          <p class="si">&#x1F467;&#x1F3FF;</p>
+          <p class="si">&#x1F467;&#x1f3ff;</p>
           <p class="en">Hex:&nbsp;<strong>&amp;#x1f467;&amp;#x1f3ff;</strong><br>Dec:&nbsp;<strong>&amp;#128103;&amp;#127999;</strong></p>
           <p class="no">girl: dark skin tone</p>
         </div>
@@ -361,12 +425,31 @@
 
       <p>Por ejemplo, para mostrar el emoji de un perro guía se puede escribir el carácter correspondiente a un perro (U+1F415) y el carácter correspondiente a un chaleco salvavidas (U+1F9BA), intercalando el carácter ZWJ (U+0200D), sin espacios entre ellos:</p>
 
-      <p class="ejemplo-secuencia">&#x1F415; + ZWJ + &#x1F9BA; = &#x1F415;&#x200D;&#x1F9BA;</p>
+      <table class="ejemplo-secuencia">
+        <tr>
+          <td style="font-size: 60%">U+1F415</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F9BA</td>
+          <td>=</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&#x1f415;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f9ba;</td>
+          <td>=</td>
+          <td>&#x1f415;&#x200d;&#x1f9ba;</td>
+        </tr>
+      </table>
 
       <div class="u-l2">
         <div class="u2">
           <p class="uc">U+1F415 U+200D U+1F9BA </p>
-          <p class="si">&#x1F415;&#x200D;&#x1F9BA;</p>
+          <p class="si">&#x1F415;&#x200d;&#x1F9BA;</p>
           <p class="en">
             Hex:&nbsp;<strong>&amp;#x1f415;&amp;#x200d;&amp;#x1f9ba;</strong><br>
             Dec:&nbsp;<strong>&amp;#128021;&amp;#8205;&amp;#129466;</strong>
@@ -386,7 +469,7 @@
         <li><i>minimally-qualified</i>, es decir, que incluyen parte de estos caracteres</li>
       </ul>
 
-      <p>En muchos casos los sistemas operativos y/o navegadores son capaces de mostrar los emojis correctos aunque se omitan parte de los caracteres, pero no lo hacen siempre, por lo que en estos apuntes se ha elegido hacer referencia siempre a las secuencias completamente cualificadas.</p>
+      <p>En muchos casos los sistemas operativos y/o navegadores son capaces de mostrar los emojis correctos aunque se omitan parte de los caracteres, pero no lo hacen siempre, ni siquiera de forma sistemática, por lo que en estos apuntes se ha elegido hacer referencia siempre a las secuencias completamente cualificadas.</p>
     </section>
   </section>
 
@@ -403,103 +486,99 @@
       <ul>
         <li id="gr-genero-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-1">apartado Géneros (1)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
           <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>),Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
+            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>), Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto relacionado con la profesión</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un personaje neutro, un hombre o una mujer cocineros se puede escribir la secuencia Adulto/Hombre/Mujer + ZWJ + Sartén (U+1F9D1/U+1F468/U+1F469 U+200D U+1F373):</p>
+          <p>Por ejemplo, para mostrar un personaje neutro, un hombre o una mujer cocineros se puede escribir la secuencia Adulto/Hombre/Mujer + ZWJ + Sartén:</p>
 
-          <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x1F373; = &#x1F9D1;&#x200D;&#x1F373;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F373</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x200d;&#x1f373;</td>
+            </tr>
+          </table>
 
-          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x1F373; = &#x1F468;&#x200D;&#x1F373;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F373</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td>&#x1f468;&#x200d;&#x1f373;</td>
+            </tr>
+          </table>
 
-          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x1F373; = &#x1F469;&#x200D;&#x1F373;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F373</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x200d;&#x1f373;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u2">
               <p class="uc">U+1F9D1 U+200D U+1F373 </p>
-              <p class="si">&#x1F9D1;&#x200D;&#x1F373;</p>
+              <p class="si">&#x1f9d1;&#x200d;&#x1F373;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f373;</strong><br>Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#127859;</strong></p>
               <p class="no">cook</p>
             </div>
 
             <div class="u2">
               <p class="uc">U+1F468 U+200D U+1F373 </p>
-              <p class="si">&#x1F468;&#x200D;&#x1F373;</p>
+              <p class="si">&#x1f468;&#x200d;&#x1F373;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f373;</strong><br>Dec:&nbsp;<strong>&amp;#128104;&amp;#8205;&amp;#127859;</strong></p>
               <p class="no">man cook</p>
             </div>
 
             <div class="u2">
               <p class="uc">U+1F469 U+200D U+1F373 </p>
-              <p class="si">&#x1F469;&#x200D;&#x1F373;</p>
+              <p class="si">&#x1f469;&#x200d;&#x1F373;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f373;</strong><br>Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#127859;</strong></p>
               <p class="no">woman cook</p>
             </div>
           </div>
         </li>
-        <!-- Estas secuencias no están completamente cualificadas -->
-        <!--
-        <li id="gr-genero-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-2">apartado Géneros (2)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
-          <ul>
-            <li>el carácter de un personaje humano</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Femenino (U+2640, <span class="grande">&#x2640;</span>) o Masculino (U+2642, <span class="grande">&#x2642;</span>)</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar un hombre o una mujer corriendo se puede escribir la secuencia Corredor + ZWJ + Masculino/Femenino (U+1F3C3 U+200D U+2640/U+2642):</p>
-
-          <p class="ejemplo-secuencia">&#x1F3C3; + ZWJ + &#x2640; = &#x1F3C3;&#x200D;&#x2640;</p>
-
-          <p class="ejemplo-secuencia">&#x1F3C3; + ZWJ + &#x2642; = &#x1F3C3;&#x200D;&#x2642;</p>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F3C3 U+200D U+2640 </p>
-              <p class="si">&#x1F3C3;&#x200D;&#x2640;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x200d;&amp;#x2640;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#8205;&amp;#9792;</strong>
-              </p>
-              <p class="no">woman running</p>
-            </div>
-
-            <div class="u">
-              <p class="uc">U+1F3C3 U+200D U+2642 </p>
-              <p class="si">&#x1F3C3;&#x200D;&#x2642;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x200d;&amp;#x2642;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#8205;&amp;#9794;</strong>
-              </p>
-              <p class="no">man running</p>
-            </div>
-          </div>
-        </li>
-        <li id="gr-genero-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-2">apartado Géneros (2)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante tres caracteres, sin espacios entre ellos:
-          <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter de un objeto relacionado con la profesión</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar un personaje neutro cocinero se puede escribir la secuencia Adulto + ZWJ + Sartén (U+1F9D1 U+200D U+1F373):</p>
-
-          <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x1F373; = &#x1F9D1;&#x200D;&#x1F373;</p>
-
-          <div class="u-l2">
-            <div class="u2">
-              <p class="uc">U+1F9D1 U+200D U+1F373 </p>
-              <p class="si">&#x1F9D1;&#x200D;&#x1F373;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f373;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#127859;</strong>
-              </p>
-              <p class="no">person cook</p>
-            </div>
-          </div>
-        </li>
-         -->
         <li id="gr-genero-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-2">apartado Géneros (2)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>), Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
@@ -508,30 +587,61 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un personaje neutro, un hombre o una mujer médicos se puede escribir la secuencia Adulto/Hombre/Mujer + ZWJ + Vara de Esculapio + VS16 (U+1F9D1/U+1F468/U+1F469 U+200D U+2695 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar un personaje neutro, un hombre o una mujer médicos se puede escribir la secuencia Adulto/Hombre/Mujer + ZWJ + Vara de Esculapio + VS16:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F9D1; + ZWJ + </td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2695</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2695;</td>
               <td>+</td>
               <td>VS16</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</td>
+              <td></td>
             </tr>
             <tr>
-              <td>&#x1F9D1; + ZWJ + </td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
-              <td>&#x2695;&#xFE0F;</td>
+              <td>&#x2695;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</td>
+              <td>&#x1f9d1;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F468; + ZWJ + </td>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2695</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2695;</td>
               <td>+</td>
               <td>VS16</td>
@@ -539,18 +649,35 @@
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F468; + ZWJ + </td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
-              <td>&#x2695;&#xFE0F;</td>
+              <td>&#x2695;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1F468;&#x200D;&#x2695;&#xFE0F;</td>
+              <td>&#x1f468;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F469; + ZWJ + </td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2695</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2695;</td>
               <td>+</td>
               <td>VS16</td>
@@ -558,33 +685,36 @@
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F469; + ZWJ + </td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
-              <td>&#x2695;&#xFE0F;</td>
+              <td>&#x2695;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1F469;&#x200D;&#x2695;&#xFE0F;</td>
+              <td>&#x1f469;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</p>
+              <p class="si">&#x1f9d1;&#x200d;&#x2695;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
               <p class="no">health worker</p>
             </div>
 
             <div class="u">
               <p class="uc">U+1F468 U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F468;&#x200D;&#x2695;&#xFE0F;</p>
+              <p class="si">&#x1f468;&#x200d;&#x2695;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#128104;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
               <p class="no">man health worker</p>
             </div>
 
             <div class="u">
               <p class="uc">U+1F469 U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F469;&#x200D;&#x2695;&#xFE0F;</p>
+              <p class="si">&#x1f469;&#x200d;&#x2695;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#9877;&amp;#65039;</strong></p>
               <p class="no">woman health worker</p>
             </div>
@@ -598,11 +728,25 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un hombre o una mujer caminando se puede escribir la secuencia Paseante + ZWJ + Masculino/Femenino + VS16 (U+1F6B6 U+200D U+2640/U+2642 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar un hombre o una mujer caminando se puede escribir la secuencia Paseante + ZWJ + Masculino/Femenino + VS16:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F6B6; + ZWJ + </td>
+              <td style="font-size: 60%">U+1F6B6</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2640</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f6b6;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2640;</td>
               <td>+</td>
               <td>VS16</td>
@@ -610,18 +754,35 @@
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F6B6; + ZWJ + </td>
+              <td>&#x1f6b6;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
-              <td>&#x2640;&#xFE0F;</td>
+              <td>&#x2640;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</td>
+              <td>&#x1f6b6;&#x200d;&#x2640;&#xfe0f;</td>
             </tr>
           </table>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F6B6; + ZWJ + </td>
+              <td style="font-size: 60%">U+1F6B6</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2642</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f6b6;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2642;</td>
               <td>+</td>
               <td>VS16</td>
@@ -629,12 +790,15 @@
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F6B6; + ZWJ + </td>
+              <td>&#x1f6b6;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
-              <td>&#x2642;&#xFE0F;</td>
+              <td>&#x2642;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</td>
+              <td>&#x1f6b6;&#x200d;&#x2642;&#xfe0f;</td>
             </tr>
           </table>
 
@@ -642,8 +806,8 @@
             <div class="u">
               <p class="uc">U+1F6B6 U+200D U+2640 U+FE0F</p>
               <p class="si">
-                <span class="ss">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</span>
-                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2640-fe0f.svg">&#x1F6B6;&#x200D;&#x2640;&#xFE0F;</a></span>
+                <span class="ss">&#x1F6B6;&#x200d;&#x2640;&#xfe0f;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2640-fe0f.svg">&#x1F6B6;&#x200d;&#x2640;&#xfe0f;</a></span>
               </p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#128694;&amp;#8205;&amp;#9792;&amp;#65039;</strong></p>
               <p class="no">woman walking</p>
@@ -652,8 +816,8 @@
             <div class="u">
               <p class="uc">U+1F6B6 U+200D U+2642 U+FE0F</p>
               <p class="si">
-                <span class="ss">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</span>
-                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2642-fe0f.svg">&#x1F6B6;&#x200D;&#x2642;&#xFE0F;</a></span>
+                <span class="ss">&#x1F6B6;&#x200d;&#x2642;&#xfe0f;</span>
+                <span class="te"><a href="https://github.com/twitter/twemoji/blob/master/assets/svg/1f6b6-200d-2642-fe0f.svg">&#x1F6B6;&#x200d;&#x2642;&#xfe0f;</a></span>
               </p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f6b6;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#128694;&amp;#8205;&amp;#9794;&amp;#65039;</strong></p>
               <p class="no">man walking</p>
@@ -661,81 +825,6 @@
           </div>
 
         </li>
-        <!-- Estas secuencias no están completamente cualificadas -->
-        <!--
-        <li id="gr-genero-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-6">apartado Géneros (6)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> son similares a las del apartado Géneros (2), pero con cuatro caracteres. El carácter adicional es el selector de presentación 16 U+FE0F para indicar que el personaje humano es un emoji:
-
-          <ul>
-            <li>el carácter de un personaje humano</li>
-            <li>el selector de presentación VS16 (U+FE0F)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Femenino (U+2640, <span class="grande">&#x2640;</span>) o Masculino (U+2642, <span class="grande">&#x2642;</span>)</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar un hombre o una mujer levantando unas pesas se puede escribir la secuencia Individuo con pesas + VS16 + ZWJ + Masculino/Femenino (U+26F9 U+FE0F U+200D U+2640/U+2642):</p>
-
-          <p class="ejemplo-secuencia">&#x1f3cb; + VS16 + ZWJ + &#x2640; = &#x1f3cb;&#xfe0f; + ZWJ + &#x2640; = &#x1f3cb;&#xFE0F;&#x200D;&#x2640;</p>
-
-          <p class="ejemplo-secuencia">&#x1f3cb; + VS16 + ZWJ + &#x2642 = &#x1f3cb;&#xfe0f; + ZWJ + &#x2642; = &#x1f3cb;&#xFE0F;&#x200D;&#x2642;</p>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F3CB U+FE0F U+200D U+2640</p>
-              <p class="si">&#x1F3CB;&#xFE0F;&#x200D;&#x2640;</p>
-              <p class="en">Hex:&nbsp;<strong>&amp;#x1f3cb;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;</strong><br>Dec:&nbsp;<strong>&amp;#127947;&amp;#65039;&amp;#8205;&amp;#9792;</strong></p>
-              <p class="no">woman lifting weights</p>
-            </div>
-
-            <div class="u">
-              <p class="uc">U+1F3CB U+FE0F U+200D U+2642</p>
-              <p class="si">&#x1F3CB;&#xFE0F;&#x200D;&#x2642;</p>
-              <p class="en">Hex:&nbsp;<strong>&amp;#x1f3cb;&amp;#xfe0f;&amp;#x200d;&amp;#x2642;</strong><br>Dec:&nbsp;<strong>&amp;#127947;&amp;#65039;&amp;#8205;&amp;#9794;</strong></p>
-              <p class="no">man lifting weights</p>
-            </div>
-          </div>
-        </li>
-        <li id="gr-genero-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-5">apartado Géneros (5)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
-          <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter de un objeto relacionado con la profesión</li>
-            <li>el selector de presentación VS16 (U+FE0F)</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar un personaje neutro médico se puede escribir la secuencia Adulto + ZWJ + Vara de Esculapio + VS16 (U+1F9D1 U+200D U+2695 U+FE0F):</p>
-
-          <table class="ejemplo-secuencia">
-            <tr>
-              <td>&#x1F9D1; + ZWJ + </td>
-              <td>&#x2695;</td>
-              <td>+</td>
-              <td>VS16</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>&#x1F9D1; + ZWJ + </td>
-              <td></td>
-              <td>&#x2695;&#xFE0F;</td>
-              <td></td>
-              <td>=</td>
-              <td>&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F9D1 U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
-              </p>
-              <p class="no">person health worker</p>
-            </div>
-          </div>
-        </li>
-         -->
         <li id="gr-genero-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-generos.html#gr-genero-4">apartado Géneros (4)</a> de la <a href="html-unicode-secuencias-generos.html">lección Secuencias: Géneros</a> se forman mediante cinco caracteres, sin espacios entre ellos:
 
           <ul>
@@ -746,14 +835,29 @@
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un hombre o una mujer levantando unas pesas se puede escribir la secuencia Levantador de pesas + VS16 + ZWJ + Masculino/Femenino (U+26F9 U+FE0F U+200D U+2640/U+2642):</p>
+          <p>Por ejemplo, para mostrar un hombre o una mujer levantando unas pesas se puede escribir la secuencia Levantador de pesas + VS16 + ZWJ + Masculino/Femenino + VS16:</p>
 
           <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F3CB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2640</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
             <tr>
               <td>&#x1f3cb;</td>
               <td>+</td>
               <td>VS16</td>
-              <td>+ ZWJ + </td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2640;</td>
               <td>+</td>
               <td>VS16</td>
@@ -764,21 +868,38 @@
               <td></td>
               <td>&#x1f3cb;&#xfe0f;</td>
               <td></td>
-              <td>+ ZWJ + </td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
               <td>&#x2640;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1f3cb;&#xFE0F;&#x200D;&#x2640;&#xfe0f;</td>
+              <td>&#x1f3cb;&#xfe0f;&#x200d;&#x2640;&#xfe0f;</td>
             </tr>
           </table>
 
           <table class="ejemplo-secuencia">
             <tr>
+              <td style="font-size: 60%">U+1F3CB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2642</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
               <td>&#x1f3cb;</td>
               <td>+</td>
               <td>VS16</td>
-              <td>+ ZWJ + </td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td>&#x2642;</td>
               <td>+</td>
               <td>VS16</td>
@@ -789,26 +910,28 @@
               <td></td>
               <td>&#x1f3cb;&#xfe0f;</td>
               <td></td>
-              <td>+ ZWJ + </td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
               <td></td>
               <td>&#x2642;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1f3cb;&#xFE0F;&#x200D;&#x2642;&#xfe0f;</td>
+              <td>&#x1f3cb;&#xfe0f;&#x200d;&#x2642;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F3CB U+FE0F U+200D U+2640 U+FE0F</p>
-              <p class="si">&#x1F3CB;&#xFE0F;&#x200D;&#x2640;&#xFE0F;</p>
+              <p class="si">&#x1F3CB;&#xfe0f;&#x200d;&#x2640;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f3cb;&amp;#xfe0f;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#127947;&amp;#65039;&amp;#8205;&amp;#9792;&amp;#xfe0f;</strong></p>
               <p class="no">woman lifting weights</p>
             </div>
 
             <div class="u">
               <p class="uc">U+1F3CB U+FE0F U+200D U+2642 U+FE0F</p>
-              <p class="si">&#x1F3CB;&#xFE0F;&#x200D;&#x2642;&#xFE0F;</p>
+              <p class="si">&#x1F3CB;&#xfe0f;&#x200d;&#x2642;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f3cb;&amp;#xfe0f;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#127947;&amp;#65039;&amp;#8205;&amp;#9794;&amp;#xfe0f;</strong></p>
               <p class="no">man lifting weights</p>
             </div>
@@ -829,9 +952,24 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una oreja de piel oscura se pueden escribir la secuencia Oreja + Modificador Fitzpatrick de tipo 6 (U+1F442 U+1F1FF):</p>
+          <p>Por ejemplo, para mostrar una oreja de piel oscura se pueden escribir la secuencia Oreja + Modificador Fitzpatrick de tipo 6:</p>
 
-          <p class="ejemplo-secuencia">&#x1F442; + &#x1F3FF; = &#x1F442;&#x1F3FF;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F442</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f442;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>=</td>
+              <td>&#x1f442;&#x1f3ff;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -846,7 +984,7 @@
 
             <div class="u">
               <p class="uc">U+1F442 U+1F3FF</p>
-              <p class="si">&#x1F442;&#x1F3FF;</p>
+              <p class="si">&#x1F442;&#x1f3ff;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f442;&amp;#x1f3ff;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128066;&amp;#127999;</strong>
@@ -857,13 +995,47 @@
         </li>
         <li id="gr-colores-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-2">apartado Colores de piel (2)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
+            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>), Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto relacionado con la profesión</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un cocinero hombre de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén:</p>
+          <p>Por ejemplo, para mostrar un cocinero de piel muy oscura, neutro, hombre o mujer, se puede escribir la secuencia Adulto/Hombre/Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Sartén:</p>
+
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F9D1</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+1F373</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f9d1;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x1f3ff;&#x200d;&#x1f373;</td>
+            </tr>
+          </table>
 
           <table class="ejemplo-secuencia">
             <tr style="font-size: 60%">
@@ -889,9 +1061,7 @@
               <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td>&#x1f468;&#x1f3ff;</td>
-              <td></td>
+              <td colspan="3">&#x1f468;&#x1f3ff;</td>
               <td>+</td>
               <td>ZWJ</td>
               <td>+</td>
@@ -901,15 +1071,69 @@
             </tr>
           </table>
 
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F469</td>
+              <td>+</td>
+              <td>U+1F3FF</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+1F373</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f469;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f373;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x1f3ff;&#x200d;&#x1f373;</td>
+            </tr>
+          </table>
+
           <div class="u-l2">
             <div class="u">
+              <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F373 </p>
+              <p class="si">&#x1f9d1;&#x1f3ff;&#x200d;&#x1F373;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f373;</strong><br>
+                Dec:&nbsp;<strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#127859;</strong>
+              </p>
+              <p class="no">cook: dark skin tone</p>
+            </div>
+
+            <div class="u">
               <p class="uc">U+1F468 U+1F3FF U+200D U+1F373 </p>
-              <p class="si">&#x1F468;&#x1F3FF;&#x200D;&#x1F373;</p>
+              <p class="si">&#x1f468;&#x1f3ff;&#x200d;&#x1F373;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f373;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#127859;</strong>
               </p>
               <p class="no">man cook: dark skin tone</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F469 U+1F3FF U+200D U+1F373 </p>
+              <p class="si">&#x1f469;&#x1f3ff;&#x200d;&#x1F373;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f373;</strong><br>
+                Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#127859;</strong>
+              </p>
+              <p class="no">woman cook: dark skin tone</p>
             </div>
           </div>
         </li>
@@ -931,22 +1155,22 @@
               <td>=</td>
               <td>&#x1F3C3; + ZWJ + &#x2640</td>
               <td>=</td>
-              <td>&#x1F3C3;&#x200D;&#x2640;</td>
+              <td>&#x1F3C3;&#x200d;&#x2640;</td>
             </tr>
             <tr>
-              <td>&#x1F3C3; + &#x1F3FF;</td>
+              <td>&#x1F3C3; + &#x1f3ff;</td>
               <td>+ ZWJ + &#x2640;</td>
               <td>=</td>
-              <td>&#x1F3C3;&#x1F3FF; + ZWJ + &#x2640;</td>
+              <td>&#x1F3C3;&#x1f3ff; + ZWJ + &#x2640;</td>
               <td>=</td>
-              <td>&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;</td>
+              <td>&#x1F3C3;&#x1f3ff;&#x200d;&#x2640;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u2">
               <p class="uc">U+1F3C3 U+200D U+2640</p>
-              <p class="si">&#x1F3C3;&#x200D;&#x2640;</p>
+              <p class="si">&#x1F3C3;&#x200d;&#x2640;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x200d;&amp;#x2640;</strong><br>
                 Dec:&nbsp;<strong>&amp;#127939;&amp;#8205;&amp;#9792;</strong>
@@ -956,7 +1180,7 @@
 
             <div class="u">
               <p class="uc">U+1F3C3 U+1F3FF U+200D U+2640 </p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;</p>
+              <p class="si">&#x1F3C3;&#x1f3ff;&#x200d;&#x2640;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;</strong><br>
                 Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;</strong>
@@ -965,7 +1189,6 @@
             </div>
           </div>
         </li>
-         -->
         <li id="gr-colores-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-3">apartado Colores de piel (3)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cuatro caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
@@ -989,7 +1212,7 @@
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F9D1;</td>
+              <td>&#x1f9d1;</td>
               <td>+</td>
               <td>&#x1f3ff;</td>
               <td>+</td>
@@ -1001,7 +1224,7 @@
             </tr>
             <tr>
               <td></td>
-              <td>&#x1F9D1;&#x1f3ff;</td>
+              <td>&#x1f9d1;&#x1f3ff;</td>
               <td></td>
               <td>+</td>
               <td>ZWJ</td>
@@ -1015,7 +1238,7 @@
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FF U+200D U+1F373 </p>
-              <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x1F373;</p>
+              <p class="si">&#x1f9d1;&#x1f3ff;&#x200d;&#x1F373;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f373;</strong><br>
                 Dec:&nbsp;<strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#127859;</strong>
@@ -1024,152 +1247,23 @@
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-4">apartado Colores de piel (4)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
+         -->
+        <li id="gr-colores-piel-3">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-3">apartado Colores de piel (3)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
+            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>), Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
             <li>el modificador Fitzpatrick</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter de un objeto relacionado con la profesión</li>
             <li>el selector de presentación VS16 (U+FE0F)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una mujer médico de piel oscura se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16:</p>
-
-          <table class="ejemplo-secuencia">
-            <tr style="font-size: 60%">
-              <td>U+1F469</td>
-              <td>+</td>
-              <td>U+1F3FF</td>
-              <td>+</td>
-              <td>U+200D</td>
-              <td>+</td>
-              <td>U+2695</td>
-              <td>+</td>
-              <td>U+FE0F</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>&#x1F469;</td>
-              <td>+</td>
-              <td>&#x1f3ff;</td>
-              <td>+</td>
-              <td>ZWJ</td>
-              <td>+</td>
-              <td>&#x2695;</td>
-              <td>+</td>
-              <td>VS16</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>&#x1F469;&#x1f3ff;</td>
-              <td></td>
-              <td>+</td>
-              <td>ZWJ</td>
-              <td>+</td>
-              <td></td>
-              <td>&#x2695;&#xfe0f;</td>
-              <td></td>
-              <td>=</td>
-              <td>&#x1F469;&#x1f3ff;&#x200d;&#x2695;&#xfe0f;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+1F3FF U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
-              </p>
-              <p class="no">woman health worker: dark skin tone</p>
-            </div>
-          </div>
-        </li>
-        <li id="gr-colores-piel-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-5">apartado Colores de piel (5)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
-          <ul>
-            <li>el carácter de un personaje humano</li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Femenino (U+2640, <span class="grande">&#x2640;</span>) o Masculino (U+2642, <span class="grande">&#x2642;</span>)</li>
-            <li>el selector de presentación VS16 (U+FE0F)</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar una mujer corriendo de piel oscura se puede escribir la secuencia Corredor + Modificador Fitzpatrick de tipo 6 + ZWJ + Femenino + VS16:</p>
-
-          <table class="ejemplo-secuencia">
-            <tr style="font-size: 60%">
-              <td>U+1F3C3</td>
-              <td>+</td>
-              <td>U+1F3FF</td>
-              <td>+</td>
-              <td>U+200D</td>
-              <td>+</td>
-              <td>U+2640</td>
-              <td>+</td>
-              <td>U+FE0F</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>&#x1f3c3;</td>
-              <td>+</td>
-              <td>&#x1f3ff;</td>
-              <td>+</td>
-              <td>ZWJ</td>
-              <td>+</td>
-              <td>&#x2640;</td>
-              <td>+</td>
-              <td>VS16</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>&#x1f3c3;&#x1f3ff;</td>
-              <td></td>
-              <td>+</td>
-              <td>ZWJ</td>
-              <td>+</td>
-              <td></td>
-              <td>&#x2640;&#xfe0f;</td>
-              <td></td>
-              <td>=</td>
-              <td>&#x1f3c3;&#x1f3ff;&#x200d;&#x2640;&#xfe0f;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F</p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
-              </p>
-              <p class="no">woman running: dark skin tone</p>
-            </div>
-          </div>
-        </li>
-        <li id="gr-colores-piel-6">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-6">apartado Colores de piel (6)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> e forman mediante cinco caracteres, sin espacios entre ellos:
-          <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter de un objeto relacionado con la profesión</li>
-            <li>el selector de presentación VS16 (U+FE0F)</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar un trabajador sanitario neutro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16:</p>
+          <p>Por ejemplo, para mostrar un médico de tono de piel claro, neutro, hombre o mujer, se puede escribir la secuencia Adulto/Hombre/Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Vara de Esculapio + VS16:</p>
 
           <table class="ejemplo-secuencia">
             <tr style="font-size: 60%">
               <td>U+1F9D1</td>
               <td>+</td>
-              <td>U+1F3FF</td>
+              <td>U+1F3FC</td>
               <td>+</td>
               <td>U+200D</td>
               <td>+</td>
@@ -1182,7 +1276,7 @@
             <tr>
               <td>&#x1f9d1;</td>
               <td>+</td>
-              <td>&#x1f3ff;</td>
+              <td>&#x1f3fc;</td>
               <td>+</td>
               <td>ZWJ</td>
               <td>+</td>
@@ -1193,9 +1287,7 @@
               <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td>&#x1f9d1;&#x1f3ff;</td>
-              <td></td>
+              <td colspan="3">&#x1f9d1;&#x1f3fc;</td>
               <td>+</td>
               <td>ZWJ</td>
               <td>+</td>
@@ -1203,23 +1295,236 @@
               <td>&#x2695;&#xfe0f;</td>
               <td></td>
               <td>=</td>
-              <td>&#x1f9d1;&#x1f3ff;&#x200d;&#x2695;&#xfe0f;</td>
+              <td>&#x1f9d1;&#x1f3fc;&#x200d;&#x2695;&#xfe0f;</td>
+            </tr>
+          </table>
+
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F468</td>
+              <td>+</td>
+              <td>U+1F3FC</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2695</td>
+              <td>+</td>
+              <td>U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fc;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f468;&#x1f3fc;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2695;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f468;&#x1f3fc;&#x200d;&#x2695;&#xfe0f;</td>
+            </tr>
+          </table>
+
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F469</td>
+              <td>+</td>
+              <td>U+1F3FC</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2695</td>
+              <td>+</td>
+              <td>U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>&#x1f3fc;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2695;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f469;&#x1f3fc;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2695;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f469;&#x1f3fc;&#x200d;&#x2695;&#xfe0f;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
-              <p class="uc">U+1F9D1 U+1F3FF U+200D U+2695 U+FE0F</p>
-              <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x2695;&#xFE0F;</p>
+              <p class="uc">U+1F9D1 U+1F3FC U+200D U+2695 U+FE0F</p>
+              <p class="si">&#x1f9d1;&#x1F3Fc;&#x200d;&#x2695;&#xfe0f;</p>
               <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#127999;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fc;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec:&nbsp;<strong>&amp;#129489;&amp;#127997;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
               </p>
-              <p class="no">health worker: dark skin tone</p>
+              <p class="no">health worker: medium skin tone</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F468 U+1F3FC U+200D U+2695 U+FE0F</p>
+              <p class="si">&#x1f468;&#x1F3Fc;&#x200d;&#x2695;&#xfe0f;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x1f3fc;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec:&nbsp;<strong>&amp;#128104;&amp;#127997;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+              </p>
+              <p class="no">man health worker: medium skin tone</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F469 U+1F3FC U+200D U+2695 U+FE0F</p>
+              <p class="si">&#x1f469;&#x1F3Fc;&#x200d;&#x2695;&#xfe0f;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3fc;&amp;#x200d;&amp;#x2695;&amp;#xfe0f;</strong><br>
+                Dec:&nbsp;<strong>&amp;#128105;&amp;#127997;&amp;#8205;&amp;#9877;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman health worker: medium skin tone</p>
             </div>
           </div>
         </li>
-        <li id="gr-colores-piel-7">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-7">apartado Colores de piel (7)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
+        <li id="gr-colores-piel-4">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-4">apartado Colores de piel (4)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
+          <ul>
+            <li>el carácter de un personaje humano</li>
+            <li>el modificador Fitzpatrick</li>
+            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter Femenino (U+2640, <span class="grande">&#x2640;</span>) o Masculino (U+2642, <span class="grande">&#x2642;</span>)</li>
+            <li>el selector de presentación VS16 (U+FE0F)</li>
+          </ul>
+
+          <p>Por ejemplo, para mostrar un hombre o una mujer corriendo de piel oscura se puede escribir la secuencia Corredor + Modificador Fitzpatrick de tipo 6 + ZWJ + Masculino/Femenino + VS16:</p>
+
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F3C3</td>
+              <td>+</td>
+              <td>U+1F3FE</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2642</td>
+              <td>+</td>
+              <td>U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3c3;</td>
+              <td>+</td>
+              <td>&#x1f3fe;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2642;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f3c3;&#x1f3fe;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2642;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f3c3;&#x1f3fe;&#x200d;&#x2642;&#xfe0f;</td>
+            </tr>
+          </table>
+
+          <table class="ejemplo-secuencia">
+            <tr style="font-size: 60%">
+              <td>U+1F3C3</td>
+              <td>+</td>
+              <td>U+1F3FE</td>
+              <td>+</td>
+              <td>U+200D</td>
+              <td>+</td>
+              <td>U+2640</td>
+              <td>+</td>
+              <td>U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3c3;</td>
+              <td>+</td>
+              <td>&#x1f3fe;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2640;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f3c3;&#x1f3fe;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2640;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f3c3;&#x1f3fe;&#x200d;&#x2640;&#xfe0f;</td>
+            </tr>
+          </table>
+
+          <div class="u-l2">
+            <div class="u">
+              <p class="uc">U+1F3C3 U+1F3FE U+200D U+2642 U+FE0F</p>
+              <p class="si">&#x1F3C3;&#x1F3FE;&#x200d;&#x2642;&#xfe0f;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3fe;&amp;#x200d;&amp;#x2642;&amp;#xfe0f;</strong><br>
+                Dec:&nbsp;<strong>&amp;#127939;&amp;#127998;&amp;#8205;&amp;#9794;&amp;#65039;</strong>
+              </p>
+              <p class="no">man running: medium-dark skin tone</p>
+            </div>
+
+            <div class="u">
+              <p class="uc">U+1F3C3 U+1F3FE U+200D U+2640 U+FE0F</p>
+              <p class="si">&#x1F3C3;&#x1F3FE;&#x200d;&#x2640;&#xfe0f;</p>
+              <p class="en">
+                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3fe;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;</strong><br>
+                Dec:&nbsp;<strong>&amp;#127939;&amp;#127998;&amp;#8205;&amp;#9792;&amp;#65039;</strong>
+              </p>
+              <p class="no">woman running: medium-dark skin tone</p>
+            </div>
+          </div>
+        </li>
+        <li id="gr-colores-piel-5">Las secuencias que se muestran en el <a href="html-unicode-secuencias-colores.html#gr-colores-piel-5">apartado Colores de piel (5)</a> de la <a href="html-unicode-secuencias-colores.html">lección Secuencias: Colores de piel</a> se forman mediante cinco caracteres, sin espacios entre ellos:
           <ul>
             <li>el carácter Mano abierta hacia la derecha (U+1FAF1, <span class="grande">&#x1faf1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
@@ -1228,7 +1533,7 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un apretón de manos con una mano clara y otra oscura se puede escribir la secuencia Mano hacia la derecha + Modificador Fitzpatrick de tipo 1-2+ ZWJ + Mano hacia la izquierda + Modificador Fitzpatrick de tipo 6:</p>
+          <p>Por ejemplo, para mostrar un apretón de manos con una mano clara y otra oscura se puede escribir la secuencia Mano hacia la derecha + Modificador Fitzpatrick de tipo 1-2 + ZWJ + Mano hacia la izquierda + Modificador Fitzpatrick de tipo 6:</p>
 
           <table class="ejemplo-secuencia">
             <tr style="font-size: 60%">
@@ -1258,9 +1563,7 @@
               <td></td>
             </tr>
             <tr>
-              <td></td>
-              <td>&#x1faf1;&#x1f3fb;</td>
-              <td></td>
+              <td colspan="3">&#x1faf1;&#x1f3fb;</td>
               <td>+</td>
               <td>ZWJ</td>
               <td>+</td>
@@ -1275,7 +1578,7 @@
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1FAF1 U+1F3FB U+200D U+1FAF2 U+1F3FF</p>
-              <p class="si">&#x1FAF1;&#x1F3FB;&#x200D;&#x1FAF2;&#x1F3FF;</p>
+              <p class="si">&#x1FAF1;&#x1f3fb;&#x200d;&#x1FAF2;&#x1f3ff;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1faf1;&amp;#x1f3fb;&amp;#x200d;&amp;#x1faf2;&amp;#x1f3ff;</strong><br>
                 Dec:&nbsp;<strong>&amp;#129777;&amp;#127995;&amp;#8205;&amp;#129778;&amp;#127999;</strong>
@@ -1295,21 +1598,102 @@
       <p>Por ejemplo:</p>
 
       <ul>
-        <li>para mostrar una familia formada por un padre y una niña se puede escribir la secuencia Hombre + ZWJ + Niña (U+1F468 U+200D U+1F467)
-          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x1F467; = &#x1F468;&#x200D;&#x1F467;</p>
+        <li>para mostrar una familia formada por un padre y una niña se puede escribir la secuencia Hombre + ZWJ + Niña:
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F467</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f467;</td>
+              <td>=</td>
+              <td>&#x1f468;&#x200d;&#x1f467;</td>
+            </tr>
+          </table>
         </li>
-        <li>para mostrar una familia formada por una madre y dos niños se puede escribir la secuencia Mujer + ZWJ + Niño + ZWJ + Niño (U+1F469 U+200D U+1F466 U+200D U+1F466)
-          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x1F466; + ZWJ + &#x1F466; = &#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</p>
+        <li>para mostrar una familia formada por una madre y dos niños se puede escribir la secuencia Mujer + ZWJ + Niño + ZWJ + Niño:
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F466</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F466</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f466;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f466;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x200d;&#x1f466;&#x200d;&#x1f466;</td>
+            </tr>
+          </table>
         </li>
-        <li>para mostrar una familia formada por un padre, una madre, un niño y una niña se puede escribir la secuencia Hombre + ZWJ + Mujer + ZWJ + Niña + ZWJ + Niño (U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466)
-          <p class="ejemplo-secuencia">&#x1F468; + ZWJ + &#x1F469; + ZWJ + &#x1F467; + ZWJ + &#x1F466; = &#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</p>
+        <li>para mostrar una familia formada por un padre, una madre, un niño y una niña se puede escribir la secuencia Hombre + ZWJ + Mujer + ZWJ + Niña + ZWJ + Niño:
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F467</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F466</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f467;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f466;</td>
+              <td>=</td>
+              <td>&#x1f468;&#x200d;&#x1f469;&#x200d;&#x1f467;&#x200d;&#x1f466;</td>
+            </tr>
+          </table>
         </li>
       </ul>
 
       <div class="u-l2">
         <div class="u">
           <p class="uc">U+1F468 U+200D U+1F467 </p>
-          <p class="si">&#x1F468;&#x200D;&#x1F467;</p>
+          <p class="si">&#x1f468;&#x200d;&#x1F467;</p>
           <p class="en">
             Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f467;</strong><br>
             Dec:&nbsp;<strong>&amp;#128104;&amp;#8205;&amp;#128103;</strong>
@@ -1319,7 +1703,7 @@
 
         <div class="u">
           <p class="uc">U+1F469 U+200D U+1F466 U+200D U+1F466 </p>
-          <p class="si">&#x1F469;&#x200D;&#x1F466;&#x200D;&#x1F466;</p>
+          <p class="si">&#x1f469;&#x200d;&#x1F466;&#x200d;&#x1F466;</p>
           <p class="en">
             Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x1f466;&amp;#x200d;&amp;#x1f466;</strong><br>
             Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#128102;&amp;#8205;&amp;#128102;</strong>
@@ -1329,35 +1713,94 @@
 
         <div class="u">
           <p class="uc">U+1F468 U+200D U+1F469 U+200D U+1F467 U+200D U+1F466 </p>
-          <p class="si">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</p>
+          <p class="si">&#x1f468;&#x200d;&#x1f469;&#x200d;&#x1F467;&#x200d;&#x1F466;</p>
           <p class="en">Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x200d;&amp;#x1f469;&amp;#x200d;&amp;#x1f467;&amp;#x200d;&amp;#x1f466;</strong><br>Dec:&nbsp;<strong>&amp;#128104;&amp;#8205;&amp;#128105;&amp;#8205;&amp;#128103;&amp;#8205;&amp;#128102;</strong></p>
           <p class="no">family: man, woman, girl, boy</p>
         </div>
       </div>
 
-      <p><strong>Nota</strong>: Actualmente (noviembre de 2025), Windows 10 muestra emojis aunque no se respeten las restricciones en el orden de los caracteres (es decir, permite escribir la mujer antes del hombre o el niño antes de la niña), pero esas secuencias no están definidas por Unicode.</p>
-      <p class="ejemplo-secuencia"><img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40"> &#x1F469; + ZWJ + &#x1F468; + ZWJ + &#x1F466; + ZWJ + &#x1F467; = &#x1F469;&#x200D;&#x1F468;&#x200D;&#x1F466;&#x200D;&#x1F467;</p>
+      <p><strong>Nota</strong>: Actualmente (octubre de 2026), Windows 11 muestra emojis aunque no se respeten las restricciones en el orden de los caracteres (es decir, permite escribir la mujer antes del hombre o el niño antes de la niña), pero esas secuencias no están definidas por Unicode.</p>
+      <table class="ejemplo-secuencia">
+        <tr>
+          <td rowspan="2"><img src="../varios/iconos/icono-okno.svg" alt="Incorrecto" title="Incorrecto" width="40" height="40"></td>
+          <td style="font-size: 60%">U+1F469</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F468</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F466</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F467</td>
+          <td>=</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&#x1f469;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f468;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f466;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f467;</td>
+          <td>=</td>
+          <td>&#x1f469;&#x200d;&#x1f468;&#x200d;&#x1f466;&#x200d;&#x1f467;</td>
+        </tr>
+      </table>
 
       <hr class="corta">
 
       <p>En Unicode 15.1 (septiembre de 2023) se introdujeron tres secuencias Unicode que definen familias genéricas formadas por uno o dos adultos y uno o dos niños (sin género) que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-familias-4">apartado Familias genéricas</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a>. Estas tres secuencias se obtienen combinando tres o cuatro caracteres U+1F9D1 (adulto, <span class="grande">&#x1f9d1;</span>) y U+1F9D2 (niño neutro <span class="grande">&#x1f9d2;</span>), uniéndolos con caracteres ZWJ (U+200D, Zero-Width Joiner), sin espacios entre ellos.</p>
 
-      <p>Por ejemplo, para mostrar una familia genérica formada por un adulto y dos niños se debe escribir la secuencia Adulto + ZWJ + Niño + ZWJ + Niño (U+1F9D1 U+200D U+1F9D2 U+200D U+1F9D2):</p>
-
-      <p class="ejemplo-secuencia">&#x1F9D1; + ZWJ + &#x1F9D2; + ZWJ + &#x1F9D2; = &#x1F9D1;&#x200D;&#x1F9D2;&#x200D;&#x1F9D2;</p>
+      <p>Por ejemplo, para mostrar una familia genérica formada por un adulto y dos niños se debe escribir la secuencia Adulto + ZWJ + Niño + ZWJ + Niño:</p>
+      <table class="ejemplo-secuencia">
+        <tr>
+          <td style="font-size: 60%">U+1F9D1</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F9D2</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+200D</td>
+          <td>+</td>
+          <td style="font-size: 60%">U+1F9D2</td>
+          <td>=</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&#x1f9d1;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f9d2;</td>
+          <td>+</td>
+          <td>ZWJ</td>
+          <td>+</td>
+          <td>&#x1f9d2;</td>
+          <td>=</td>
+          <td>&#x1f9d1;&#x200d;&#x1f9d2;&#x200d;&#x1f9d2;</td>
+        </tr>
+      </table>
 
       <div class="u-l2">
         <div class="u">
           <p class="uc">U+1F9D1 U+200D U+1F9D2 U+200D U+1F9D2</p>
-          <p class="si">&#x1F9D1;&#x200D;&#x1F9D2;&#x200D;&#x1F9D2;</p>
+          <p class="si">&#x1f9d1;&#x200d;&#x1F9D2;&#x200d;&#x1F9D2;</p>
           <p class="en">
             Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x200d;&amp;#x1f9d2;&amp;#x200d;&amp;#x1f9d2;</strong><br>
             Dec:&nbsp;<strong>&amp;#129489;&amp;#8205;&amp;#129490;&amp;#8205;&amp;#129490;</strong>
           </p>
           <p class="no">family: adult, child, child</p>
-          <p class="co">
-            No disponible en Windows 10
-          </p>
         </div>
       </div>
     </section>
@@ -1374,9 +1817,24 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una pareja de mujeres de piel oscura cogidas de la mano se puede escribir la secuencia Pareja de mujeres + Modificador Fitzpatrick de tipo 6 (U+1F46D U+1F3FF):</p>
+          <p>Por ejemplo, para mostrar una pareja de mujeres de piel oscura cogidas de la mano se puede escribir la secuencia Pareja de mujeres + Modificador Fitzpatrick de tipo 6:</p>
 
-          <p class="ejemplo-secuencia">&#x1F46D; + &#x1F3FF; = &#x1F46D;&#x1F3FF;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F46D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f46d;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>=</td>
+              <td>&#x1f46d;&#x1f3ff;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
@@ -1388,7 +1846,7 @@
 
             <div class="u">
               <p class="uc">U+1F46D U+1F3FF</p>
-              <p class="si">&#x1F46D;&#x1F3FF;</p>
+              <p class="si">&#x1F46D;&#x1f3ff;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f46d;&amp;#x1f3ff;</strong><br>Dec:&nbsp;<strong>&amp;#128109;&amp;#127999;</strong></p>
               <p class="no">women holding hands: dark skin tone</p>
             </div>
@@ -1407,14 +1865,62 @@
 
           <p><strong>Nota</strong>: En el caso de la pareja hombre-mujer, debe escribirse la mujer en primera posición y el hombre en segunda posición.</p>
 
-          <p>Por ejemplo, para mostrar una pareja cogida de la mano formada por un hombre de piel clara y una mujer de piel oscura se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Apretón de manos + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2 (U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB):</p>
+          <p>Por ejemplo, para mostrar una pareja cogida de la mano formada por un hombre de piel clara y una mujer de piel oscura se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Apretón de manos + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2:</p>
 
-          <p class="ejemplo-secuencia">&#x1F469; + &#x1F3FF; + ZWJ + &#x1F91D; + ZWJ + &#x1F468; + &#x1F3FC; = &#x1F469;&#x1F3FF; + ZWJ + &#x1F91D; + ZWJ + &#x1F468;&#x1F3FB; = &#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F91D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f91d;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f469;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f91d;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f468;&#x1f3fb;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x1f3ff;&#x200d;&#x1f91d;&#x200d;&#x1f468;&#x1f3fb;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB</p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x1F91D;&#x200D;&#x1F468;&#x1F3FB;</p>
+              <p class="si">&#x1f469;&#x1f3ff;&#x200d;&#x1F91D;&#x200d;&#x1f468;&#x1f3fb;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
@@ -1434,14 +1940,62 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una pareja de personajes neutros cogidos de la mano, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1-2 (U+1F1FB) + ZWJ + Apretón de manos + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+1F91D U+200D U+1F9D1 U+1F3FF):</p>
+          <p>Por ejemplo, para mostrar una pareja de personajes neutros cogidos de la mano, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1-2 (U+1F1FB) + ZWJ + Apretón de manos + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6:</p>
 
-          <p class="ejemplo-secuencia">&#x1F9D1; + &#x1F3FB; + ZWJ + &#x1F91D; + ZWJ + &#x1F9D1; + &#x1F3FF; = &#x1F9D1;&#x1F3FB; + ZWJ + &#x1F91D; + ZWJ + &#x1F9D1;&#x1F3FF; = &#x1F9D1;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F91D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f91d;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f9d1;&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f91d;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f9d1;&#x1f3ff;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x1f3fb;&#x200d;&#x1f91d;&#x200d;&#x1f9d1;&#x1f3ff;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FB U+200D U+1F91D U+200D U+1F9D1 U+1F3FF</p>
-              <p class="si">&#x1F9D1;&#x1F3FB;&#x200D;&#x1F91D;&#x200D;&#x1F9D1;&#x1F3FF;</p>
+              <p class="si">&#x1f9d1;&#x1f3fb;&#x200d;&#x1F91D;&#x200d;&#x1f9d1;&#x1f3ff;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f91d;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>
                 Dec:&nbsp;<strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#129309;&amp;#8205;&amp;#129489;&amp;#127999;</strong>
@@ -1459,33 +2013,6 @@
       <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <!--
-        <li id="gr-parejas-corazon-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-11">apartado Parejas de rostros masculinos/femeninos de enamorados (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante cinco caracteres:
-          <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar los rostros de una mujer y un hombre enamorados se puede escribir la secuencia Mujer + ZWJ + Corazón + ZWJ + Hombre (U+1F469 U+200D U+2764 U+200D U+1F468):</p>
-
-          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2764; + ZWJ + &#x1F468; = &#x1F469;&#x200D;&#x2764;&#x200D;&#x1F468;</p>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+200D U+2764 U+200D U+1F468 </p>
-              <p class="si">&#x1F469;&#x200D;&#x2764;&#x200D;&#x1F468;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f468;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#128104;</strong>
-              </p>
-              <p class="no">couple with heart: woman, man</p>
-            </div>
-          </div>
-        </li>
-      -->
         <li id="gr-parejas-corazon-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-1">apartado Parejas de rostros masculinos/femeninos de enamorados,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante seis caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
@@ -1496,29 +2023,58 @@
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
           </ul>
 
-          <p>Por ejemplo, para mostrar los rostros de una mujer y un hombre enamorados besándose se puede escribir la secuencia Mujer + ZWJ + Corazón + VS16 + ZWJ + Hombre (U+1F469 U+200D U+2764 U+FE0F U+200D U+1F468):</p>
+          <p>Por ejemplo, para mostrar los rostros de una mujer y un hombre enamorados besándose se puede escribir la secuencia Mujer + ZWJ + Corazón + VS16 + ZWJ + Hombre:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F469; + ZWJ +</td>
-              <td>&#x2764; + VS16</td>
-              <td>+ ZWJ + &#x1F468;</td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F469; + ZWJ +</td>
-              <td style="text-align: center;">&#x2764;&#xFE0F; </td>
-              <td>+ ZWJ + &#x1F468;</td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
               <td>=</td>
-              <td>&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f468;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F468 </p>
-              <p class="si">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;</p>
+              <p class="si">&#x1f469;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f468;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;</strong>
@@ -1527,50 +2083,6 @@
             </div>
           </div>
         </li>
-        <!--
-        <li id="gr-parejas-corazon-piel-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-11">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
-          <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el modificador Fitzpatrick</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1/2 (U+1F469 U+1F3FF U+200D U+2764 U+200D U+1F468 U+1F3FB):</p>
-
-          <table class="ejemplo-secuencia">
-            <tr>
-              <td>&#x1F469; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ +</td>
-              <td>&#x1F468; + &#x1F3FB;</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td style="text-align: center;">&#x1F469;&#x1F3FF;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F468;&#x1F3FB;</td>
-              <td>=</td>
-              <td>&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#x200D;&#x1F468;&#x1F3FB;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+1F3FF U+200D U+2764 U+200D U+1F468 U+1F3FB </p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#x200D;&#x1F468;&#x1F3FB;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
-              </p>
-              <p class="no">couple with heart: woman, man, dark skin tone, light skin tone</p>
-            </div>
-          </div>
-        </li>
-        -->
         <li id="gr-parejas-corazon-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
@@ -1583,33 +2095,66 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + VS16 + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1/2 (U+1F469 U+1F3FF U+200D U+2764 U+FE0F U+200D U+1F468 U+1F3FB):</p>
+          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + VS16 + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F469; + &#x1F3FF;</td>
-              <td>+ ZWJ + </td>
-              <td>&#x2764; + VS16</td>
-              <td>+ ZWJ </td>
-              <td>&#x1F468; + &#x1F3FB;</td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center;">&#x1F469;&#x1F3FF;</td>
-              <td>+ ZWJ +</td>
-              <td style="text-align: center;">&#x2764;&#xFE0F;</td>
-              <td> + ZWJ +</td>
-              <td style="text-align: center;">&#x1F468;&#x1F3FB;</td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
               <td>=</td>
-              <td>&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;&#x1F3FB;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f469;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f468;&#x1f3fb;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x1f3ff;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f468;&#x1f3fb;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F469 U+1F3FF U+200D U+2764 U+FE0F U+200D U+1F468 U+1F3FB </p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F468;&#x1F3FB;</p>
+              <p class="si">&#x1f469;&#x1f3ff;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f468;&#x1f3fb;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
@@ -1618,50 +2163,6 @@
             </div>
           </div>
         </li>
-        <!--
-        <li id="gr-parejas-corazon-piel-12">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-12">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel (12),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
-          <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el modificador Fitzpatrick</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F9D1 U+1F3FF):</p>
-
-          <table class="ejemplo-secuencia">
-            <tr>
-              <td>&#x1F9D1; + &#x1F3FB;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ +</td>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FB;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FF;</td>
-              <td>=</td>
-              <td>&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#x200D;&#x1F9D1;&#x1F3FF;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F9D1 U+1F3FF </p>
-              <p class="si">&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#x200D;&#x1F9D1;&#x1F3FF;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#129489;&amp;#127999;</strong>
-              </p>
-              <p class="no">couple with heart: person, person, light skin tone, dark skin tone</p>
-            </div>
-          </div>
-        </li>
-        -->
         <li id="gr-parejas-corazon-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-corazon-piel-2">apartado Parejas de rostros neutros de enamorados, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
@@ -1674,33 +2175,66 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + VS16 + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F9D1 U+1F3FF):</p>
+          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1-2 + ZWJ + Corazón + VS16 + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F9D1; + &#x1F3FB;</td>
-              <td>+ ZWJ + </td>
-              <td>&#x2764; + VS16</td>
-              <td>+ ZWJ </td>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FB;</td>
-              <td>+ ZWJ +</td>
-              <td style="text-align: center;">&#x2764;&#xFE0F;</td>
-              <td> + ZWJ +</td>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FF;</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F9D1;&#x1F3FF;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f9d1;&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f9d1;&#x1f3ff;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x1f3fb;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f9d1;&#x1f3ff;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F9D1 U+1F3FF </p>
-              <p class="si">&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F9D1;&#x1F3FF;</p>
+              <p class="si">&#x1f9d1;&#x1f3fb;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f9d1;&#x1f3ff;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>
                 Dec:&nbsp;<strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#129489;&amp;#127999;</strong>
@@ -1718,35 +2252,6 @@
       <p>Las secuencias Unicode correspondientes a parejas de rostros de enamorados besándose con colores de piel específicos que se muestran en la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se pueden clasificar en grupos de acuerdo con el número de caracteres de la secuencia:</p>
 
       <ul>
-        <!--
-        <li id="gr-parejas-beso-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-11">apartado Parejas de rostros masculinos/femeninos de enamorados besándose (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante siete caracteres:
-          <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Marca de labios (U+1F48B, <span class="grande">&#x1f48b;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar el rostro de una mujer y un hombre enamorados besándose se puede escribir la secuencia Mujer + ZWJ + Corazón + ZWJ + Marca de labios + ZWJ + Hombre (U+1F469 U+200D U+2764 U+200D U+1F48B U+200D U+1F468):</p>
-
-          <p class="ejemplo-secuencia">&#x1F469; + ZWJ + &#x2764; + ZWJ + &#x1F48B; + ZWJ + &#x1F468; = &#x1F469;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F468;</p>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+200D U+2764 U+200D U+1F48B U+200D U+1F468 </p>
-              <p class="si">&#x1F469;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F468;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong>
-              </p>
-              <p class="no">kiss: woman, man</p>
-            </div>
-          </div>
-        </li> -->
-
         <li id="gr-parejas-beso">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso">apartado Parejas de rostros masculinos/femeninos de enamorados besándose,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante ocho caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
@@ -1759,29 +2264,70 @@
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
           </ul>
 
-          <p>Por ejemplo, para mostrar el rostro de una mujer y un hombre enamorados besándose se puede escribir la secuencia Mujer + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Hombre (U+1F469 U+200D U+2764 U+200D U+1F48B U+200D U+1F468):</p>
+          <p>Por ejemplo, para mostrar el rostro de una mujer y un hombre enamorados besándose se puede escribir la secuencia Mujer + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Hombre:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F469; + ZWJ +</td>
-              <td>&#x2764; + VS16</td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ + &#x1F468;</td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F48B</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td>&#x1F469; + ZWJ +</td>
-              <td style="text-align: center;">&#x2764;&#xFE0F; </td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ + &#x1F468;</td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
               <td>=</td>
-              <td>&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f48b;&#x200d;&#x1f468;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F469 U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 </p>
-              <p class="si">&#x1F469;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;</p>
+              <p class="si">&#x1f469;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1F48B;&#x200d;&#x1f468;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128105;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;</strong>
@@ -1790,52 +2336,6 @@
             </div>
           </div>
         </li>
-        <!--
-        <li id="gr-parejas-beso-piel-11">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-11">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel (11),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante nueve caracteres:
-          <ul>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Marca de labios (U+1F48B, <span class="grande">&#x1f48b;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
-            <li>el modificador Fitzpatrick</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados besándose se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + ZWJ + Marca de labios + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1/2 (U+1F469 U+1F3FF U+200D U+2764 U+200D U+1F48B U+200D U+1F468 U+1F3FB):</p>
-
-          <table class="ejemplo-secuencia">
-            <tr>
-              <td>&#x1F469; + &#x1F3FF;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ + &#x1F48B; + ZWJ +</td>
-              <td>&#x1F468; + &#x1F3FB;</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td style="text-align: center;">&#x1F469;&#x1F3FF;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ + &#x1F48B; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F468;&#x1F3FB;</td>
-              <td>=</td>
-              <td>&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F468;&#x1F3FB;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F469 U+1F3FF U+200D U+2764 U+200D U+1F48B U+200D U+1F468 U+1F3FB</p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F468;&#x1F3FB;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
-                Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
-              </p>
-              <p class="no">kiss: woman, man, dark skin tone, light skin tone</p>
-            </div>
-          </div>
-        </li> -->
-
         <li id="gr-parejas-beso-piel-1">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-1">apartado Parejas de rostros masculinos/femeninos de enamorados besándose, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante diez caracteres:
           <ul>
             <li>el carácter Hombre (U+1F468, <span class="grande">&#x1f468;</span>) o Mujer (U+1F469, <span class="grande">&#x1f469;</span>) </li>
@@ -1850,33 +2350,78 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados besándose se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1/2 (U+1F469 U+1F3FF U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 U+1F3FB):</p>
+          <p>Por ejemplo, para mostrar los rostros de una mujer de piel oscura y un hombre de piel clara enamorados besándose se puede escribir la secuencia Mujer + Modificador Fitzpatrick de tipo 6 + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F469; + &#x1F3FF;</td>
-              <td>+ ZWJ + </td>
-              <td>&#x2764; + VS 16</td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ +</td>
-              <td>&#x1F468; + &#x1F3FB;</td>
+              <td style="font-size: 60%">U+1F469</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F48B</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center;">&#x1F469;&#x1F3FF;</td>
-              <td>+ ZWJ + </td>
-              <td style="text-align: center;">&#x2764;&#xFE0F;</td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F468;&#x1F3FB;</td>
+              <td>&#x1f469;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
               <td>=</td>
-              <td>&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;&#x1F3FB;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f469;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f468;&#x1f3fb;</td>
+              <td>=</td>
+              <td>&#x1f469;&#x1f3ff;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f48b;&#x200d;&#x1f468;&#x1f3fb;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F469 U+1F3FF U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F468 U+1F3FB </p>
-              <p class="si">&#x1F469;&#x1F3FF;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F468;&#x1F3FB;</p>
+              <p class="si">&#x1f469;&#x1f3ff;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1F48B;&#x200d;&#x1f468;&#x1f3fb;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f469;&amp;#x1f3ff;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128105;&amp;#127999;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
@@ -1885,52 +2430,6 @@
             </div>
           </div>
         </li>
-        <!--
-        <li id="gr-parejas-beso-piel-12">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-12">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel (12),</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante nueve caracteres:
-          <ul>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el modificador Fitzpatrick</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Marca de labios (U+1F48B, <span class="grande">&#x1f48b;</span>)</li>
-            <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
-            <li>el modificador Fitzpatrick</li>
-          </ul>
-
-          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados besándose, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + ZWJ + Marca de labios + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F9D1 U+1F3FF):</p>
-
-          <table class="ejemplo-secuencia">
-            <tr>
-              <td>&#x1F9D1; + &#x1F3FB;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ + &#x1F48B; + ZWJ +</td>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
-              <td>=</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FB;</td>
-              <td>+ ZWJ + &#x2764; + ZWJ + &#x1F48B; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FF;</td>
-              <td>=</td>
-              <td>&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F9D1;&#x1F3FF;</td>
-            </tr>
-          </table>
-
-          <div class="u-l2">
-            <div class="u">
-              <p class="uc">U+1F9D1 U+1F3FB U+200D U+2764 U+200D U+1F48B U+200D U+1F9D1 U+1F3FF </p>
-              <p class="si">&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#x200D;&#x1F48B;&#x200D;&#x1F9D1;&#x1F3FF;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x2764;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>
-                Dec:&nbsp;<strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#10084;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#129489;&amp;#127999;</strong>
-              </p>
-              <p class="no">kiss: person, person, light skin tone, dark skin tone</p>
-            </div>
-          </div>
-        </li>
-        -->
 
         <li id="gr-parejas-beso-piel-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-parejas.html#gr-parejas-beso-piel-2">apartado Parejas de rostros neutros de enamorados besándose, con dos tonos de piel,</a> de la <a href="html-unicode-secuencias-parejas.html">lección Secuencias: Parejas y Familias</a> se forman mediante diez caracteres:
           <ul>
@@ -1939,40 +2438,85 @@
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter Corazón (U+2764 <span class="grande">&#x2764;</span>)</li>
             <li>el selector de presentación VS16 (U+FE0F)</li>
-            <li>el carácter Marca de labios (U+1F48B, <span class="grande">&#x1f48b;</span>)</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
+            <li>el carácter Marca de labios (U+1F48B, <span class="grande">&#x1f48b;</span>)</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
             <li>el carácter Adulto neutro (U+1F9D1, <span class="grande">&#x1f9d1;</span>)</li>
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados besándose, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1/2 + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6 (U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F9D1 U+1F3FF):</p>
+          <p>Por ejemplo, para mostrar los rostros de una pareja de personajes neutros enamorados besándose, uno de piel clara y otro de piel oscura, se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 1-2 + ZWJ + Corazón + VS16 + ZWJ + Marca de labios + ZWJ + Adulto + Modificador Fitzpatrick de tipo 6:</p>
 
           <table class="ejemplo-secuencia">
             <tr>
-              <td>&#x1F9D1; + &#x1F3FB;</td>
-              <td>+ ZWJ + </td>
-              <td>&#x2764; + VS16</td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ +</td>
-              <td>&#x1F9D1; + &#x1F3FF;</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2764</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F48B</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
               <td>=</td>
               <td></td>
             </tr>
             <tr>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FB;</td>
-              <td>+ ZWJ +</td>
-              <td style="text-align: center;">&#x2764;&#xFE0F;</td>
-              <td>+ ZWJ + &#x1F48B; + ZWJ +</td>
-              <td style="text-align: center;">&#x1F9D1;&#x1F3FF;</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2764;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
               <td>=</td>
-              <td>&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F9D1;&#x1F3FF;</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f9d1;&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2764;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f48b;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f9d1;&#x1f3ff;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x1f3fb;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1f48b;&#x200d;&#x1f9d1;&#x1f3ff;</td>
             </tr>
           </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FB U+200D U+2764 U+FE0F U+200D U+1F48B U+200D U+1F9D1 U+1F3FF </p>
-              <p class="si">&#x1F9D1;&#x1F3FB;&#x200D;&#x2764;&#xFE0F;&#x200D;&#x1F48B;&#x200D;&#x1F9D1;&#x1F3FF;</p>
+              <p class="si">&#x1f9d1;&#x1f3fb;&#x200d;&#x2764;&#xfe0f;&#x200d;&#x1F48B;&#x200d;&#x1f9d1;&#x1f3ff;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3fb;&amp;#x200d;&amp;#x2764;&amp;#xfe0f;&amp;#x200d;&amp;#x1f48b;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3ff;</strong><br>
                 Dec:&nbsp;<strong>&amp;#129489;&amp;#127995;&amp;#8205;&amp;#10084;&amp;#65039;&amp;#8205;&amp;#128139;&amp;#8205;&amp;#129489;&amp;#127999;</strong>
@@ -2003,14 +2547,62 @@
 
           <p>Los dos personajes deben ser hombres o mujeres, no pueden ser parejas mixtas.</p>
 
-          <p>Por ejemplo, para mostrar una pareja peleando formada por dos hombres, uno de piel clara y otro de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2 (U+1F469 U+1F3FF U+200D U+1F91D U+200D U+1F468 U+1F3FB):</p>
+          <p>Por ejemplo, para mostrar una pareja peleando formada por dos hombres, uno de piel clara y otro de piel oscura se puede escribir la secuencia Hombre + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Hombre + Modificador Fitzpatrick de tipo 1-2:</p>
 
-          <p class="ejemplo-secuencia">&#x1F468; + &#x1F3FF; + ZWJ + &#x1FAEF; + ZWJ + &#x1F468; + &#x1F3FC; = &#x1F468;&#x1F3FF; + ZWJ + &#x1FAEF; + ZWJ + &#x1F468;&#x1F3FB; = &#x1F468;&#x1F3FF;&#x200D;&#x1FAEF;&#x200D;&#x1F468;&#x1F3FB;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1FAEF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1faef;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f468;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1faef;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f468;&#x1f3fb;</td>
+              <td>=</td>
+              <td>&#x1f468;&#x1f3ff;&#x200d;&#x1faef;&#x200d;&#x1f468;&#x1f3fb;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F468 U+1F3FF U+200D U+1FAEF U+200D U+1F468 U+1F3FB</p>
-              <p class="si">&#x1F468;&#x1F3FF;&#x200D;&#x1FAEF;&#x200D;&#x1F468;&#x1F3FB;</p>
+              <p class="si">&#x1f468;&#x1f3ff;&#x200d;&#x1FAEF;&#x200d;&#x1f468;&#x1f3fb;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x1f3ff;&amp;#x200d;&amp;#x1faef;&amp;#x200d;&amp;#x1f468;&amp;#x1f3fb;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129775;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
@@ -2030,14 +2622,62 @@
             <li>el modificador Fitzpatrick</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una pareja de personajes neutros, uno de piel clara y otro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Adulto + Modificador Fitzpatrick de tipo 1-2 (U+1F9D1 U+1F3FF U+200D U+1F91D U+200D U+1F9D1 U+1F3FB):</p>
+          <p>Por ejemplo, para mostrar una pareja de personajes neutros, uno de piel clara y otro de piel oscura se puede escribir la secuencia Adulto + Modificador Fitzpatrick de tipo 6 + ZWJ + Pelea + ZWJ + Adulto + Modificador Fitzpatrick de tipo 1-2:</p>
 
-          <p class="ejemplo-secuencia">&#x1F9D1; + &#x1F3FF; + ZWJ + &#x1FAEF; + ZWJ + &#x1F9D1; + &#x1F3FC; = &#x1F9D1;&#x1F3FF; + ZWJ + &#x1FAEF; + ZWJ + &#x1F9D1;&#x1F3FB; = &#x1F9D1;&#x1F3FF;&#x200D;&#x1FAEF;&#x200D;&#x1F9D1;&#x1F3FB;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1FAEF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F9D1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1faef;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9d1;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f9d1;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1faef;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x1f9d1;&#x1f3fb;</td>
+              <td>=</td>
+              <td>&#x1f9d1;&#x1f3ff;&#x200d;&#x1faef;&#x200d;&#x1f9d1;&#x1f3fb;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u">
               <p class="uc">U+1F9D1 U+1F3FF U+200D U+1FAEF U+200D U+1F9D1 U+1F3FB</p>
-              <p class="si">&#x1F9D1;&#x1F3FF;&#x200D;&#x1FAEF;&#x200D;&#x1F9D1;&#x1F3FB;</p>
+              <p class="si">&#x1f9d1;&#x1f3ff;&#x200d;&#x1FAEF;&#x200d;&#x1f9d1;&#x1f3fb;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f9d1;&amp;#x1f3ff;&amp;#x200d;&amp;#x1faef;&amp;#x200d;&amp;#x1f9d1;&amp;#x1f3fb;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128104;&amp;#127999;&amp;#8205;&amp;#129775;&amp;#8205;&amp;#128104;&amp;#127995;</strong>
@@ -2058,12 +2698,27 @@
         <li id="gr-banderas-paises">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-paises">apartado Banderas nacionales</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan las banderas de los países del mundo y se obtienen escribiendo el código de dos letras <a href="https://es.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1</a> correspondiente al país. Las letras que se deben utilizar son los caracteres Unicode denominados "letras para símbolos de indicadores regionales", que se extienden desde el carácter U+1F1E6 (letra A) hasta el U+1F1FF (letra Z).</p>
 
-          <p>Por ejemplo, para mostrar la bandera de España se puede escribir la secuencia E + S (U+1F1EA U+1F1F8):</p>
+          <p>Por ejemplo, para mostrar la bandera de España se puede escribir la secuencia E + S:</p>
 
-          <p class="ejemplo-secuencia">&#x1F1EA; + &#x1F1F8; = &#x1F1EA;&#x1F1F8;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F1EA</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F1F8</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f1ea;</td>
+              <td>+</td>
+              <td>&#x1f1f8;</td>
+              <td>=</td>
+              <td>&#x1f1ea;&#x1f1f8;</td>
+            </tr>
+          </table>
 
-          <div class="u-l">
-            <div class="u">
+          <div class="u-l2">
+            <div class="u2">
               <p class="uc">U+1F1EA U+1F1F8 </p>
               <p class="si">&#x1F1EA;&#x1F1F8;</p>
               <p class="en">hexadecimal: <strong>&amp;#x1f1ea;&amp;#x1f1f8;</strong><br>decimal: <strong>&amp;#127466;&amp;#127480;</strong></p>
@@ -2073,11 +2728,53 @@
         </li>
 
         <li id="gr-banderas-regiones">
-          <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-regiones">apartado Banderas (subdivisiones regionales)</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan banderas regionales. Unicode define secuencias para muchas banderas regionales, pero únicamente se recomienda el uso como emojis de tres de ellas: las banderas de las tres naciones que forman Gran Bretaña (Inglaterra, Escocia y Gales). Estas secuencias se forman mediante el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>), el código <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> de cinco letras correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en estos casos) y finalmente el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado).</p>
+          <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-regiones">apartado Banderas (subdivisiones regionales)</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> representan banderas regionales. Unicode define secuencias para muchas banderas regionales, pero únicamente se recomienda el uso como emojis de tres de ellas: las banderas de las tres naciones que forman Gran Bretaña (Inglaterra, Escocia y Gales). Estas secuencias se forman mediante:</p>
 
-          <p>Por ejemplo, para mostrar la bandera regional de Inglaterra (GB-ENG) se puede escribir la secuencia Bandera negra + G + B + E + N + G + DEL (U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F):</p>
+          <ul>
+            <li>el carácter U+1F3F4 (bandera negra <span class="grande">&#x1f3f4;</span>)</li>
+            <li>el código <a href="https://es.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> de cinco letras correspondiente al país y a la subdivisión (gbeng, gbsct y gbwls en estos casos). Las letras son los caracteres del bloque de etiquetas de región (U+E0061 a U+E007A), que no son visibles cuando se muestran separadas.</li>
+            <li>el carácter U+E007F (DEL, carácter ASCII que no es visible cuando se muestra separado)</li>
+          </ul>
 
-          <p class="ejemplo-secuencia">&#x1F3F4; + &#x0067; + &#x0062; + &#x0065; + &#x006E; + &#x0067; + &#x2b1a; = &#x1F3F4;&#xe0067;&#xe0062;&#xe0065;&#xe006E;&#xe0067;&#xe007F;</p>
+
+          <p>Por ejemplo, para mostrar la bandera regional de Inglaterra (GB-ENG) se puede escribir la secuencia Bandera negra + g + b + e + n + g + DEL:</p>
+
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F3F4</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E0067</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E0062</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E0065</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E006E</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E0067</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+E007F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3f4;</td>
+              <td>+</td>
+              <td>&#xe0067;</td>
+              <td>+</td>
+              <td>&#xe0062;</td>
+              <td>+</td>
+              <td>&#xe0065;</td>
+              <td>+</td>
+              <td>&#xe006e;</td>
+              <td>+</td>
+              <td>&#xe0067;</td>
+              <td>+</td>
+              <td>&#xe007f;</td>
+              <td>=</td>
+              <td>&#x1f3f4;&#xe0067;&#xe0062;&#xe0065;&#xe006e;&#xe0067;&#xe007f;</td>
+            </tr>
+          </table>
 
           <div class="u-l">
             <div class="u">
@@ -2092,14 +2789,48 @@
         <li id="gr-banderas-otras">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-banderas.html#gr-banderas-otras">apartado Otras Banderas</a> de la <a href="html-unicode-secuencias-banderas.html">lección Secuencias: Banderas</a> agrupa las secuencias que corresponden a banderas que no pertenecen a ninguno de los grupos anteriores.</p>
 
-          <p>Por ejemplo, para mostrar la bandera pirata se puede escribir la secuencia Bandera negra + ZWJ + Cráneo y tibias cruzadas + VS16 (U+1F3F4 U+200D U+2620 U+FE0F).</p>
+          <p>Por ejemplo, para mostrar la bandera pirata se puede escribir la secuencia Bandera negra + ZWJ + Cráneo y tibias cruzadas + VS16:</p>
 
-          <p class="ejemplo-secuencia">&#x1F3F4; + ZWJ + &#x2620; + VS16 = &#x1F3F4; + ZWJ + &#x2620;&#xFE0F; = &#x1F3F4;&#xFE0F;&#x200D;&#x2620;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F3F4</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2620</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3f4;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2620;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3f4;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td></td>
+              <td>&#x2620;&#xfe0f;</td>
+              <td></td>
+              <td>=</td>
+              <td>&#x1f3f4;&#x200d;&#x2620;&#xfe0f;</td>
+            </tr>
+          </table>
 
           <div class="u-l">
             <div class="u">
               <p class="uc">U+1F3F4 U+200D U+2620 U+FE0F</p>
-              <p class="si">&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</p>
+              <p class="si">&#x1F3F4;&#x200d;&#x2620;&#xfe0f;</p>
               <p class="en">Hex:&nbsp;<strong>&amp;#x1f3f4;&amp;#x200d;&amp;#x2620;&amp;#xfe0f;</strong><br>Dec:&nbsp;<strong>&amp;#127988;&amp;#8205;&amp;#9760;&amp;#65039;</strong></p>
               <p class="no">pirate flag</p>
             </div>
@@ -2126,112 +2857,155 @@
             <li>el carácter Flecha derecha en su variante emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar un hombre de piel blanca con bastón caminando hacia la derecha se puede escribir la secuencia Hombre + Fitzpatrick + ZWJ + Bastón + ZWJ + Flecha derecha emoji (U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 U+FE0F):</p>
+          <p>Por ejemplo, para mostrar un hombre de piel blanca con bastón caminando hacia la derecha se puede escribir la secuencia Hombre + Fitzpatrick + ZWJ + Bastón + ZWJ + Flecha derecha + VS16:</p>
 
-          <p class="ejemplo-secuencia">&#x1F468; + &#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB; + ZWJ + &#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF; + ZWJ + &#x27A1;&#xFE0F; = &#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F468</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FB</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F9AF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+27A1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f468;</td>
+              <td>+</td>
+              <td>&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9af;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x27a1;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f468;&#x1f3fb;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f9af;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x27a1;&#xfe0f;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="7">&#x1f468;&#x1f3fb;&#x200d;&#x1f9af;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x27a1;&#xfe0f;</td>
+              <td>=</td>
+              <td>&#x1f468;&#x1f3fb;&#x200d;&#x1F9AF;&#x200d;&#x27A1;&#xfe0f;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
             <div class="u2">
               <p class="uc">U+1F468 U+1F3FB U+200D U+1F9AF U+200D U+27A1 U+FE0F </p>
-              <p class="si">&#x1F468;&#x1F3FB;&#x200D;&#x1F9AF;&#x200D;&#x27A1;&#xFE0F;</p>
+              <p class="si">&#x1f468;&#x1f3fb;&#x200d;&#x1F9AF;&#x200d;&#x27A1;&#xfe0f;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f468;&amp;#x1f3fb;&amp;#x200d;&amp;#x1f9af;&amp;#x200d;&amp;#x27a1;&amp;#xfe0f;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128104;&amp;#127995;&amp;#8205;&amp;#129455;&amp;#8205;&amp;#10145;&amp;#65039;</strong>
               </p>
               <p class="no">man with white cane facing right: light skin tone</p>
-              <p class="co">
-                No disponible en Windows 11
-              </p>
             </div>
           </div>
         </li>
-        <li id="gr-sentido-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-sentido.html#gr-sentido-2">apartado Sentido (2)</a> de la <a href="html-unicode-secuencias-sentido.html">lección Secuencias: Sentido</a> se forman combinando un carácter que representa un individuo realizando una actividad (al que se puede añadir un modificador Fitzpatrick y/o el símbolo masculino o femenino) y el carácter texto/emoji Flecha derecha, unidos con caracteres ZWJ (U+200D, Zero-Width Joiner) entre ellos:
+        <li id="gr-sentido-2">Las secuencias que se muestran en el <a href="html-unicode-secuencias-sentido.html#gr-sentido-2">apartado Sentido (2)</a> de la <a href="html-unicode-secuencias-sentido.html">lección Secuencias: Sentido</a> se forman combinando un carácter que representa un individuo neutro realizando una actividad (al que se puede añadir un modificador Fitzpatrick y/o el símbolo masculino o femenino) y el carácter texto/emoji Flecha derecha, unidos con caracteres ZWJ (U+200D, Zero-Width Joiner) entre ellos:
           <ul>
-            <li>el carácter de un individuo (en Unicode 15.1 únicamente se permiten los individuos Corredor (U+1F3C3, <span class="grande">&#x1f3c3;</span>), Peatón (U+1F6B6, <span class="grande">&#x1f6b6;</span>) e Individuo arrodillado (U+1F9CE, <span class="grande">&#x1f9ce;</span>)</li>
+            <li>el carácter de un individuo neutro. En Unicode 15.1 únicamente se permiten los individuos Corredor (U+1F3C3, <span class="grande">&#x1f3c3;</span>), Peatón (U+1F6B6, <span class="grande">&#x1f6b6;</span>) e Individuo arrodillado (U+1F9CE, <span class="grande">&#x1f9ce;</span>)</li>
             <li>opcionalmente, un modificador Fitzpatrick</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>opcionalmente, el carácter Femenino o Masculino en sus variantes texto o emoji (U+2640, <span class="grande">&#x2640;</span>, U+2640 U+FE0F, <span class="grande">&#x2640;&#xfe0f;</span>, U+2642, <span class="grande">&#x2642;</span>, U+2642 U+FE0F, <span class="grande">&#x2642;&#xfe0f;</span>, )</li>
+            <li>opcionalmente, el carácter Femenino (U+2640 U+FE0F, <span class="grande">&#x2640;&#xfe0f;</span>) o Masculino (U+2642 U+FE0F, <span class="grande">&#x2642;&#xfe0f;</span>), en su variante emoji</li>
             <li>el carácter ZWJ (U+200D, Zero-Width Joiner)</li>
-            <li>el carácter Flecha derecha en sus variantes texto (U+27A1, <span class="grande">&#x27a1;</span>) o emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>)</li>
+            <li>el carácter Flecha derecha en su variante emoji (U+27A1 U+FE0F, <span class="grande">&#x27a1;&#xfe0f;</span>)</li>
           </ul>
 
-          <p>Por ejemplo, para mostrar una mujer de piel negra corriendo hacia la derecha de pueden escribir las secuencias Persona corriendo + Fitzpatrick + ZWJ + Mujer (texto/emoji) + ZWJ + Flecha derecha (texto/emoji), lo que da en total cuatro combinaciones posibles:</p>
+          <p>Por ejemplo, para mostrar una mujer de piel negra corriendo hacia la derecha de pueden escribir las secuencias Persona corriendo + Fitzpatrick + ZWJ + Femenino + VS16 + ZWJ + Flecha derecha + VS16:</p>
 
-          <p class="ejemplo-secuencia">&#x1F3C3; + &#x1F3FF; + ZWJ + &#x2640; + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF; + ZWJ + &#x2640; + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF;&#x200d;&#x2640; + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#x200D;&#x27A1;</p>
-
-          <p class="ejemplo-secuencia">&#x1F3C3; + &#x1F3FF; + ZWJ + &#x2640; + VS16 + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF; + ZWJ + &#x2640;&#xFE0F; + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF;&#x200d;&#x2640;&#xFE0F; + ZWJ + &#x27A1; = &#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;&#x200D;&#x27A1;</p>
-
-          <p class="ejemplo-secuencia">&#x1F3C3; + &#x1F3FF; + ZWJ + &#x2640; + ZWJ + &#x27A1; + VS16 = &#x1F3C3;&#x1F3FF; + ZWJ + &#x2640; + ZWJ + &#x27A1;&#xFE0F; = &#x1F3C3;&#x1F3FF;&#x200d;&#x2640; + ZWJ + &#x27A1;&#xFE0F; = &#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#x200D;&#x27A1;&#xFE0F;</p>
-
-          <p class="ejemplo-secuencia">&#x1F3C3; + &#x1F3FF; + ZWJ + &#x2640; + VS16 + ZWJ + &#x27A1; + VS16 = &#x1F3C3;&#x1F3FF; + ZWJ + &#x2640;&#xFE0F; + ZWJ + &#x27A1;&#xFE0F; = &#x1F3C3;&#x1F3FF;&#x200d;&#x2640;&#xFE0F; + ZWJ + &#x27A1;&#xFE0F; = &#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;&#x200D;&#x27A1;&#xFE0F;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F3C3 </td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F3FF</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+2640</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+27A1</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f3c3;</td>
+              <td>+</td>
+              <td>&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x2640;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x27a1;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f3c3;&#x1f3ff;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x2640;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x27a1;&#xfe0f;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="9">&#x1f3c3;&#x1f3ff;&#x200d;&#x2640;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td colspan="3">&#x27a1;&#xfe0f;</td>
+              <td>=</td>
+              <td>&#x1f3c3;&#x1f3ff;&#x200d;&#x2640;&#xfe0f;&#x200d;&#x27a1;&#xfe0f;</td>
+            </tr>
+          </table>
 
           <div class="u-l2">
-            <div class="u2">
-              <p class="u2">
-                <span class="ve" title="Nuevo en Unicode 15.1 (2023)">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 512 512">
-                    <polygon points="260,20 308,82 380,48 386,132 465,139 430,205 492,257 435,307 465,372 384,375 378,458 308,423 263,493 215,425 140,460 135,382 53,372 85,303 22,254 85,215 53,135 137,132 141,48 213,87" fill="none" stroke-width="20" stroke="red" />
-                    <text x="250" y="320" font-family="sans-serif" font-size="160" font-weight="bold" text-anchor="middle" fill="red">15.1</text>
-                  </svg>
-                </span>
-                U+1F3C3 U+1F3FF U+200D U+2640 U+200D U+27A1
-              </p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#x200D;&#x27A1;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#x200d;&amp;#x27a1;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#8205;&amp;#10145;</strong>
-              </p>
-              <p class="no">woman running facing right: dark skin tone</p>
-              <p class="co">
-                No disponible en Windows 10<br>
-                No disponible en Windows 11
-              </p>
-            </div>
-
-            <div class="u2">
-              <p class="uc">
-                <span class="ve" title="Nuevo en Unicode 15.1 (2023)">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 512 512">
-                    <polygon points="260,20 308,82 380,48 386,132 465,139 430,205 492,257 435,307 465,372 384,375 378,458 308,423 263,493 215,425 140,460 135,382 53,372 85,303 22,254 85,215 53,135 137,132 141,48 213,87" fill="none" stroke-width="20" stroke="red" />
-                    <text x="250" y="320" font-family="sans-serif" font-size="160" font-weight="bold" text-anchor="middle" fill="red">15.1</text>
-                  </svg>
-                </span>
-                U+1F3C3 U+1F3FF U+200D U+2640 U+200D U+27A1 U+FE0F
-              </p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#x200D;&#x27A1;&#xFE0F;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#x200d;&amp;#x27a1;&amp;#xfe0f;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#8205;&amp;#10145;&amp;#65039;</strong>
-              </p>
-              <p class="no">woman running facing right: dark skin tone</p>
-              <p class="co">
-                No disponible en Windows 10<br>
-                No disponible en Windows 11
-              </p>
-            </div>
-
-            <div class="u2">
-              <p class="uc">
-                <span class="ve" title="Nuevo en Unicode 15.1 (2023)">
-                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="30" viewBox="0 0 512 512">
-                    <polygon points="260,20 308,82 380,48 386,132 465,139 430,205 492,257 435,307 465,372 384,375 378,458 308,423 263,493 215,425 140,460 135,382 53,372 85,303 22,254 85,215 53,135 137,132 141,48 213,87" fill="none" stroke-width="20" stroke="red" />
-                    <text x="250" y="320" font-family="sans-serif" font-size="160" font-weight="bold" text-anchor="middle" fill="red">15.1</text>
-                  </svg>
-                </span>
-                U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F U+200D U+27A1
-              </p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;&#x200D;&#x27A1;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;&amp;#x200d;&amp;#x27a1;</strong><br>
-                Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#65039;&amp;#8205;&amp;#10145;</strong>
-              </p>
-              <p class="no">woman running facing right: dark skin tone</p>
-              <p class="co">
-                No disponible en Windows 10<br>
-                No disponible en Windows 11
-              </p>
-            </div>
-
             <div class="u2">
               <p class="uc">
                 <span class="ve" title="Nuevo en Unicode 15.1 (2023)">
@@ -2242,16 +3016,12 @@
                 </span>
                 U+1F3C3 U+1F3FF U+200D U+2640 U+FE0F U+200D U+27A1 U+FE0F
               </p>
-              <p class="si">&#x1F3C3;&#x1F3FF;&#x200D;&#x2640;&#xFE0F;&#x200D;&#x27A1;&#xFE0F;</p>
+              <p class="si">&#x1F3C3;&#x1f3ff;&#x200d;&#x2640;&#xfe0f;&#x200d;&#x27A1;&#xfe0f;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f3c3;&amp;#x1f3ff;&amp;#x200d;&amp;#x2640;&amp;#xfe0f;&amp;#x200d;&amp;#x27a1;&amp;#xfe0f;</strong><br>
                 Dec:&nbsp;<strong>&amp;#127939;&amp;#127999;&amp;#8205;&amp;#9792;&amp;#65039;&amp;#8205;&amp;#10145;&amp;#65039;</strong>
               </p>
               <p class="no">woman running facing right: dark skin tone</p>
-              <p class="co">
-                No disponible en Windows 10<br>
-                No disponible en Windows 11
-              </p>
             </div>
           </div>
         </li>
@@ -2264,37 +3034,43 @@
       <p>Las secuencias Unicode que se muestran en la <a href="html-unicode-secuencias-otras.html">lección Secuencias: otras</a> se pueden clasificar en grupos que no pertenecen a apartados del resto de páginas de secuencias Unicode:</p>
 
       <ul>
-        <li id="gr-keycap-1">
-          <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-otras.html#gr-keycap-1">apartado Caracteres enmarcados (teclas) en modo texto</a> de la <a href="html-unicode-secuencias-otras.html">lección Secuencias: Otras</a> representan en modo texto (en blanco y negro) las teclas del teclado numérico de un ordenador.</p>
-
-          <p>Por ejemplo, para mostrar el número 5 en una tecla se puede escribir la secuencia 5 + TECLA (U+35 U+20E3 ):</p>
-
-          <p class="ejemplo-secuencia">&#x35; + &nbsp; &#x20E3; &nbsp; = &#x35;&#x20E3;</p>
-
-          <div class="u-l">
-            <div class="u">
-              <p class="uc">U+35 U+20E3 </p>
-              <p class="si">&#x35;&#x20E3;</p>
-              <p class="en">
-                Hex:&nbsp;<strong>&amp;#x35;&amp;#x20e3;</strong><br>
-                Dec:&nbsp;<strong>&amp;#53;&amp;#8419;</strong>
-              </p>
-              <p class="no">keycap: 5</p>
-            </div>
-          </div>
-        </li>
-
         <li id="gr-keycap-2">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-otras.html#gr-keycap-2">apartado Caracteres enmarcados (teclas) en modo emoji</a> de la <a href="html-unicode-secuencias-otras.html">lección Secuencias: Otras</a> representan en modo emoji (en color) las teclas del teclado numérico de un ordenador.</p>
 
-          <p>Por ejemplo, para mostrar el número 5 en una tecla se puede escribir la secuencia 5 + VS16 + tecla (U+35 U+FE0F U+20E3):</p>
+          <p>Por ejemplo, para mostrar el número 5 en una tecla se puede escribir la secuencia 5 + VS16 + tecla:</p>
 
-          <p class="ejemplo-secuencia">&#x35; + VS16 + &nbsp; &#x20E3; &nbsp; = &#x35;&#xFE0F;&#x20E3;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+35</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+20E3</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x35;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>&#x20e3;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x35;</td>
+              <td>+</td>
+              <td>&#x20e3;</td>
+              <td>=</td>
+              <td>&#x35;&#xfe0f;&#x20e3;</td>
+            </tr>
+          </table>
 
           <div class="u-l">
             <div class="u">
               <p class="uc">U+35 U+FE0F U+20E3 </p>
-              <p class="si">&#x35;&#xFE0F;&#x20E3;</p>
+              <p class="si">&#x35;&#xfe0f;&#x20E3;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x35;&amp;#xfe0f;&amp;#x20e3;</strong><br>
                 Dec:&nbsp;<strong>&amp;#53;&amp;#65039;&amp;#8419;</strong>
@@ -2307,14 +3083,46 @@
         <li id="gr-restos">
           <p>Las secuencias que se muestran en el <a href="html-unicode-secuencias-otras.html#gr-restos">apartado Otras secuencias</a> de la <a href="html-unicode-secuencias-otras.html">lección Secuencias: Otras</a> no pertenecen a ninguno de los apartados anteriores.</p>
 
-          <p>Por ejemplo, para mostrar un ojo en un bocadillo de tebeo se puede escribir la secuencia Ojo + VS16 + ZWJ + Bocadillo de tebeo (U+1F441 U+FE0F U+200D U+1F5E8):</p>
+          <p>Por ejemplo, para mostrar un ojo en un bocadillo de tebeo se puede escribir la secuencia Ojo + VS16 + ZWJ + Bocadillo de tebeo:</p>
 
-          <p class="ejemplo-secuencia">&#x1F441; + VS16 + ZWJ + &#x1F5E8; = &#x1F441;&#xFE0F + ZWJ + &#x1F5E8; = &#x1F441;&#xFE0F;&#x200D;&#x1F5E8;</p>
+          <table class="ejemplo-secuencia">
+            <tr>
+              <td style="font-size: 60%">U+1F441</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+FE0F</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+200D</td>
+              <td>+</td>
+              <td style="font-size: 60%">U+1F5E8</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>&#x1f441;</td>
+              <td>+</td>
+              <td>VS16</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f5e8;</td>
+              <td>=</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3">&#x1f441;&#xfe0f;</td>
+              <td>+</td>
+              <td>ZWJ</td>
+              <td>+</td>
+              <td>&#x1f5e8;</td>
+              <td>=</td>
+              <td>&#x1f441;&#xfe0f;&#x200d;&#x1f5e8;</td>
+            </tr>
+          </table>
 
           <div class="u-l">
             <div class="u">
               <p class="uc">U+1F441 U+FE0F U+200D U+1F5E8 </p>
-              <p class="si">&#x1F441;&#xFE0F;&#x200D;&#x1F5E8;</p>
+              <p class="si">&#x1F441;&#xfe0f;&#x200d;&#x1F5E8;</p>
               <p class="en">
                 Hex:&nbsp;<strong>&amp;#x1f441;&amp;#xfe0f;&amp;#x200d;&amp;#x1f5e8;</strong><br>
                 Dec:&nbsp;<strong>&amp;#128065;&amp;#65039;&amp;#8205;&amp;#128488;</strong>
@@ -2328,7 +3136,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 20 de octubre de 2026</p>
+    <p class="ultmod">Última modificación de esta página: 22 de octubre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
