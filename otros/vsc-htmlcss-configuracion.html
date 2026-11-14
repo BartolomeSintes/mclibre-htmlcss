@@ -140,7 +140,7 @@
     </section>
 
     <section id="extension-hex-editor">
-      <h3>Hex Editor</h3>
+      <h3>Editor hexadecimal (Hex Editor)</h3>
 
       <p><img src="../img/vscode/vsc-extension-hex-editor-logo.png" alt="Logotipo de Hex Editor" width="128" height="128" class="izquierda"></p>
 
@@ -198,7 +198,7 @@
         <span class="soft-atajo-teclado">Ctrl+clic izquierdo</span> se abre la imagen en otra pestaña.
       </p>
 
-      <p><strong>Nota</strong>: En cursos anteriores recomendaba este extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente. Pero en septiembre de 2019 añadí a la lista de atajos recomendados un atajo de teclado que permite crear de forma inmediata los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>. Sitúe el cursor en el interior de la etiqueta <span class="html-eti">img</span> y escriba el atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+s</span> y automáticamente se añadirán los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> con los valores de la imagen. La extensión Image Preview sigue siendo útil para ver una miniatura de la imagen, pero ya no es necesaria para indicar los tamaños.</p>
+      <p><strong>Nota</strong>: En cursos anteriores recomendaba este extensión para ver el tamaño de las imágenes insertadas y poder rellenar los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> fácilmente. Pero en septiembre de 2019 añadí a la lista de atajos recomendados un atajo de teclado que permite crear de forma inmediata los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>. Sitúe el cursor en el interior de la etiqueta <span class="html-eti">img</span> y escriba el atajo <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+s</span> y automáticamente se añadirán los atributos <span class="html-atri">width</span> y <span class="html-atri">height</span> con los valores de la imagen. La extensión Image Preview sigue siendo útil para ver una miniatura de la imagen, pero ya no es necesaria para indicar los tamaños.</p>
     </section>
 
     <section id="extension-tag-inserter">
@@ -264,6 +264,22 @@
 
       <p>El estilo de formato concreto que aplica CSScomb se configura en el archivo de configuración de usuario o en el del área de trabajo mediante la configuración csscomb.preset.</p>
     </section>
+
+    <section id="extension-multi-command">
+      <h3>multi-command</h3>
+
+      <p><img src="../img/vscode/vsc-extension-no-logo.png" alt="Logotipo genérico" width="128" height="128" class="izquierda"></p>
+
+      <p>Autor: ryuta46</p>
+
+      <p>Marketplace: <a href="https://marketplace.visualstudio.com/items?itemName=ryuta46.multi-command">multi-command</a></p>
+
+      <p>Repositorio GitHub: <a href="https://github.com/ryuta46/vscode-multi-command">multi-command</a></p>
+
+      <p>Esta extensión permite crear comandos que ejecuten a su vez varios comandos de Visual Studio Code.</p>
+
+      <p>En estos apuntes se utiliza esta extensión únicamente para definir un comando que permite abrir la extensión Live Preview y devolver el cursor a la ventana de edición de la página web que se muestra en Live Peview.</p>
+    </section>
   </section>
 
   <section id="preferencias">
@@ -288,10 +304,18 @@
   // Creación de páginas web HTML con hojas de estilo CSS
   // https://www.mclibre.org/consultar/htmlcss/
   //
-  // Versión 2026-10-08
+  // Versión 2026-11-08
   //
   //
   // Configuraciones de VSCode
+  //
+  // Chat: Title Bar: Open in Agents Window: Enabled
+  // Controla si el botón Abrir en la ventana Agentes se muestra en la barra de título.
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  //
+  // Chat: Title Bar: Sign In: Enabled
+  // Controla si el botón de inicio de sesión de Copilot se muestra en la barra de título cuando la sesión está cerrada. Cuando se desactiva, la opción de inicio de sesión pasa a la barra de estado.
+  "chat.titleBar.signIn.enabled": false,
   //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
@@ -337,11 +361,11 @@
   // Finalizar con una nueva línea.
   "html.format.endWithNewline": true,
   //
-  // HTML: Format Extra Liners
+  // HTML: Format: Extra Liners
   // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. null equivale a "head, body, /html".
   "html.format.extraLiners": "body",
   //
-  // HTML: Format Wrap Line Length
+  // HTML: Format: Wrap Line Length
   // Cantidad máxima de caracteres por línea (0 = deshabilitar).
   "html.format.wrapLineLength": 0,
   //
@@ -365,11 +389,15 @@
   // Controla el título de la ventana en función del contexto actual, como el área de trabajo abierta o el editor activo. Las variables se sustituyen en función del contexto:
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
   //
+  // Workbench: Browser: Show In Title Bar
+  // Controla si el botón del explorador integrado se muestra en la barra de título.
+  "workbench.browser.showInTitleBar": false,
+  //
   // Workbench: Color Theme
   // Especifica el tema de color que se usa en el área de trabajo cuando Window: Auto Detect Color Scheme no está habilitado.
   "workbench.colorTheme": "Dark Modern",
   //
-  // Workbench: Editor: useModal
+  // Workbench: Editor: Use Modal
   // Controla si los editores se abren en una superposición modal.
   "workbench.editor.useModal": "off",
   //
@@ -489,7 +517,7 @@
     "id-class-ad-disabled": true, //            Los atributos id o class no incluyen la palabra "ad" (que puede ser bloqueada por los bloqueadores de anuncios)
     "id-unique": true, //                       Los valores de los atributos id no se repiten
     // Formatting
-    "spec-char-escape": true, //                Los caracteres especiales &amp;gt; &amp;lt; y &amp;amp; se escriben como entidades de carácter
+    "spec-char-escape": true, //                Los caracteres especiales &gt; &lt; y &amp; se escriben como entidades de carácter
   },
   //
   //
@@ -683,6 +711,20 @@
   },
   //
   //
+  // Extensión multi-command
+  //
+  "multiCommand.commands": [
+    // Abrir navegador interno en grupo derecho
+    {
+      "command": "abrirNavegadorDerecha",
+      "interval": 100,
+      "sequence": [
+        "workbench.action.browser.openFile",
+        "workbench.action.moveEditorToRightGroup",
+        "workbench.action.focusLeftGroup"
+      ]
+    }
+  ],
 }</code>
 </pre>
         </div>
@@ -698,6 +740,14 @@
             <div class="codigo">
               <pre class="line-numbers">
 <code class="language-json">  // Configuraciones de VSCode
+  //
+  // Chat: Title Bar: Open in Agents Window: Enabled
+  // Controla si el botón Abrir en la ventana Agentes se muestra en la barra de título.
+  "chat.titleBar.openInAgentsWindow.enabled": false,
+  //
+  // Chat: Title Bar: Sign In: Enabled
+  // Controla si el botón de inicio de sesión de Copilot se muestra en la barra de título cuando la sesión está cerrada. Cuando se desactiva, la opción de inicio de sesión pasa a la barra de estado.
+  "chat.titleBar.signIn.enabled": false,
   //
   // Editor: Insert Spaces
   // Insertar espacios al presionar "TAB"
@@ -734,19 +784,20 @@
   // HTML: Auto Closing Tags
   // Habilita o deshabilita el cierre automático de las etiquetas HTML.
   "html.autoClosingTags": false,
+  //
   // HTML: Auto Create Quotes
-  // habilita o deshabilita la creación automática de comillas para la asignación de atributos HTML.
+  // Habilita o deshabilita la creación automática de comillas para la asignación de atributos HTML.
   "html.autoCreateQuotes": false,
   //
   // HTML: Format: End With Newline
   // Finalizar con una nueva línea.
   "html.format.endWithNewline": true,
   //
-  // HTML: Format Extra Liners
+  // HTML: Format: Extra Liners
   // Lista de etiquetas, separadas por comas, que deben tener una nueva línea adicional delante. null equivale a "head, body, /html".
   "html.format.extraLiners": "body",
   //
-  // HTML: Format Wrap Line Length
+  // HTML: Format: Wrap Line Length
   // Cantidad máxima de caracteres por línea (0 = deshabilitar).
   "html.format.wrapLineLength": 0,
   //
@@ -770,11 +821,15 @@
   // Controla el título de la ventana en función del contexto actual, como el área de trabajo abierta o el editor activo. Las variables se sustituyen en función del contexto:
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
   //
+  // Workbench: Browser: Show In Title Bar
+  // Controla si el botón del explorador integrado se muestra en la barra de título.
+  "workbench.browser.showInTitleBar": false,
+  //
   // Workbench: Color Theme
   // Especifica el tema de color que se usa en el área de trabajo cuando Window: Auto Detect Color Scheme no está habilitado.
   "workbench.colorTheme": "Dark Modern",
   //
-  // Workbench: Editor: useModal
+  // Workbench: Editor: Use Modal
   // Controla si los editores se abren en una superposición modal.
   "workbench.editor.useModal": "off",
   //
@@ -790,6 +845,14 @@
             <summary>Haga clic aquí para ver/ocultar la explicación de las preferencias relacionadas con el editor en general:</summary>
 
             <ul>
+              <li>"chat.titleBar.openInAgentsWindow.enabled": false,
+                <p>Esta preferencia oculta un icono que se muestra en la barra de título que permite abrir la ventana de agentes, para simplificar el interfaz de VSCode.</p>
+                <p>Cuando el icono está oculto, se puede abrir la ventana de agentes abriendo la paleta de comandos (<kbd>Ctrl + Shift + p</kbd>), escribiendo "Chat: Open Agents window" y pulsando <kbd>Intro</kbd>.</p>
+              </li>
+              <li> "chat.titleBar.signIn.enabled": false,
+                <p>Esta preferencia oculta el botón "Iniciar sesión" que se muestra en la barra de título que permite iniciar sesión en GitHub Copilot, para simplificar el interfaz de VSCode.</p>
+                <p>Cuando el icono está oculto, se puede abrir la ventana de inicio de sesión haciendo clic en el icono de GitHub Copilot (una carita con unas gafas de aviador sobre la cabeza) situado enla barra de estado, abajo a la derecha.</p>
+              </li>
               <li>"editor.insertSpaces": true,
                 <p>Es conveniente sangrar adecuadamente los documentos para facilitar su lectura. Para sangrar un documento, se han utilizado siempre los tabuladores. Pero en los editores modernos no es necesario utilizar tabuladores porque los editores saben gestionar los espacios, de manera que cuando se pulsa la tecla <kbd>tabulador</kbd> el editor añade los espacios necesarios.</p>
               </li>
@@ -849,6 +912,11 @@
               </li>
               <li> "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}",
                 <p>El nombre del perfil no aparece en el título de la ventana.</p>
+              </li>
+              <li>"workbench.browser.showInTitleBar": false,
+                <p>Oculta el icono del explorador integrado (una bola del mundo) que se muestra en la barra de título (arriba, a la derecha), para simplificar el interfaz de VSCode.</p>
+                <p>Cuando el icono está oculto, se puede abrir una página web en el explorador integrado haciendo clic derecho en la pestaña de la página web y eligiendo la opción "Abrir en el explorador integrado".</p>
+                <p>En vez del explorado integrado, en estos apuntes se recomienda el uso de la extensión Live Preview, que actualiza continuamente la página que se está editando (el explorador integrado sólo la actualiza cuando se guarda el documento).</p>
               </li>
               <li>"workbench.colorTheme": "Dark Modern",
                 <p>El tema elegido es "Dark Modern".</p>
@@ -1003,6 +1071,31 @@
             </div>
           </details>
         </li>
+        <li>Preferencias de la extensión multi-command:
+          <details>
+            <summary>Haga clic aquí para ver/ocultar las preferencias relacionadas con la extensión multi-command:</summary>
+
+            <div class="codigo">
+              <pre>
+<code class="language-json">  // Extensión multi-command
+  //
+  "multiCommand.commands": [
+    // Abrir navegador interno en grupo derecho
+    {
+      "command": "abrirNavegadorDerecha",
+      "interval": 100,
+      "sequence": [
+        "workbench.action.browser.openFile",
+        "workbench.action.moveEditorToRightGroup",
+        "workbench.action.focusLeftGroup"
+      ]
+    }
+  ],
+  //</code>
+</pre>
+            </div>
+          </details>
+        </li>
       </ul>
     </section>
   </section>
@@ -1026,7 +1119,7 @@
   // Creación de páginas web HTML con hojas de estilo CSS
   // https://www.mclibre.org/consultar/htmlcss/
   //
-  // Versión 2026-10-08
+  // Versión 2026-11-08
   //
   //
   "version": "2.0.0",
@@ -1040,12 +1133,12 @@
           "/c",
           "start",
           "",
-          "<span class="codigo-resaltado">C:/Program Files/Mozilla Firefox/firefox.exe</span>",
+          <span class="codigo-resaltado">"C:/Program Files/Mozilla Firefox/firefox.exe"</span>,
           "${file}"
         ]
       },
       "linux": {
-        "command": "<span class="codigo-resaltado">firefox</span>",
+        "command": "firefox",
         "args": [
           "${file}"
         ]
@@ -1065,12 +1158,12 @@
           "/c",
           "start",
           "",
-          "<span class="codigo-resaltado">C:/Program Files/Google/Chrome/Application/chrome.exe</span>",
+          <span class="codigo-resaltado">"C:/Program Files/Google/Chrome/Application/chrome.exe"</span>,
           "${file}"
         ]
       },
       "linux": {
-        "command": "<span class="codigo-resaltado">google-chrome</span>",
+        "command": "google-chrome",
         "args": [
           "${file}"
         ]
@@ -1095,9 +1188,9 @@
       <p>Compruebe los campos enmarcados de las tareas recomendadas, por si necesita modificarlas:</p>
 
       <ul>
-        <li>"windows" &gt; "command" &gt; "args": el tercer elemento de la lista debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows.
+        <li>"windows" &gt; "command" &gt; "args": el cuarto elemento de la lista debe indicar la ruta hasta el ejecutable de Firefox o Chrome. El valor incluido en el ejemplo es el predeterminado en Windows.
 
-          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes. Como las actualizaciones no cambian la ubicación del programa, si tiene Chrome instalado desde antes de 2020 la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
+          <p>En particular, compruebe la ubicación del ejecutable de Chrome, ya que desde Chrome 85 (publicado en agosto de 2020) Chrome se instala en "C:\Archivos de programa\" y no en "C:\Archivos de programa (x86)" como hacía antes. Como las actualizaciones no cambian la ubicación del programa, si tiene Chrome instalado desde antes de 2020 o si instaló una versión de 32 bits la ruta seguramente será "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe".</p>
 
           <p>Si en su ordenador los programas se encuentran en otra ubicación, escriba la ubicación separando los directorios con barras (/) o con contrabarras dobles (\\), pero no con contrabarras simples (\).</p>
         </li>
@@ -1129,7 +1222,7 @@
     // Creación de páginas web HTML con hojas de estilo CSS
     // https://www.mclibre.org/consultar/htmlcss/
     //
-    // Versión 2026-10-08
+    // Versión 2026-11-08
     //
     //
     {
@@ -1170,22 +1263,22 @@
     },
     {
         // Emmet: Borrar etiqueta
-        "key": "ctrl+alt+e ctrl+alt+b",
+        "key": "ctrl+alt+m ctrl+alt+b",
         "command": "editor.emmet.action.removeTag"
     },
     {
         // Emmet: Insertar tamaño imagen
-        "key": "ctrl+alt+e ctrl+alt+s",
+        "key": "ctrl+alt+m ctrl+alt+s",
         "command": "editor.emmet.action.updateImageSize"
     },
     {
         // Emmet: Seleccionar elemento superior
-        "key": "ctrl+alt+e ctrl+alt+o",
+        "key": "ctrl+alt+m ctrl+alt+o",
         "command": "editor.emmet.action.balanceOut"
     },
     {
         // Emmet: Seleccionar elemento inferior
-        "key": "ctrl+alt+e ctrl+alt+i",
+        "key": "ctrl+alt+m ctrl+alt+i",
         "command": "editor.emmet.action.balanceIn"
     },
     {
@@ -1201,15 +1294,28 @@
         "when": "isLinux"
     },
     {
-        // Extensión Live Preview: Abrir en navegador interno
+        // Extensión Live Preview: Abrir navegador/servidor interno
         "key": "ctrl+alt+p",
-        "command": "livePreview.start.internalPreview.atFile",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "interval": 300,
+            "sequence": [
+                "livePreview.start.internalPreview.atFile",
+                "workbench.action.focusLeftGroup"
+            ]
+        },
         "when": "LivePreviewServerOn == false"
     },
     {
         // Extensión Live Preview: Cerrar navegador/servidor interno
         "key": "ctrl+alt+p",
-        "command": "livePreview.end",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.browser.closeAll",
+                "livePreview.end",
+            ]
+        },
         "when": "LivePreviewServerOn == true"
     },
     {
@@ -1243,17 +1349,18 @@
             </li>
           </ul>
         </li>
-        <li>Los cuatro siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "e" (de Emmet):
+        <li>Los cuatro siguientes atajos permiten aplicar comandos de Emmet. Estos comandos ya están incluidos en Visual Studio Code, por lo que los atajos funcionan inmediatamente. Para que sea más fácil recordar los atajos, todos empiezan por la letra "m" (de Emmet):
+          <p><strong>Nota:</strong> Hasta noviembre de 2026, estos atajos empezaban por la letra "e", pero me he dado cuenta de que la combinación <span class="soft-atajo-teclado">Ctrl+Alt+e</span> da problemas en muchos portátiles y en algunos ordenadores se ve afectada por el estado de la tecla <kbd>Bloq Despl</kbd>, así que he decidido cambiarla por la letra "m".</p>
           <ul>
-            <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+b</span> elimina la primera etiqueta que haya alrededor de la posición del cursor.</li>
-            <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+s</span> inserta el tamaño de una imagen (atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>) cuando el cursor se encuentra en la etiqueta correspondiente.</li>
-            <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+o</span> selecciona la primera etiqueta que haya alrededor de la posición del cursor (o todo el texto que haya dentro de la primera etiqueta).</li>
-            <li>El atajo <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+i</span> retrocede la selección realizada con <span class="soft-atajo-teclado">ctrl+alt+e ctrl+alt+o</span> o selecciona el primer elemento o texto que haya dentro del fragmento seleccionado.</li>
+            <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+b</span> elimina la primera etiqueta que haya alrededor de la posición del cursor.</li>
+            <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+s</span> inserta el tamaño de una imagen (atributos <span class="html-atri">width</span> y <span class="html-atri">height</span>) cuando el cursor se encuentra en la etiqueta correspondiente.</li>
+            <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+o</span> selecciona la primera etiqueta que haya alrededor de la posición del cursor (o todo el texto que haya dentro de la primera etiqueta).</li>
+            <li>El atajo <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+i</span> retrocede la selección realizada con <span class="soft-atajo-teclado">Ctrl+Alt+m Ctrl+Alt+o</span> o selecciona el primer elemento o texto que haya dentro del fragmento seleccionado.</li>
           </ul>
         </li>
         <li>El siguiente atajo, <span class="soft-atajo-teclado">alt+shift+c alt+shift+f</span> en Windows o <span class="soft-atajo-teclado">alt+shift+c alt+shift+i</span> en Linux, ejecuta CSScomb, extensión que formatea hojas de estilo CSS. Este atajo sólo funciona cuando se está editando un archivo .css o .html.</li>
         <li>El siguiente atajo, <span class="soft-atajo-teclado">Ctrl+Alt+p</span> muestra la vista previa de la página que se esté editando mediante la extensión Live Preview y/o cierra el servidor de vista previa.</li>
-        <li>Los dos siguientes atajos, <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c</span> permiten abrir en los navegadores Firefox o Google Chrome, respectivamente, las páginas web que se están editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
+        <li>Los dos siguientes atajos, <span class="soft-atajo-teclado">Ctrl+Alt+f</span> y <span class="soft-atajo-teclado">Ctrl+Alt+c</span> permiten abrir en los navegadores Firefox o Google Chrome, respectivamente, la página web que se está editando en Visual Studio Code. Para que estos atajos funcionen es necesario crear las tareas correspondientes, que se comentan en el apartado <a href="#tareas">Tareas recomendadas</a>.</li>
       </ul>
     </details>
   </section>
@@ -1280,7 +1387,7 @@
   </section>
 
   <footer>
-    <p class="ultmod">Última modificación de esta página: 12 de octubre de 2026</p>
+    <p class="ultmod">Última modificación de esta página: 14 de noviembre de 2026</p>
 
     <p class="licencia">
       <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es"><img src="../varios/iconos/icono-cc-by-sa.svg" alt="Licencia Creative Commons" title="Licencia Creative Commons BY-SA" width="120" height="42"></a><br>
